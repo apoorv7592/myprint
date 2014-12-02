@@ -41,3 +41,10 @@ gem 'spring',        group: :development
 gem 'spree', github: 'spree/spree'
 gem 'spree_gateway', github: 'spree/spree_gateway'
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise'
+
+#installing bootstrap
+gem 'bootstrap-sass', '~> 3.3.1.0'
+
+#for serving static assets
+gem 'rails_12factor', group: :production
+
