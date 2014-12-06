@@ -5,4 +5,6 @@ class Suite < ActiveRecord::Base
 	has_and_belongs_to_many :trims
 	has_and_belongs_to_many :papers
 	has_and_belongs_to_many :dimensions
+
+	scope :active, -> { where( id: !nil)}
 end

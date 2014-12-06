@@ -5,6 +5,13 @@
 	</div>
 <% end %>
 
+<% @suites.each do |s| %>
+	Suite name - 
+	<%= s.name %>
+	Suite description - 
+	<%= s.description %>
+<% end %>
+
 <div data-hook="homepage_products">
 	<% cache(cache_key_for_products) do %>
 		<%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>

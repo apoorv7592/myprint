@@ -11,39 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141130082104) do
+ActiveRecord::Schema.define(version: 20141206093807) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
     t.integer "suite_id", null: false
   end
 
-  add_index "Colors_Suites", ["color_id", "suite_id"], name: "index_Colors_Suites_on_color_id_and_suite_id"
-  add_index "Colors_Suites", ["suite_id", "color_id"], name: "index_Colors_Suites_on_suite_id_and_color_id"
-
   create_table "Dimensions_Suites", id: false, force: true do |t|
     t.integer "dimension_id", null: false
     t.integer "suite_id",     null: false
   end
-
-  add_index "Dimensions_Suites", ["dimension_id", "suite_id"], name: "index_Dimensions_Suites_on_dimension_id_and_suite_id"
-  add_index "Dimensions_Suites", ["suite_id", "dimension_id"], name: "index_Dimensions_Suites_on_suite_id_and_dimension_id"
 
   create_table "Papers_Suites", id: false, force: true do |t|
     t.integer "paper_id", null: false
     t.integer "suite_id", null: false
   end
 
-  add_index "Papers_Suites", ["paper_id", "suite_id"], name: "index_Papers_Suites_on_paper_id_and_suite_id"
-  add_index "Papers_Suites", ["suite_id", "paper_id"], name: "index_Papers_Suites_on_suite_id_and_paper_id"
-
   create_table "Suites_Trims", id: false, force: true do |t|
     t.integer "suite_id", null: false
     t.integer "trim_id",  null: false
   end
-
-  add_index "Suites_Trims", ["suite_id", "trim_id"], name: "index_Suites_Trims_on_suite_id_and_trim_id"
-  add_index "Suites_Trims", ["trim_id", "suite_id"], name: "index_Suites_Trims_on_trim_id_and_suite_id"
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -1075,8 +1063,6 @@ ActiveRecord::Schema.define(version: 20141130082104) do
     t.datetime "updated_at"
   end
 
-  add_index "sub_categories", ["category_id"], name: "index_sub_categories_on_category_id"
-
   create_table "suites", force: true do |t|
     t.string   "sku_id"
     t.string   "name"
@@ -1085,10 +1071,10 @@ ActiveRecord::Schema.define(version: 20141130082104) do
     t.integer  "sub_category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "available_on"
   end
 
-  add_index "suites", ["designer_id"], name: "index_suites_on_designer_id"
-  add_index "suites", ["sub_category_id"], name: "index_suites_on_sub_category_id"
+  add_index "suites", ["available_on"], name: "index_suites_on_available_on"
 
   create_table "trims", force: true do |t|
     t.string   "name"
