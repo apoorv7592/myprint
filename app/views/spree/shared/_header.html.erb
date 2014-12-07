@@ -2,7 +2,7 @@
 	<header id="header" data-hook>
 		<div class="container">
 			<figure id="logo" class="col-md-4" data-hook>
-				<%= image_tag 'logo.png', height: 50%>
+				<%= link_to image_tag('logo.png', height: 50), root_path %>
 			</figure>
 			<%= render :partial => 'spree/shared/nav_bar' %>
 		</div>
