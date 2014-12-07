@@ -5,6 +5,7 @@ class Suite < ActiveRecord::Base
 	has_and_belongs_to_many :trims
 	has_and_belongs_to_many :papers
 	has_and_belongs_to_many :dimensions
+	has_many :spree_products, :class_name => 'Spree::Product'
 
 	scope :active, ->  { where( "available_on < ? " , Date.today)}
 end
