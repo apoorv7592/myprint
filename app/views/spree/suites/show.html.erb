@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <%= @s.name %>
 <%= @s.description %>
@@ -7,3 +8,27 @@
 <% @p.each do |prd| %>
 	<%= prd.name%>
 <% end %>
+=======
+<h1>This is a suite show page </h1>
+
+<strong> Suite name - </strong>
+<%= @suite.name %>
+
+</br>
+<strong>Suite Description</strong>
+<%= @suite.description %>
+
+<% @prds.each do |p| %>
+	<div class="row">
+		<div class="col-md-4">
+		</div>
+		<div class="col-md-6">
+			<%= p.name %>
+		</div>
+	</div>
+<% end -%>
+
+
+
+
+>>>>>>> e558f3237f4aa3ed68f46f8c5f1f1e83e22f340b
