@@ -10,8 +10,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   Spree::Core::Engine.routes.prepend do
-    get 'suites/:id' => 'suites#show'
-  end
+     get '/suites/:id' => 'suites#show'  end
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
