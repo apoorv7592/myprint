@@ -29,8 +29,9 @@ module SearchExtensions
 	 			scope = scope.order('name')
 	 		elsif ord=='dsc'
 	 			scope= scope.order('name DSC')
+	 		else
+	 			scope
 	 		end
-	 			
 	 	end
 
 end
