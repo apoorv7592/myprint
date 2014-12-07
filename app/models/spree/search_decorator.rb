@@ -16,8 +16,8 @@ module SearchExtensions
 	protected 
 	 	def get_suite_scope
 	 		suite_scope = Suite.active
-	 		suite_scope = get_name_scope(suite_scope)
-	 		suite_scope = sort_by_name(suite_scope, '')
+	 		#suite_scope = get_name_scope(suite_scope)
+	 		#suite_scope = sort_by_name(suite_scope, '')
 	 	end
 
 	 	def get_name_scope(scope)

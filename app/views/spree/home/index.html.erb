@@ -1,13 +1,13 @@
 
 <% content_for :sidebar do %>
 	<div data-hook="homepage_sidebar_navigation">
-		<%= render :partial => 'spree/shared/taxonomies' %>
+		<%= render :partial => 'spree/shared/categories' %>
 	</div>
 <% end %>
 
 <% @suites.each do |s| %>
 	Suite name - 
-	<%= s.name %>
+	<%= link_to s.name, s %>
 	Suite description - 
 	<%= s.description %>
 <% end %>
