@@ -1,3 +1,9 @@
 
 <%= @s.name %>
 <%= @s.description %>
+
+</br>
+<strong>Products</strong>
+<% @p.each do |prd| %>
+	<%= prd.name%>
+<% end %>
