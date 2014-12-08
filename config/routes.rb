@@ -11,10 +11,12 @@ Rails.application.routes.draw do
 
   Spree::Core::Engine.routes.prepend do
 
-    get '/suites/:id' => 'suites#show'
+    get '/suites/:id' => 'spree/suites#show'    
     get '/categories/:id' => 'categories#show'
 
   end
+
+  #get '/suites/:id' => 'suites#show'
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
