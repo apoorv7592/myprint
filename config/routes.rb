@@ -9,11 +9,9 @@ Rails.application.routes.draw do
           # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  Spree::Core::Engine.routes.prepend do
-
-    get '/suites/:id' => 'spree/suites#show'    
-    get '/categories/:id' => 'categories#show'
-
+  Spree::Core::Engine.routes.draw do
+    resources :suites
+    resources :categories
   end
 
   #get '/suites/:id' => 'suites#show'

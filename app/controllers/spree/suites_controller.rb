@@ -1,5 +1,5 @@
 module Spree
-	class SuitesController < ApplicationController
+	class SuitesController < Spree::HomeController
 		def show
 			@suite = Suite.find(params[:id])
 			@prds = @suite.spree_products
