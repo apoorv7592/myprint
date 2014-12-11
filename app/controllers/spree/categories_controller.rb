@@ -1,5 +1,5 @@
 module Spree
-	class CategoriesController < ApplicationController
+	class CategoriesController < Spree::HomeController
 		def show
 			@cat = Category.find(params[:id])
 		end

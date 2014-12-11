@@ -7,11 +7,21 @@
 
 <% @suites.each do |s| %>
 	Suite name - 
+<<<<<<< HEAD
 	<%= link_to s.name, spree: s%>
+=======
+	<%= link_to s.name, s%>
+>>>>>>> 4258b7ae6292be235e8e416f9141128e61263db4
 	Suite description - 
 	<%= s.description %>
 <% end %>
 
+<<<<<<< HEAD
+=======
+<% @categories.each do |c| %>
+	<%= link_to c.name, c%>
+<% end %>
+>>>>>>> 4258b7ae6292be235e8e416f9141128e61263db4
 
 <div data-hook="homepage_products">
 	<% cache(cache_key_for_products) do %>
