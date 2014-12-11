@@ -1,7 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: center;
+}
+
+a {
+    display: block;
+    width: 60px;
+   #background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
 <nav id= 'topmost-nav' class="navbar navbar-default" role="navigation">
 	<ul class="nav navbar-nav navbar-right ">
-		<li class="topmost-nav-list">
-			<%= link_to "MyAccount", '/account/' %>
+		
+        <li class="topmost-nav-list">
+			<%= link_to "Cart", '/cart/' %>
 		</li>
+		 <li class="topmost-nav-list">
+			<%= link_to "Wishlist", '/wishlist/' %>
+		</li>
+		<li class="topmost-nav-list">
+			<%= link_to "Log In", '/login/' %>
+		</li>
+
+		<li class="topmost-nav-list">
+		<%if @current_user.present? %>
+			<%= link_to "My Account", '/account/'  %>
+		<% else %>
+			  <%= link_to "Logout", '/logout/' %>
+		<% end %>
+
+
+		</li>
+		
+
 	</ul>
 </nav>
+
+

@@ -7,10 +7,11 @@
 
 <% @suites.each do |s| %>
 	Suite name - 
-	<%= link_to s.name, s %>
+	<%= link_to s.name, spree: s%>
 	Suite description - 
 	<%= s.description %>
 <% end %>
+
 
 <div data-hook="homepage_products">
 	<% cache(cache_key_for_products) do %>

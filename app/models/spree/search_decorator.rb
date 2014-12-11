@@ -1,8 +1,6 @@
 module SearchExtensions
 
 	def retrieve_suites
-	    
-		curr_page = page || 1
 
 		@suites= get_suite_scope
 		curr_page = page || 1

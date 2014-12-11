@@ -12,3 +12,4 @@ end
 Spree::HomeController.class_eval do
   prepend HomeControllerExtensions
 end
+
