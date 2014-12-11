@@ -1,3 +1,7 @@
-<div class="row">
-	
-</div>
+
+<% @categories.each do |c| %> 
+	<span>
+		<%= link_to c.name, c %>
+	</span>
+<% end %> 
+

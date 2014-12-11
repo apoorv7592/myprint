@@ -1,9 +1,5 @@
 
-<% content_for :sidebar do %>
-	<div data-hook="homepage_sidebar_navigation">
-		<%= render :partial => 'spree/shared/categories' %>
-	</div>
-<% end %>
+
 
 <% @suites.each do |s| %>
 	Suite name - 
@@ -12,11 +8,8 @@
 	<%= s.description %>
 <% end %>
 
-<% @categories.each do |c| %>
-	<%= link_to c.name, c%>
-<% end %>
 
-<div data-hook="homepage_products">
+<div data-hook="homepage_products" class="container">
 	<% cache(cache_key_for_products) do %>
 		<%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
 	<% end %>
