@@ -6,18 +6,16 @@ Rails.application.routes.draw do
   #
   # We ask that you don't use the :as option here, as Spree relies on it being the default of "spree"
   mount Spree::Core::Engine, :at => '/'
-          # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
 
-  Spree::Core::Engine.routes.prepend do
-<<<<<<< HEAD
-     get '/suites/:id' => 'suites#show'  end
-=======
+   Spree::Core::Engine.routes.prepend do
+
     get '/suites/:id' => 'suites#show'
     get '/categories/:id' => 'categories#show'
 
   end
->>>>>>> e558f3237f4aa3ed68f46f8c5f1f1e83e22f340b
+          # The priority is based upon order of creation: first created -> highest priority.
+  # See how all your routes lay out with "rake routes".
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
@@ -69,5 +67,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
 end
