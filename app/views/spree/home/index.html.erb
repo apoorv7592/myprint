@@ -8,8 +8,8 @@
 <% end %>
 
 
-
 <div data-hook="homepage_products" class "container">
+
 	<% cache(cache_key_for_products) do %>
 		<%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
 	<% end %>

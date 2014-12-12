@@ -45,3 +45,6 @@ gem 'spree_auth_devise', github: 'spree/spree_auth_devise'
 #installing bootstrap
 gem 'bootstrap-sass', '~> 3.3.1.0'
 
+# S3 Amazon configuration
+gem 'aws-sdk', '~> 1.59.1'
+
