@@ -3,7 +3,7 @@ module SearchExtensions
 	def retrieve_suites
 
 		@suites= get_suite_scope
-		#curr_page = page || 1
+		curr_page = page || 1
 		#unless Spree::Config.show_suites_without_price
 		#@suites = @suites.where("spree_prices.amount IS NOT NULL").where("spree_prices.currency" => current_currency)
 		#end

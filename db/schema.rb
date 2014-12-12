@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141207070248) do
+ActiveRecord::Schema.define(version: 20141130082104) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -455,7 +455,6 @@ ActiveRecord::Schema.define(version: 20141207070248) do
     t.datetime "updated_at"
     t.boolean  "promotionable",        default: true
     t.string   "meta_title"
-    t.integer  "suite_id"
   end
 
   add_index "spree_products", ["available_on"], name: "index_spree_products_on_available_on"
@@ -464,7 +463,6 @@ ActiveRecord::Schema.define(version: 20141207070248) do
   add_index "spree_products", ["shipping_category_id"], name: "index_spree_products_on_shipping_category_id"
   add_index "spree_products", ["slug"], name: "index_spree_products_on_slug"
   add_index "spree_products", ["slug"], name: "permalink_idx_unique", unique: true
-  add_index "spree_products", ["suite_id"], name: "index_spree_products_on_suite_id"
   add_index "spree_products", ["tax_category_id"], name: "index_spree_products_on_tax_category_id"
 
   create_table "spree_products_promotion_rules", id: false, force: true do |t|
@@ -1073,10 +1071,7 @@ ActiveRecord::Schema.define(version: 20141207070248) do
     t.integer  "sub_category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.date     "available_on"
   end
-
-  add_index "suites", ["available_on"], name: "index_suites_on_available_on"
 
   create_table "trims", force: true do |t|
     t.string   "name"
