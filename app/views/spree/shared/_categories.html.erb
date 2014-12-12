@@ -1,7 +1,9 @@
 
-<% @categories.each do |c| %> 
-	<span>
-		<%= link_to c.name, c %>
-	</span>
-<% end %> 
+<% if @categories %>
+	<% @categories.each do |c| %> 
+		<span>
+			<%= link_to c.name, c %>
+		</span>
+	<% end %> 
 
+<% end %>
