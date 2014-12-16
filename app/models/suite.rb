@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: suites
+#
+#  id              :integer          not null, primary key
+#  sku_id          :string(255)
+#  name            :string(255)
+#  description     :text
+#  designer_id     :integer
+#  sub_category_id :integer
+#  created_at      :datetime
+#  updated_at      :datetime
+#  available_on    :date
+#
+
 class Suite < ActiveRecord::Base
 	belongs_to :sub_category
 	belongs_to :designer
