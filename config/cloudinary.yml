@@ -1,0 +1,7 @@
+development: 
+  cloud_name: "printdora"
+production:
+  cloud_name: "printdora"
+  api_key: "168424296795629"
+  api_secret: "v5_JlGgYKVpn5_OshqkV_O98YJk"
+

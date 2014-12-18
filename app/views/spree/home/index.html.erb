@@ -1,7 +1,16 @@
 
+<<<<<<< HEAD
 
 
 <div data-hook="homepage_products" class "container">
+=======
+<% @suites.each do |s| %>
+	Suite name - 
+	<%= link_to s.name, s%>
+	Suite description - 
+	<%= s.description %>
+<% end %>
+>>>>>>> f6e91ea072d47d942af199b7e0a12d881c295304
 
 	<% cache(cache_key_for_products) do %>
 		<%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>

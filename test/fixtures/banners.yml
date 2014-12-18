@@ -1,0 +1,25 @@
+# == Schema Information
+#
+# Table name: banners
+#
+#  id                   :integer          not null, primary key
+#  category             :string(255)
+#  position             :integer
+#  enabled              :boolean          default(FALSE)
+#  picture_file_name    :string(255)
+#  picture_content_type :string(255)
+#  picture_file_size    :integer
+#  picture_updated_at   :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category: MyString
+  position: 1
+  enabled: false
+
+two:
+  category: MyString
+  position: 1
+  enabled: false

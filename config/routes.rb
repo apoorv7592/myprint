@@ -13,8 +13,16 @@ Rails.application.routes.draw do
   Spree::Core::Engine.routes.draw do
     resources :suites
     resources :categories
+<<<<<<< HEAD
     resources :colors
 
+=======
+
+    namespace :admin do 
+      resources :banners
+    end
+    
+>>>>>>> f6e91ea072d47d942af199b7e0a12d881c295304
   end
 
   #get '/suites/:id' => 'suites#show'
