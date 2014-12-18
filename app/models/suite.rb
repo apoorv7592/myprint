@@ -7,5 +7,8 @@ class Suite < ActiveRecord::Base
 	has_and_belongs_to_many :dimensions
 	has_many :spree_products, :class_name => 'Spree::Product'
 
-	scope :active, ->  { where( "available_on < ? " , Date.today)}
+
+	def self.retrieve_suites
+        Suite.all
+    end	
 end

@@ -1,0 +1,11 @@
+
+<h1>This is a colors show page </h1>
+
+        <% if @colors %>
+	<% @colors.each do |c| %> 
+		<span>
+			<%= link_to c.name, c %>
+		</span>
+	<% end %> 
+
+<% end %>

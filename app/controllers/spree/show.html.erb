@@ -1,0 +1,25 @@
+
+<h1>This is a suite show page </h1>
+
+
+
+
+
+
+       <div class="col-sm-6" style="height:auto; width:570px;margin-right: 10px;border:1px solid #000;float:left;">
+       <% if @colors %>
+	<% @colors.each do |c| %> 
+		<span>
+			<%= link_to c.name, c %>
+		</span>
+	<% end %> 
+
+<% end %>
+
+    
+    
+
+
+
+
+
