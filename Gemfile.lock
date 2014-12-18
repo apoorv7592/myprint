@@ -332,6 +332,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails
+  paperclip
   pg (~> 0.17.1)
   rails (= 4.1.8)
   rails_12factor (= 0.0.2)

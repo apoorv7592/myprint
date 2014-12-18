@@ -69,3 +69,5 @@ gem 'ransack'
 
 #For annotating
 gem 'annotate'
+
+gem 'paperclip'
