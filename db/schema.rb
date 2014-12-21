@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141217203710) do
+ActiveRecord::Schema.define(version: 20141218172557) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -35,12 +35,12 @@ ActiveRecord::Schema.define(version: 20141217203710) do
 
   create_table "banners", force: true do |t|
     t.string   "category"
-    t.integer  "position"
     t.boolean  "enabled",              default: false
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.integer  "position"
   end
 
   create_table "categories", force: true do |t|

@@ -1,0 +1,12 @@
+<%= form_for [:admin, @bn] do |f| %> 
+	<%= f.label :category %>
+	<%= f.text_field :category %>
+
+	<%= f.label :position %>
+	<%= f.number_field :position %>
+
+	<%= f.label "Banner Image" %>
+	<%= f.file_field :picture %>
+
+	<%= f.submit %> 
+<% end %>
