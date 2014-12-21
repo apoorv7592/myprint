@@ -48,8 +48,7 @@ gem 'bootstrap-sass', '~> 3.3.1.0'
 # S3 Amazon configuration
 gem 'aws-sdk', '~> 1.59.1'
 
-<<<<<<< HEAD
-=======
+
 # Banner handler
 #gem 'spree_banner', '~> 1.3.0'
 
@@ -63,4 +62,4 @@ gem 'ransack'
 gem 'annotate'
 
 gem 'paperclip'
->>>>>>> f6e91ea072d47d942af199b7e0a12d881c295304
+

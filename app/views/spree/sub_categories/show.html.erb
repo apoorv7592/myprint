@@ -1,0 +1,33 @@
+
+<h1>This is a subcat->suites show page </h1>
+
+
+
+
+
+  <div class="col-sm-10" style="height:auto;margin-left:0px; border:1px solid #000; float:left;">
+        <div class="row">
+         
+       <% if !@scsuite.nil? %>
+
+          <% @scsuite.each do |p| %>
+            
+             
+		    <span>
+			
+			<div class="col-sm-4" style="float:left;width:310px; margin-left:10px;margin-bottom:10px;border:1px solid orange;">
+			<%= link_to p.name, p %>
+			<P> It was November. Although it was not yet late, the sky was dark when I turned into Laundress Passage. Father had finished for the day, switched off the shop lights and closed the shutters; but so I would not come home to darkness he had left on the light over the stairs to the flat. Through the glass in the door it cast a foolscap rectangle of paleness onto the wet pavement, and it was while I was standing in that rectangle, about to turn my key in the door, that I first saw the letter. Another white rectangle, it was on the fifth step from the bottom, where I couldn't miss it.
+			</P>
+			</div>
+
+		    </span>
+	        <% end %> 
+
+            <% end %>
+           
+
+
+
+        </div>
+        </div>

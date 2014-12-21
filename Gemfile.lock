@@ -326,15 +326,9 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails
-<<<<<<< HEAD
-  rails (= 4.1.8)
-=======
   paperclip
-  pg (~> 0.17.1)
   rails (= 4.1.8)
-  rails_12factor (= 0.0.2)
   ransack
->>>>>>> f6e91ea072d47d942af199b7e0a12d881c295304
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spree!

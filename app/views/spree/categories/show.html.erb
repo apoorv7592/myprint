@@ -1,6 +1,6 @@
 
-<<<<<<< HEAD
-<h1>This is a suite show page </h1>
+
+<h1>This is a subcatetory show page </h1>
 
 
 
@@ -12,53 +12,29 @@
                 
         <div class="col-sm-2" style="height:auto; width:180px;margin-right: 10px;border:1px solid #000;float:left;">
        
+       
+      <% if !@scat.nil? %>
 
-       <% if !@scat.nil? %>
-
-       		<% @scat.each do |sc| %>
-       			<% @st = sc.suites %>
-       			<% if !@st.nil? %>
-       				<% @st.each do |p| %>
-						<span>
-							<%= p.name%>
-						</span>
-	 				<% end -%> 
-     			<% end -%>
-     		<% end -%>
-     	<% end %>
+          <% @scat.each do |sc| %>
+            
+            <span>
+            <br>
+              <%= link_to sc.name, category_sub_category_path(@cat, sc)%>
+            </br>
+            </span>
+                  <% end -%>
+      <% end -%>
+      
+     
             
         </div>
         
         
       
-        <div class="col-sm-10" style="height:auto;margin-left:0px; border:1px solid #000; float:left;">
-        <div class="row">
-            <% if @categories %>
-	        <% @categories.each do |c| %> 
-		    <span>
-			
-			<div class="col-sm-4" style="float:left;width:310px; margin-left:10px;margin-bottom:10px;border:1px solid orange;">
-			<%= link_to c.name, c %>
-			<P> It was November. Although it was not yet late, the sky was dark when I turned into Laundress Passage. Father had finished for the day, switched off the shop lights and closed the shutters; but so I would not come home to darkness he had left on the light over the stairs to the flat. Through the glass in the door it cast a foolscap rectangle of paleness onto the wet pavement, and it was while I was standing in that rectangle, about to turn my key in the door, that I first saw the letter. Another white rectangle, it was on the fifth step from the bottom, where I couldn't miss it.
-			</P>
-			</div>
-
-		    </span>
-	        <% end %> 
-
-            <% end %>
-
-
-
-        </div>
-        </div>
+       
     </div>
 </div>
 
  
-=======
-<div class="col-md-3">
-	
-</div>
-<strong><%= @cat.name %></strong>
->>>>>>> f6e91ea072d47d942af199b7e0a12d881c295304
+
+

@@ -13,4 +13,8 @@ class SubCategory < ActiveRecord::Base
 	belongs_to :category
 	has_many :suites
 	
+
+	def self.retrieve_sub_categories
+		SubCategory.all
+	end
 end

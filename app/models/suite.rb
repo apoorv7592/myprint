@@ -22,13 +22,12 @@ class Suite < ActiveRecord::Base
 	has_and_belongs_to_many :dimensions
 	has_many :spree_products, :class_name => 'Spree::Product'
 
-<<<<<<< HEAD
+
 
 	def self.retrieve_suites
         Suite.all
     end	
-end
-=======
+
 	scope :active, ->  { where( "available_on < ? " , Date.today)}
 end
->>>>>>> f6e91ea072d47d942af199b7e0a12d881c295304
+
