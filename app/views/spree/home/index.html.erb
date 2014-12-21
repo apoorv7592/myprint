@@ -1,14 +1,30 @@
+<%= render 'main_banner'%>
 
-<% @suites.each do |s| %>
-	Suite name - 
-	<%= link_to s.name, s%>
-	Suite description - 
-	<%= s.description %>
-<% end %>
+<div class="margin-bottom-10"></div>
 
+<%= render 'second_banner'%>
+<div class="margin-bottom-10"></div>
 
-<div data-hook="homepage_products" class="container">
-	<% cache(cache_key_for_products) do %>
-		<%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
-	<% end %>
+<div class="row">
+	<div class="col-md-6">
+		<%= render 'third_banner'%>
+	</div>	
+	<div class="col-md-6">
+		<%= render 'fourth_banner'%>
+	</div>	
 </div>
+<div>
+	<%= render 'fifth_banner' %>	
+</div>
+
+<div class="margin-bottom-10"></div>
+<div>
+	<%= render 'sixth_banner' %>	
+</div>
+
+<br>
+
+
+<script type="text/javascript">
+	$('.carousel').carousel()
+</script>

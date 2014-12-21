@@ -9,19 +9,40 @@ module Spree
 
 			def create
 				if @new_banner = Banner.create(banner_params)
-					flash[:success] = "Banner succssfully stored"
+					flash[:success] = "Banner successfully stored"
 				else
 					flash[:error] = "Some error occured"
 				end
 				redirect_to :back
 			end
 
+			def edit
+				@bn = Banner.find(params[:id])
+			end
+
+			def update
+				@bn = Banner.find(params[:id])
+				if @bn.update_attributes(banner_params)
+					flash[:success] = "Banner successfully updated"
+				else
+					flash[:error] = "Some error occured"
+				end
+				redirect_to action: 'index'
+			end
+
+			def destroy
+				@bn = Banner.find(params[:id])
+				if @bn.destroy
+					flash[:success] = "Banner successfully deleted"
+				else
+					flash[:error] = "Some error occured"
+				end
+				redirect_to action:'index'
+			end
 
 			private
 				def banner_params
-					params.require(:banner).permit(:category, :position,
-						:picture_file_name, :picture_content_type,
-						:picture_file_size,:picture_updated_at)
+					params.require(:banner).permit(:category, :position, :picture)
 				end
 			
 		end

@@ -19,7 +19,8 @@
 			<td> Banner Position</td>
 			<td> Banner Size </td>
 			<td> Banner Image</td>
-			<td> Action</td>
+			<td> Update</td>
+			<td> Delete</td>
 		</tr>
 	</thead>
 
@@ -29,8 +30,9 @@
 				<td><%= bn.category %></td>
 				<td><%= bn.position%></td>
 				<td><%= bn.picture_file_size%></td>
-				<td><%= image_tag bn.picture.url(:small)%></td>
-				<td>
+				<td><%= image_tag bn.picture.url(:small), height: 100%></td>
+				<td><%= link_to 'Update', edit_admin_banner_path(bn.id) %></td>
+				<td><%= link_to 'Delete', admin_banner_path(bn.id), method: 'delete', confirm: 'You Sure?', :title => "Delete #{bn.category}" %></td>
 			</tr>		
 		<%end %>
 	<% end %>
