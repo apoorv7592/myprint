@@ -1,33 +1,10 @@
 <%= render 'main_banner'%>
 
-<<<<<<< HEAD
-=======
 <div class="margin-bottom-10"></div>
->>>>>>> 7a8d29b2bab15a94ec515fd74b9cb3911c2be116
 
 <%= render 'second_banner'%>
 <div class="margin-bottom-10"></div>
 
-<<<<<<< HEAD
-
-<div data-hook="homepage_products" class "container">
-
- <% if @categories %>
-	    <% @categories.each do |s| %> 
-		<span>
-			<%= link_to s.name, s %>
-		</span>
-	    <% end %> 
-	    <% end %>
-     </div>
-
-
-
-	<% cache(cache_key_for_products) do %>
-		<%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
-	<% end %>
-</div>
-=======
 <div class="row">
 	<div class="col-md-6">
 		<%= render 'third_banner'%>
@@ -51,4 +28,22 @@
 <script type="text/javascript">
 	$('.carousel').carousel()
 </script>
->>>>>>> 7a8d29b2bab15a94ec515fd74b9cb3911c2be116
+
+<div data-hook="homepage_products" class "container">
+
+ <% if @categories %>
+	    <% @categories.each do |s| %> 
+		<span>
+			<%= link_to s.name, s %>
+		</span>
+	    <% end %> 
+	    <% end %>
+     </div>
+
+
+
+	<% cache(cache_key_for_products) do %>
+		<%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
+	<% end %>
+</div>
+
