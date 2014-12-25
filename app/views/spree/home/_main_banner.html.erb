@@ -12,7 +12,7 @@
 		<!-- First slide-->
 		<div class="item active">
 			<% b= get_banner('Home Page', 1) %>
-			<% if !b.nil? %>
+			<% if !b.first.nil? %>
 				
 			<%= image_tag b.first.picture.url(:main), alt:'main banner', class:'img-responsive' %>
 			<% end%>
@@ -21,19 +21,23 @@
 		</div>
 		<!-- Second slide-->
 		<div class="item">
-			<% b= get_banner('Home Page', 2) %>			
+			<% b= get_banner('Home Page', 2) %>		
+			<% if !b.first.nil? %>	
 
 			<%= image_tag b.first.picture.url(:main), alt:'main banner', class:'img-responsive' %>	
-				
+				<% end%>
+
 					</div>
 		<!-- Third slide-->
 		<div class="item">
 			<% b= get_banner('Home Page', 3) %>
 			
 			
+            <% if !b.first.nil? %>	
 
 			<%= image_tag b.first.picture.url(:main), alt:'main banner', class:'img-responsive' %>	
-				
+				<% end%>
+
 					</div>
 	</div>
 

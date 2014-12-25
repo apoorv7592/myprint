@@ -1,5 +1,5 @@
 <% b= get_banner('Home Page', 7) %>
-<% if !b.nil? %>
+<% if !b.first.nil? %>
 
 <%= image_tag b.first.picture.url(:main), alt:'second banner', class:'img-responsive' %>
-<%= end%>
+<%end%>
