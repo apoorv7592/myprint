@@ -1,6 +1,40 @@
-<h1> This is a category show page </h1>
 
-<div class="col-md-3">
-	
+
+<h1>This is a subcatetory show page </h1>
+
+
+
+
+
+<div class="container">
+            
+    <div class="row">
+                
+        <div class="col-sm-2" style="height:auto; width:180px;margin-right: 10px;border:1px solid #000;float:left;">
+       
+       
+      <% if !@scat.nil? %>
+
+          <% @scat.each do |sc| %>
+            
+            <span>
+            <br>
+              <%= link_to sc.name, category_sub_category_path(@cat, sc)%>
+            </br>
+            </span>
+                  <% end -%>
+      <% end -%>
+      
+     
+            
+        </div>
+        
+        
+      
+       
+    </div>
 </div>
-<strong><%= @cat.name %></strong>
+
+ 
+
+
