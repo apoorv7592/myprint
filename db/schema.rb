@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141218172557) do
+ActiveRecord::Schema.define(version: 20141226114631) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -83,6 +83,12 @@ ActiveRecord::Schema.define(version: 20141218172557) do
     t.integer  "weight"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "ratings", force: true do |t|
+    t.integer "stars",    default: 0
+    t.integer "suite_id"
+    t.integer "user_id"
   end
 
   create_table "spree_addresses", force: true do |t|

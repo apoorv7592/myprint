@@ -4,12 +4,11 @@
 
 
 
-
 <div class="container">
             
     <div class="row">
                 
-      <div class="col-sm-6" style="height:auto;width:560px;margin-right: 10px;border:1px solid #000;float:left;">
+      <div class="col-sm-12" style="height:auto;width:1000px;margin-right: 10px;border:1px solid #000;float:left;">
 	       
 
 
@@ -62,49 +61,24 @@
       <% end -%>
 
       </div>
+     
       
 
-        <div class="col-sm-6" style="height:auto;width:560px;margin-right: 10px;border:1px solid #000;float:left;">        
-        <% if @suites %>
-	    <% @suites.each do |s| %> 
-		<span>
-			<%= link_to s.name, s %>
-	    </span>
-	    <% end %> 
-        <% end %>
-       </div>
-    </div>
 
-    <div class="row">
-                
-     <div class="col-sm-6" style="height:auto;width:560px;margin-right: 10px;border:1px solid #000;float:left;">  
-        <% if @suites %>
-	    <% @suites.each do |s| %> 
-		<span>
-			<%= link_to s.name, s %>
-		</span>
-	    <% end %> 
-	    <% end %>
-     </div>
-      <div class="col-sm-6" style="height:auto;width:560px;margin-right: 10px;border:1px solid #000;float:left;">  
-        <% if @suites %>
-	    <% @suites.each do |s| %> 
-		<span>
-			<%= link_to s.name, s %>
-		</span>
-	    <% end %> 
-	    <% end %>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-12" style="height:auto;margin-right: 10px;width:1130px;border:1px solid #000;float:left;">
-       <% if @suites %>
-	    <% @suites.each do |s| %> 
-		<span>
-			<%= link_to s.name, s %>
-		</span>
-	    <% end %> 
-	    <% end %>
-      </div>  
+            <div class="col-sm-12" style="height:auto;margin-right:
+            10px;width:1000px;border:1px solid #000;float:left;">
+              <% if @suites %>
+      	      <% @suites.each do |s| %> 
+          		<span>
+          			<%= link_to s.name, s %>
+          		</span>
+        	    <% end %> 
+        	    <% end %>
+            </div> 
+            <%= @suite.avg_rating %>
 
- </div>
+ 
+</div>
+</div>
+
+

@@ -21,6 +21,7 @@ class Suite < ActiveRecord::Base
 	has_and_belongs_to_many :papers
 	has_and_belongs_to_many :dimensions
 	has_many :spree_products, :class_name => 'Spree::Product'
+	has_many :ratings
 
 
 
@@ -29,5 +30,21 @@ class Suite < ActiveRecord::Base
     end	
 
 	scope :active, ->  { where( "available_on < ? " , Date.today)}
+
+def avg_rating
+  average_rating = 0.0
+  count = 0
+  ratings.each do |rating| 
+    average_rating += rating.stars
+    count += 1
+  end
+                
+  if count != 0
+    (average_rating / count)
+  else
+    count
+  end
+end
+
 end
 

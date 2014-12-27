@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     end
 
     resources :colors
+    resources :ratings
 
 
     namespace :admin do 
