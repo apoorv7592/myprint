@@ -63,3 +63,7 @@ gem 'annotate'
 
 gem 'paperclip'
 
+
+#for writing html
+gem 'haml'
+
