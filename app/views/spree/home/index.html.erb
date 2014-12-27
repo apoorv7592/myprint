@@ -22,21 +22,3 @@
 $('.carousel').carousel()
 </script>
 
-<div data-hook="homepage_products" class "container">
-
- <% if @categories %>
-	    <% @categories.each do |s| %> 
-		<span>
-			<%= link_to s.name, s %>
-		</span>
-	    <% end %> 
-	    <% end %>
-     </div>
-
-
-
-	<% cache(cache_key_for_products) do %>
-		<%= render :partial => 'spree/shared/products', :locals => { :products => @products } %>
-	<% end %>
-</div>
-
