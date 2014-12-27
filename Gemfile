@@ -67,3 +67,7 @@ gem 'paperclip'
 #for writing html
 gem 'haml'
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4e63d8416d7f2d3a17840c0be91c97de19de7687
