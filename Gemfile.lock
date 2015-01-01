@@ -244,6 +244,7 @@ GEM
       mime-types
     paranoia (2.0.3)
       activerecord (~> 4.0)
+    pg (0.17.1)
     polyamorous (1.1.0)
       activerecord (>= 3.0)
     polyglot (0.3.5)
@@ -349,6 +350,7 @@ DEPENDENCIES
   jquery-rails
   monologue
   paperclip
+  pg
   rails (= 4.1.8)
   ransack
   sass-rails (~> 4.0.3)
