@@ -1,10 +1,115 @@
-<nav class="col-md-12">
-	<div id="main-nav-bar" class="navbar">
-		<ul class="nav navbar-nav" data-hook>
-			<%= render 'spree/shared/categories' %>
- 		</ul>
-	</div>
+
+
+
+<head>
+  <title>Bootstrap</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <style type="text/css">
+  .navigation-div{
+    z-index:1000;
+    background:rgba(55,25,25,0.9);
+    position:absolute;
+    top:50px;
+    left:0px;
+    width:1000px;
+    height:250px;
+    display:none;
+    padding:10px;
+    margin-left:-1px;
+    color:#fff;
+  }
+  #navdiv2{
+    width:180px;
+    height: 220px;
+    margin-right: 10px;
+    border:1px solid #000;
+  }
+  #navigationbar{
+    width: 1000px;
+    height: auto;
+    background: white;
+    position:relative;
+    float: right;
+  }
+  .abc{
+    margin-right: 67px;
+    font-family: Georgia;
+  }
+
+  </style>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $('#navigationbar li').each(function(){
+      try{
+        var idNavigation = $(this).attr('id');
+        var idDiv = idNavigation.toLowerCase();
+        var timeoutNavigationFade;
+
+       
+        
+        $('#'+idNavigation).bind('mouseover',function(){
+          clearTimeout(timeoutNavigationFade);
+          $('#'+idDiv).fadeIn(500);
+        });
+        $('#'+idDiv).bind('mouseover',function(){
+          clearTimeout(timeoutNavigationFade);
+        });
+        
+        $('#'+idNavigation+", #"+idDiv).bind('mouseout',function(){
+          timeoutNavigationFade=setTimeout(function(){$("#"+idDiv).fadeOut(500);}, 500);
+        });
+      }
+      catch(e){
+        console.log("ERROR: "+e);
+      }
+    });
+  });
+  </script>
+</head>
+
+
+<nav class="navbar navbar-inverse" style="width:1000px;">
+  <div class="container-fluid">
+   
+      
+      <ul id="navigationbar" class="nav navbar-nav" style="background:white;">
+        <li id="Wedding" class="abc" style="margin-left:55px;"><a href="#">Wedding</a></li>
+        <li id="Invitation" class="abc"><a href="#">Invitations</a></li>
+        <li id="Birthday" class="abc"><a href="#">Birthday</a></li>
+        <li id="Valentine" class="abc"><a href="#">Valentine</a></li>
+        <li id="Ceremony" class="abc"><a href="#">Ceremony</a></li>
+        <li id="Blog" class="abc"><a href="#">Blog</a></li>
+      </ul>
+      <div id="wedding" class="navigation-div">
+      </div>
+      
+      <div id="invitation" class="navigation-div">
+          <div class= "container-fluid">
+          <div class="row-fluid">
+            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
+            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
+            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
+            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
+            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
+          </div>
+          </div>
+      </div>
+      
+      <div id="birthday" class="navigation-div">
+      <p>hbbjbjnjnknjknknkmnk</p>
+      </div>
+
+      <div id="valentine" class="navigation-div">
+      </div>
+      
+      <div id="ceremony" class="navigation-div">
+      </div>
+
+    
+    
+  </div>
 </nav>
-
-
-	

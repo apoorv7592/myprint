@@ -1,6 +1,6 @@
 <% @taxons = @taxon && @taxon.parent ? @taxon.parent.children : Spree::Taxon.roots %>
 <%= form_tag spree.products_path, :method => :get, class: "form-horizontal" do %>
-	<div class="form-group">
+	<div class="form-group" style="width:500px;">
 		<div class="col-sm-3">
 			<% cache(cache_key_for_taxons) do %>
 				<%= select_tag :taxon,options_for_select([[Spree.t(:all_departments), '']] +@taxons.map {|t| [t.name, t.id]},@taxon ? @taxon.id : params[:taxon]), 'aria-label' => 'Taxon', class: "form-control" %>
@@ -9,9 +9,9 @@
 		<div class="col-sm-5">
 			<%= search_field_tag :keywords, params[:keywords], :placeholder => Spree.t(:search), class: "form-control" %>
 		</div>		
-		<div class="col-sm-4">
+		<div class="col-sm-3">
 			<%= submit_tag Spree.t(:search), :name => nil, class: "btn btn-success" %>
-		</div>
+	</div>
 
 	</div>
 	
