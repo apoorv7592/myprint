@@ -77,3 +77,4 @@ gem 'haml'
 #gem 'spree_blogging_spree', github: 'stefansenk/spree-blogging-spree'
 gem 'monologue'
 
+gem 'binding_of_caller'
