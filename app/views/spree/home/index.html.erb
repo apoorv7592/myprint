@@ -1,24 +1,41 @@
+
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+
+
+<div class="col-md-12" style="height:563px;width:1000px;margin-bottom:10px;">
 <%= render 'main_banner'%>
-<div class="margin-bottom-10"></div>
+</div>
+
+<div class="col-md-12" style="height:311px;width:1000px;margin-bottom:10px;">
 <%= render 'second_banner'%>
-<div class="margin-bottom-10"></div>
+</div>
+
+<div class="col-md-12" style="height:auto;width:1000px;">
 <div class="row">
-<div class="col-md-6">
+<div class="col-md-6" style="height:311px;width:492px;margin-right:8px;background:pink;">
 <%= render 'third_banner'%>
 </div>
-<div class="col-md-6">
+<div class="col-md-6" style="height:311px;width:492px;margin-left:8px;background:lavender;">
 <%= render 'fourth_banner'%>
 </div>
 </div>
-<div>
+</div>
+
+<div class="col-md-12" style="height:311px;width:1000px;margin-bottom:10px;background:rgba(1,0,0,0.1); ">
 <%= render 'fifth_banner' %>	
 </div>
-<div class="margin-bottom-10"></div>
-<div>
+
+<div class="col-md-12" style="height:311px;width:1000px;background:rgba(1,0,0,0.1); ">
 <%= render 'sixth_banner' %>	
 </div>
 <br>
 <script type="text/javascript">
-$('.carousel').carousel()
+    $('.carousel').carousel({
+        interval: 3000
+    })
 </script>
 

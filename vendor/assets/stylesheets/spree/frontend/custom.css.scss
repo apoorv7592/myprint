@@ -7,15 +7,102 @@
 	min-height:20px !important;
 	border:none;
 	background-color:white;
+	font-family: Georgia;
 }
 .topmost-nav-list >a{
 	padding-top:3px !important;
 	padding-bottom:2px !important;
 }
+
 #logo >a >img{
 	padding-top: 0px !important;
 }
+
 #nav-cart{
 	height:10px !important;
 }
 
+.topmost-nav-list{
+    float: center;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.row{ margin-right: 0!important; margin-left: 0!important;}
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12
+{padding-right : 0!important; padding-left : 0!important;}
+.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus{color:#ff0 !important;}
+
+.navbar-inverse{
+  border-right: none !important;
+border-left: none !important;
+}
+ .navigation-div{
+    z-index:1000;
+    border: 1px solid #000000;
+
+        position:absolute;
+    top:50px;
+    left:0px;
+    width:1000px;
+    height:auto;
+    display:none;
+    padding:10px;
+    margin-left:-1px;
+    color:#fff;
+  }
+  
+  #navdiv2{
+    width:180px;
+    height: 220px;
+    margin-right: 10px;
+    border:1px solid #000;
+  }
+
+  #navigationbar{
+    
+    z-index:1;
+
+    width: 1000px;
+    height: auto;
+    background: white;
+    border:1px ;
+  }
+
+ .abc:mouseover{
+  color:red;
+  }
+
+
+
+  
+  .abc{
+    margin-right: 67px;
+    font-family: Georgia;
+  }
+
+  .footerbottom{
+    text-align:left;
+    font-family:verdana;
+    font-size: 10px;
+    list-style-type: none;
+  }
+  #footercol123{
+    border-right:1px solid rgba(1,0,0,0.2);
+    margin-top:10px;
+    list-style-type: none;
+    height: 120px;
+
+
+  }
+  #footercol4{
+    margin-top:10px;
+    list-style-type: none;
+    height: 120px;
+  }
+
+  .inputboxsubs{
+  width:300px;
+  height:40px;
+  text-align:center;
+  color:rgba(1,0,0,0.4);
+  }

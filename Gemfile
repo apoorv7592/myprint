@@ -78,6 +78,9 @@ gem 'haml'
 #gem 'spree_blogging_spree', github: 'stefansenk/spree-blogging-spree'
 gem 'monologue'
 
+
 ##for full text search
 gem 'sunspot_rails'
 
+
+gem 'binding_of_caller'
