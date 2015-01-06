@@ -1,10 +1,146 @@
-<nav class="col-md-12">
-	<div id="main-nav-bar" class="navbar">
-		<ul class="nav navbar-nav" data-hook>
-			<%= render 'spree/shared/categories' %>
- 		</ul>
-	</div>
+
+
+
+
+  <title>Bootstrap</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  
+
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $('#navigationbar li').each(function(){
+      try{
+        var idNavigation = $(this).attr('id');
+        var idDiv = idNavigation.toLowerCase();
+        var timeoutNavigationFade;
+
+       
+        
+        $('#'+idNavigation).bind('mouseover',function(){
+          clearTimeout(timeoutNavigationFade);
+          $('#'+idDiv).fadeIn(300);
+        });
+        $('#'+idDiv).bind('mouseover',function(){
+          clearTimeout(timeoutNavigationFade);
+        });
+        
+        $('#'+idNavigation+", #"+idDiv).bind('mouseout',function(){
+          timeoutNavigationFade=setTimeout(function(){$("#"+idDiv).fadeOut(300);}, 300);
+        });
+      }
+      catch(e){
+        console.log("ERROR: "+e);
+      }
+    });
+  });
+  </script>
+
+
+
+<nav class="navbar navbar-inverse">
+ 
+   
+      
+      <ul id="navigationbar" class="nav navbar-nav" >
+        <li id="Wedding" class="abc" style="margin-left:55px;"><a href="#">Wedding</a></li>
+        <li id="Invitation" class="abc"><a href="#">Invitations</a></li>
+        <li id="Birthday" class="abc"><a href="#">Birthday</a></li>
+        <li id="Valentine" class="abc"><a href="#">Valentine</a></li>
+        <li id="Ceremony" class="abc"><a href="#">Ceremony</a></li>
+        <li id="Blog" class="abc"><a href="/blog">Blog</a></li>
+      </ul>
+      
+
+
+  <div id="wedding" class="navigation-div">
+  <div class ="col-md-12" style="width:1000px;height:auto;">
+<div class="row">
+
+<div id ="footercol123" class="col-md-3">
+<span>
+  <ul>
+    <li class="footerbottom"><b>INFORMATION</b></li>
+      <li id="About Us" class="footerbottom"><a href="#">About Us</a></li>
+        <li id="Customer Service" class="footerbottom"><a href="#">Customer Service</a></li>
+        <li id="Privacy Policy" class="footerbottom"><a href="#">Privacy Policy</a></li>
+        <li id="Site Map" class="footerbottom"><a href="#">Site Map</a></li>
+        <li id="Advanced Search" class="footerbottom"><a href="#">Advanced Search</a></li>
+        <li id="Orders and Returns" class="footerbottom"><a href="#">Orders and Returns</a></li>
+         <li id="Contact Us" class="footerbottom"><a href="#">Contact Us</a></li>
+    </ul>
+</span>
+</div>
+<div id ="footercol123" class="col-md-3" >
+<span>
+  <ul>
+  <li class="footerbottom"><b>WHY BUY FROM US</b></li>
+      <li id="Shipping & Returns" class="footerbottom"><a href="#">Shipping & Returns</a></li>
+        <li id="Secure Shopping" class="footerbottom"><a href="#">Secure Shopping</a></li>
+        <li id="International Shipping" class="footerbottom"><a href="#">International Shipping</a></li>
+        <li id="Affiliates" class="footerbottom"><a href="#">Affiliates</a></li>
+        <li id="Group Sales" class="footerbottom"><a href="#">Group Sales</a></li>
+        <li id="Blank" class="footerbottom"></li>
+        <li id="Blank" class="footerbottom"></li>
+
+       
+    </ul>
+</span>
+</div>
+<div id ="footercol123" class="col-md-3">
+<span>
+    <ul>
+      <li class="footerbottom"><b>MY ACCOUNT</b></li>
+      <li id="Sign In" class="footerbottom"><a href="#">Sign In</a></li>
+        <li id="View Cart" class="footerbottom"><a href="#">View Cart</a></li>
+        <li id="My Wishlist" class="footerbottom"><a href="#">My Wishlist</a></li>
+        <li id="Saved Projects" class="footerbottom"><a href="#">Saved Projects</a></li>
+        <li id="Track My Order" class="footerbottom"><a href="#">Track My Order</a></li>
+        <li id="Help" class="footerbottom"><a href="#">Help</a></li>
+        <li id="Blank" class="footerbottom"></li>
+        
+    </ul>
+</span>
+</div>
+<div id="footercol4" class="col-md-3" >
+<span>
+<ul>
+  <li class="footerbottom"><b>FOLLOW US ON</b></li>
+  <li><img src="spree/frontend/fb1.jpg"></li>
+
+</span>
+</div>
+</div>
+</div>
+</div>
+      
+      <div id="invitation" class="navigation-div">
+          <div class= "container-fluid">
+          <div class="row-fluid">
+            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
+            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
+            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
+            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
+            
+          </div>
+          </div>
+      </div>
+      
+      <div id="birthday" class="navigation-div">
+      <p>hbbjbjnjnknjknknkmnk</p>
+      </div>
+
+      <div id="valentine" class="navigation-div">
+      </div>
+      
+      <div id="ceremony" class="navigation-div">
+      </div>
+
+    
+    
+  
 </nav>
-
-
-	

@@ -78,4 +78,4 @@ gem 'haml'
 gem 'monologue'
 
 
-
+gem 'binding_of_caller'
