@@ -13,10 +13,9 @@ Rails.application.routes.draw do
 
   Spree::Core::Engine.routes.draw do
     resources :suites
-    resources :categories do
-      resources :sub_categories
-    end
-
+    resources :categories 
+    resources :sub_categories
+    
     resources :colors
 
 
