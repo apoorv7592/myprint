@@ -15,7 +15,7 @@
 
 class Suite < ActiveRecord::Base
 	belongs_to :sub_category
-	#belongs_to :designer
+	belongs_to :designer
 	has_and_belongs_to_many :colors
 	has_and_belongs_to_many :trims
 	has_and_belongs_to_many :papers
@@ -24,11 +24,25 @@ class Suite < ActiveRecord::Base
 
 	searchable do 
 		text :name, :description
+		time :available_on
+		
+		text :designer_names do 
+			designer.name
+		end
+
+		integer :designer_id, multiple:true, references: Designer
+		integer :color_ids, multiple:true, references: Color
+		integer :trim_ids, multiple:true, references: Trim
+		integer :dimension_ids, multiple:true, references: Dimension
 	end
 
 	def self.retrieve_suites
         Suite.all
     end	
+    
+    def self.match_(id)
+    	
+    end
 
 	scope :active, ->  { where( "available_on < ? " , Date.today)}
 end

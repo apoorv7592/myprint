@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   Spree::Core::Engine.routes.draw do
     resources :suites
-    resources :categories 
+    resources :categories
     resources :sub_categories
     
     resources :colors
@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     namespace :admin do 
       resources :banners
     end
-    
+    get '/search'  => 'solrsearch#index'
 
   end
 

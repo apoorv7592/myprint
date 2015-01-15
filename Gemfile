@@ -33,6 +33,8 @@ group :development do
 
 	# Solr for dev
 	gem 'sunspot_solr'
+	# For seeing the progress
+	gem 'progress_bar'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
