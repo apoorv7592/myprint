@@ -1,40 +1,59 @@
 
 
-<h1>This is a subcatetory show page </h1>
+<h1>This is a Category Landing page </h1>
 
 
 
 
 
-<div class="container">
-            
-    <div class="row">
-                
-        <div class="col-sm-2" style="height:auto; width:180px;margin-right: 10px;border:1px solid #000;float:left;">
-       
-       
-      <% if !@scat.nil? %>
 
-          <% @scat.each do |sc| %>
-            
-            <span>
-            <br>
-              <%= link_to sc.name, category_sub_category_path(@cat, sc)%>
-            </br>
-            </span>
-                  <% end -%>
-      <% end -%>
+<div class="row" style="height:auto; width:1000px;">
+         
+      <div class="col-md-3"style="height:100px; width:238px; background:rgba(1,0,0,0.2); margin-right:8px;float:left;">
+      navigation
+      </div>
       
-     
-            
-        </div>
-        
-        
-      
-       
-    </div>
+      <div class="col-md-9"style="height:auto; width:746px; margin-left:8px;float:right;">
+              <div class="col-md-12" style="height:593px; width:746px; background:rgba(1,0,0,0.2);">
+              <% if !@scat.nil? %>
+                    <% @scat.each do |sc| %>
+                    <span>
+                    <br>
+                      <%= link_to sc.name, category_sub_category_path(@cat, sc)%>
+                    </br>
+                    </span>
+                    <% end -%>
+              <% end -%>
+              </div>
+
+              <div class="col-md-12" style="height:auto; width:746px; margin-top:10px;">
+                <div class="row">
+                  <div class="col-md-6" style="height:311px; width:365px; background:rgba(1,0,0,0.2); margin-right:8px;" >
+                  </div>
+                  <div class="col-md-6" style="height:311px; width:365px;margin-left:8px;background:rgba(1,0,0,0.2);">
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="col-md-12" style="height:auto; width:746px;">
+                <div class="row">
+                  <div class="col-md-4" style="height:238px; width:238px; background:rgba(1,0,0,0.2); margin-right:8px;" >
+                  </div>
+                  <div class="col-md-4" style="height:238px; width:238px; background:rgba(1,0,0,0.2); margin-right:8px;margin-left:8px;" >
+                  </div>
+                   <div class="col-md-4" style="height:238px; width:238px; background:rgba(1,0,0,0.2); margin-left:8px;" >
+                  </div>                 
+                </div>
+              </div>
+      </div>
 </div>
 
+              
+
+
+
+      
  
 
 
