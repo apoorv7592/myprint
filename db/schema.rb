@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150108152353) do
+ActiveRecord::Schema.define(version: 20150115182835) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -1127,6 +1127,17 @@ ActiveRecord::Schema.define(version: 20150108152353) do
   add_index "spree_variants", ["sku"], name: "index_spree_variants_on_sku"
   add_index "spree_variants", ["tax_category_id"], name: "index_spree_variants_on_tax_category_id"
   add_index "spree_variants", ["track_inventory"], name: "index_spree_variants_on_track_inventory"
+
+  create_table "spree_volume_prices", force: true do |t|
+    t.integer  "variant_id"
+    t.string   "name"
+    t.string   "range"
+    t.decimal  "amount",        precision: 8, scale: 2
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "discount_type"
+  end
 
   create_table "spree_zone_members", force: true do |t|
     t.integer  "zoneable_id"
