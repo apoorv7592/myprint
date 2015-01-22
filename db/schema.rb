@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150101123163) do
+ActiveRecord::Schema.define(version: 20150108152353) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -52,6 +52,15 @@ ActiveRecord::Schema.define(version: 20150101123163) do
   create_table "colors", force: true do |t|
     t.string   "name"
     t.string   "code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "designers", force: true do |t|
+    t.string   "name"
+    t.text     "about"
+    t.boolean  "active"
+    t.string   "city"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

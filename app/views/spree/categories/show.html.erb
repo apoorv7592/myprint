@@ -3,10 +3,6 @@
 <h1>This is a Category Landing page </h1>
 
 
-
-
-
-
 <div class="row" style="height:auto; width:1000px;">
          
       <div class="col-md-3"style="height:100px; width:238px; background:rgba(1,0,0,0.2); margin-right:8px;float:left;">
@@ -19,7 +15,7 @@
                     <% @scat.each do |sc| %>
                     <span>
                     <br>
-                      <%= link_to sc.name, category_sub_category_path(@cat, sc)%>
+                      <%= link_to sc.name, sc%>
                     </br>
                     </span>
                     <% end -%>

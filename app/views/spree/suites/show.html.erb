@@ -1,35 +1,10 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
-
-$('select#quantity').change(function() {
-var value = $(this).val();
-$.get("getAmount.erb?quantity="+value,function(data,status){
-    alert("Data: " + data + "\nStatus: " + status);
-  });
-
-});
-
-$('p').html("Checked Radio Button Value is :"+ value );
-});
-
 $('input:radio').click(function() {
 var value = $("input[name='paper']:checked").val();
 $('p').html("Checked Radio Button Value is :"+ value );
 });
-
-$('input:radio').click(function() {
-var value1 = $("input[name='trim']:checked").val();
-$('h1').html("Checked Radio Button Value is :"+ value1 );
-});
-
-$('input:radio').click(function() {
-var value2 = $("input[name='color']:checked").val();
-$('h2').html("Checked Radio Button Value is :"+ value2 );
-});
-
-
-
 });
 
 </script>
@@ -42,11 +17,11 @@ $('h2').html("Checked Radio Button Value is :"+ value2 );
                 
           <div class="row">
                   
-                  <div class="col-md-6" style="height:416px; width:492px; background:rgba(1,0,0,0.2); margin-right:8px;" >
+                  <div class="col-md-6" style="height:716px; width:492px; background:rgba(1,0,0,0.2); margin-right:8px;" >
                   </div>
                   
-                  <div class="col-md-6" style="height:416px; width:492px;margin-left:8px;">
-                  <div class="col-md-6" style="height:216px; width:492px;background:rgba(1,0,0,0.2)">
+                  <div class="col-md-6" style="height:716px; width:492px;margin-left:8px;">
+                  <div class="col-md-6" style="height:516px; width:492px;background:rgba(1,0,0,0.2)">
                   <ul>
                       <form action="" method="post">
   
@@ -55,11 +30,13 @@ $('h2').html("Checked Radio Button Value is :"+ value2 );
                       <span>Color:</span>
                       
                       <% @scat.each do |sc| %>
+                      <div class="colorbox" style="width:15px;height:15px;background:<%= sc.code%>">
+                      </div>
+
                       <input type="radio" name="color"  value= <%=sc.id%> />
-                      <%= sc.name%> 
+                       
                       <% end -%>
                       <% end -%>
-                      <h2></h2>
                       </li>
 
       
@@ -71,7 +48,6 @@ $('h2').html("Checked Radio Button Value is :"+ value2 );
                       <%= sc.name%>
                       <% end -%>
                       <% end -%>
-                      <h1></h1>
                       
                       </li> 
 
@@ -80,11 +56,10 @@ $('h2').html("Checked Radio Button Value is :"+ value2 );
                       <% if !@pap.nil? %>
                       <span>Paper:</span>
                       <% @pap.each do |sc| %>
-                      <input type="radio" name= "paper" value= <%=sc.id%> />
-                      <%= sc.name%>
+                        <%= sc.name%>
+                      <input type="radio" name= "paper" value=  <%= sc.name%>>
                       <% end -%>
                       <% end -%>
-                      <p></p>
                       </li>
                       
 
@@ -97,7 +72,7 @@ $('h2').html("Checked Radio Button Value is :"+ value2 );
                       <% end -%>
                       </li>
 
-                      <input type="submit" value="Personalize and Buy Now"/>
+                      <input type="image" style="height:20px; width:200px;" src="facebook.jpg" alt="Personalise & Buy Now" />
 
                       </form>
                   </ul>
@@ -108,6 +83,7 @@ $('h2').html("Checked Radio Button Value is :"+ value2 );
 
                           <% @prds.each do |p| %>
                             <%= render 'add_prod', prd: p %> 
+                            <%= p.name %>
                           <%end%>
 
                           <%= button_tag :class => 'btn btn-success', :id => 'add-to-cart-button', :type => :submit do %>
@@ -143,14 +119,31 @@ $('h2').html("Checked Radio Button Value is :"+ value2 );
           <div class="row">
                   
               <div class="col-md-6" style="height:416px; width:492px; margin-right:8px;" >
-                  <div class="col-md-6" style="height:200px; width:492px;margin-bottom:8px; background:rgba(1,0,0,0.2);" >
+                  <div class="col-md-6" style="max-height:200px; width:492px;margin-bottom:8px; background:rgba(1,0,0,0.2);overflow-y: scroll;" >
+                  <h1>Description goes here</h1><br/>
+                  gggggggg<br/>
+                  gggggggg<br/>
+                  gggggggg<br/>
+                  gggggggg<br/>
+                  gggggggg<br/>
+                  gggggggg<br/>
+                  gggggggg<br/>
+                  gggggggg<br/>
+                  gggggggg<br/>
+                  gggggggg<br/>
+                  gggggggg<br/>
+
+
+
                   </div>
+
                   <div class="col-md-6" style="height:200px; width:492px;margin-top:8px;background:rgba(1,0,0,0.2);">
                   <div class="row">
                   <% $i = 0 %>
                   <% $num = 10 %>
                   <%while $i < $num  do%>
                   <span>
+                  
                   <div class="col-md-1" style="height:92px; width:90px;margin-right:4px;margin-left:4px;margin-bottom:4px;margin-top:4px; background:rgba(1,0,0,1);float:right;">fuck</div>
                   </span>
                   <%$i +=1 %>
@@ -160,8 +153,8 @@ $('h2').html("Checked Radio Button Value is :"+ value2 );
 
               </div>
                   
-                  <div class="col-md-6" style="height:416px; width:492px;margin-left:8px;background:rgba(1,0,0,0.2);">
-                  </div>
+              <div class="col-md-6" style="height:416px; width:492px;margin-left:8px;background:rgba(1,0,0,0.2);">
+              </div>
 
           </div>
            

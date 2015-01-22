@@ -30,6 +30,11 @@ group :development do
 	gem 'better_errors', '~> 2.1.0', group: :development
 	# Use sqlite3 as the database for Active Record
 	gem 'sqlite3'	
+
+	# Solr for dev
+	gem 'sunspot_solr'
+	# For seeing the progress
+	gem 'progress_bar'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -60,8 +65,6 @@ gem 'aws-sdk', '~> 1.59.1'
 #Image uploading and handling
 gem 'cloudinary'
 
-#For providing search on models
-gem 'ransack'
 
 #For annotating
 gem 'annotate'
@@ -77,4 +80,11 @@ gem 'haml'
 #gem 'spree_blogging_spree', github: 'stefansenk/spree-blogging-spree'
 gem 'monologue'
 
+
+##for full text search
+gem 'sunspot_rails'
+
+
 gem 'binding_of_caller'
+
+gem 'font-awesome-sass', '~> 4.2.0'

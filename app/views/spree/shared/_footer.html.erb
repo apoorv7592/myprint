@@ -1,16 +1,16 @@
 
-<div class ="col-md-12" style="background:rgba(1,0,0,0.1); width:1000px;height:auto;">
+<div class ="col-md-12" style="background:rgba(1,0,0,0.03); width:1000px;height:auto;">
 <div class="row">
 <h1 style="text-align:right;text-align:center;font-size:25px;
     font-family:gabriola;  position: relative;
     bottom: 5px;">Subscribe our Newsletter
 
 <form>Sign up
-<input type="text" id="inputboxsubs" email="email id" value="Enter your email address" onClick="this.value=''";><input type="submit" value="Submit">
+<input type="text" id="inputboxsubs" email="email id" value="Enter your email address" defaultvalue="Enter your email address"><%= link_to image_tag('buttonsignup.jpg', height:39), root_path %>
 </form>
 
 </h1>
-<p style="border-bottom:1px solid rgba(1,0,0,0.4);top:10px;"></p>
+
 
 <div id ="footercol1" class="col-md-3">
 <span>
@@ -61,16 +61,28 @@
 <span>
 <ul>
 	<li class="footerbottom"><b>FOLLOW US ON</b></li>
-	<li><img src="spree/frontend/fb1.jpg"></li>
+  <ul class="row" >
+    <%= link_to image_tag('facebook.jpg', height: 38), root_path %>
+    <%= link_to image_tag('twitter.jpg', height: 38), root_path %>
+    <%= link_to image_tag('g+.jpg', height: 38), root_path %>
+    <%= link_to image_tag('pinterest.jpg', height: 38), root_path %>
+
+ 
+  </ul>
+</ul>    
 
 </span>
 </div>
 </div>
 </div>
-<div><p style="font-size:10px;font-family:verdana;">
+<div><p style="font-size:10px;font-family:verdana;float:left;">
 Privacy Policy | Terms of Use | Glossary
-<br>©2014 All rights reserved. www.printdora.com - India's Largest Online Card Store </br>
+<br>©2014 All rights reserved. www.printdora.com - India's Largest Online Card Store </br></p>
 
-</p></div>
+<ul class="row" style="float:right;margin-top:8px;">
+  <%= image_tag "paycardfoot.jpg" %>
+  </ul>
+
+</div>
 
 

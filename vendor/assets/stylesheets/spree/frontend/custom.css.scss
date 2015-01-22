@@ -1,17 +1,26 @@
 /* Header */
 #topmost-nav{
-	height:20px;
 	font-size:10px;
-	padding-top:5px !important;
-	padding-bottom:2px !important;
+	
 	min-height:20px !important;
 	border:none;
 	background-color:white;
 	font-family: Georgia;
 }
-.topmost-nav-list >a{
+.topmost-nav-list {
 	padding-top:3px !important;
 	padding-bottom:2px !important;
+  float:right !important;
+}
+
+ul.nav.navbar-nav.navbar-right{
+  width:300px;
+  height:40px;
+  margin-right:0px !important;
+  margin-bottom:10px !important;
+}
+ul.nav.navbar-nav.navbar-right >a{
+  float:right;
 }
 
 #logo >a >img{
@@ -21,35 +30,42 @@
 #nav-cart{
 	height:10px !important;
 }
+ 
+ nav#topmost-nav.navbar.navbar-default{
+ height:30px;
+ margin-bottom:7px !important;
+ }
 
-.topmost-nav-list{
-    float: center;
-    margin-right: 5px;
-    margin-left: 5px;
-}
-
-.row{ margin-right: 0!important; margin-left: 0!important;}
-
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12
-{padding-right : 0!important; padding-left : 0!important;}
-
-
-.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus{color:rgba(0,255,200,1) !important;}
-
-.navbar-inverse{
-  border-right: none !important;
-border-left: none !important;
-}
+ input#search.form-control{
+ width:200px;
+ height:30px;
+ border:1px solid rgba(1,0,0,0.5);
+ border-radius:0px !important;
+  }
 
 
- .navigation-div{
+ #navigationbar{
+    
+    z-index:1;
+    width: 1000px;
+    height: 40px;
+    border:1px ;
+    background : white;
+    border-top:1px solid #000000;
+    border-bottom:1px solid #000000;
+    margin-bottom:10px;
+
+
+
+  }
+
+.navigation-div{
     z-index:1000;
     background:white;
-    border-top:1px solid #000000;
     border-left:1px solid rgba(1,0,0,0.3);
     border-right:1px solid rgba(1,0,0,0.3);
-    position:absolute;
-    top:50px;
+    position:relative;
+    top:40px;
     left:0px;
     width:1000px;
     height:auto;
@@ -58,7 +74,27 @@ border-left: none !important;
     margin-left:0px;
     color:#fff;
     border-bottom:2px solid rgba(255,0,0,0.7);
+}
+
+.navbar-nav>li>a:hover,.navbar-nav>li>a:focus{color:rgba(0,200,160,0.5) !important;}
+
+.navbar-nav>li>a,.navbar-nav>li>a{
+  background:white !important;
+  height:20px !important;
+  padding: none !important;
   }
+
+.row
+{ margin-right: 0!important; 
+margin-left: 0!important;
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12
+{padding-right : 0!important; padding-left : 0!important;}
+
+
+
+
   
   #navdiv2{
     width:180px;
@@ -67,20 +103,13 @@ border-left: none !important;
     border:1px solid #000;
   }
 
-  #navigationbar{
-    
-    z-index:1;
-
-    width: 1000px;
-    height: auto;
-    background: white;
-    border:1px ;
-  }
-  
   .abc{
     margin-right: 67px;
     font-family: Georgia;
+    
   }
+
+  .abc >a{color:rgba(1,0,0,0.8);height:20px;}
 
   .footerbottom{
     text-align:left;
@@ -108,14 +137,13 @@ border-left: none !important;
     width:188px;
   }
     
-    #footercol1{
+   #footercol1{
     margin-top:10px;
     list-style-type: none;
     height: 120px;
     margin-left:62px;
     border-right:1px solid rgba(1,0,0,0.2);
     width:188px;
-
   }
 
 
@@ -131,5 +159,30 @@ border-left: none !important;
   width:492px;
   height:50px;
   }
+ 
+ .pernbuy{
+  margin-left: 120px;
+  margin-right: 120px;
+  text-align: center;
+  height: 40px;
+  width: 252px;
+
+ }
+
+ #add-to-cart-button
+ {  
+  margin-left: 120px;
+  margin-right: 120px;
+  text-align: center;
+  height: 40px;
+  width: 252px;
+}
+
+#foot1
+{
+  list-style-type: none;
+}
+
+
 
 

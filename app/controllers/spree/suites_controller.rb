@@ -10,8 +10,4 @@ module Spree
 			@dim = @suite.dimensions
         end
 	end
-
-
-
-	
 end

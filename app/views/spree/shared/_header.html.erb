@@ -3,7 +3,7 @@
 <div id="spree-header">
 	<header id="header" data-hook>
 		
-		<div class="container">
+		<div class="container" style="width:1000px;padding:0 !important;">
 			<div class="row-fluid">
 				<div class="col-md-6">
 					<figure id="logo" data-hook>
@@ -11,21 +11,9 @@
 					</figure>
 				</div>
 				
-				<div class="col-md-6">
-					<div class="row" style="margin-bottom:0px !important;">
+				<div class="col-md-6" style="margin-bottom:10px;">
 						<%= render :partial => 'spree/shared/search' %>
-					</div>
-					<div class="row" id="nav-cart">
-						<ul class="nav navbar-nav navbar-right" data-hook>
-							<li id="link-to-cart" data-hook>
-								<noscript>
-									<%= link_to Spree.t(:cart), '/cart' %>
-								</noscript>
-								&nbsp;
-							</li>
-							<script>Spree.fetch_cart()</script>
-						</ul>
-					</div>
+				   
 				</div>
 				
 			</div>

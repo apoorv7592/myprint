@@ -22,11 +22,27 @@ class Suite < ActiveRecord::Base
 	has_and_belongs_to_many :dimensions
 	has_many :spree_products, :class_name => 'Spree::Product'
 
+	searchable do 
+		text :name, :description
+		time :available_on
+		
+		text :designer_names do 
+			designer.name
+		end
 
+		integer :designer_id, multiple:true, references: Designer
+		integer :color_ids, multiple:true, references: Color
+		integer :trim_ids, multiple:true, references: Trim
+		integer :dimension_ids, multiple:true, references: Dimension
+	end
 
 	def self.retrieve_suites
         Suite.all
     end	
+    
+    def self.match_(id)
+    	
+    end
 
 	scope :active, ->  { where( "available_on < ? " , Date.today)}
 end

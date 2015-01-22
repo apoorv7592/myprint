@@ -1,12 +1,9 @@
 <% @taxons = @taxon && @taxon.parent ? @taxon.parent.children : Spree::Taxon.roots %>
-<%= form_tag spree.products_path, :method => :get, class: "form-horizontal" do %>
-	<div class="form-group" style="width:500px;">
+<%= form_tag '/search', :method => :get, class: "form-horizontal" do %>
 		
-		<div class="col-sm-5" style="float:right;margin-right:73px;height:20px;width:200px;">
-			<%= search_field_tag :keywords, params[:keywords], :placeholder => Spree.t(:search), class: "form-control" %>
-		</div>		
+		<div style="float:right; ">
+			<%= search_field_tag :search, params[:search], class: "form-control"%>
+					</div>		
 		
-
-	</div>
 	
 <% end %>

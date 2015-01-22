@@ -1,7 +1,18 @@
+<style>
+#menubar{
+	background:rgba(1,0,0,0.1);
+	margin-left: 150px;
+	margin-right: 150px;
+	text-align: center;
+	max-height: 30px;
+	max-width: 192px;
 
+}
+	
+</style>
                           
                             
                         
 
   <%= hidden_field_tag "variant_id[]", prd.master.id%>
-  <%= number_field_tag :quantity, 1, :class => 'title form-control', :min => 1 %>
+  <%= number_field_tag :quantity, 1, :class => 'title form-control',:id =>'menubar', :min => 1 %>
