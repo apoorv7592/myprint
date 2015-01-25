@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150115182835) do
+ActiveRecord::Schema.define(version: 20150125054042) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -480,7 +480,7 @@ ActiveRecord::Schema.define(version: 20150115182835) do
     t.string   "avs_response"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "identifier"
+    t.string   "number"
     t.string   "cvv_response_code"
     t.string   "cvv_response_message"
   end
@@ -554,8 +554,7 @@ ActiveRecord::Schema.define(version: 20150115182835) do
   add_index "spree_products", ["deleted_at"], name: "index_spree_products_on_deleted_at"
   add_index "spree_products", ["name"], name: "index_spree_products_on_name"
   add_index "spree_products", ["shipping_category_id"], name: "index_spree_products_on_shipping_category_id"
-  add_index "spree_products", ["slug"], name: "index_spree_products_on_slug"
-  add_index "spree_products", ["slug"], name: "permalink_idx_unique", unique: true
+  add_index "spree_products", ["slug"], name: "index_spree_products_on_slug", unique: true
   add_index "spree_products", ["suite_id"], name: "index_spree_products_on_suite_id"
   add_index "spree_products", ["tax_category_id"], name: "index_spree_products_on_tax_category_id"
 
@@ -1046,16 +1045,6 @@ ActiveRecord::Schema.define(version: 20150115182835) do
   add_index "spree_taxons_prototypes", ["prototype_id"], name: "index_spree_taxons_prototypes_on_prototype_id"
   add_index "spree_taxons_prototypes", ["taxon_id"], name: "index_spree_taxons_prototypes_on_taxon_id"
 
-  create_table "spree_tokenized_permissions", force: true do |t|
-    t.integer  "permissable_id"
-    t.string   "permissable_type"
-    t.string   "token"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "spree_tokenized_permissions", ["permissable_id", "permissable_type"], name: "index_tokenized_name_and_type"
-
   create_table "spree_trackers", force: true do |t|
     t.string   "environment"
     t.string   "analytics_id"
@@ -1157,9 +1146,11 @@ ActiveRecord::Schema.define(version: 20150115182835) do
     t.integer  "zone_members_count", default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "kind"
   end
 
   add_index "spree_zones", ["default_tax"], name: "index_spree_zones_on_default_tax"
+  add_index "spree_zones", ["kind"], name: "index_spree_zones_on_kind"
 
   create_table "sub_categories", force: true do |t|
     t.string   "name"
