@@ -35,6 +35,10 @@ group :development do
 	gem 'sunspot_solr'
 	# For seeing the progress
 	gem 'progress_bar'
+
+	#for opening the mail in browser
+  	gem "letter_opener"
+
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -90,3 +94,6 @@ gem 'binding_of_caller'
 #Volume pricing
 #gem 'spree_volume_pricing', '3.0.2'
 #gem 'spree_volume_pricing', :git => 'git://github.com/spree-contrib/spree_volume_pricing.git'
+gem 'popen4'
+
+gem 'seed-fu'
