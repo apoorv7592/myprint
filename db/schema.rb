@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150125054042) do
+ActiveRecord::Schema.define(version: 20150127102156) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -229,6 +229,16 @@ ActiveRecord::Schema.define(version: 20150125054042) do
 
   add_index "spree_assets", ["viewable_id"], name: "index_assets_on_viewable_id"
   add_index "spree_assets", ["viewable_type", "type"], name: "index_assets_on_viewable_type_and_type"
+
+  create_table "spree_authentication_methods", force: true do |t|
+    t.string   "environment"
+    t.string   "provider"
+    t.string   "api_key"
+    t.string   "api_secret"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "spree_calculators", force: true do |t|
     t.string   "type"
@@ -1055,6 +1065,14 @@ ActiveRecord::Schema.define(version: 20150125054042) do
 
   add_index "spree_trackers", ["active"], name: "index_spree_trackers_on_active"
 
+  create_table "spree_user_authentications", force: true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "spree_users", force: true do |t|
     t.string   "encrypted_password",     limit: 128
     t.string   "password_salt",          limit: 128
@@ -1085,11 +1103,16 @@ ActiveRecord::Schema.define(version: 20150125054042) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.string   "name"
+    t.string   "uid"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
   end
 
   add_index "spree_users", ["deleted_at"], name: "index_spree_users_on_deleted_at"
   add_index "spree_users", ["email"], name: "email_idx_unique", unique: true
   add_index "spree_users", ["spree_api_key"], name: "index_spree_users_on_spree_api_key"
+  add_index "spree_users", ["uid"], name: "index_spree_users_on_uid"
 
   create_table "spree_variants", force: true do |t|
     t.string   "sku",                                        default: "",    null: false
