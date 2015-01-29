@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: spree_volume_prices
+#
+#  id            :integer          not null, primary key
+#  variant_id    :integer
+#  name          :string(255)
+#  range         :string(255)
+#  amount        :decimal(8, 2)
+#  position      :integer
+#  created_at    :datetime
+#  updated_at    :datetime
+#  discount_type :string(255)
+#
+
 class Spree::VolumePrice < ActiveRecord::Base
 	belongs_to :variant, :touch => true
 	acts_as_list :scope => :variant

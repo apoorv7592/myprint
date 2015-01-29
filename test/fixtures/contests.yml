@@ -1,0 +1,27 @@
+# == Schema Information
+#
+# Table name: contests
+#
+#  id          :integer          not null, primary key
+#  title       :string(255)
+#  description :text
+#  start_date  :datetime
+#  end_date    :datetime
+#  active      :boolean          default(FALSE)
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  start_date: 2015-01-28 11:07:05
+  end_date: 2015-01-28 11:07:05
+
+two:
+  title: MyString
+  description: MyText
+  start_date: 2015-01-28 11:07:05
+  end_date: 2015-01-28 11:07:05

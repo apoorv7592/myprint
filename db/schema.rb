@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150127102156) do
+ActiveRecord::Schema.define(version: 20150128095325) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -94,6 +94,16 @@ ActiveRecord::Schema.define(version: 20150127102156) do
     t.datetime "updated_at"
   end
 
+  create_table "contests", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.boolean  "active",      default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "designers", force: true do |t|
     t.string   "name"
     t.text     "about"
@@ -109,6 +119,25 @@ ActiveRecord::Schema.define(version: 20150127102156) do
     t.float    "height"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "entries", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "contest_id"
+    t.text     "description"
+    t.text     "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "entry_attachements", force: true do |t|
+    t.integer  "entry_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "friendly_id_slugs", force: true do |t|

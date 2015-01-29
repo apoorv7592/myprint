@@ -13,4 +13,5 @@
 
 class Designer < ActiveRecord::Base
 	has_many :suites
+	has_many :entries, dependent: :destroy
 end
