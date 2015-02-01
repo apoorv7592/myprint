@@ -12,7 +12,7 @@
 #
 
 class Entry < ActiveRecord::Base
-	belongs_to :designer
+	belongs_to :spree_user
 	belongs_to :contest
 	has_many :entry_attachements, dependent: :destroy
 

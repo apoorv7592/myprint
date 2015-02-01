@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150128095325) do
+ActiveRecord::Schema.define(version: 20150201081815) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -111,6 +111,7 @@ ActiveRecord::Schema.define(version: 20150128095325) do
     t.string   "city"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id",    default: 0, null: false
   end
 
   create_table "dimensions", force: true do |t|
@@ -138,6 +139,7 @@ ActiveRecord::Schema.define(version: 20150128095325) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "title"
   end
 
   create_table "friendly_id_slugs", force: true do |t|
@@ -1110,8 +1112,8 @@ ActiveRecord::Schema.define(version: 20150128095325) do
     t.string   "persistence_token"
     t.string   "reset_password_token"
     t.string   "perishable_token"
-    t.integer  "sign_in_count",                      default: 0, null: false
-    t.integer  "failed_attempts",                    default: 0, null: false
+    t.integer  "sign_in_count",                      default: 0,     null: false
+    t.integer  "failed_attempts",                    default: 0,     null: false
     t.datetime "last_request_at"
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
@@ -1136,6 +1138,7 @@ ActiveRecord::Schema.define(version: 20150128095325) do
     t.string   "uid"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
+    t.boolean  "is_designer",                        default: false
   end
 
   add_index "spree_users", ["deleted_at"], name: "index_spree_users_on_deleted_at"
