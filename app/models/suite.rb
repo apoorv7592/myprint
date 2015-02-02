@@ -21,7 +21,10 @@ class Suite < ActiveRecord::Base
 	has_and_belongs_to_many :papers
 	has_and_belongs_to_many :dimensions
 	has_many :spree_products, :class_name => 'Spree::Product'
+	has_many :spree_reviews,:class_name=> 'Spree::Review'
 
+	scope :active, ->  { where( "available_on < ? " , Date.today)}
+	
 	searchable do 
 		text :name, :description
 		time :available_on
@@ -44,6 +47,18 @@ class Suite < ActiveRecord::Base
     	
     end
 
-	scope :active, ->  { where( "available_on < ? " , Date.today)}
+	def stars
+		avg_rating.try(:round) || 0
+	end
+
+	def recalculate_rating
+		self[:reviews_count] = reviews.reload.approved.count
+		if reviews_count > 0
+			self[:avg_rating] = reviews.approved.sum(:rating).to_f / reviews_count
+		else
+			self[:avg_rating] = 0
+		end
+		save
+	end
 end
 

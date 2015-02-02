@@ -21,15 +21,18 @@
 		 <li class="topmost-nav-list">
 			<%= link_to "Wishlist", '/wishlist/' %>
 		</li>
-		<li class="topmost-nav-list">
-			<%= link_to "Log In", '/login/' %>
-		</li>
+		
+		<%if spree_current_user %>
+			<li class="topmost-nav-list">	
+				<%= link_to spree_current_user.email, '/myaccount' %>
+			</li>
+			
+			<li class="topmost-nav-list">	
+				<%= link_to "Logout", '/logout/' %>
+			</li>
 
-		<li class="topmost-nav-list">
-		<%if @current_user.present? %>
-			<%= link_to "My Account", '/account/'  %>
 		<% else %>
-			  <%= link_to "Logout", '/logout/' %>
+			<%= link_to "Log In", '/login/' %>  
 		<% end %>
         
 

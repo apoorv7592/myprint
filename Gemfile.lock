@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/spree-contrib/spree_reviews.git
+  revision: aaa76230da9cca35e1d7b084922be94266ef9040
+  branch: master
+  specs:
+    spree_reviews (3.0.0.beta)
+      spree_core (~> 3.0.0.beta)
+
+GIT
   remote: git://github.com/spree-contrib/spree_social.git
   revision: 1d8c7b6930f700b1886153ba8ef7f38219a19d55
   branch: master
@@ -451,6 +459,7 @@ DEPENDENCIES
   spree!
   spree_auth_devise!
   spree_gateway!
+  spree_reviews!
   spree_social!
   spring
   sqlite3

@@ -99,3 +99,6 @@ gem 'popen4'
 gem 'seed-fu'
 gem 'omniauth-facebook'
 gem 'spree_social', github: 'spree-contrib/spree_social', branch: 'master'
+
+#user reviews
+gem 'spree_reviews', github: 'spree-contrib/spree_reviews', branch: 'master'

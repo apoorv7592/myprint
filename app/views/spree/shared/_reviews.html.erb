@@ -1,0 +1,20 @@
+<div id="reviews">
+	<h3 class="suite-section-title"><%= Spree.t(:reviews) %></h3>
+	
+
+	<% if Spree::Reviews::Config[:include_unapproved_reviews] == false and @suite.spree_reviews.approved.count == 0 %>
+		<p class="reviews-none"><%= Spree.t(:no_reviews_available) %></p>
+	<% else %>
+	
+		<%= render 'spree/shared/rating', product: @suite, review: 0 %>
+		
+		<% for review in (Spree::Reviews::Config[:track_locale] ? @suite.reviews.localized(I18n.locale) : @suite.reviews).default_approval_filter.preview %>
+			<%= render 'spree/shared/review', review: review %>
+		<% end %>
+	<% end %>
+
+
+	<% if !Spree::Reviews::Config[:require_login] || spree_current_user %>
+		<%= link_to Spree.t(:write_your_own_review), new_suite_review_path(@suite), class: 'btn btn-default', rel: 'nofollow' %>
+	<% end %>
+</div>

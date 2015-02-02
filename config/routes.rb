@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   Spree::Core::Engine.routes.draw do
-    resources :suites
+    resources :suites do
+      resources :reviews
+    end
     resources :categories
     resources :sub_categories
     
@@ -40,7 +42,7 @@ Rails.application.routes.draw do
     else
       Spree::Core::Engine.routes.draw(&routes)
     end
-
+    
   end
 
   #get '/suites/:id' => 'suites#show'
