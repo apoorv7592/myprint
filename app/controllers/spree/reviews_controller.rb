@@ -5,12 +5,13 @@ class Spree::ReviewsController < Spree::StoreController
 	rescue_from ActiveRecord::RecordNotFound, with: :render_404
 
 	def index
-		@approved_reviews = Spree::Review.approved.where(product: @product)
+		@approved_reviews = Spree::Review.approved.where(product: @suite)
 	end
 
 	def new
-		@review = Spree::Review.new(product: @suite)
-		authorize! :create, @review		
+		@review = Spree::Review.new(suite: @suite)
+		authorize! :create, @review	
+		
 	end
 
 	# save if all ok
@@ -33,7 +34,7 @@ class Spree::ReviewsController < Spree::StoreController
 
 	private
 		def load_product
-			@product = Spree::Product.friendly.find(params[:product_id])
+			@suite = Suite.where(params[:suite_id]).first
 		end
 		
 		def permitted_review_attributes
