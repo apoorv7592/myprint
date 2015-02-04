@@ -1,17 +1,15 @@
 
-
-<div id="spree-header">
 	<header id="header" data-hook>
 		
-		<div class="container" style="width:1000px;padding:0 !important;">
+		<div class="container" style="width:1000px;padding:0 !important; margin-bottom:10px;">
 			<div class="row-fluid">
-				<div class="col-md-6">
+				<div class="col-md-6" style="float:left;">
 					<figure id="logo" data-hook>
 						<%= link_to image_tag('logo.png', height: 40), root_path %>
 					</figure>
 				</div>
 				
-				<div class="col-md-6" style="margin-bottom:10px;">
+				<div class="col-md-6" style="float:right;">
 						<%= render :partial => 'spree/shared/search' %>
 				   
 				</div>
@@ -19,4 +17,4 @@
 			</div>
 		</div>
 	</header>
-</div>
+

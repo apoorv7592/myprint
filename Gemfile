@@ -87,4 +87,9 @@ gem 'sunspot_rails'
 
 gem 'binding_of_caller'
 
+
 gem 'font-awesome-sass', '~> 4.2.0'
+#Volume pricing
+#gem 'spree_volume_pricing', '3.0.2'
+#gem 'spree_volume_pricing', :git => 'git://github.com/spree-contrib/spree_volume_pricing.git'
+

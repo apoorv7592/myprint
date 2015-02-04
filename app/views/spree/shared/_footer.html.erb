@@ -1,12 +1,13 @@
 
-<div class ="col-md-12" style="background:rgba(1,0,0,0.03); width:1000px;height:auto;">
+<div class ="col-md-12" style="background:rgba(1,0,0,0.03); width:1000px;height:auto;margin-top:10px;">
 <div class="row">
-<h1 style="text-align:right;text-align:center;font-size:25px;
+<h1 style="text-align:center;font-size:25px;
     font-family:gabriola;  position: relative;
     bottom: 5px;">Subscribe our Newsletter
 
 <form>Sign up
-<input type="text" id="inputboxsubs" email="email id" value="Enter your email address" defaultvalue="Enter your email address"><%= link_to image_tag('buttonsignup.jpg', height:39), root_path %>
+<input type="text" id="inputboxsubs" email="email id" value="Enter your email address" defaultvalue="Enter your email address">
+<%= link_to image_tag('buttonsignup.jpg', height:40), root_path %>
 </form>
 
 </h1>
@@ -26,6 +27,7 @@
     </ul>
 </span>
 </div>
+
 <div id ="footercol1" class="col-md-3" >
 <span>
 	<ul>
@@ -35,13 +37,11 @@
         <li id="International Shipping" class="footerbottom"><a href="#">International Shipping</a></li>
         <li id="Affiliates" class="footerbottom"><a href="#">Affiliates</a></li>
         <li id="Group Sales" class="footerbottom"><a href="#">Group Sales</a></li>
-        <li id="Blank" class="footerbottom"></li>
-        <li id="Blank" class="footerbottom"></li>
-
        
     </ul>
 </span>
 </div>
+
 <div id ="footercol1" class="col-md-3">
 <span>
     <ul>
@@ -52,29 +52,29 @@
         <li id="Saved Projects" class="footerbottom"><a href="#">Saved Projects</a></li>
         <li id="Track My Order" class="footerbottom"><a href="#">Track My Order</a></li>
         <li id="Help" class="footerbottom"><a href="#">Help</a></li>
-        <li id="Blank" class="footerbottom"></li>
-        
+               
     </ul>
 </span>
 </div>
+
 <div id="footercol4" class="col-md-3" >
-<span>
 <ul>
 	<li class="footerbottom"><b>FOLLOW US ON</b></li>
-  <ul class="row" >
-    <%= link_to image_tag('facebook.jpg', height: 38), root_path %>
-    <%= link_to image_tag('twitter.jpg', height: 38), root_path %>
-    <%= link_to image_tag('g+.jpg', height: 38), root_path %>
-    <%= link_to image_tag('pinterest.jpg', height: 38), root_path %>
+  <ul >
+    <li class="footerbottompic"><%= link_to image_tag('facebook.jpg', height: 38), root_path %></li>
+    <li class="footerbottompic"><%= link_to image_tag('twitter.jpg', height: 38), root_path %></li>
+    <li class="footerbottompic"><%= link_to image_tag('g+.jpg', height: 38), root_path %></li>
+    <li class="footerbottompic"><%= link_to image_tag('pinterest.jpg', height: 38), root_path %></li>
 
  
   </ul>
 </ul>    
+</div>
+</div>
+</div>
 
-</span>
-</div>
-</div>
-</div>
+
+
 <div><p style="font-size:10px;font-family:verdana;float:left;">
 Privacy Policy | Terms of Use | Glossary
 <br>©2014 All rights reserved. www.printdora.com - India's Largest Online Card Store </br></p>

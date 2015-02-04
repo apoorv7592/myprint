@@ -20,14 +20,14 @@
         
         $('#'+idNavigation).bind('mouseover',function(){
           clearTimeout(timeoutNavigationFade);
-          $('#'+idDiv).fadeIn(300);
+          $('#'+idDiv).fadeIn(500);
         });
         $('#'+idDiv).bind('mouseover',function(){
           clearTimeout(timeoutNavigationFade);
         });
         
         $('#'+idNavigation+", #"+idDiv).bind('mouseout',function(){
-          timeoutNavigationFade=setTimeout(function(){$("#"+idDiv).fadeOut(300);}, 300);
+          timeoutNavigationFade=setTimeout(function(){$("#"+idDiv).fadeOut(500);}, 500);
         });
 
 
@@ -43,7 +43,7 @@
 
  
    
-    <div>  
+<div>  
       <ul id="navigationbar" class="nav navbar-nav" >
         <li id="Wedding" class="abc" style="margin-left:75px;"><a href="#">Wedding</a></li>
         <li id="Invitation" class="abc"><a href="#">Invitations</a></li>
@@ -52,45 +52,46 @@
         <li id="Ceremony" class="abc"><a href="#">Ceremony</a></li>
         <li id="Blog" class="abc"><a href="/blog">Blog</a></li>
       </ul>
+</div>      
       
 
 
-  <div id="wedding" class="navigation-div">
-      <div class= "container-fluid">
-         <div class="row-fluid">
-            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
-            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
-            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
-            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
-            
-         </div>
-      </div>
+                  <div id="wedding" class="navigation-div">
+                      
+                         <div class="row">
+                            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
+                            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
+                            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
+                            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
+                            
+                         
+                      </div>
 
-  </div>
-      
-  <div id="invitation" class="navigation-div">
-          <div class= "container-fluid">
-          <div class="row-fluid">
-            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
-            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
-            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
-            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
-            
-          </div>
-          </div>
-  </div>
-      
-  <div id="birthday" class="navigation-div">
-      <p>hbbjbjnjnknjknknkmnk</p>
-  </div>
+                  </div>
+                      
+                  <div id="invitation" class="navigation-div">
+                          
+                          <div class="row-fluid">
+                            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
+                            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
+                            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
+                            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
+                            
+                          
+                          </div>
+                  </div>
+                      
+                  <div id="birthday" class="navigation-div">
+                      <p>hbbjbjnjnknjknknkmnk</p>
+                  </div>
 
-  <div id="valentine" class="navigation-div">
-  </div>
-      
-  <div id="ceremony" class="navigation-div">
-  </div>
+                  <div id="valentine" class="navigation-div">
+                  </div>
+                      
+                  <div id="ceremony" class="navigation-div">
+                  </div>
 
-  </div>
+
 
     
     
