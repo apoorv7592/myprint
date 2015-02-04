@@ -1,5 +1,6 @@
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
+
 <script type="text/javascript">
 
 $(document).ready(function() {
@@ -349,3 +350,58 @@ $(document).ready(function(){ // on document load
   
 
 
+=======
+<h1>This is a suite show page </h1>
+<div class="container">
+            
+    <div class="row">
+                
+      <div class="col-sm-6" style="height:auto;width:560px;margin-right: 10px;border:1px solid #000;float:left;">
+      
+      <% if !@scat.nil? %>
+          <% @scat.each do |sc| %>
+            color: <%=  sc.name%>
+          <% end %>
+      <% end %>
+      
+      <% if !@trm.nil? %>
+        <% @trm.each do |sc| %>
+          <span>
+            <br>
+              trim: <%=  sc.name%>
+            </br>
+          </span>
+        <% end -%>
+      <% end -%>
+        
+        <% if !@pap.nil? %>
+        <span>paper:</span>
+        <% @pap.each do |sc| %>
+           
+            <span>
+
+            |<%=  sc.name%>|
+          
+            </span>
+
+                  <% end -%>
+      <% end -%>
+
+        <% if !@dim.nil? %>
+        <% @dim.each do |sc| %>
+            
+            <span>
+            <br>
+              dimension: <%=  sc.width%>*<%= sc.height%>
+            </br>
+            </span>
+                  <% end -%>
+      <% end -%>
+      </div>
+     </div>
+ </div>
+<%#= button_to 'Write reviews', new_suite_review_path(@suite), method: :get,remote: true%>
+<img src="#{asset_path 'images/store/reviews/star.gif' }">
+<%= asset_path('assets/images/store/reviews/star.gif') %>
+<%= render 'spree/shared/reviews' %>
+>>>>>>> ee976950ae3a5a2f822cfa360376f38a6ea51072

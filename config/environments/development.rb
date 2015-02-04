@@ -6,6 +6,8 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+  #config.serve_static_assets = false
+  #config.assets.prefix = "/assets_dev"
   # Do not eager load code on boot.
   config.eager_load = false
 
@@ -45,5 +47,8 @@ Rails.application.configure do
       :s3_host_name => "s3-ap-southeast-1.amazonaws.com"
     }
   }
+
+  config.action_mailer.delivery_method = :letter_opener
+  
 
 end

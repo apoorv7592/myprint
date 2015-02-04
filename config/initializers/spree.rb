@@ -12,4 +12,5 @@ Spree.config do |config|
   #config.searcher_class = Spree::Search::Solr
 end
 
+Spree::PermittedAttributes.user_attributes << :is_designer
 Spree.user_class = "Spree::User"

@@ -9,8 +9,11 @@
 #  city       :string(255)
 #  created_at :datetime
 #  updated_at :datetime
+#  user_id    :integer          default(0), not null
 #
 
 class Designer < ActiveRecord::Base
 	has_many :suites
+	has_many :entries, dependent: :destroy
+	belongs_to :user
 end

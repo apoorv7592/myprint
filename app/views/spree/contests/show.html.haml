@@ -1,0 +1,16 @@
+%h2
+	This is an awesome contest
+=form_for @entry,:html => {:multipart => true}, class: 'form-horizontal' do |f|
+	.form-group
+		=f.label 'Title', class: ' col-sm-2'
+		.col-sm-10
+			=f.text_field :title
+	.form-group
+		=f.label 'Submit your design', class: 'col-sm-2'
+		.col-sm-10
+			=file_field_tag 'images[]', multiple: true
+			-#=file_field_tag 'entry_entry_attachements_images',			 type: :file, multiple: true, name:'entry[entry_attachements_attributes][][image]'
+	.form-group
+		.col-sm-10.col-sm-offset-2
+			=f.submit 'Submit your entry', class: 'btn btn-success'
+= debug(params) if Rails.env.development?

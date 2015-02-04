@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20150122173059) do
+
+ActiveRecord::Schema.define(version: 20150202112654) do
+
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -56,6 +60,16 @@ ActiveRecord::Schema.define(version: 20150122173059) do
     t.datetime "updated_at"
   end
 
+  create_table "contests", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.boolean  "active",      default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "designers", force: true do |t|
     t.string   "name"
     t.text     "about"
@@ -63,6 +77,7 @@ ActiveRecord::Schema.define(version: 20150122173059) do
     t.string   "city"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id",    default: 0, null: false
   end
 
   create_table "dimensions", force: true do |t|
@@ -71,6 +86,26 @@ ActiveRecord::Schema.define(version: 20150122173059) do
     t.float    "height"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "entries", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "contest_id"
+    t.text     "description"
+    t.text     "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "entry_attachements", force: true do |t|
+    t.integer  "entry_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "title"
   end
 
   create_table "friendly_id_slugs", force: true do |t|
@@ -198,6 +233,16 @@ ActiveRecord::Schema.define(version: 20150122173059) do
   add_index "spree_assets", ["viewable_id"], name: "index_assets_on_viewable_id"
   add_index "spree_assets", ["viewable_type", "type"], name: "index_assets_on_viewable_type_and_type"
 
+  create_table "spree_authentication_methods", force: true do |t|
+    t.string   "environment"
+    t.string   "provider"
+    t.string   "api_key"
+    t.string   "api_secret"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "spree_calculators", force: true do |t|
     t.string   "type"
     t.integer  "calculable_id"
@@ -255,6 +300,19 @@ ActiveRecord::Schema.define(version: 20150122173059) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "spree_feedback_reviews", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "review_id",                 null: false
+    t.integer  "rating",     default: 0
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "locale",     default: "en"
+  end
+
+  add_index "spree_feedback_reviews", ["review_id"], name: "index_spree_feedback_reviews_on_review_id"
+  add_index "spree_feedback_reviews", ["user_id"], name: "index_spree_feedback_reviews_on_user_id"
 
   create_table "spree_gateways", force: true do |t|
     t.string   "type"
@@ -728,6 +786,24 @@ ActiveRecord::Schema.define(version: 20150122173059) do
   add_index "spree_return_items", ["customer_return_id"], name: "index_return_items_on_customer_return_id"
   add_index "spree_return_items", ["exchange_inventory_unit_id"], name: "index_spree_return_items_on_exchange_inventory_unit_id"
 
+  create_table "spree_reviews", force: true do |t|
+    t.integer  "suite_id"
+    t.string   "name"
+    t.string   "location"
+    t.integer  "rating"
+    t.text     "title"
+    t.text     "review"
+    t.boolean  "approved",        default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.string   "ip_address"
+    t.string   "locale",          default: "en"
+    t.boolean  "show_identifier", default: true
+  end
+
+  add_index "spree_reviews", ["show_identifier"], name: "index_spree_reviews_on_show_identifier"
+
   create_table "spree_roles", force: true do |t|
     t.string "name"
   end
@@ -1023,6 +1099,14 @@ ActiveRecord::Schema.define(version: 20150122173059) do
 
   add_index "spree_trackers", ["active"], name: "index_spree_trackers_on_active"
 
+  create_table "spree_user_authentications", force: true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "spree_users", force: true do |t|
     t.string   "encrypted_password",     limit: 128
     t.string   "password_salt",          limit: 128
@@ -1031,8 +1115,8 @@ ActiveRecord::Schema.define(version: 20150122173059) do
     t.string   "persistence_token"
     t.string   "reset_password_token"
     t.string   "perishable_token"
-    t.integer  "sign_in_count",                      default: 0, null: false
-    t.integer  "failed_attempts",                    default: 0, null: false
+    t.integer  "sign_in_count",                      default: 0,     null: false
+    t.integer  "failed_attempts",                    default: 0,     null: false
     t.datetime "last_request_at"
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
@@ -1053,11 +1137,17 @@ ActiveRecord::Schema.define(version: 20150122173059) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.string   "name"
+    t.string   "uid"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.boolean  "is_designer",                        default: false
   end
 
   add_index "spree_users", ["deleted_at"], name: "index_spree_users_on_deleted_at"
   add_index "spree_users", ["email"], name: "email_idx_unique", unique: true
   add_index "spree_users", ["spree_api_key"], name: "index_spree_users_on_spree_api_key"
+  add_index "spree_users", ["uid"], name: "index_spree_users_on_uid"
 
   create_table "spree_variants", force: true do |t|
     t.string   "sku",                                        default: "",    null: false
@@ -1136,6 +1226,8 @@ ActiveRecord::Schema.define(version: 20150122173059) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.date     "available_on"
+    t.decimal  "avg_rating",      precision: 7, scale: 5, default: 0.0, null: false
+    t.integer  "reviews_count",                           default: 0,   null: false
   end
 
   add_index "suites", ["available_on"], name: "index_suites_on_available_on"

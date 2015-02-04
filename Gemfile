@@ -26,8 +26,8 @@ group :production do
 end
 group :development do 
 	# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-	gem 'spring',        group: :development
-	gem 'better_errors', '~> 2.1.0', group: :development
+	gem 'spring'
+	gem 'better_errors', '~> 2.1.0'
 	# Use sqlite3 as the database for Active Record
 	gem 'sqlite3'	
 
@@ -35,6 +35,10 @@ group :development do
 	gem 'sunspot_solr'
 	# For seeing the progress
 	gem 'progress_bar'
+
+	#for opening the mail in browser
+  	gem "letter_opener"
+
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -93,3 +97,12 @@ gem 'font-awesome-sass', '~> 4.2.0'
 #gem 'spree_volume_pricing', '3.0.2'
 #gem 'spree_volume_pricing', :git => 'git://github.com/spree-contrib/spree_volume_pricing.git'
 
+gem 'popen4'
+
+gem 'seed-fu'
+gem 'omniauth-facebook'
+gem 'spree_social', github: 'spree-contrib/spree_social', branch: 'master'
+
+#user reviews
+gem 'spree_reviews', github: 'spree-contrib/spree_reviews', branch: 'master'
+>>>>>>> ee976950ae3a5a2f822cfa360376f38a6ea51072
