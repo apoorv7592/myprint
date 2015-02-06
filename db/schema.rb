@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20150122173059) do
-
 ActiveRecord::Schema.define(version: 20150202112654) do
-
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -105,7 +101,6 @@ ActiveRecord::Schema.define(version: 20150202112654) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.string   "title"
   end
 
   create_table "friendly_id_slugs", force: true do |t|
@@ -1137,17 +1132,12 @@ ActiveRecord::Schema.define(version: 20150202112654) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
-    t.string   "name"
-    t.string   "uid"
-    t.string   "oauth_token"
-    t.datetime "oauth_expires_at"
     t.boolean  "is_designer",                        default: false
   end
 
   add_index "spree_users", ["deleted_at"], name: "index_spree_users_on_deleted_at"
   add_index "spree_users", ["email"], name: "email_idx_unique", unique: true
   add_index "spree_users", ["spree_api_key"], name: "index_spree_users_on_spree_api_key"
-  add_index "spree_users", ["uid"], name: "index_spree_users_on_uid"
 
   create_table "spree_variants", force: true do |t|
     t.string   "sku",                                        default: "",    null: false

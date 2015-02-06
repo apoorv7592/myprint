@@ -17,21 +17,35 @@
 
 
               <div class="col-md-12" style="height:auto; width:746px;">
-                <div class="row">
+              <div class="row">
 	              <% if !@scsuite.nil? %>
 	              <% @scsuite.each do |p| %>
-	              <span>
-				  <div class="col-md-4" style="height:238px; width:240px; background:rgba(1,0,0,0.2);margin-right:8px;margin-top:10px;" >
-				  <%= link_to p.name, p %>
-			      <P> It was November. Although it was not yet late, the sky was dark when I turned into Laundress Passage. Father had finished for the day, switched off the shop lights and closed the shutters; but so I would not come home to darkness he had left on the light over the stairs to the flat. Through the glass in the door it cast a foolscap 
-			      </P>
-			      </div>
-                  </span>
-			      <% end %> 
-			      <% end %>                
-                </div>
+	               <span>
+
+                    <div class="col-md-4" style="height:350px; width:240px; margin-right:8px;margin-top:10px;border:1px solid rgba(1,0,0,0.2);" >
+                        <div style="height:240px; width:238px;background:rgba(1,0,0,0.2);">
+				                 <P> IMAGE	</P>
+                        </div>            
+                    
+                        <div class="viewsuitediv">
+                        <%= link_to p.name, p,:class => "viewsuitetxt" %><br>
+                        <font class ="viewsuitetxt">Rs.xxx</font><br>
+                        <%= link_to p.avg_rating,:class => "viewsuitetxt" %><br>
+                        <button type="button" class ="viewsuitebtn">
+                        <%= link_to "View Suite", p,:class => "viewsuitetxt1" %>
+                        </button> 
+
+
+                        </div>
+                    </div>
+
+                 </span>
+			          <% end %> 
+			          <% end %>                
+              </div>
               </div>
       </div>
+
 </div>
 
 

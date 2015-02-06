@@ -105,4 +105,4 @@ gem 'spree_social', github: 'spree-contrib/spree_social', branch: 'master'
 
 #user reviews
 gem 'spree_reviews', github: 'spree-contrib/spree_reviews', branch: 'master'
->>>>>>> ee976950ae3a5a2f822cfa360376f38a6ea51072
+

@@ -14,14 +14,14 @@
         
         $('#'+idNavigation).bind('mouseover',function(){
           clearTimeout(timeoutNavigationFade);
-          $('#'+idDiv).fadeIn(500);
+          $('#'+idDiv).fadeIn(700);
         });
         $('#'+idDiv).bind('mouseover',function(){
           clearTimeout(timeoutNavigationFade);
         });
         
         $('#'+idNavigation+", #"+idDiv).bind('mouseout',function(){
-          timeoutNavigationFade=setTimeout(function(){$("#"+idDiv).fadeOut(500);}, 500);
+          timeoutNavigationFade=setTimeout(function(){$("#"+idDiv).fadeOut(100);}, 100);
         });
 
 
@@ -65,7 +65,7 @@
                       
                   <div id="invitation" class="navigation-div">
                           
-                          <div class="row-fluid">
+                          <div class="row">
                             <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
                             <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
                             <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
