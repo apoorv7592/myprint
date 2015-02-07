@@ -1,19 +1,53 @@
-<style>
-.topmost-nav-list{
-    float: center;
-    margin-right: 5px;
-    margin-left: 5px;
-}
-
-#topmost-nav{
-	font-family: Georgia;
-	1
-}
-</style>
+  <title>Bootstrap</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 
-<nav id= 'topmost-nav' class="navbar navbar-default" role="navigation">
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $('ul.nav.navbar-nav.navbar-right li').each(function(){
+      try{
+        var idNavigation1 = $(this).attr('id');
+        var idDiv1 = idNavigation1.toLowerCase();
+        var timeoutNavigationFade;
+
+       
+        
+        $('#'+idNavigation1).bind('mouseover',function(){
+          clearTimeout(timeoutNavigationFade);
+          $('#'+idDiv1).fadeIn(500);
+        });
+        $('#'+idDiv1).bind('mouseover',function(){
+          clearTimeout(timeoutNavigationFade);
+        });
+        
+        $('#'+idNavigation1+", #"+idDiv1).bind('mouseout',function(){
+          timeoutNavigationFade=setTimeout(function(){$("#"+idDiv1).fadeOut(200);}, 200);
+        });
+
+
+      }
+      catch(e){
+        console.log("ERROR: "+e);
+      }
+    });
+  });
+  </script>
+
+<nav id= 'topmost-nav' class="navbar navbar-default" >
 	<ul class="nav navbar-nav navbar-right ">
+
+
+	    <li id="Login" class="abcd">
+			<%= link_to "Sign In", '/login/' %>
+		</li>
+
+		<li id="Myaccount" class="abcd">
+			<%= link_to "My Account", '/account/'  %>
+        </li>
 		
         <li class="topmost-nav-list">
 			<%= link_to "Cart", '/cart/' %>
@@ -35,12 +69,17 @@
 			<%= link_to "Log In", '/login/' %>  
 		<% end %>
         
-
-		</li>
-		
-
+	
 	</ul>
+
+
+
 </nav>
+ <div id="myaccount" class="uparrowdiv">
+
+ </div>
+
+
 
 
 

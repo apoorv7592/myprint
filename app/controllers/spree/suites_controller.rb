@@ -12,6 +12,6 @@ module Spree
 			@trm = @suite.trims
 			@pap = @suite.papers
 			@dim = @suite.dimensions
-		end
-	end	
+        end
+	end
 end
