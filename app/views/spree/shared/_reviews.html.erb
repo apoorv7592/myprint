@@ -17,6 +17,6 @@
 	<% if !Spree::Reviews::Config[:require_login] || spree_current_user %>
 		
 		<%= render 'review_modal' %>
- 		<%= link_to Spree.t(:write_your_own_review), new_suite_review_path(@suite), class: 'btn btn-default', rel: 'nofollow' %>
+ 		
 	<% end %>
 </div>
