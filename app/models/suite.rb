@@ -23,6 +23,12 @@ class Suite < ActiveRecord::Base
 	has_many :spree_products, :class_name => 'Spree::Product'
 	has_many :reviews,:class_name=> 'Spree::Review'
 
+	validates_presence_of :name, message: 'Name cannot be blank'
+	validates_presence_of :sku_id, message: 'SKU ID cannot be blank'
+	validates_presence_of :sub_category_id, message: 'Sub category ID cannot be blank'
+	validates_presence_of :designer_id, message: 'Designer cannot be blank'
+	validates_presence_of :available_on, message: 'Available on cannot be blank'
+
 	scope :active, ->  { where( "available_on < ? " , Date.today)}
 	
 	searchable do 

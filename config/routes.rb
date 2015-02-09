@@ -28,6 +28,7 @@ Rails.application.routes.draw do
 
     namespace :admin do 
       resources :banners
+      resources :suites
     end
     get '/search'  => 'solrsearch#index'
     routes = lambda do
