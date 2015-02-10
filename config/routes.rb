@@ -24,8 +24,15 @@ Rails.application.routes.draw do
     resources :contests
     resources :entries
 
+    resources :designers
 
-
+    resources :users do
+      member do
+        get :following, :followers
+      end
+    end
+    resources :relationships, only: [:create, :destroy]
+    
     namespace :admin do 
       resources :banners
       resources :suites

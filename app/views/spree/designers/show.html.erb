@@ -1,0 +1,32 @@
+<h4> This is the Designer show page </h4>
+
+<div>
+	<b> Name </b>
+	<%= @details.name %>
+</div>
+
+<div>
+	<b>About the designer </b>
+	<%= @details.about %>
+</div>
+<div>
+	<b>City</b>
+	<%= @details.city %>
+</div>
+
+<%= render 'stats' %>
+
+<% if spree_current_user %>
+	<% unless spree_current_user==@designer %>
+	  <div id="follow_form">
+	  <% if spree_current_user.following?(@designer) %>
+	    <%= render 'unfollow' %>
+	  <% else %>
+	    <%= render 'follow' %>
+	  <% end %>
+	  </div>
+	<% end %>
+<% else %>
+	<%= link_to 'Login to Follow this designer', '/login' %>
+<% end %>
+
