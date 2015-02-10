@@ -1,0 +1,39 @@
+
+<div class="row">
+	<div class="col-sm-offset-2">
+	<h4> New Suite </h4>
+		<%= form_for @suite, url: admin_suites_path, class: 'form-horizontal' do |f| %>
+			<div class="row form-group">
+				<%= f.label :sku_id, class: 'col-sm-2' %>
+				<%= f.text_field :sku_id, class: 'col-sm-6'%>
+			</div>
+			<div class="row form-group">
+				<%= f.label :name, class: 'col-sm-2' %>
+				<%= f.text_field :name, class: 'col-sm-6'%>
+				
+			</div>
+			<div class="row form-group">
+				<%= f.label :description, class: 'col-sm-2' %>
+				<%= f.text_field :description, class: 'col-sm-6'%>
+			</div>
+			<div class="row form-group">
+				<%= f.label 'Designer', class: 'col-sm-2' %>
+				<%= f.select :designer_id,Designer.all.collect{|d| [d.name,d.id]}, class: 'col-sm-6'%>
+			</div>
+
+			<div class="row form-group">
+				<%= f.label 'Sub Category', class: 'col-sm-2' %>
+				<%= f.select :sub_category_id,SubCategory.all.collect{|d| [d.name,d.id]}, class: 'col-sm-6'%>
+			</div>
+			
+			<div class="row form-group">
+				<%= f.label 'Available from', class: 'col-sm-2' %>
+				<%= f.date_field :available_on %>
+			</div>
+
+			<div class="row form-group">
+				<%= f.submit 'Submit', class: 'btn btn-primary col-sm-4 col-sm-offset-2' %>
+			</div>
+		<% end %>
+	</div>
+</div>

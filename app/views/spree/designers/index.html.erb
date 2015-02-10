@@ -1,0 +1,21 @@
+<h4> Our Designers </h4>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>About</th>
+			<th>City</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @designers.each do |d| %>
+			<tr>
+				<td><%= link_to d.name, d %></td>
+				<td><%= d.about %></td>
+				<td><%= d.city %></td>
+			</tr>
+			
+		<% end %>
+	</tbody>
+</table>

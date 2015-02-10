@@ -11,6 +11,8 @@
 #  created_at      :datetime
 #  updated_at      :datetime
 #  available_on    :date
+#  avg_rating      :decimal(7, 5)    default(0.0), not null
+#  reviews_count   :integer          default(0), not null
 #
 
 class Suite < ActiveRecord::Base
@@ -21,7 +23,13 @@ class Suite < ActiveRecord::Base
 	has_and_belongs_to_many :papers
 	has_and_belongs_to_many :dimensions
 	has_many :spree_products, :class_name => 'Spree::Product'
-	has_many :spree_reviews,:class_name=> 'Spree::Review'
+	has_many :reviews,:class_name=> 'Spree::Review'
+
+	validates_presence_of :name, message: 'Name cannot be blank'
+	validates_presence_of :sku_id, message: 'SKU ID cannot be blank'
+	validates_presence_of :sub_category_id, message: 'Sub category ID cannot be blank'
+	validates_presence_of :designer_id, message: 'Designer cannot be blank'
+	validates_presence_of :available_on, message: 'Available on cannot be blank'
 
 	scope :active, ->  { where( "available_on < ? " , Date.today)}
 	

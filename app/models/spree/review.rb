@@ -1,3 +1,23 @@
+# == Schema Information
+#
+# Table name: spree_reviews
+#
+#  id              :integer          not null, primary key
+#  suite_id        :integer
+#  name            :string(255)
+#  location        :string(255)
+#  rating          :integer
+#  title           :text
+#  review          :text
+#  approved        :boolean          default(FALSE)
+#  created_at      :datetime
+#  updated_at      :datetime
+#  user_id         :integer
+#  ip_address      :string(255)
+#  locale          :string(255)      default("en")
+#  show_identifier :boolean          default(TRUE)
+#
+
 class Spree::Review < ActiveRecord::Base
 	belongs_to :suite, touch: true
 	belongs_to :user, class_name: Spree.user_class.to_s

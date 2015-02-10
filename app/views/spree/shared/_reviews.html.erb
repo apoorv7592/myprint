@@ -2,7 +2,7 @@
 	<h3 class="suite-section-title"><%= Spree.t(:reviews) %></h3>
 	
 
-	<% if Spree::Reviews::Config[:include_unapproved_reviews] == false and @suite.spree_reviews.approved.count == 0 %>
+	<% if Spree::Reviews::Config[:include_unapproved_reviews] == false and @suite.reviews.approved.count == 0 %>
 		<p class="reviews-none"><%= Spree.t(:no_reviews_available) %></p>
 	<% else %>
 	
@@ -15,6 +15,8 @@
 
 
 	<% if !Spree::Reviews::Config[:require_login] || spree_current_user %>
-		<%= link_to Spree.t(:write_your_own_review), new_suite_review_path(@suite), class: 'btn btn-default', rel: 'nofollow' %>
+		
+		<%= render 'review_modal' %>
+ 		
 	<% end %>
 </div>

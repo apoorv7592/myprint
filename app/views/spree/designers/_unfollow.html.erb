@@ -1,0 +1,3 @@
+<%= form_for(spree_current_user.active_relationships.where(followed_id: @designer.id).first, html: { method: :delete }) do |f| %>
+  <%= f.submit "Unfollow", class: "btn" %>
+<% end %>
