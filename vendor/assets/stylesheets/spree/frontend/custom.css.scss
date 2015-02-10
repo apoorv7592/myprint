@@ -62,8 +62,8 @@ ul.nav.navbar-nav.navbar-right >a{
     background:white;
     border-left:1px solid rgba(1,0,0,0.3);
     border-right:1px solid rgba(1,0,0,0.3);
-    position:relative;
-    top:40px;
+    position:absolute;
+    top:130px;
     left:0px;
     width:1000px;
     height:auto;
@@ -109,8 +109,8 @@ margin-left: 0!important;
 
   .abc >a{color:rgba(1,0,0,0.8);height:20px;}
 
-
-  .abcd >a{color:rgba(1,0,0,0.8);}
+/* topmost nav bar */
+  .topmost >a{color:rgba(1,0,0,0.8);}
 
 
   .footerbottom{
@@ -202,7 +202,7 @@ margin-left: 0!important;
 .uparrowdiv{
 z-index:1100; 
 width:180px;
-min-height:250px; /*min height of DIV should be set to at least 2x the width of the arrow*/
+min-height:200px; /*min height of DIV should be set to at least 2x the width of the arrow*/
 background: black;
 padding:5px;
 position:absolute;
@@ -211,6 +211,7 @@ word-wrap:break-word;
 margin-bottom:2em;
 left:754px;
 border:2px solid rgba(1,0,0,0);
+display:none
 }
 
 .uparrowdiv:after{ /*arrow added to uparrowdiv DIV*/
@@ -378,10 +379,49 @@ right: 20px;
   color:#40e0d0;
   font-size:10px;
   }
+/* smaall div box in catalog page below image of color */
 
 
+.filterbox{
+  width:238px;
+  height:1500px;
+  border: 1px solid black;
+  background:rgba(1,0,0,0.2);
+}
 
 
+.filterboxtxt{
+  float:center;
+  color:black;
+  font-size:12px;
+  }
+
+.filterboxtxt1{
+  margin-left:20px;
+  color:black;
+  font-size:12px;
+  }
+
+li.checkbox1{
+  border-radius:0px;
+  width:200px;
+  height:200px;
+  border:1px solid black;
+  color:blue;
+}
+
+li.ulfilterbox{
+  list-style-type:none;
+  float:left !important;
+  padding:none;
+}
+
+.rowfilterbox{
+  width:217px;
+  height:auto;
+  border: 1px solid rgba(1,0,0,0.01);
+  margin-bottom:20px;
+}
 
 
 

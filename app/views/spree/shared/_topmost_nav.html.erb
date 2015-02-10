@@ -41,33 +41,21 @@
 	<ul class="nav navbar-nav navbar-right ">
 
 
-	    <li id="Login" class="abcd">
+	    <li id="Login" class="topmosta">
 			<%= link_to "Sign In", '/login/' %>
-		</li>
+		  </li>
 
-		<li id="Myaccount" class="abcd">
+		  <li id="Myaccount" class="topmosta">
 			<%= link_to "My Account", '/account/'  %>
-        </li>
+      </li>
 		
-        <li class="topmost-nav-list">
+      <li id="Cart" class="topmosta">
 			<%= link_to "Cart", '/cart/' %>
-		</li>
-		 <li class="topmost-nav-list">
+		  </li>
+		 
+    <li id="Wishlist" class="topmosta">
 			<%= link_to "Wishlist", '/wishlist/' %>
 		</li>
-		
-		<%if spree_current_user %>
-			<li class="topmost-nav-list">	
-				<%= link_to spree_current_user.email, '/myaccount' %>
-			</li>
-			
-			<li class="topmost-nav-list">	
-				<%= link_to "Logout", '/logout/' %>
-			</li>
-
-		<% else %>
-			<%= link_to "Log In", '/login/' %>  
-		<% end %>
         
 	
 	</ul>
