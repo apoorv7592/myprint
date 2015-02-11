@@ -30,11 +30,19 @@
                         <div class="viewsuitediv">
                         <%= link_to p.name, p,:class => "viewsuitetxt" %><br>
                         <font class ="viewsuitetxt">Rs.xxx</font><br>
-                        <%= link_to p.avg_rating,:class => "viewsuitetxt" %><br>
+                        <div style="width:100px;height:17px; border:1px solid rgba(1,0,0,0.05);margin-left:50px;margin-right:50px;">
+                         <% if p.colors.first %>
+                          <% p.colors.each do |sc| %>
+                        <div style="width:15px;height:15px; float:center;margin-left:5px;float:left; background:<%= sc.code %>">
+                        </div>
+                         <%end %>
+                         <%end %>
+                        </div>
+                        <%= link_to p.avg_rating,:class => "viewsuitetxt" %>(<%= link_to p.reviews_count,:class => "viewsuitetxt" %>)<br>
                         <button type="button" class ="viewsuitebtn">
                         <%= link_to "View Suite", p,:class => "viewsuitetxt1" %>
-                        </button> 
 
+                        </button> 
 
                         </div>
                     </div>
@@ -47,5 +55,7 @@
       </div>
 
 </div>
+
+
 
 
