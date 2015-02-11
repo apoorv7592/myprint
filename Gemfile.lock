@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/ast0708/spree_chimpy.git
+  revision: 643942a832ef3b6db26b431a8b2af927a8cf867e
+  branch: master
+  specs:
+    spree_chimpy (2.0.0.alpha)
+      mailchimp (>= 0.0.9)
+      spree_core (~> 3.0.0.beta)
+
+GIT
   remote: git://github.com/spree-contrib/spree_reviews.git
   revision: aaa76230da9cca35e1d7b084922be94266ef9040
   branch: master
@@ -244,6 +253,8 @@ GEM
       launchy (~> 2.2)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    mailchimp (0.0.9)
+      httparty
     mime-types (2.4.3)
     mini_portile (0.6.1)
     minitest (5.4.3)
@@ -457,6 +468,7 @@ DEPENDENCIES
   seed-fu
   spree!
   spree_auth_devise!
+  spree_chimpy!
   spree_gateway!
   spree_reviews!
   spree_social!

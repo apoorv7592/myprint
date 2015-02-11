@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150210061812) do
+ActiveRecord::Schema.define(version: 20150210124330) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -293,6 +293,21 @@ ActiveRecord::Schema.define(version: 20150210061812) do
 
   add_index "spree_calculators", ["calculable_id", "calculable_type"], name: "index_spree_calculators_on_calculable_id_and_calculable_type"
   add_index "spree_calculators", ["id", "type"], name: "index_spree_calculators_on_id_and_type"
+
+  create_table "spree_chimpy_order_sources", force: true do |t|
+    t.integer  "order_id"
+    t.string   "campaign_id"
+    t.string   "email_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spree_chimpy_subscribers", force: true do |t|
+    t.string   "email",                     null: false
+    t.boolean  "subscribed", default: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "spree_configurations", force: true do |t|
     t.string   "name"
@@ -1181,6 +1196,7 @@ ActiveRecord::Schema.define(version: 20150210061812) do
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
     t.boolean  "is_designer",                        default: false
+    t.boolean  "subscribed"
   end
 
   add_index "spree_users", ["deleted_at"], name: "index_spree_users_on_deleted_at"
