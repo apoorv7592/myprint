@@ -33,6 +33,7 @@ Rails.application.routes.draw do
     end
     resources :relationships, only: [:create, :destroy]
     
+    get '/wedding', to: 'landing_pages#wedding'
     
     get '/search'  => 'solrsearch#index'
     routes = lambda do

@@ -57,7 +57,7 @@ gem 'spree_gateway', github: 'spree/spree_gateway'
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise'
 
 #installing bootstrap
-gem 'bootstrap-sass', '~> 3.3.1.0'
+gem 'bootstrap-sass', '~> 3.3.3'
 
 # S3 Amazon configuration
 gem 'aws-sdk', '~> 1.59.1'
@@ -105,3 +105,10 @@ gem 'spree_reviews', github: 'spree-contrib/spree_reviews', branch: 'master'
 
 #Integrate mailchimp with spree
 gem 'spree_chimpy', github: 'ast0708/spree_chimpy', branch: 'master'
+
+#for font-awesome icons
+gem "font-awesome-rails"
+
+gem 'less-rails', '~> 2'
+gem 'therubyracer', '~> 0.12.1'
+gem 'sprockets-rails', '~> 2.2.2'
