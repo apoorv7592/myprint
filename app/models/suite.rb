@@ -41,6 +41,7 @@ class Suite < ActiveRecord::Base
 			designer.name
 		end
 
+		integer :sub_category_id, references: SubCategory
 		integer :designer_id, multiple:true, references: Designer
 		integer :color_ids, multiple:true, references: Color
 		integer :trim_ids, multiple:true, references: Trim
