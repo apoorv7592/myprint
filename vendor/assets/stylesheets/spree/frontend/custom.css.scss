@@ -14,14 +14,15 @@
 }
 
 ul.nav.navbar-nav.navbar-right{
-  width:262px;
-  height:40px;
+  width:155px;
+  height:30px;
   margin-right:0px !important;
   margin-bottom:10px !important;
+  float:right;
 }
-ul.nav.navbar-nav.navbar-right >a{
-  float:left;
-  margin-right:4px;
+navbar-nav.navbar-right>li>a{
+  float:right;
+  padding:none !important;
 }
 
 #logo >a >img{
@@ -34,7 +35,7 @@ ul.nav.navbar-nav.navbar-right >a{
  
  nav#topmost-nav.navbar.navbar-default{
  height:30px;
- margin-bottom:7px !important;
+ margin-bottom:20px !important;
  }
 
  input#search.form-control{
@@ -63,7 +64,7 @@ ul.nav.navbar-nav.navbar-right >a{
     border-left:1px solid rgba(1,0,0,0.3);
     border-right:1px solid rgba(1,0,0,0.3);
     position:absolute;
-    top:130px;
+    top:140px;
     left:0px;
     width:1000px;
     height:auto;
@@ -74,12 +75,12 @@ ul.nav.navbar-nav.navbar-right >a{
     border-bottom:2px solid rgba(255,0,0,0.7);
 }
 
-.navbar-nav>li>a:hover,.navbar-nav>li>a:focus{color:rgba(0,200,160,0.5) !important;}
+.navbar-nav>li>a:hover,.navbar-nav>li>a:focus{color:rgba(0,200,160,0.5) !important;padding:none !important;}
 
 .navbar-nav>li>a,.navbar-nav>li>a{
   background:white !important;
   height:20px !important;
-  padding: none !important;
+  padding:none !important;
   }
 
 .row
@@ -146,13 +147,12 @@ margin-left: 0!important;
     width:249px;
   }
 
-
+/* Sign up box in footer*/
   #inputboxsubs{
   width:300px;
   height:36px;
   text-align:center;
-  color:rgba(1,0,0,0.4);
-  border-radius:0px;
+  color:rgba(1,0,0,0.7);
   margin-left:350px;
   }
 
@@ -203,14 +203,15 @@ margin-left: 0!important;
 z-index:1100; 
 width:180px;
 min-height:200px; /*min height of DIV should be set to at least 2x the width of the arrow*/
-background: black;
+background: rgba(1,0,0,0.4);
 padding:5px;
 position:absolute;
 word-wrap:break-word;
 -moz-border-radius:5px; /*add some nice CSS3 round corners*/
 margin-bottom:2em;
-left:754px;
+left:835px;
 border:2px solid rgba(1,0,0,0);
+border-bottom:red;
 display:none
 }
 
@@ -218,11 +219,12 @@ display:none
 content:'';
 display:block;
 position:absolute;
-top:-19px; /*should be set to -border-width x 2 */
+top:-22px; /*should be set to -border-width x 2 */
 left:80px;
 width:0;
 height:0;
-border-color: transparent transparent black transparent; /*border color should be same as div div background color*/
+border-color: transparent transparent rgba(1,0,0,0.4)
+ transparent; /*border color should be same as div div background color*/
 border-style: solid;
 border-width: 10px;
 
@@ -232,6 +234,7 @@ border-width: 10px;
   display:none;
 }
 
+/* used in Users page in users/show.html.erb*/
 .removeline{
 text-decoration: none;
 color:black;
@@ -379,9 +382,8 @@ right: 20px;
   color:#40e0d0;
   font-size:10px;
   }
-/* smaall div box in catalog page below image of color */
 
-
+/* small div box in catalog page below image of color */
 .filterbox{
   width:238px;
   height:1500px;
@@ -422,6 +424,16 @@ li.ulfilterbox{
   border: 1px solid rgba(1,0,0,0.01);
   margin-bottom:20px;
 }
+
+  #suitedescdiv{
+    list-style-type: none;
+    border-left:1px solid rgba(1,0,0,0.2);
+    width:500px;
+  }
+
+  .descriptionbox{
+  padding:20px;
+    }
 
 
 

@@ -202,19 +202,6 @@ $(document).ready(function(){ // on document load
   <div class="col-md-6" style="height:716px; width:492px;margin-right:8px;border:1px solid rgba(1,0,0,0.2);" >
   
   <div id="thumbsliderdiv"></div>
-  <div class="col-md-6" style="max-height:200px; width:492px;margin-top:20px;background:rgba(1,0,0,0.2);overflow-y: scroll;" >
-  <h3>Description goes here</h3><br/>
-  xxxxx<br>
-  xxxxx<br>
-  xxxxx<br>
-  xxxxx<br>
-  xxxxx<br>
-  xxxxx<br>
-  xxxxx<br>
-
-
-
-  </div>
   </div>
   
   <div class="col-md-6" style="height:716px; width:492px;border:1px solid rgba(1,0,0,0.2);;margin-left:8px;">
@@ -311,33 +298,66 @@ $(document).ready(function(){ // on document load
 
         </div>
       </div>
- </div>     
+ </div>  
+
+<div class="col-md-12" style="max-height:200px; width:1000px; background:rgba(1,0,0,0.2);overflow-y: scroll;" >
+  <div class="row"> 
+    <div  class="col-md-6">
+        <div class="descriptionbox">
+          <h1>Description:</h1>
+          Created for you by Minted’s global community of designers, our invitation designs will set the perfect tone for your wedding day. With unique designs printed on luxe paper, all foil pressed wedding invitations are available with several matching accessories. If you have any questions or special requests for your invitations, please email us.
+        </div>
+    </div>
+
+<div id ="suitedescdiv" class="col-md-6" >
+<div class="descriptionbox">
+
+<b>Dimensions:</b><br/>
+ 5" x 7" Printing: flat Card Type: flat Tags:kraft, gold, foil pressed, gold foil, modern, festive<br/><br/>
+<b>Printing Time:</b><br/>
+Order today by midnight PST with FedEx Ground shipping and receive your order by Tuesday, February 24. See more delivery options.<br/><br/>
+<b>Customization options:</b><br/>
+This wedding invitation can also be used for a general party invitation or converted into an entire invitation suite. Please email us for more details.
+</div>
+</div>
+
+  </div>
+  </div>
+   
 
 
 <div class="col-md-12" style="height:auto; width:1000px; ">
                 
           <div class="row" style="margin-top:10px;">
                   
-              <div class="col-md-6" style="height:416px; width:492px; margin-right:8px;background:rgba(1,0,0,1);" >
+              <div class="col-md-6" style="height:516px; width:492px; margin-right:8px;background:rgba(1,0,0,0.2);" >
                   
 
-                  <div class="col-md-6" style="height:200px; width:492px;margin-top:8px;background:rgba(1,0,0,0.2);">
-                  <div class="row">
-                  <% $i = 0 %>
-                  <% $num = 10 %>
-                  <%while $i < $num  do%>
-                  <span>
-                  
-                  <div class="col-md-1" style="height:92px; width:90px;margin-right:4px;margin-left:4px;margin-bottom:4px;margin-top:4px; background:rgba(1,0,0,1);float:right;">fuck</div>
-                  </span>
-                  <%$i +=1 %>
-                  <% end%>
+                  <div class="col-md-6" style="height:320px; width:484px;margin:none;background:rgba(1,0,0,0.05);border-bottom:1px solid black;">
+                          <div class="row">
+                          <% $i = 0 %>
+                          <% $num = 6 %>
+                          <%while $i < $num  do%>
+                          <span>
+                          
+                          <div class="col-md-1" style="height:150px; width:150px;margin-right:4px;margin-left:4px;margin-bottom:4px;margin-top:4px; background:white;float:right;">more products</div>
+                          </span>
+                          <%$i +=1 %>
+                          <% end%>
+                          </div>
                   </div>
+
+                  <div >
+                  <h1>Write a Review</h1>
+                  <%= button_to 'Write reviews', new_suite_review_path(@suite), method: :get,remote: true%>
+                  <%= asset_path('star.gif') %>
+                  <%= image_tag 'star.gif' %>
+                  <%= render 'spree/shared/reviews' %>
                   </div>
 
               </div>
                   
-              <div class="col-md-6" style="height:416px; width:492px;margin-left:8px;background:rgba(1,0,0,0.2);">
+              <div class="col-md-6" style="height:516px; width:492px;margin-left:8px;background:rgba(1,0,0,0.2);">
               banner Area
               </div>
 
@@ -347,9 +367,5 @@ $(document).ready(function(){ // on document load
   
 
 
-<%#= button_to 'Write reviews', new_suite_review_path(@suite), method: :get,remote: true%>
 
-<%= asset_path('star.gif') %>
-<%= image_tag 'star.gif' %>
-<%= render 'spree/shared/reviews' %>
 
