@@ -41,19 +41,22 @@
 	<ul class="nav navbar-nav navbar-right ">
 
 
-	    <li id="Login" class="topmosta">
+	    
   			<%= render 'spree/shared/sign_in' %>
         
         <% if spree_current_user %>
-          <%= link_to "My Account", '/account/'  %>  
-        <% else %>
-          <%= link_to "Sign In", '#',"data-toggle"=>"modal", "data-target"=>"#myModal" %>
-        <% end %>
-		  </li>
+          <li id="Myaccount" class="topmosta">
+            <%= link_to "My Account", '/account/'  %>
+          </li>
 
-		  <li id="Myaccount" class="topmosta">
-			<%= link_to "My Account", '/account/'  %>
-      </li>
+        <% else %>
+          <li id="Login" class="topmosta">
+            <%= link_to "Login / Signup", '#',"data-toggle"=>"modal", "data-target"=>"#myModal" %>
+          </li>
+        <% end %>
+		  
+
+		  
 		
       <li id="Cart" class="topmosta">
 			<%= link_to "Cart", '/cart/' %>
