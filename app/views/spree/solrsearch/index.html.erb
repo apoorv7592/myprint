@@ -118,37 +118,28 @@
 
               <div class="col-md-12" style="height:auto; width:746px;">
               <div class="row">
-                <% if !@suites.nil? %>
-                <% @suites.each do |p| %>
-                 <span>
-
-                    <div class="col-md-4" style="height:350px; width:240px; margin-right:8px;margin-bottom:10px;border:1px solid rgba(1,0,0,0.2);" >
-                        <div style="height:240px; width:238px;background:rgba(1,0,0,0.2);">
-                         <P> IMAGE  </P>
-                        </div>            
-                    
-                        <div class="viewsuitediv">
-                        <%= link_to p.name, p,:class => "viewsuitetxt" %><br>
-                        <font class ="viewsuitetxt">Rs.xxx</font><br>
-                        <div style="width:100px;height:17px; border:1px solid rgba(1,0,0,0.05);margin-left:50px;margin-right:50px;">
-                         <% if p.colors.first %>
-                          <% p.colors.each do |sc| %>
-                        <div style="width:15px;height:15px; float:center;margin-left:5px;float:left; background:<%= sc.code %>">
+                <% if @suites.present? %>
+                  <% @suites.each do |p| %>
+                   <%= render 'spree/solrsearch/suite', p: p %>
+                  <% end %> 
+                
+                <%else %>
+                  <div>No Results found</div>
+                  <%= form_tag '/search', :method => :get, class: "form-horizontal" do %>
+                      <div class="form-group">
+                        <%= label_tag 'Search',nil, class: 'col-md-2 control-label' %>
+                        <div class="col-md-6">
+                          <%= search_field_tag :search, params[:search], class: "form-control"%>
+                        </div>  
+                      </div>
+                      
+                      <div class="form-group">
+                        <div class="col-md-4 col-md-offset-2">
+                          <%= submit_tag 'Submit' %>
                         </div>
-                         <%end %>
-                         <%end %>
-                        </div>
-                        <%= link_to p.avg_rating,:class => "viewsuitetxt" %>(<%= link_to p.reviews_count,:class => "viewsuitetxt" %>)<br>
-                        <button type="button" class ="viewsuitebtn">
-                        <%= link_to "View Suite", p,:class => "viewsuitetxt1" %>
-
-                        </button> 
-
-                        </div>
-                    </div>
-
-                 </span>
-                <% end %> 
+                      </div>    
+                  <% end %>
+                
                 <% end %>                
               </div>
               </div>
