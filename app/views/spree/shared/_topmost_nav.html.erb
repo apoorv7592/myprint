@@ -42,7 +42,13 @@
 
 
 	    <li id="Login" class="topmosta">
-			<%= link_to "Sign In", '/login/' %>
+  			<%= render 'spree/shared/sign_in' %>
+        
+        <% if spree_current_user %>
+          <%= link_to "My Account", '/account/'  %>  
+        <% else %>
+          <%= link_to "Sign In", '#',"data-toggle"=>"modal", "data-target"=>"#myModal" %>
+        <% end %>
 		  </li>
 
 		  <li id="Myaccount" class="topmosta">
