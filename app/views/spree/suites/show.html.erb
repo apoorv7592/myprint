@@ -1,355 +1,303 @@
-
 <script type="text/javascript">
-
-$(document).ready(function() {
-$('input:radio').click(function() {
-var value = $("input[name='paper']:checked").val();
-$('p').html("Checked Radio Button Value is :"+ value );
-});
-});
-
-
-(function($) {
-$.fn.imageSlider=function(options){
-   var container=$(this);
-   function deployCanvas(options,container){
-      var auto_scroll=options.auto_scroll;
-      var auto_scroll_speed=options.auto_scroll_speed;
-      var images_path=options.images_path;
-      var thumbs =options.thumbs;
-      var stop_on_click=options.stop_on_click
-      var stop_after=options.stop_after; 
-      var canvas_height=options.canvas_height;
-      var canvas_width=options.canvas_width;
-      var complete_cycle_slide=options.complete_cycle_slide;
-      var main_image_container=$(document.createElement('div'))
-                    .addClass("main_image_container")
-                    .append($(document.createElement('div')).addClass("main_image_scroller"))
-                    .append($(document.createElement('div')).addClass("description_container"));
-      var thumbs_list_container=$(document.createElement('div')).addClass("thumbs_list_container");
-      
-
-      container.append(main_image_container)
-           .append(thumbs_list_container)
-           .addClass("slider_container");
-      
-      
-      //resize the canvas to the custom width/height
-      container.find(".main_image_scroller")
-        .css("height",canvas_height+"px")
-        .css("width",canvas_width+"px")
-      container.find(".thumbs_list_container").css("height",canvas_height+"px");
-      
-      var current_thumb=0;
-      var current_cycle=1;
-      var slide_interval=null;
-      var images_number=thumbs.length;
-      var thumbfrag=$();
-      var mainfrag=$();
-      for(var x=0;x<images_number;x++){
-        var current_image=images_path+thumbs[x];
-        thumbfrag=thumbfrag.add(new newThumb(current_image,x,container));
-        mainfrag=mainfrag.add(new newMain(current_image,x,container))
-      }
-      container.find(".thumbs_list_container").append(thumbfrag);
-      container.find(".main_image_scroller").append(mainfrag);
-      var main_image_scroller=container.find(".main_image_scroller") //cache reference
-      var description_container=container.find(".description_container") //cache reference
-      var largeimages=main_image_scroller.find('div.main_image') //cache reference
-      var thumbs=container.find(".thumbs_list_container").find("div") //cache ref to thumb divs
-      var largeimageheight=largeimages.eq(0).outerHeight()
-
-      if(thumbs.length==0)
-        container.find(".thumbs_list_container").css('visibility','hidden');
-        description_container.hide();
-      
-      function newThumb(src,no,container){
-        
-        return $(document.createElement('div'))
-          .html($("<img src='"+encodeURI(src)+"' width=100 height=60>"))
-              .addClass("thumb")
-              .attr("src","'"+src+"'")
-              .attr("id",'thumb_'+no)
-              .prop("container",container)
-              .mouseover(function(){
-                clearTimeout(slide_interval);
-                thumbs.removeClass('thumb_selected').eq(no).addClass('thumb_selected')
-          main_image_scroller.stop().animate({top:'-'+(largeimageheight*no)},complete_cycle_slide);
-                
-                if(auto_scroll==true)
-                  {
-              current_thumb=no
-                    current_thumb++;
-                    if(current_thumb==images_number)
-                      {
-                        current_thumb=0;
-                        current_cycle++;
-                      }                               
-                    if((current_cycle>stop_after)&&(stop_after!=0))
-                      {
-                        autoscroll=false;
-                        return;
-                      }
-                    slide_interval=setTimeout(function(){
-                      thumbs.eq(current_thumb).trigger("mouseover");
-                    },auto_scroll_speed);
-                  }
-                
-              })
-              .mouseup(function(){
-                if(stop_on_click==true)
-                  auto_scroll=false;  
-              }); 
-      };
-      function newMain(src,no,container){
-        return $(document.createElement('div'))
-          .append($('<div style="width:100%;height:100%;background:url('+encodeURI(src)+')  center center no-repeat;"></div>'))
-              .addClass("main_image")
-              .attr("src",src)
-              .attr("id","main_"+no)
-              .click(function(){
-              })
-              .mouseover(function(){
-              })
-              .mouseout(function(){
-              })
-      };  
-      
-      container.find(".thumbs_list_container").find("div").eq(0).trigger("mouseover");
-   }
-   
-  var options = $.extend( {
-      'auto_scroll':false,
-      'auto_scroll_speed':2500,
-      'images_path':'',//this is the path to the folder added in front of all the pages (if specified);
-      'thumbs':[], //The names of the images you want in the slider each separated by a comma
-      'stop_on_click':true,//set this to true if you want the aoutoscroll to stop once the user clicks on a thumbnail
-          /*this is the number of cycles the autoscroll will run for; if autoscroll is set to false, this is ignored;
-       *  if stop_on_click is set to true, this will be ignored after the user clicks a thumbnail
-       *  if this is set to 0, the loop will run infinitely*/
-    'stop_after':0,
-    'complete_cycle_slide':300,//this determines the speed needed to cycle from first image to the last. Cycling from image 1 to image 2 is complete_cycle_slide/[number of images];
-    //change these 2 values to set the canvas height and width; the thumbs area will be resized in height automatically, depending on the canvas height;
-    'canvas_height':385,
-    'canvas_width':410
-    }, options);   
-          
-
-   return this.each(function(){
-    var preloadimages=[]
-    for (var i=0, c=options.thumbs.length; i<c; i++){
-      preloadimages[i]=new Image()
-      preloadimages[i].src=options.thumbs[i]
-    } 
-    new deployCanvas(options,container);
-   });
-  
-} 
-  
-  
-})(jQuery)
-
-
-//Initialization code:
-$(document).ready(function(){ // on document load
-    
-    $("#thumbsliderdiv").imageSlider({ //initialize slider
-      'thumbs': ["images/buttonsignup.jpg","facebook.jpg","g+.jpg","images/4.jpg","images/5.jpg","images/6.jpg","images/7.jpg"], // file names of images within slider. Default path should be changed inside thumbslide.js (near bottom)
-      'auto_scroll':false,
-      'auto_scroll_speed':4500,
-      'stop_after': 2, //stop after x cycles? Set to 0 to disable.
-      'canvas_width':700,
-      'canvas_height':500 // <-- No comma after last option
-      })
+  $(document).ready(function() {
+  $('input:radio').click(function() {
+  var value = $("input[name='paper']:checked").val();
+  $('p').html("Checked Radio Button Value is :"+ value );
   });
-
+  });
+  
+  
+  (function($) {
+  $.fn.imageSlider=function(options){
+     var container=$(this);
+     function deployCanvas(options,container){
+        var auto_scroll=options.auto_scroll;
+        var auto_scroll_speed=options.auto_scroll_speed;
+        var images_path=options.images_path;
+        var thumbs =options.thumbs;
+        var stop_on_click=options.stop_on_click
+        var stop_after=options.stop_after; 
+        var canvas_height=options.canvas_height;
+        var canvas_width=options.canvas_width;
+        var complete_cycle_slide=options.complete_cycle_slide;
+        var main_image_container=$(document.createElement('div'))
+                      .addClass("main_image_container")
+                      .append($(document.createElement('div')).addClass("main_image_scroller"))
+                      .append($(document.createElement('div')).addClass("description_container"));
+        var thumbs_list_container=$(document.createElement('div')).addClass("thumbs_list_container");
+        
+  
+        container.append(main_image_container)
+             .append(thumbs_list_container)
+             .addClass("slider_container");
+        
+        
+        //resize the canvas to the custom width/height
+        container.find(".main_image_scroller")
+          .css("height",canvas_height+"px")
+          .css("width",canvas_width+"px")
+        container.find(".thumbs_list_container").css("height",canvas_height+"px");
+        
+        var current_thumb=0;
+        var current_cycle=1;
+        var slide_interval=null;
+        var images_number=thumbs.length;
+        var thumbfrag=$();
+        var mainfrag=$();
+        for(var x=0;x<images_number;x++){
+          var current_image=images_path+thumbs[x];
+          thumbfrag=thumbfrag.add(new newThumb(current_image,x,container));
+          mainfrag=mainfrag.add(new newMain(current_image,x,container))
+        }
+        container.find(".thumbs_list_container").append(thumbfrag);
+        container.find(".main_image_scroller").append(mainfrag);
+        var main_image_scroller=container.find(".main_image_scroller") //cache reference
+        var description_container=container.find(".description_container") //cache reference
+        var largeimages=main_image_scroller.find('div.main_image') //cache reference
+        var thumbs=container.find(".thumbs_list_container").find("div") //cache ref to thumb divs
+        var largeimageheight=largeimages.eq(0).outerHeight()
+  
+        if(thumbs.length==0)
+          container.find(".thumbs_list_container").css('visibility','hidden');
+          description_container.hide();
+        
+        function newThumb(src,no,container){
+          
+          return $(document.createElement('div'))
+            .html($("<img src='"+encodeURI(src)+"' width=100 height=60>"))
+                .addClass("thumb")
+                .attr("src","'"+src+"'")
+                .attr("id",'thumb_'+no)
+                .prop("container",container)
+                .mouseover(function(){
+                  clearTimeout(slide_interval);
+                  thumbs.removeClass('thumb_selected').eq(no).addClass('thumb_selected')
+            main_image_scroller.stop().animate({top:'-'+(largeimageheight*no)},complete_cycle_slide);
+                  
+                  if(auto_scroll==true)
+                    {
+                current_thumb=no
+                      current_thumb++;
+                      if(current_thumb==images_number)
+                        {
+                          current_thumb=0;
+                          current_cycle++;
+                        }                               
+                      if((current_cycle>stop_after)&&(stop_after!=0))
+                        {
+                          autoscroll=false;
+                          return;
+                        }
+                      slide_interval=setTimeout(function(){
+                        thumbs.eq(current_thumb).trigger("mouseover");
+                      },auto_scroll_speed);
+                    }
+                  
+                })
+                .mouseup(function(){
+                  if(stop_on_click==true)
+                    auto_scroll=false;  
+                }); 
+        };
+        function newMain(src,no,container){
+          return $(document.createElement('div'))
+            .append($('<div style="width:100%;height:100%;background:url('+encodeURI(src)+')  center center no-repeat;"></div>'))
+                .addClass("main_image")
+                .attr("src",src)
+                .attr("id","main_"+no)
+                .click(function(){
+                })
+                .mouseover(function(){
+                })
+                .mouseout(function(){
+                })
+        };  
+        
+        container.find(".thumbs_list_container").find("div").eq(0).trigger("mouseover");
+     }
+     
+    var options = $.extend( {
+        'auto_scroll':false,
+        'auto_scroll_speed':2500,
+        'images_path':'',//this is the path to the folder added in front of all the pages (if specified);
+        'thumbs':[], //The names of the images you want in the slider each separated by a comma
+        'stop_on_click':true,//set this to true if you want the aoutoscroll to stop once the user clicks on a thumbnail
+            /*this is the number of cycles the autoscroll will run for; if autoscroll is set to false, this is ignored;
+         *  if stop_on_click is set to true, this will be ignored after the user clicks a thumbnail
+         *  if this is set to 0, the loop will run infinitely*/
+      'stop_after':0,
+      'complete_cycle_slide':300,//this determines the speed needed to cycle from first image to the last. Cycling from image 1 to image 2 is complete_cycle_slide/[number of images];
+      //change these 2 values to set the canvas height and width; the thumbs area will be resized in height automatically, depending on the canvas height;
+      'canvas_height':385,
+      'canvas_width':410
+      }, options);   
+            
+  
+     return this.each(function(){
+      var preloadimages=[]
+      for (var i=0, c=options.thumbs.length; i<c; i++){
+        preloadimages[i]=new Image()
+        preloadimages[i].src=options.thumbs[i]
+      } 
+      new deployCanvas(options,container);
+     });
+    
+  } 
+    
+    
+  })(jQuery)
+  
+  
+  //Initialization code:
+  $(document).ready(function(){ // on document load
+      
+      $("#thumbsliderdiv").imageSlider({ //initialize slider
+        'thumbs': ["images/buttonsignup.jpg","facebook.jpg","g+.jpg","images/4.jpg","images/5.jpg","images/6.jpg","images/7.jpg"], // file names of images within slider. Default path should be changed inside thumbslide.js (near bottom)
+        'auto_scroll':false,
+        'auto_scroll_speed':4500,
+        'stop_after': 2, //stop after x cycles? Set to 0 to disable.
+        'canvas_width':700,
+        'canvas_height':500 // <-- No comma after last option
+        })
+    });
+  
 </script>
-
 <style type="text/css">
   .fuck select {
-   width: 200px;
-   padding: 5px;
-   font-size: 10px;
-   line-height: 1;
-   border: 1px solid black;
-   border-radius: 0;
+  width: 200px;
+  padding: 5px;
+  font-size: 10px;
+  line-height: 1;
+  border: 1px solid black;
+  border-radius: 0;
   }
-
   .fucks{
-   width: 200px;
-   padding: 5px;
-   font-size: 10px;
-   line-height: 1;
-   border: 1px solid black;
-   border-radius: 0;
+  width: 200px;
+  padding: 5px;
+  font-size: 10px;
+  line-height: 1;
+  border: 1px solid black;
+  border-radius: 0;
   }
-
-
   li
   {
-    list-style-type: none;  
+  list-style-type: none;  
   }
-
- </style>
-
-
+</style>
 <h1><%=@suite.name %></h1>
 <div id = "suite-noti"></div>
 <div class="col-md-12" style="height:auto; width:1000px;border-bottom:1px solid black;">
-                
-<div class="row" style="margin-bottom:10px;">
-      
-  <div class="col-md-6" style="height:716px; width:492px;margin-right:8px;border:1px solid rgba(1,0,0,0.2);" >
-  
-  <div id="thumbsliderdiv"></div>
-  <div class="col-md-6" style="max-height:200px; width:492px;margin-top:20px;background:rgba(1,0,0,0.2);overflow-y: scroll;" >
-  <h3>Description goes here</h3><br/>
-  xxxxx<br>
-  xxxxx<br>
-  xxxxx<br>
-  xxxxx<br>
-  xxxxx<br>
-  xxxxx<br>
-  xxxxx<br>
-
-
-
-  </div>
-  </div>
-  
-  <div class="col-md-6" style="height:716px; width:492px;border:1px solid rgba(1,0,0,0.2);;margin-left:8px;">
-              <ul>
-                <form action="" method="post">
-
-                  <li class="prop">
-                  <span>Quantity:</span>
-                  <br>
-                  <div class="fuck" >
-                  <select id="first-choice">
-                  <option selected value="base">Please Select</option>
-                  <option value="beverages">Beverages</option>
-                  <option value="snacks">Snacks</option>
-                  </select>
-                  </div>
-                  </li>
-
-
-
-                  <li class="prop">
-                  <% if !@scat.nil? %>
-                  <span>Color:</span>
-                  
-                  <% @scat.each do |sc| %>
-                  <div style="margin-left:150px;margin-right:150px;float:center;">
-                  <div class="colorbox" style="width:15px;height:15px; float:center;background:<%= sc.code%>">
-                  </div>
-                  </div>
-
-                  <input type="radio" name="color"  value= <%=sc.id%> />
-                   
-                  <% end -%>
-                  <% end -%>
-                  </li>
-
-  
-                  <li class="prop">
-                  <% if !@trm.nil? %>
-                  <span>Trim:</span>
-                  <% @trm.each do |sc| %>
-                  <input type="radio" name="trim" value= <%=sc.id%> />
-                  <%= sc.name%>
-                  <% end -%>
-                  <% end -%>
-                  
-                  </li> 
-
-    
-                  <li class="prop">
-                  <% if !@pap.nil? %>
-                  <span>Paper:</span>
-                  <% @pap.each do |sc| %>
-                    <%= sc.name%>
-                  <input type="radio" name= "paper" value=  <%= sc.name%>>
-                  <% end -%>
-                  <% end -%>
-                  </li>
-                  
-
-                  <li class="prop">
-                  <% if !@dim.nil? %>
-                  <span>Dimension:</span>
-                  <% @dim.each do |sc| %>
-                  <%= sc.width%>*<%= sc.height%>
-                  <% end -%>
-                  <% end -%>
-                  </li>
-
-                  <li class="prop">
-                  <% if !@prds.nil? %>
-                   <span>Productz:</span>
-              
-                   <%= form_for :order, url: populate_orders_path do |f| %>
-                   
-                   <% @prds.each do |p| %>
-                   <%= p.name %>
-                    <%= render 'add_prod', prd: p %> 
-                    
-
-                    <%end%>
-                   
-
-                  <%= button_tag :class => 'btn btn-success', :id => 'add-to-cart-button', :type => :submit do %>
-                    <%= Spree.t(:add_to_cart) %>
-                  <%end %>
-                <%end %>
-
-              <%end %> 
-              </li>
-
-              </form>
-              </ul>
-
-        </div>
+  <div class="row" style="margin-bottom:10px;">
+    <div class="col-md-6" style="height:716px; width:492px;margin-right:8px;border:1px solid rgba(1,0,0,0.2);" >
+      <div id="thumbsliderdiv"></div>
+      <div class="col-md-6" style="max-height:200px; width:492px;margin-top:20px;background:rgba(1,0,0,0.2);overflow-y: scroll;" >
+        <h3>Description goes here</h3>
+        <br/>
+        xxxxx<br>
+        xxxxx<br>
+        xxxxx<br>
+        xxxxx<br>
+        xxxxx<br>
+        xxxxx<br>
+        xxxxx<br>
       </div>
- </div>     
-
+    </div>
+    <div class="col-md-6" style="height:716px; width:492px;border:1px solid rgba(1,0,0,0.2);;margin-left:8px;">
+      <ul>
+        <form action="" method="post">
+          <li class="prop">
+            <span>Quantity:</span>
+            <br>
+            <div class="fuck" >
+              <select id="first-choice">
+                <option selected value="base">Please Select</option>
+                <option value="beverages">Beverages</option>
+                <option value="snacks">Snacks</option>
+              </select>
+            </div>
+          </li>
+          <li class="prop">
+            <% if !@scat.nil? %>
+            <span>Color:</span>
+            <% @scat.each do |sc| %>
+            <div style="margin-left:150px;margin-right:150px;float:center;">
+              <div class="colorbox" style="width:15px;height:15px; float:center;background:<%= sc.code%>">
+              </div>
+            </div>
+            <input type="radio" name="color"  value= <%=sc.id%> />
+            <% end -%>
+            <% end -%>
+          </li>
+          <li class="prop">
+            <% if !@trm.nil? %>
+            <span>Trim:</span>
+            <% @trm.each do |sc| %>
+            <input type="radio" name="trim" value= <%=sc.id%> />
+            <%= sc.name%>
+            <% end -%>
+            <% end -%>
+          </li>
+          <li class="prop">
+            <% if !@pap.nil? %>
+            <span>Paper:</span>
+            <% @pap.each do |sc| %>
+            <%= sc.name%>
+            <input type="radio" name= "paper" value=  <%= sc.name%>>
+            <% end -%>
+            <% end -%>
+          </li>
+          <li class="prop">
+            <% if !@dim.nil? %>
+            <span>Dimension:</span>
+            <% @dim.each do |sc| %>
+            <%= sc.width%>*<%= sc.height%>
+            <% end -%>
+            <% end -%>
+          </li>
+          <li class="prop">
+            <% if !@prds.nil? %>
+            <span>Productz:</span>
+            <%= form_for :order, url: populate_orders_path do |f| %>
+            <% @prds.each do |p| %>
+            <%= p.name %>
+            <%= render 'add_prod', prd: p %> 
+            <%end%>
+            <%= button_tag :class => 'btn btn-success', :id => 'add-to-cart-button', :type => :submit do %>
+            <%= Spree.t(:add_to_cart) %>
+            <%end %>
+            <%end %>
+            <%end %> 
+          </li>
+        </form>
+      </ul>
+    </div>
+  </div>
+</div>
 
 <div class="col-md-12" style="height:auto; width:1000px; ">
-                
-          <div class="row" style="margin-top:10px;">
-                  
-              <div class="col-md-6" style="height:416px; width:492px; margin-right:8px;background:rgba(1,0,0,1);" >
-                  
-
-                  <div class="col-md-6" style="height:200px; width:492px;margin-top:8px;background:rgba(1,0,0,0.2);">
-                  <div class="row">
-                  <% $i = 0 %>
-                  <% $num = 10 %>
-                  <%while $i < $num  do%>
-                  <span>
-                  
-                  <div class="col-md-1" style="height:92px; width:90px;margin-right:4px;margin-left:4px;margin-bottom:4px;margin-top:4px; background:rgba(1,0,0,1);float:right;">fuck</div>
-                  </span>
-                  <%$i +=1 %>
-                  <% end%>
-                  </div>
-                  </div>
-
-              </div>
-                  
-              <div class="col-md-6" style="height:416px; width:492px;margin-left:8px;background:rgba(1,0,0,0.2);">
-              banner Area
-              </div>
-
-          </div>
-           
-</div>    
-  
-
-
+  <div class="row" style="margin-top:10px;">
+    <div class="col-md-6" style="height:416px; width:492px; margin-right:8px;background:rgba(1,0,0,1);" >
+      <div class="col-md-6" style="height:200px; width:492px;margin-top:8px;background:rgba(1,0,0,0.2);">
+        <div class="row">
+          <% $i = 0 %>
+          <% $num = 10 %>
+          <%while $i < $num  do%>
+          <span>
+            <div class="col-md-1" style="height:92px; width:90px;margin-right:4px;margin-left:4px;margin-bottom:4px;margin-top:4px; background:rgba(1,0,0,1);float:right;">fuck</div>
+          </span>
+          <%$i +=1 %>
+          <% end%>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6" style="height:416px; width:492px;margin-left:8px;background:rgba(1,0,0,0.2);">
+      banner Area
+    </div>
+  </div>
+</div>
 <%#= button_to 'Write reviews', new_suite_review_path(@suite), method: :get,remote: true%>
-
 <%= asset_path('star.gif') %>
 <%= image_tag 'star.gif' %>
 <%= render 'spree/shared/reviews' %>
 
+<%= render 'spree/suites/add_to_wishlist' %>

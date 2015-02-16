@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 
     resources :designers
 
+    
     resources :users do
       member do
         get :following, :followers
@@ -40,7 +41,7 @@ Rails.application.routes.draw do
       namespace :admin do
         resources :products do
           resources :variants do
-            get :volume_prices, :on => :member
+            #get :volume_prices, :on => :member
           end
         end
         resources :designers do 
@@ -50,7 +51,7 @@ Rails.application.routes.draw do
         end
         resources :banners
         resources :suites
-        delete '/volume_prices/:id', :to => "volume_prices#destroy", :as => :volume_price
+        #delete '/volume_prices/:id', :to => "volume_prices#destroy", :as => :volume_price
       end
     end
     if Spree::Core::Engine.respond_to?(:add_routes)

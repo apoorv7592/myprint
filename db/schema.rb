@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150211230107) do
+ActiveRecord::Schema.define(version: 20150216195940) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -1244,6 +1244,27 @@ ActiveRecord::Schema.define(version: 20150211230107) do
     t.datetime "updated_at"
     t.string   "discount_type"
   end
+
+  create_table "spree_wished_products", force: true do |t|
+    t.integer  "suite_id"
+    t.integer  "wishlist_id"
+    t.text     "remark"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "spree_wishlists", force: true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "access_hash"
+    t.boolean  "is_private",  default: true,  null: false
+    t.boolean  "is_default",  default: false, null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "spree_wishlists", ["user_id", "is_default"], name: "index_spree_wishlists_on_user_id_and_is_default"
+  add_index "spree_wishlists", ["user_id"], name: "index_spree_wishlists_on_user_id"
 
   create_table "spree_zone_members", force: true do |t|
     t.integer  "zoneable_id"
