@@ -23,7 +23,7 @@ class Designer < ActiveRecord::Base
 
 	has_attached_file :avatar,:path => "designers/avatars/000/000/:id/:style/:filename", styles: {
 	    thumb: '100x100>',
-	    square: '300x300>',
+	    square: '250x250>',
 	    medium: '500x500>'
   	}
   	

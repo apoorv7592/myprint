@@ -13,7 +13,7 @@
               <div class="row">
 	              <% if !@scsuite.nil? %>
   	              <% @scsuite.each do |p| %>
-  	                 <%= render 'suite', p: p %>
+  	                 <%= render 'spree/suites/suite', p: p %>
   			          <% end %> 
 			          <% end %>                
               </div>

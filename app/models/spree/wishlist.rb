@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: spree_wishlists
+#
+#  id          :integer          not null, primary key
+#  user_id     :integer
+#  name        :string(255)
+#  access_hash :string(255)
+#  is_private  :boolean          default(TRUE), not null
+#  is_default  :boolean          default(FALSE), not null
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 class Spree::Wishlist < ActiveRecord::Base
 	belongs_to :user, class_name: Spree.user_class
 	has_many :wished_products, dependent: :destroy

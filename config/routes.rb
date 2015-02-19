@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   Spree::Core::Engine.routes.draw do
     resources :suites do
       resources :reviews
+      resources :likes
     end
+
     resources :categories
     resources :sub_categories
     
@@ -35,7 +37,9 @@ Rails.application.routes.draw do
     resources :relationships, only: [:create, :destroy]
     
     get '/wedding', to: 'landing_pages#wedding'
-    
+    get '/like', to: 'likes#create', as: 'like_suite'
+    get '/unlike', to: 'likes#destroy', as: 'unlike_suite'
+
     get '/search'  => 'solrsearch#index'
     routes = lambda do
       namespace :admin do
