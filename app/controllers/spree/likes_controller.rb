@@ -6,6 +6,8 @@ module Spree
 			u = spree_current_user
 			like = Like.new(user_id: u.id, suite_id: @s.id)
 			if like.save
+				@s.like_no +=1
+				@s.save
 				respond_to do |format|
 					format.js
 				end
@@ -21,6 +23,8 @@ module Spree
 			u = spree_current_user
 			like = Like.where(suite_id: @s.id, user_id: u.id).first
 			if like.destroy
+				@s.like_no -=1
+				@s.save
 				respond_to do |format|
 					format.js
 				end
@@ -34,7 +38,7 @@ module Spree
 		private
 			def authenticate_login
 				if !spree_current_user.present?
-					redirect_to :back, notice: 'Please login'
+					redirect_to :back, notice: 'Please login to like'
 				end
 			end
 	end
