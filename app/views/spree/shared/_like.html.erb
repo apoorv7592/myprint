@@ -1,0 +1,16 @@
+<% if spree_current_user.present? %>
+	<% like = Like.where(user_id: spree_current_user.id, suite_id: p.id)%> 
+
+	<div id="heart-<%= p.id %>">
+		<% if like.present? %> 
+			<%= render 'spree/shared/unlike_form', suite: p %>
+		<% else %>	
+			<%= render 'spree/shared/like_form', suite: p %>
+		<% end %>
+	</div>
+
+<% else %>
+	<%= link_to "#", "data-toggle"=>"modal", "data-target"=>"#myModal" do %>
+		<i class="fa fa-heart-o"></i>
+	<% end%>
+<% end %>

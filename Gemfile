@@ -112,3 +112,9 @@ gem "font-awesome-rails"
 gem 'less-rails', '~> 2'
 gem 'therubyracer', '~> 0.12.1'
 gem 'sprockets-rails', '~> 2.2.2'
+
+
+#whishlist
+gem 'spree_wishlist', github: 'ast0708/spree_wishlist', branch: 'master'
+
+#gem 'spree_email_to_friend', github: 'spree-contrib/spree_email_to_friend', branch: 'master'

@@ -428,6 +428,7 @@ li.ulfilterbox{
   margin-bottom:20px;
 }
 
+<<<<<<< HEAD
   #suitedescdiv{
     list-style-type: none;
     border-left:1px solid rgba(1,0,0,0.2);
@@ -464,6 +465,27 @@ li.ulfilterbox{
     border-bottom:2px solid rgba(255,0,0,0.7);
   
 }
+/* login modal */
+#login-comm-head{
+  font-size:15px;
+  font-weight:bold;
+}
+.login-sub-comm{
+  font-size:12px;
+  margin-top:4px;
+  margin-bottom:4px;
+}
 
 
 
+.login-comm-icon{
+  color:#72BFC2;
+}
+.login-form-label{
+  font-size:12px;
+  margin-left:5px;
+}
+
+.liked{
+  color:red;
+}

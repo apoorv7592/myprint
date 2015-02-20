@@ -13,6 +13,7 @@
 #  available_on    :date
 #  avg_rating      :decimal(7, 5)    default(0.0), not null
 #  reviews_count   :integer          default(0), not null
+#  like_no         :integer          default(0)
 #
 
 class Suite < ActiveRecord::Base
@@ -24,6 +25,8 @@ class Suite < ActiveRecord::Base
 	has_and_belongs_to_many :dimensions
 	has_many :spree_products, :class_name => 'Spree::Product'
 	has_many :reviews,:class_name=> 'Spree::Review'
+	has_many :wished_products, dependent: :destroy
+	has_many :likes, dependent: :destroy
 
 	validates_presence_of :name, message: 'Name cannot be blank'
 	validates_presence_of :sku_id, message: 'SKU ID cannot be blank'

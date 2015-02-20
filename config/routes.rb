@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   Spree::Core::Engine.routes.draw do
     resources :suites do
       resources :reviews
+      resources :likes
     end
+
     resources :categories
     resources :sub_categories
     
@@ -26,6 +28,7 @@ Rails.application.routes.draw do
 
     resources :designers
 
+    
     resources :users do
       member do
         get :following, :followers
@@ -34,13 +37,15 @@ Rails.application.routes.draw do
     resources :relationships, only: [:create, :destroy]
     
     get '/wedding', to: 'landing_pages#wedding'
-    
+    get '/like', to: 'likes#create', as: 'like_suite'
+    get '/unlike', to: 'likes#destroy', as: 'unlike_suite'
+
     get '/search'  => 'solrsearch#index'
     routes = lambda do
       namespace :admin do
         resources :products do
           resources :variants do
-            get :volume_prices, :on => :member
+            #get :volume_prices, :on => :member
           end
         end
         resources :designers do 
@@ -50,7 +55,7 @@ Rails.application.routes.draw do
         end
         resources :banners
         resources :suites
-        delete '/volume_prices/:id', :to => "volume_prices#destroy", :as => :volume_price
+        #delete '/volume_prices/:id', :to => "volume_prices#destroy", :as => :volume_price
       end
     end
     if Spree::Core::Engine.respond_to?(:add_routes)

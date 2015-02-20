@@ -8,6 +8,14 @@ GIT
       spree_core (~> 3.0.0.beta)
 
 GIT
+  remote: git://github.com/ast0708/spree_wishlist.git
+  revision: 28acd5c33442de91f6edd0eca5f4c2fda5439f99
+  branch: master
+  specs:
+    spree_wishlist (2.2.0)
+      spree_core (~> 3.0.0.beta)
+
+GIT
   remote: git://github.com/spree-contrib/spree_reviews.git
   revision: aaa76230da9cca35e1d7b084922be94266ef9040
   branch: master
@@ -489,6 +497,7 @@ DEPENDENCIES
   spree_gateway!
   spree_reviews!
   spree_social!
+  spree_wishlist!
   spring
   sprockets-rails (~> 2.2.2)
   sqlite3

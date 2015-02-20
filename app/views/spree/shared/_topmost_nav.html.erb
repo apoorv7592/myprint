@@ -62,6 +62,7 @@
 	<ul class="nav navbar-nav navbar-right ">
 
 
+
 	    <li id="Login">
 			<%= link_to "Sign In |", '/login/',style:"padding-right:10px !important;padding-left:0px !important;"  %>
 		  </li>
@@ -69,6 +70,23 @@
 		  <li id="MyAccount">
 			<%= link_to "My Account |", '/account/',style:"padding-right:10px !important;padding-left:0px !important;"   %>
       </li> 
+	    
+  			<%= render 'spree/shared/sign_in' %>
+        
+        <% if spree_current_user %>
+          <li id="Myaccount" class="topmosta">
+            <%= link_to "My Account", '/account/'  %>
+          </li>
+
+        <% else %>
+          <li id="Login" class="topmosta">
+            <%= link_to "Login / Signup", '#',"data-toggle"=>"modal", "data-target"=>"#myModal" %>
+          </li>
+        <% end %>
+		  
+
+		  
+
 		
       <li id="Cart">
 			<%= link_to "Cart", '/cart/',style:"padding-left:0px !important;padding-right:0px !important;" %>

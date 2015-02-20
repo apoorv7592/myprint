@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150211230107) do
+ActiveRecord::Schema.define(version: 20150219125746) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -119,6 +119,17 @@ ActiveRecord::Schema.define(version: 20150211230107) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+
+  create_table "likes", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "suite_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "likes", ["suite_id"], name: "index_likes_on_suite_id"
+  add_index "likes", ["user_id", "suite_id"], name: "index_likes_on_user_id_and_suite_id", unique: true
+  add_index "likes", ["user_id"], name: "index_likes_on_user_id"
 
   create_table "monologue_posts", force: true do |t|
     t.boolean  "published"
@@ -1207,6 +1218,27 @@ ActiveRecord::Schema.define(version: 20150211230107) do
     t.string   "discount_type"
   end
 
+  create_table "spree_wished_products", force: true do |t|
+    t.integer  "suite_id"
+    t.integer  "wishlist_id"
+    t.text     "remark"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "spree_wishlists", force: true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "access_hash"
+    t.boolean  "is_private",  default: true,  null: false
+    t.boolean  "is_default",  default: false, null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "spree_wishlists", ["user_id", "is_default"], name: "index_spree_wishlists_on_user_id_and_is_default"
+  add_index "spree_wishlists", ["user_id"], name: "index_spree_wishlists_on_user_id"
+
   create_table "spree_zone_members", force: true do |t|
     t.integer  "zoneable_id"
     t.string   "zoneable_type"
@@ -1249,6 +1281,7 @@ ActiveRecord::Schema.define(version: 20150211230107) do
     t.date     "available_on"
     t.decimal  "avg_rating",      precision: 7, scale: 5, default: 0.0, null: false
     t.integer  "reviews_count",                           default: 0,   null: false
+    t.integer  "like_no",                                 default: 0
   end
 
   add_index "suites", ["available_on"], name: "index_suites_on_available_on"
