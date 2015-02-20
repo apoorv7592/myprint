@@ -39,6 +39,7 @@ class Suite < ActiveRecord::Base
 	searchable do 
 		text :name, :description
 		time :available_on
+		time :created_at
 		
 		text :designer_names do 
 			designer.name
