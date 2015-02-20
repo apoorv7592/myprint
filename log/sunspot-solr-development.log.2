@@ -1,580 +1,314 @@
-Feb 08, 2015 9:57:36 PM org.apache.solr.servlet.SolrDispatchFilter init
+Feb 20, 2015 2:07:51 PM org.apache.solr.servlet.SolrDispatchFilter init
 INFO: SolrDispatchFilter.init()
-Feb 08, 2015 9:57:36 PM org.apache.solr.core.SolrResourceLoader locateSolrHome
+Feb 20, 2015 2:07:51 PM org.apache.solr.core.SolrResourceLoader locateSolrHome
 INFO: JNDI not configured for solr (NoInitialContextEx)
-Feb 08, 2015 9:57:36 PM org.apache.solr.core.SolrResourceLoader locateSolrHome
-INFO: using system property solr.solr.home: /Users/apoorvgoyal/mypd/solr
-Feb 08, 2015 9:57:36 PM org.apache.solr.core.CoreContainer$Initializer initialize
-INFO: looking for solr.xml: /Users/apoorvgoyal/mypd/solr/solr.xml
-Feb 08, 2015 9:57:36 PM org.apache.solr.core.CoreContainer <init>
+Feb 20, 2015 2:07:51 PM org.apache.solr.core.SolrResourceLoader locateSolrHome
+INFO: using system property solr.solr.home: solr
+Feb 20, 2015 2:07:52 PM org.apache.solr.core.CoreContainer$Initializer initialize
+INFO: looking for solr.xml: /Users/apoorvgoyal/.rvm/gems/ruby-2.1.4/gems/sunspot_solr-2.1.1/solr/solr/solr.xml
+Feb 20, 2015 2:07:52 PM org.apache.solr.core.CoreContainer <init>
 INFO: New CoreContainer 346224929
-Feb 08, 2015 9:57:36 PM org.apache.solr.core.CoreContainer load
-INFO: Loading CoreContainer using Solr Home: '/Users/apoorvgoyal/mypd/solr/'
-Feb 08, 2015 9:57:36 PM org.apache.solr.core.SolrResourceLoader <init>
-INFO: new SolrResourceLoader for directory: '/Users/apoorvgoyal/mypd/solr/'
-Feb 08, 2015 9:57:37 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
+Feb 20, 2015 2:07:52 PM org.apache.solr.core.CoreContainer load
+INFO: Loading CoreContainer using Solr Home: 'solr/'
+Feb 20, 2015 2:07:52 PM org.apache.solr.core.SolrResourceLoader <init>
+INFO: new SolrResourceLoader for directory: 'solr/'
+Feb 20, 2015 2:07:54 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
 INFO: Setting socketTimeout to: 0
-Feb 08, 2015 9:57:37 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
+Feb 20, 2015 2:07:54 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
 INFO: Setting urlScheme to: http://
-Feb 08, 2015 9:57:37 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
+Feb 20, 2015 2:07:54 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
 INFO: Setting connTimeout to: 0
-Feb 08, 2015 9:57:37 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
+Feb 20, 2015 2:07:54 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
 INFO: Setting maxConnectionsPerHost to: 20
-Feb 08, 2015 9:57:37 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
+Feb 20, 2015 2:07:54 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
 INFO: Setting corePoolSize to: 0
-Feb 08, 2015 9:57:37 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
+Feb 20, 2015 2:07:54 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
 INFO: Setting maximumPoolSize to: 2147483647
-Feb 08, 2015 9:57:37 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
+Feb 20, 2015 2:07:54 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
 INFO: Setting maxThreadIdleTime to: 5
-Feb 08, 2015 9:57:37 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
+Feb 20, 2015 2:07:54 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
 INFO: Setting sizeOfQueue to: -1
-Feb 08, 2015 9:57:37 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
+Feb 20, 2015 2:07:54 PM org.apache.solr.handler.component.HttpShardHandlerFactory getParameter
 INFO: Setting fairnessPolicy to: false
-Feb 08, 2015 9:57:37 PM org.apache.solr.client.solrj.impl.HttpClientUtil createClient
+Feb 20, 2015 2:07:54 PM org.apache.solr.client.solrj.impl.HttpClientUtil createClient
 INFO: Creating new http client, config:maxConnectionsPerHost=20&maxConnections=10000&socketTimeout=0&connTimeout=0&retry=false
-Feb 08, 2015 9:57:37 PM org.apache.solr.core.CoreContainer load
+Feb 20, 2015 2:07:55 PM org.apache.solr.core.CoreContainer load
 INFO: Registering Log Listener
-Feb 08, 2015 9:57:37 PM org.apache.solr.core.CoreContainer create
-INFO: Creating SolrCore 'default' using instanceDir: /Users/apoorvgoyal/mypd/solr/.
-Feb 08, 2015 9:57:37 PM org.apache.solr.core.CoreContainer create
-INFO: Creating SolrCore 'development' using instanceDir: /Users/apoorvgoyal/mypd/solr/.
-Feb 08, 2015 9:57:37 PM org.apache.solr.core.CoreContainer create
-INFO: Creating SolrCore 'test' using instanceDir: /Users/apoorvgoyal/mypd/solr/.
-Feb 08, 2015 9:57:37 PM org.apache.solr.core.SolrResourceLoader <init>
-INFO: new SolrResourceLoader for directory: '/Users/apoorvgoyal/mypd/solr/./'
-Feb 08, 2015 9:57:37 PM org.apache.solr.core.SolrResourceLoader <init>
-INFO: new SolrResourceLoader for directory: '/Users/apoorvgoyal/mypd/solr/./'
-Feb 08, 2015 9:57:37 PM org.apache.solr.core.SolrResourceLoader <init>
-INFO: new SolrResourceLoader for directory: '/Users/apoorvgoyal/mypd/solr/./'
-Feb 08, 2015 9:57:37 PM org.apache.solr.core.SolrConfig <init>
+Feb 20, 2015 2:07:55 PM org.apache.solr.core.CoreContainer create
+INFO: Creating SolrCore 'default' using instanceDir: solr/.
+Feb 20, 2015 2:07:55 PM org.apache.solr.core.CoreContainer create
+INFO: Creating SolrCore 'test' using instanceDir: solr/.
+Feb 20, 2015 2:07:55 PM org.apache.solr.core.CoreContainer create
+INFO: Creating SolrCore 'development' using instanceDir: solr/.
+Feb 20, 2015 2:07:55 PM org.apache.solr.core.SolrResourceLoader <init>
+INFO: new SolrResourceLoader for directory: 'solr/./'
+Feb 20, 2015 2:07:55 PM org.apache.solr.core.SolrResourceLoader <init>
+INFO: new SolrResourceLoader for directory: 'solr/./'
+Feb 20, 2015 2:07:55 PM org.apache.solr.core.SolrResourceLoader <init>
+INFO: new SolrResourceLoader for directory: 'solr/./'
+Feb 20, 2015 2:07:56 PM org.apache.solr.core.SolrConfig <init>
 INFO: Using Lucene MatchVersion: LUCENE_41
-Feb 08, 2015 9:57:37 PM org.apache.solr.core.SolrConfig <init>
+Feb 20, 2015 2:07:56 PM org.apache.solr.core.SolrConfig <init>
 INFO: Using Lucene MatchVersion: LUCENE_41
-Feb 08, 2015 9:57:37 PM org.apache.solr.core.SolrConfig <init>
+Feb 20, 2015 2:07:56 PM org.apache.solr.core.SolrConfig <init>
 INFO: Using Lucene MatchVersion: LUCENE_41
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.SolrConfig <init>
+Feb 20, 2015 2:07:56 PM org.apache.solr.core.SolrConfig <init>
 INFO: Loaded SolrConfig: solrconfig.xml
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.SolrConfig <init>
+Feb 20, 2015 2:07:56 PM org.apache.solr.core.SolrConfig <init>
 INFO: Loaded SolrConfig: solrconfig.xml
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.SolrConfig <init>
+Feb 20, 2015 2:07:56 PM org.apache.solr.core.SolrConfig <init>
 INFO: Loaded SolrConfig: solrconfig.xml
-Feb 08, 2015 9:57:38 PM org.apache.solr.schema.IndexSchema readSchema
+Feb 20, 2015 2:07:56 PM org.apache.solr.schema.IndexSchema readSchema
 INFO: Reading Solr Schema
-Feb 08, 2015 9:57:38 PM org.apache.solr.schema.IndexSchema readSchema
+Feb 20, 2015 2:07:56 PM org.apache.solr.schema.IndexSchema readSchema
 INFO: Reading Solr Schema
-Feb 08, 2015 9:57:38 PM org.apache.solr.schema.IndexSchema readSchema
+Feb 20, 2015 2:07:56 PM org.apache.solr.schema.IndexSchema readSchema
 INFO: Reading Solr Schema
-Feb 08, 2015 9:57:38 PM org.apache.solr.schema.IndexSchema readSchema
+Feb 20, 2015 2:07:56 PM org.apache.solr.schema.IndexSchema readSchema
 INFO: Schema name=sunspot
-Feb 08, 2015 9:57:38 PM org.apache.solr.schema.IndexSchema readSchema
+Feb 20, 2015 2:07:56 PM org.apache.solr.schema.IndexSchema readSchema
 INFO: Schema name=sunspot
-Feb 08, 2015 9:57:38 PM org.apache.solr.schema.IndexSchema readSchema
+Feb 20, 2015 2:07:56 PM org.apache.solr.schema.IndexSchema readSchema
 INFO: Schema name=sunspot
-Feb 08, 2015 9:57:38 PM org.apache.solr.schema.IndexSchema readSchema
+Feb 20, 2015 2:07:56 PM org.apache.solr.schema.IndexSchema readSchema
 INFO: default search field in schema is text
-Feb 08, 2015 9:57:38 PM org.apache.solr.schema.IndexSchema readSchema
+Feb 20, 2015 2:07:56 PM org.apache.solr.schema.IndexSchema readSchema
+INFO: query parser default operator is AND
+Feb 20, 2015 2:07:56 PM org.apache.solr.schema.IndexSchema readSchema
+INFO: unique key field: id
+Feb 20, 2015 2:07:56 PM org.apache.solr.schema.IndexSchema readSchema
 INFO: default search field in schema is text
-Feb 08, 2015 9:57:38 PM org.apache.solr.schema.IndexSchema readSchema
+Feb 20, 2015 2:07:56 PM org.apache.solr.schema.IndexSchema readSchema
 INFO: query parser default operator is AND
-Feb 08, 2015 9:57:38 PM org.apache.solr.schema.IndexSchema readSchema
+Feb 20, 2015 2:07:56 PM org.apache.solr.schema.IndexSchema readSchema
 INFO: unique key field: id
-Feb 08, 2015 9:57:38 PM org.apache.solr.schema.IndexSchema readSchema
+Feb 20, 2015 2:07:56 PM org.apache.solr.schema.IndexSchema readSchema
 INFO: default search field in schema is text
-Feb 08, 2015 9:57:38 PM org.apache.solr.schema.IndexSchema readSchema
+Feb 20, 2015 2:07:56 PM org.apache.solr.schema.IndexSchema readSchema
 INFO: query parser default operator is AND
-Feb 08, 2015 9:57:38 PM org.apache.solr.schema.IndexSchema readSchema
+Feb 20, 2015 2:07:56 PM org.apache.solr.schema.IndexSchema readSchema
 INFO: unique key field: id
-Feb 08, 2015 9:57:38 PM org.apache.solr.schema.IndexSchema readSchema
-INFO: query parser default operator is AND
-Feb 08, 2015 9:57:38 PM org.apache.solr.schema.IndexSchema readSchema
-INFO: unique key field: id
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.SolrCore <init>
-INFO: [test] Opening new SolrCore at /Users/apoorvgoyal/mypd/solr/./, dataDir=/Users/apoorvgoyal/mypd/solr/./test/data/
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.SolrCore <init>
+Feb 20, 2015 2:07:56 PM org.apache.solr.core.SolrCore <init>
+INFO: [default] Opening new SolrCore at solr/./, dataDir=solr/./default/data/
+Feb 20, 2015 2:07:56 PM org.apache.solr.core.SolrCore <init>
+INFO: [development] Opening new SolrCore at solr/./, dataDir=solr/./development/data/
+Feb 20, 2015 2:07:56 PM org.apache.solr.core.SolrCore <init>
+INFO: [test] Opening new SolrCore at solr/./, dataDir=solr/./test/data/
+Feb 20, 2015 2:07:56 PM org.apache.solr.core.SolrCore <init>
 INFO: JMX monitoring not detected for core: test
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.SolrCore <init>
-INFO: [default] Opening new SolrCore at /Users/apoorvgoyal/mypd/solr/./, dataDir=/Users/apoorvgoyal/mypd/solr/./default/data/
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.SolrCore <init>
-INFO: JMX monitoring not detected for core: default
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.SolrCore <init>
-INFO: [development] Opening new SolrCore at /Users/apoorvgoyal/mypd/solr/./, dataDir=/Users/apoorvgoyal/mypd/solr/./development/data/
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.SolrCore <init>
+Feb 20, 2015 2:07:56 PM org.apache.solr.core.SolrCore <init>
 INFO: JMX monitoring not detected for core: development
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.SolrCore initDirectoryFactory
+Feb 20, 2015 2:07:56 PM org.apache.solr.core.SolrCore <init>
+INFO: JMX monitoring not detected for core: default
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.SolrCore initDirectoryFactory
 INFO: solr.NRTCachingDirectoryFactory
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.SolrCore initDirectoryFactory
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.SolrCore initDirectoryFactory
 INFO: solr.NRTCachingDirectoryFactory
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.SolrCore initDirectoryFactory
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.SolrCore initDirectoryFactory
 INFO: solr.NRTCachingDirectoryFactory
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.CachingDirectoryFactory get
-INFO: return new directory for /Users/apoorvgoyal/mypd/solr/./development/data forceNew: false
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.SolrCore getNewIndexDir
-INFO: New index directory detected: old=null new=/Users/apoorvgoyal/mypd/solr/./development/data/index/
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.CachingDirectoryFactory get
-INFO: return new directory for /Users/apoorvgoyal/mypd/solr/./default/data forceNew: false
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.SolrCore getNewIndexDir
-INFO: New index directory detected: old=null new=/Users/apoorvgoyal/mypd/solr/./default/data/index/
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.CachingDirectoryFactory get
-INFO: return new directory for /Users/apoorvgoyal/mypd/solr/./test/data forceNew: false
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.CachingDirectoryFactory get
-INFO: return new directory for /Users/apoorvgoyal/mypd/solr/./development/data/index forceNew: false
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.CachingDirectoryFactory get
-INFO: return new directory for /Users/apoorvgoyal/mypd/solr/./default/data/index forceNew: false
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.SolrCore getNewIndexDir
-INFO: New index directory detected: old=null new=/Users/apoorvgoyal/mypd/solr/./test/data/index/
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.CachingDirectoryFactory get
-INFO: return new directory for /Users/apoorvgoyal/mypd/solr/./test/data/index forceNew: false
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.CachingDirectoryFactory get
+INFO: return new directory for /Users/apoorvgoyal/.rvm/gems/ruby-2.1.4/gems/sunspot_solr-2.1.1/solr/solr/./default/data forceNew: false
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.SolrCore getNewIndexDir
+INFO: New index directory detected: old=null new=solr/./default/data/index/
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.CachingDirectoryFactory get
+INFO: return new directory for /Users/apoorvgoyal/.rvm/gems/ruby-2.1.4/gems/sunspot_solr-2.1.1/solr/solr/./test/data forceNew: false
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.CachingDirectoryFactory get
+INFO: return new directory for /Users/apoorvgoyal/.rvm/gems/ruby-2.1.4/gems/sunspot_solr-2.1.1/solr/solr/./development/data forceNew: false
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.SolrCore getNewIndexDir
+INFO: New index directory detected: old=null new=solr/./test/data/index/
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.SolrCore getNewIndexDir
+INFO: New index directory detected: old=null new=solr/./development/data/index/
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.CachingDirectoryFactory get
+INFO: return new directory for /Users/apoorvgoyal/.rvm/gems/ruby-2.1.4/gems/sunspot_solr-2.1.1/solr/solr/./test/data/index forceNew: false
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.CachingDirectoryFactory get
+INFO: return new directory for /Users/apoorvgoyal/.rvm/gems/ruby-2.1.4/gems/sunspot_solr-2.1.1/solr/solr/./development/data/index forceNew: false
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.CachingDirectoryFactory get
+INFO: return new directory for /Users/apoorvgoyal/.rvm/gems/ruby-2.1.4/gems/sunspot_solr-2.1.1/solr/solr/./default/data/index forceNew: false
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /select: solr.SearchHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /query: solr.SearchHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /select: solr.SearchHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
-INFO: created /query: solr.SearchHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
-INFO: created /get: solr.RealTimeGetHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /select: solr.SearchHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /query: solr.SearchHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /get: solr.RealTimeGetHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+INFO: created /query: solr.SearchHandler
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /get: solr.RealTimeGetHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /update: solr.UpdateRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+INFO: created /get: solr.RealTimeGetHandler
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /update: solr.UpdateRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+INFO: created /update/json: solr.JsonUpdateRequestHandler
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+INFO: created /update/json: solr.JsonUpdateRequestHandler
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /update: solr.UpdateRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /update/json: solr.JsonUpdateRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
-INFO: created /update/json: solr.JsonUpdateRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
-INFO: created /update/json: solr.JsonUpdateRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /update/csv: solr.CSVRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: adding lazy requestHandler: solr.extraction.ExtractingRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+INFO: created /update/extract: solr.extraction.ExtractingRequestHandler
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+INFO: adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+INFO: created /analysis/field: solr.FieldAnalysisRequestHandler
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+INFO: adding lazy requestHandler: solr.DocumentAnalysisRequestHandler
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+INFO: created /analysis/document: solr.DocumentAnalysisRequestHandler
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+INFO: created /admin/ping: solr.PingRequestHandler
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+INFO: created /debug/dump: solr.DumpRequestHandler
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /update/csv: solr.CSVRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: adding lazy requestHandler: solr.extraction.ExtractingRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /update/extract: solr.extraction.ExtractingRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: adding lazy requestHandler: solr.FieldAnalysisRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
-INFO: created /update/extract: solr.extraction.ExtractingRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
-INFO: adding lazy requestHandler: solr.FieldAnalysisRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /analysis/field: solr.FieldAnalysisRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: adding lazy requestHandler: solr.DocumentAnalysisRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
-INFO: created /analysis/field: solr.FieldAnalysisRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
-INFO: adding lazy requestHandler: solr.DocumentAnalysisRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /analysis/document: solr.DocumentAnalysisRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
-INFO: created /analysis/document: solr.DocumentAnalysisRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /update/csv: solr.CSVRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+INFO: created /admin/ping: solr.PingRequestHandler
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: adding lazy requestHandler: solr.extraction.ExtractingRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /update/extract: solr.extraction.ExtractingRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: adding lazy requestHandler: solr.FieldAnalysisRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /analysis/field: solr.FieldAnalysisRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+INFO: created /debug/dump: solr.DumpRequestHandler
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: adding lazy requestHandler: solr.DocumentAnalysisRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
-INFO: created /admin/ping: solr.PingRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /analysis/document: solr.DocumentAnalysisRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /admin/ping: solr.PingRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /debug/dump: solr.DumpRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
-INFO: created /admin/ping: solr.PingRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
-INFO: created /debug/dump: solr.DumpRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
-INFO: created /debug/dump: solr.DumpRequestHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /replication: solr.ReplicationHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /replication: solr.ReplicationHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /replication: solr.ReplicationHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /mlt: solr.MoreLikeThisHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+INFO: created /admin/: solr.admin.AdminHandlers
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /mlt: solr.MoreLikeThisHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /admin/: solr.admin.AdminHandlers
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /mlt: solr.MoreLikeThisHandler
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
+Feb 20, 2015 2:07:57 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
 INFO: created /admin/: solr.admin.AdminHandlers
-Feb 08, 2015 9:57:38 PM org.apache.solr.core.RequestHandlers initHandlersFromConfig
-INFO: created /admin/: solr.admin.AdminHandlers
-Feb 08, 2015 9:57:38 PM org.apache.solr.handler.loader.XMLLoader init
+Feb 20, 2015 2:07:57 PM org.apache.solr.handler.loader.XMLLoader init
 INFO: xsltCacheLifetimeSeconds=60
-Feb 08, 2015 9:57:38 PM org.apache.solr.handler.loader.XMLLoader init
+Feb 20, 2015 2:07:57 PM org.apache.solr.handler.loader.XMLLoader init
 INFO: xsltCacheLifetimeSeconds=60
-Feb 08, 2015 9:57:38 PM org.apache.solr.handler.loader.XMLLoader init
+Feb 20, 2015 2:07:57 PM org.apache.solr.handler.loader.XMLLoader init
 INFO: xsltCacheLifetimeSeconds=60
-Feb 08, 2015 9:57:38 PM org.apache.solr.handler.loader.XMLLoader init
+Feb 20, 2015 2:07:57 PM org.apache.solr.handler.loader.XMLLoader init
 INFO: xsltCacheLifetimeSeconds=60
-Feb 08, 2015 9:57:38 PM org.apache.solr.handler.loader.XMLLoader init
+Feb 20, 2015 2:07:57 PM org.apache.solr.handler.loader.XMLLoader init
 INFO: xsltCacheLifetimeSeconds=60
-Feb 08, 2015 9:57:38 PM org.apache.solr.handler.loader.XMLLoader init
+Feb 20, 2015 2:07:57 PM org.apache.solr.handler.loader.XMLLoader init
 INFO: xsltCacheLifetimeSeconds=60
-Feb 08, 2015 9:57:38 PM org.apache.solr.handler.loader.XMLLoader init
+Feb 20, 2015 2:07:57 PM org.apache.solr.handler.loader.XMLLoader init
 INFO: xsltCacheLifetimeSeconds=60
-Feb 08, 2015 9:57:38 PM org.apache.solr.handler.loader.XMLLoader init
+Feb 20, 2015 2:07:57 PM org.apache.solr.handler.loader.XMLLoader init
 INFO: xsltCacheLifetimeSeconds=60
-Feb 08, 2015 9:57:38 PM org.apache.solr.handler.loader.XMLLoader init
+Feb 20, 2015 2:07:57 PM org.apache.solr.handler.loader.XMLLoader init
 INFO: xsltCacheLifetimeSeconds=60
-Feb 08, 2015 9:57:38 PM org.apache.solr.search.SolrIndexSearcher <init>
-INFO: Opening Searcher@78fa929 main
-Feb 08, 2015 9:57:38 PM org.apache.solr.search.SolrIndexSearcher <init>
-INFO: Opening Searcher@6a6e2552 main
-Feb 08, 2015 9:57:39 PM org.apache.solr.update.CommitTracker <init>
+Feb 20, 2015 2:07:57 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@2336a872 main
+Feb 20, 2015 2:07:57 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@2fcaf74f main
+Feb 20, 2015 2:07:57 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@cd2d2e6 main
+Feb 20, 2015 2:07:57 PM org.apache.solr.update.CommitTracker <init>
 INFO: Hard AutoCommit: if uncommited for 15000ms; 
-Feb 08, 2015 9:57:39 PM org.apache.solr.update.CommitTracker <init>
+Feb 20, 2015 2:07:57 PM org.apache.solr.update.CommitTracker <init>
 INFO: Hard AutoCommit: if uncommited for 15000ms; 
-Feb 08, 2015 9:57:39 PM org.apache.solr.update.CommitTracker <init>
-INFO: Soft AutoCommit: if uncommited for 5000ms; 
-Feb 08, 2015 9:57:39 PM org.apache.solr.update.CommitTracker <init>
-INFO: Soft AutoCommit: if uncommited for 5000ms; 
-Feb 08, 2015 9:57:39 PM org.apache.solr.handler.component.SpellCheckComponent inform
-INFO: Initializing spell checkers
-Feb 08, 2015 9:57:39 PM org.apache.solr.handler.component.SpellCheckComponent inform
-INFO: Initializing spell checkers
-Feb 08, 2015 9:57:39 PM org.apache.solr.search.SolrIndexSearcher <init>
-INFO: Opening Searcher@7d45380f main
-Feb 08, 2015 9:57:39 PM org.apache.solr.spelling.DirectSolrSpellChecker init
-INFO: init: {name=default,field=name,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
-Feb 08, 2015 9:57:39 PM org.apache.solr.spelling.DirectSolrSpellChecker init
-INFO: init: {name=default,field=name,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
-Feb 08, 2015 9:57:39 PM org.apache.solr.handler.component.SpellCheckComponent inform
-INFO: No queryConverter defined, using default converter
-Feb 08, 2015 9:57:39 PM org.apache.solr.handler.component.SpellCheckComponent inform
-INFO: No queryConverter defined, using default converter
-Feb 08, 2015 9:57:39 PM org.apache.solr.handler.ReplicationHandler inform
-INFO: Commits will be reserved for  10000
-Feb 08, 2015 9:57:39 PM org.apache.solr.handler.ReplicationHandler inform
-INFO: Commits will be reserved for  10000
-Feb 08, 2015 9:57:39 PM org.apache.solr.update.CommitTracker <init>
+Feb 20, 2015 2:07:57 PM org.apache.solr.update.CommitTracker <init>
 INFO: Hard AutoCommit: if uncommited for 15000ms; 
-Feb 08, 2015 9:57:39 PM org.apache.solr.update.CommitTracker <init>
+Feb 20, 2015 2:07:57 PM org.apache.solr.update.CommitTracker <init>
 INFO: Soft AutoCommit: if uncommited for 5000ms; 
-Feb 08, 2015 9:57:39 PM org.apache.solr.handler.component.SpellCheckComponent inform
+Feb 20, 2015 2:07:57 PM org.apache.solr.update.CommitTracker <init>
+INFO: Soft AutoCommit: if uncommited for 5000ms; 
+Feb 20, 2015 2:07:57 PM org.apache.solr.update.CommitTracker <init>
+INFO: Soft AutoCommit: if uncommited for 5000ms; 
+Feb 20, 2015 2:07:57 PM org.apache.solr.handler.component.SpellCheckComponent inform
 INFO: Initializing spell checkers
-Feb 08, 2015 9:57:39 PM org.apache.solr.spelling.DirectSolrSpellChecker init
+Feb 20, 2015 2:07:57 PM org.apache.solr.handler.component.SpellCheckComponent inform
+INFO: Initializing spell checkers
+Feb 20, 2015 2:07:57 PM org.apache.solr.handler.component.SpellCheckComponent inform
+INFO: Initializing spell checkers
+Feb 20, 2015 2:07:57 PM org.apache.solr.spelling.DirectSolrSpellChecker init
 INFO: init: {name=default,field=name,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
-Feb 08, 2015 9:57:39 PM org.apache.solr.handler.component.SpellCheckComponent inform
+Feb 20, 2015 2:07:57 PM org.apache.solr.spelling.DirectSolrSpellChecker init
+INFO: init: {name=default,field=name,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+Feb 20, 2015 2:07:57 PM org.apache.solr.spelling.DirectSolrSpellChecker init
+INFO: init: {name=default,field=name,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+Feb 20, 2015 2:07:57 PM org.apache.solr.handler.component.SpellCheckComponent inform
 INFO: No queryConverter defined, using default converter
-Feb 08, 2015 9:57:39 PM org.apache.solr.handler.ReplicationHandler inform
+Feb 20, 2015 2:07:57 PM org.apache.solr.handler.component.SpellCheckComponent inform
+INFO: No queryConverter defined, using default converter
+Feb 20, 2015 2:07:57 PM org.apache.solr.handler.component.SpellCheckComponent inform
+INFO: No queryConverter defined, using default converter
+Feb 20, 2015 2:07:57 PM org.apache.solr.handler.ReplicationHandler inform
 INFO: Commits will be reserved for  10000
-Feb 08, 2015 9:57:43 PM org.apache.solr.core.SolrCore registerSearcher
-INFO: [default] Registered new searcher Searcher@6a6e2552 main{StandardDirectoryReader(segments_1:1)}
-Feb 08, 2015 9:57:43 PM org.apache.solr.core.SolrCore registerSearcher
-INFO: [development] Registered new searcher Searcher@7d45380f main{StandardDirectoryReader(segments_1w:131 _12(4.2):C10)}
-Feb 08, 2015 9:57:43 PM org.apache.solr.core.CoreContainer registerCore
+Feb 20, 2015 2:07:57 PM org.apache.solr.handler.ReplicationHandler inform
+INFO: Commits will be reserved for  10000
+Feb 20, 2015 2:07:57 PM org.apache.solr.handler.ReplicationHandler inform
+INFO: Commits will be reserved for  10000
+Feb 20, 2015 2:08:03 PM org.apache.solr.core.SolrCore registerSearcher
+INFO: [test] Registered new searcher Searcher@2336a872 main{StandardDirectoryReader(segments_1:1)}
+Feb 20, 2015 2:08:03 PM org.apache.solr.core.SolrCore registerSearcher
+INFO: [development] Registered new searcher Searcher@cd2d2e6 main{StandardDirectoryReader(segments_1:1)}
+Feb 20, 2015 2:08:03 PM org.apache.solr.core.CoreContainer registerCore
 INFO: registering core: test
-Feb 08, 2015 9:57:43 PM org.apache.solr.core.SolrCore registerSearcher
-INFO: [test] Registered new searcher Searcher@78fa929 main{StandardDirectoryReader(segments_1:1)}
-Feb 08, 2015 9:57:43 PM org.apache.solr.core.CoreContainer registerCore
-INFO: registering core: default
-Feb 08, 2015 9:57:43 PM org.apache.solr.core.CoreContainer registerCore
+Feb 20, 2015 2:08:03 PM org.apache.solr.core.CoreContainer registerCore
 INFO: registering core: development
-Feb 08, 2015 9:57:43 PM org.apache.solr.servlet.SolrDispatchFilter init
+Feb 20, 2015 2:08:03 PM org.apache.solr.core.CoreContainer registerCore
+INFO: registering core: default
+Feb 20, 2015 2:08:03 PM org.apache.solr.core.SolrCore registerSearcher
+INFO: [default] Registered new searcher Searcher@2fcaf74f main{StandardDirectoryReader(segments_1:1)}
+Feb 20, 2015 2:08:03 PM org.apache.solr.servlet.SolrDispatchFilter init
 INFO: user.dir=/Users/apoorvgoyal/.rvm/gems/ruby-2.1.4/gems/sunspot_solr-2.1.1/solr
-Feb 08, 2015 9:57:43 PM org.apache.solr.servlet.SolrDispatchFilter init
+Feb 20, 2015 2:08:03 PM org.apache.solr.servlet.SolrDispatchFilter init
 INFO: SolrDispatchFilter.init() done
-Feb 08, 2015 9:58:05 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T16\:28\:04Z}&rows=30&wt=ruby} hits=9 status=0 QTime=771 
-Feb 08, 2015 9:58:25 PM org.apache.solr.request.UnInvertedField <init>
-INFO: UnInverted multi-valued field {field=designer_id_im,memSize=4428,tindexSize=44,time=2,phase1=2,nTerms=1,bigTerms=1,termInstances=0,uses=0}
-Feb 08, 2015 9:58:25 PM org.apache.solr.request.UnInvertedField <init>
-INFO: UnInverted multi-valued field {field=color_ids_im,memSize=4372,tindexSize=44,time=0,phase1=0,nTerms=2,bigTerms=0,termInstances=2,uses=0}
-Feb 08, 2015 9:58:25 PM org.apache.solr.request.UnInvertedField <init>
-INFO: UnInverted multi-valued field {field=trim_ids_im,memSize=4372,tindexSize=44,time=0,phase1=0,nTerms=1,bigTerms=0,termInstances=1,uses=0}
-Feb 08, 2015 9:58:25 PM org.apache.solr.request.UnInvertedField <init>
-INFO: UnInverted multi-valued field {field=dimension_ids_im,memSize=4372,tindexSize=44,time=0,phase1=0,nTerms=1,bigTerms=0,termInstances=1,uses=0}
-Feb 08, 2015 9:58:25 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T16\:28\:25Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=47 
-Feb 08, 2015 10:08:48 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T16\:38\:48Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=48 
-Feb 08, 2015 10:09:24 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T16\:39\:24Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=23 
-Feb 08, 2015 10:10:19 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T16\:40\:19Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 08, 2015 10:11:17 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T16\:41\:17Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=14 
-Feb 08, 2015 10:24:26 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T16\:54\:26Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=25 
-Feb 08, 2015 10:27:12 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T16\:57\:12Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 08, 2015 10:29:24 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T16\:59\:24Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 08, 2015 10:30:29 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T17\:00\:29Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 08, 2015 10:33:23 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T17\:03\:23Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 08, 2015 10:33:47 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T17\:03\:47Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 08, 2015 10:38:26 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T17\:08\:26Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 08, 2015 10:39:25 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T17\:09\:25Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 08, 2015 10:43:07 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T17\:13\:07Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 08, 2015 10:45:28 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3Ddpjebi8zoefx}designer_id_im&facet.field={!ex%3Ddpjebi8zoefx}color_ids_im&facet.field={!ex%3Ddpjebi8zoefx}trim_ids_im&facet.field={!ex%3Ddpjebi8zoefx}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T17\:15\:27Z}&fq={!tag%3Ddpjebi8zoefx}color_ids_im:10&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=1 status=0 QTime=4 
-Feb 08, 2015 10:45:40 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D1vh7pdusfiry}designer_id_im&facet.field={!ex%3D1vh7pdusfiry}color_ids_im&facet.field={!ex%3D1vh7pdusfiry}trim_ids_im&facet.field={!ex%3D1vh7pdusfiry}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T17\:15\:40Z}&fq={!tag%3D1vh7pdusfiry}color_ids_im:11&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=1 status=0 QTime=1 
-Feb 08, 2015 10:45:50 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3Ddpjebi8zoefx}designer_id_im&facet.field={!ex%3Ddpjebi8zoefx}color_ids_im&facet.field={!ex%3Ddpjebi8zoefx}trim_ids_im&facet.field={!ex%3Ddpjebi8zoefx}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T17\:15\:50Z}&fq={!tag%3Ddpjebi8zoefx}color_ids_im:10&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=1 status=0 QTime=2 
-Feb 08, 2015 10:45:57 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T17\:15\:57Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 08, 2015 10:47:05 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T17\:17\:05Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 08, 2015 10:47:12 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3Ddpjebi8zoefx}designer_id_im&facet.field={!ex%3Ddpjebi8zoefx}color_ids_im&facet.field={!ex%3Ddpjebi8zoefx}trim_ids_im&facet.field={!ex%3Ddpjebi8zoefx}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T17\:17\:12Z}&fq={!tag%3Ddpjebi8zoefx}color_ids_im:10&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=1 status=0 QTime=3 
-Feb 08, 2015 10:47:18 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D1vh7pdusfiry}designer_id_im&facet.field={!ex%3D1vh7pdusfiry}color_ids_im&facet.field={!ex%3D1vh7pdusfiry}trim_ids_im&facet.field={!ex%3D1vh7pdusfiry}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T17\:17\:18Z}&fq={!tag%3D1vh7pdusfiry}color_ids_im:11&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=1 status=0 QTime=2 
-Feb 08, 2015 10:50:15 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D1vh7pdusfiry}designer_id_im&facet.field={!ex%3D1vh7pdusfiry}color_ids_im&facet.field={!ex%3D1vh7pdusfiry}trim_ids_im&facet.field={!ex%3D1vh7pdusfiry}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T17\:20\:15Z}&fq={!tag%3D1vh7pdusfiry}color_ids_im:11&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=1 status=0 QTime=2 
-Feb 08, 2015 10:51:46 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D1vh7pdusfiry}designer_id_im&facet.field={!ex%3D1vh7pdusfiry}color_ids_im&facet.field={!ex%3D1vh7pdusfiry}trim_ids_im&facet.field={!ex%3D1vh7pdusfiry}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T17\:21\:46Z}&fq={!tag%3D1vh7pdusfiry}color_ids_im:11&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=1 status=0 QTime=2 
-Feb 08, 2015 10:52:42 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3Ddpjebi8zoefx}designer_id_im&facet.field={!ex%3Ddpjebi8zoefx}color_ids_im&facet.field={!ex%3Ddpjebi8zoefx}trim_ids_im&facet.field={!ex%3Ddpjebi8zoefx}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T17\:22\:42Z}&fq={!tag%3Ddpjebi8zoefx}color_ids_im:10&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=1 status=0 QTime=2 
-Feb 08, 2015 10:54:04 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3Ddpjebi8zoefx}designer_id_im&facet.field={!ex%3Ddpjebi8zoefx}color_ids_im&facet.field={!ex%3Ddpjebi8zoefx}trim_ids_im&facet.field={!ex%3Ddpjebi8zoefx}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T17\:24\:04Z}&fq={!tag%3Ddpjebi8zoefx}color_ids_im:10&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=1 status=0 QTime=2 
-Feb 08, 2015 10:54:16 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T17\:24\:16Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 08, 2015 10:58:31 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T17\:28\:31Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 08, 2015 10:59:07 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T17\:29\:07Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 08, 2015 11:10:38 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T17\:40\:38Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=35 
-Feb 08, 2015 11:10:51 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T17\:40\:51Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 08, 2015 11:10:59 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T17\:40\:59Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 08, 2015 11:11:12 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T17\:41\:12Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 08, 2015 11:36:26 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3Ddpjebi8zoefx}designer_id_im&facet.field={!ex%3Ddpjebi8zoefx}color_ids_im&facet.field={!ex%3Ddpjebi8zoefx}trim_ids_im&facet.field={!ex%3Ddpjebi8zoefx}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T18\:06\:26Z}&fq={!tag%3Ddpjebi8zoefx}color_ids_im:10&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=1 status=0 QTime=45 
-Feb 08, 2015 11:36:34 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T18\:06\:34Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 08, 2015 11:38:50 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T18\:08\:50Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 08, 2015 11:42:19 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T18\:12\:19Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 08, 2015 11:43:50 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T18\:13\:50Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 08, 2015 11:47:50 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T18\:17\:50Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 08, 2015 11:48:23 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T18\:18\:23Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 08, 2015 11:55:23 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T18\:25\:23Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 08, 2015 11:55:50 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T18\:25\:50Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 08, 2015 11:56:26 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T18\:26\:26Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 08, 2015 11:56:58 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T18\:26\:58Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 08, 2015 11:58:13 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T18\:28\:12Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 12:00:43 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T18\:30\:43Z}&rows=30&wt=ruby} hits=9 status=0 QTime=2 
-Feb 09, 2015 12:00:45 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T18\:30\:45Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 09, 2015 12:01:52 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T18\:31\:52Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 12:15:22 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T18\:45\:22Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=48 
-Feb 09, 2015 12:20:22 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T18\:50\:22Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 09, 2015 12:20:49 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T18\:50\:49Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 09, 2015 12:21:24 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T18\:51\:24Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 12:21:38 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3Ds1wzq1namjcn}designer_id_im&facet.field={!ex%3Ds1wzq1namjcn}color_ids_im&facet.field={!ex%3Ds1wzq1namjcn}trim_ids_im&facet.field={!ex%3Ds1wzq1namjcn}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T18\:51\:38Z}&fq={!tag%3Ds1wzq1namjcn}designer_id_im:1&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=67 
-Feb 09, 2015 12:21:44 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T18\:51\:44Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 12:22:19 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T18\:52\:19Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 09, 2015 12:22:43 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T18\:52\:43Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 09, 2015 12:26:39 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T18\:56\:39Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 12:27:38 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T18\:57\:38Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 12:37:22 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T19\:07\:22Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=35 
-Feb 09, 2015 12:38:49 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T19\:08\:49Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 12:40:37 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T19\:10\:37Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 12:41:27 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T19\:11\:27Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 12:45:13 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T19\:15\:13Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 09, 2015 12:46:09 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T19\:16\:09Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 12:46:49 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T19\:16\:49Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 09, 2015 12:47:42 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T19\:17\:42Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 09, 2015 12:49:14 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T19\:19\:14Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 09, 2015 12:49:37 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T19\:19\:37Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 09, 2015 12:57:56 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T19\:27\:56Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 12:59:06 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T19\:29\:06Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 09, 2015 12:59:27 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D1vh7pdusfiry}designer_id_im&facet.field={!ex%3D1vh7pdusfiry}color_ids_im&facet.field={!ex%3D1vh7pdusfiry}trim_ids_im&facet.field={!ex%3D1vh7pdusfiry}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T19\:29\:27Z}&fq={!tag%3D1vh7pdusfiry}color_ids_im:11&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=1 status=0 QTime=2 
-Feb 09, 2015 12:59:47 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D1vh7pdusfiry,vil2q98kbwxq}designer_id_im&facet.field={!ex%3D1vh7pdusfiry,vil2q98kbwxq}color_ids_im&facet.field={!ex%3D1vh7pdusfiry,vil2q98kbwxq}trim_ids_im&facet.field={!ex%3D1vh7pdusfiry,vil2q98kbwxq}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T19\:29\:47Z}&fq={!tag%3D1vh7pdusfiry}color_ids_im:11&fq={!tag%3Dvil2q98kbwxq}trim_ids_im:7&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=0 status=0 QTime=4 
-Feb 09, 2015 12:59:58 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T19\:29\:58Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 1:00:59 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T19\:30\:59Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 09, 2015 1:01:46 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T19\:31\:46Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 1:52:43 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T20\:22\:43Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=69 
-Feb 09, 2015 1:53:42 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T20\:23\:42Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=30 
-Feb 09, 2015 1:54:40 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T20\:24\:40Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 09, 2015 1:55:04 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T20\:25\:04Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 09, 2015 1:56:11 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T20\:26\:11Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 1:56:53 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T20\:26\:53Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 1:57:30 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T20\:27\:30Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 1:58:11 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T20\:28\:11Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 1:58:34 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T20\:28\:34Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 1:59:35 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T20\:29\:35Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 09, 2015 2:02:02 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T20\:32\:02Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 2:02:22 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T20\:32\:22Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 2:03:00 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T20\:33\:00Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 2:03:35 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T20\:33\:35Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 09, 2015 2:05:06 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T20\:35\:06Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 09, 2015 2:11:51 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T20\:41\:51Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 09, 2015 2:12:28 AM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-08T20\:42\:28Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 5:15:26 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T11\:45\:26Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=328 
-Feb 09, 2015 5:15:42 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3Ds1wzq1namjcn}designer_id_im&facet.field={!ex%3Ds1wzq1namjcn}color_ids_im&facet.field={!ex%3Ds1wzq1namjcn}trim_ids_im&facet.field={!ex%3Ds1wzq1namjcn}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T11\:45\:42Z}&fq={!tag%3Ds1wzq1namjcn}designer_id_im:1&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 5:15:55 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T11\:45\:55Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 5:16:56 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T11\:46\:56Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 5:17:38 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T11\:47\:38Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 09, 2015 5:18:00 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T11\:48\:00Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 5:18:31 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T11\:48\:31Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 09, 2015 5:18:56 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T11\:48\:56Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 5:19:19 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T11\:49\:19Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 09, 2015 5:21:34 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T11\:51\:34Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 5:23:12 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T11\:53\:12Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 5:23:46 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T11\:53\:46Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 09, 2015 5:25:39 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T11\:55\:39Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 5:26:13 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T11\:56\:13Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 09, 2015 5:27:08 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T11\:57\:08Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 5:27:49 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T11\:57\:49Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 5:27:56 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3Ds1wzq1namjcn}designer_id_im&facet.field={!ex%3Ds1wzq1namjcn}color_ids_im&facet.field={!ex%3Ds1wzq1namjcn}trim_ids_im&facet.field={!ex%3Ds1wzq1namjcn}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T11\:57\:56Z}&fq={!tag%3Ds1wzq1namjcn}designer_id_im:1&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 5:28:23 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3Ds1wzq1namjcn}designer_id_im&facet.field={!ex%3Ds1wzq1namjcn}color_ids_im&facet.field={!ex%3Ds1wzq1namjcn}trim_ids_im&facet.field={!ex%3Ds1wzq1namjcn}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T11\:58\:23Z}&fq={!tag%3Ds1wzq1namjcn}designer_id_im:1&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 5:28:33 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T11\:58\:33Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 5:34:01 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T12\:04\:01Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 09, 2015 5:35:57 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T12\:05\:57Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 5:38:00 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T12\:08\:00Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=3 
-Feb 09, 2015 5:57:07 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T12\:27\:07Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 6:00:32 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D1vh7pdusfiry}designer_id_im&facet.field={!ex%3D1vh7pdusfiry}color_ids_im&facet.field={!ex%3D1vh7pdusfiry}trim_ids_im&facet.field={!ex%3D1vh7pdusfiry}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T12\:30\:32Z}&fq={!tag%3D1vh7pdusfiry}color_ids_im:11&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=1 status=0 QTime=1 
-Feb 09, 2015 6:09:35 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D1vh7pdusfiry}designer_id_im&facet.field={!ex%3D1vh7pdusfiry}color_ids_im&facet.field={!ex%3D1vh7pdusfiry}trim_ids_im&facet.field={!ex%3D1vh7pdusfiry}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T12\:39\:35Z}&fq={!tag%3D1vh7pdusfiry}color_ids_im:11&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=1 status=0 QTime=1 
-Feb 09, 2015 6:11:28 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D1vh7pdusfiry}designer_id_im&facet.field={!ex%3D1vh7pdusfiry}color_ids_im&facet.field={!ex%3D1vh7pdusfiry}trim_ids_im&facet.field={!ex%3D1vh7pdusfiry}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T12\:41\:28Z}&fq={!tag%3D1vh7pdusfiry}color_ids_im:11&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=1 status=0 QTime=1 
-Feb 09, 2015 6:14:58 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D1vh7pdusfiry}designer_id_im&facet.field={!ex%3D1vh7pdusfiry}color_ids_im&facet.field={!ex%3D1vh7pdusfiry}trim_ids_im&facet.field={!ex%3D1vh7pdusfiry}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T12\:44\:58Z}&fq={!tag%3D1vh7pdusfiry}color_ids_im:11&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=1 status=0 QTime=1 
-Feb 09, 2015 6:16:05 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T12\:46\:05Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=2 
-Feb 09, 2015 6:16:22 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D1vh7pdusfiry}designer_id_im&facet.field={!ex%3D1vh7pdusfiry}color_ids_im&facet.field={!ex%3D1vh7pdusfiry}trim_ids_im&facet.field={!ex%3D1vh7pdusfiry}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T12\:46\:22Z}&fq={!tag%3D1vh7pdusfiry}color_ids_im:11&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=1 status=0 QTime=1 
-Feb 09, 2015 6:16:27 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3Ddpjebi8zoefx}designer_id_im&facet.field={!ex%3Ddpjebi8zoefx}color_ids_im&facet.field={!ex%3Ddpjebi8zoefx}trim_ids_im&facet.field={!ex%3Ddpjebi8zoefx}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T12\:46\:27Z}&fq={!tag%3Ddpjebi8zoefx}color_ids_im:10&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=1 status=0 QTime=1 
-Feb 09, 2015 6:16:49 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3Ds1wzq1namjcn,dpjebi8zoefx}designer_id_im&facet.field={!ex%3Ds1wzq1namjcn,dpjebi8zoefx}color_ids_im&facet.field={!ex%3Ds1wzq1namjcn,dpjebi8zoefx}trim_ids_im&facet.field={!ex%3Ds1wzq1namjcn,dpjebi8zoefx}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T12\:46\:49Z}&fq={!tag%3Ds1wzq1namjcn}designer_id_im:1&fq={!tag%3Ddpjebi8zoefx}color_ids_im:10&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=1 status=0 QTime=1 
-Feb 09, 2015 6:16:57 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3Ds1wzq1namjcn,1vh7pdusfiry}designer_id_im&facet.field={!ex%3Ds1wzq1namjcn,1vh7pdusfiry}color_ids_im&facet.field={!ex%3Ds1wzq1namjcn,1vh7pdusfiry}trim_ids_im&facet.field={!ex%3Ds1wzq1namjcn,1vh7pdusfiry}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T12\:46\:57Z}&fq={!tag%3Ds1wzq1namjcn}designer_id_im:1&fq={!tag%3D1vh7pdusfiry}color_ids_im:11&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=1 status=0 QTime=1 
-Feb 09, 2015 6:17:05 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3Ds1wzq1namjcn,1vh7pdusfiry,vil2q98kbwxq}designer_id_im&facet.field={!ex%3Ds1wzq1namjcn,1vh7pdusfiry,vil2q98kbwxq}color_ids_im&facet.field={!ex%3Ds1wzq1namjcn,1vh7pdusfiry,vil2q98kbwxq}trim_ids_im&facet.field={!ex%3Ds1wzq1namjcn,1vh7pdusfiry,vil2q98kbwxq}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T12\:47\:05Z}&fq={!tag%3Ds1wzq1namjcn}designer_id_im:1&fq={!tag%3D1vh7pdusfiry}color_ids_im:11&fq={!tag%3Dvil2q98kbwxq}trim_ids_im:7&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=0 status=0 QTime=2 
-Feb 09, 2015 6:21:01 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T12\:51\:01Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 6:24:07 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T12\:54\:07Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 6:24:39 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T12\:54\:39Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 09, 2015 6:25:27 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-09T12\:55\:27Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 10, 2015 10:59:29 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-10T17\:29\:28Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=106 
-Feb 10, 2015 11:05:28 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-10T17\:35\:28Z}&rows=30&wt=ruby} hits=9 status=0 QTime=1 
-Feb 11, 2015 11:44:50 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-11T18\:14\:50Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=53 
-Feb 11, 2015 11:44:53 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-11T18\:14\:53Z}&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=9 status=0 QTime=1 
-Feb 13, 2015 8:53:21 PM org.apache.solr.core.SolrCore execute
-INFO: [development] webapp=/solr path=/select params={q=*:*&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-13T15\:23\:20Z}&rows=30&wt=ruby} hits=9 status=0 QTime=331 
+Feb 20, 2015 2:08:21 PM org.apache.solr.request.UnInvertedField <init>
+INFO: UnInverted multi-valued field {field=designer_id_im,memSize=4288,tindexSize=0,time=0,phase1=0,nTerms=0,bigTerms=0,termInstances=0,uses=0}
+Feb 20, 2015 2:08:21 PM org.apache.solr.request.UnInvertedField <init>
+INFO: UnInverted multi-valued field {field=color_ids_im,memSize=4288,tindexSize=0,time=0,phase1=0,nTerms=0,bigTerms=0,termInstances=0,uses=0}
+Feb 20, 2015 2:08:21 PM org.apache.solr.request.UnInvertedField <init>
+INFO: UnInverted multi-valued field {field=trim_ids_im,memSize=4288,tindexSize=0,time=0,phase1=0,nTerms=0,bigTerms=0,termInstances=0,uses=0}
+Feb 20, 2015 2:08:21 PM org.apache.solr.request.UnInvertedField <init>
+INFO: UnInverted multi-valued field {field=dimension_ids_im,memSize=4288,tindexSize=0,time=0,phase1=0,nTerms=0,bigTerms=0,termInstances=0,uses=0}
+Feb 20, 2015 2:08:21 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&fl=*+score&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-02\-20T08\:38\:21Z}&rows=30&q=atif&defType=edismax&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&qf=name_text+description_text+designer_names_text&f.designer_id_im.facet.mincount=1&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=0 status=0 QTime=509 

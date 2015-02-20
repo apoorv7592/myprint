@@ -1,0 +1,2 @@
+<% div_id = "#"+"dsg_switch_"+@dsg.id.to_s %>
+$("<%= div_id %>").html("<%= escape_javascript(render('make_active', :d=> @dsg)) %>")

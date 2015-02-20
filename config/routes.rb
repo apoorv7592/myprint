@@ -33,10 +33,8 @@ Rails.application.routes.draw do
     end
     resources :relationships, only: [:create, :destroy]
     
-    namespace :admin do 
-      resources :banners
-      resources :suites
-    end
+    get '/wedding', to: 'landing_pages#wedding'
+    
     get '/search'  => 'solrsearch#index'
     routes = lambda do
       namespace :admin do
@@ -45,6 +43,13 @@ Rails.application.routes.draw do
             get :volume_prices, :on => :member
           end
         end
+        resources :designers do 
+          post :deactivate
+          post :activate
+          
+        end
+        resources :banners
+        resources :suites
         delete '/volume_prices/:id', :to => "volume_prices#destroy", :as => :volume_price
       end
     end

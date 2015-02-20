@@ -1,0 +1,44 @@
+<div class="row">
+	<div class="col-md-6 col-md-offset-2">
+		<h4><b>New designer details</b> </h4>
+	</div>
+</div>
+<%= form_for @dsg, url: admin_designers_path, class: 'form-horizontal' do |f| %>
+	<div class="row form-group">
+		<%= f.label :name, class: 'col-sm-2 col-sm-offset-2' %>
+		<%= f.text_field :name, class: 'col-sm-4' %>
+	</div>
+	<div class="row form-group">
+		<%= f.label :about, class: 'col-sm-2 col-sm-offset-2' %>
+		<%= f.text_area :about, class: 'col-sm-4' %>
+	</div>
+	<div class="row form-group">
+		<%= f.label :city, class: 'col-sm-2 col-sm-offset-2' %>
+		<%= f.text_field :city, class: 'col-sm-4' %>
+	</div>
+	<div class="row form-group">
+		<%= f.label :active, class: 'col-sm-2 col-sm-offset-2' %>
+		<div class="col-sm-4">
+			<% if @dsg.active %> 
+				<%= f.radio_button :active, true, checked: true%>
+				<span>Yes</span>
+				&nbsp
+				<%= f.radio_button :active, false %>
+				<span>No</span>
+			<% else %>
+				<%= f.radio_button :active, true%>
+				<span>Yes</span>
+				&nbsp
+				<%= f.radio_button :active, false%>
+				<span>No</span>
+			<% end -%>
+		</div>
+	</div>
+	<div class="row form-group">
+		<%= f.label :avatar, class: 'col-sm-2 col-sm-offset-2' %>
+		<%= f.file_field :avatar, class: 'col-sm-4' %>
+	</div>
+	<div class="row form-group">
+		<%= f.submit 'Create the designer', class: 'col-sm-2 col-sm-offset-2 btn btn-primary' %>
+	</div>
+<%end %>

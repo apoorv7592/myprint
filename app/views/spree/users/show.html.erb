@@ -3,55 +3,61 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#userpagenavbar li').each(function(){
+      try{
+        var idNavigation = $(this).attr('id');
+        var idDiv = idNavigation.toLowerCase();
+        $('#'+idNavigation).bind('click',function(){
+          $('#'+idDiv).toggle();
+        });
+      }
+      catch(e){
+        console.log("ERROR: "+e);
+      }
+    });
+  });
+</script>
 
 
 
-<div class="col-md-10" style="width:1000px;height:500px;border:1px solid #000000;">
-<h1 style="text-align:center;font-size:20px;background:rgba(1,0,0,0.1);position:relative;top:5px;">DASHBOARD</h1>
-  <div style="width:500px;height:180px;margin-left:30px;border:1px solid rgba(1,0,0,0.2);margin-top:20px;">
+
+
+<div class="col-md-10" style="width:1000px;height:auto;border:1px solid #000000;">
+ <p style="text-align:center;font-size:20px;background:rgba(1,0,0,0.1);position:relative;top:5px;color:"> ORDERS & ACCOUNT </p>
+
+  <div style="width:940px;height:500px;margin:30px;margin-top:5px;">
           
-          <div style="float:left;width:170px;height:180px;border-right:1px solid rgba(1,0,0,0.2);">
-               <p style="margin:20px;"> ORDERS & <br/>
-              ACCOUNT </p>
-          </div>
           
-          <div  style="float:right;width:312px;height:180px;">
-            <p style="margin:20px;">
-            <table style="width:100%">
-            <tr>
-              <td><a href="#"class="removeline">Account Settings</a><br/><br/></td>
-              <td><a href="#"class="removeline">Orders</a><br/><br/><td>
-            </tr>
-            <tr>
-              <td><a href="#"class="removeline">Saved Addresses</a><br/><br/></td>
-              <td><a href="#"class="removeline">Payment Methods</a><br/><br/></td>
-            </tr>
-            <tr>
-              <td><a href="#"class="removeline">My Wishlist</a><br/><br/></td>
-              <td><a href="#"class="removeline">My Favourite Designer</a><br/><br/></td>
-            </tr>
-            <tr>
-              <td><a href="#"class="removeline">Saved Projects</a></td>
-            </tr>
-            </table>
-             </p>
-          </div>
-   
+         
+            <ul  id="userpagenavbar" class="nav navbar-nav" >
+
+              <li id ="Settings"><a href="#"class="removeline">Password</a></li>
+              <li id="Orders"><a href="#"class="removeline">Orders</a></li>
+              <li><a href="#"class="removeline">Addresses</a></li>
+              <li><a href="#"class="removeline">Payment Methods</a></li>
+              <li><a href="#"class="removeline">Wishlist</a></li>
+              <li><a href="#"class="removeline">Fav Designer</a></li>
+              <li><a href="#"class="removeline">Saved Projects</a></li>
+              <li id="Lifestats"> <a class="removeline">Lifetime Stats</a></li>
+            </ul>
+         
    
   </div>
   
-  <div style="width:500px;height:200px;margin-left:30px;margin-top:40px;">
-  RECENT ORDERS  &nbsp  <i class="fa fa-clock-o"></i><small class="ordhist" >ORDER HISTORY</small><br/><br/>
-  <table style="width:100%;border-bottom: 1px solid rgba(1,0,0,0.2);">
-              <tr>
-              <td  class="ordhist">DATE<br/><br/></td>
-              <td  class="ordhist">ORDER#<br/><br/></td>
-              <td  class="ordhist">STATUS<br/><br/></td>
-              <td  class="ordhist">TOTAL<br/><br/></td>
-            </tr>
-  </table>
-  <%= button_to 'LOGOUT', '/logout/',:method => :get ,:form_class => "logoutbtn"  %>
-  </div>
+      <div style="width:500px;height:200px;margin-left:30px;margin-top:40px;">
+      RECENT ORDERS  <i class="fa fa-clock-o"></i><small class="ordhist" >ORDER HISTORY</small><br/><br/>
+      <table style="width:100%;border-bottom: 1px solid rgba(1,0,0,0.2);">
+                  <tr>
+                  <td  class="ordhist">DATE<br/><br/></td>
+                  <td  class="ordhist">ORDER#<br/><br/></td>
+                  <td  class="ordhist">STATUS<br/><br/></td>
+                  <td  class="ordhist">TOTAL<br/><br/></td>
+                </tr>
+      </table>
+      <%= button_to 'LOGOUT', '/logout/',:method => :get ,:form_class => "logoutbtn"  %>
+      </div>
 </div>
 
 <p>User Account Page</p>
@@ -60,59 +66,38 @@
   <%= Spree.t(:editing_user) %> <%= @user.email %>
 <% end %>
 
-<%= render :partial => 'spree/admin/users/sidebar', :locals => { :current => :account } %>
-<%= render :partial => 'spree/admin/users/user_page_actions' %>
 
+<div id="settings" class="userpagenavdiv">
+        <%= render :partial => 'spree/admin/users/sidebar', :locals => { :current => :account } %>
+        <%= render :partial => 'spree/admin/users/user_page_actions' %>
 <fieldset data-hook="admin_user_edit_general_settings" class="marginb">
-  <legend><%= Spree.t(:general_settings) %></legend>
+         <legend><%= Spree.t(:general_settings) %></legend>
 
-  <div data-hook="admin_user_edit_form_header">
-    <%= render :partial => 'spree/admin/shared/error_messages', :locals => { :target => @user } %>
-  </div>
+          <div data-hook="admin_user_edit_form_header">
+            <%= render :partial => 'spree/admin/shared/error_messages', :locals => { :target => @user } %>
+          </div>
 
-  <div data-hook="admin_user_edit_form">
-    <%= form_for [:admin, @user], as: :user, url: admin_user_url(@user), method: :put do |f| %>
-      <%= render :partial => 'form', :locals => { :f => f } %>
+          <div data-hook="admin_user_edit_form">
+            <%= form_for [:admin, @user], as: :user, url: admin_user_url(@user), method: :put do |f| %>
+              <%= render :partial => 'form', :locals => { :f => f } %>
 
-      <div data-hook="admin_user_edit_form_button">
-        <%= render :partial => 'spree/admin/shared/edit_resource_links', :locals => { :collection_url => admin_users_url } %>
-      </div>
-    <% end %>
-  </div>
+              <div data-hook="admin_user_edit_form_button">
+                <%= render :partial => 'spree/admin/shared/edit_resource_links', :locals => { :collection_url => admin_users_url } %>
+              </div>
+            <% end %>
+          </div>
 </fieldset>
+</div>
 
-<fieldset data-hook="admin_user_api_key" id="admin_user_edit_api_key" class="marginb">
-  <legend><%= Spree.t('access', :scope => 'api') %></legend>
-
-  <% if @user.spree_api_key.present? %>
-    <div class="form-group">
-      <div id="current-api-key"><%= Spree.t('key', :scope => 'api') %>: <%= @user.spree_api_key %></div>
-    </div>
-    <div class="form-actions">
-      <%= form_tag spree.clear_api_key_admin_user_path(@user), :method => :put do %>
-        <%= button Spree.t('clear_key', :scope => 'api'), 'delete', 'submit', class: "btn-danger" %>
-      <% end %>
-
-      <span class="or"><%= Spree.t(:or)%></span>
-
-      <%= form_tag spree.generate_api_key_admin_user_path(@user), :method => :put do %>
-        <%= button Spree.t('regenerate_key', :scope => 'api'), 'save' %>
-      <% end %>
-    </div>
-
-  <% else %>
-
-    <div class="alert alert-warning"><%= Spree.t('no_key', :scope => 'api') %></div>
-
-    <div class="form-actions">
-      <%= form_tag spree.generate_api_key_admin_user_path(@user), :method => :put do %>
-        <%= button Spree.t('generate_key', :scope => 'api'), 'key' %>
-      <% end %>
-    </div>
-  <% end %>
-</fieldset>
-
+<div id="lifestats" class="userpagenavdiv">
 <%= render 'spree/admin/users/lifetime_stats' %>
+</div>
+
+<div id="orders" class="userpagenavdiv1">
+<%= render 'spree/admin/users/sidebar' %>
+</div>
+
+
 
 
 
