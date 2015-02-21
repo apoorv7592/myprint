@@ -73,7 +73,9 @@
 
 </nav>
  <div id="myaccount" class="uparrowdiv">
-
+    <% if spree_current_user && spree_current_user.is_designer %>
+      <%= link_to 'Designer Dashboard', designer_dashboard_path %>
+    <% end %>
  </div>
 
 
