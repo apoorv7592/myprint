@@ -93,7 +93,7 @@ gem 'binding_of_caller'
 
 #Volume pricing
 #gem 'spree_volume_pricing', '3.0.2'
-#gem 'spree_volume_pricing', :git => 'git://github.com/spree-contrib/spree_volume_pricing.git'
+#gem 'spree_volume_pricing', :github => 'ast0708/spree_volume_pricing'
 gem 'popen4'
 
 gem 'seed-fu'
