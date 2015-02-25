@@ -9,7 +9,7 @@ module Spree
 		def show	
 			@usr = Spree::User.find(params[:id])
 			if @usr.is_designer?
-				if @usr.designer.active
+				if  @usr.designer.active
 					@designer = @usr
 					@details = @designer.designer 
 				else

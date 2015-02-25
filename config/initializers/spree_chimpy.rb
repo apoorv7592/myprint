@@ -24,8 +24,10 @@ Spree::Chimpy.config do |config|
   # - key: a unique name that mail chimp uses. 10 letters max
   # - value: the name of any method on the user class.
   # default is {'EMAIL' => :email}
-  # config.merge_vars = {
-  #   'EMAIL' => :email,
-  #   'HAIRCOLOR' => :hair_color
-  # }
+   config.merge_vars = {
+    'EMAIL'       => :email,
+    'FNAME'       => :fname,
+    'LNAME'       => :lname,
+    'ORDERNUMBER' => :onumber
+  }
 end
