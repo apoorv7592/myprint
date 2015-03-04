@@ -21,6 +21,9 @@ Rails.application.routes.draw do
     resources :sub_categories
     
     resources :colors
+    
+
+    
 
    
     resources :contests

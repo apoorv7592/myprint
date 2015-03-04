@@ -8,18 +8,11 @@
 <%= render partial: 'spree/admin/shared/head' %>
 </head>
 <body class="admin skin-blue">
-<div id="progress">
-<div class="alert alert-info alert-progress">
-<div class="spinner"><%= Spree.t(:loading) %>...</div>
-<div class="progress-message"><%= Spree.t(:loading) %>...</div>
-</div>
-</div>
 <%= render partial: 'spree/admin/shared/header' %>
-<div id="wrapper" class="wrapper row-offcanvas row-offcanvas-left">
-<aside class="left-side sidebar-offcanvas">
-<section class="sidebar">
 
-<div class="navbar navbar-default">
+<p style="margin:50px;"></p>
+<div id="wrapper" class="wrapper row-offcanvas row-offcanvas-left">
+<div class="navbar navbar-default" >
 	<div class="container-fluid">
 		<div class="navbar-header">
 			<ul class="nav navbar-nav">
@@ -31,6 +24,7 @@
 
 </section>
 </aside>
+</div>
 <aside class="right-side">
 <%= render partial: 'spree/admin/shared/content_header' %>
 <section class="content <%= "with-sidebar" if content_for?(:sidebar) %>">

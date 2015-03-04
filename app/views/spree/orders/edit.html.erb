@@ -1,3 +1,29 @@
+<head>
+<style>
+table{
+    border: 1px solid black;
+}
+
+td{
+  border:1px solid rgba(1,0,0,0.1);
+}
+
+th {
+    background:rgba(1,0,0,0.2) !important;
+       border-bottom:1px solid black;
+
+}
+
+#line_items{
+  border-bottom:1px solid black;
+  color:black  !important;
+}
+
+
+</style>
+</head>
+
+
 <% @body_id = 'cart' %>
 <div data-hook="cart_container">
   <h3><%= Spree.t(:Cart) %></h3>
@@ -6,7 +32,7 @@
     <div data-hook="empty_cart" style="width:1000px;height:200px; border:1px solid rgba(1,0,0,0.3);">
       <div><h5 style="text-align:center;color:black;"><%= Spree.t(:your_cart_is_empty) %></h5>
       <i class="fa fa-cart-plus fa-3x" style="color:rgba(1,0,0,0.3); margin-left:480px;"></i></div><br/>
-      <p><%= link_to Spree.t(:continue_shopping), root_path, class: 'btn btn-default',style: "width:200px;height:30px; background:#87c9c2;color:white;margin-left:400px;" %></p>
+      <p><%= link_to Spree.t(:continue_shopping), root_path, class: 'btn btn-default',style: "width:200px;height:30px; background:#87c9c2;color:white; " %></p>
     </div>
   
   <% else %>
@@ -16,15 +42,40 @@
         <div data-hook="inside_cart_form">
 
           <div data-hook="cart_items" class="table-responsive">
-            <%= render partial: 'form', locals: { order_form: order_form } %>
+                              <%= render partial: 'spree/shared/error_messages', locals: { target: @order } %>
+                              <table class="table" id="cart-detail" data-hook>
+                                <thead>
+                                  <tr class="active" data-hook="cart_items_headers">
+                                    <th class="cart-item-description-header" colspan="2"><%= Spree.t(:item) %></th>
+                                    <th class="cart-item-price-header"><%= Spree.t(:price) %></th>
+                                    <th Style="width:100px;" class="cart-item-quantity-header"><%= Spree.t(:qty) %></th>
+                                    <th class="cart-item-total-header"><%= Spree.t(:subtotal) %></th>
+                                    <th class="cart-item-delete-header"></th>
+                                  </tr>
+                                </thead>
+                                <tbody id="line_items" data-hook>
+                                  <%= render partial: 'spree/orders/line_item', collection: order_form.object.line_items, locals: { order_form: order_form } %>
+                                </tbody>
+                                <% if @order.adjustments.nonzero.exists? || @order.line_item_adjustments.nonzero.exists? || @order.shipment_adjustments.nonzero.exists? || @order.shipments.any? %>
+                                  <tr class="cart-subtotal">
+                                    <td colspan="4" align='right'><h5><%= Spree.t(:cart_subtotal, count: @order.line_items.sum(:quantity)) %></h5></td>
+                                    <td colspan="2"><h5><%= order_form.object.display_item_total %></h5></td>
+                                  </tr>
+                                  <%= render "spree/orders/adjustments" %>
+                                <% end %>
+                                <tr class="warning cart-total">
+                                  <td colspan="4" align='right' style="background:rgba(1,0,0,0.2);"><h5><%= Spree.t(:total) %></h5></td>
+                                  <td class="lead" colspan="2" style="background:rgba(1,0,0,0.2);"><%= order_form.object.display_total %></td>
+                                </tr>
+                              </table>
           </div>
 
           <div class="links col-md-6 navbar-form pull-right text-right" data-hook="cart_buttons">
-            <div class="form-group">
-            <%= button_tag class: 'btn btn-primary', id: 'update-button' do %>
+              <div class="form-group">
+            <%= button_tag class: 'btn btn-primary', id: 'update-button', style: "width:200px;height:30px; background:#87c9c2;color:white;" do %>
               <%= Spree.t(:update) %>
             <% end %>
-            <%= button_tag class: 'btn btn-lg btn-success', id: 'checkout-link', name: 'checkout' do %>
+            <%= button_tag class: 'btn btn-lg btn-success', id: 'checkout-link', name: 'checkout',style: "width:200px;height:40px; background:#87c9c2;color:white;" do %>
               <%= Spree.t(:checkout) %>
             <% end %>
           </div>
@@ -33,13 +84,8 @@
     </div>
 
     <div id="empty-cart" class="col-md-6 pull-left" data-hook>
-      <%= form_tag empty_cart_path, method: :put do %>
-        <p id="clear_cart_link" data-hook>
-          <%= submit_tag Spree.t(:empty_cart), class: 'btn btn-default',style: "width:100px;height:30px;background:#87c9c2; color:white;margin-left:200px;"  %>
-          <%= Spree.t(:or) %>
-          <%= link_to Spree.t(:continue_shopping), products_path, class: 'continue' %>
-        </p>
-      <% end %>
+          <%= link_to Spree.t(:continue_shopping), root_path, class: 'btn btn-default',style: "width:150px;height:30px; background:#87c9c2;color:white;" %>
+
     </div>
   <% end %>
 </div>

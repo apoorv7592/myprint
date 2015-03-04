@@ -1,9 +1,0 @@
-<% @subscriber ||= Spree::Chimpy::Subscriber.new %>
-
-<%= form_for @subscriber do |f| %>
-	<div>
-		<%= f.label :email, Spree.t(:label, scope: [:chimpy, :email]) %>
-		<%= f.email_field :email, placeholder: Spree.t(:placeholder, scope: [:chimpy, :email]) %>
-		<%= f.submit '',:type => :image, :src => "buttonsignup.jpg" %>
-	</div>
-<% end %>

@@ -192,7 +192,6 @@
               </div>
               <div class="col-md-6" style="height:716px; width:492px;border:1px solid rgba(1,0,0,0.2);;margin-left:8px;">
                 <ul>
-                  <form action="" method="post">
                     <li class="prop">
                       <span>Quantity:</span>
                       <br>
@@ -212,7 +211,7 @@
                         <div class="colorbox" style="width:15px;height:15px; float:center;background:<%= sc.code%>">
                         </div>
                       </div>
-                      <input type="radio" name="color"  value= <%=sc.id%> />
+                      
                       <% end -%>
                       <% end -%>
                     </li>
@@ -220,7 +219,7 @@
                       <% if !@trm.nil? %>
                       <span>Trim:</span>
                       <% @trm.each do |sc| %>
-                      <input type="radio" name="trim" value= <%=sc.id%> />
+                      
                       <%= sc.name%>
                       <% end -%>
                       <% end -%>
@@ -230,7 +229,7 @@
                       <span>Paper:</span>
                       <% @pap.each do |sc| %>
                       <%= sc.name%>
-                      <input type="radio" name= "paper" value=  <%= sc.name%>>
+                      
                       <% end -%>
                       <% end -%>
                     </li>
@@ -246,21 +245,21 @@
                       <% if !@prds.nil? %>
                       <span>Productz:</span>
                       <%= form_for :order, url: populate_orders_path do |f| %>
-                      <% @prds.each do |p| %>
-                      <%= p.name %>
-                      <%= render 'add_prod', prd: p %> 
-                      <%end%>
-                      <%= button_tag :class => 'btn btn-success', :id => 'add-to-cart-button', :type => :submit do %>
-                      <%= Spree.t(:add_to_cart) %>
-                      <%end %>
-                      <%end %>
+                        <% @prds.each do |p| %>
+                          <%= p.name %>
+                          <%= render 'add_prod', prd: p %> 
+                          <%end%>
+                          <%= button_tag :class => 'btn btn-success', :id => 'add-to-cart-button', :type => :submit do %>
+                            <%= Spree.t(:add_to_cart) %>
+                          <%end %>
+                        <%end %>
                       <%end %> 
                     </li>
-                  </form>
+                  
                 </ul>
               </div>
     </div>
-</div>
+</div>  
 
  
 
