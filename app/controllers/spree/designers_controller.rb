@@ -1,5 +1,7 @@
 module Spree
 	class DesignersController < Spree::HomeController
+		before_action :authenticate_designer, only: [:dashboard]
+
 		def index
 			@designers = Designer.active
 		end
@@ -17,5 +19,17 @@ module Spree
 				redirect_to controller: 'home', action: 'index', notice:'This user is not registered as a designer'
 			end
 		end
+
+		def dashboard
+			@designer = spree_current_user
+		end
+
+		private
+			def authenticate_designer
+				if !spree_current_user.is_designer
+					redirect_to :back, notice: 'This user
+					is not registered as a designer'
+				end
+			end
 	end
 end

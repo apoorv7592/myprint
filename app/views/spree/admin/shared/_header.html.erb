@@ -2,7 +2,8 @@
 
 <header class="header <%= admin ? "logged-in" : "logged-out" %>">
 
-  <nav class="navbar navbar-inverse navbar-fixed-top" style="background:none;" role="navigation">
+
+  <nav class="navbar navbar-inverse" style="background:none;" role="navigation">
     <div class="container-fluid">
       <div class="row">
         <div class="navbar-header col-sm-3 col-md-2">
@@ -25,5 +26,18 @@
       </div>
     </div>
   </nav>
+
+
+
+  <% if admin %>
+    <nav class="navbar navbar-static-top" role="navigation">
+      <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+    </nav>
+  <% end %>
 
 </header>

@@ -1,0 +1,28 @@
+<div style="margin-top:20px;">
+	
+</div>
+<div role="tabpanel">
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Designs</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Orders</a></li>
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Payments</a></li>
+    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="home">
+    	<%= render 'spree/designers/dashboard/design' %>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="profile">
+    	<%= render 'spree/designers/dashboard/orders' %>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="messages">
+    	<%= render 'spree/designers/dashboard/payments' %>
+    </div>
+    <div role="tabpanel" class="tab-pane" id="settings">Coming soon</div>
+  </div>
+
+</div>

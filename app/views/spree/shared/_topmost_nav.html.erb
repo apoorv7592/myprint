@@ -84,6 +84,12 @@
                       <li style="position:relative;top:18px;margin-left:0px !important;">
                       <i class="fa fa-shopping-cart"></i>
                       </li>
+</nav>
+ <div id="myaccount" class="uparrowdiv">
+    <% if spree_current_user && spree_current_user.is_designer %>
+      <%= link_to 'Designer Dashboard', designer_dashboard_path %>
+    <% end %>
+ </div>
 
 
 

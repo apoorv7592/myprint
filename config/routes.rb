@@ -42,6 +42,8 @@ Rails.application.routes.draw do
     get '/wedding', to: 'landing_pages#wedding'
     get '/like', to: 'likes#create', as: 'like_suite'
     get '/unlike', to: 'likes#destroy', as: 'unlike_suite'
+    get '/designer_dashboard', to: 'designers#dashboard', as: 'designer_dashboard'
+
 
     get '/search'  => 'solrsearch#index'
     routes = lambda do
