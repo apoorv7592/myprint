@@ -4,3 +4,21 @@ Sort by
    		Newest
    	</span>
 <% end %>
+
+<%= link_to like_no: 1, designer_id: params[:designer_id], color_id: params[:color_id], trim_id: params[:trim_id], dimension_id: params[:dimension_id],:class=>"checbox1"  do  %>
+   	<span class="btn btn-default btn-group-xs">
+   	Most Liked
+   	</span>
+<% end %>
+
+<%= link_to avg_rating: 1, designer_id: params[:designer_id], color_id: params[:color_id], trim_id: params[:trim_id], dimension_id: params[:dimension_id],:class=>"checbox1"  do  %>
+   	<span class="btn btn-default btn-group-xs">
+     Top Rated
+   	</span>
+<% end %>
+
+<%= link_to price: 1, designer_id: params[:designer_id], color_id: params[:color_id], trim_id: params[:trim_id], dimension_id: params[:dimension_id],:class=>"checbox1"  do  %>
+   	<span class="btn btn-default btn-group-xs">
+   	Price
+   	</span>
+<% end %>

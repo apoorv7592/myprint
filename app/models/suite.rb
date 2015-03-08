@@ -40,6 +40,8 @@ class Suite < ActiveRecord::Base
 		text :name, :description
 		time :available_on
 		time :created_at
+		integer :like_no
+		integer :avg_rating
 		
 		text :designer_names do 
 			designer.name

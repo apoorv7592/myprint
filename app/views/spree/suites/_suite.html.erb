@@ -1,7 +1,6 @@
 <div class="col-md-4" style="height:350px; width:240px; margin-right:8px;margin-top:10px;border:1px solid rgba(1,0,0,0.2);" >
   <div style="height:240px; width:238px;background:rgba(1,0,0,0.2);">
-    <P> IMAGE </P>
-    <%= p.id %>
+    <%= render 'spree/shared/like', p: p %>
   </div>
   <div class="viewsuitediv">
     <%= link_to p.name, p,:class => "viewsuitetxt" %><br>
@@ -15,11 +14,13 @@
       <%end %>
     </div>
     <%= link_to p.avg_rating,:class => "viewsuitetxt" %>(<%= link_to p.reviews_count,:class => "viewsuitetxt" %>)<br>
-    <button type="button" class ="viewsuitebtn">
-    <%= link_to "View Suite", p,:class => "viewsuitetxt1" %>
-    </button> 
-    <%= render 'spree/shared/like', p: p %>
+    <%= button_to p, class: 'viewsuitebtn', method: 'get' do %>
+        <span class="viewsuitetxt1">View Suite</span>
+    <%end %>
+
+    
   </div>
 </div>
-</span>
+
+
 

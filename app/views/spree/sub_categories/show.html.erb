@@ -1,5 +1,5 @@
 
-<h1>This is a subcat->suites show page </h1>
+<h4>Suites</h4>
 <div class="row" style="height:auto; width:1000px;">
          
       <div>
@@ -11,17 +11,14 @@
               <div class="col-md-12" style="height:auto; width:746px;">
               <%= render 'spree/suites/sort' %>
               <div class="row">
-	              <% if !@scsuite.nil? %>
-  	              <% @scsuite.each do |p| %>
-  	                 <%= render 'spree/suites/suite', p: p %>
-  			          <% end %> 
-			          <% end %>                
+                <% if !@scsuite.nil? %>
+                  <% @scsuite.each do |p| %>
+                     <%= render 'spree/suites/suite', p: p %>
+                  <% end %> 
+                <% end %>                
               </div>
               </div>
       </div>
 
 </div>
-
-
-
 

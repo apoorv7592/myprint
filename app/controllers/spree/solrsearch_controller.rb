@@ -9,7 +9,12 @@ module Spree
 		    	color_filter = with(:color_ids, params[:color_id]) if params[:color_id].present?
 				trim_filter = with(:trim_ids, params[:trim_id]) if params[:trim_id].present?		    	
 				dimension_filter = with(:dimension_ids, params[:dimension_id]) if params[:dimension_id].present?		    	
+				
 				order_by(:created_at, :desc) if params[:created_at]
+				order_by(:like_no, :desc) if params[:like_no]
+				order_by(:avg_rating, :desc) if params[:avg_rating]
+				order_by(:price, :desc) if params[:price]
+
 
 		    	facet :designer_id, exclude: [designer_filter, color_filter, trim_filter, dimension_filter].compact
 		    	facet :color_ids, exclude: [designer_filter, color_filter, trim_filter, dimension_filter].compact

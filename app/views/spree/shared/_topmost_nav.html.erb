@@ -60,47 +60,30 @@
 
 <nav id= 'topmost-nav' class="navbar navbar-default" >
 	<ul class="nav navbar-nav navbar-right ">
+                      <li id="Contact">
+                      <%= link_to "Contact Us", '/contact_us/',style:"padding-left:0px !important;padding-right:0px !important;margin-right:10px;" %>
+                      </li>
+
+                	  <% if spree_current_user %>
+                      <li id="Myaccount">
+                        <%= link_to "My Account", '/account/',style:"padding-left:0px !important;padding-right:0px !important;margin-right:10px;"  %>
+                      </li>
+
+                    <% else %>
+                      <li id="Login">
+                        <%= link_to "Sign In", '#',"data-toggle"=>"modal", "data-target"=>"#myModal",style:"padding-left:0px !important;padding-right:0px !important;margin-right:20px;margin-left:10px;" %>
+                      </li>
+                    <% end %>
+                    <%= render 'spree/shared/sign_in' %>
 
 
+                      <li id="Cart">
+                      <%= link_to "Cart", '/cart/',style:"padding-left:0px !important;padding-right:0px !important;" %>
+                      </li>
 
-	    <li id="Login">
-			<%= link_to "Sign In |", '/login/',style:"padding-right:10px !important;padding-left:0px !important;"  %>
-		  </li>
-
-		  <li id="MyAccount">
-			<%= link_to "My Account |", '/account/',style:"padding-right:10px !important;padding-left:0px !important;"   %>
-      </li> 
-	    
-  			<%= render 'spree/shared/sign_in' %>
-        
-        <% if spree_current_user %>
-          <li id="Myaccount" class="topmosta">
-            <%= link_to "My Account", '/account/'  %>
-          </li>
-
-        <% else %>
-          <li id="Login" class="topmosta">
-            <%= link_to "Login / Signup", '#',"data-toggle"=>"modal", "data-target"=>"#myModal" %>
-          </li>
-        <% end %>
-		  
-
-		  
-
-		
-      <li id="Cart">
-			<%= link_to "Cart", '/cart/',style:"padding-left:0px !important;padding-right:0px !important;" %>
-		  </li>
-
-      <li style="position:relative;top:18px;margin-left:0px !important;">
-      <i class="fa fa-shopping-cart"></i>
-     </li>
-        
-	
-	</ul>
-
-
-
+                      <li style="position:relative;top:18px;margin-left:0px !important;">
+                      <i class="fa fa-shopping-cart"></i>
+                      </li>
 </nav>
  <div id="myaccount" class="uparrowdiv">
     <% if spree_current_user && spree_current_user.is_designer %>
@@ -110,5 +93,40 @@
 
 
 
+
+	    
+  			        
+	</ul>
+</nav>
+ 
+<div id="myaccount" class="uparrowdiv">
+  
+                      <li id="Logout" class="myaccountdiv" >
+                      <%= link_to "Logout", '/logout/',:style=>""%>
+                      </li>
+                      
+                      <li id="Wishlist" class="myaccountdiv">
+                      <%= link_to "Wishlist", '/mywishlist/',:style=>""%>
+                      </li>
+                      
+                      <li id="Saved" class="myaccountdiv">
+                      <%= link_to "Saved Projects", '/mysaved-projects/',:style=>""%>
+                      </li>
+
+                      <li id="FavouriteDes" class="myaccountdiv">
+                      <%= link_to "Favourite Designers", '/myfavourite-designers/',:style=>""%>
+                      </li>
+
+                      <li id="Orders" class="myaccountdiv">
+                      <%= link_to "Orders", '/orders/',:style=>""%>
+                      </li>
+                     
+</div>
+
+
+<div id="cart" class="uparrowdivcart">
+
+
+</div>
 
 

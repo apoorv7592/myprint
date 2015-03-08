@@ -14,7 +14,7 @@
 }
 
 ul.nav.navbar-nav.navbar-right{
-  width:155px;
+  width:150px;
   height:30px;
   margin-right:0px !important;
   margin-bottom:10px !important;
@@ -43,6 +43,8 @@ navbar-nav.navbar-right>li>a{
  height:30px;
  border:1px solid rgba(1,0,0,0.5);
  border-radius:0px !important;
+ font-size:11px;
+ padding-top:7px!important;
   }
 
 
@@ -102,13 +104,13 @@ margin-left: 0!important;
     border:1px solid #000;
   }
 
-  .abc{
+  .mainnavatags{
     margin-right: 67px;
     font-family: Georgia;
     
   }
 
-  .abc >a{color:rgba(1,0,0,0.8);height:20px;}
+  .mainnavatags >a{color:rgba(1,0,0,0.8);height:20px;}
 
 /* topmost nav bar */
   .topmost >a{color:rgba(1,0,0,0.8);}
@@ -203,28 +205,27 @@ margin-left: 0!important;
 .uparrowdiv{
 z-index:1100; 
 width:180px;
-min-height:200px; /*min height of DIV should be set to at least 2x the width of the arrow*/
-background: rgba(1,0,0,0.4);
-padding:5px;
+min-height:150px; /*min height of DIV should be set to at least 2x the width of the arrow*/
+background: white;
+border-right : 1px solid rgba(1,0,0,0.5);
+border-left : 1px solid rgba(1,0,0,0.5);
+border-top : 1px solid rgba(1,0,0,0.2);
 position:absolute;
-word-wrap:break-word;
--moz-border-radius:5px; /*add some nice CSS3 round corners*/
-margin-bottom:2em;
+-moz-border-radius:10px; /*add some nice CSS3 round corners*/
 left:835px;
-border:2px solid rgba(1,0,0,0);
-border-bottom:red;
-display:none
+border-bottom:2px solid red;
+display:none;
 }
 
 .uparrowdiv:after{ /*arrow added to uparrowdiv DIV*/
 content:'';
 display:block;
 position:absolute;
-top:-22px; /*should be set to -border-width x 2 */
+top:-20px; /*should be set to -border-width x 2 */
 left:80px;
 width:0;
 height:0;
-border-color: transparent transparent rgba(1,0,0,0.4)
+border-color: transparent transparent rgba(1,0,0,0.3)
  transparent; /*border color should be same as div div background color*/
 border-style: solid;
 border-width: 10px;
@@ -487,5 +488,119 @@ li.ulfilterbox{
 }
 
 .liked{
-  color:red;
+  color:#6BBCBF;
 }
+
+/* Cart Page */
+
+
+.panel-body1{
+  width:200px;
+  height:auto;
+  padding:10px;
+  margin-left:15px;
+}
+
+.checkoutemailbox{
+   width:500px;
+   border-radius:10px; 
+   border:1px solid #cccccc;
+   height:auto;
+   margin-bottom:20px;
+
+}
+
+#checkout-summary{
+  width:300px;
+  height:auto;
+  padding:10px;
+  margin-left:15px;
+  float:right;
+  border-radius:10px; 
+  border:1px solid #cccccc;
+
+}
+
+div.well.text-right.form-buttons{
+   width:500px;
+   border-radius:10px; 
+   border:1px solid #cccccc;
+   height:auto;
+   background:none !important;
+}
+
+/*checkout page */
+
+saveandcont>a{
+   border:1px solid #cccccc;
+   background:red !important;
+
+}
+
+ul#checkout-step-address.progress-steps.nav.nav-pills.nav-justified{
+  background:none !important;
+  border:1px solid #cccccc;
+
+}
+
+.myaccountdiv{
+font-size:10px;
+color:red !important;
+list-style-type:none;
+margin-left:40px;
+margin-top:10px;
+}
+
+
+.buttonsignup{
+  vertical-align:top;
+  padding:none;
+  height:38px;
+  margin-left:0px  !important;
+}
+
+.signupbox{
+  width:302px;
+  margin-left:350px;
+  margin-top:10px;
+  border-collapse: collapse;
+  height:40px;
+  border: 1px solid rgba(1,0,0,0.1);
+  padding:none! important;
+  font-size:12px;
+  text-align:center;
+}
+
+.uparrowdivcart{
+z-index:1100; 
+width:180px;
+min-height:150px; /*min height of DIV should be set to at least 2x the width of the arrow*/
+background: rgba(1,0,0,1);
+position:absolute;
+word-wrap:break-word;
+-moz-border-radius:5px; /*add some nice CSS3 round corners*/
+margin-bottom:2em;
+left:835px;
+border-bottom:2px solid red;
+display:none;
+}
+
+.uparrowdivcart:after{ /*arrow added to uparrowdiv DIV*/
+content:'';
+display:block;
+position:absolute;
+top:-20px; /*should be set to -border-width x 2 */
+left:135px;
+width:0;
+height:0;
+border-color: transparent transparent rgba(1,0,0,1)
+ transparent; /*border color should be same as div div background color*/
+border-style: solid;
+border-width: 10px;
+}
+
+.uparrowdivcart:before{
+  display:none;
+}
+
+

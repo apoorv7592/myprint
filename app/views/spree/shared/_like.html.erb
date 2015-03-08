@@ -1,3 +1,25 @@
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#heart-<%= p.id %>").click(function(){
+        $("#heart-<%= p.id %>").css("color", "blue");
+    });
+});
+</script>
+
+<style>
+.likeicon{
+	width:20px;
+	height:20px;
+	margin-top:5px;
+	margin-right: 2px;
+	z-index: 1000;
+	float:right;
+	}
+</style>
+
+<div class="likeicon">
+
 <% if spree_current_user.present? %>
 	<% like = Like.where(user_id: spree_current_user.id, suite_id: p.id)%> 
 
@@ -14,3 +36,4 @@
 		<i class="fa fa-heart-o"></i>
 	<% end%>
 <% end %>
+</div>

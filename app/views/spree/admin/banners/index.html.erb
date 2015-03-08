@@ -1,4 +1,29 @@
-<h1> This is the banner index page </h1>
+<title>Printdora.com - Banners</title>
+
+<style>
+table, td, th {
+    border: 1px solid black;
+    text-align:center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th{
+	background: #66cccc;
+	color:white;
+}
+
+td{
+	background: rgba(1,0,0,0.1);
+}
+
+
+</style>
+<div  class="col-md-10 col-md-offset-1" style="width:1000px;">
+<h1 style="text-align:center;"> Banners</h1>
 <%= form_for [:admin, @new_banner] do |f| %> 
 	<%= f.label :category %>
 	<%= f.text_field :category %>
@@ -15,12 +40,12 @@
 <table>
 	<thead>
 		<tr>
-			<td> Banner Category </td>
-			<td> Banner Position</td>
-			<td> Banner Size </td>
-			<td> Banner Image</td>
-			<td> Update</td>
-			<td> Delete</td>
+			<th> Banner Category </th>
+			<th> Banner Position</th>
+			<th> Banner Size </th>
+			<th> Banner Image</th>
+			<th> Update</th>
+			<th> Delete</th>
 		</tr>
 	</thead>
 
@@ -37,3 +62,6 @@
 		<%end %>
 	<% end %>
 </table>
+</div>
+
+
