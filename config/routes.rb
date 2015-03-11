@@ -71,6 +71,13 @@ Rails.application.routes.draw do
     
   end
 
+  devise_scope :person do
+  get '/login', :to => "devise/sessions#new"
+  get '/signup', :to => "devise/registrations#new"
+  delete '/logout', :to => "devise/sessions#destroy"
+  get '/designer_signup', :to => "devise/registrations#new_designer"
+  end
+
   #get '/suites/:id' => 'suites#show'
 
   # You can have the root of your site routed with "root"

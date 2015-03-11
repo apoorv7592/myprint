@@ -117,4 +117,7 @@ gem 'sprockets-rails', '~> 2.2.2'
 #whishlist
 gem 'spree_wishlist', github: 'ast0708/spree_wishlist', branch: 'master'
 
+gem 'unicorn'
+gem 'unicorn-rails'
+
 #gem 'spree_email_to_friend', github: 'spree-contrib/spree_email_to_friend', branch: 'master'

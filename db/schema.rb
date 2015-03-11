@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150219125746) do
+ActiveRecord::Schema.define(version: 20150310093225) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -78,6 +78,10 @@ ActiveRecord::Schema.define(version: 20150219125746) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "skills"
+    t.string   "experience"
+    t.string   "college"
+    t.string   "phonenum"
   end
 
   create_table "dimensions", force: true do |t|
