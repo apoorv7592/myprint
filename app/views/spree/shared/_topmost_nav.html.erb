@@ -1,40 +1,11 @@
-  <title>Bootstrap</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<style type="">
-  .inner-addon { 
-    position: relative; 
-}
-
-/* style icon */
-.inner-addon .fa {
-  position: absolute;
-  padding-top: 8px;
-  padding-left: 8px;
-  padding-right: 8px;
-  pointer-events: none;
-}
-
-/* align icon */
-.right-addon .fa { right: 0px;}
-
-/* add padding  */
-.right-addon input { padding-right: 30px; }
-</style>
-
-
-  <script type="text/javascript">
+<script type="text/javascript">
   $(document).ready(function(){
     $('ul.nav.navbar-nav.navbar-right li').each(function(){
       try{
         var idNavigation1 = $(this).attr('id');
         var idDiv1 = idNavigation1.toLowerCase();
         var timeoutNavigationFade;
-
+  
        
         
         $('#'+idNavigation1).bind('mouseover',function(){
@@ -48,85 +19,84 @@
         $('#'+idNavigation1+", #"+idDiv1).bind('mouseout',function(){
           timeoutNavigationFade=setTimeout(function(){$("#"+idDiv1).fadeOut(200);}, 200);
         });
-
-
+  
+  
       }
       catch(e){
         console.log("ERROR: "+e);
       }
     });
   });
-  </script>
-
+</script>
 <nav id= 'topmost-nav' class="navbar navbar-default" >
-	<ul class="nav navbar-nav navbar-right ">
-                      <li id="Contact">
-                      <%= link_to "Contact Us", '/contact_us/',style:"padding-left:0px !important;padding-right:0px !important;margin-right:10px;" %>
-                      </li>
-
-                	  <% if spree_current_user %>
-                      <li id="Myaccount">
-                        <%= link_to "My Account", '/account/',style:"padding-left:0px !important;padding-right:0px !important;margin-right:10px;"  %>
-                      </li>
-
-                    <% else %>
-                      <li id="Login">
-                        <%= link_to "Sign In", '#',"data-toggle"=>"modal", "data-target"=>"#myModal",style:"padding-left:0px !important;padding-right:0px !important;margin-right:20px;margin-left:10px;" %>
-                      </li>
-                    <% end %>
-                    <%= render 'spree/shared/sign_in' %>
-
-
-                      <li id="Cart">
-                      <%= link_to "Cart", '/cart/',style:"padding-left:0px !important;padding-right:0px !important;" %>
-                      </li>
-
-                      <li style="position:relative;top:18px;margin-left:0px !important;">
-                      <i class="fa fa-shopping-cart"></i>
-                      </li>
-</nav>
- <div id="myaccount" class="uparrowdiv">
-    <% if spree_current_user && spree_current_user.is_designer %>
-      <%= link_to 'Designer Dashboard', designer_dashboard_path %>
+  <ul class="nav navbar-nav navbar-right ">
+    <li id="Contact">
+      <%= link_to "Contact Us", '/contact_us/',style:"padding-left:0px !important;padding-right:0px !important;margin-right:10px;" %>
+    </li>
+    <% if spree_current_user %>
+    <li id="Myaccount">
+      <%= link_to "My Account", '/account/',style:"padding-left:0px !important;padding-right:0px !important;margin-right:10px;"  %>
+    </li>
+    <% else %>
+    <li id="Login">
+      <%= link_to "Sign In", '#',"data-toggle"=>"modal", "data-target"=>"#myModal",style:"padding-left:0px !important;padding-right:0px !important;margin-right:20px;margin-left:10px;" %>
+    </li>
     <% end %>
- </div>
-
-
-
-
-	    
-  			        
-	</ul>
+    <%= render 'spree/shared/sign_in' %>
+    <li id="Cart">
+      <%= link_to "Cart", '/cart/',style:"padding-left:0px !important;padding-right:0px !important;" %>
+    </li>
+    <li style="position:relative;top:18px;margin-left:0px !important;">
+      <i class="fa fa-shopping-cart"></i>
+    </li>
+    <% if  current_order %>
+      <%= fa_icon "bell", style: 'color:red' %>
+      <% @order = current_order %>
+    <% end %>
 </nav>
- 
+
 <div id="myaccount" class="uparrowdiv">
-  
-                      <li id="Logout" class="myaccountdiv" >
-                      <%= link_to "Logout", '/logout/',:style=>""%>
-                      </li>
-                      
-                      <li id="Wishlist" class="myaccountdiv">
-                      <%= link_to "Wishlist", '/mywishlist/',:style=>""%>
-                      </li>
-                      
-                      <li id="Saved" class="myaccountdiv">
-                      <%= link_to "Saved Projects", '/mysaved-projects/',:style=>""%>
-                      </li>
-
-                      <li id="FavouriteDes" class="myaccountdiv">
-                      <%= link_to "Favourite Designers", '/myfavourite-designers/',:style=>""%>
-                      </li>
-
-                      <li id="Orders" class="myaccountdiv">
-                      <%= link_to "Orders", '/orders/',:style=>""%>
-                      </li>
-                     
+  <% if spree_current_user && spree_current_user.is_designer %>
+  <%= link_to 'Designer Dashboard', designer_dashboard_path %>
+<% end %>
 </div>
-
-
+</ul>
+</nav>
+<div id="myaccount" class="uparrowdiv">
+  <li id="Logout" class="myaccountdiv" >
+    <%= link_to "Logout", '/logout/',:style=>""%>
+  </li>
+  <li id="Wishlist" class="myaccountdiv">
+    <%= link_to "Wishlist", '/mywishlist/',:style=>""%>
+  </li>
+  <li id="Saved" class="myaccountdiv">
+    <%= link_to "Saved Projects", '/mysaved-projects/',:style=>""%>
+  </li>
+  <li id="FavouriteDes" class="myaccountdiv">
+    <%= link_to "Favourite Designers", '/myfavourite-designers/',:style=>""%>
+  </li>
+  <li id="Orders" class="myaccountdiv">
+    <%= link_to "Orders", '/orders/',:style=>""%>
+  </li>
+</div>
 <div id="cart" class="uparrowdivcart">
-
-
+  <% if current_order %> 
+      <%= form_for @order, url: update_cart_path, html: { id: 'update-cart' } do |order_form| %>
+          <div data-hook="cart_items" class="table-responsive">
+            <%= render partial: 'spree/shared/form', locals: { order_form: order_form } %>
+          </div>
+          
+          <div class="links col-md-6 navbar-form pull-right text-right" data-hook="cart_buttons">
+            <div class="form-group">
+              <%= button_tag class: 'btn btn-primary', id: 'update-button' do %>
+                <%= Spree.t(:update) %>
+              <% end %>
+          
+              <%= button_tag class: 'btn btn-lg btn-success', id: 'checkout-link', name: 'checkout' do %>
+                <%= Spree.t(:checkout) %>
+              <% end %>
+            </div>
+          </div>
+      <% end %>
+  <% end %>
 </div>
-
-
