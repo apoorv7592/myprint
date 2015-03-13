@@ -301,15 +301,15 @@
                       </div>
                   </div>
                             
-                  <div >
-                      <h1>Write a Review</h1>
-                      <%= image_tag 'star.gif' %>
-                      <%= render 'spree/shared/reviews' %>
+                  <div style="padding:50px; " >
+                    <%= render 'spree/suites/add_to_wishlist' %> 
                   </div>
               </div>
               
-              <div class="col-md-6" style="height:556px; width:492px;margin-left:8px;background:rgba(1,0,0,0.2);">
-              banner Area
+              <div class="col-md-6" style="height:556px; width:492px;margin-left:8px; padding:50px; background:rgba(1,0,0,0.2);">
+              <h1>Write a Review</h1>
+                      <%= image_tag 'star.gif' %>
+                      <%= render 'spree/shared/reviews' %>
               </div>
 
           </div>
@@ -320,10 +320,3 @@
 
 
 
-<%#= button_to 'Write reviews', new_suite_review_path(@suite), method: :get,remote: true%>
-<%= asset_path('star.gif') %>
-<%= image_tag 'star.gif' %>
-<%= render 'spree/shared/reviews' %>
-
-
-<%= render 'spree/suites/add_to_wishlist' %>

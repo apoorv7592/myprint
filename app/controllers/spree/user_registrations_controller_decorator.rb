@@ -11,4 +11,6 @@ Spree::UserRegistrationsController.class_eval do
 		def clear_omniauth
 			session[:omniauth] = nil unless @spree_user.new_record?
 		end
+
+
 end

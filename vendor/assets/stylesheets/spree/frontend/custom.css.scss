@@ -14,7 +14,7 @@
 }
 
 ul.nav.navbar-nav.navbar-right{
-  width:150px;
+  width:160px;
   height:30px;
   margin-right:0px !important;
   margin-bottom:10px !important;
@@ -202,39 +202,7 @@ margin-left: 0!important;
 }
 
 
-.uparrowdiv{
-z-index:1100; 
-width:180px;
-min-height:150px; /*min height of DIV should be set to at least 2x the width of the arrow*/
-background: white;
-border-right : 1px solid rgba(1,0,0,0.5);
-border-left : 1px solid rgba(1,0,0,0.5);
-border-top : 1px solid rgba(1,0,0,0.2);
-position:absolute;
--moz-border-radius:10px; /*add some nice CSS3 round corners*/
-left:835px;
-border-bottom:2px solid red;
-display:none;
-}
 
-.uparrowdiv:after{ /*arrow added to uparrowdiv DIV*/
-content:'';
-display:block;
-position:absolute;
-top:-20px; /*should be set to -border-width x 2 */
-left:80px;
-width:0;
-height:0;
-border-color: transparent transparent rgba(1,0,0,0.3)
- transparent; /*border color should be same as div div background color*/
-border-style: solid;
-border-width: 10px;
-
-}
-
-.uparrowdiv:before{
-  display:none;
-}
 
 /* used in Users page in users/show.html.erb*/
 .removeline{
@@ -573,17 +541,21 @@ margin-top:10px;
 
 .uparrowdivcart{
   z-index:1100; 
-  width:auto;
-  min-width:500px;
-  min-height:150px; /*min height of DIV should be set to at least 2x the width of the arrow*/
-  background: rgba(1,0,0,1);
+  width:500px;
+  min-height:200px; /*min height of DIV should be set to at least 2x the width of the arrow*/
+  background: rgba(1,0,0,0.1);
   position:absolute;
   word-wrap:break-word;
   -moz-border-radius:5px; /*add some nice CSS3 round corners*/
   margin-bottom:2em;
-  left:400px;
+  left:500px;
+  background: white;
+  border-right : 1px solid rgba(1,0,0,0.5);
+  border-left : 1px solid rgba(1,0,0,0.5);
+  border-top : 1px solid rgba(1,0,0,0.2);
   border-bottom:2px solid red;
   display:none;
+  padding:50px;
 }
 
 .uparrowdivcart:after{ /*arrow added to uparrowdiv DIV*/
@@ -591,16 +563,50 @@ content:'';
 display:block;
 position:absolute;
 top:-20px; /*should be set to -border-width x 2 */
-left:570px;
+left:465px;
 width:0;
 height:0;
-border-color: transparent transparent rgba(1,0,0,1)
+border-color: transparent transparent rgba(1,0,0,0.2)
  transparent; /*border color should be same as div div background color*/
 border-style: solid;
 border-width: 10px;
 }
 
 .uparrowdivcart:before{
+  display:none;
+}
+
+.uparrowdiv{
+z-index:1100; 
+width:180px;
+min-height:150px; /*min height of DIV should be set to at least 2x the width of the arrow*/
+background: white;
+border-right : 1px solid rgba(1,0,0,0.5);
+border-left : 1px solid rgba(1,0,0,0.5);
+border-top : 1px solid rgba(1,0,0,0.2);
+border-bottom:2px solid red;
+position:absolute;
+-moz-border-radius:10px; /*add some nice CSS3 round corners*/
+left:835px;
+display:none;
+}
+
+.uparrowdiv:after{ /*arrow added to uparrowdiv DIV*/
+content:'';
+display:block;
+position:absolute;
+top:-20px; /*should be set to -border-width x 2 */
+left:80px;
+width:0;
+height:0;
+border-color: transparent transparent rgba(1,0,0,0.3)
+ transparent; /*border color should be same as div div background color*/
+border-style: solid;
+border-width: 10px;
+
+}
+
+.uparrowdiv:before{
   display:none;
 }
 
