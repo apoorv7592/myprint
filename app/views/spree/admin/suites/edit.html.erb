@@ -32,6 +32,11 @@
 			</div>
 
 			<div class="row form-group">
+				<%= f.label 'Slug', class: 'col-sm-2'%>
+				<%= f.text_field :slug %>
+			</div>
+
+			<div class="row form-group">
 				<%= f.submit 'Submit', class: 'btn btn-primary col-sm-4 col-sm-offset-2' %>
 			</div>
 		<% end %>
