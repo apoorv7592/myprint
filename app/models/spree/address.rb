@@ -1,3 +1,24 @@
+# == Schema Information
+#
+# Table name: spree_addresses
+#
+#  id                :integer          not null, primary key
+#  firstname         :string(255)
+#  lastname          :string(255)
+#  address1          :string(255)
+#  address2          :string(255)
+#  city              :string(255)
+#  zipcode           :string(255)
+#  phone             :string(255)
+#  state_name        :string(255)
+#  alternative_phone :string(255)
+#  company           :string(255)
+#  state_id          :integer
+#  country_id        :integer
+#  created_at        :datetime
+#  updated_at        :datetime
+#
+
 module Spree
   class Address < Spree::Base
     require 'twitter_cldr'

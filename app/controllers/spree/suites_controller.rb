@@ -6,7 +6,7 @@ module Spree
 		
 		def show
 			@suites = Suite.retrieve_suites
-			@suite = Suite.find(params[:id])
+			@suite = Suite.friendly.find(params[:id])
 			@prds = @suite.spree_products
 			@scat = @suite.colors
 			@trm = @suite.trims

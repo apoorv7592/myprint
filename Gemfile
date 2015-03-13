@@ -120,3 +120,5 @@ gem 'spree_wishlist', github: 'ast0708/spree_wishlist', branch: 'master'
 #gem 'spree_email_to_friend', github: 'spree-contrib/spree_email_to_friend', branch: 'master'
 
 gem 'spree_sitemap', github: 'ast0708/spree_sitemap', branch: 'master'
+
+gem 'friendly_id'

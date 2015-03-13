@@ -14,9 +14,13 @@
 #  avg_rating      :decimal(7, 5)    default(0.0), not null
 #  reviews_count   :integer          default(0), not null
 #  like_no         :integer          default(0)
+#  slug            :string(255)
 #
 
 class Suite < ActiveRecord::Base
+	extend FriendlyId
+	friendly_id :name, use: [:slugged, :history]
+	
 	belongs_to :sub_category
 	belongs_to :designer
 	has_and_belongs_to_many :colors
@@ -74,6 +78,12 @@ class Suite < ActiveRecord::Base
 			self[:avg_rating] = 0
 		end
 		save
+	end
+
+	def should_generate_new_friendly_id?
+		if slug.blank?
+		elsif name_changed?
+		end
 	end
 end
 
