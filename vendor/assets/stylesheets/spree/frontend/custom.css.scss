@@ -351,6 +351,34 @@ right: 20px;
   font-weight:bold;
   padding:5px;
 }
+
+/* Suite Styling */
+.suite-blck{
+  height:350px; 
+  width:240px; 
+  margin-right:8px;
+  margin-top:10px;
+  border:1px solid rgba(1,0,0,0.2);
+}
+.suite-img{
+  height:240px; 
+  width:238px;
+  background:rgba(1,0,0,0.2);
+}
+.suite-clrblck{
+  width:100px;
+  height:17px; 
+  border:1px solid rgba(1,0,0,0.05);
+  margin-left:50px;
+  margin-right:50px;
+}
+.suite-clr{
+  width:15px;
+  height:15px; 
+  float:center;
+  margin-left:5px;
+  float:left;
+}
 /* for view suite button in catalog page */
   .viewsuitebtn{
   width:70px;
@@ -361,6 +389,7 @@ right: 20px;
   border-radius:5px;
   background:white;
   font-size:12px;
+  padding:2px;
   }
 
 /* for view suite div below image  in catalog page in which name price and ratings is mentioned */
@@ -605,3 +634,69 @@ border-width: 10px;
 }
 
 
+/* suite page */
+.suite-container{
+  height:auto; 
+  width:1000px;
+  border-bottom:1px solid black;
+}
+.suite-img-cont{
+  height:716px; 
+  width:492px;
+  margin-right:8px;
+  border:1px solid rgba(1,0,0,0.2);
+}
+.suite-form-cont{
+  height:716px; 
+  width:492px;
+  border:1px solid rgba(1,0,0,0.2);
+  margin-left:8px;
+}
+.colorbox{
+  width:15px;
+  height:15px; 
+  float:center;
+}
+.suite-color-cont{
+  margin-left:150px;
+  margin-right:150px;
+  float:center;
+}
+.suite-middle-cont{
+  max-height:200px; 
+  width:1000px;
+  background:rgba(1,0,0,0.2);
+  overflow-y: scroll;
+}
+.suite-lower-middle{
+  height:auto; 
+  width:1000px; 
+}
+.suite-lower-left-cont{
+  height:556px; 
+  width:492px; 
+  margin-right:8px;
+  background:rgba(1,0,0,0.2);
+}
+.suite-lower-left-cont-1{
+  height:320px;
+   width:484px;
+   margin:none;
+   background:rgba(1,0,0,0.05);
+   border-bottom:1px solid black;
+}
+.more-prod-cont{
+  height:150px; 
+  width:150px;
+  margin-right:4px;
+  margin-left:4px;
+  margin-bottom:4px;
+  margin-top:4px; 
+  background:white;float:right;
+}
+.suite-banner-area{
+  height:556px; 
+  width:492px;
+  margin-left:8px;
+  background:rgba(1,0,0,0.2);
+}

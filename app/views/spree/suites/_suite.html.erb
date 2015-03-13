@@ -1,26 +1,47 @@
-<div class="col-md-4" style="height:350px; width:240px; margin-right:8px;margin-top:10px;border:1px solid rgba(1,0,0,0.2);" >
-  <div style="height:240px; width:238px;background:rgba(1,0,0,0.2);">
-    <%= render 'spree/shared/like', p: p %>
-  </div>
-  <div class="viewsuitediv">
-    <%= link_to p.name, p,:class => "viewsuitetxt" %><br>
-    <font class ="viewsuitetxt">Rs.xxx</font><br>
-    <div style="width:100px;height:17px; border:1px solid rgba(1,0,0,0.05);margin-left:50px;margin-right:50px;">
-      <% if p.colors.first %>
-      <% p.colors.each do |sc| %>
-      <div style="width:15px;height:15px; float:center;margin-left:5px;float:left; background:<%= sc.code %>">
-      </div>
-      <%end %>
-      <%end %>
+<!--Wrapper for SEO considerations -->
+<div itemscope itemtype="http://schema.org/IndividualProduct" itemdid="<%= p.id %>"> 
+  
+  <div class="col-md-4 suite-blck" >
+    <div class="suite-img" >
+      
+      <span itemprop="image"><!-- Placeholder for suite image --></span>
+
+      <%= render 'spree/shared/like', p: p %>
     </div>
-    <%= link_to p.avg_rating,:class => "viewsuitetxt" %>(<%= link_to p.reviews_count,:class => "viewsuitetxt" %>)<br>
-    <%= button_to p, class: 'viewsuitebtn', method: 'get' do %>
-        <span class="viewsuitetxt1">View Suite</span>
-    <%end %>
+    <div class="viewsuitediv">
+      <%= link_to p,:class => "viewsuitetxt", itemprop:'url' do  %>
+        <span itemprop="name"><%= p.name %></span>
+      <% end %>
+      <br>
 
-    
+      <font class ="viewsuitetxt">Rs.xxx</font><br>
+      <div class="suite-clrblck">
+        <% if p.colors.first %>
+          <% p.colors.each do |sc| %>
+            <div class="suite-clr" style="background:<%= sc.code %>"></div>
+          <%end %>
+        <%end %>
+      </div>
+
+      <span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+        <span class="viewsuitetxt" itemprop="ratingValue"> 
+        <%= p.avg_rating %> </span>
+        based on 
+        (
+        <span itemprop="ratingCount">
+          <%= link_to p.reviews_count,:class => "viewsuitetxt" %>
+        </span>
+        )
+      </span>       
+      <br>
+      
+      <%= link_to p, class: 'viewsuitebtn', method: 'get', itemprop:"url" do %>
+          <span class="viewsuitetxt1" >View Suite</span>
+      <%end %>
+
+      
+    </div>
   </div>
-</div>
-
+</div> <!--End of itemscope individual products -->
 
 
