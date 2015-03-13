@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150312180411) do
+ActiveRecord::Schema.define(version: 20150313135847) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 20150312180411) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
   create_table "colors", force: true do |t|
@@ -1306,9 +1307,11 @@ ActiveRecord::Schema.define(version: 20150312180411) do
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
   add_index "sub_categories", ["category_id"], name: "index_sub_categories_on_category_id"
+  add_index "sub_categories", ["slug"], name: "index_sub_categories_on_slug"
 
   create_table "suites", force: true do |t|
     t.string   "sku_id"

@@ -79,11 +79,9 @@ class Suite < ActiveRecord::Base
 		end
 		save
 	end
-
-	def should_generate_new_friendly_id?
-		if slug.blank?
-		elsif name_changed?
+	private
+		def should_generate_new_friendly_id?
+			slug.blank? || name_changed?
 		end
-	end
 end
 
