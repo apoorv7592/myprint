@@ -6,8 +6,7 @@ Spree::OrdersController.class_eval do
 
       success = true
       vars.each do |v|
-	      if populator.populate(v, params[:quantity], params[:options])
-	        
+	      if populator.populate(v, params[:quantity], params[:options])	        
 	        
 	      else
 	        success = false

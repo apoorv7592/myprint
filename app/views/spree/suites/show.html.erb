@@ -265,8 +265,8 @@
                   <%= form_for :order, url: populate_orders_path do |f| %>
                     
                     <% @prds.each do |p| %>
-                      <%= p.name %>
                       <%= render 'add_prod', prd: p %> 
+                      
                     <%end%>
                     <%= button_tag :class => 'btn btn-success', :id => 'add-to-cart-button', :type => :submit do %>
                       <%= Spree.t(:add_to_cart) %>
@@ -330,8 +330,8 @@
       </div>
   </div>    
   <%#= button_to 'Write reviews', new_suite_review_path(@suite), method: :get,remote: true%>
-  <%= asset_path('star.gif') %>
-  <%= image_tag 'star.gif' %>
   <%= render 'spree/shared/reviews' %>
   <%= render 'spree/suites/add_to_wishlist' %>
 </div> <!-- itemscope end-->
+
+<div>
