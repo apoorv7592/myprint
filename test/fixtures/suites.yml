@@ -11,6 +11,9 @@
 #  created_at      :datetime
 #  updated_at      :datetime
 #  available_on    :date
+#  avg_rating      :decimal(7, 5)    default(0.0), not null
+#  reviews_count   :integer          default(0), not null
+#  like_no         :integer          default(0)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

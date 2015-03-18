@@ -1,4 +1,5 @@
 <!doctype html>
+
 <!--[if lt IE 7 ]> <html class="ie ie6" lang="<%= I18n.locale %>"> <![endif]-->
 <!--[if IE 7 ]> <html class="ie ie7" lang="<%= I18n.locale %>"> <![endif]-->
 <!--[if IE 8 ]> <html class="ie ie8" lang="<%= I18n.locale %>"> <![endif]-->
@@ -7,22 +8,25 @@
 <head data-hook="admin_inside_head">
 <%= render partial: 'spree/admin/shared/head' %>
 </head>
+
 <body class="admin skin-blue">
-<div id="progress">
-<div class="alert alert-info alert-progress">
-<div class="spinner"><%= Spree.t(:loading) %>...</div>
-<div class="progress-message"><%= Spree.t(:loading) %>...</div>
-</div>
-</div>
 <%= render partial: 'spree/admin/shared/header' %>
+
+<p style="margin:50px;"></p>
 <div id="wrapper" class="wrapper row-offcanvas row-offcanvas-left">
-<aside class="left-side sidebar-offcanvas">
-<section class="sidebar">
-<ul class="sidebar-menu">
-<%= render partial: 'spree/admin/shared/main_menu' %>
-</ul>
+<div class="navbar navbar-default" >
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<ul class="nav navbar-nav">
+				<%= render partial: 'spree/admin/shared/main_menu' %>
+			</ul>
+		</div>
+	</div>
+</div>
+
 </section>
 </aside>
+</div>
 <aside class="right-side">
 <%= render partial: 'spree/admin/shared/content_header' %>
 <section class="content <%= "with-sidebar" if content_for?(:sidebar) %>">
@@ -41,4 +45,16 @@
 </aside>
 <div data-hook="admin_footer_scripts"></div>
 </body>
-</html>
+<!--[if lt IE 7 ]> 
+<html class="ie ie6" lang="<%= I18n.locale %>">
+	<![endif]-->
+	<!--[if IE 7 ]> 
+	<html class="ie ie7" lang="<%= I18n.locale %>">
+		<![endif]-->
+		<!--[if IE 8 ]> 
+		<html class="ie ie8" lang="<%= I18n.locale %>">
+			<![endif]-->
+			<!--[if IE 9 ]> 
+			<html class="ie ie9" lang="<%= I18n.locale %>">
+				<![endif]-->
+				<!--[if gt IE 9]><!-->

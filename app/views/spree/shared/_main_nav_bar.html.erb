@@ -1,10 +1,91 @@
-<nav class="col-md-12">
-	<div id="main-nav-bar" class="navbar">
-		<ul class="nav navbar-nav" data-hook>
-			<%= render 'spree/shared/categories' %>
- 		</ul>
-	</div>
-</nav>
+
+  
 
 
-	
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $('#navigationbar li').each(function(){
+      try{
+        var idNavigation = $(this).attr('id');
+        var idDiv = idNavigation.toLowerCase();
+        var timeoutNavigationFade;
+
+       
+        
+        $('#'+idNavigation).bind('mouseover',function(){
+          clearTimeout(timeoutNavigationFade);
+          $('#'+idDiv).fadeIn(700);
+        });
+        $('#'+idDiv).bind('mouseover',function(){
+          clearTimeout(timeoutNavigationFade);
+        });
+        
+        $('#'+idNavigation+", #"+idDiv).bind('mouseout',function(){
+          timeoutNavigationFade=setTimeout(function(){$("#"+idDiv).fadeOut(100);}, 100);
+        });
+
+
+      }
+      catch(e){
+        console.log("ERROR: "+e);
+      }
+    });
+  });
+  </script>
+
+
+
+ 
+   
+<div>  
+      <ul id="navigationbar" class="nav navbar-nav" >
+        <li id="Wedding" class="mainnavatags" style="margin-left:75px;"><%= link_to 'Wedding', '/wedding'%></li>
+        <li id="Invitation" class="mainnavatags"><a href="#">Invitations</a></li>
+        <li id="Birthday" class="mainnavatags"><a href="#">Birthday</a></li>
+        <li id="Valentine" class="mainnavatags"><a href="#">Valentine</a></li>
+        <li id="Ceremony" class="mainnavatags"><a href="/designers">Designers</a></li>
+        <li id="Blog" class="mainnavatags"><a href="/blog">Blog</a></li>
+      </ul>
+</div>      
+      
+
+
+                  <div id="wedding" class="navigation-div">
+                      
+                        <div class="row">
+                            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
+                            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
+                            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
+                            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
+                        </div>
+
+                  </div>
+                      
+                  <div id="invitation" class="navigation-div">
+                          
+                          <div class="row">
+                            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
+                            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
+                            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
+                            <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
+                            
+                          
+                          </div>
+                  </div>
+                      
+                  <div id="birthday" class="navigation-div">
+                      <p>hbbjbjnjnknjknknkmnk</p>
+                  </div>
+
+                  <div id="valentine" class="navigation-div">
+                  </div>
+                      
+                  <div id="ceremony" class="navigation-div">
+                  </div>
+
+
+
+    
+    
+  
+

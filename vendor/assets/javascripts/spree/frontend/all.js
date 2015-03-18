@@ -7,6 +7,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require spree/frontend
-
+//= require bootstrap-sprockets
 //= require_tree .
-//= require spree/frontend/spree_wishlist
+

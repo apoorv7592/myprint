@@ -1,0 +1,22 @@
+# == Schema Information
+#
+# Table name: entry_attachements
+#
+#  id                 :integer          not null, primary key
+#  entry_id           :integer
+#  created_at         :datetime
+#  updated_at         :datetime
+#  image_file_name    :string(255)
+#  image_content_type :string(255)
+#  image_file_size    :integer
+#  image_updated_at   :datetime
+#  title              :string(255)
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  entry_id: 1
+
+two:
+  entry_id: 1

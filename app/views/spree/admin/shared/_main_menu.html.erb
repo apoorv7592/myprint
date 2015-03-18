@@ -1,26 +1,49 @@
 <% if can? :admin, Spree::Order %>
-  <%= tab *Spree::BackendConfiguration::ORDER_TABS, icon: 'shopping-cart' %>
+  <li>
+  	<%= tab *Spree::BackendConfiguration::ORDER_TABS, icon: 'shopping-cart' %>
+  </li>
 <% end %>
 
+<li>
+	<%= main_menu_tree "Suites", icon: "bars", sub_menu: 'suite' %>
+</li>
+
 <% if can? :admin, Spree::Product %>
-  <%= main_menu_tree Spree.t(:products), icon: "products", sub_menu: "product" %>
+  <li>
+  	<%= main_menu_tree Spree.t(:products), icon: "products", sub_menu: "product" %>
+  </li>
 <% end %>
 
 <% if can? :admin, Spree::Admin::ReportsController %>
-  <%= tab *Spree::BackendConfiguration::REPORT_TABS, icon: 'file'  %>
+  <li>
+  	<%= tab *Spree::BackendConfiguration::REPORT_TABS, icon: 'file'  %>
+  </li>
 <% end %>
 
 <% if can? :admin, Spree::Promotion %>
-  <%= main_menu_tree Spree.t(:promotions), icon: "promotion", sub_menu: "promotion" %>
+  <li>
+  	<%= main_menu_tree Spree.t(:promotions), icon: "promotion", sub_menu: "promotion" %>
+  </li>
 <% end %>
 
 
 <% if Spree.user_class && can?(:admin, Spree.user_class) %>
-  <%= tab *Spree::BackendConfiguration::USER_TABS, url: spree.admin_users_path, icon: 'user' %>
+  <li >
+  	<%= tab *Spree::BackendConfiguration::USER_TABS, url: spree.admin_users_path, icon: 'user' %>
+  </li>
 <% end %>
 
 <% if can? :admin, current_store %>
-  <%= main_menu_tree Spree.t(:configurations), icon: "wrench", sub_menu: "configuration" %>
+  <li >
+  	<%= main_menu_tree Spree.t(:configurations), icon: "wrench", sub_menu: "configuration"%>
+  </li>
 <% end %>
 
-<%= link_to 'Banners', admin_banners_path %>
+
+<li>
+	<%= link_to 'Banners', admin_banners_path %>
+</li>
+
+<li>
+  <%= link_to 'Designers', admin_designers_path %>
+</li>

@@ -1,0 +1,38 @@
+<div id="main-carousel" class="carousel slide" data-ride="carousel">
+	<!-- Indicators-->
+	<ol class="carousel-indicators">
+		<li data-target="#main-carousel" data-slide-to="0" class="active"></li>
+		<li data-target="#main-carousel" data-slide-to="1" ></li>
+		<li data-target="#main-carousel" data-slide-to="2" ></li>		
+	</ol>
+	
+	<!-- Wrapper for slides-->
+	<div class="carousel-inner" >
+		
+		<!-- First slide-->
+		<div class="item active">
+			<% b= get_banner('Home Page', 1) %>
+			<% if !b.nil? %>
+				<%= image_tag b.picture.url(:main), alt:'main banner', class:'img-responsive', width:1000, height: 593 %>	
+			<%end%>	
+
+		</div>
+		<!-- Second slide-->
+		<div class="item">
+			<% b= get_banner('Home Page', 2) %>
+			<% if !b.nil? %>
+            <%= image_tag b.picture.url(:main), alt:'main banner', class:'img-responsive', width:1000, height: 593 %>	
+     	    <%end%>	
+		</div>
+		<!-- Third slide-->
+		<div class="item">
+			<% b= get_banner('Home Page', 3) %>
+		    <% if !b.nil? %>
+            <%= image_tag b.picture.url(:main), alt:'main banner', class:'img-responsive', width:1000, height: 593 %>	
+			<%end%>	
+		</div>
+	</div>
+
+	<!-- Controls-->
+
+</div>

@@ -1,13 +1,12 @@
 
-<!--<% if @categories %>
-	<% @categories.each do |c| %> 
+    <% @categories = Category.all%>
+
+     <% if @categories %>
+	    <% @categories.each do |s| %> 
+	     <li class="main-nav-list">
 		<span>
-			<%= link_to c.name, c %>
+			<%= link_to s.name, s %>
 		</span>
-	<% end %> 
-
-<% end %>-->
-
- 
-    
-
+		</li>
+	    <% end %> 
+	    <% end %>

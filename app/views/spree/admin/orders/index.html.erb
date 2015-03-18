@@ -1,3 +1,5 @@
+<div  class="col-md-10 col-md-offset-1" style="width:1000px;">
+
 <% content_for :page_title do %>
   <%= Spree.t(:listing_orders) %>
 <% end %>
@@ -168,3 +170,5 @@
 <% end %>
 
 <%= render :partial => 'spree/admin/shared/index_table_options', :locals => { :collection => @orders, :simple => true } %>
+
+</div>

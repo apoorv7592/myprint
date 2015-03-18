@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -23,9 +21,23 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+group :production do 
+	gem 'pg'
+end
+group :development do 
+	# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+	gem 'spring'
+	gem 'better_errors', '~> 2.1.0'
+	# Use sqlite3 as the database for Active Record
+	gem 'sqlite3'	
 
+	# Solr for dev
+	gem 'sunspot_solr'
+	# For seeing the progress
+	gem 'progress_bar'
+
+
+end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -43,7 +55,7 @@ gem 'spree_gateway', github: 'spree/spree_gateway'
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise'
 
 #installing bootstrap
-gem 'bootstrap-sass', '~> 3.3.1.0'
+gem 'bootstrap-sass', '~> 3.3.3'
 
 # S3 Amazon configuration
 gem 'aws-sdk', '~> 1.59.1'
@@ -55,8 +67,6 @@ gem 'aws-sdk', '~> 1.59.1'
 #Image uploading and handling
 gem 'cloudinary'
 
-#For providing search on models
-gem 'ransack'
 
 #For annotating
 gem 'annotate'
@@ -68,6 +78,60 @@ gem 'paperclip'
 gem 'haml'
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 4e63d8416d7f2d3a17840c0be91c97de19de7687
+=======
+#for blogging 
+#gem 'blogit', '~> 1.0.0.rc1'
+#gem 'spree_blogging_spree', github: 'stefansenk/spree-blogging-spree'
+gem 'monologue'
+
+
+##for full text search
+gem 'sunspot_rails'
+
+
+gem 'binding_of_caller'
+
+#Volume pricing
+#gem 'spree_volume_pricing', '3.0.2'
+#gem 'spree_volume_pricing', :github => 'ast0708/spree_volume_pricing'
+gem 'popen4'
+
+gem 'seed-fu'
+gem 'omniauth-facebook'
+gem 'spree_social', github: 'spree-contrib/spree_social', branch: 'master'
+
+#user reviews
+gem 'spree_reviews', github: 'spree-contrib/spree_reviews', branch: 'master'
+
+#Integrate mailchimp with spree
+gem 'spree_chimpy', github: 'ast0708/spree_chimpy', branch: 'master'
+
+#for font-awesome icons
+gem "font-awesome-rails"
+
+gem 'less-rails', '~> 2'
+gem 'therubyracer', '~> 0.12.1'
+gem 'sprockets-rails', '~> 2.2.2'
+
+
+#whishlist
+gem 'spree_wishlist', github: 'ast0708/spree_wishlist', branch: 'master'
+
+
+gem 'unicorn'
+gem 'unicorn-rails'
+
+#gem 'spree_email_to_friend', github: 'spree-contrib/spree_email_to_friend', branch: 'master'
+
+#gem 'spree_email_to_friend', github: 'spree-contrib/spree_email_to_friend', branch: 'master'
+
+gem 'spree_sitemap', github: 'ast0708/spree_sitemap', branch: 'master'
+
+gem "letter_opener", :group => :development
+
+gem 'attachinary'
+>>>>>>> master

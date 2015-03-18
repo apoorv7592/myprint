@@ -6,25 +6,79 @@ Rails.application.routes.draw do
   #
   # We ask that you don't use the :as option here, as Spree relies on it being the default of "spree"
   mount Spree::Core::Engine, :at => '/'
-
-          # The priority is based upon order of creation: first created -> highest priority.
+  #mount Blogit::Engine => "/blog"
+  mount Monologue::Engine, at: '/blog'
+  # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   Spree::Core::Engine.routes.draw do
-    resources :suites
-    resources :categories do
-      resources :sub_categories
+    resources :suites do
+      resources :reviews
+      resources :likes
     end
 
+    resources :categories
+    resources :sub_categories
+    
     resources :colors
+
     resources :ratings
-
-
-    namespace :admin do 
-      resources :banners
-    end
     
 
+    
+
+   
+    resources :contests
+    resources :entries
+
+
+    resources :designers
+
+    
+    resources :users do
+      member do
+        get :following, :followers
+      end
+    end
+    resources :relationships, only: [:create, :destroy]
+    
+    get '/wedding', to: 'landing_pages#wedding'
+    get '/like', to: 'likes#create', as: 'like_suite'
+    get '/unlike', to: 'likes#destroy', as: 'unlike_suite'
+    get '/designer_dashboard', to: 'designers#dashboard', as: 'designer_dashboard'
+
+
+    get '/search'  => 'solrsearch#index'
+    routes = lambda do
+      namespace :admin do
+        resources :products do
+          resources :variants do
+            #get :volume_prices, :on => :member
+          end
+        end
+        resources :designers do 
+          post :deactivate
+          post :activate
+          
+        end
+        resources :banners
+        resources :suites
+        #delete '/volume_prices/:id', :to => "volume_prices#destroy", :as => :volume_price
+      end
+    end
+    if Spree::Core::Engine.respond_to?(:add_routes)
+      Spree::Core::Engine.add_routes(&routes)
+    else
+      Spree::Core::Engine.routes.draw(&routes)
+    end
+    
+  end
+
+  devise_scope :person do
+  get '/login', :to => "devise/sessions#new"
+  get '/signup', :to => "devise/registrations#new"
+  delete '/logout', :to => "devise/sessions#destroy"
+  get '/designer_signup', :to => "devise/registrations#new_designer"
   end
 
   #get '/suites/:id' => 'suites#show'

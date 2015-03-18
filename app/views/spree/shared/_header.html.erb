@@ -1,35 +1,47 @@
-<div id="spree-header">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<style type="">
+	.inner-addon { 
+    position: relative; 
+}
+
+/* style icon */
+.inner-addon .fa {
+  position: absolute;
+  padding-top: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  pointer-events: none;
+}
+
+/* align icon */
+.right-addon .fa { right: 0px;}
+
+/* add padding  */
+.right-addon input { padding-right: 30px; }
+</style>
+
 	<header id="header" data-hook>
 		
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6">
+		<div class="container" style="width:1000px;padding:0 !important; margin-bottom:10px;">
+			<div class="row-fluid">
+				<div class="col-md-6" style="float:left;">
 					<figure id="logo" data-hook>
 						<%= link_to image_tag('logo.png', height: 40), root_path %>
 					</figure>
 				</div>
 				
-				<div class="col-md-6">
-					<div class="row" style="margin-bottom:0px !important;">
-						<%= render :partial => 'spree/shared/search' %>
-					</div>
-					<div class="row" id="nav-cart">
-						<ul class="nav navbar-nav navbar-right" data-hook>
-							<li id="link-to-cart" data-hook>
-								<noscript>
-									<%= link_to Spree.t(:cart), '/cart' %>
-								</noscript>
-								&nbsp;
-							</li>
-							<script>Spree.fetch_cart()</script>
-						</ul>
-					</div>
+				<div class="col-md-6" style="float:right;">
+				<div class="inner-addon right-addon">
+			    <i class="fa fa-search"></i>
+			   
+			    <%= render :partial => 'spree/shared/search' %>
+                </div>
+
+						
+				   
 				</div>
 				
 			</div>
 		</div>
 	</header>
-	<div class="container">
-		<%= render :partial => 'spree/shared/main_nav_bar' if store_menu? %>
-	</div>
-</div>
+
