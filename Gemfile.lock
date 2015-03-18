@@ -8,6 +8,15 @@ GIT
       spree_core (~> 3.0.0.beta)
 
 GIT
+  remote: git://github.com/ast0708/spree_sitemap.git
+  revision: a00e2a385a751b17d046ba4660099061d4399124
+  branch: master
+  specs:
+    spree_sitemap (2.0.0.beta)
+      sitemap_generator (~> 4.3.1)
+      spree_core (= 3.0.0.beta)
+
+GIT
   remote: git://github.com/ast0708/spree_wishlist.git
   revision: 28acd5c33442de91f6edd0eca5f4c2fda5439f99
   branch: master
@@ -417,6 +426,8 @@ GEM
       activesupport (>= 3.1, <= 4.2)
     select2-rails (3.5.9.1)
       thor (~> 0.14)
+    sitemap_generator (4.3.1)
+      builder
     spring (1.2.0)
     sprockets (2.12.3)
       hike (~> 1.2)
@@ -505,6 +516,7 @@ DEPENDENCIES
   spree_chimpy!
   spree_gateway!
   spree_reviews!
+  spree_sitemap!
   spree_social!
   spree_wishlist!
   spring
