@@ -5,8 +5,8 @@ Spree::OrdersController.class_eval do
       vars = params[:variant_id]
 
       success = true
-      vars.each do |v|
-	      if populator.populate(v, params[:quantity], params[:options])	        
+      vars.each_with_index do |v,i|
+	      if populator.populate(v, params[:quantity][i], params[:options])	        
 	        
 	      else
 	        success = false

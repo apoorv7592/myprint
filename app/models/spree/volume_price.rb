@@ -27,12 +27,24 @@ class Spree::VolumePrice < ActiveRecord::Base
 			bound = /\d+/.match(range)[0].to_i
 			return quantity >= bound
 		else
-			range.to_range === quantity
+			to_rng(range) === quantity
 		end
 	end
 
 	# indicates whether or not the range is a true Ruby range or an open ended range with no upper bound
 	def open_ended?
 		OPEN_ENDED =~ range
+	end
+	def to_rng(x)
+		case x.count('.')
+	         when 2
+	             elements = x.split('..')
+	             return Range.new(elements[0].to_i, elements[1].to_i)
+	         when 3
+	             elements = x.split('...')
+	             return Range.new(elements[0].to_i, elements[1].to_i-1)
+	         else
+	             raise ArgumentError.new("Couldn't convert to Range:#{str}")
+    	end
 	end
 end

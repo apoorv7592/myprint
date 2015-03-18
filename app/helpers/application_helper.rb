@@ -1,5 +1,8 @@
 module ApplicationHelper
-	def resource_name
+	  
+	  include Spree::SuitesHelper
+	  
+	  def resource_name
 	    :spree_user
 	  end
 	 

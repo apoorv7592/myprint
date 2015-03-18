@@ -9,8 +9,6 @@ module Spree
       @errors = ActiveModel::Errors.new(self)
     end
 
-
-
     def populate(variant_id, quantity, options = {})
       # protect against passing a nil hash being passed in
       # due to an empty params[:options]
