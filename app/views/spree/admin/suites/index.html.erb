@@ -17,6 +17,7 @@
 		<table class=" table table-striped">
 			<thead>
 				<tr>
+				    <th>Suite DP</th>
 					<th>Id</th>
 					<th>Name</th>
 					<th>SKU Id</th>
@@ -31,7 +32,9 @@
 			<tbody>
 				<% @suites.each do |s| %>
 					<tr>
-						<td><b><%= s.id %></b></td>
+
+						<td><%= image_tag s.avatar.url(:thumb) %></td>
+   						<td><b><%= s.id %></b></td>
 						<td><%= s.sku_id %></td>
 						<td><%= link_to s.name, admin_suite_path(s) %></td>
 						<td><%= s.description %></td>
@@ -40,6 +43,7 @@
 						<td><%= s.sub_category.name %></td>
 						<td><%= s.available_on %></td>
 						<td><%= link_to 'Edit',edit_admin_suite_path(s)%></td>
+
 					</tr>
 				<%end%>
 			</tbody>

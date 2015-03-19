@@ -17,6 +17,23 @@
 #
 
 class Suite < ActiveRecord::Base
+
+	has_many :variants, :through => :characteristics
+	has_many :characteristics 
+
+
+
+	has_attached_file :avatar, styles: {
+    thumb: '100x100>',
+    square: '200x200#',
+    medium: '300x300>',
+    large:  '500x500>'
+    }
+
+  # Validate the attached image is image/jpg, image/png, etc
+    validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+	
+		
 	belongs_to :sub_category
 	belongs_to :designer
 	has_and_belongs_to_many :colors
@@ -24,12 +41,9 @@ class Suite < ActiveRecord::Base
 	has_and_belongs_to_many :papers
 	has_and_belongs_to_many :dimensions
 	has_many :spree_products, :class_name => 'Spree::Product'
-
-	has_many :ratings
 	has_many :reviews,:class_name=> 'Spree::Review'
 	has_many :wished_products, dependent: :destroy
 	has_many :likes, dependent: :destroy
-
 
 	validates_presence_of :name, message: 'Name cannot be blank'
 	validates_presence_of :sku_id, message: 'SKU ID cannot be blank'
@@ -56,6 +70,16 @@ class Suite < ActiveRecord::Base
 		integer :trim_ids, multiple:true, references: Trim
 		integer :dimension_ids, multiple:true, references: Dimension
 	end
+	
+	class Characteristic
+	  belongs_to :suite
+	  belongs_to :variants
+	end
+
+	class Variant
+	  has_many :suites, :through => :characteristics
+	  belongs_to :characteristic
+	end
 
 	def self.retrieve_suites
         Suite.all
@@ -64,23 +88,6 @@ class Suite < ActiveRecord::Base
     def self.match_(id)
     	
     end
-
-	scope :active, ->  { where( "available_on < ? " , Date.today)}
-
-def avg_rating
-  average_rating = 0.0
-  count = 0
-  ratings.each do |rating| 
-    average_rating += rating.stars
-    count += 1
-  end
-                
-  if count != 0
-    (average_rating / count)
-  else
-    count
-  end
-end
 
 	def stars
 		avg_rating.try(:round) || 0
@@ -95,6 +102,6 @@ end
 		end
 		save
 	end
-
+	
 end
 

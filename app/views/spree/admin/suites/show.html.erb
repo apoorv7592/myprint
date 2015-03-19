@@ -32,6 +32,11 @@
 				<td><b>Available From</b></td>
 				<td><%= @suite.available_on%></td>
 			</tr>
+
+			<tr>
+				<td><b>Image</b></td>
+				<td><%= image_tag @suite.avatar.url(:thumb) %></td>
+			</tr>
 		</table>
 			<div class="row">
 				<div class="col-md-4">

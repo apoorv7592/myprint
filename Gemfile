@@ -77,12 +77,6 @@ gem 'paperclip'
 #for writing html
 gem 'haml'
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> 4e63d8416d7f2d3a17840c0be91c97de19de7687
-=======
 #for blogging 
 #gem 'blogit', '~> 1.0.0.rc1'
 #gem 'spree_blogging_spree', github: 'stefansenk/spree-blogging-spree'
@@ -133,5 +127,4 @@ gem 'spree_sitemap', github: 'ast0708/spree_sitemap', branch: 'master'
 
 gem "letter_opener", :group => :development
 
-gem 'attachinary'
->>>>>>> master
+

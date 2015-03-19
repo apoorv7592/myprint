@@ -11,9 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20141226114631) do
-ActiveRecord::Schema.define(version: 20150310093225) do
+ActiveRecord::Schema.define(version: 20150319063856) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -34,6 +32,22 @@ ActiveRecord::Schema.define(version: 20150310093225) do
     t.integer "suite_id", null: false
     t.integer "trim_id",  null: false
   end
+
+  create_table "attachinary_files", force: true do |t|
+    t.integer  "attachinariable_id"
+    t.string   "attachinariable_type"
+    t.string   "scope"
+    t.string   "public_id"
+    t.string   "version"
+    t.integer  "width"
+    t.integer  "height"
+    t.string   "format"
+    t.string   "resource_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "attachinary_files", ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent"
 
   create_table "banners", force: true do |t|
     t.string   "category"
@@ -196,7 +210,6 @@ ActiveRecord::Schema.define(version: 20150310093225) do
   add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id"
   add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
-
 
   create_table "spree_addresses", force: true do |t|
     t.string   "firstname"
@@ -1286,9 +1299,13 @@ ActiveRecord::Schema.define(version: 20150310093225) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.date     "available_on"
-    t.decimal  "avg_rating",      precision: 7, scale: 5, default: 0.0, null: false
-    t.integer  "reviews_count",                           default: 0,   null: false
-    t.integer  "like_no",                                 default: 0
+    t.decimal  "avg_rating",          precision: 7, scale: 5, default: 0.0, null: false
+    t.integer  "reviews_count",                               default: 0,   null: false
+    t.integer  "like_no",                                     default: 0
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "suites", ["available_on"], name: "index_suites_on_available_on"
