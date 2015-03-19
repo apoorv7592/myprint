@@ -24,12 +24,10 @@ class Suite < ActiveRecord::Base
 	##acts_as_list scope: :active
 
 
-	has_many :variants, :through => :characteristics
-	has_many :characteristics 
+	#has_many :variants, :through => :characteristics
+	#has_many :characteristics 
 
-
-
-	has_attached_file :avatar, styles: {
+	has_attached_file :avatar,  styles: {
     thumb: '100x100>',
     square: '200x200#',
     medium: '300x300>',
@@ -77,15 +75,6 @@ class Suite < ActiveRecord::Base
 		integer :dimension_ids, multiple:true, references: Dimension
 	end
 	
-	class Characteristic
-	  belongs_to :suite
-	  belongs_to :variants
-	end
-
-	class Variant
-	  has_many :suites, :through => :characteristics
-	  belongs_to :characteristic
-	end
 
 	def self.retrieve_suites
         Suite.all.order('position ASC')
