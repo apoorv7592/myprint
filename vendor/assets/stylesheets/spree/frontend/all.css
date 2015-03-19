@@ -9,3 +9,8 @@
  *= require_tree .
  *= require spree/frontend/spree_social
 */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+

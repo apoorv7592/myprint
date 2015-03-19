@@ -36,9 +36,15 @@
 			</div>
 
 			<div class="row form-group">
+
+				<%= f.label 'Suite DP', class: 'col-sm-2' %>
+				<%= f.file_field :avatar %>
+			</div>
+
 				<%= f.label 'Slug', class: 'col-sm-2'%>
 				<%= f.text_field :slug %>
 			</div>
+
 
 			<div class="row form-group">
 				<%= f.submit 'Submit', class: 'btn btn-primary col-sm-4 col-sm-offset-2' %>

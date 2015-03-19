@@ -36,8 +36,6 @@ group :development do
 	# For seeing the progress
 	gem 'progress_bar'
 
-	#for opening the mail in browser
-  	gem "letter_opener"
 
 end
 # Use ActiveModel has_secure_password
@@ -117,6 +115,12 @@ gem 'sprockets-rails', '~> 2.2.2'
 #whishlist
 gem 'spree_wishlist', github: 'ast0708/spree_wishlist', branch: 'master'
 
+
+gem 'unicorn'
+gem 'unicorn-rails'
+
+#gem 'spree_email_to_friend', github: 'spree-contrib/spree_email_to_friend', branch: 'master'
+
 #gem 'spree_email_to_friend', github: 'spree-contrib/spree_email_to_friend', branch: 'master'
 
 gem 'spree_sitemap', github: 'ast0708/spree_sitemap', branch: 'master'
@@ -126,3 +130,5 @@ gem 'friendly_id'
 
 #for ordering of objects
 #gem 'acts_as_list'
+
+gem "letter_opener", :group => :development

@@ -21,6 +21,8 @@ Rails.application.routes.draw do
     resources :sub_categories
     
     resources :colors
+
+    resources :ratings
     
 
     
@@ -28,6 +30,7 @@ Rails.application.routes.draw do
    
     resources :contests
     resources :entries
+
 
     resources :designers
 
@@ -69,6 +72,13 @@ Rails.application.routes.draw do
       Spree::Core::Engine.routes.draw(&routes)
     end
     
+  end
+
+  devise_scope :person do
+  get '/login', :to => "devise/sessions#new"
+  get '/signup', :to => "devise/registrations#new"
+  delete '/logout', :to => "devise/sessions#destroy"
+  get '/designer_signup', :to => "devise/registrations#new_designer"
   end
 
   #get '/suites/:id' => 'suites#show'

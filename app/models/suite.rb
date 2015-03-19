@@ -22,7 +22,23 @@ class Suite < ActiveRecord::Base
 	extend FriendlyId
 	friendly_id :name, use: [:slugged, :history]
 	##acts_as_list scope: :active
-	
+
+
+	has_many :variants, :through => :characteristics
+	has_many :characteristics 
+
+
+
+	has_attached_file :avatar, styles: {
+    thumb: '100x100>',
+    square: '200x200#',
+    medium: '300x300>',
+    large:  '500x500>'
+    }
+    validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/  # Validate the attached image is image/jpg, image/png, etc	
+		
+		
+
 	belongs_to :sub_category
 	belongs_to :designer
 	has_and_belongs_to_many :colors
@@ -60,6 +76,16 @@ class Suite < ActiveRecord::Base
 		integer :trim_ids, multiple:true, references: Trim
 		integer :dimension_ids, multiple:true, references: Dimension
 	end
+	
+	class Characteristic
+	  belongs_to :suite
+	  belongs_to :variants
+	end
+
+	class Variant
+	  has_many :suites, :through => :characteristics
+	  belongs_to :characteristic
+	end
 
 	def self.retrieve_suites
         Suite.all.order('position ASC')
@@ -82,10 +108,15 @@ class Suite < ActiveRecord::Base
 		end
 		save
 	end
+
+	extend FriendlyId
+	friendly_id :name, use: [:slugged, :history]
+
 	private
 		
 		def should_generate_new_friendly_id?
 			slug.blank? || name_changed?
 		end
+
 end
 
