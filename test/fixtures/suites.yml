@@ -15,6 +15,7 @@
 #  reviews_count   :integer          default(0), not null
 #  like_no         :integer          default(0)
 #  slug            :string(255)
+#  position        :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

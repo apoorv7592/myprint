@@ -15,11 +15,13 @@
 #  reviews_count   :integer          default(0), not null
 #  like_no         :integer          default(0)
 #  slug            :string(255)
+#  position        :integer
 #
 
 class Suite < ActiveRecord::Base
 	extend FriendlyId
 	friendly_id :name, use: [:slugged, :history]
+	##acts_as_list scope: :active
 	
 	belongs_to :sub_category
 	belongs_to :designer
@@ -46,6 +48,7 @@ class Suite < ActiveRecord::Base
 		time :created_at
 		integer :like_no
 		integer :avg_rating
+		integer :position
 		
 		text :designer_names do 
 			designer.name
@@ -59,7 +62,7 @@ class Suite < ActiveRecord::Base
 	end
 
 	def self.retrieve_suites
-        Suite.all
+        Suite.all.order('position ASC')
     end	
     
     def self.match_(id)

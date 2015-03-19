@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150313135847) do
+ActiveRecord::Schema.define(version: 20150318193046) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -1326,10 +1326,12 @@ ActiveRecord::Schema.define(version: 20150313135847) do
     t.integer  "reviews_count",                           default: 0,   null: false
     t.integer  "like_no",                                 default: 0
     t.string   "slug"
+    t.integer  "position"
   end
 
   add_index "suites", ["available_on"], name: "index_suites_on_available_on"
   add_index "suites", ["designer_id"], name: "index_suites_on_designer_id"
+  add_index "suites", ["position"], name: "index_suites_on_position"
   add_index "suites", ["slug"], name: "index_suites_on_slug"
   add_index "suites", ["sub_category_id"], name: "index_suites_on_sub_category_id"
 

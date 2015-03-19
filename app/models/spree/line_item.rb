@@ -1,3 +1,24 @@
+# == Schema Information
+#
+# Table name: spree_line_items
+#
+#  id                   :integer          not null, primary key
+#  variant_id           :integer
+#  order_id             :integer
+#  quantity             :integer          not null
+#  price                :decimal(10, 2)   not null
+#  created_at           :datetime
+#  updated_at           :datetime
+#  currency             :string(255)
+#  cost_price           :decimal(10, 2)
+#  tax_category_id      :integer
+#  adjustment_total     :decimal(10, 2)   default(0.0)
+#  additional_tax_total :decimal(10, 2)   default(0.0)
+#  promo_total          :decimal(10, 2)   default(0.0)
+#  included_tax_total   :decimal(10, 2)   default(0.0), not null
+#  pre_tax_amount       :decimal(8, 2)    default(0.0)
+#
+
 module Spree
 	class LineItem < Spree::Base
 		before_validation :invalid_quantity_check

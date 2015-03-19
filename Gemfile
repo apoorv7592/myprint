@@ -121,4 +121,8 @@ gem 'spree_wishlist', github: 'ast0708/spree_wishlist', branch: 'master'
 
 gem 'spree_sitemap', github: 'ast0708/spree_sitemap', branch: 'master'
 
+#for beautification of urls
 gem 'friendly_id'
+
+#for ordering of objects
+#gem 'acts_as_list'

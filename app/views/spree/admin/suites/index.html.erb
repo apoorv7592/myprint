@@ -18,6 +18,7 @@
 			<thead>
 				<tr>
 					<th>Id</th>
+					<th>Position</th>
 					<th>Name</th>
 					<th>SKU Id</th>
 					<th>Description</th>
@@ -33,6 +34,7 @@
 				<% @suites.each do |s| %>
 					<tr>
 						<td><b><%= s.id %></b></td>
+						<td><%= s.position %></td>
 						<td><%= s.sku_id %></td>
 						<td><%= link_to s.name, admin_suite_path(s) %></td>
 						<td><%= s.description %></td>
