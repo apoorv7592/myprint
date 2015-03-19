@@ -496,6 +496,7 @@ DEPENDENCIES
   cloudinary
   coffee-rails (~> 4.0.0)
   font-awesome-rails
+  friendly_id
   haml
   jbuilder (~> 2.0)
   jquery-rails

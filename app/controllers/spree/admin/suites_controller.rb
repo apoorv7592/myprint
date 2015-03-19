@@ -6,7 +6,10 @@ module Spree
 			end
 
 			def show
+
 				@suite = Suite.find(params[:id])
+				@suite = Suite.friendly.find(params[:id])
+
 			end
 
 			def new
@@ -16,7 +19,7 @@ module Spree
 				@s = Suite.new(suites_params)
 				if @s.save
 					respond_to do |format|
-						format.html {redirect_to controller: 'suites', action:'index'}
+						format.html {redirect_to action:'index'}
 						format.js {@msg = 'Suite Saved successfully'}
 					end
 				else
@@ -28,11 +31,18 @@ module Spree
 			end
 
 			def edit
+
 				@suite = Suite.find(params[:id])
 			end
 
 			def update
 				@s = Suite.find(params[:id])
+				@suite = Suite.friendly.find(params[:id])
+			end
+
+			def update
+				@s = Suite.friendly.find(params[:id])
+
 				if @s.update(suites_params)
 					respond_to do |format|
 						format.html {redirect_to admin_suite_path(@s)}
@@ -55,7 +65,10 @@ module Spree
 
 			private
 				def suites_params
+
 					params.require(:suite).permit(:sku_id, :name, :description, :designer_id, :sub_category_id, :available_on, :avatar)
+					params.require(:suite).permit(:sku_id, :name, :description, :designer_id, :sub_category_id, :available_on, :slug)
+
 				end 
 		end
 	end

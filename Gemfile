@@ -125,6 +125,8 @@ gem 'unicorn-rails'
 
 gem 'spree_sitemap', github: 'ast0708/spree_sitemap', branch: 'master'
 
+
 gem "letter_opener", :group => :development
 
+gem 'friendly_id'
 

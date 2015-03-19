@@ -14,6 +14,7 @@
 #  avg_rating      :decimal(7, 5)    default(0.0), not null
 #  reviews_count   :integer          default(0), not null
 #  like_no         :integer          default(0)
+#  slug            :string(255)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

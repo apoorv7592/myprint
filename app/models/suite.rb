@@ -14,9 +14,11 @@
 #  avg_rating      :decimal(7, 5)    default(0.0), not null
 #  reviews_count   :integer          default(0), not null
 #  like_no         :integer          default(0)
+#  slug            :string(255)
 #
 
 class Suite < ActiveRecord::Base
+
 
 	has_many :variants, :through => :characteristics
 	has_many :characteristics 
@@ -29,11 +31,11 @@ class Suite < ActiveRecord::Base
     medium: '300x300>',
     large:  '500x500>'
     }
-
-  # Validate the attached image is image/jpg, image/png, etc
-    validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+    validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/  # Validate the attached image is image/jpg, image/png, etc
 	
 		
+		
+
 	belongs_to :sub_category
 	belongs_to :designer
 	has_and_belongs_to_many :colors
@@ -102,6 +104,15 @@ class Suite < ActiveRecord::Base
 		end
 		save
 	end
-	
+
+	extend FriendlyId
+	friendly_id :name, use: [:slugged, :history]
+
+	private
+		
+		def should_generate_new_friendly_id?
+			slug.blank? || name_changed?
+		end
+
 end
 
