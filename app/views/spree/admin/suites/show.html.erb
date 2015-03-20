@@ -4,7 +4,13 @@
 		>>
 		Suite Details</h4>
 		<table class="table table-striped">
+
+
 			<tr>
+				<td><b>Image</b></td>
+				<td><%= image_tag @suite.avatar.url(:thumb) %></td>
+			</tr>
+            <tr>
 				<td><b>SKU ID</b></td>
 				<td><%= @suite.sku_id%></td>
 			</tr>
@@ -34,9 +40,7 @@
 			</tr>
 
 
-			<tr>
-				<td><b>Image</b></td>
-				<td><%= image_tag @suite.avatar.url(:thumb) %></td>
+						
 			<tr>
 				<td><b>Slug</b></td>
 				<td><%= @suite.slug %></td>

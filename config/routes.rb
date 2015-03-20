@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :suites do
       resources :reviews
       resources :likes
+
     end
 
     resources :categories
@@ -62,7 +63,10 @@ Rails.application.routes.draw do
           
         end
         resources :banners
-        resources :suites
+        
+        resources :suites do
+          resources :characteristics
+        end
         #delete '/volume_prices/:id', :to => "volume_prices#destroy", :as => :volume_price
       end
     end
@@ -80,6 +84,7 @@ Rails.application.routes.draw do
   delete '/logout', :to => "devise/sessions#destroy"
   get '/designer_signup', :to => "devise/registrations#new_designer"
   end
+
 
   #get '/suites/:id' => 'suites#show'
 

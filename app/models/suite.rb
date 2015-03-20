@@ -19,6 +19,8 @@
 
 class Suite < ActiveRecord::Base
 
+	extend FriendlyId
+	friendly_id :name, use: [:slugged, :history]
 
 	has_many :variants, :through => :characteristics
 	has_many :characteristics 
@@ -73,15 +75,7 @@ class Suite < ActiveRecord::Base
 		integer :dimension_ids, multiple:true, references: Dimension
 	end
 	
-	class Characteristic
-	  belongs_to :suite
-	  belongs_to :variants
-	end
-
-	class Variant
-	  has_many :suites, :through => :characteristics
-	  belongs_to :characteristic
-	end
+	
 
 	def self.retrieve_suites
         Suite.all
@@ -105,8 +99,6 @@ class Suite < ActiveRecord::Base
 		save
 	end
 
-	extend FriendlyId
-	friendly_id :name, use: [:slugged, :history]
 
 	private
 		
@@ -115,4 +107,6 @@ class Suite < ActiveRecord::Base
 		end
 
 end
+
+
 

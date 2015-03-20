@@ -1,0 +1,38 @@
+
+<div class="row">
+<div id="suites_noti"></div>
+
+	<div class="col-md-10 col-md-offset-1">
+		<div class="row">
+			<div class="col-md-6">
+				<h4>All Suites Variants</h4>
+			</div>
+			<div class="col-md-6">
+				<div class="pull-right">
+					<%= button_to 'New Variant', new_admin_suite_characteristic_path, method: 'get', class: 'btn btn-primary' 	%>
+				</div>
+			</div>
+		</div>
+		<table class=" table table-striped">
+			<thead>
+				<tr>
+				    <th>Suite DP</th>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Belogs to Suite Id</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @characteristics.each do |s| %>
+					<tr>
+
+						<td><%= image_tag s.avatar.url(:thumb) %></td>
+   						<td><b><%= s.id %></b></td>
+   						<td><b><%= s.name %></b></td>
+						<td><%= s.suite_id %></td>
+					</tr>
+				<%end%>
+			</tbody>
+		</table>
+	</div>
+</div>

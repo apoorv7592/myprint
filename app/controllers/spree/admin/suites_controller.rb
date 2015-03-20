@@ -7,8 +7,7 @@ module Spree
 
 			def show
 
-				@suite = Suite.find(params[:id])
-				@suite = Suite.friendly.find(params[:id])
+				@suite = Suite.friendly.find(params[:id])				
 
 			end
 
@@ -32,13 +31,9 @@ module Spree
 
 			def edit
 
-				@suite = Suite.find(params[:id])
-			end
-
-			def update
-				@s = Suite.find(params[:id])
 				@suite = Suite.friendly.find(params[:id])
 			end
+
 
 			def update
 				@s = Suite.friendly.find(params[:id])
@@ -63,11 +58,14 @@ module Spree
 				end
 			end
 
+			def variants
+				@variants = Variant.all
+			end
+
 			private
 				def suites_params
 
-					params.require(:suite).permit(:sku_id, :name, :description, :designer_id, :sub_category_id, :available_on, :avatar)
-					params.require(:suite).permit(:sku_id, :name, :description, :designer_id, :sub_category_id, :available_on, :slug)
+					params.require(:suite).permit(:sku_id, :name, :description, :designer_id, :sub_category_id, :available_on,:slug, :avatar)
 
 				end 
 		end
