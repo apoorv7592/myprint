@@ -22,10 +22,6 @@ Rails.application.routes.draw do
     
     resources :colors
     
-
-    
-
-   
     resources :contests
     resources :entries
 
