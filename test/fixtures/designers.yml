@@ -14,6 +14,10 @@
 #  avatar_content_type :string(255)
 #  avatar_file_size    :integer
 #  avatar_updated_at   :datetime
+#  skills              :string(255)
+#  experience          :string(255)
+#  college             :string(255)
+#  phonenum            :string(255)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

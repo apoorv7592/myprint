@@ -1,6 +1,9 @@
 module Spree
 	class DesignersController < Spree::HomeController
-		before_action :authenticate_designer, only: [:dashboard]
+		before_action :authenticate_designer, only: [:dashboard, :new, :create]
+
+		def new
+		end
 
 		def index
 			@designers = Designer.active
@@ -20,8 +23,27 @@ module Spree
 			end
 		end
 
+		def create 
+			@d = Designer.new(designer_params)
+			if @d.save
+				@d.user_id = spree_current_user.id
+				@d.save
+				redirect_to action:'dashboard'
+			else
+				redirect_to :back, message: 'Some error occured'
+			end
+		end
+
 		def dashboard
 			@designer = spree_current_user
+		end
+
+		def complete_account
+			if spree_current_user.designer.present?
+				@dsg = spree_current_user.designer
+			else
+				@dsg = Designer.new
+			end			
 		end
 
 		private
@@ -30,6 +52,9 @@ module Spree
 					redirect_to :back, notice: 'This user
 					is not registered as a designer'
 				end
+			end
+			def designer_params
+				params.require(:designer).permit(:name, :city, :about, :phonenum, :college)
 			end
 	end
 end
