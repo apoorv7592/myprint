@@ -38,8 +38,8 @@ attachment_config = {
       large:    "600x600>"
   },
 
-  path:           "/printdora/:class/:id/:style/:basename.:extension",
-  default_url:    "/printdora/:class/:id/:style/:basename.:extension",
+  #path:           "/printdora/:class/:id/:style/:basename.:extension",
+  #default_url:    "/printdora/:class/:id/:style/:basename.:extension",
   default_style:  "product"
 }
 

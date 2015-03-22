@@ -266,6 +266,9 @@
                     
                     <% @prds.each do |p| %>
                       <%= render 'add_prod', prd: p %> 
+                      <%# p.variant_images.each do |img| %>
+                        <%#= image_tag img.attachment.url %>
+                      <%# end %>
                       
                     <%end%>
                     <%= button_tag :class => 'btn btn-success', :id => 'add-to-cart-button', :type => :submit do %>

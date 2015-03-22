@@ -2,20 +2,26 @@
 #
 # Table name: suites
 #
-#  id              :integer          not null, primary key
-#  sku_id          :string(255)
-#  name            :string(255)
-#  description     :text
-#  designer_id     :integer
-#  sub_category_id :integer
-#  created_at      :datetime
-#  updated_at      :datetime
-#  available_on    :date
-#  avg_rating      :decimal(7, 5)    default(0.0), not null
-#  reviews_count   :integer          default(0), not null
-#  like_no         :integer          default(0)
-#  slug            :string(255)
-#  position        :integer
+#  id                  :integer          not null, primary key
+#  sku_id              :string(255)
+#  name                :string(255)
+#  description         :text
+#  designer_id         :integer
+#  sub_category_id     :integer
+#  created_at          :datetime
+#  updated_at          :datetime
+#  available_on        :date
+#  avg_rating          :decimal(7, 5)    default(0.0), not null
+#  reviews_count       :integer          default(0), not null
+#  like_no             :integer          default(0)
+#  slug                :string(255)
+#  position            :integer
+#  avatar_file_name    :string(255)
+#  avatar_content_type :string(255)
+#  avatar_file_size    :integer
+#  avatar_updated_at   :datetime
+#  variant             :string(255)
+#  characteristic      :string(255)
 #
 
 class Suite < ActiveRecord::Base

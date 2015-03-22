@@ -24,17 +24,13 @@ Rails.application.routes.draw do
 
     resources :ratings
     
-
-    
-
-   
     resources :contests
     resources :entries
-
-
     resources :designers
 
     
+    get '/complete_account', to: 'designers#complete_account', as: 'designer_complete_account'    
+
     resources :users do
       member do
         get :following, :followers
