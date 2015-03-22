@@ -1,17 +1,11 @@
 /* Header */
-* {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
 #topmost-nav{
-	font-size:10px;
-	
-	min-height:10px !important;
+	font-size:10px;	
+	min-height:20px !important;
 	border:none;
 	background-color:white;
 	font-family: Georgia;
+  padding:0 !important;
 }
 .topmost-nav-list {
 	padding-top:3px !important;
@@ -19,13 +13,16 @@
   float:right !important;
 }
 
+/* topmost nav bar */
+  .topmost >a{color:rgba(1,0,0,0.8);}
+
 ul.nav.navbar-nav.navbar-right{
   width:160px;
   height:30px;
   margin-right:0px !important;
-  margin-bottom:10px !important;
   float:right;
 }
+
 navbar-nav.navbar-right>li>a{
   float:right;
   padding:none !important;
@@ -42,7 +39,8 @@ navbar-nav.navbar-right>li>a{
  
  nav#topmost-nav.navbar.navbar-default{
  height:30px;
- margin-bottom:20px !important;
+ padding:0 !important;
+ margin-bottom: 2px;
  }
 
  input#search.form-control{
@@ -58,12 +56,11 @@ navbar-nav.navbar-right>li>a{
  #navigationbar{
     width: 1000px;
     background : white;
-    border-bottom:1px solid #000000;
-    border-top:1px solid #000000;
+    border-bottom:1px solid rgba(1,0,0,0.6);
+    border-top:1px solid rgba(1,0,0,0.6);
     margin-bottom:10px;
-    padding-top:5px;
-    padding-bottom:10px;
-  }
+    padding-top:5px !important;
+    }
 
 .navigation-div{
     z-index:1000;
@@ -71,7 +68,7 @@ navbar-nav.navbar-right>li>a{
     border-left:1px solid rgba(1,0,0,0.3);
     border-right:1px solid rgba(1,0,0,0.3);
     position:absolute;
-    top:140px;
+    top:122px;
     left:0px;
     width:1000px;
     height:auto;
@@ -80,15 +77,20 @@ navbar-nav.navbar-right>li>a{
     margin-left:0px;
     color:#fff;
     border-bottom:2px solid rgba(255,0,0,0.7);
+    box-shadow: 0 0 2px #888;
+    
 }
 
-.navbar-nav>li>a:hover,.navbar-nav>li>a:focus{color:rgba(0,200,160,0.5) !important;padding:none !important;}
+.navbar-nav>li>a:hover,.navbar-nav>li>a:focus{
+color:#6BBCBF !important;
+padding:none !important;
+}
 
-.navbar-nav>li>a,.navbar-nav>li>a{
+.navbar-nav>li>a{
   background:white !important;
-  height:20px !important;
-  padding:none !important;
-  }
+  padding:1px !important;
+  color:#000000;
+}
 
 .row
 { margin-right: 0!important; 
@@ -110,18 +112,28 @@ margin-left: 0!important;
   }
 
   .mainnavatags{
-    margin-right: 30px;
-    font-family: Georgia;
-    padding:none !important;
-    background:red !important;
-    
+    margin-right:74px;
+    font-family: Century Gothic;
+    font-size: 13px;
+    height:28px;
+}
+
+  .mainnavatags1{
+    font-family: Century Gothic;
+    font-size: 13px;
+    height:28px;
+}
+
+  .mainnavatags2{
+    margin-right:71px;
+    font-family: Century Gothic;
+    font-size: 13px;
+    height:28px;
+}
+
+  .carousel-indicators{
+  top:450px;
   }
-
-  .mainnavatags >a{color:rgba(1,0,0,1);padding:none !important;}
-
-/* topmost nav bar */
-  .topmost >a{color:rgba(1,0,0,0.8);}
-
 
   .footerbottom{
     font-family:verdana;
@@ -713,3 +725,5 @@ border-width: 10px;
   margin-left:8px;
   background:rgba(1,0,0,0.2);
 }
+
+

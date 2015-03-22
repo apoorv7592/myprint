@@ -42,11 +42,14 @@ Rails.application.routes.draw do
       end
     end
     resources :relationships, only: [:create, :destroy]
+
     
     get '/wedding', to: 'landing_pages#wedding'
     get '/like', to: 'likes#create', as: 'like_suite'
     get '/unlike', to: 'likes#destroy', as: 'unlike_suite'
     get '/designer_dashboard', to: 'designers#dashboard', as: 'designer_dashboard'
+    get '/contact_us', to: 'contactus#contact', as:'contact_us'
+
 
 
     get '/search'  => 'solrsearch#index'
