@@ -1,7 +1,7 @@
 
 <div class="row">
 	<div class="col-sm-offset-2">
-	<h4> New Suite </h4>
+	<h4> Edit Suite </h4>
 		<%= form_for @suite, url: admin_suite_path(@suite), class: 'form-horizontal', method: 'put' do |f| %>
 			<div class="row form-group">
 				<%= f.label :sku_id, class: 'col-sm-2' %>
@@ -41,6 +41,7 @@
 				<%= f.file_field :avatar %>
 			</div>
 
+            <div class="row form-group">
 				<%= f.label 'Slug', class: 'col-sm-2'%>
 				<%= f.text_field :slug %>
 			</div>

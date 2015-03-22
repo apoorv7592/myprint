@@ -29,6 +29,8 @@ class Suite < ActiveRecord::Base
 	friendly_id :name, use: [:slugged, :history]
 	##acts_as_list scope: :active
 
+	extend FriendlyId
+	friendly_id :name, use: [:slugged, :history]
 
 	#has_many :variants, :through => :characteristics
 	#has_many :characteristics 
@@ -81,7 +83,6 @@ class Suite < ActiveRecord::Base
 		integer :dimension_ids, multiple:true, references: Dimension
 	end
 	
-
 	def self.retrieve_suites
         Suite.all.order('position ASC')
     end	
@@ -104,8 +105,6 @@ class Suite < ActiveRecord::Base
 		save
 	end
 
-	extend FriendlyId
-	friendly_id :name, use: [:slugged, :history]
 
 	private
 		
@@ -114,4 +113,6 @@ class Suite < ActiveRecord::Base
 		end
 
 end
+
+
 
