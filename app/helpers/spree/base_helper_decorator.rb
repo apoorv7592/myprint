@@ -27,5 +27,6 @@ Spree::BaseHelper.class_eval do
 	         else
 	             raise ArgumentError.new("Couldn't convert to Range:#{str}")
     	end
+    
  	end
 end
