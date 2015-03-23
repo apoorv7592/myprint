@@ -136,7 +136,7 @@
       <%= form_for @order, url: update_cart_path, html: { id: 'update-cart' },method: 'put' do |order_form| %>
           <div class="table-responsive-cart">
           <div data-hook="cart_items">
-            <%= render partial: 'spree/shared/form', locals: { order_form: order_form } %>
+            <%= render partial: 'spree/shared/top_cart_form', locals: { order_form: order_form } %>
           </div>
           
           <div data-hook="cart_buttons">
