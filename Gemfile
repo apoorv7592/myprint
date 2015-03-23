@@ -42,7 +42,8 @@ end
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
+gem "unicorn-rails"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -125,8 +126,10 @@ gem 'unicorn-rails'
 
 gem 'spree_sitemap', github: 'ast0708/spree_sitemap', branch: 'master'
 
-
-gem "letter_opener", :group => :development
-
+#for beautification of urls
 gem 'friendly_id'
 
+#for ordering of objects
+#gem 'acts_as_list'
+
+gem "letter_opener", :group => :development

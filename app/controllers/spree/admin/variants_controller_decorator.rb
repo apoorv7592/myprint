@@ -22,7 +22,7 @@ Spree::Admin::VariantsController.class_eval do
 
 		def location_after_save
 			if @product.master.id == @variant.id and params[:variant].has_key? :volume_prices_attributes
-				#return volume_prices_admin_product_variant_url(@product, @variant)
+				return volume_prices_admin_product_variant_url(@product, @variant)
 			end
 			super
 		end

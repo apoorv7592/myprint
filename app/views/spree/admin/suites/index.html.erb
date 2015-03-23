@@ -19,6 +19,7 @@
 				<tr>
 				    <th>Suite DP</th>
 					<th>Id</th>
+					<th>Position</th>
 					<th>Name</th>
 					<th>SKU Id</th>
 					<th>Description</th>
@@ -27,15 +28,16 @@
 					<th>Sub Category</th>
 					<th>Available From(YYYY-MM-DD) </th>
 					<th>Slug</th>
+					<th>Image</th>
 					<th>Action</th>
 				</tr>
 			</thead>
 			<tbody>
 				<% @suites.each do |s| %>
 					<tr>
-
-						<td><%= image_tag s.avatar.url(:thumb) %></td>
-   						<td><b><%= s.id %></b></td>
+						<td><b><%= s.id %></b></td>
+						<td><%= s.position %></td>
+						
 						<td><%= s.sku_id %></td>
 						<td><%= link_to s.name, admin_suite_path(s) %></td>
 						<td><%= s.description %></td>
@@ -44,6 +46,7 @@
 						<td><%= s.sub_category.name %></td>
 						<td><%= s.available_on %></td>
 						<td><%= s.slug%></td>
+						<td><%= image_tag s.avatar.url(:thumb) %></td>
 						<td><%= link_to 'Edit',edit_admin_suite_path(s)%></td>
 
 					</tr>

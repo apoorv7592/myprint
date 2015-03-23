@@ -54,29 +54,58 @@
       }
     });
   });
+
+  $(document).ready(function(){
+    $('ul.nav.navbar-nav.navbar-right1 li').each(function(){
+      try{
+        var idNavigation1 = $(this).attr('id');
+        var idDiv1 = idNavigation1.toLowerCase();
+        var timeoutNavigationFade;
+        $('#'+idNavigation1).bind('mouseover',function(){
+          clearTimeout(timeoutNavigationFade);
+          $('#'+idDiv1).fadeIn(500);
+        });
+        $('#'+idDiv1).bind('mouseover',function(){
+          clearTimeout(timeoutNavigationFade);
+        });
+        
+        $('#'+idNavigation1+", #"+idDiv1).bind('mouseout',function(){
+          timeoutNavigationFade=setTimeout(function(){$("#"+idDiv1).fadeOut(200);}, 200);
+        });
+  
+  
+      }
+      catch(e){
+        console.log("ERROR: "+e);
+      }
+    });
+  });
 </script>
-
+<% if spree_current_user %>
 <nav id= 'topmost-nav' class="navbar navbar-default" >
-  <ul class="nav navbar-nav navbar-right ">
-    <li id="Contact">
-      <%= link_to "Contact Us", '/contact_us/',style:"padding-left:0px !important;padding-right:0px !important;margin-right:10px;" %>
-    </li>
+  <ul class="nav navbar-nav navbar-right ">   
+     <li>
+      <%= link_to "blog", '/blog/',class:"topbar"  %>
+    </li> 
+
+    <li>
+      <%= link_to "help", '/help/',class:"topbar"  %>
+    </li>  
+
     
-    <% if spree_current_user %>
-    <li id="Myaccount">
-      <%= link_to "My Account", '/account/',style:"padding-left:0px !important;padding-right:0px !important;margin-right:10px;"  %>
-    </li>
-    <% else %>
-    <li id="Login">
-      <%= link_to "Sign In", '#',"data-toggle"=>"modal", "data-target"=>"#myModal",style:"padding-left:0px !important;padding-right:0px !important;margin-right:20px;margin-left:10px;" %>
+    <li id="Contact">
+      <%= link_to "contact us", '/contact_us/',class:"topbar" %>
     </li>
 
-    <% end %>
-    <%= render 'spree/shared/sign_in' %>
-    
-    <li id="Cart">
-      <%= link_to "Cart", '/cart/',style:"padding-left:0px !important;padding-right:0px !important;" %>
+    <li id="Myaccount">
+      <%= link_to "my account", '/account/',class:"topbar"  %>
     </li>
+
+
+    <li id="Cart">
+      <%= link_to "cart", '/cart/',style:"padding-left:0px !important;padding-right:0px !important;" %>
+    </li>
+
     <li style="position:relative;top:4px;margin-left:0px !important;">
       <i class="fa fa-shopping-cart"></i>
     </li>
@@ -85,10 +114,50 @@
       <%= fa_icon "bell", style: 'color:red' %>
       </li>
       <% @order = current_order %>
-    <% end %>
-
+    <%end %>
   </ul>
 </nav>
+
+  
+  <% else %>
+  <nav id= 'topmost-nav' class="navbar navbar-default" >
+  <ul class="nav navbar-nav navbar-right1 ">   
+    <li>
+      <%= link_to "blog", '/blog/',class:"topbar"  %>
+    </li> 
+
+    <li>
+      <%= link_to "help", '/help/',class:"topbar"  %>
+    </li>  
+
+    
+    <li id="Contact">
+      <%= link_to "contact us", '/contact_us/',class:"topbar" %>
+    </li>
+
+    <li id="Login">
+      <%= link_to "sign in", '#',"data-toggle"=>"modal", "data-target"=>"#myModal",class:"topbar" %>
+    </li>
+    <%= render 'spree/shared/sign_in_modal' %>
+   
+    <li id="Cart">
+      <%= link_to "cart", '/cart/',style:"padding-left:0px !important;padding-right:0px !important;" %>
+    </li>
+
+    <li style="position:relative;top:4px;margin-left:0px !important;">
+      <i class="fa fa-shopping-cart"></i>
+    </li>
+    <% if  current_order %>
+      <li style="position:relative;top:4px;margin-left:0px !important;">
+      <%= fa_icon "bell", style: 'color:red' %>
+      </li>
+      <% @order = current_order %>
+    <%end %>
+    </ul>
+  </nav>
+<% end %>
+
+
 
 <div id="myaccount" class="uparrowdiv">
       <% if spree_current_user && spree_current_user.is_designer %>
@@ -113,45 +182,54 @@
       </li>
 </div>
 
-<% if spree_current_user %>
-<div id="cart" class="uparrowdivcart">
-  
-  <% if @order.line_items.empty? %>
-      <div data-hook="empty_cart" style="width:500px; height:200px;border:1px solid rgba(1,0,0,0.3);">
-          <div>
-            <h5 style="text-align:center;color:black;"><%= Spree.t(:your_cart_is_empty) %>
-            </h5>
-            <i class="fa fa-cart-plus fa-3x" style="color:rgba(1,0,0,0.3); margin-left:220px;">
-            </i>
-          </div>
-          
-          <br/>
-          
-          <p><%= link_to Spree.t(:continue_shopping), root_path, class: 'btn btn-default',style: "width:200px;height:30px; background:#87c9c2; color:white;margin-left:150px;" %>
-          </p>
-      </div>
-  <% else %>
-  <% if current_order %> 
-      <%= form_for @order, url: update_cart_path, html: { id: 'update-cart' } do |order_form| %>
-          <div class="table-responsive-cart">
-          <div data-hook="cart_items">
-            <%= render partial: 'spree/shared/form', locals: { order_form: order_form } %>
-          </div>
-          
-          <div data-hook="cart_buttons">
-            <div class="form-group">
-              <%= button_tag class: 'btn btn-default', id: 'update-button',style: "width:150px;height:30px; background:#87c9c2;color:white;"  do %>
-                <%= Spree.t(:update) %>
-              <% end %>
-          
-              <%= button_tag class: 'btn btn-default', id: 'checkout-link', name: 'checkout',style: "width:150px; height:30px; background:#87c9c2; color:white;"  do %>
-              <%= Spree.t(:checkout) %>
-              <% end %>
-            </div>
-          </div>
-          </div>
-      <% end %>
-  <% end %>
-  <% end %>
+<div id="login" class="uparrowdiv">
+    <li>
+      <%= link_to "designer sign up", new_designer_path,class:"topbar"  %>    
+    </li>
 </div>
+
+<% if spree_current_user %>
+  <div id="cart" class="uparrowdivcart">  
+    <% if @order.line_items.empty? %>
+          <div data-hook="empty_cart" style="width:500px; height:200px;border:1px solid rgba(1,0,0,0.3);">
+              <div>
+                <h5 style="text-align:center;color:black;"><%= Spree.t(:your_cart_is_empty) %>
+                </h5>
+                <i class="fa fa-cart-plus fa-3x" style="color:rgba(1,0,0,0.3); margin-left:220px;">
+                </i>
+              </div>
+              
+              <br/>
+              
+              <p><%= link_to Spree.t(:continue_shopping), root_path, class: 'btn btn-default',style: "width:200px;height:30px; background:#87c9c2; color:white;margin-left:150px;" %>
+              </p>
+          </div>
+    <% else %>
+      <% if current_order %> 
+          <%= form_for @order, url: update_cart_path, html: { id: 'update-cart' } do |order_form| %>
+              <div class="table-responsive-cart">
+              <div data-hook="cart_items">
+                <%= render partial: 'spree/shared/form', locals: { order_form: order_form } %>
+              </div>
+              
+              <div data-hook="cart_buttons">
+                <div class="form-group">
+                  <%= button_tag class: 'btn btn-default', id: 'update-button',style: "width:150px;height:30px; background:#87c9c2;color:white;"  do %>
+                    <%= Spree.t(:update) %>
+                  <% end %>
+              
+                  <%= button_tag class: 'btn btn-default', id: 'checkout-link', name: 'checkout',style: "width:150px; height:30px; background:#87c9c2; color:white;"  do %>
+                  <%= Spree.t(:checkout) %>
+                  <% end %>
+                </div>
+              </div>
+              </div>
+          <% end %>
+      <% end %>
+    <% end %>
+  </div>
 <%end %>
+
+   
+
+

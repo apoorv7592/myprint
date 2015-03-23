@@ -7,6 +7,7 @@
 #  category_id :integer
 #  created_at  :datetime
 #  updated_at  :datetime
+#  slug        :string(255)
 #
 
 class SubCategory < ActiveRecord::Base

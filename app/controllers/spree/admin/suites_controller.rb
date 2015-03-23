@@ -7,7 +7,7 @@ module Spree
 
 			def show
 
-				@suite = Suite.friendly.find(params[:id])				
+				@suite = Suite.friendly.find(params[:id])
 
 			end
 
@@ -50,7 +50,7 @@ module Spree
 			end
 
 			def destroy
-				@suite = Suite.find(params[:id])
+				@suite = Suite.friendly.find(params[:id])
 				if @suite.destroy
 					redirect_to admin_suites_path, message:'Suite deleted successfully'
 				else
@@ -64,9 +64,13 @@ module Spree
 
 			private
 				def suites_params
+<<<<<<< HEAD
+					params.require(:suite).permit(:sku_id, :name, :description, :designer_id, :sub_category_id, :available_on, :slug, :position, :avatar)
+=======
 
 					params.require(:suite).permit(:sku_id, :name, :description, :designer_id, :sub_category_id, :available_on,:slug, :avatar)
 
+>>>>>>> 4fda7c64be27c246fff74b9cc550312c8b4fef1c
 				end 
 		end
 	end

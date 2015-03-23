@@ -1323,9 +1323,11 @@ ActiveRecord::Schema.define(version: 20150320051753) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "slug"
+    t.integer  "position"
   end
 
   add_index "suites", ["available_on"], name: "index_suites_on_available_on"
+  add_index "suites", ["position"], name: "index_suites_on_position"
   add_index "suites", ["slug"], name: "index_suites_on_slug"
 
   create_table "trims", force: true do |t|

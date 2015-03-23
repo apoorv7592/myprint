@@ -2,39 +2,46 @@
 #
 # Table name: suites
 #
-#  id              :integer          not null, primary key
-#  sku_id          :string(255)
-#  name            :string(255)
-#  description     :text
-#  designer_id     :integer
-#  sub_category_id :integer
-#  created_at      :datetime
-#  updated_at      :datetime
-#  available_on    :date
-#  avg_rating      :decimal(7, 5)    default(0.0), not null
-#  reviews_count   :integer          default(0), not null
-#  like_no         :integer          default(0)
-#  slug            :string(255)
+#  id                  :integer          not null, primary key
+#  sku_id              :string(255)
+#  name                :string(255)
+#  description         :text
+#  designer_id         :integer
+#  sub_category_id     :integer
+#  created_at          :datetime
+#  updated_at          :datetime
+#  available_on        :date
+#  avg_rating          :decimal(7, 5)    default(0.0), not null
+#  reviews_count       :integer          default(0), not null
+#  like_no             :integer          default(0)
+#  slug                :string(255)
+#  position            :integer
+#  avatar_file_name    :string(255)
+#  avatar_content_type :string(255)
+#  avatar_file_size    :integer
+#  avatar_updated_at   :datetime
+#  variant             :string(255)
+#  characteristic      :string(255)
 #
 
 class Suite < ActiveRecord::Base
+	extend FriendlyId
+	friendly_id :name, use: [:slugged, :history]
+	##acts_as_list scope: :active
 
 	extend FriendlyId
 	friendly_id :name, use: [:slugged, :history]
 
-	has_many :variants, :through => :characteristics
-	has_many :characteristics 
+	#has_many :variants, :through => :characteristics
+	#has_many :characteristics 
 
-
-
-	has_attached_file :avatar, styles: {
+	has_attached_file :avatar,  styles: {
     thumb: '100x100>',
     square: '200x200#',
     medium: '300x300>',
     large:  '500x500>'
     }
-    validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/  # Validate the attached image is image/jpg, image/png, etc
-	
+    validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/  # Validate the attached image is image/jpg, image/png, etc	
 		
 		
 
@@ -63,6 +70,7 @@ class Suite < ActiveRecord::Base
 		time :created_at
 		integer :like_no
 		integer :avg_rating
+		integer :position
 		
 		text :designer_names do 
 			designer.name
@@ -75,10 +83,8 @@ class Suite < ActiveRecord::Base
 		integer :dimension_ids, multiple:true, references: Dimension
 	end
 	
-	
-
 	def self.retrieve_suites
-        Suite.all
+        Suite.all.order('position ASC')
     end	
     
     def self.match_(id)

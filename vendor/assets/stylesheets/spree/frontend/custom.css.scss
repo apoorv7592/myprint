@@ -1,6 +1,6 @@
 /* Header */
 #topmost-nav{
-	font-size:10px;	
+	font-size:11px;	
 	min-height:20px !important;
 	border:none;
 	background-color:white;
@@ -17,11 +17,25 @@
   .topmost >a{color:rgba(1,0,0,0.8);}
 
 ul.nav.navbar-nav.navbar-right{
-  width:160px;
+  width:260px;
   height:30px;
   margin-right:0px !important;
   float:right;
 }
+
+ul.nav.navbar-nav.navbar-right1{
+  width:223px;
+  height:30px;
+  margin-right:0px !important;
+  float:right;
+}
+
+.topbar{
+  padding-left:0px !important;
+  padding-right:0px !important;
+  margin-right:15px;
+}
+
 
 navbar-nav.navbar-right>li>a{
   float:right;
@@ -112,7 +126,7 @@ margin-left: 0!important;
   }
 
   .mainnavatags{
-    margin-right:74px;
+    margin-right:98px;
     font-family: Century Gothic;
     font-size: 13px;
     height:28px;
@@ -626,7 +640,7 @@ border-width: 10px;
 
 .uparrowdiv{
 z-index:1100; 
-width:180px;
+width:170px;
 min-height:150px; /*min height of DIV should be set to at least 2x the width of the arrow*/
 background: white;
 border-right : 1px solid rgba(1,0,0,0.5);
@@ -635,9 +649,11 @@ border-top : 1px solid rgba(1,0,0,0.2);
 border-bottom:2px solid red;
 position:absolute;
 -moz-border-radius:10px; /*add some nice CSS3 round corners*/
-left:835px;
+left:815px;
 display:none;
 }
+
+
 
 .uparrowdiv:after{ /*arrow added to uparrowdiv DIV*/
 content:'';
