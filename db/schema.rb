@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 20150320051753) do
     t.integer "trim_id",  null: false
   end
 
-
   add_index "Suites_Trims", ["suite_id", "trim_id"], name: "index_Suites_Trims_on_suite_id_and_trim_id"
 
   create_table "attachinary_files", force: true do |t|
@@ -1374,7 +1373,6 @@ ActiveRecord::Schema.define(version: 20150320051753) do
 
   add_index "suites", ["available_on"], name: "index_suites_on_available_on"
   add_index "suites", ["designer_id"], name: "index_suites_on_designer_id"
-  add_index "suites", ["available_on"], name: "index_suites_on_available_on"
   add_index "suites", ["position"], name: "index_suites_on_position"
   add_index "suites", ["slug"], name: "index_suites_on_slug"
   add_index "suites", ["sub_category_id"], name: "index_suites_on_sub_category_id"

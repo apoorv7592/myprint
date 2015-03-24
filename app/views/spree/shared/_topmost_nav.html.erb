@@ -189,7 +189,6 @@
 </div>
 
 <% if spree_current_user %>
-
   <div id="cart" class="uparrowdivcart">  
     <% if @order.line_items.empty? %>
           <div data-hook="empty_cart" style="width:500px; height:200px;border:1px solid rgba(1,0,0,0.3);">
@@ -204,7 +203,6 @@
               
               <p><%= link_to Spree.t(:continue_shopping), root_path, class: 'btn btn-default',style: "width:200px;height:30px; background:#87c9c2; color:white;margin-left:150px;" %>
               </p>
-
           </div>
     <% else %>
       <% if current_order %> 
