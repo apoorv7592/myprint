@@ -3,7 +3,7 @@ module Spree
 		class BannersController < Spree::Admin::BaseController
 			
 			def index
-				@banners = Banner.all.sort_by{|b| b.position }
+				@banners = Banner.all.sort_by{|b|}
 				@new_banner = Banner.new
 			end
 

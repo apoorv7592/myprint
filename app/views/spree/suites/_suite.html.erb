@@ -1,7 +1,7 @@
 <!--Wrapper for SEO considerations -->
 <div itemscope itemtype="http://schema.org/IndividualProduct" itemdid="<%= p.id %>"> 
   
-  <div class="col-md-4 suite-blck" >
+  <div class="suite-blck" >
     <div class="suite-img" >
       
       <span itemprop="image"><!-- Placeholder for suite image --></span>
@@ -10,11 +10,11 @@
     </div>
     <div class="viewsuitediv">
       <%= link_to p,:class => "viewsuitetxt", itemprop:'url' do  %>
-        <span itemprop="name"><%= p.name %></span>
+        <span itemprop="name"><b><%= p.name %></b></span>
       <% end %>
       <br>
 
-      <font class ="viewsuitetxt">Rs.xxx</font><br>
+      <font class ="viewsuitetxt1"><b>Rs.xxx</b></font><br>
       <div class="suite-clrblck">
         <% if p.colors.first %>
           <% p.colors.each do |sc| %>
@@ -24,7 +24,7 @@
       </div>
 
       <span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-        <span class="viewsuitetxt" itemprop="ratingValue"> 
+        <span class="viewsuitetxt1" itemprop="ratingValue"> 
         <%= p.avg_rating %> </span>
         based on 
         (
@@ -35,10 +35,9 @@
       </span>       
       <br>
       
-      <%= link_to p, class: 'viewsuitebtn', method: 'get', itemprop:"url" do %>
+      <%= button_to p, class: 'viewsuitebtn', method: 'get', itemprop:"url" do %>
           <span class="viewsuitetxt1" >View Suite</span>
       <%end %>
-      Position
       
     </div>
   </div>

@@ -1,24 +1,28 @@
-Sort by
-<%= link_to created_at: 1, designer_id: params[:designer_id], color_id: params[:color_id], trim_id: params[:trim_id], dimension_id: params[:dimension_id],:class=>"checbox1"  do  %>
-   	<span class="btn btn-default btn-group-xs">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
+<nav id= 'sort-nav' class="navbar navbar-default" >
+<h5 style="float:left;padding:0 auto;">Sort by:</h5>
+<ul class="nav navbar-nav navbar-sort"> 
+<li class="checbox1">
+<%= link_to created_at: 1, designer_id: params[:designer_id], color_id: params[:color_id], trim_id: params[:trim_id], dimension_id: params[:dimension_id] do  %>
    		Newest
-   	</span>
 <% end %>
+</li>
 
-<%= link_to like_no: 1, designer_id: params[:designer_id], color_id: params[:color_id], trim_id: params[:trim_id], dimension_id: params[:dimension_id],:class=>"checbox1"  do  %>
-   	<span class="btn btn-default btn-group-xs">
+<li class="checbox1"><%= link_to like_no: 1, designer_id: params[:designer_id], color_id: params[:color_id], trim_id: params[:trim_id], dimension_id: params[:dimension_id] do  %>
    	Most Liked
-   	</span>
 <% end %>
+</li>
 
-<%= link_to avg_rating: 1, designer_id: params[:designer_id], color_id: params[:color_id], trim_id: params[:trim_id], dimension_id: params[:dimension_id],:class=>"checbox1"  do  %>
-   	<span class="btn btn-default btn-group-xs">
+<li class="checbox1"><%= link_to avg_rating: 1, designer_id: params[:designer_id], color_id: params[:color_id], trim_id: params[:trim_id], dimension_id: params[:dimension_id] do  %>
      Top Rated
-   	</span>
 <% end %>
-
-<%= link_to price: 1, designer_id: params[:designer_id], color_id: params[:color_id], trim_id: params[:trim_id], dimension_id: params[:dimension_id],:class=>"checbox1"  do  %>
-   	<span class="btn btn-default btn-group-xs">
-   	Price
-   	</span>
+</li>
+<li class="checbox1"><%= link_to price: 1, designer_id: params[:designer_id], color_id: params[:color_id], trim_id: params[:trim_id], dimension_id: params[:dimension_id]  do  %>
+      	Price
 <% end %>
+</li>
+</ul>
+</nav>

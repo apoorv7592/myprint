@@ -2,7 +2,7 @@
   $(document).ready(function() {
   $('input:radio').click(function() {
   var value = $("input[name='paper']:checked").val();
-  $('p').html("Checked Radio Button Value is :"+ value );
+  alert("Checked Radio Button Value is :"+ value );
   });
   });
   
@@ -162,6 +162,7 @@
     });
   
 </script>
+
 <style type="text/css">
   .fuck select {
   width: 200px;
@@ -191,14 +192,11 @@
   <h1 itemprop="name"><%=@suite.name %></h1>
 
   <div class="col-md-12 suite-container">
-      <div class="row" style="margin-bottom:10px;">
-        
+      <div class="row" style="margin-bottom:10px;">        
         <!-- Suite image container-->
         <div class="col-md-6 suite-img-cont">
           <div id="thumbsliderdiv"></div>
         </div>
-        
-
         <!-- Suite building form-->
         <div class="col-md-6 suite-form-cont">
             <ul>
@@ -322,19 +320,21 @@
           </div>
         </div>
       </div>
+        
+      <div class="col-md-6 suite-banner-area">
+          banner Area
+      </div>
+  </div>  
+
+  <%#= button_to 'Write reviews', new_suite_review_path(@suite), method: :get,remote: true%>
+  <%= render 'spree/shared/reviews' %>
+  <%= render 'spree/suites/add_to_wishlist' %>
+</div> 
+</div> <!-- itemscope end-->
+
+
         <div >
           <h1>Write a Review</h1>
           <%= render 'spree/shared/reviews' %>
         </div>
-        
-        <div class="col-md-6 suite-banner-area">
-          banner Area
-        </div>
-      </div>
-  </div>    
-  <%#= button_to 'Write reviews', new_suite_review_path(@suite), method: :get,remote: true%>
-  <%= render 'spree/shared/reviews' %>
-  <%= render 'spree/suites/add_to_wishlist' %>
-</div> <!-- itemscope end-->
 
-<div>

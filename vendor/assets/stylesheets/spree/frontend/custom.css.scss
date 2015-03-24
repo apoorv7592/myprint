@@ -1,20 +1,22 @@
 /* Header */
 #topmost-nav{
 	font-size:11px;	
-	min-height:20px !important;
-	border:none;
-	background-color:white;
-	font-family: Georgia;
+  border:none;
+  background-color:white;
+  font-family: Georgia;
   padding:0 !important;
 }
-.topmost-nav-list {
-	padding-top:3px !important;
-	padding-bottom:2px !important;
-  float:right !important;
-}
+
 
 /* topmost nav bar */
   .topmost >a{color:rgba(1,0,0,0.8);}
+
+
+.topmost-nav-list {
+  padding-top:3px !important;
+  padding-bottom:2px !important;
+  float:right !important;
+}
 
 ul.nav.navbar-nav.navbar-right{
   width:260px;
@@ -357,12 +359,17 @@ right: 20px;
 .suite-blck{
   height:350px; 
   width:240px; 
-  margin-right:8px;
+  margin-right:4px !important;
+  margin-left:4px !important;
   margin-top:10px;
   border:1px solid rgba(1,0,0,0.2);
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box;  
+  box-sizing: border-box;
+  float:left;      
 }
 .suite-img{
-  height:240px; 
+  height:238px; 
   width:238px;
   background:rgba(1,0,0,0.2);
 }
@@ -385,35 +392,39 @@ right: 20px;
   width:70px;
   height:22px;
   text-align:center;
-  color:#40e0d0;
-  border:1px solid rgba(1,0,0,0.3);
+  border:1px solid rgba(1,0,0,0.6);
   border-radius:5px;
   background:white;
   font-size:12px;
+  font-family:verdana;
   padding:2px;
   }
+  .viewsuitebtn:hover{
+ background:rgba(1,0,0,0.1);
+   }
 
 /* for view suite div below image  in catalog page in which name price and ratings is mentioned */
   .viewsuitediv{
   width:200px;
   height:25px;
   text-align:center;
-  float:center;
-  color:#40e0d0;
   margin-left:20px;
+  float:center;
+  color:rgba(1,0,0,0.8);
   background:white;
   font-size:12px;
+  font-family:verdana;
   }
 
   /* for view suite text belo image  in catalog page */
   .viewsuitetxt{
   float:center;
-  color:#40e0d0;
+  color:rgba(1,0,0,0.8);
   font-size:12px;
   }
    .viewsuitetxt1{
   float:center;
-  color:#40e0d0;
+  color:rgba(1,0,0,0.4);
   font-size:10px;
   }
 
@@ -463,7 +474,7 @@ li.ulfilterbox{
   #suitedescdiv{
     list-style-type: none;
     border-left:1px solid rgba(1,0,0,0.2);
-    width:500px;
+    width:490px;
   }
 
   .descriptionbox{
@@ -680,18 +691,22 @@ border-width: 10px;
   height:auto; 
   width:1000px;
   border-bottom:1px solid black;
+  padding:0 auto;
 }
 .suite-img-cont{
   height:716px; 
   width:492px;
   margin-right:8px;
-  border:1px solid rgba(1,0,0,0.2);
+  border-bottom:1px solid black;
+
+
 }
 .suite-form-cont{
   height:716px; 
   width:492px;
-  border:1px solid rgba(1,0,0,0.2);
   margin-left:8px;
+  border-bottom:1px solid black;
+
 }
 .colorbox{
   width:15px;
@@ -718,9 +733,10 @@ border-width: 10px;
   width:492px; 
   margin-right:8px;
   background:rgba(1,0,0,0.2);
+  float:left;
 }
 .suite-lower-left-cont-1{
-  height:320px;
+   height:320px;
    width:484px;
    margin:none;
    background:rgba(1,0,0,0.05);
@@ -740,6 +756,43 @@ border-width: 10px;
   width:492px;
   margin-left:8px;
   background:rgba(1,0,0,0.2);
+  float:right;
 }
 
+.checbox1{
+ padding-left:0px !important;
+  padding-right:0px !important;
+  margin-right:15px;
+  margin-top:7px;
+}
+
+#sort-nav{
+  font-size:13px; 
+  border:none;
+  background-color:white;
+  font-family: Georgia;
+  padding:0 !important;
+}
+
+
+/* sort nav bar */
+  .sort >a{color:rgba(1,0,0,0.8);}
+
+ nav#sort-nav.navbar.navbar-default{
+ height:20px !important;
+ padding:0 auto;
+ margin-bottom: 1px;
+ }
+
+ ul.nav.navbar-nav.navbar-sort{
+  width:500px;
+  height:30px;
+}
+
+
+
+
+
+
+  
 
