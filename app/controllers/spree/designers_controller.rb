@@ -48,7 +48,7 @@ module Spree
 
 		private
 			def authenticate_designer
-				if !spree_current_user.is_designer
+				if spree_current_user && !spree_current_user.is_designer
 					redirect_to :back, notice: 'This user
 					is not registered as a designer'
 				end

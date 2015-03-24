@@ -1,9 +1,15 @@
 <script type="text/javascript">
   $(document).ready(function() {
+
   $('input:radio').click(function() {
   var value = $("input[name='paper']:checked").val();
   alert("Checked Radio Button Value is :"+ value );
   });
+    $('input:radio').click(function() {
+      var value = $("input[name='paper']:checked").val();
+      $('p').html("Checked Radio Button Value is :"+ value );
+    });
+
   });
   
   
@@ -195,6 +201,10 @@
       <div class="row" style="margin-bottom:10px;">        
         <!-- Suite image container-->
         <div class="col-md-6 suite-img-cont">
+
+          <!-- Fetching images -->
+          <div id="image_plchldr"></div>
+
           <div id="thumbsliderdiv"></div>
         </div>
         <!-- Suite building form-->
@@ -333,8 +343,25 @@
 </div> <!-- itemscope end-->
 
 
+
         <div >
           <h1>Write a Review</h1>
           <%= render 'spree/shared/reviews' %>
         </div>
+<div>
+
+<!-- Fetching images of products-->
+<script>
+  $(document).ready(function(){
+      $.ajax({
+        url       :'/get_prd_images/2',
+        cache     : 'false',
+        dataType  : 'json',
+        success   : function(data){
+          alert(data)
+        }
+      });
+  }); 
+</script>
+
 

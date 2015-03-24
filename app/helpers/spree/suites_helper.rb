@@ -9,9 +9,5 @@ module Spree
 				r.last.to_s+' cards for ' + prc.amount.to_s
 			end
 		end
-
-		def vlm_prc_val(prc)
-			
-		end
 	end
 end

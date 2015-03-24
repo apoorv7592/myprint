@@ -45,9 +45,8 @@ Rails.application.routes.draw do
     get '/unlike', to: 'likes#destroy', as: 'unlike_suite'
     get '/designer_dashboard', to: 'designers#dashboard', as: 'designer_dashboard'
     get '/contact_us', to: 'contactus#contact', as:'contact_us'
-
-
-
+    get '/get_prd_images/:id', to: 'suites#get_prd_images'
+    
     get '/search'  => 'solrsearch#index'
     routes = lambda do
       namespace :admin do

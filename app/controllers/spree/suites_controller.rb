@@ -14,5 +14,19 @@ module Spree
 			@dim = @suite.dimensions
 			@review = @suite.reviews.new
         end
+
+        def get_prd_images
+        	suite = Suite.find(params[:id])
+        	prds = suite.spree_products
+        	arr = []
+        	prds.each do |p|
+        		p.variant_images.each do |img|
+        			hash = {name: p.name, url: img.attachment.url(:product)}
+        			arr<<hash
+        		end
+        	end
+        	a = arr.to_json
+        	render json: a
+        end
 	end
 end
