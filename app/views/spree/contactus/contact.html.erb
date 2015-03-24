@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<style type="text/css">
+    .margin-lr{
+        margin: 0 10px;
+    }
+    .mrgnBtm{
+        margin-bottom: 10px;
+    }
+    .contactUs-wrapper{
+        margin: 0 auto;
+        max-width: 1000px;
+    }
+    .manage-contacts,.phone-info,.chat-info{
+        background: none repeat scroll 0 0 #f7f8f9;
+        margin: 10px 0 0;
+        padding: 35px 0 46px;
+        text-align: center;
+    }
+
+    .manage-contacts h2{
+        font-size: 32px;
+        font-weight: 300;
+        margin: 0 0 40px;
+    }
+    .manage-list li{
+        display: inline-block;
+        vertical-align: top;
+        width: 33%;
+    }
+    .three-option{
+        color: #444546;
+        display: inline-block;
+        font-size: 17px;
+        font-weight: 500;
+        text-decoration: none;
+    }
+    .three-option .icon{
+        height: 68px;
+        margin: 0 auto 10px;
+        width: 68px;
+    }
+    .manage-list{
+        list-style: outside none none;
+        padding: 0;
+        margin: 0;
+    }
+    .three-option .fa.fa-angle-right{
+        margin-left: 2px;
+    }
+    .three-option:hover{
+        color: #6BBCBF;
+        cursor: pointer;
+    }
+   .manage-list .phone{
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+    } 
+    .email-form{
+        background: none repeat scroll 0 0 #f7f8f9;
+        margin: 10px 0 0;
+        padding: 35px 0 46px;
+    }
+    .contactUs-forms .email-form-lft-box{
+        margin-left: 20px;
+        width: 49%;
+        padding: 0;
+        border-right: 1px solid #ccc;
+    }
+    .contactUs-forms .email-form .span1{
+        width: 25%;
+        display: inline-table;
+    }
+    .contactUs-forms .email-form span input{
+        width: 60%;
+        display: inline;
+    }
+    .email-form-rgt-box{
+        width: 46%;
+        padding: 0;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#email").click(function(){
+            $("#phone").css("color","#444546");
+            $("#chat").css("color","#444546");
+            $(this).css("color","#6BBCBF");
+            $("#phone-info").hide();
+            $("#email-form").show('slow');
+            $("#chat-info").hide();
+
+        });
+        $("#phone").click(function(){
+            $("#email").css("color","#444546");
+            $("#chat").css("color","#444546");
+            $(this).css("color","#6BBCBF");
+            $("#email-form").hide();
+            $("#chat-info").hide();
+            $("#phone-info").show('slow');
+        });
+        $("#chat").click(function(){
+            $("#email").css("color","#444546");
+            $("#phone").css("color","#444546");
+            $(this).css("color","#6BBCBF");
+            $("#email-form").hide();
+            $("#phone-info").hide();
+            $("#chat-info").show('slow');
+        });
+    });
+</script>
+ </head>
+
+<body>
+      <div class="contactUs-wrapper">
+        <div class="manage-contacts">
+            <h2>Contact Us</h2>
+            <ul class="manage-list">
+                <li class="email">
+                    <div id="email" class="three-option">
+                        <div class="icon"><i class="fa fa-envelope fa-3x"></i></div>
+                        <div>Email Us<i class="fa fa-angle-right"></i></div>
+                    </div>
+                </li>
+                <li class="phone">
+                    <div id="phone" class="three-option">
+                        <div class="icon"><i class="fa fa-phone fa-3x"></i></div>
+                        <div>Call Us<i class="fa fa-angle-right"></i></div>
+                    </div>
+                </li>
+                <li class="chat">
+                    <div id="chat" class="three-option">
+                        <div class="icon"><i class="fa fa-comment fa-3x"></i></div>
+                        <div>Ping Us<i class="fa fa-angle-right"></i></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="contactUs-forms">
+            <div id="email-form" class="email-form row" style="display:none;">
+                <div class="email-form-lft-box col-lg-6">
+                    <h4>Email Your Question at Your Convenience</h4>
+                    <form id="email-form" method="post">
+                        <div class="mrgnBtm">
+                            <span class="span1">First Name : </span>
+                            <span><input class="form-control" type="text" name="firstName"></span>
+                        </div>
+                        <div class="mrgnBtm">
+                            <span class="span1">Last Name : </span>
+                            <span><input class="form-control" type="text" name="lastName"></span>
+                        </div>
+                        <div class="mrgnBtm">
+                            <span class="span1">Email Address : </span>
+                            <span><input class="form-control" type="email" name="email"></span>
+                        </div>
+                        <div class="mrgnBtm">
+                            <span class="span1">Message : </span>
+                            <span><textarea class="form-control" name="message" rows="3" cols="50" style="vertical-align:middle;width:60%;display:inline;"></textarea></span>
+                        </div>
+                        <div>
+                            <input class="btn btn-default" type="button" name="submit" value="Submit">
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="margin-lr email-form-rgt-box col-lg-6">
+                    
+                </div>
+            </div>
+
+            <div id="phone-info" class="phone-info" style="display:none;">
+                <ul class="manage-list">
+                    <li class="box-left">
+                        <div class="">
+                            
+                        </div>
+                    </li>
+                    <li class="phone">
+                        <div class="three-option">
+                             Monday through Sunday: 8:00 AM - 9:00 PM (IST) <br>
+                            
+                            (+91) 8962447275
+                        </div>
+                    </li>
+                    <li class="box-right">
+                        <div class="">
+                            
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="chat-info" class="chat-info" style="display:none;">
+                <ul class="manage-list">
+                    <li class="box-left">
+                        <div class="">
+                            
+                        </div>
+                    </li>
+                    <li class="chat">
+                        <div class="three-option">
+                             <h4>Live Chat Support Is Available 7 Days a Week.</h4>
+                            
+                            Monday - Friday:&nbsp;06:00 AM - 09:00 PM IST <br>
+                            Saturday - Sunday:&nbsp;08:00 AM - 06:00 PM IST 
+                        </div>
+                    </li>
+                    <li class="box-right">
+                        <div class="">
+
+                            
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+ 
+  
+</body>
+
+</html> 

@@ -325,3 +325,13 @@ Mar 20, 2015 2:45:29 AM org.apache.solr.core.SolrCore registerSearcher
 INFO: [development] Registered new searcher Searcher@2e610788 main{StandardDirectoryReader(segments_2l:347 _2n(4.2):C12/1 _2o(4.2):C1)}
 Mar 20, 2015 2:45:29 AM org.apache.solr.update.processor.LogUpdateProcessor finish
 INFO: [development] webapp=/solr path=/update params={wt=ruby} {commit=} 0 384
+Mar 21, 2015 12:04:22 PM org.apache.solr.request.UnInvertedField <init>
+INFO: UnInverted multi-valued field {field=designer_id_im,memSize=4480,tindexSize=44,time=42,phase1=42,nTerms=2,bigTerms=1,termInstances=1,uses=0}
+Mar 21, 2015 12:04:22 PM org.apache.solr.request.UnInvertedField <init>
+INFO: UnInverted multi-valued field {field=color_ids_im,memSize=4384,tindexSize=44,time=0,phase1=0,nTerms=3,bigTerms=0,termInstances=3,uses=0}
+Mar 21, 2015 12:04:22 PM org.apache.solr.request.UnInvertedField <init>
+INFO: UnInverted multi-valued field {field=trim_ids_im,memSize=4384,tindexSize=44,time=0,phase1=0,nTerms=1,bigTerms=0,termInstances=1,uses=0}
+Mar 21, 2015 12:04:22 PM org.apache.solr.request.UnInvertedField <init>
+INFO: UnInverted multi-valued field {field=dimension_ids_im,memSize=4384,tindexSize=44,time=1,phase1=0,nTerms=1,bigTerms=0,termInstances=1,uses=0}
+Mar 21, 2015 12:04:22 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-03\-21T06\:34\:21Z}&fq=sub_category_id_i:1&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=4 status=0 QTime=1055 

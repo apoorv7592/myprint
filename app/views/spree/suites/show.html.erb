@@ -1,9 +1,9 @@
 <script type="text/javascript">
   $(document).ready(function() {
-  $('input:radio').click(function() {
-  var value = $("input[name='paper']:checked").val();
-  $('p').html("Checked Radio Button Value is :"+ value );
-  });
+    $('input:radio').click(function() {
+      var value = $("input[name='paper']:checked").val();
+      $('p').html("Checked Radio Button Value is :"+ value );
+    });
   });
   
   
@@ -195,6 +195,10 @@
         
         <!-- Suite image container-->
         <div class="col-md-6 suite-img-cont">
+
+          <!-- Fetching images -->
+          <div id="image_plchldr"></div>
+
           <div id="thumbsliderdiv"></div>
         </div>
         
@@ -338,3 +342,18 @@
 </div> <!-- itemscope end-->
 
 <div>
+
+<!-- Fetching images of products-->
+<script>
+  $(document).ready(function(){
+      $.ajax({
+        url       :'/get_prd_images/2',
+        cache     : 'false',
+        dataType  : 'json',
+        success   : function(data){
+          alert(data)
+        }
+      });
+  }); 
+</script>
+
