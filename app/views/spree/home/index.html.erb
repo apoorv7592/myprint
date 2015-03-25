@@ -41,4 +41,9 @@
         interval: 5000
     });
 </script>
+<div>new banner</div>
 
+<% b= get_banner('Home Page', 2) %>
+      <% if !b.nil? %>
+        <img src="<%=b.picture.url(:main) %>">
+<%end%> 
