@@ -28,5 +28,17 @@ module Spree
         	a = arr.to_json
         	render json: a
         end
+
+       	def get_suite_chars
+       		suite = Suite.find(params[:id])
+       		chars = suite.characteristics
+       		arr=[]
+       		chars.each do |c|
+       			hash={color: c.color, url: c.avatar.url(:thumb)}
+       			arr<<hash
+       		end
+       		a = arr.to_json
+       		render json: a
+       	end
 	end
 end

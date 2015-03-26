@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150320051753) do
+ActiveRecord::Schema.define(version: 20150325193207) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -43,22 +43,7 @@ ActiveRecord::Schema.define(version: 20150320051753) do
   end
 
   add_index "Suites_Trims", ["suite_id", "trim_id"], name: "index_Suites_Trims_on_suite_id_and_trim_id"
-
-  create_table "attachinary_files", force: true do |t|
-    t.integer  "attachinariable_id"
-    t.string   "attachinariable_type"
-    t.string   "scope"
-    t.string   "public_id"
-    t.string   "version"
-    t.integer  "width"
-    t.integer  "height"
-    t.string   "format"
-    t.string   "resource_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "attachinary_files", ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent"
+  add_index "Suites_Trims", ["trim_id", "suite_id"], name: "index_Suites_Trims_on_trim_id_and_suite_id"
 
   create_table "banners", force: true do |t|
     t.string   "category"
@@ -112,6 +97,7 @@ ActiveRecord::Schema.define(version: 20150320051753) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "color"
   end
 
   create_table "colors", force: true do |t|
@@ -127,6 +113,13 @@ ActiveRecord::Schema.define(version: 20150320051753) do
     t.datetime "start_date"
     t.datetime "end_date"
     t.boolean  "active",      default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "customizations", force: true do |t|
+    t.string   "color"
+    t.integer  "order_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -1361,14 +1354,14 @@ ActiveRecord::Schema.define(version: 20150320051753) do
     t.decimal  "avg_rating",          precision: 7, scale: 5, default: 0.0, null: false
     t.integer  "reviews_count",                               default: 0,   null: false
     t.integer  "like_no",                                     default: 0
+    t.string   "slug"
+    t.integer  "position"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "variant"
     t.string   "characteristic"
-    t.string   "slug"
-    t.integer  "position"
   end
 
   add_index "suites", ["available_on"], name: "index_suites_on_available_on"

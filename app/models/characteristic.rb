@@ -1,6 +1,22 @@
+# == Schema Information
+#
+# Table name: characteristics
+#
+#  id                  :integer          not null, primary key
+#  name                :string(255)
+#  suite_id            :integer
+#  created_at          :datetime
+#  updated_at          :datetime
+#  avatar_file_name    :string(255)
+#  avatar_content_type :string(255)
+#  avatar_file_size    :integer
+#  avatar_updated_at   :datetime
+#  color               :string(255)
+#
+
 class Characteristic < ActiveRecord::Base
 	belongs_to :suite
-	belongs_to :variant 
+	#belongs_to :variant 
 	
 	has_attached_file :avatar, styles: {
     thumb: '100x100>',

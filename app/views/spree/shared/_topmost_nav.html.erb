@@ -190,7 +190,7 @@
 
 <% if spree_current_user %>
   <div id="cart" class="uparrowdivcart">  
-    <% if @order.line_items.empty? %>
+    <% if @order && @order.line_items.empty? %>
           <div data-hook="empty_cart" style="width:500px; height:200px;border:1px solid rgba(1,0,0,0.3);">
               <div>
                 <h5 style="text-align:center;color:black;"><%= Spree.t(:your_cart_is_empty) %>

@@ -354,7 +354,7 @@
 <script>
   $(document).ready(function(){
       $.ajax({
-        url       :'/get_prd_images/2',
+        url       :'/get_prd_images/<%= @suite.id %>',
         cache     : 'false',
         dataType  : 'json',
         success   : function(data){
