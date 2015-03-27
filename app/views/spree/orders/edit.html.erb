@@ -1,32 +1,51 @@
 <head>
   <style>
-    table{
-    border: 1px solid black;
-    }
     td{
     border:1px solid rgba(1,0,0,0.1);
     }
     th {
-    background:rgba(1,0,0,0.2) !important;
-    border-bottom:1px solid black;
+    background:rgba(1,0,0,0.08) !important;
+    border:none;
     }
     #line_items{
-    border-bottom:1px solid black;
     color:black  !important;
+    }
+    .emptycartchng{
+      width:1000px;
+      height:500px;
+      vertical-align:center;
+      color: #444546;
+      display: inline-block;
+      background: rgba(1,0,0,0.08);
+      text-align:center;
+      font-family:Century Gothic;
+    }
+
+    .carticondiv:hover{
+        color: #6BBCBF;
+        cursor: pointer;
+    }
+
+    .carticondiv{ 
+      color: #444546;
+      width:60px;
+      height:50px;
+      display: inline-block;
     }
   </style>
 </head>
 
-<div data-hook="cart_container">
-  <h3><%= Spree.t(:Cart) %></h3>
-  <% if @order.line_items.empty? %>
-    <div data-hook="empty_cart" style="width:1000px;height:200px; border:1px solid rgba(1,0,0,0.3);">
-    <div>
-    <h5 style="text-align:center;color:black;"><%= Spree.t(:your_cart_is_empty) %></h5>
-    <i class="fa fa-cart-plus fa-3x" style="color:rgba(1,0,0,0.3); margin-left:480px;"></i>
+<div data-hook="cart_container" style="width:1000px;padding:0 auto;">
+<h4 style="font-family:Century Gothic;"><%=Spree.t(:Cart) %></h4>
+<% if @order.line_items.empty? %>
+  <div data-hook="empty_cart" class="emptycartchng">
+    <h5 style="margin-top:190px;"><%= Spree.t(:your_cart_is_empty) %></h5>
+    <div class="carticondiv">
+    <i class="fa fa-cart-plus fa-3x"></i>
+    </div>
+     <br/>
+     <p><%= link_to Spree.t(:continue_shopping), root_path, class: 'btn btn-default',style: "width:200px;height:30px; background:#6BBCBF;color:white;" %></p>
   </div>
-  <br/>
-  <p><%= link_to Spree.t(:continue_shopping), root_path, class: 'btn btn-default',style: "width:200px;height:30px; background:#87c9c2;color:white; " %></p>
 </div>
 <% else %>
 <div data-hook="outside_cart_form">
@@ -59,19 +78,19 @@
         <%= render "spree/orders/adjustments" %>
         <% end %>
         <tr class="warning cart-total">
-          <td colspan="4" align='right' style="background:rgba(1,0,0,0.2);">
+          <td colspan="4" align='right' style="background:rgba(1,0,0,0.08);">
             <h5><%= Spree.t(:total) %></h5>
           </td>
-          <td class="lead" colspan="2" style="background:rgba(1,0,0,0.2);"><%= order_form.object.display_total %></td>
+          <td class="lead" colspan="2" style="background:rgba(1,0,0,0.08);"><%= order_form.object.display_total %></td>
         </tr>
       </table>
     </div>
     <div class="links col-md-6 navbar-form pull-right text-right" data-hook="cart_buttons">
       <div class="form-group">
-        <%= button_tag class: 'btn btn-primary', id: 'update-button', style: "width:200px;height:30px; background:#87c9c2;color:white;" do %>
+        <%= button_tag class: 'btn btn-default', id: 'update-button', style: "width:120px;height:30px; background:#6BBCBF; color:white;" do %>
         <%= Spree.t(:update) %>
         <% end %>
-        <%= button_tag class: 'btn btn-lg btn-success', id: 'checkout-link', name: 'checkout',style: "width:200px;height:40px; background:#87c9c2;color:white;" do %>
+        <%= button_tag class: 'btn btn-default', id: 'checkout-link', name: 'checkout',style: "width:120px;height:30px; background:#6BBCBF;color:white;" do %>
         <%= Spree.t(:checkout) %>
         <% end %>
       </div>
@@ -79,7 +98,8 @@
     <% end %>
   </div>
   <div id="empty-cart" class="col-md-6 pull-left" data-hook>
-    <%= link_to Spree.t(:continue_shopping), root_path, class: 'btn btn-default',style: "width:150px;height:30px; background:#87c9c2;color:white;" %>
+    <%= link_to Spree.t(:continue_shopping), root_path, class: 'btn btn-default',style: "width:150px;height:30px; background:#6BBCBF;margin-top:7px;color:white;" %>
   </div>
   <% end %>
 </div>
+

@@ -5,7 +5,7 @@
 	</div>
 	<div class="col-md-6">
 		<% if prd.price > 0 and prd.master.volume_prices.present? %>
-			<%= select_tag "quantity[]", options_for_select(prd.master.volume_prices.collect{|prc|[
+			<%= number_field_tag "quantity[]", options_for_select(prd.master.volume_prices.collect{|prc|[
 					vlm_prc_str(prc), to_rng(prc.range).last
 					]}), min: 1, class: 'form-control'
 			%>
