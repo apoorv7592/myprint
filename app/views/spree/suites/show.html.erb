@@ -194,7 +194,11 @@
               <div class="suite-form-cont">
                 <ul>
                   <li class="prop">
-                                     
+                    <div id="order-sample">
+                      
+                    </div>
+
+                    <!--       
                     <div class="selectqnty" >
                     <span>Quantity:</span> 
                       <select id="first-choice">
@@ -203,7 +207,7 @@
                         <option value="beverages">Beverages</option>
                         <option value="snacks">Snacks</option>
                       </select>
-                    </div>
+                    </div> -->
                   </li>
                   
                   <li class="prop">
@@ -255,11 +259,21 @@
                   <li class="prop">
                     <% if !@prds.nil? %>
                       <span style="float:left;">Productz:</span>
-                      
+                      <%= form_for :order, url: populate_orders_path do |f| %> 
+                        <% @prds.each do |p| %>
+                          <% if !p.is_not_sample? %>
+                            <%= render 'add_sample', prd: p%>
+                          <% end %>
+                        <% end %>
+                        <%= submit_tag("Order Sample",:id => 'add-to-cart-button') %>
+                      <% end %> 
+
                       <%= form_for :order, url: populate_orders_path do |f| %>
                         
                         <% @prds.each do |p| %>
-                          <%= render 'add_prod', prd: p %> 
+                          <% if p.is_not_sample? %>
+                            <%= render 'add_prod', prd: p %>
+                          <% end %>
                           <%# p.variant_images.each do |img| %>
                             <%#= image_tag img.attachment.url %>
                           <%# end %>    

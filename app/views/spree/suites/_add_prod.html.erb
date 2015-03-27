@@ -1,15 +1,17 @@
 <div class="row">
 	<div class="col-md-6">
 		<%= hidden_field_tag "variant_id[]", prd.master.id%>
-		<%= prd.name %>
+		<%= prd.name if prd.is_not_sample?%>
 	</div>
 	<div class="col-md-6">
-		<% if prd.price > 0 and prd.master.volume_prices.present? %>
-			<%= number_field_tag "quantity[]", options_for_select(prd.master.volume_prices.collect{|prc|[
-					vlm_prc_str(prc), to_rng(prc.range).last
-					]}), min: 1, class: 'form-control'
-			%>
-		<% end%>		
+		<% if prd.is_not_sample? %>
+			<% if prd.price > 0 and prd.master.volume_prices.present? %>
+				<%= select_tag "quantity[]", options_for_select(prd.master.volume_prices.collect{|prc|[
+						vlm_prc_str(prc), to_rng(prc.range).last
+						]}),prompt: "Select a quantity", class: 'form-control'
+				%>
+			<% end%>		
+		<%end %>
 	</div>
 </div>
 <%#= number_field_tag :quantity, 1, :class => 'title form-control',:id =>'menubar', :min => 1 %>
