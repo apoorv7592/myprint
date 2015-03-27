@@ -1,5 +1,5 @@
 <div id="reviews">
-	<h3 class="suite-section-title"><%= Spree.t(:reviews) %></h3>
+	<h4 class="suite-section-title"><%= Spree.t(:reviews) %></h4>
 	
 
 	<% if Spree::Reviews::Config[:include_unapproved_reviews] == false and @suite.reviews.approved.count == 0 %>
