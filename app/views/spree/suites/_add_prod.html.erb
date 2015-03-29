@@ -3,15 +3,34 @@
 		<%= hidden_field_tag "variant_id[]", prd.master.id%>
 		<%= prd.name if prd.is_not_sample?%>
 	</div>
-	<div class="col-md-6">
+	<div class="col-md-5">
 		<% if prd.is_not_sample? %>
 			<% if prd.price > 0 and prd.master.volume_prices.present? %>
 				<%= select_tag "quantity[]", options_for_select(prd.master.volume_prices.collect{|prc|[
 						vlm_prc_str(prc), to_rng(prc.range).last
-						]}),prompt: "Select a quantity", class: 'form-control'
+						]}),prompt: "Select a quantity", class: 'form-control', 'data-chk'=> prd.id
 				%>
 			<% end%>		
 		<%end %>
 	</div>
 </div>
+
+<script type="text/javascript">
+	$("select[data-chk='<%=prd.id %>']").change(function(){
+		var total = 0;
+		$("select option:selected").each(function(){
+			var qty = $(this).val();
+			var txt = $(this).text();
+			var arr = txt.split('---Rs. ')
+			if(arr[1] != null){
+				var prc = arr[1];
+			}
+			else{
+				var prc = 0;
+			}
+			total = total + parseInt(prc)*qty;
+		});
+		$("#total-price").html(total);		
+	});
+</script>
 <%#= number_field_tag :quantity, 1, :class => 'title form-control',:id =>'menubar', :min => 1 %>

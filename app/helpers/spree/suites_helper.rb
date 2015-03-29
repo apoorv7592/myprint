@@ -6,8 +6,9 @@ module Spree
 				prc.range.to_s + ' cards for ' + prc.amount.to_s
 			else
 				r = to_rng(prc.range)
-				r.last.to_s+' cards for ' + prc.amount.to_s
+				r.last.to_s+' cards for---Rs. ' + prc.amount.to_s
 			end
 		end
+
 	end
 end

@@ -128,10 +128,23 @@ $('#gallery-demo').simplegallery({
                           <% if p.is_not_sample? %>
                             <%= render 'add_prod', prd: p %>
                           <% end %>
+                          
                           <%# p.variant_images.each do |img| %>
                             <%#= image_tag img.attachment.url %>
                           <%# end %>    
                         <%end%>
+                        <div class="row" style="border-top:1px solid black;">
+                          <div class="col-md-6" >
+                            <b>Total Price</b>
+                          </div>
+                          <div class="col-md-6" >
+                            <span><b>Rs.</b></span>
+                            <b><span id="total-price">0</span></b>
+                          
+                          </div>
+                        </div>
+                    
+
                         <%= image_submit_tag("buttonbuynow.png",:id => 'add-to-cart-button') %>
                       <%end %> 
                     <%end %> 
@@ -255,5 +268,26 @@ $('#gallery-demo').simplegallery({
 
 })(jQuery, window, document);
 
+
+</script>
+
+<script>
+  $(document).ready(function(){
+    var total = 0;
+    $("select option:selected").each(function(){
+      var qty = $(this).val();
+      var txt = $(this).text();
+      var arr = txt.split('---Rs. ')
+      if(arr[1] != null){
+        var prc = arr[1];
+      }
+      else{
+        var prc = 0;
+      }
+      total = total + parseInt(prc)*qty;
+    });
+    $("#total-price").html(total);    
+
+  })
 
 </script>
