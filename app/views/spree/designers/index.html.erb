@@ -1,21 +1,74 @@
-<h4> Our Designers </h4>
 
-<table class="table table-striped">
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>About</th>
-			<th>City</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @designers.each do |d| %>
-			<tr>
-				<td><%= link_to d.name, d %></td>
-				<td><%= d.about %></td>
-				<td><%= d.city %></td>
-			</tr>
-			
-		<% end %>
-	</tbody>
-</table>
+<style>   
+	.designer-container{
+		width: 1000px;
+		margin: auto;
+	}
+	.designer-container h2{
+		text-align: center;
+	}
+	.designer-container .row{
+		margin: 0 !important;
+	}
+	
+	.designer-container h3{
+		font-family: sans-serif;
+    	font-size: 17px;
+    	font-weight: normal;
+    	margin: 5px 0 0;
+    	text-align: left;
+	}
+	.designer-container p{
+		font-family: fantasy;
+    	font-size: 12px;
+    	margin: 0;
+	}
+	.designer-div{
+		margin-top: 0;
+	}
+	.designer-box{
+		margin-top: 30px;
+		margin-left: 3px;
+		margin-right: 3px;
+		text-align: left;
+
+	}
+
+	img.grayfilter{
+	-webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    width: 238px;
+	height: 238px;
+	border:3px solid rgba(1,0,0,0.5);
+
+
+	}
+
+    img.grayfilter:hover{
+	-webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+    cursor: pointer;
+	}
+
+
+</style>
+
+		<div class="designer-container">
+			<h2 style="font-family:Century Gothic;">MEET OUR DESIGNERS</h2>
+			<div class="row">
+				<div class="col-lg-12 designer-div">
+				    <% @designers.each do |d| %>
+					<div class="col-lg-3 designer-box">
+						<a href="#">
+							<img src="http://icons.iconarchive.com/icons/iconka/pool/128/pool-bird-icon.png" class="grayfilter">
+						</a>
+						<h3><%= link_to d.name, d %></h3>
+						<p><%= d.city %></p>
+						<p>Designer</p>
+					</div>
+                    <%end%>
+				</div>
+			</div>
+		</div>
+
+

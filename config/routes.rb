@@ -46,6 +46,7 @@ Rails.application.routes.draw do
     get '/designer_dashboard', to: 'designers#dashboard', as: 'designer_dashboard'
     get '/contact_us', to: 'contactus#contact', as:'contact_us'
     get '/get_prd_images/:id', to: 'suites#get_prd_images'
+    get '/whybuyfromus', to:'wbfromus#whybuyfromus'
     
     get '/search'  => 'solrsearch#index'
     routes = lambda do
