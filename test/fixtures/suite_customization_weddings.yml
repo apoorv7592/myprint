@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  gr_name: MyString
+  gr_fathers_name: MyString
+  gr_mothers_name: MyString
+  gr_address: MyText
+  br_name: MyString
+  br_fathers_name: MyString
+  br_mothers_name: MyString
+  br_address: MyText
+  user_id: 1
+  suite_id: 1
+
+two:
+  gr_name: MyString
+  gr_fathers_name: MyString
+  gr_mothers_name: MyString
+  gr_address: MyText
+  br_name: MyString
+  br_fathers_name: MyString
+  br_mothers_name: MyString
+  br_address: MyText
+  user_id: 1
+  suite_id: 1

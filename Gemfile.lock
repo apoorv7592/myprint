@@ -523,6 +523,7 @@ DEPENDENCIES
   spring
   sprockets-rails (~> 2.2.2)
   sqlite3
+  state_machine (= 1.2.0)
   sunspot_rails
   sunspot_solr
   therubyracer (~> 0.12.1)

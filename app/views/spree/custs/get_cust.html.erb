@@ -1,0 +1,33 @@
+<div id="noti"></div>
+
+<div class="panel-group" id="accordian" role="tablist" aria-multiselectable="true">
+	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headingOne">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+					Basic Information
+				</a>
+			</h4>
+		</div>
+		<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+	      <div class="panel-body">
+	        <%= render 'basic_form', s: @s, cust: @cust%>
+	      </div>
+	    </div>
+	</div>
+	
+	<div class="panel panel-default">
+		<div class="panel-heading" role="tab" id="headingOne">
+			<h4 class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+					Leaf Info
+				</a>
+			</h4>
+		</div>
+		<div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+	      <div class="panel-body">
+	        <%= render 'leaf_form', s: @s, cust: @leafs%>
+	      </div>
+	    </div>
+	</div>		
+</div>

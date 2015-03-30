@@ -29,9 +29,6 @@ class Suite < ActiveRecord::Base
 	friendly_id :name, use: [:slugged, :history]
 	##acts_as_list scope: :active
 
-	extend FriendlyId
-	friendly_id :name, use: [:slugged, :history]
-
 	#has_many :variants, :through => :characteristics
 	#has_many :characteristics 
 
@@ -55,6 +52,7 @@ class Suite < ActiveRecord::Base
 	has_many :reviews,:class_name=> 'Spree::Review'
 	has_many :wished_products, dependent: :destroy
 	has_many :likes, dependent: :destroy
+	has_many :custs
 
 	validates_presence_of :name, message: 'Name cannot be blank'
 	validates_presence_of :sku_id, message: 'SKU ID cannot be blank'

@@ -2,6 +2,8 @@ Spree::User.class_eval do
 	devise :confirmable
 	has_one :designer
 	has_many :entries
+	has_many :custs
+
 	has_many :likes, dependent: :destroy
 
 	has_many :active_relationships, class_name:  "Relationship",

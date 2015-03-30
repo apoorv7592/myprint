@@ -129,3 +129,6 @@ gem 'friendly_id'
 #gem 'acts_as_list'
 
 gem "letter_opener", :group => :development
+
+#maintaining state machines
+gem 'state_machine', '1.2.0'

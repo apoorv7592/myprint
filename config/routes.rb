@@ -15,7 +15,9 @@ Rails.application.routes.draw do
     resources :suites do
       resources :reviews
       resources :likes
-
+      resources :custs
+      resources :leafs
+      get '/wedding-customizations', to: 'custs#get_cust', as: 'get_wcust'
     end
 
     resources :categories

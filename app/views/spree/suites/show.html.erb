@@ -202,28 +202,7 @@ $('#gallery-demo').simplegallery({
       </div> 
 </div> 
 <!-- itemscope end-->
-
-<!--Fetching images of products
-<script>
-  $(document).ready(function(){
-      $.ajax({
-        url       :'/get_prd_images/<%= @suite.id %>',
-        cache     : 'false',
-        dataType  : 'json',
-        success   : function(data){
-          alert(data)
-          for (var x = 0; x < data.length; x++) {
-          content = data[x].Id;
-          content += "<br>";
-          content += data[x].Name;
-          content += "<br>";
-          $(content).appendTo("#prod-image-list");
-               // updateListing(data[x]);
-          }
-        }
-      });
-  }); 
-</script> -->
+<%= link_to 'customize suite', suite_get_wcust_path(@suite, id: @suite.id) %>
 
 <script type="text/javascript">
 /*!
