@@ -76,8 +76,9 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
-   config.action_mailer.smtp_settings = {
+  config.action_mailer.default_url_options = {:host => ENV['DOMAIN_NAME']}
+  
+  config.action_mailer.smtp_settings = {
     :address   => "smtp.mandrillapp.com",
     :port      => 25, # ports 587 and 2525 are also supported with STARTTLS
     :enable_starttls_auto => true, # detects and uses STARTTLS
