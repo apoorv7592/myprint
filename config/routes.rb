@@ -49,6 +49,7 @@ Rails.application.routes.draw do
     get '/contact_us', to: 'contactus#contact', as:'contact_us'
     get '/get_prd_images/:id', to: 'suites#get_prd_images'
     get '/get_suite_chars/:id', to: 'suites#get_suite_chars'
+    get '/whybuyfromus', to:'wbfromus#whybuyfromus'
     
     get '/search'  => 'solrsearch#index'
     routes = lambda do

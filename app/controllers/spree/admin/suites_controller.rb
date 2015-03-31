@@ -64,8 +64,8 @@ module Spree
 
 			private
 				def suites_params
- 
 					params.require(:suite).permit(:sku_id, :name, :description, :designer_id, :sub_category_id, :available_on, :slug, :position, :avatar)
+
 				end 
 		end
 	end
