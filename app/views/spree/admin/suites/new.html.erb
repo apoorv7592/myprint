@@ -2,13 +2,14 @@
 <div class="row">
 	<div class="col-sm-offset-2">
 	<h4> New Suite </h4>
-		<%= form_for @suite, url: admin_suites_path, class: 'form-horizontal' do |f| %>
+	<p>Slug can only be updated while editing the suite</p>
+		<%= form_for @suite, url: admin_suites_path, html: {class: 'form-horizontal'} do |f| %>
 			<div class="row form-group">
 				<%= f.label :sku_id, class: 'col-sm-2' %>
 				<%= f.text_field :sku_id, class: 'col-sm-6'%>
 			</div>
 			<div class="row form-group">
-				<%= f.label 'Weight', class: 'col-sm-2'%>
+				<%= f.label 'Relative importance', class: 'col-sm-2'%>
 				<%= f.number_field :position, class: 'col-sm-6' %>
 			</div>
 			<div class="row form-group">
@@ -33,6 +34,11 @@
 			<div class="row form-group">
 				<%= f.label 'Available from', class: 'col-sm-2' %>
 				<%= f.date_field :available_on %>
+			</div>
+
+			<div class="row form-group">
+				<%= f.label 'Suite Photo', class: 'col-sm-2'%>
+				<%= f.file_field :avatar, class: 'col-sm-6' %>
 			</div>
 		
 
