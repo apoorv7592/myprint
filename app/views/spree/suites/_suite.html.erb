@@ -4,7 +4,9 @@
   <div class="suite-blck" >
     <div class="suite-img" >
       
-      <span itemprop="image"><!-- Placeholder for suite image --></span>
+      <span itemprop="image"><!-- Placeholder for suite image -->
+        <%=image_tag p.avatar.url(:medium), alt: p.slug, height:238, width: 238 %>
+      </span>
 
       <%= render 'spree/shared/like', p: p %>
     </div>
