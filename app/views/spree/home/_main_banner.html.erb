@@ -36,20 +36,12 @@
 		</div>
 		<!-- Fourth slide-->
 		<div class="item">
-			<% b= get_banner('Home Page', 3) %>
+			<% b= get_banner('Home Page', 4) %>
 		    <% if !b.nil? %>
             <%= image_tag b.picture.url(:main), alt:'main banner', class:'img-responsive', width:1000, height: 500 %>	
 			<%end%>	
 		</div>
 	</div>
 
-	 <!-- Controls -->
-	  <a class="left carousel-control" href="#main-carousel" role="button" data-slide="prev">
-	    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-	    <span class="sr-only">Previous</span>
-	  </a>
-	  <a class="right carousel-control" href="#main-carousel" role="button" data-slide="next">
-	    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-	    <span class="sr-only">Next</span>
-	  </a>
+	
 </div>

@@ -1,26 +1,130 @@
+<style>
 
+#mask {
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:9000;
+  background-color:#d8d8d8;
+  display:none;
+  width:1000px !important;
+  opacity: 0.1;
+}  
+#boxes .window {
+  position:absolute;
+  margin-left: 200px;
+  margin-top: 200px;
+  display:none;
+  z-index:9999;
+  padding:5px;
+  text-align: center;
+}
+#boxes #dialog {
+  height:auto;
+  padding:5px;
+  background-color:#ffffff;
+  font-family: 'Segoe UI Light', sans-serif;
+  font-size: 15pt;
+}
+#popupfoot{
+  font-family: "Segoe UI", sans-serif;
+  font-size: 16pt;
+  padding: 10px 20px;
+}
+#popupfoot a{
+  text-decoration: none;
+}
+.agree:hover{
+  background-color: #D1D1D1;
+}
+.popupoption:hover{
+  background-color:#D1D1D1;
+  color: green;
+}
+.popupoption2:hover{ 
+  color: red;
+}
+</style>
+
+<div id="mask">
+<div id="boxes">
+  <div id="dialog" class="window"> 
+      <%= image_tag 'signuppopup.jpg',height:400, :usemap=>"#popcord"%>
+    <div id="popupfoot"> <a href="#" class="close agree">I agree</a> | <a class="agree"style="color:red;" href="http://www.cartoonnetwork.com/">I do not agree</a> 
+    </div>
+  </div>
+</div>
+</div>
+
+<map name="Map" id="popcord">
+    <area alt="" title="" href="www.gmail.com" shape="poly" coords="547,553,546,593,962,593,962,552" />
+    <area alt="" title="" href="www.gmail.com" shape="poly" coords="708,635,707,664,803,664,801,634" />
+</map>
+
+<script >
+  $(document).ready(function() {  
+
+    var id = '#dialog';
+  
+    //Get the screen height and width
+    var maskHeight = $(document).height();
+    var maskWidth = $(window).width();
+  
+    //Set heigth and width to mask to fill up the whole screen
+    $('#mask').css({'width':maskWidth,'height':maskHeight});
+    
+    //transition effect   
+    $('#mask').fadeIn(500); 
+    $('#mask').fadeTo("slow",0.9);  
+    
+    //transition effect
+    $(id).fadeIn(2000);   
+  
+  //if close button is clicked
+  $('.window .close').click(function (e) {
+    //Cancel the link behavior
+    e.preventDefault();
+    
+    $('#mask').hide();
+    $('.window').hide();
+  });   
+  
+  //if mask is clicked
+  $('#mask').click(function () {
+    $(this).hide();
+    $('.window').hide();
+  });   
+  
+});
+
+</script>
+
+
+
+
+<!--index page starts from here-->
 <div id='result_json'></div>
 <div class="col-md-12" style="height:503px;width:1000px;margin-bottom:10px;background:rgba(1,0,0,0.1);">
-	<%= render 'main_banner'%>
+<%= render 'main_banner'%>
 </div>
 
 <div class="col-md-12" style="height:200px;width:1000px;margin-bottom:10px;background:rgba(1,0,0,0.1);">
-	<%= render 'second_banner'%>
+<%= render 'second_banner'%>
 </div>
 
 
 <div class="col-md-12" style="height:auto;width:1000px;margin-bottom:10px;">
-		<div class="col-md-6" style="height:311px;width:492px;margin-right:8px;background:pink;">
-			<%= render 'third_banner'%>
-		</div>
-		<div class="col-md-6" style="height:311px;width:492px;margin-left:8px;background:lavender;">
-			<%= render 'fourth_banner'%>
-		</div>
+<div class="col-md-6" style="height:311px;width:492px;margin-right:8px;background:pink;">
+<%= render 'third_banner'%>
+</div>
+<div class="col-md-6" style="height:311px;width:492px;margin-left:8px;background:lavender;">
+<%= render 'fourth_banner'%>
+</div>
 
 </div>
 
 <div class="col-md-12" style="height:311px;width:1000px;margin-bottom:10px;background:rgba(1,0,0,0.1); ">
-	<%= render 'fifth_banner' %>	
+<%= render 'fifth_banner' %>  
 </div>
 
 
@@ -41,9 +145,3 @@
         interval: 5000
     });
 </script>
-<div>new banner</div>
-
-<% b= get_banner('Home Page', 2) %>
-      <% if !b.nil? %>
-        <img src="<%=b.picture.url(:main) %>">
-<%end%> 
