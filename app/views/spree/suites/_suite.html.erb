@@ -5,7 +5,7 @@
     <div class="suite-img" >
       
       <span itemprop="image"><!-- Placeholder for suite image -->
-        <%=image_tag p.avatar.url(:medium), alt: p.slug, height:238, width: 238 %>
+        <%=link_to (image_tag p.avatar.url(:medium), alt: p.slug, height:238, width: 238), p%>
       </span>
 
       <%= render 'spree/shared/like', p: p %>
@@ -27,7 +27,7 @@
 
       <span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
         <span class="viewsuitetxt1" itemprop="ratingValue"> 
-        <%= p.avg_rating %> </span>
+        <%= render 'spree/shared/rating', product: p, review: 0 %>
         based on 
         (
         <span itemprop="ratingCount">

@@ -17,7 +17,7 @@ class Spree::ReviewsController < Spree::StoreController
 	def create
 		params[:review][:rating].sub!(/\s*[^0-9]*\z/, '') unless params[:review][:rating].blank?
 		@review = Spree::Review.new(review_params)
-		@review.suite = @suite
+		@review.suite_id = @suite.id
 		@review.name = spree_current_user.name if spree_user_signed_in?
 		@review.user = spree_current_user if spree_user_signed_in?
 		@review.ip_address = request.remote_ip
@@ -38,11 +38,11 @@ class Spree::ReviewsController < Spree::StoreController
 
 	private
 		def load_product
-			@suite = Suite.where(params[:suite_id]).first
+			@suite = Suite.where(id: params[:review]['suite_id']).first
 		end
 		
 		def permitted_review_attributes
-			[:rating, :title, :review, :name, :show_identifier]
+			[:rating, :title, :review, :name, :show_identifier, :suite_id]
 		end
 		def review_params
 			params.require(:review).permit(permitted_review_attributes)

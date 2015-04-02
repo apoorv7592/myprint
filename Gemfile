@@ -132,3 +132,6 @@ gem "letter_opener", :group => :development
 
 #maintaining state machines
 gem 'state_machine', '1.2.0'
+
+#for youtube style progress bar
+gem 'nprogress-rails'
