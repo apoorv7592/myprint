@@ -234,16 +234,18 @@ $('#gallery-demo').simplegallery({
       var arr = txt.split('---Rs. ')
       if(arr[1] != null){
         var prc = arr[1];
+        if(qty != null){
+          total = total + parseInt(prc)*qty;    
+        }
       }
       else{
         var prc = 0;
       }
-      total = total + parseInt(prc)*qty;
     });
     $("#total-price").html(total);    
 
   })
-
+</script>
 <script type="text/javascript">
 ;(function($, window, document, undefined) {
 

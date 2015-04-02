@@ -30,9 +30,20 @@
         var total = 0;
         $("select option:selected").each(function(){
             var txt = $(this).text();
+            var qty = $(this).val();
+
             var arr = txt.split('---Rs. ')
             var prc = arr[1];
-            total = total + parseInt(prc);
+            if(arr[1] != null){
+                var prc = arr[1];
+                if(qty != null){
+                    total = total + parseInt(prc)*qty;    
+                }
+            }
+            else{
+                var prc = 0;
+            }
+
         });
         $("#total-price").html(total);        
     });
