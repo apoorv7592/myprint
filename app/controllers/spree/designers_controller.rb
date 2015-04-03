@@ -54,7 +54,7 @@ module Spree
 				end
 			end
 			def designer_params
-				params.require(:designer).permit(:name, :city, :about, :phonenum, :college)
+				params.require(:designer).permit(:name, :city, :about, :phonenum, :college, :avatar)
 			end
 	end
 end

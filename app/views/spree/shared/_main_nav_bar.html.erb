@@ -1,7 +1,3 @@
-
-  
-
-
   <script type="text/javascript">
   $(document).ready(function(){
     $('#navigationbar li').each(function(){
@@ -9,9 +5,7 @@
         var idNavigation = $(this).attr('id');
         var idDiv = idNavigation.toLowerCase();
         var timeoutNavigationFade;
-
        
-        
         $('#'+idNavigation).bind('mouseover',function(){
           clearTimeout(timeoutNavigationFade);
           $('#'+idDiv).fadeIn(700);
@@ -23,8 +17,6 @@
         $('#'+idNavigation+", #"+idDiv).bind('mouseout',function(){
           timeoutNavigationFade=setTimeout(function(){$("#"+idDiv).fadeOut(100);}, 100);
         });
-
-
       }
       catch(e){
         console.log("ERROR: "+e);
@@ -32,52 +24,135 @@
     });
   });
   </script>
-
+<style type="text/css">
+li{
+  list-style-type:none;
+}
+</style>
 
 
    
 <div>  
       <ul id="navigationbar" class="nav navbar-nav" >
-        <li id="Wedding" class="mainnavatags"><a href="/wedding">WEDDING</a></li>
-        <li id="Invitations" class="mainnavatags"><a href="#">PARTY INVITATIONS</a></li>
-        <li id="Birthday" class="mainnavatags"><a href="#">BIRTHDAY</a></li>
-        <li id="Anniversary" class="mainnavatags"><a href="#">ANNIVERSARY</a></li>
-        <li id="Designers" class="mainnavatags2"><a href="/designers">MEET OUR DESIGNERS</a></li>
+        <li id="Weddinginvt" class="mainnavatags"><a href="/wedding-invitations">WEDDING INVITATIONS</a></li>
+        <li id="Weddingacc" class="mainnavatags"><a href="/wedding-accessories">WEDDING ACCESSORIES</a></li>
+        <li id="Partyinvt" class="mainnavatags"><a href="/party-invites">PARTY INVITATIONS</a></li>
+        <li id="Greetings" class="mainnavatags"><a href="/greetings">GREETINGS</a></li>
+        <li id="Designers" class="mainnavatags"><a href="/designers">MEET OUR DESIGNERS</a></li>
         <li id="Sources" class="mainnavatags1"><a href="/blog">BONHEUR</a></li>
       </ul>
 </div>      
       
 
 
-                    <div id="wedding" class="navigation-div">
+                    <div id="weddinginvt" class="navigation-div">
                         
                           <div class="row">
-                              <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
-                              <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
-                              <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
-                              <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
+                              <div class="col-md-3" id="navdiv1">
+                                <li><a href="" class="removeline">Wedding Invitations</a></li><br/>
+                                <%= image_tag "" ,height:150 %>
+                              </div>
+                              <div class="col-md-3" id="navdiv1">
+                                <li><a href=""class="removeline">Shop By Theme</a></li><br/>
+                                <li><a href="" class="removeline">Shop All Themes></a></li><br/>
+                                <li><a href="" class="removeline">Shop By Color</a></li><br/>
+                                <li><a href="" class="removeline">Shop All Colors</a></li>                                 
+                              </div>
+                              <div class="col-md-3" id="navdiv1">
+                                <%= image_tag "" ,height:150 %>
+                                <li><a href="" class="removeline">Shop By Printing Styles</a></li>                                
+                              </div>
+                              <div class="col-md-3" id="navdiv1">
+                                <li><a href="" class="removeline">Save The Date</a></li><br/>
+                                <%= image_tag "" ,height:150 %>
+                                <li><a href="" class="removeline">Shop All ></a></li>                                
+                              </div>
+                              <div class="col-md-3" id="navdiv11">
+                              <br/><br/><br/><br/>
+                                <li class="removeline"><b>QUALITY YOU WILL FALL IN LOVE WITH.</b></li>  
+                                <li><a href="" class="removeline">Chek Our Printing & Paper Styles</a></li>                                                
+                              </div>
                           </div>
 
                     </div>
                       
-                  <div id="invitations" class="navigation-div">
+                  <div id="greetings" class="navigation-div">
+                          
+                          <div class="row">
+                            <div class="col-md-3" id="navdiv1">
+                                <li><a href=""class="removeline">For Kids</a></li><br/>
+                                <li><a href="" class="removeline">For Son</a></li><br/>
+                                <li><a href="" class="removeline">For Daughter</a></li><br/>
+                                <li><a href="" class="removeline">For Friend</a></li> 
+                                <%= image_tag "" ,height:100 %>
+                            </div>
+                            <div class="col-md-3" id="navdiv1">
+                                <li><a href="" class="removeline">For Sister</a></li>
+                                <%= image_tag "" ,height:100 %>
+                                <li><a href="" class="removeline">For Brother</a></li>
+                                <%= image_tag "" ,height:100 %>
+                            </div>
+
+                            <div class="col-md-3" id="navdiv1">
+                                <li><a href=""class="removeline">For Husband</a></li><br/>
+                                <li><a href="" class="removeline">For Wife</a></li><br/>
+                                <li><a href="" class="removeline">For Boyfriend</a></li><br/>
+                                <li><a href="" class="removeline">For Girlfriend</a></li><br/>
+                                <li><a href="" class="removeline">For Father</a></li><br/>
+                                <li><a href="" class="removeline">For Mother</a></li>                             
+                            </div>
+                            <div class="col-md-3" id="navdiv1">
+                                <li class="removeline"><b> Anniversary</b></li><br/><br/>
+                                <li><a href="" class="removeline">For Parents</a></li>
+                                <%= image_tag "" ,height:100 %>
+                                <li><a href="" class="removeline">For Couple</a></li><br/>
+                                <li><a href="" class="removeline">For 25th Anniversary</a></li>
+                            </div>
+                            <div class="col-md-3" id="navdiv11">
+                                <li><a href="" class="removeline">For Husband</a></li><br/>
+                                <%= image_tag "" ,height:100 %>
+                                <li><a href="" class="removeline">For Wife</a></li>
+                                <%= image_tag "" ,height:100 %>
+                            </div>
+                          </div>
+                  </div>
+
+                  <!--<div id="weddingacc" class="navigation-div">
                           
                           <div class="row">
                             <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
                             <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
                             <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
                             <div class="col-md-3" id="navdiv2"><b>ddd</b></div>
-                            
-                          
+                                                     
                           </div>
-                  </div>
+                  </div>-->
                       
-                  <div id="birthday" class="navigation-div">
-                      <p>hbbjbjnjnknjknknkmnk</p>
+                  <div id="partyinvt" class="navigation-div">
+                          <div class="row">
+                            <div class="col-md-3" id="navdiv2">
+                                <li><a href="" class="removeline">Birthday Party Kids</a></li>
+                                <%= image_tag "" ,height:150 %>
+                                <li><a href="" class="removeline">SHOP ALL ></a></li>
+                            </div>
+                            <div class="col-md-3" id="navdiv2">
+                                <li><a href=""class="removeline">Birthday Party Adults</a></li><br/>
+                                <li><a href="" class="removeline">1st Birthday</a></li><br/>
+                                <li><a href="" class="removeline">Baby Shower</a></li><br/>
+                                <li><a href="" class="removeline">Farewell</a></li>           
+                            </div>
+                            <div class="col-md-3" id="navdiv2">
+                                <li><a href="" class="removeline">House Warming </a></li>
+                                <%= image_tag "" ,height:150 %>
+                                <li><a href="" class="removeline">SHOP ALL ></a></li>
+                            </div>
+
+                            <div class="col-md-3" id="navdiv4">
+                                <li><a href="" class="removeline">Bridal Shower</a></li>
+                            </div> 
+                          </div>                  
                   </div>
 
-                  <div id="anniversary" class="navigation-div">
-                  </div>
                       
 
 

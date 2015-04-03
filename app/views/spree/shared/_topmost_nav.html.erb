@@ -159,30 +159,30 @@
 
 
 
-<div id="myaccount" class="uparrowdiv">
+<div id="myaccount" class="arrow_box">
       <% if spree_current_user && spree_current_user.is_designer %>
       <li id="Logout" class="myaccountdiv" >
       <%= link_to 'Designer Dashboard', designer_dashboard_path %>
       </li>
       <% end %>
       <li id="Logout" class="myaccountdiv" >
-        <%= link_to "Logout", '/logout/',:style=>""%>
+        <%= link_to "Logout", '/logout/',:style=>"color:#6C6C6C"%>
       </li>
       <li id="Wishlist" class="myaccountdiv">
-        <%= link_to "Wishlist", '/wishlists/',:style=>""%>
+        <%= link_to "Wishlist", '/wishlists/',:style=>"color:#6C6C6C"%>
       </li>
       <li id="Saved" class="myaccountdiv">
-        <%= link_to "Saved Projects", '/mysaved-projects/',:style=>""%>
+        <%= link_to "Saved Projects", '/mysaved-projects/',:style=>"color:#6C6C6C"%>
       </li>
       <li id="FavouriteDes" class="myaccountdiv">
-        <%= link_to "Favourite Designers", '/myfavourite-designers/',:style=>""%>
+        <%= link_to "Favourite Designers", '/myfavourite-designers/',:style=>"color:#6C6C6C"%>
       </li>
       <li id="Orders" class="myaccountdiv">
-        <%= link_to "Orders", '/orders/',:style=>""%>
+        <%= link_to "Orders", '/orders/',:style=>"color:#6C6C6C;"%>
       </li>
 </div>
 
-<div id="login" class="uparrowdiv">
+<div id="login" class="uparrownewdesigner">
     <li>
       <%= link_to "designer sign up", new_designer_path,class:"topbar"  %>    
     </li>

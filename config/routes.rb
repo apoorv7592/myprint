@@ -15,16 +15,12 @@ Rails.application.routes.draw do
     resources :suites do
       resources :reviews
       resources :likes
-
     end
 
     resources :categories
-    resources :sub_categories
-    
+    resources :sub_categories   
     resources :colors
-
-    resources :ratings
-    
+    resources :ratings 
     resources :contests
     resources :entries
     resources :designers
@@ -40,7 +36,10 @@ Rails.application.routes.draw do
     resources :relationships, only: [:create, :destroy]
 
     
-    get '/wedding', to: 'landing_pages#wedding'
+    get '/wedding-invitations', to: 'landing_pages#wedding', as: 'wedding'
+    get '/wedding-accessories', to: 'landing_pages#wedaccs', as: 'wedaccs'
+    get '/greetings', to: 'landing_pages#greetings', as: 'greetings'
+    get '/party-invites', to: 'landing_pages#partyinvite', as: 'partyinvite'
     get '/like', to: 'likes#create', as: 'like_suite'
     get '/unlike', to: 'likes#destroy', as: 'unlike_suite'
     get '/designer_dashboard', to: 'designers#dashboard', as: 'designer_dashboard'
