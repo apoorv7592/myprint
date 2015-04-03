@@ -1,0 +1,21 @@
+<div class="row">
+	<div class="col-sm-offset-2">
+	<h4> Edit Category </h4>
+		<%= form_for @cat, url: admin_sub_category_path(@cat), class: 'form-horizontal', method: 'put' do |f| %>
+			<div class="row form-group">
+				<%= f.label :name, class: 'col-sm-2' %>
+				<%= f.text_field :name, class: 'col-sm-6'%>
+			</div>
+			
+			<div class="row form-group">
+				<%= f.label :category_id, class: 'col-sm-2' %>
+				<%= f.select :name,options_from_collection_for_select(Category.all, 'id', 'name') %>
+			</div>
+						
+
+			<div class="row form-group">
+				<%= f.submit 'Submit', class: 'btn btn-primary col-sm-4 col-sm-offset-2' %>
+			</div>
+		<% end %>
+	</div>
+</div>

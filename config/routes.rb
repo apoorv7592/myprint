@@ -65,6 +65,8 @@ Rails.application.routes.draw do
           
         end
         resources :banners
+        resources :categories
+        resources :sub_categories
         
         resources :suites do
           resources :characteristics
