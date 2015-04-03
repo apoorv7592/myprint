@@ -80,7 +80,7 @@ Rails.application.configure do
   
   config.action_mailer.smtp_settings = {
     :address   => "smtp.mandrillapp.com",
-    :port      => 25, # ports 587 and 2525 are also supported with STARTTLS
+    :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
     :enable_starttls_auto => true, # detects and uses STARTTLS
     :user_name => ENV['MANDRILL_USERNAME'],
     :password  => ENV['MANDRILL_PASSWORD'], # SMTP password is any valid API key
@@ -90,7 +90,7 @@ Rails.application.configure do
 
   config.paperclip_defaults = {
     :storage => :s3,
-    :s3_host_alias => "d3b3h7jdgjjvpj.cloudfront.net",
+    :s3_host_alias => ENV['CLOUDFRONT_URL'],
     :url => ':s3_alias_url',
     :s3_credentials => {
       :bucket => ENV["S3_BUCKET_NAME"],
