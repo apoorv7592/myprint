@@ -8,9 +8,8 @@
  *= require_self
  *= require_tree .
  *= require spree/frontend/spree_social
+ *= require font-awesome
 */
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
-
