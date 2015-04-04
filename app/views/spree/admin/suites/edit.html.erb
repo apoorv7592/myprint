@@ -24,14 +24,22 @@
 				<%= f.label 'Designer', class: 'col-sm-2' %>
 				<%= f.select :designer_id,Designer.all.collect{|d| [d.name,d.id]}, class: 'col-sm-6'%>
 			</div>
-
+			<td><%if @suite.sub_categories 
+					@suite.sub_categories.each do |s|%>
+						<%= s.name %>,
+					<% end %>
+				<%end%>
+			</td>
 			<div class="row form-group">
 				<%=f.label 'Sub Categories', class: 'col-sm-2' %>
 				<div class="col-sm-6">
 					<% SubCategory.all.each do |s| %>
-						<%= label_tag s.name%>
-						<%= check_box_tag 'sub_category_ids[]', s.id%>
-						&nbsp
+						
+						<% if !@suite.sub_categories.include?(s)%>
+							<%= label_tag s.name%>
+							<%= check_box_tag 'sub_category_ids[]', s.id%>
+							&nbsp
+						<%end%>
 					<% end %>
 				</div>
 			</div>
