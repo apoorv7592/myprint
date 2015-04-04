@@ -16,6 +16,16 @@ module Spree
 			end
 			def create
 				@s = Suite.new(suites_params)
+				scats = params['sub_category_ids']
+				if !scats.nil?
+					scats.each do |s|
+						scat = SubCategory.where(id: s).first
+						if !@s.sub_categories.include?(scat)
+							@s.sub_categories<<scat
+						end
+					end
+				end
+
 				if @s.save
 					respond_to do |format|
 						format.html {redirect_to action:'index'}

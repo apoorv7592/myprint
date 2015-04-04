@@ -45,7 +45,7 @@
 				<div class="col-sm-6">
 					<% SubCategory.all.each do |s| %>
 						<%= f.label s.name%>
-						<%= f.check_box 'sub_category_id',{}, s.id, ''%>
+						<%= check_box_tag 'sub_category_ids[]', s.id%>
 						&nbsp
 					<% end %>
 				</div>
