@@ -36,7 +36,10 @@
 			</tr>
 			<tr>
 				<td><b>Sub Category</b></td>
-				<td><%= @suite.sub_category.name%></td>
+				<td><% @suite.sub_categories.each do |s|%>
+					<%= s.name%>,
+					<% end %>
+				</td>
 			</tr>
 			<tr>
 				<td><b>Available From</b></td>
@@ -44,7 +47,6 @@
 			</tr>
 
 
-						
 			<tr>
 				<td><b>Slug</b></td>
 				<td><%= @suite.slug %></td>

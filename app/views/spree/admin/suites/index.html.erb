@@ -42,7 +42,12 @@
 						<td><%= s.description %></td>
 						<td><%= s.designer.name %></td>
 						<td><%= s.designer_id %></td>
-						<td><%= s.sub_category.name %></td>
+						<td><%if s.sub_categories 
+								s.sub_categories.each do |s|%>
+									<%= s.name %>,
+								<% end %>
+							<%end%>
+						</td>
 						<td><%= s.available_on %></td>
 						<td><%= s.slug%></td>
 						<td><%= image_tag s.avatar.url(:thumb) %></td>

@@ -8,7 +8,7 @@
 			</div>
 			<div class="col-md-6">
 				<div class="pull-right">
-					<%= button_to 'New Category', new_admin_sub_category_path, method: 'get', class: 'btn btn-primary' 	%>
+					<%= button_to 'New SubCategory', new_admin_sub_category_path, method: 'get', class: 'btn btn-primary' 	%>
 				</div>
 			</div>
 		</div>
@@ -28,7 +28,7 @@
 					<tr>
 						<td><b><%= c.id %></b></td>
 						<td><b><%= c.name%></b></td>
-						<td><b><%= c.category.name%></b></td>
+						<td><b><%= c.category.name if c.category%></b></td>
 						<td><%= link_to 'Edit',edit_admin_sub_category_path(c)%></td>
 
 					</tr>

@@ -40,7 +40,22 @@
 				<%= f.label 'Suite Photo', class: 'col-sm-2'%>
 				<%= f.file_field :avatar, class: 'col-sm-6' %>
 			</div>
-		
+
+			<div class="row form-group">
+				<%= f.label 'Suite Photo', class: 'col-sm-2'%>
+				<%= f.file_field :avatar, class: 'col-sm-6' %>
+			</div>
+
+			<div class="row form-group">
+				<%=f.label 'Sub Categories', class: 'col-sm-2' %>
+				<div class="col-sm-6">
+					<% SubCategory.all.each do |s| %>
+						<%= f.label s.name%>
+						<%= f.check_box 'sub_category_id',{}, s.id, ''%>
+						&nbsp
+					<% end %>
+				</div>
+			</div>
 
 			<div class="row form-group">
 				<%= f.submit 'Submit', class: 'btn btn-primary col-sm-4 col-sm-offset-2' %>

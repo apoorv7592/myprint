@@ -135,3 +135,6 @@ gem 'state_machine', '1.2.0'
 
 #for youtube style progress bar
 # => gem 'nprogress-rails'
+
+#for tree structure
+gem 'ancestry'

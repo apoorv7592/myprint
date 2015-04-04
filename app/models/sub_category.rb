@@ -15,7 +15,7 @@ class SubCategory < ActiveRecord::Base
 	friendly_id :name, use: [:slugged, :history]
 	
 	belongs_to :category
-	has_many :suites
+	has_and_belongs_to_many :suites
 	
 
 	def self.retrieve_sub_categories

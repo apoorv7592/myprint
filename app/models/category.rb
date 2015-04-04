@@ -7,6 +7,7 @@
 #  created_at :datetime
 #  updated_at :datetime
 #  slug       :string(255)
+#  ancestry   :string(255)
 #
 
 class Category < ActiveRecord::Base
@@ -15,7 +16,7 @@ class Category < ActiveRecord::Base
 	friendly_id :name, use: [:slugged, :history]
 
 	has_many :sub_categories
-
+	has_ancestry
 	
 
 	def self.retrieve_categories

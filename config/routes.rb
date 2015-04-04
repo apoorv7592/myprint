@@ -51,6 +51,11 @@ Rails.application.routes.draw do
     get '/get_suite_chars/:id', to: 'suites#get_suite_chars'
     get '/whybuyfromus', to:'wbfromus#whybuyfromus'
     
+    get '/wedding-invitations/:id', to: 'shop#wedding', as: 'wedding-invitations'
+    get '/greeting-cards/:id', to: 'shop#greeting', as: 'greeting-cards'
+    get '/party-invitations/:id', to: 'shop#partyinvites', as: 'partyinvites'
+
+
     get '/search'  => 'solrsearch#index'
     routes = lambda do
       namespace :admin do

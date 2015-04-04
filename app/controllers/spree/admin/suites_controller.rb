@@ -37,6 +37,14 @@ module Spree
 
 			def update
 				@s = Suite.friendly.find(params[:id])
+				scats = params['sub_category_ids']
+
+				scats.each do |s|
+					scat = SubCategory.where(id: s).first
+					if !@s.sub_categories.include?(scat)
+						@s.sub_categories<<scat
+					end
+				end
 
 				if @s.update(suites_params)
 					respond_to do |format|
@@ -44,7 +52,7 @@ module Spree
 					end
 				else
 					respond_to do |format|
-						format.html {redirect_to :back , notice: 'Some error occured'}
+						format.html {redirect_to :back , notice: @s.errors.full_messages.first}
 					end
 				end
 			end

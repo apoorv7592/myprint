@@ -42,12 +42,14 @@ class Suite < ActiveRecord::Base
 		
 		
 
-	belongs_to :sub_category
+	
 	belongs_to :designer
 	has_and_belongs_to_many :colors
 	has_and_belongs_to_many :trims
 	has_and_belongs_to_many :papers
 	has_and_belongs_to_many :dimensions
+	has_and_belongs_to_many :sub_categories
+
 	has_many :spree_products, :class_name => 'Spree::Product'
 	has_many :reviews,:class_name=> 'Spree::Review'
 	has_many :wished_products, dependent: :destroy
@@ -74,7 +76,10 @@ class Suite < ActiveRecord::Base
 			designer.name
 		end
 
-		integer :sub_category_id, references: SubCategory
+		
+		integer :sub_category_ids, multiple: true do
+    		sub_categories.map(&:id)
+  		end
 		integer :designer_id, multiple:true, references: Designer
 		integer :color_ids, multiple:true, references: Color
 		integer :trim_ids, multiple:true, references: Trim
@@ -103,6 +108,30 @@ class Suite < ActiveRecord::Base
 		save
 	end
 
+	def self.search(q,sub_cat_id,designer_id, color_id, trim_id,dimension_id, created_at,like_no,avg_rating,price )
+		@search = Sunspot.search(Suite) do 
+		    	fulltext q
+		    	with(:available_on).less_than(Time.zone.now)
+		    	with(:sub_category_ids, sub_cat_id)
+		    	designer_filter = with(:designer_id, designer_id) if designer_id.present?
+		    	color_filter = with(:color_ids, color_id) if color_id.present?
+				trim_filter = with(:trim_ids, trim_id) if trim_id.present?		    	
+				dimension_filter = with(:dimension_ids, dimension_id) if dimension_id.present?		    	
+				
+				order_by(:position, :desc)
+				order_by(:created_at, :desc) if created_at
+				order_by(:like_no, :desc) if like_no
+				order_by(:avg_rating, :desc) if avg_rating
+				order_by(:price, :desc) if price
+				
+		    	facet :designer_id, exclude: [designer_filter, color_filter, trim_filter, dimension_filter].compact
+		    	facet :color_ids, exclude: [designer_filter, color_filter, trim_filter, dimension_filter].compact
+		    	facet :trim_ids, exclude: [designer_filter, color_filter, trim_filter, dimension_filter].compact
+		    	facet :dimension_ids, exclude: [designer_filter, color_filter, trim_filter, dimension_filter].compact
+		    	
+		    end
+
+	end
 
 	private
 		

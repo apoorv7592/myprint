@@ -57,7 +57,7 @@ module Spree
 			end
 			private
 				def cats_params
-					params.require(:sub_category).permit(:name)
+					params.require(:sub_category).permit(:name, :category_id)
 
 				end
 

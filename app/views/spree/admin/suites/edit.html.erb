@@ -26,9 +26,16 @@
 			</div>
 
 			<div class="row form-group">
-				<%= f.label 'Sub Category', class: 'col-sm-2' %>
-				<%= f.select :sub_category_id,SubCategory.all.collect{|d| [d.name,d.id]}, class: 'col-sm-6'%>
+				<%=f.label 'Sub Categories', class: 'col-sm-2' %>
+				<div class="col-sm-6">
+					<% SubCategory.all.each do |s| %>
+						<%= label_tag s.name%>
+						<%= check_box_tag 'sub_category_ids[]', s.id%>
+						&nbsp
+					<% end %>
+				</div>
 			</div>
+
 			
 			<div class="row form-group">
 				<%= f.label 'Available from', class: 'col-sm-2' %>
