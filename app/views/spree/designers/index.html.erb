@@ -4,8 +4,8 @@
 	.designer-container{
 		width: 1000px;
 		margin: auto;
-		font-family: Crimson Text;
-	}
+		font-family: fantasy;
+	}	
 	.designer-container h2{
 		text-align: center;
 	}
@@ -25,16 +25,19 @@
     	font-size: 12px;
     	margin: 0;
 	}
+	.designer-container h3{
+		font-family: fantasy;
+    	font-size: 15px;
+   	}
+
 	.designer-div{
 		margin-top: 0;
 	}
 	.designer-box{
-		margin-top: 30px;
-		margin-left: 3px;
-		margin-right: 3px;
+		margin-bottom: 50px;
 		text-align: left;
 
-	}
+    }
 
 	img.grayfilter{
 	-webkit-filter: grayscale(100%);
@@ -56,15 +59,14 @@
 </style>
 
 		<div class="designer-container">
-			<h2>MEET OUR DESIGNERS</h2>
+			<h2 style="margin-bottom:30px;">MEET OUR DESIGNERS</h2>
 			<div class="row">
 				<div class="col-lg-12 designer-div">
 				    <% @designers.each do |d| %>
 					<div class="col-lg-3 designer-box">
-                        <%= image_tag d.avatar.url(:medium) ,class:"grayfilter"%>					
+                        <%= image_tag d.avatar.url(:medium) ,class:"grayfilter"%>
 						<h3><%= link_to d.name, d %></h3>
 						<p><%= d.city %></p>
-						<p>Designer</p>
 					</div>
                     <%end%>
 				</div>

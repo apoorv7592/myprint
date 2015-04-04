@@ -19,7 +19,7 @@
 </style>
 <!-- Suite Itemscope start-->
 <div itemscope itemtype="http://schema.org/IndividualProduct" itemdid="<%= @suite.id %>">
-   <h5 itemprop="name"><%=@suite.name %></h5>
+   <h4 itemprop="name"><%=@suite.name %></h4>
    <div class="col-md-12 suite-upper-cont" >
       <!-- Suite image container-->
       <div class="suite-img-cont">
@@ -55,74 +55,20 @@
                <%= render 'add_sample', prd: p%>
                <% end %>
                <% end %>
-               <%= submit_tag("Order Sample",:style => 'height:30px;width:100px;margin-left:330px;background:white;color:#6BBCBF;border:1px solid black;') %>
+               <%= submit_tag("Order Sample",:style => 'height:30px;width:100px;margin-left:330px;background:white;color:#6BBCBF;border:1px solid rgba(1,0,0,0.3);') %>
                <% end %> 
             </li>
-            <!--<li class="prop">
-               <% if !@scat.nil? %>
-               <span style="float:left;"><b>Color:</b></span>
-                 <div style="width:200px;margin-left:73px;">
-                 <% @scat.each do |sc| %>
-                 <div class="colorbox" style="background:<%= sc.code%>">
-                 </div>    
-                 <% end -%>
-                 </div>
-               <% end -%>        
-               </li>
-               <br/>
-               <br/>
-               
-               <li class="prop">
-               <% if !@trm.nil? %>
-                 <span style="float:left;"><b>Trim:</b></span>
-                 <div style="margin-left:83px;width:200px;">
-                 <form>
-                 <% @trm.each do |sc| %>
-                 <input type="radio" name="trim" value=" <%= sc.name%>">
-                   <%= sc.name%><br/>
-                 <% end -%>
-                 </form>
-                 </div>
-               <% end -%>
-               </li>
-               
-               <li class="prop">
-               <% if !@pap.nil? %>
-                 <span style="float:left;"><b>Paper:</b></span>
-                 <div style="margin-left:85px;width:200px;">
-                 <form>
-                 <% @pap.each do |sc| %>
-                 <input type="radio" name="paper" value=" <%= sc.name%>">
-                  <%= sc.name%><br/>
-                 <% end -%>
-                 </form>
-                 </div>
-               <% end -%>
-               </li>
-               <li class="prop">
-               <% if !@dim.nil? %>
-               <span style="float:left;"><b>Dimension:</b></span>
-               <div style="margin-left:87px;width:200px;">
-                  <% @dim.each do |sc| %>
-                  <%= sc.width%>*<%= sc.height%>
-                  <% end -%>
-               </div>
-               <% end -%>  
-               </li>-->
             <li class="prop">
                <% if !@prds.nil? %>
-               <span style="float:left;"><b>Productz:</b></span>
+               <span style="float:left;"><b>Products:</b></span>
                <div style="margin-left:88px;width:200px;">
                   <%= form_for :order, url: populate_orders_path do |f| %>
                   <% @prds.each do |p| %>
                   <% if p.is_not_sample? %>
                   <%= render 'add_prod', prd: p %>
-                  <% end %>
-                  <%# p.variant_images.each do |img| %>
-                  <%#= image_tag img.attachment.url %>
-                  <%# end %>    
+                  <% end %> 
                   <%end%>
-                  <div class="row" style="border-top:1px solid black;">
+                  <div class="row" style="border-top:1px solid rgba(1,0,0,0.3);margin-top:15px;">
                      <div class="col-md-6" >
                         <b>Total Price</b>
                      </div>
@@ -151,23 +97,8 @@
    <%= render 'spree/shared/reviews' %>
 </div>
 </div>         
-<!--<div class="suite-lower-left-cont"  >
-   <div class="suite-lower-left-cont-1" >
-     <div class="row">
-       <% $i = 0 %>
-       <% $num = 3 %>
-       <%while $i < $num  do%>
-         <span>
-           <div class="more-prod-cont">more products</div>
-         </span>
-         <%$i +=1 %>
-       <% end%>
-     </div>
-   </div>
-   </div>
-   <!-- itemscope end-->
-<script>
 
+<script>
   $(document).ready(function(){
     var total = 0;
     $("select option:selected").each(function(){
@@ -223,11 +154,3 @@
    
    })(jQuery, window, document);   
 </script>
-<!--for (var x = 0; x < data.length; x++) {
-   content = data[x].Id;
-   content += "<br>";
-   content += data[x].Name;
-   content += "<br>";
-   $(content).appendTo("#prod-image-list");
-        // updateListing(data[x]);
-   }-->
