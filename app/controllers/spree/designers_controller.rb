@@ -10,7 +10,8 @@ module Spree
 		end
 
 		def show	
-			@usr = Spree::User.find(params[:id])
+			@dsg = Designer.friendly.find(params[:id])
+			@usr = @dsg.user
 			if @usr.is_designer?
 				if  @usr.designer.active
 					@designer = @usr

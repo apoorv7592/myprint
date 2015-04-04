@@ -21,6 +21,10 @@
 #  
 
 class Designer < ActiveRecord::Base
+	
+	extend FriendlyId
+	friendly_id :name, use: [:slugged, :history]
+	
 	has_many :suites
 	has_many :entries, dependent: :destroy
 	belongs_to :user, class_name: 'Spree::User'
