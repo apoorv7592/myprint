@@ -16,7 +16,7 @@
   z-index:9999;
   padding:5px;
   text-align: center;
-  margin-left: -370px;
+  margin-left: -390px;
   margin-top: 10px;
 
 }
@@ -24,63 +24,58 @@
   height:auto;
   padding:5px;
   background-color:#ffffff;
-  font-family: 'Segoe UI Light', sans-serif;
+  font-family:Century Gothic;
   font-size: 15pt;
 }
 #popupfoot{
-  font-family: "Segoe UI", sans-serif;
-  font-size: 16pt;
-  padding: 10px 20px;
+  font-family: Century Gothic;
+  font-size: 5px;
+  padding: 5px;
 }
 #popupfoot a{
   text-decoration: none;
+  font-size: 10px;
+  color:#000;
 }
 .agree:hover{
-  background-color: #D1D1D1;
-}
-.popupoption:hover{
-  background-color:#D1D1D1;
-  color: green;
-}
-.popupoption2:hover{ 
-  color: red;
+  background-color: #ffffff;
+  color:#000;
 }
 
 .email{
 height:23px;
-width:222px;
+width:180px;
 padding:5px;
-font-size:15px;
-background:rgba(0,0,0,0);
+font-size:12px;
+background:#ffffff;
 
 }
 .submit{
 height:18px;
 width:50px;
-padding:5px;
-font-size:12px;
-background:rgba(0,0,0,0);
+padding:1px;
+font-size:9px;
+background:#ffffff;
 
 }
 
 
 </style>
 
-<div id="mask">
 
 <div id="boxes">
   <div id="dialog" class="window">   
     <div style="position:relative;top:0px; left:0px;" >
-    <%= image_tag 'signuppopup.jpg',height:400 %>
+    <%= image_tag 'Popup.jpg'%>
     <% @subscriber ||= Spree::Chimpy::Subscriber.new %>
 
      <%= form_for @subscriber do |f| %>
 
-        <div style="position:absolute;top:291.5px;left:291px">
-          <%= f.email_field :email, class:"email" %>
+        <div style="position:absolute;top:240px;left:373px">
+          <%= f.email_field :email,placeholder:"enter your email address", class:"email" %>
         </div>
-        <div style="position:absolute;top:338px;left:378px">
-          <%=f.submit :signup,:class=>"submit" %>
+        <div style="position:absolute;top:265px;left:440px">
+          <%=f.submit :SignUp,:class=>"submit" %>
         </div>
      <% end %>
     </div>
@@ -143,7 +138,7 @@ $('.window').hide();
 
 //Pop-under only once per browser session? (0=no, 1=yes)
 //Specifying 0 will cause popunder to load every time page is loaded
-var once_per_session=0
+var once_per_session=1
 
 ///No editing beyond here required/////
 
