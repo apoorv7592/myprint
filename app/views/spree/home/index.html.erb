@@ -12,12 +12,13 @@
 }  
 #boxes .window {
   position:absolute;
-  margin-left: 200px;
-  margin-top: 200px;
   display:none;
   z-index:9999;
   padding:5px;
   text-align: center;
+  margin-left: -370px;
+  margin-top: 10px;
+
 }
 #boxes #dialog {
   height:auto;
@@ -44,60 +45,144 @@
 .popupoption2:hover{ 
   color: red;
 }
+
+.email{
+height:23px;
+width:222px;
+padding:5px;
+font-size:15px;
+background:rgba(0,0,0,0);
+
+}
+.submit{
+height:18px;
+width:50px;
+padding:5px;
+font-size:12px;
+background:rgba(0,0,0,0);
+
+}
+
+
 </style>
+
 <div id="mask">
+
 <div id="boxes">
-  <div id="dialog" class="window"> 
-      <%= image_tag 'signuppopup.jpg',height:400, :usemap=>"#popcord"%>
-    <div id="popupfoot"> <a href="#" class="close agree">I agree</a> | <a class="agree"style="color:red;" href="http://www.cartoonnetwork.com/">I do not agree</a> 
+  <div id="dialog" class="window">   
+    <div style="position:relative;top:0px; left:0px;" >
+    <%= image_tag 'signuppopup.jpg',height:400 %>
+    <% @subscriber ||= Spree::Chimpy::Subscriber.new %>
+
+     <%= form_for @subscriber do |f| %>
+
+        <div style="position:absolute;top:291.5px;left:291px">
+          <%= f.email_field :email, class:"email" %>
+        </div>
+        <div style="position:absolute;top:338px;left:378px">
+          <%=f.submit :signup,:class=>"submit" %>
+        </div>
+     <% end %>
+    </div>
+    <div id="popupfoot"> <a href="#" class="close agree">Close</a> 
     </div>
   </div>
 </div>
-</div>
+<div id="mask"></div>
 
-<map name="Map" id="popcord">
-    <area alt="" title="" href="www.gmail.com" shape="poly" coords="547,553,546,593,962,593,962,552" />
-    <area alt="" title="" href="www.gmail.com" shape="poly" coords="708,635,707,664,803,664,801,634" />
-</map>
 
-<script >
-  $(document).ready(function() {  
 
-    var id = '#dialog';
-  
-    //Get the screen height and width
-    var maskHeight = $(document).height();
-    var maskWidth = $(window).width();
-  
-    //Set heigth and width to mask to fill up the whole screen
-    $('#mask').css({'width':maskWidth,'height':maskHeight});
-    
-    //transition effect   
-    $('#mask').fadeIn(500); 
-    $('#mask').fadeTo("slow",0.9);  
-    
-    //transition effect
-    $(id).fadeIn(2000);   
-  
-  //if close button is clicked
-  $('.window .close').click(function (e) {
-    //Cancel the link behavior
-    e.preventDefault();
-    
-    $('#mask').hide();
-    $('.window').hide();
-  });   
-  
-  //if mask is clicked
-  $('#mask').click(function () {
-    $(this).hide();
-    $('.window').hide();
-  });   
-  
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {  
+
+var id = '#dialog';
+
+//Get the screen height and width
+var maskHeight = $(document).height();
+var maskWidth = $(window).width();
+
+//Set heigth and width to mask to fill up the whole screen
+$('#mask').css({'width':maskWidth,'height':maskHeight});
+
+//transition effect 
+$('#mask').fadeIn(1000);  
+$('#mask').fadeTo("slow",0.8);  
+
+//Get the window height and width
+var winH = $(window).height();
+var winW = $(window).width();
+
+//Set the popup window to center
+$(id).css('top', winH/2-$(id).height()/2);
+$(id).css('left', winW/2-$(id).width()/2);
+
+//transition effect
+$(id).fadeIn(2000); 
+
+//if close button is clicked
+$('.window .close').click(function (e) {
+//Cancel the link behavior
+e.preventDefault();
+
+$('#mask').hide();
+$('.window').hide();
+}); 
+
+//if mask is clicked
+$('#mask').click(function () {
+$(this).hide();
+$('.window').hide();
+}); 
+
 });
 
 </script>
 
+<script type="text/javascript">
+
+//Pop-under only once per browser session? (0=no, 1=yes)
+//Specifying 0 will cause popunder to load every time page is loaded
+var once_per_session=0
+
+///No editing beyond here required/////
+
+function get_cookie(Name) {
+var search = Name + "="
+var returnvalue = "";
+if (document.cookie.length > 0) {
+offset = document.cookie.indexOf(search)
+if (offset != -1) { // if cookie exists
+offset += search.length
+// set index of beginning of value
+end = document.cookie.indexOf(";", offset);
+// set index of end of cookie value
+if (end == -1)
+end = document.cookie.length;
+returnvalue=unescape(document.cookie.substring(offset, end))
+}
+}
+return returnvalue;
+}
+
+function loadpopunder(){
+if (get_cookie('popunder')==''){
+loadpopunder()
+document.cookie="popunder=yes"
+}
+}
+function loadpopunder(){
+if (once_per_session==0)
+loadpopunder()
+else
+{
+if (get_cookie('popunder')==''){
+loadpopunder()
+document.cookie="popunder=yes"
+}
+}
+}
+</script>
 
 
 
@@ -107,19 +192,19 @@
 <%= render 'main_banner'%>
 </div>
 
-<div class="col-md-12" style="height:200px;width:1000px;margin-bottom:10px;background:rgba(1,0,0,0.1);">
-<%= render 'second_banner'%>
+
+<div class="col-md-12" style="height:230px;width:1000px;margin-bottom:10px;background:rgba(1,0,0,0.1);">
+  	<%= render 'second_banner'%>
 </div>
 
 
 <div class="col-md-12" style="height:auto;width:1000px;margin-bottom:10px;">
-<div class="col-md-6" style="height:311px;width:492px;margin-right:8px;background:pink;">
-<%= render 'third_banner'%>
-</div>
-<div class="col-md-6" style="height:311px;width:492px;margin-left:8px;background:lavender;">
-<%= render 'fourth_banner'%>
-</div>
-
+    <div class="col-md-6" style="height:311px;width:492px;margin-right:8px;background:pink;">
+    <%= render 'third_banner'%>
+    </div>
+    <div class="col-md-6" style="height:311px;width:492px;margin-left:8px;background:lavender;">
+    <%= render 'fourth_banner'%>
+    </div>
 </div>
 
 <div class="col-md-12" style="height:311px;width:1000px;margin-bottom:10px;background:rgba(1,0,0,0.1); ">
@@ -127,16 +212,15 @@
 </div>
 
 
- <div class="col-md-12" style="height:auto; width:1000px;margin-bottom:10px;">
-                
-                  <div class="col-md-4" style="height:238px; width:238px; background:rgba(1,0,0,0.2); margin-right:8px;" >
-                  </div>
-                  <div class="col-md-4" style="height:238px; width:238px; background:rgba(1,0,0,0.2); margin-right:8px;margin-left:8px;;" >
-                  </div>
-                  <div class="col-md-4" style="height:238px; width:238px; background:rgba(1,0,0,0.2); margin-right:8px;margin-left:8px;" >
-                  </div>
-                  <div class="col-md-4" style="height:238px; width:238px; background:rgba(1,0,0,0.2); margin-left:8px;" >
-                  </div>
+ <div class="col-md-12" style="height:auto; width:1000px;margin-bottom:10px;">     
+    <div class="col-md-4" style="height:238px; width:238px; background:rgba(1,0,0,0.2); margin-right:8px;" >
+    </div>
+    <div class="col-md-4" style="height:238px; width:238px; background:rgba(1,0,0,0.2); margin-right:8px;margin-left:8px;;" >
+    </div>
+    <div class="col-md-4" style="height:238px; width:238px; background:rgba(1,0,0,0.2); margin-right:8px;margin-left:8px;" >
+    </div>
+    <div class="col-md-4" style="height:238px; width:238px; background:rgba(1,0,0,0.2); margin-left:8px;" >
+    </div>
 </div>
 
 <script type="text/javascript">
