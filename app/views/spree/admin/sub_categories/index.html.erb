@@ -26,6 +26,7 @@
 			<tbody>
 				<% @cats.each do |c| %>
 					<tr>
+					
 						<td><b><%= c.id %></b></td>
 						<td><b><%= c.name%></b></td>
 						<td><b><%= c.category.name if c.category%></b></td>
