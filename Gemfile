@@ -23,6 +23,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 group :production do 
 	gem 'pg'
+	gem 'rails_12factor'
+
 end
 group :development do 
 	# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
@@ -35,6 +37,8 @@ group :development do
 	gem 'sunspot_solr'
 	# For seeing the progress
 	gem 'progress_bar'
+    
+
 
 
 end
