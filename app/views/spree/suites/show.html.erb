@@ -19,7 +19,7 @@
 </style>
 <!-- Suite Itemscope start-->
 <div itemscope itemtype="http://schema.org/IndividualProduct" itemdid="<%= @suite.id %>">
-   <h5 itemprop="name"><%=@suite.name %></h5>
+    <h5 itemprop="name"><%=@suite.name %></h5>
    <div class="col-md-12 suite-upper-cont" >
       <!-- Suite image container-->
       <div class="suite-img-cont">
@@ -47,6 +47,7 @@
       </div>
       <!-- Suite building form-->
       <div class="suite-form-cont">
+         <p>Designed By</p>
          <ul>
             <li class="prop">
                <%= form_for :order, url: populate_orders_path do |f| %> 
@@ -111,12 +112,13 @@
                </li>-->
             <li class="prop">
                <% if !@prds.nil? %>
-               <span style="float:left;"><b>Productz:</b></span>
+               <span style="float:left;"><b>Build your suite</b></span>
                <div style="margin-left:88px;width:200px;">
                   <%= form_for :order, url: populate_orders_path do |f| %>
                   <% @prds.each do |p| %>
-                  <% if p.is_not_sample? %>
-                  <%= render 'add_prod', prd: p %>
+                  
+                  <% if p&& p.is_not_sample? %>
+                    <%= render 'add_prod', prd: p %>
                   <% end %>
                   <%# p.variant_images.each do |img| %>
                   <%#= image_tag img.attachment.url %>
