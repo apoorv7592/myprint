@@ -58,7 +58,7 @@ class Suite < ActiveRecord::Base
 
 	validates_presence_of :name, message: 'Name cannot be blank'
 	validates_presence_of :sku_id, message: 'SKU ID cannot be blank'
-	validates_presence_of :sub_category_id, message: 'Sub category ID cannot be blank'
+	#validates_presence_of :sub_category_id, message: 'Sub category ID cannot be blank'
 	validates_presence_of :designer_id, message: 'Designer cannot be blank'
 	validates_presence_of :available_on, message: 'Available on cannot be blank'
 
