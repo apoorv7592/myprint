@@ -23,7 +23,7 @@ module Spree
 					end
 				else
 					respond_to do |format|
-						format.html {redirect_to :back , notice: 'Some error occured'}
+						format.html {redirect_to :back , notice: @s.errors.full_messages.first}
 						format.js {@msg = 'Some error occured'}
 					end
 				end
