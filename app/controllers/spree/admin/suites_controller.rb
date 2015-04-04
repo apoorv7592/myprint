@@ -38,11 +38,13 @@ module Spree
 			def update
 				@s = Suite.friendly.find(params[:id])
 				scats = params['sub_category_ids']
-
-				scats.each do |s|
-					scat = SubCategory.where(id: s).first
-					if !@s.sub_categories.include?(scat)
-						@s.sub_categories<<scat
+				
+				if !scats.nil?
+					scats.each do |s|
+						scat = SubCategory.where(id: s).first
+						if !@s.sub_categories.include?(scat)
+							@s.sub_categories<<scat
+						end
 					end
 				end
 
