@@ -16,26 +16,20 @@
       <% end %>
       <br>
 
-      <font class ="viewsuitetxt1"><b>Rs.xxx</b></font><br>
-      <div class="suite-clrblck">
+      <span class ="viewsuitetxt1"><b>Rs.xxx</b></span>
+      <!--<div class="suite-clrblck">
         <% if p.colors.first %>
           <% p.colors.each do |sc| %>
             <div class="suite-clr" style="background:<%= sc.code %>"></div>
           <%end %>
         <%end %>
-      </div>
+      </div>-->
 
       <span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
         <span class="viewsuitetxt1" itemprop="ratingValue"> 
         <%= render 'spree/shared/rating', product: p, review: 0 %>
-        based on 
-        (
-        <span itemprop="ratingCount">
-          <%= link_to p.reviews_count,:class => "viewsuitetxt" %>
-        </span>
-        )
-      </span>       
-      <br>
+        </span>  
+      </span>     
       
       <%= button_to p, class: 'viewsuitebtn', method: 'get', itemprop:"url" do %>
           <span class="viewsuitetxt1" >View Suite</span>

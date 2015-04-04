@@ -1,293 +1,230 @@
 <script type="text/javascript">
-$(document).ready(function(){
-
-$('#gallery-demo').simplegallery({
-  galltime : 400, // transition delay
-  gallcontent: '.content',
-  gallthumbnail: '.thumbnail',
-  gallthumb: '.thumb'
-});
-
-});  
-
+   $(document).ready(function(){
+   
+   $('#gallery-demo').simplegallery({
+     galltime : 400, // transition delay
+     gallcontent: '.content',
+     gallthumbnail: '.thumbnail',
+     gallthumb: '.thumb'
+   });
+   
+   });  
+   
 </script>
-
-
 <style type="text/css">
-  li
-  {
-  list-style-type: none;  
-  }
-
-  input[type="radio"]
-{
-  border-right: #a9a9a9 2px solid;
-  padding-right: 2px;
-  border-top: #a9a9a9 2px solid;
-  padding-left: 2px;
-  padding-bottom: 2px;
-  border-left: #a9a9a9 2px solid;
-  padding-top: 2px;
-  border-bottom: #a9a9a9 2px solid;
-}
+   li
+   {
+   list-style-type: none;  
+   }
 </style>
-
 <!-- Suite Itemscope start-->
 <div itemscope itemtype="http://schema.org/IndividualProduct" itemdid="<%= @suite.id %>">
-  <h5 itemprop="name"><%=@suite.name %></h5>
-        <div class="col-md-12 suite-upper-cont" >
-              <!-- Suite image container-->
-              <div class="suite-img-cont">
-                    <div id="gallery-demo" class="simplegallery">
-                      <div class="content">
-                         <% @prds.each_with_index do |p,j| %>
-                            <% p.variant_images.each_with_index do |img,i| %>
-                            <%= image_tag img.attachment.url, class: 'image_'+ j.to_s %>
-                          <%end %> 
-                        <% end %>
-                         
-                      </div>
-                      <div class="clear"></div>
-                      <div class="thumbnail">
-                       <% @prds.each_with_index do |p,j| %>
-                            <% p.variant_images.each_with_index do |img,i| %>
-                              <div class="thumb">
-                                <a href="#" rel="<%=j %>">
-                                  <%= image_tag img.attachment.url, id: 'thumb_'+j.to_s%>
-                                </a>
-                              </div>
-                            <% end %>
-                         <% end %> 
-                      </div>
-                    </div>
-              </div>
-            <!-- Suite building form-->
-              <div class="suite-form-cont">
-                <ul>
-                  <li class="prop">
-                      <%= form_for :order, url: populate_orders_path do |f| %> 
-                        <% @prds.each do |p| %>
-                          <% if !p.is_not_sample? %>
-                            <%= render 'add_sample', prd: p%>
-                          <% end %>
-                        <% end %>
-                        <%= submit_tag("Order Sample",:style => 'height:30px;width:100px;margin-left:300px;background:white;color:#6BBCBF;border:1px solid black;') %>
-                      <% end %> 
-
-                  </li>
-                  <li class="prop">
-                    <% if !@scat.nil? %>
-                    <span style="float:left;"><b>Color:</b></span>
-                      <div style="width:200px;margin-left:73px;">
-                      <% @scat.each do |sc| %>
-                      <div class="colorbox" style="background:<%= sc.code%>">
-                      </div>    
-                      <% end -%>
-                      </div>
-                    <% end -%>        
-                  </li>
-                  <br/>
-                  <br/>
-
-                  <li class="prop">
-                    <% if !@trm.nil? %>
-                      <span style="float:left;"><b>Trim:</b></span>
-                      <div style="margin-left:83px;width:200px;">
-                      <form>
-                      <% @trm.each do |sc| %>
-                      <input type="radio" name="trim" value=" <%= sc.name%>">
-                        <%= sc.name%><br/>
-                      <% end -%>
-                      </form>
-                      </div>
-                    <% end -%>
-                  </li>
-                  
-                  <li class="prop">
-                    <% if !@pap.nil? %>
-                      <span style="float:left;"><b>Paper:</b></span>
-                      <div style="margin-left:85px;width:200px;">
-                      <form>
-                      <% @pap.each do |sc| %>
-                      <input type="radio" name="paper" value=" <%= sc.name%>">
-                       <%= sc.name%><br/>
-                      <% end -%>
-                      </form>
-                      </div>
-                    <% end -%>
-                  </li>
-                  
-                  <li class="prop">
-                    <% if !@dim.nil? %>
-                      <span style="float:left;"><b>Dimension:</b></span>
-                      <div style="margin-left:87px;width:200px;">
-                      
-                      <% @dim.each do |sc| %>
-                        <%= sc.width%>*<%= sc.height%>
-                      <% end -%>
-                      </div>
-                    <% end -%>  
-                  </li>
-                  
-                  <li class="prop">
-                    <% if !@prds.nil? %>
-                      <%= form_for :order, url: populate_orders_path do |f| %> 
-                        <% @prds.each do |p| %>
-                          <% if !p.is_not_sample? %>
-                            <%= render 'add_sample', prd: p%>
-                          <% end %>
-                        <% end %>
-                        <%= submit_tag("Order Sample",:id => 'add-to-cart-button') %>
-                      <% end %> 
-
-
-                      <span style="float:left;"><b>Productz:</b></span>
-                      <div style="margin-left:88px;width:200px;">
-
-                      <%= form_for :order, url: populate_orders_path do |f| %>
-                        
-                        <% @prds.each do |p| %>
-                          <% if p.is_not_sample? %>
-                            <%= render 'add_prod', prd: p %>
-                          <% end %>
-                          <%# p.variant_images.each do |img| %>
-                            <%#= image_tag img.attachment.url %>
-                          <%# end %>    
-                        <%end%>
-                        <div class="row" style="border-top:1px solid black;">
-                          <div class="col-md-6" >
-                            <b>Total Price</b>
-                          </div>
-                          <div class="col-md-6" >
-                            <span><b>Rs.</b></span>
-                            <b><span id="total-price">0</span></b>
-                          
-                          </div>
-                        </div>
-                
-                        <%= image_submit_tag("buttonbuynow.png",:id => 'add-to-cart-button') %>
-                      <%end %>
-                      </div>
-                      </div> 
-
-                    <%end %> 
-                  </li>        
-                </ul>
-                <%= render 'spree/suites/add_to_wishlist' %>      
-              </div>      
-      </div>  
-
-      <div class="col-md-12 suite-middle-cont" >
-        <div class="row"> 
-          <div  class="col-md-6">
-            <div class="descriptionbox" itemprop="description">
-              <h3>Description:</h3>
-              Created for you by Minted’s global community of designers, our invitation designs will set the perfect tone for your wedding day. With unique designs printed on luxe paper, all foil pressed wedding invitations are available with several matching accessories. If you have any questions or special requests for your invitations, please email us.
+   <h5 itemprop="name"><%=@suite.name %></h5>
+   <div class="col-md-12 suite-upper-cont" >
+      <!-- Suite image container-->
+      <div class="suite-img-cont">
+         <div id="gallery-demo" class="simplegallery">
+            <div class="content">
+               <% @prds.each_with_index do |p,j| %>
+               <% p.variant_images.each_with_index do |img,i| %>
+               <%= image_tag img.attachment.url, class: 'image_'+ j.to_s %>
+               <%end %> 
+               <% end %>
             </div>
-          </div>
-
-          <div id ="suitedescdiv" class="col-md-6" >
-            <div class="descriptionbox">
-              <b>Dimensions:</b><br/>
-              5" x 7" Printing: flat Card Type: flat Tags:kraft, gold, foil pressed, gold foil, modern, festive<br/><br/>
-              <b>Printing Time:</b><br/>
-              Order today by midnight PST with FedEx Ground shipping and receive your order by Tuesday, February 24. See more delivery options.<br/><br/>
-              <b>Customization options:</b><br/>
-              This wedding invitation can also be used for a general party invitation or converted into an entire invitation suite. Please email us for more details.
+            <div class="clear"></div>
+            <div class="thumbnail">
+               <% @prds.each_with_index do |p,j| %>
+               <% p.variant_images.each_with_index do |img,i| %>
+               <div class="thumb">
+                  <a href="#" rel="<%=j %>">
+                  <%= image_tag img.attachment.url, id: 'thumb_'+j.to_s%>
+                  </a>
+               </div>
+               <% end %>
+               <% end %> 
             </div>
-          </div>
-        </div>
+         </div>
       </div>
-
-      <!-- suite lower middle part-->
-      <div class=" col-md-12 suite-lower-middle">
-              <div class="suite-lower-left-cont"  >
-                <div class="suite-lower-left-cont-1" >
-                  <div class="row">
-                    <% $i = 0 %>
-                    <% $num = 3 %>
-                    <%while $i < $num  do%>
-                      <span>
-                        <div class="more-prod-cont">more products</div>
-                      </span>
-                      <%$i +=1 %>
-                    <% end%>
+      <!-- Suite building form-->
+      <div class="suite-form-cont">
+         <ul>
+            <li class="prop">
+               <%= form_for :order, url: populate_orders_path do |f| %> 
+               <% @prds.each do |p| %>
+               <% if !p.is_not_sample? %>
+               <%= render 'add_sample', prd: p%>
+               <% end %>
+               <% end %>
+               <%= submit_tag("Order Sample",:style => 'height:30px;width:100px;margin-left:330px;background:white;color:#6BBCBF;border:1px solid black;') %>
+               <% end %> 
+            </li>
+            <!--<li class="prop">
+               <% if !@scat.nil? %>
+               <span style="float:left;"><b>Color:</b></span>
+                 <div style="width:200px;margin-left:73px;">
+                 <% @scat.each do |sc| %>
+                 <div class="colorbox" style="background:<%= sc.code%>">
+                 </div>    
+                 <% end -%>
+                 </div>
+               <% end -%>        
+               </li>
+               <br/>
+               <br/>
+               
+               <li class="prop">
+               <% if !@trm.nil? %>
+                 <span style="float:left;"><b>Trim:</b></span>
+                 <div style="margin-left:83px;width:200px;">
+                 <form>
+                 <% @trm.each do |sc| %>
+                 <input type="radio" name="trim" value=" <%= sc.name%>">
+                   <%= sc.name%><br/>
+                 <% end -%>
+                 </form>
+                 </div>
+               <% end -%>
+               </li>
+               
+               <li class="prop">
+               <% if !@pap.nil? %>
+                 <span style="float:left;"><b>Paper:</b></span>
+                 <div style="margin-left:85px;width:200px;">
+                 <form>
+                 <% @pap.each do |sc| %>
+                 <input type="radio" name="paper" value=" <%= sc.name%>">
+                  <%= sc.name%><br/>
+                 <% end -%>
+                 </form>
+                 </div>
+               <% end -%>
+               </li>
+               <li class="prop">
+               <% if !@dim.nil? %>
+               <span style="float:left;"><b>Dimension:</b></span>
+               <div style="margin-left:87px;width:200px;">
+                  <% @dim.each do |sc| %>
+                  <%= sc.width%>*<%= sc.height%>
+                  <% end -%>
+               </div>
+               <% end -%>  
+               </li>-->
+            <li class="prop">
+               <% if !@prds.nil? %>
+               <span style="float:left;"><b>Productz:</b></span>
+               <div style="margin-left:88px;width:200px;">
+                  <%= form_for :order, url: populate_orders_path do |f| %>
+                  <% @prds.each do |p| %>
+                  <% if p.is_not_sample? %>
+                  <%= render 'add_prod', prd: p %>
+                  <% end %>
+                  <%# p.variant_images.each do |img| %>
+                  <%#= image_tag img.attachment.url %>
+                  <%# end %>    
+                  <%end%>
+                  <div class="row" style="border-top:1px solid black;">
+                     <div class="col-md-6" >
+                        <b>Total Price</b>
+                     </div>
+                     <div class="col-md-6" >
+                        <span><b>Rs.</b></span>
+                        <b><span id="total-price">0</span></b>
+                     </div>
                   </div>
-                </div>
-              </div>
-                
-              <div class="suite-banner-area">
-                  <%= render 'spree/shared/reviews' %>
-              </div>
-      </div> 
-</div> 
-<!-- itemscope end-->
-
-
-
+                  <%= image_submit_tag("buttonbuynow.png",:id => 'add-to-cart-button') %>
+                  <%end %>
+               </div>
+             <%end %> 
+          </li> 
+          <li class="prop"> 
+            <%= render 'spree/suites/add_to_wishlist' %>                
+          </li>      
+      </ul>
+   </div>
+</div>
+<div class="col-md-12 suite-middle-cont" >
+   <h3>Description:</h3>
+   Created for you by Minted’s global community of designers, our invitation designs will set the perfect tone for your wedding day. With unique designs printed on luxe paper, all foil pressed wedding invitations are available with several matching accessories. If you have any questions or special requests for your invitations, please email us.
+</div>
+<!-- suite lower middle part-->
+<div class=" col-md-12 suite-lower-middle">
+   <%= render 'spree/shared/reviews' %>
+</div>
+</div>         
+<!--<div class="suite-lower-left-cont"  >
+   <div class="suite-lower-left-cont-1" >
+     <div class="row">
+       <% $i = 0 %>
+       <% $num = 3 %>
+       <%while $i < $num  do%>
+         <span>
+           <div class="more-prod-cont">more products</div>
+         </span>
+         <%$i +=1 %>
+       <% end%>
+     </div>
+   </div>
+   </div>
+   <!-- itemscope end-->
 <script>
-  $(document).ready(function(){
-    var total = 0;
-    $("select option:selected").each(function(){
-      var qty = $(this).val();
-      var txt = $(this).text();
-      var arr = txt.split('---Rs. ')
-      if(arr[1] != null){
-        var prc = arr[1];
-      }
-      else{
-        var prc = 0;
-      }
-      total = total + parseInt(prc)*qty;
-    });
-    $("#total-price").html(total);    
-
-  })
-
-<script type="text/javascript">
-;(function($, window, document, undefined) {
-
-    $.fn.simplegallery = function(options) {
-
-        var defaults = {
-            'galltime': 300,
-            'gallcontent': '.content',
-            'gallthumbnail': '.thumbnail',
-            'gallthumb': '.thumb'
-        };
-
-        var settings = $.extend({}, defaults, options);
-
-        return this.each(function() {
-
-            $(settings.gallthumb).click(function() {
-
-                $(settings.gallcontent).find('img').stop(true,true).fadeOut(settings.galltime).hide();
-
-                var img_attr = $(this).find('img').attr("id"),
-                    image_id = img_attr.replace('thumb_', '');
-
-                $('.image_' + image_id + '').stop(true,true).fadeIn(settings.galltime);
-                return false;
-
-            });
-
-        });
-
-    };
-
-})(jQuery, window, document);
-
-
+   $(document).ready(function(){
+     var total = 0;
+     $("select option:selected").each(function(){
+       var qty = $(this).val();
+       var txt = $(this).text();
+       var arr = txt.split('---Rs. ')
+       if(arr[1] != null){
+         var prc = arr[1];
+       }
+       else{
+         var prc = 0;
+       }
+       total = total + parseInt(prc)*qty;
+     });
+     $("#total-price").html(total);    
+   
+   })
 </script>
-
-
-
-          <!--for (var x = 0; x < data.length; x++) {
-          content = data[x].Id;
-          content += "<br>";
-          content += data[x].Name;
-          content += "<br>";
-          $(content).appendTo("#prod-image-list");
-               // updateListing(data[x]);
-          }-->
+   
+<script type="text/javascript">
+   ;(function($, window, document, undefined) {
+   
+     $.fn.simplegallery = function(options) {
+   
+         var defaults = {
+             'galltime': 300,
+             'gallcontent': '.content',
+             'gallthumbnail': '.thumbnail',
+             'gallthumb': '.thumb'
+         };
+   
+         var settings = $.extend({}, defaults, options);
+   
+         return this.each(function() {
+   
+             $(settings.gallthumb).click(function() {
+   
+                 $(settings.gallcontent).find('img').stop(true,true).fadeOut(settings.galltime).hide();
+   
+                 var img_attr = $(this).find('img').attr("id"),
+                     image_id = img_attr.replace('thumb_', '');
+   
+                 $('.image_' + image_id + '').stop(true,true).fadeIn(settings.galltime);
+                 return false;
+   
+             });
+   
+         });
+   
+     };
+   
+   })(jQuery, window, document);   
+</script>
+<!--for (var x = 0; x < data.length; x++) {
+   content = data[x].Id;
+   content += "<br>";
+   content += data[x].Name;
+   content += "<br>";
+   $(content).appendTo("#prod-image-list");
+        // updateListing(data[x]);
+   }-->
