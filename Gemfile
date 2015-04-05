@@ -134,7 +134,7 @@ gem "letter_opener", :group => :development
 gem 'state_machine', '1.2.0'
 
 #for youtube style progress bar
-# => gem 'nprogress-rails'
+gem 'nprogress-rails'
 
 #for tree structure
 gem 'ancestry'
