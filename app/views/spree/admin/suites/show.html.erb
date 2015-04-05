@@ -73,7 +73,7 @@
 				<td>
 					<table>
 						<tbody>
-							<%= link_to 'Add New product', new_admin_product_path, s_id: @suite.id, class: 'btn btn-primary' %>
+							<%= link_to 'Add New product', new_admin_product_path(s_id: @suite.id), class: 'btn btn-primary' %>
 
 							<% @suite.spree_products.each do |p| %>
 								<tr>
