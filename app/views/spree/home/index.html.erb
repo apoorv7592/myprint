@@ -1,81 +1,18 @@
-<style>
-
-#mask {
-  position:absolute;
-  left:0;
-  top:0;
-  z-index:9000;
-  background-color:#d8d8d8;
-  display:none;
-  width:1000px !important;
-  opacity: 0.1;
-}  
-#boxes .window {
-  position:absolute;
-  display:none;
-  z-index:9999;
-  padding:5px;
-  text-align: center;
-  margin-left: -390px;
-  margin-top: 10px;
-
-}
-#boxes #dialog {
-  height:auto;
-  padding:5px;
-  background-color:#ffffff;
-  font-family:Century Gothic;
-  font-size: 15pt;
-}
-#popupfoot{
-  font-family: Century Gothic;
-  font-size: 5px;
-  padding: 5px;
-}
-#popupfoot a{
-  text-decoration: none;
-  font-size: 10px;
-  color:#000;
-}
-.agree:hover{
-  background-color: #ffffff;
-  color:#000;
-}
-
-.email{
-height:23px;
-width:180px;
-padding:5px;
-font-size:12px;
-background:#ffffff;
-
-}
-.submit{
-height:18px;
-width:50px;
-padding:1px;
-font-size:9px;
-background:#ffffff;
-
-}
-
-
-</style>
 
 
 <div id="boxes">
   <div id="dialog" class="window">   
-    <div style="position:relative;top:0px; left:0px;" >
+    <div style="position:relative;" >
     <%= image_tag 'Popup.jpg'%>
     <% @subscriber ||= Spree::Chimpy::Subscriber.new %>
 
      <%= form_for @subscriber do |f| %>
 
         <div style="position:absolute;top:240px;left:373px">
-          <%= f.email_field :email,placeholder:"enter your email address", class:"email" %>
+          <%= f.email_field :email,placeholder:"enter your email address", class:"emailpopup" %>
         </div>
         <div style="position:absolute;top:265px;left:440px">
-          <%=f.submit :SignUp,:class=>"submit" %>
+          <%=f.submit :SignUp,:class=>"submitpopup" %>
         </div>
      <% end %>
     </div>
@@ -220,3 +157,5 @@ document.cookie="popunder=yes"
         interval: 5000
     });
 </script>
+
+

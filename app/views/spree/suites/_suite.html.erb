@@ -5,7 +5,7 @@
     <div class="suite-img" >
       
       <span itemprop="image"><!-- Placeholder for suite image -->
-        <%=link_to (image_tag p.avatar.url(:medium), alt: p.slug, height:238, width: 238), p%>
+        <%=link_to (image_tag p.avatar.url(:medium), alt: p.slug,width: 218), p%>
       </span>
 
       <%= render 'spree/shared/like', p: p %>

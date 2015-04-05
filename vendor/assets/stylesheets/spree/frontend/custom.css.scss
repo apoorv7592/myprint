@@ -24,8 +24,12 @@ ul.nav.navbar-nav.navbar-right{
   float:right;
 }
 
+.navbar{
+  min-height:40px !important;
+}
+
 ul.nav.navbar-nav.navbar-right1{
-  width:210px;
+  width:203px;
   height:30px;
   margin-right:0px !important;
   float:right;
@@ -71,7 +75,7 @@ navbar-nav.navbar-right>li>a{
 
  #navigationbar{
     width: 1000px;
-    background : white;
+    background : #ffffff;
     border-bottom:1px solid rgba(1,0,0,0.6);
     border-top:1px solid rgba(1,0,0,0.6);
     margin-bottom:10px;
@@ -84,7 +88,7 @@ navbar-nav.navbar-right>li>a{
     border-left:1px solid rgba(1,0,0,0.3);
     border-right:1px solid rgba(1,0,0,0.3);
     position:absolute;
-    top:142px;
+    top:132px;
     left:0px;
     width:1000px;
     height:auto;
@@ -153,7 +157,7 @@ margin-left: 0!important;
 
 
   .mainnavatags{
-    margin-right:61px;
+    margin-right:63px;
     font-family: Century Gothic;
     font-size: 13px;
     height:28px;
@@ -163,6 +167,7 @@ margin-left: 0!important;
     font-family: Century Gothic;
     font-size: 13px;
     height:28px;
+    margin-left:1px;
 }
 
   .carousel-indicators{
@@ -232,6 +237,8 @@ margin-left: 0!important;
   text-align: center;
   height: 40px;
   width: 252px;
+  position:absolute;
+  bottom:80px;
 }
 
 #foot1
@@ -938,6 +945,64 @@ color: #6BBCBF;
 cursor:pointer;
 }
 
+/*pop up signup */
+#mask {
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:9000;
+  background-color:#d8d8d8;
+  display:none;
+  width:1000px !important;
+  opacity: 0.1;
+}  
+#boxes .window {
+  position:absolute;
+  display:none;
+  z-index:9999;
+  padding:2px;
+  text-align: center;
+  margin-left:-140px;
+  margin-top: 10px;
+
+}
+#boxes #dialog {
+  height:auto;
+  padding:5px;
+  background-color:#ffffff;
+  font-family:Century Gothic;
+  font-size: 15pt;
+}
+#popupfoot{
+  font-family: Century Gothic;
+  font-size: 5px;
+  padding: 5px;
+}
+#popupfoot a{
+  text-decoration: none;
+  font-size: 10px;
+  color:#000;
+}
+.agree:hover{
+  background-color: #ffffff;
+  color:#000;
+}
+
+.emailpopup{
+height:23px;
+width:180px;
+padding:5px;
+font-size:12px;
+background:#ffffff;
+
+}
+.submitpopup{
+height:18px;
+width:50px;
+padding:1px;
+font-size:9px;
+background:#ffffff;
+}
 
 
 $nprogress-color: #29d !default;

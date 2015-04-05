@@ -1,3 +1,4 @@
-<div style="width:1000px;height:auto;">
-<%= image_tag ("https://s3-ap-southeast-1.amazonaws.com/prindora/wbfromus/Landing+page_WBU.jpg") %>
-</div>
+<% b= get_banner('Waboutus', 1) %>
+<% if !b.nil? %>
+	<%= image_tag b.picture.url(:main), alt:'What-about-us', class:'img-responsive' %>
+<% end%>

@@ -50,8 +50,8 @@ Rails.application.routes.draw do
     get '/contact_us', to: 'contactus#contact', as:'contact_us'
     get '/get_prd_images/:id', to: 'suites#get_prd_images'
     get '/get_suite_chars/:id', to: 'suites#get_suite_chars'
-    get '/whybuyfromus', to:'wbfromus#whybuyfromus'
-    
+    get '/why-buy-from-us', to:'wbfromus#whybuyfromus'
+    get '/print-paper', to:'printpaperpage#printpaperpage'
     get '/wedding-invitations/:id', to: 'shop#wedding', as: 'wedding-invitations'
     get '/greeting-cards/:id', to: 'shop#greeting', as: 'greeting-cards'
     get '/party-invitations/:id', to: 'shop#partyinvites', as: 'partyinvites'
