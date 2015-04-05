@@ -95,7 +95,7 @@ navbar-nav.navbar-right>li>a{
     display:none;
     padding:10px;
     margin-left:0px;
-    border-bottom:2px solid rgba(255,0,0,0.7);    
+    border-bottom:2px solid #6BBCBF;    
 }
 
 .navbar-nav>li>a:hover,.navbar-nav>li>a:focus{
@@ -121,38 +121,38 @@ margin-left: 0!important;
     width:244px;
     border-right:1px solid rgba(1,0,0,0.1);
     float:left;
-    padding:10px;
-    height:250px;
+    padding:20px;
+    min-height:250px;
     font-family: Century Gothic;
-    font-size:12px;
+    font-size:11px;
   }
 
   #navdiv4{
     width:245px;
     float:left;
-    padding:10px;
-    height:250px;
+    padding:20px;
+    min-height:250px;
     font-family:Century Gothic;
-    font-size:12px;
+    font-size:11px;
   }
 
   #navdiv1{
     width:195px;
     border-right:1px solid rgba(1,0,0,0.1);
     float:left;
-    padding:10px;
-    height:250px;
+    padding:20px;
+    min-height:250px;
     font-family: Century Gothic;
-    font-size:12px;
+    font-size:11px;
   }
 
     #navdiv11{
     width:196px;
     float:left;
-    padding:10px;
-    height:250px;
+    padding:20px;
+    min-height:250px;
     font-family: Century Gothic;
-    font-size:12px;
+    font-size:11px;
   }
 
 
@@ -381,6 +381,7 @@ right: 20px;
   margin-right:4px !important;
   margin-left:4px !important;
   margin-top:10px;
+  margin-bottom:20px;
   float:left;      
 }
 .suite-img{
@@ -436,11 +437,13 @@ right: 20px;
   float:center;
   color:rgba(1,0,0,0.8);
   font-size:12px;
+  text-align:center;
   }
    .viewsuitetxt1{
   float:center;
   color:rgba(1,0,0,0.4);
   font-size:10px;
+  text-align:center;
   }
 
 /* small div box in catalog page below image of color */
@@ -962,30 +965,30 @@ cursor:pointer;
   z-index:9999;
   padding:2px;
   text-align: center;
-  margin-left:-140px;
-  margin-top: 10px;
+  margin-left:-410px;
+  margin-top:-100px;
 
 }
 #boxes #dialog {
   height:auto;
-  padding:5px;
-  background-color:#ffffff;
+  padding:2px;
+  background-color:rgba(1,0,0,0.7);
   font-family:Century Gothic;
-  font-size: 15pt;
 }
 #popupfoot{
   font-family: Century Gothic;
   font-size: 5px;
-  padding: 5px;
+  padding: 0 auto;
+
 }
 #popupfoot a{
   text-decoration: none;
-  font-size: 10px;
-  color:#000;
+  font-size: 20px;
+  color:white;
 }
 .agree:hover{
-  background-color: #ffffff;
-  color:#000;
+  background-color:#000000;
+  color:rgba(1,0,0,0.3);
 }
 
 .emailpopup{

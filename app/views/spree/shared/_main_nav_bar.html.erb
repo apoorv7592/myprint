@@ -1,4 +1,5 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 
   <script type="text/javascript">
@@ -43,7 +44,7 @@ li{
         <li id="Partyinvt" class="mainnavatags"><a href="/party-invites">PARTY INVITATIONS</a></li>
         <li id="Greetings" class="mainnavatags"><a href="/greetings">GREETINGS</a></li>
         <li id="Designers" class="mainnavatags"><a href="/designers">MEET OUR DESIGNERS</a></li>
-        <li id="Sources" class="mainnavatags1"><a href="/blog">BONHEUR</a></li>
+        <li id="Sources" class="mainnavatags1"><a href="/bonheur">BONHEUR</a></li>
       </ul>
 </div>      
       
@@ -53,23 +54,52 @@ li{
                         
                           <div class="row">
                               <div class="col-md-3" id="navdiv1">
-                                <li><a href="" class="removeline">Wedding Invitations</a></li><br/>
-                                <%= image_tag "Wedding_Invitation.jpg" ,height:210,width:180 %>
+                                <li><b>WEDDING INVITATIONS</b></li>
+                                <li style="margin-left:2px;"><%= link_to image_tag('Wedding_Invitation.jpg', height: 210,width:180), "/wedding-invitations" %></li>
+                                <li><a href="/wedding-invitations" class="removeline">Shop All Wedding Invitations</a>&nbsp
+                                <i class="fa fa-caret-right"></i></li>   
                               </div>
                               <div class="col-md-3" id="navdiv1">
-                                <li><a href=""class="removeline">Shop By Theme</a></li><br/>
-                                <li><a href="" class="removeline">Shop All Themes></a></li><br/>
-                                <li><a href="" class="removeline">Shop By Color</a></li><br/>
-                                <li><a href="" class="removeline">Shop All Colors</a></li>                                 
+                                <li><b>&nbsp&nbsp&nbspSHOP BY THEME</b></li><br/>
+                                <li><a href="" class="removeline">Western Collections</a></li><br>
+                                <li><a href="" class="removeline">Royal Collections</a></li><br>
+                                <li><a href="" class="removeline">Vibrant Color Collections</a></li><br>
+                                <li><a href="" class="removeline">Floral Collections</a></li><br>
+                                <li><a href="" class="removeline">Quirky Collections</a></li><br>
+                                <li><a href="" class="removeline">Ethnic Collections</a></li><br>
+                                <li><a href="" class="removeline">Painting Collections</a></li><br><br>                 
+                                <li><a href="/wedding-invitations" class="removeline">Shop All Themes</a>&nbsp
+                                <i class="fa fa-caret-right"></i>
+                                </li><br/>
+
+                                <li><b>&nbsp&nbsp&nbspSHOP BY COLOR</b></li><br/>
+                                <li><a href="" class="removeline">Pink</a></li><br>
+                                <li><a href="" class="removeline">Blue</a></li><br>
+                                <li><a href="" class="removeline">Orange</a></li><br>
+                                <li><a href="" class="removeline">Green</a></li><br>
+                                <li><a href="" class="removeline">Yellow</a></li><br>
+                                <li><a href="" class="removeline">Red</a></li><br><br>                 
+                                <li><a href="/wedding-invitations" class="removeline">Shop All Colors</a>&nbsp
+                                <i class="fa fa-caret-right"></i>
+                                </li>                               
+
                               </div>
+                              
                               <div class="col-md-3" id="navdiv1">
-                                <%= image_tag "" ,height:150 %>
-                                <li><a href="" class="removeline">Shop By Printing Styles</a></li>                                
+                                <li style="margin-left:8px;"><%= link_to image_tag('Wedding_Invitationtwo.jpg',width:180,height:180), "/wedding-invitations" %></li><br><br>                                
+                                <li><b>&nbsp&nbsp&nbspSHOP BY PRINTING STYLES</b></li><br/>
+                                <li><a href="" class="removeline">Embossing</a></li><br>
+                                <li><a href="" class="removeline">Letterpress</a></li><br>
+                                <li><a href="" class="removeline">Laser-Cut</a></li><br>
+                                <li><a href="" class="removeline">Foil-Stamped</a></li><br>
+                 
                               </div>
                               <div class="col-md-3" id="navdiv1">
                                 <li><a href="" class="removeline">Save The Date</a></li><br/>
                                 <%= image_tag "" ,height:150 %>
-                                <li><a href="" class="removeline">Shop All ></a></li>                                
+                                <li><a href="/wedding-invitations" class="removeline">Shop All Save The Dates</a>&nbsp
+                                <i class="fa fa-caret-right"></i>
+                                </li>                               
                               </div>
                               <div class="col-md-3" id="navdiv11">
                               <br/><br/><br/><br/>
@@ -84,39 +114,41 @@ li{
                           
                           <div class="row">
                             <div class="col-md-3" id="navdiv1">
-                                <li><a href=""class="removeline">For Kids</a></li><br/>
-                                <li><a href="" class="removeline">For Son</a></li><br/>
-                                <li><a href="" class="removeline">For Daughter</a></li><br/>
-                                <li><a href="" class="removeline">For Friend</a></li> 
-                                <%= image_tag "" ,height:100 %>
+                                <li><b>&nbsp&nbsp&nbsp Birthday</b></li><br>
+                                <li><a href=""class="removeline">Birthday Cards For Kids</a></li><br/>
+                                <li><a href="" class="removeline">Birthday Cards For Son</a></li><br/>
+                                <li><a href="" class="removeline">Birthday Cards For Daughter</a></li><br/>
+                                <li><a href="" class="removeline">Birthday Cards For Friend</a></li> 
+                                <li style="margin-left:8px;"><%= link_to image_tag('Birthday_Friend.jpg', height: 210,width:180), "/wedding-invitations" %></li>
                             </div>
                             <div class="col-md-3" id="navdiv1">
-                                <li><a href="" class="removeline">For Sister</a></li>
-                                <%= image_tag "" ,height:100 %>
-                                <li><a href="" class="removeline">For Brother</a></li>
-                                <%= image_tag "" ,height:100 %>
+                                <li><a href="" class="removeline">Birthday Cards For Brother</a></li>
+                                <li><a href="" class="removeline">Birthday Cards For Sister</a></li><br>
+                                <li style="margin-left:8px;"><%= link_to image_tag('Birthday_Sister.jpg', height: 210,width:180), "/wedding-invitations" %></li>
+
                             </div>
 
                             <div class="col-md-3" id="navdiv1">
-                                <li><a href=""class="removeline">For Husband</a></li><br/>
-                                <li><a href="" class="removeline">For Wife</a></li><br/>
-                                <li><a href="" class="removeline">For Boyfriend</a></li><br/>
-                                <li><a href="" class="removeline">For Girlfriend</a></li><br/>
-                                <li><a href="" class="removeline">For Father</a></li><br/>
-                                <li><a href="" class="removeline">For Mother</a></li>                             
+                                <li><a href=""class="removeline">Birthday Cards For Husband</a></li><br/>
+                                <li><a href="" class="removeline">Birthday Cards For Wife</a></li><br/>
+                                <li><a href="" class="removeline">Birthday Cards For Boyfriend</a></li><br/>
+                                <li><a href="" class="removeline">Birthday Cards For Girlfriend</a></li><br/>
+                                <li><a href="" class="removeline">Birthday Cards For Father</a></li><br/>
+                                <li><a href="" class="removeline">Birthday Cards For Mother</a></li>                             
                             </div>
                             <div class="col-md-3" id="navdiv1">
-                                <li class="removeline"><b> Anniversary</b></li><br/><br/>
-                                <li><a href="" class="removeline">For Parents</a></li>
-                                <%= image_tag "" ,height:100 %>
-                                <li><a href="" class="removeline">For Couple</a></li><br/>
-                                <li><a href="" class="removeline">For 25th Anniversary</a></li>
+                                <li><b>&nbsp&nbsp&nbsp Anniversary</b></li><br>
+                                <li><a href="" class="removeline">Anniversay Cards For Parents</a></li>
+                                <li style="margin-left:8px;"><%= link_to image_tag('Anniversary_Parents.jpg', height: 210,width:180), "/wedding-invitations" %></li>
+                                <li><a href="" class="removeline">Anniversay Cards For Couple</a></li><br/>
+                                <li><a href="" class="removeline">Anniversay Cards For 25th Anniversary</a></li>
                             </div>
                             <div class="col-md-3" id="navdiv11">
-                                <li><a href="" class="removeline">For Husband</a></li><br/>
-                                <%= image_tag "" ,height:100 %>
-                                <li><a href="" class="removeline">For Wife</a></li>
-                                <%= image_tag "" ,height:100 %>
+
+                                <li><a href="" class="removeline">Anniversay Cards For Wife</a></li>
+                                <li><a href="" class="removeline">Anniversay Cards For Husband</a></li><br/>
+                                <li style="margin-left:8px;"><%= link_to image_tag('Anniversay_Husband.jpg', height: 250,width:180), "/wedding-invitations" %></li>
+
                             </div>
                           </div>
                   </div>
@@ -135,15 +167,17 @@ li{
                   <div id="partyinvt" class="navigation-div">
                           <div class="row">
                             <div class="col-md-3" id="navdiv2">
-                                <li><a href="" class="removeline">Birthday Party Kids</a></li>
-                                <%= image_tag "" ,height:150 %>
-                                <li><a href="" class="removeline">SHOP ALL ></a></li>
+                                <li><b>&nbsp&nbsp&nbspBIRTHDAY PARTY KIDS</b></li><br>
+                                <li style="margin-left:8px;"><%= link_to image_tag('Birthday_Party_kid.jpg',width:210,height:270), "/wedding-invitations" %> 
+                                </li><br/><br/>                                             
+                                <li><a href="" class="removeline">Shop All Birthday Invites For Kids ></a>&nbsp
+                                <i class="fa fa-caret-right"></i></li>
                             </div>
                             <div class="col-md-3" id="navdiv2">
-                                <li><a href=""class="removeline">Birthday Party Adults</a></li><br/>
-                                <li><a href="" class="removeline">1st Birthday</a></li><br/>
-                                <li><a href="" class="removeline">Baby Shower</a></li><br/>
-                                <li><a href="" class="removeline">Farewell</a></li>           
+                                <li><a href=""class="removeline">Birthday Party Invitations For Adults</a></li><br/>
+                                <li><a href="" class="removeline">1st Birthday Invitations</a></li><br/>
+                                <li><a href="" class="removeline">Baby Shower Invitations</a></li><br/>
+                                <li><a href="" class="removeline">Farewell Invitations</a></li>           
                             </div>
                             <div class="col-md-3" id="navdiv2">
                                 <li><a href="" class="removeline">House Warming </a></li>
