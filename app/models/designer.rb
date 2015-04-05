@@ -18,7 +18,8 @@
 #  experience          :string(255)
 #  college             :string(255)
 #  phonenum            :string(255)
-#  
+#  slug                :string(255)
+#
 
 class Designer < ActiveRecord::Base
 	

@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     resources :contests
     resources :entries
     resources :designers
+    resources :suite_images
 
     
     get '/complete_account', to: 'designers#complete_account', as: 'designer_complete_account'    
@@ -73,6 +74,7 @@ Rails.application.routes.draw do
         resources :banners
         resources :categories
         resources :sub_categories
+        resources :suite_images
         
         resources :suites do
           resources :characteristics

@@ -18,6 +18,7 @@
 #  experience          :string(255)
 #  college             :string(255)
 #  phonenum            :string(255)
+#  slug                :string(255)
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
