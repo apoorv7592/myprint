@@ -56,7 +56,7 @@
 
         <div data-hook="new_product_suite" class="col-md-4">
           <%= f.label 'Suite' %>
-          <%= f.select(:suite_id, Suite.all.collect{|s|[s.name.to_s + s.id.to_s, s.id]} ) %>
+          <%= f.hidden_field :suite_id, value: params[:s_id] %>
         </div>
 
       </div>
