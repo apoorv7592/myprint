@@ -14,6 +14,7 @@ module Spree
 				order_by(:like_no, :desc) if params[:like_no]
 				order_by(:avg_rating, :desc) if params[:avg_rating]
 				order_by(:price, :desc) if params[:price]
+				order_by(:position, :desc)
 
 
 		    	facet :designer_id, exclude: [designer_filter, color_filter, trim_filter, dimension_filter].compact
@@ -31,5 +32,6 @@ module Spree
 		    @suites = @search.results
 		end
 
+		
 	end
 end
