@@ -68,3 +68,13 @@
 		<% end %>
 	</div>
 </div>
+
+<table>
+	<% @suite.suite_images.each do |s|%>
+		<tr>
+			<td><%= s.name %></td>
+			<td><%= image_tag s.avatar.url(:thumb)%></td>
+		</tr>
+	<% end %>
+</table>
+<%= link_to 'Add suite images', admin_new_suite_image_path %>

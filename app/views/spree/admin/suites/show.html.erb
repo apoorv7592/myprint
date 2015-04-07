@@ -52,6 +52,38 @@
 				<td><%= @suite.slug %></td>
 
 			</tr>
+			<tr>
+				<td><b>Images</b></td>
+				<td>
+					<table>
+						<% @suite.suite_images.each do |s|%>
+							<tr>
+								<td><%= s.name %></td>
+								<td><%= image_tag s.avatar.url(:thumb)%></td>
+							</tr>
+						<% end %>
+						<%= link_to "Add photos", new_admin_suite_image_path %>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Products
+				</td>
+				<td>
+					<table>
+						<tbody>
+							<%= link_to 'Add New product', new_admin_product_path(s_id: @suite.id), class: 'btn btn-primary' %>
+
+							<% @suite.spree_products.each do |p| %>
+								<tr>
+									<td><%= p.name %></td>
+								</tr>
+							<% end %>
+						</tbody>
+					</table>
+				</td>
+			</tr>
 		</table>
 			<div class="row">
 				<div class="col-md-4">
@@ -64,3 +96,4 @@
 			
 	</div>
 </div>
+

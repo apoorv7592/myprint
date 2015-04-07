@@ -1,0 +1,25 @@
+<div class="row">
+	<div class="col-sm-offset-2">
+	<h4> New Suite Image</h4>
+	
+		<%= form_for @img, url: admin_suite_images_path, html: {class: 'form-horizontal'} do |f| %>
+			<div class="row form-group">
+				<%= f.label :type, class: 'col-sm-2' %>
+				<%= f.text_field :type, class: 'col-sm-6'%>
+			</div>
+			<div class="row form-group">
+				<%= f.label :name, class: 'col-sm-2'%>
+				<%= f.number_field :name, class: 'col-sm-6' %>
+			</div>
+			
+
+			<div class="row form-group">
+				<%= f.label 'Photo', class: 'col-sm-2'%>
+				<%= f.file_field :avatar, class: 'col-sm-6' %>
+			</div>
+			<div class="row form-group">
+				<%= f.submit 'Submit', class: 'btn btn-primary col-sm-4 col-sm-offset-2' %>
+			</div>
+		<% end %>
+	</div>
+</div>
