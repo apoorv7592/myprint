@@ -142,3 +142,6 @@ gem 'nprogress-rails'
 
 #for tree structure
 gem 'ancestry'
+
+gem 'sprockets_better_errors'
+

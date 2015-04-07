@@ -1092,3 +1092,43 @@ font-size:11px;
     font-family: arial;
     font-size:11px;
   }
+
+  @-moz-document url-prefix() {
+.mainnavatags{
+margin-right:60px;
+font-family: -moz-Century Gothic;
+font-size: 13px;
+height:28px;
+}
+.mainnavatags1{
+font-family: -moz-Century Gothic;
+font-size: 13px;
+height:28px;
+}
+ul.nav.navbar-nav.navbar-right{
+width:250px;
+height:30px;
+margin-right:0px !important;
+float:right;
+}
+ul.nav.navbar-nav.navbar-right1{
+width:215px;
+height:30px;
+margin-right:0px !important;
+float:right;
+}
+
+#boxes .window {
+  position:absolute;
+  display:none;
+  z-index:9999;
+  padding:2px;
+  text-align: center;
+  margin-left:-140px;
+  margin-top:-100px;
+
+}
+
+
+
+}
