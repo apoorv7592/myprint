@@ -79,22 +79,27 @@ navbar-nav.navbar-right>li>a{
     border-top: 1px solid #000;
     border-bottom: 1px solid #000;
     margin-bottom:10px;
-    height:20px;
-    padding-top: 5px;
+    height:27px;
+    padding-top:4px;
+    margin-right:0px;
+    margin-left:0px;
+    padding-left:1px;
+    padding-right:1px;
     }
 
     #navigationbar li {
       float: left !important;
-      margin-right: 45px;
+      margin-right: 51px;
       list-style-type: none;
+      padding-left:1px;
+      padding-right:1px;
+
     }
 
 
-    #navigationbar li+li+li+li+li+li {
-      float: left !important;
-      margin-right: none;
-      list-style-type: none;
-    }
+    li.last-child{
+      margin-right:0px;
+    }    
 
 
     #navigationbar li a {
@@ -104,12 +109,13 @@ navbar-nav.navbar-right>li>a{
       text-decoration: none;
       font-family: arial;
       color: rgba(1,0,0,0.8);
+      margin:0 0px;
     }
    
     #navigationbar li a:hover {
       color: #6CCBCB;
       background-color: #fff; }
-  
+
 
 .navigation-div{
     z-index:1000;
@@ -117,7 +123,7 @@ navbar-nav.navbar-right>li>a{
     border-left:1px solid rgba(1,0,0,0.3);
     border-right:1px solid rgba(1,0,0,0.3);
     position:absolute;
-    top:132px;
+    top:124px;
     left:0px;
     width:1000px;
     height:auto;
