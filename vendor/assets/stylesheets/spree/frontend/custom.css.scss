@@ -76,29 +76,39 @@ navbar-nav.navbar-right>li>a{
   
  #navigationbar{
     width: 1000px;
-    background : #ffffff;
-    border-bottom:1px solid rgba(1,0,0,0.6);
-    border-top:1px solid rgba(1,0,0,0.6);
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
     margin-bottom:10px;
-    padding-top:5px !important;
+    height:20px;
+    padding-top: 5px;
+    }
+
+    #navigationbar li {
+      float: left !important;
+      margin-right: 45px;
+      list-style-type: none;
     }
 
 
-    #navigationbar li {
-  float: left; }
+    #navigationbar li+li+li+li+li+li {
+      float: left !important;
+      margin-right: none;
+      list-style-type: none;
+    }
 
 
-#navigationbar li a {
-  display: block;
-  padding: 8px 15px;
-  text-decoration: none;
-  font-weight: bold;
-  color: #069;
-  border-right: 1px solid #ccc; }
-#navigationbar li a:hover {
-  color: #c00;
-  background-color: #fff; }
-
+    #navigationbar li a {
+      display: block;
+      padding: 0 0px;
+      font-size:13px;
+      text-decoration: none;
+      font-family: arial;
+      color: rgba(1,0,0,0.8);
+    }
+   
+    #navigationbar li a:hover {
+      color: #6CCBCB;
+      background-color: #fff; }
   
 
 .navigation-div{
