@@ -16,7 +16,7 @@
 		<div class="item active">
 			<% b= get_banner('Home Page', 1) %>
 			<% if !b.nil? %>
-				<%= image_tag b.picture.url(:main), alt:'main banner', class:'img-responsive', width:1000, height: 500 %>	
+				<%= link_to image_tag (<%= b.picture.url(:main)%>, alt:'main banner', class:'img-responsive', width:1000, height: 500), "/wedding-invitations" %>	
 			<%end%>	
 
 		</div>
