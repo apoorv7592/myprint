@@ -73,6 +73,7 @@ navbar-nav.navbar-right>li>a{
   }
 
 
+  
  #navigationbar{
     width: 1000px;
     background : #ffffff;
@@ -81,6 +82,24 @@ navbar-nav.navbar-right>li>a{
     margin-bottom:10px;
     padding-top:5px !important;
     }
+
+
+    #navigationbar li {
+  float: left; }
+
+
+#navigationbar li a {
+  display: block;
+  padding: 8px 15px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #069;
+  border-right: 1px solid #ccc; }
+#navigationbar li a:hover {
+  color: #c00;
+  background-color: #fff; }
+
+  
 
 .navigation-div{
     z-index:1000;
