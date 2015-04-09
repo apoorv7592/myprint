@@ -1,3 +1,13 @@
+<style>
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    /* Safari and Chrome */
+    .test{
+     display:inherit;
+    }
+
+}
+</style>
+
 <div id="main-carousel" class="carousel slide" data-ride="carousel">
 	<!-- Indicators-->
 	<ol class="carousel-indicators">
@@ -10,21 +20,20 @@
 		
 		<!-- First slide-->
 		<div class="item active">
-			<% b= get_banner('Wedding Page', 1) %>
+			<% b= get_banner('Wedding-lp', 1) %>
 			<% if !b.nil? %>
-				<%= image_tag b.picture.url(:main), alt:'main banner', class:'img-responsive', width:746, height: 500 %>	
+				<img src = "<%= b.picture.url(:main)%>" alt='main banner' style='display:inline;' >	
 			<%end%>	
 
 		</div>
 		<!-- Second slide-->
 		<div class="item">
-			<% b= get_banner('Wedding Page', 2) %>
+			<% b= get_banner('Wedding-lp', 2) %>
 			<% if !b.nil? %>
-            <%= image_tag b.picture.url(:main), alt:'main banner', class:'img-responsive', width:746, height: 500 %>	
+            <%= image_tag b.picture.url(:main), alt:'main banner', class:'img-responsive' %>	
      	    <%end%>	
 		</div>
 	</div>
 
-	<!-- Controls-->
-
+	
 </div>

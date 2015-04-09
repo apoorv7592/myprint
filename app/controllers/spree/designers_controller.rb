@@ -54,6 +54,7 @@ module Spree
 					is not registered as a designer'
 				end
 			end
+			
 			def designer_params
 				params.require(:designer).permit(:name, :city, :about, :phonenum, :college, :avatar)
 			end
