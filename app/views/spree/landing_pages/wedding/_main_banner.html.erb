@@ -22,15 +22,18 @@
 		<div class="item active">
 			<% b= get_banner('Wedding-lp', 1) %>
 			<% if !b.nil? %>
-				<img src = "<%= b.picture.url(:main)%>" alt='main banner' style='display:inline;' >	
-			<%end%>	
-
+            <a href = "/wedding-invitations">
+            <%= image_tag b.picture.url(:main), alt:'main banner', class:'img-responsive' %>
+            </a>	
+        	<%end%>	
 		</div>
 		<!-- Second slide-->
 		<div class="item">
 			<% b= get_banner('Wedding-lp', 2) %>
 			<% if !b.nil? %>
-            <%= image_tag b.picture.url(:main), alt:'main banner', class:'img-responsive' %>	
+            <a href = "/wedding-invitations">
+            <%= image_tag b.picture.url(:main), alt:'main banner', class:'img-responsive' %>
+            </a>
      	    <%end%>	
 		</div>
 	</div>

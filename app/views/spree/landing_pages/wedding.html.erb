@@ -1,21 +1,43 @@
-<style>
-h2 {
-   width: 100%; 
-   text-align: center; 
-   border-bottom: 1px solid #000; 
-   line-height: 0.1em;
-   margin: 10px 0 15px; 
-   font-size: 20px;
-   font-family:Times;
-} 
+  <link href='http://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-h2 span { 
-    background:#fff; 
-    padding:20px; 10px; 
-}
+
+<style>
+  h2 {
+     width: 100%; 
+     text-align: center; 
+     border-bottom: 1px solid #000; 
+     line-height: 0.1em;
+     margin: 10px 0 15px; 
+     font-size: 20px;
+     font-family:Times;
+  } 
+
+  h2 span { 
+      background:#fff; 
+      padding:20px; 10px; 
+  }
+  .lsr-txt{
+  margin-top:20px;
+   font-size:30px;
+   font-style:italic; font-family: 'Old Standard TT', serif; text-align:center;
+  }
+  .lsr-txt-below {
+  margin-top: 15px;
+  font-size:22px;
+  font-style:italic;
+  font-weight:400;
+  font-family: 'Old Standard TT', serif; text-align:center;
+  }
+  .shop-now-below {
+
+  margin-top:30px;
+  font-size:15px;
+  font-weight:600;
+  text-align:center;
+  }
 
 </style>
-
 
 <h5>Wedding</h5>
 <div class="row" style="height:auto; width:1000px;">
@@ -26,23 +48,51 @@ h2 span {
                  <%= render 'spree/landing_pages/wedding/main_banner'%>
               </div>
 
-              <h2><span><b>LET THE CARDS SPEAK FOR YOUR STYLE</b></span></h2>
-
-
-              <div class="col-md-12" style="height:auto; width:1000px;margin-bottom:10px;margin-top:20px;">
-                <div class="row">
-                  <div class="col-md-4" style="height:280px; width:322px; background:rgba(1,0,0,0.2); margin-right:8px;" >
-                     <%= render 'spree/landing_pages/wedding/second_banner'%>
+              <h2><span  style="font-size:30px; height:100px; font-style:italic;">Let the invites speak your style</span></h2>
+              <div style="height:30px;"></div>
+              <div class="col-md-12" style="height:auto; width:1000px;margin-bottom:10px;">
+                 <div class="row">
+                    <div class="col-md-4" style="height:280px; width:322px; background:rgba(1,0,0,0.2); margin-right:8px;">
+                      <%= render 'spree/landing_pages/wedding/second_banner'%>
+                    </div>
+                    <div class="col-md-4" style="height:280px; width:323px; background:rgba(1,0,0,0.2); margin-right:8px;margin-left:8px;">
+                      <%= render 'spree/landing_pages/wedding/third_banner'%>  
+                    </div>
+                    <div class="col-md-4" style="height:280px; width:323px; background:rgba(1,0,0,0.2); margin-left:8px;">
+                      <%= render 'spree/landing_pages/wedding/fourth_banner'%>
+                    </div>
+                 </div>
+              </div>
+              
+              <div class="col-md-12" style="height:auto; width:1000px;margin-bottom:50px;">                 
+                  <div class="row">
+                    <div class="col-md-4" style="height:200px; width:322px;margin-right:8px;">
+                      <div class="lsr-txt"> Laser Cut</div>
+                       <div class="lsr-txt-below"> Perfect for a look that's <br>
+                          beautifully cutting edge. 
+                       </div>
+                       <div class="shop-now-below"> SHOP NOW <i class="fa fa-arrow-circle-right"></i></div>
+                    </div>
+                    
+                    <div class="col-md-4" style="height:200px; width:323px;margin-right:8px;margin-left:8px;">
+                       <div class="lsr-txt "> Foil Stamped </div>
+                       <div class="lsr-txt-below"> In different colors, discover <br>
+                          foils that are ready to shine. 
+                       </div>
+                       <div class="shop-now-below"> SHOP NOW <i class="fa fa-arrow-circle-right"></i></div>
+                    </div>
+                    
+                    <div class="col-md-4" style="height:200px; width:323px; margin-left:8px;">
+                        <div class="lsr-txt "> Embossed </div>
+                       <div class="lsr-txt-below"> Richness you can feel <br>
+                          that leaves a lasting impression.  
+                       </div>
+                       <div class="shop-now-below"> SHOP NOW <i class="fa fa-arrow-circle-right"></i>   </div>
+                    </div>
                   </div>
-                  <div class="col-md-4" style="height:280px; width:323px; background:rgba(1,0,0,0.2); margin-right:8px;margin-left:8px;" >
-                     <%= render 'spree/landing_pages/wedding/third_banner'%>
-                  </div>
-                   <div class="col-md-4" style="height:280px; width:323px; background:rgba(1,0,0,0.2); margin-left:8px;" >
-                       <%= render 'spree/landing_pages/wedding/fourth_banner'%>
-                  </div>                 
-                </div>
               </div>
 
+              
               <div class="col-md-12" style="height:500px; width:1000px; background:rgba(1,0,0,0.2);margin-bottom:10px;">
                   <%= render 'spree/landing_pages/wedding/fifth_banner'%>
               </div>              
