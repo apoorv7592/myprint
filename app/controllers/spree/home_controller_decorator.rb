@@ -6,6 +6,7 @@ module HomeControllerExtensions
 		@categories = Category.retrieve_categories
 		@sub_categories = SubCategory.retrieve_sub_categories
 		@taxonomies = Spree::Taxonomy.includes(root: :children)
+		@designers = Designer.find(2)
 	end
 end
 

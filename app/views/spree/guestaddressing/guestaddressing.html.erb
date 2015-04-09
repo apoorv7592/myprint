@@ -1,0 +1,4 @@
+<% b= get_banner('guest-addressing', 1) %>
+<% if !b.nil? %>
+	<%= image_tag b.picture.url(:original), alt:'Guest-Addressing', class:'img-responsive', width:1000 %>
+<% end%>

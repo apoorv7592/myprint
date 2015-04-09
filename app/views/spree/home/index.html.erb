@@ -18,6 +18,27 @@ h2 span {
     background:#fff; 
     padding:20px; 10px; 
 }
+
+h4 {
+     font-size: 23px;
+     font-family: 'Old Standard TT', serif;
+     font-style: italic; 
+     float: right;
+     margin-right: 10px;
+     margin-left: 10px;
+
+}
+
+h5{
+  h4 {
+     font-size: 17px;
+     font-family: 'Old Standard TT', serif;
+     font-style: italic; 
+     float: right;
+     margin-right: 10px;
+
+
+}
 </style>
 
 
@@ -144,8 +165,20 @@ document.cookie="popunder=yes"
 </div>
 
 
-<div class="col-md-12" style="height:230px;width:1000px;margin-bottom:10px;background:rgba(1,0,0,0.1);display:inline;">
+<div class="col-md-12" style="height:230px;width:1000px;margin-bottom:50px;background:rgba(1,0,0,0.1);display:inline;">
   	<%= render 'second_banner'%>
+</div>
+
+<div class="col-md-12" style="height:auto;width:1000px;margin-bottom:30px;">
+<h2><span> How it Works </span></h2> 
+</div> 
+
+<div class="col-md-12" style="height:650px;width:1000px;margin-bottom:30px;background:rgba(1,0,0,0.1);display:inline; ">
+<%= render 'fifth_banner' %>  
+</div>
+
+<div class="col-md-12" style="height:auto;width:1000px;margin-bottom:30px;">
+<h2><span> Our Love for Luxe &amp Thick Paper </span></h2>
 </div>
 
 
@@ -158,26 +191,50 @@ document.cookie="popunder=yes"
     </div>
 </div>
 
-<div class="col-md-12" style="height:auto;width:1000px;margin-bottom:30px;">
-<h2><span> How it Works </span></h2> 
-</div> 
 
-
-<div class="col-md-12" style="height:257px;width:1000px;margin-bottom:10px;background:rgba(1,0,0,0.1);display:inline; ">
-<%= render 'fifth_banner' %>  
+<div class="col-md-12" style="height:150px;width:1000px;margin-bottom:10px;">
+  <div class="col-md-6" style="height:150px;width:492px;margin-right:8px;display:inline; margin-top:10px;text-align:center;">
+     <p><span style="font-size:22px; height:auto; font-family:Times; text-align:center; margin-top:10px; font-style:italic; width:49%;"> We hand pick each and every paper for your cards to match the quality and deliver perfection
+     </span> 
+     </p>
+     <a href="www.prindora.com/paper-and-printing-styles">
+        <p><span style="font-size:16px; text-align:center; margin-top:10px; width:49%; color:#6BBCBF"> Know more about our Paper &amp Printing Styles <i class="fa fa-arrow-circle-right"></i></span></p>
+     </a>
+  </div>
+  <div class="col-md-6" style="height:150px;width:492px;margin-left:8px; display:inline; margin-top:10px;text-align:center;">
+     <p><span style="font-size:22px; height:auto; text-align:center; font-style:italic; margin-top:10px; font-family:Times; width:49%; "> We will add recipient addresses on your envelopes at no additional charges </span> </p>
+     <a href="www.prindora.com/guest-addressing"> 
+     <p><span style="font-size:16px; text-align:center; margin-top:10px; width:49%; color:#6BBCBF"> Know more about Free Guest Addressing <i class="fa fa-arrow-circle-right"></i> </span></p>
+     </a>
+  </div>
 </div>
 
 
- <div class="col-md-12" style="height:auto; width:1000px;margin-bottom:10px;display:inline;">     
-    <div class="col-md-4" style="height:140px; width:321px;border:1px solid rgba(1,0,0,0.3); margin-right:8px;"><a href="/why-buy-from-us" style="text-decoration:none;color:#000;">
-    <h3 style="Padding:35px 15px;font-family:'Old Standard TT', serif;font-style:italic;font-size:25px;text-align:center;">
-      Why Buy From Us</h3></a>
+ <div class="col-md-12" style="height:auto; width:1000px;margin-bottom:30px;">     
+    <div class="col-md-4" style="height:140px; width:321px; margin-right:8px;">
+    <a href="/why-buy-from-us" style="text-decoration:none;color:#000;">
+        <%= image_tag 'wbuyus.jpg' %>
+    </a>
     </div>
-    <div class="col-md-4" style="height:140px; width:322px; background:rgba(1,0,0,0.2); margin-right:8px;margin-left:8px;;" >
+    
+    <div class="col-md-4" style="height:140px; width:322px; border: 1px solid rgba(1,0,0,0.3); margin-right:8px;margin-left:8px;" >
+        <div style="height:140px;width:220px; text-align:center;float:left;">
+           <p><span style="font-size:24px; height:auto; font-family:Times; text-align: center; margin-top:2px; margin-bottom: 3px; margin-left: 5px; width:49%;"> Meet our Designer of the month
+              </span> 
+           </p>
+           <p><span style="font-size:20px; height:auto; font-family:Times; text-align: center; margin-top:10px; margin-left: 5px; width:49%; font-style:italic;"><%= @designers.name %>
+            </span> 
+           </p>
+        </div>
+        <div style="height:140px;width:100px;float:left;margin-top:10px;">
+            <%= image_tag @designers.avatar.url(:thumb),style:'grayscale:(1,0,0,0.2);'%>
+        </div>
     </div>
-    <div class="col-md-4" style="height:140px; width:321px;border:1px solid rgba(1,0,0,0.3); margin-left:8px;"> <a href="/why-buy-from-us" style="text-decoration:none;color:#000;">
-    <h3 style="Padding:35px 15px;font-family:'Old Standard TT', serif;font-style:italic;font-size:25px;text-align:center;">
-    Free Printing & Shipping</h3></a>
+    
+    <div class="col-md-4" style="height:140px; width:321px;margin-left:8px;"> 
+    <a href="/why-buy-from-us" style="text-decoration:none;color:#000;">
+        <%= image_tag 'freeship.jpg' %>
+    </a>
     </div>
 </div>
 
@@ -186,5 +243,6 @@ document.cookie="popunder=yes"
         interval: 5000
     });
 </script>
+
 
 
