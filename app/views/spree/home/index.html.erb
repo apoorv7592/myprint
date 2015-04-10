@@ -1,6 +1,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link href='http://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic' rel='stylesheet' type='text/css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.pack.js"></script>
+
 
 <style>
 h2 {
@@ -29,8 +32,7 @@ h4 {
 
 }
 
-h5{
-  h4 {
+h5 {
      font-size: 17px;
      font-family: 'Old Standard TT', serif;
      font-style: italic; 
@@ -39,123 +41,188 @@ h5{
 
 
 }
+
+#mask {
+  position:absolute;
+  left:-150px;
+  top:-150px;
+  z-index:9000;
+  background-color:#000;
+  display:none;
+}
+
+#boxes .window {
+  position:fixed;
+  width:700px;
+  height:200px;
+  display:none;
+  z-index:9999;
+  padding:20px;
+}
+
+
+#boxes #dialog2 {
+  width:630px; 
+  height:340px;
+  padding:50px 0 20px 25px;
+}
+
+
+#popupfoot{
+  font-size: 5px;
+  padding: 0 auto;
+
+}
+#popupfoot a{
+  text-decoration: none;
+  font-size: 20px;
+  color:white;
+}
+
+
+.emailpopup{
+height:23px;
+width:180px;
+padding:5px;
+font-size:12px;
+background:#ffffff;
+
+}
+.submitpopup{
+height:20px;
+width:60px;
+padding:1px;
+font-size:9px;
+background:#ffffff;
+}
+
 </style>
 
 
+<script>
+
+$(document).ready(function() {  
+
+//if the cookie hasLaunch is not set, then show the modal window
+if (!readCookie('hasLaunch')) {
+    //launch it
+    launchWindow('#dialog2');       
+    //then set the cookie, so next time the modal won't be displaying again.
+    createCookie('hasLaunch', 1, 1);
+}
+
+//if close button is clicked
+$('.window .close').click(function () {
+    $('#mask').hide();
+    $('.window').hide();
+});     
+
+//if mask is clicked
+$('#mask').click(function () {
+    $(this).hide();
+    $('.window').hide();
+});         
+
+
+$(window).resize(function () {
+
+    var box = $('#boxes .window');
+
+    //Get the screen height and width
+    var maskHeight = $(document).height();
+    var maskWidth = $(window).width();
+
+    //Set height and width to mask to fill up the whole screen
+    $('#mask').css({'width':maskWidth,'height':maskHeight});
+
+    //Get the window height and width
+    var winH = $(window).height();
+    var winW = $(window).width();
+
+    //Set the popup window to center
+    box.css('top',  winH/2 - box.height()/2);
+    box.css('left', winW/2 - box.width()/2);
+
+}); 
+
+});
+
+function createCookie(name,value,days) {
+if (days) {
+    var date = new Date();
+    //date.setTime(date.getTime()+(days*24*60*60*1000));
+    date.setTime(date.getTime()+(1*24*60*60*1000));
+    var expires = "; expires="+date.toGMTString();
+}
+else var expires = "";
+document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function readCookie(name) {
+var nameEQ = name + "=";
+var ca = document.cookie.split(';');
+for(var i=0;i < ca.length;i++) {
+    var c = ca[i];
+    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+}
+return null;
+}
+
+function launchWindow(id) {
+
+    //Get the screen height and width
+    var maskHeight = $(document).height();
+    var maskWidth = $(window).width();
+
+    //Set heigth and width to mask to fill up the whole screen
+    $('#mask').css({'width':maskWidth,'height':maskHeight});
+
+    //transition effect     
+    $('#mask').fadeIn(1000);    
+    $('#mask').fadeTo("slow",0.8);  
+
+    //Get the window height and width
+    var winH = $(window).height();
+    var winW = $(window).width();
+
+    //Set the popup window to center
+    $(id).css('top',  winH/2-$(id).height());
+    $(id).css('left', winW/2-$(id).width()/2);
+
+    //transition effect
+    $(id).fadeIn(2000); 
+
+
+}
+
+</script>
+
 
 <div id="boxes">
-  <div id="dialog" class="window">   
+    <!-- Start of Sticky Note -->
+  <div id="dialog2" class="window">
     <div style="position:relative;" >
     <%= image_tag 'signuppop.jpg'%>
     <% @subscriber ||= Spree::Chimpy::Subscriber.new %>
 
      <%= form_for @subscriber do |f| %>
 
-        <div style="position:absolute;top:240px;left:373px">
+        <div style="position:absolute;top:220px;left:365px">
           <%= f.email_field :email,placeholder:"enter your email address", class:"emailpopup" %>
         </div>
-        <div style="position:absolute;top:265px;left:440px">
-          <%=f.submit :SignUp,:class=>"submitpopup" %>
+        <div style="position:absolute;top:250px;left:435px">
+          <%=f.submit :SignUp,:class=>"submitpopup btn btn-default btn-large" %>
         </div>
      <% end %>
     </div>
-    <div id="popupfoot"> <a href="#" class="close agree"><span class="glyphicon glyphicon-remove-sign"></span></a>   
+    <div id="popupfoot"> <a href="" class="close"><span class="glyphicon glyphicon-remove-sign"></span></a>   
     </div>
   </div>
+    <!-- End of Sticky Note -->
+<!-- Mask to cover the whole screen -->
+  <div id="mask"></div>
 </div>
-<div id="mask"></div>
-
-<script type="text/javascript">
-$(document).ready(function() {  
-
-var id = '#dialog';
-
-//Get the screen height and width
-var maskHeight = $(document).height();
-var maskWidth = $(window).width();
-
-//Set heigth and width to mask to fill up the whole screen
-$('#mask').css({'width':maskWidth,'height':maskHeight});
-
-//transition effect 
-$('#mask').fadeIn(1000);  
-$('#mask').fadeTo("slow",0.8);  
-
-//Get the window height and width
-var winH = $(window).height();
-var winW = $(window).width();
-
-//Set the popup window to center
-$(id).css('top', winH/2-$(id).height()/2);
-$(id).css('left', winW/2-$(id).width()/2);
-
-//transition effect
-$(id).fadeIn(2000); 
-
-//if close button is clicked
-$('.window .close').click(function (e) {
-//Cancel the link behavior
-e.preventDefault();
-
-$('#mask').hide();
-$('.window').hide();
-}); 
-
-//if mask is clicked
-$('#mask').click(function () {
-$(this).hide();
-$('.window').hide();
-}); 
-
-});
-
-</script>
-
-<script type="text/javascript">
-
-//Pop-under only once per browser session? (0=no, 1=yes)
-//Specifying 0 will cause popunder to load every time page is loaded
-var once_per_session=1
-
-///No editing beyond here required/////
-
-function get_cookie(Name) {
-var search = Name + "="
-var returnvalue = "";
-if (document.cookie.length > 0) {
-offset = document.cookie.indexOf(search)
-if (offset != -1) { // if cookie exists
-offset += search.length
-// set index of beginning of value
-end = document.cookie.indexOf(";", offset);
-// set index of end of cookie value
-if (end == -1)
-end = document.cookie.length;
-returnvalue=unescape(document.cookie.substring(offset, end))
-}
-}
-return returnvalue;
-}
-
-function loadpopunder(){
-if (get_cookie('popunder')==''){
-loadpopunder()
-document.cookie="popunder=yes"
-}
-}
-function loadpopunder(){
-if (once_per_session==0)
-loadpopunder()
-else
-{
-if (get_cookie('popunder')==''){
-loadpopunder()
-document.cookie="popunder=yes"
-}
-}
-}
-</script>
-
 
 
 <!--index page starts from here-->
