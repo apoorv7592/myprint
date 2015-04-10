@@ -19994,7 +19994,7 @@ input#search.form-control {
 /* line 90, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 #navigationbar li {
   float: left !important;
-  margin-right: 90px;
+  margin-right: 80px;
   list-style-type: none;
   padding-left: 1px;
   padding-right: 1px;
@@ -20578,7 +20578,7 @@ ul#checkout-step-address.progress-steps.nav.nav-pills.nav-justified {
 .buttonsignup {
   vertical-align: top;
   padding: none;
-  height: 38px;
+  height: 37px;
   margin-left: 0px  !important;
 }
 
@@ -20981,83 +20981,13 @@ ul.nav.navbar-nav.navbar-sort {
   cursor: pointer;
 }
 
-/*pop up signup */
-/* line 951, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
-#mask {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 9000;
-  background-color: #d8d8d8;
-  display: none;
-  width: 1000px !important;
-  opacity: 0.1;
-}
-
-/* line 961, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
-#boxes .window {
-  position: absolute;
-  display: none;
-  z-index: 9999;
-  padding: 2px;
-  text-align: center;
-  margin-left: -410px;
-  margin-top: -100px;
-}
-
-/* line 971, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
-#boxes #dialog {
-  height: auto;
-  padding: 2px;
-  background-color: rgba(1, 0, 0, 0.7);
-  font-family: Century Gothic;
-}
-
-/* line 977, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
-#popupfoot {
-  font-family: Century Gothic;
-  font-size: 5px;
-  padding: 0 auto;
-}
-
-/* line 983, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
-#popupfoot a {
-  text-decoration: none;
-  font-size: 20px;
-  color: white;
-}
-
-/* line 988, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
-.agree:hover {
-  background-color: #000000;
-  color: rgba(1, 0, 0, 0.3);
-}
-
-/* line 993, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
-.emailpopup {
-  height: 23px;
-  width: 180px;
-  padding: 5px;
-  font-size: 12px;
-  background: #ffffff;
-}
-
-/* line 1001, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
-.submitpopup {
-  height: 18px;
-  width: 50px;
-  padding: 1px;
-  font-size: 9px;
-  background: #ffffff;
-}
-
 /* Make clicks pass-through */
-/* line 1014, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 954, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 #nprogress {
   pointer-events: none;
 }
 
-/* line 1017, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 957, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 #nprogress .bar {
   background: #2299dd;
   position: fixed;
@@ -21069,7 +20999,7 @@ ul.nav.navbar-nav.navbar-sort {
 }
 
 /* Fancy blur effect */
-/* line 1027, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 967, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 #nprogress .peg {
   display: block;
   position: absolute;
@@ -21084,7 +21014,7 @@ ul.nav.navbar-nav.navbar-sort {
 }
 
 /* Remove these to get rid of the spinner */
-/* line 1040, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 980, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 #nprogress .spinner {
   display: block;
   position: fixed;
@@ -21093,7 +21023,7 @@ ul.nav.navbar-nav.navbar-sort {
   right: 15px;
 }
 
-/* line 1047, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 987, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 #nprogress .spinner-icon {
   width: 18px;
   height: 18px;
@@ -21106,50 +21036,50 @@ ul.nav.navbar-nav.navbar-sort {
   animation: nprogress-spinner 400ms linear infinite;
 }
 
-/* line 1058, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 998, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .nprogress-custom-parent {
   overflow: hidden;
   position: relative;
 }
 
-/* line 1063, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 1003, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .nprogress-custom-parent #nprogress .spinner,
 .nprogress-custom-parent #nprogress .bar {
   position: absolute;
 }
 
 @-webkit-keyframes nprogress-spinner {
-  /* line 1067, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+  /* line 1007, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
   0% {
     -webkit-transform: rotate(0deg);
   }
 
-  /* line 1068, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+  /* line 1008, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
   100% {
     -webkit-transform: rotate(360deg);
   }
 }
 
 @keyframes nprogress-spinner {
-  /* line 1071, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+  /* line 1011, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
   0% {
     transform: rotate(0deg);
   }
 
-  /* line 1072, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+  /* line 1012, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
   100% {
     transform: rotate(360deg);
   }
 }
 
-/* line 1077, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 1017, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 #nprogress .bar,
 #nprogress .spinner {
   z-index: 999999;
 }
 
 /* rollover class for text */
-/* line 1082, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 1022, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .rollcatg {
   color: black;
   margin-left: 10px;
@@ -21157,12 +21087,12 @@ ul.nav.navbar-nav.navbar-sort {
   font-size: 11px;
 }
 
-/* line 1089, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 1029, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .rollcatg:hover {
   color: #6bbcbf;
 }
 
-/* line 1093, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 1033, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 #navdiv2 {
   width: 244px;
   border-right: 1px solid rgba(1, 0, 0, 0.1);
@@ -21173,7 +21103,7 @@ ul.nav.navbar-nav.navbar-sort {
   font-size: 11px;
 }
 
-/* line 1103, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 1043, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 #navdiv4 {
   width: 245px;
   float: left;
@@ -21183,7 +21113,7 @@ ul.nav.navbar-nav.navbar-sort {
   font-size: 11px;
 }
 
-/* line 1112, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 1052, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 #navdiv1 {
   width: 195px;
   border-right: 1px solid rgba(1, 0, 0, 0.1);
@@ -21194,7 +21124,7 @@ ul.nav.navbar-nav.navbar-sort {
   font-size: 11px;
 }
 
-/* line 1122, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 1062, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 #navdiv11 {
   width: 196px;
   float: left;
@@ -21205,7 +21135,7 @@ ul.nav.navbar-nav.navbar-sort {
 }
 
 @-moz-document url-prefix() {
-  /* line 1132, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+  /* line 1072, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
   .mainnavelements {
     margin-right: 51px;
     font-family: arial;
@@ -21213,14 +21143,14 @@ ul.nav.navbar-nav.navbar-sort {
     height: 28px;
   }
 
-  /* line 1138, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+  /* line 1078, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
   .mainnavatags1 {
     font-family: arial;
     font-size: 13px;
     height: 28px;
   }
 
-  /* line 1143, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+  /* line 1083, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
   ul.nav.navbar-nav.navbar-right {
     width: 250px;
     height: 30px;
@@ -21228,7 +21158,7 @@ ul.nav.navbar-nav.navbar-sort {
     float: right;
   }
 
-  /* line 1149, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+  /* line 1089, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
   ul.nav.navbar-nav.navbar-right1 {
     width: 215px;
     height: 30px;
@@ -21236,7 +21166,7 @@ ul.nav.navbar-nav.navbar-sort {
     float: right;
   }
 
-  /* line 1156, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+  /* line 1096, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
   #boxes .window {
     position: absolute;
     display: none;

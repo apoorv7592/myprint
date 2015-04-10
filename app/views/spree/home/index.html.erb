@@ -44,8 +44,8 @@ h5 {
 
 #mask {
   position:absolute;
-  left:-150px;
-  top:-150px;
+  left:0;
+  top:0;
   z-index:9000;
   background-color:#000;
   display:none;
@@ -208,7 +208,7 @@ function launchWindow(id) {
 
      <%= form_for @subscriber do |f| %>
 
-        <div style="position:absolute;top:220px;left:365px">
+        <div style="position:absolute;top:220px;left:370px">
           <%= f.email_field :email,placeholder:"enter your email address", class:"emailpopup" %>
         </div>
         <div style="position:absolute;top:250px;left:435px">
