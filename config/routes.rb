@@ -45,6 +45,7 @@ Rails.application.routes.draw do
     get '/wedding-accessories', to: 'landing_pages#wedaccs', as: 'wedaccs'
     get '/greetings', to: 'landing_pages#greetings', as: 'greetings'
     get '/other-invites', to: 'landing_pages#otherinvite', as: 'partyinvite'
+
     get '/like', to: 'likes#create', as: 'like_suite'
     get '/unlike', to: 'likes#destroy', as: 'unlike_suite'
     get '/designer_dashboard', to: 'designers#dashboard', as: 'designer_dashboard'
@@ -55,6 +56,7 @@ Rails.application.routes.draw do
     get '/guest-addressing', to:'guestaddressing#guestaddressing'
     get '/paper-and-print-styles', to:'printpaperpage#printpaperpage'
     get '/bonheur', to:'bonheur#bonheur'
+    get '/about-us', to:'aboutus#aboutus'
     get '/wedding-invitations/:id', to: 'shop#wedding', as: 'wedding-invitations'
     get '/greeting-cards/:id', to: 'shop#greeting', as: 'greeting-cards'
     get '/other-invitations/:id', to: 'shop#otherinvites', as: 'partyinvites'
