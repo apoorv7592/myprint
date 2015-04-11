@@ -44,7 +44,7 @@ Rails.application.routes.draw do
     get '/wedding-invitations', to: 'landing_pages#wedding', as: 'wedding'
     get '/wedding-accessories', to: 'landing_pages#wedaccs', as: 'wedaccs'
     get '/greetings', to: 'landing_pages#greetings', as: 'greetings'
-    get '/party-invites', to: 'landing_pages#partyinvite', as: 'partyinvite'
+    get '/other-invites', to: 'landing_pages#otherinvite', as: 'partyinvite'
     get '/like', to: 'likes#create', as: 'like_suite'
     get '/unlike', to: 'likes#destroy', as: 'unlike_suite'
     get '/designer_dashboard', to: 'designers#dashboard', as: 'designer_dashboard'
