@@ -57,7 +57,7 @@ Rails.application.routes.draw do
     get '/bonheur', to:'bonheur#bonheur'
     get '/wedding-invitations/:id', to: 'shop#wedding', as: 'wedding-invitations'
     get '/greeting-cards/:id', to: 'shop#greeting', as: 'greeting-cards'
-    get '/party-invitations/:id', to: 'shop#partyinvites', as: 'partyinvites'
+    get '/other-invitations/:id', to: 'shop#otherinvites', as: 'partyinvites'
 
 
     get '/search'  => 'solrsearch#index'
