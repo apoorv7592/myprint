@@ -79,6 +79,9 @@ class Suite < ActiveRecord::Base
 		integer :sub_category_ids, multiple: true do
     		sub_categories.map(&:id)
   		end
+  		integer :category_name, multiple: true do 
+  			sub_categories.map{|s| s.category.name}
+  		end
 		integer :designer_id, multiple:true, references: Designer
 		integer :color_ids, multiple:true, references: Color
 		integer :trim_ids, multiple:true, references: Trim
@@ -107,11 +110,13 @@ class Suite < ActiveRecord::Base
 		save
 	end
 
-	def self.search(q,sub_cat_id,designer_id, color_id, trim_id,dimension_id, created_at,like_no,avg_rating,price )
+	def self.search(q,sub_cat_id,designer_id, color_id, trim_id,dimension_id, created_at,like_no,avg_rating,price, category_name )
 		@search = Sunspot.search(Suite) do 
 		    	fulltext q
 		    	with(:available_on).less_than(Time.zone.now)
-		    	with(:sub_category_ids, sub_cat_id)
+		    	with(:sub_category_ids, sub_cat_id) if sub_cat_id.present?
+		    	with(:category_name, category_name) if category_name.present?
+
 		    	designer_filter = with(:designer_id, designer_id) if designer_id.present?
 		    	color_filter = with(:color_ids, color_id) if color_id.present?
 				trim_filter = with(:trim_ids, trim_id) if trim_id.present?		    	

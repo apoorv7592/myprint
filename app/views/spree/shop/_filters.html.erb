@@ -1,0 +1,112 @@
+<div style="height:auto; width:200px; margin-right:46px;float:left;border:1px solid rgba(1,0,0,0.3);">
+  <div style="padding:10px;" class="filterboxtxt">
+   <div class="rowfilterbox">
+   <strong>
+        <font style="padding-right:2em;">Narrow your Search</font> 
+         <%= link_to "reset", @subcat, style:"color:rgba(1,0,0,0.5);"%>
+    </strong>
+    </div>
+    <div class="rowfilterbox">
+      <strong>
+        Designer
+      </strong>
+      <ul style="list-style-type:none;padding:0 !important;">
+        <% for row in @search.facet(:designer_id).rows %>
+          <li style="margin-left:0px !important;">
+            <% if params[:designer].to_i == row.value %>
+              <%= link_to designer: nil, color_id: params[:color_id], trim_id: params[:trim_id], dimension_id: params[:dimension_id],:class=>"checbox1"  do  %>
+                <%= check_box_tag 'check','ch', true%>
+                <%= row.instance.name %>
+              <% end %>
+            <% else %>
+              <%= link_to designer: row.value, color_id: params[:color_id], trim_id: params[:trim_id], dimension_id: params[:dimension_id],:class=>"checbox1"  do  %>
+                <%= check_box_tag 'check','ch' %>
+                <%= row.instance.name %>
+              <% end %>
+            <% end %>
+            (
+            <%= row.count %>
+            )
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="rowfilterbox">
+      <strong>
+        Color
+      </strong>
+      <ul style="list-style-type:none;padding:0 !important;">
+        <% for row in @search.facet(:color_ids).rows %>
+          <li >
+            <% if params[:color_id].to_i == row.value %>
+                <%= link_to color_id: nil, designer: params[:designer], trim_id: params[:trim_id], dimension_id: params[:dimension_id] do %>
+                <div style="width:15px;height:15px;margin-left:3px;float:left;background:<%= row.instance.code %>">
+                </div>
+              <% end %>
+            <% else %>
+            
+              <%= link_to color_id: row.value, designer: params[:designer], trim_id: params[:trim_id], dimension_id: params[:dimension_id] do %>
+                
+                <div style="width:15px;height:15px;margin-left:3px;float:left;background:<%= row.instance.code %>">
+                </div>
+                
+              <% end %>
+            <% end %>
+            
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="rowfilterbox">
+      <strong>
+        Trim
+      </strong>
+      <ul style="list-style-type:none;padding:0 !important;">
+        <% for row in @search.facet(:trim_ids).rows %>
+          <li>
+            <% if params[:trim_id].to_i == row.value %>
+              <%= link_to trim_id: nil, designer: params[:designer], color_id: params[:color_id], dimension_id: params[:dimension_id] do %>
+                <%= check_box_tag '', '', true %>
+                <%= row.instance.name %>
+              <% end %>
+            <% else %>
+              <%= link_to trim_id: row.value, designer: params[:designer], color_id: params[:color_id], dimension_id: params[:dimension_id] do %>
+                <%= check_box_tag '' %>
+                <%= row.instance.name %>
+              <% end %>
+            <% end %>
+            (
+            <%= row.count %>
+            )	
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="rowfilterbox">
+      <strong>
+        Dimension
+      </strong>
+      <ul style="list-style-type:none;padding:0 !important;">
+        <% for row in @search.facet(:dimension_ids).rows %>
+          <li>
+            <% if params[:dimension_id].to_i == row.value %>
+              <%= link_to  dimension_id: nil, designer: params[:designer], color_id: params[:color_id], trim_id: params[:trim_id] do %>
+                <%= check_box_tag '', '', true %>
+                <%= row.instance.name %>
+              <% end %>
+            <% else %>
+              <%= link_to  dimension_id: row.value, designer: params[:designer], color_id: params[:color_id], trim_id: params[:trim_id] do %>
+                <%= check_box_tag '' %>
+                <%= row.instance.name %>
+              <% end %>
+            <% end %>
+            (
+            <%= row.count %>
+            )
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    </div>
+  </div>
+ 

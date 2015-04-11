@@ -1,0 +1,6 @@
+<% b= get_banner('Wedding-lp', 8) %>
+<% if !b.nil? %>
+<a href = "/wedding-invitations">
+	<%= image_tag b.picture.url(:main), alt:'eight banner', class:'img-responsive' %>
+</a>
+<% end%>

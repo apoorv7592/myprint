@@ -1,0 +1,7 @@
+
+<div style = "height:auto;display:block !important;">
+<% b= get_banner('Bonheur', 1) %>
+<% if !b.nil? %>
+	<%= image_tag b.picture.url(:original), alt:'Bonheur', class:'img-responsive', width:1000 %>
+<% end%>
+</div>

@@ -9,7 +9,7 @@ module Spree
 
 		end
 
-		def partyinvite
+		def otherinvite
 		
 		end
 

@@ -44,7 +44,7 @@ Rails.application.routes.draw do
     get '/wedding-invitations', to: 'landing_pages#wedding', as: 'wedding'
     get '/wedding-accessories', to: 'landing_pages#wedaccs', as: 'wedaccs'
     get '/greetings', to: 'landing_pages#greetings', as: 'greetings'
-    get '/party-invites', to: 'landing_pages#partyinvite', as: 'partyinvite'
+    get '/other-invites', to: 'landing_pages#otherinvite', as: 'partyinvite'
     get '/like', to: 'likes#create', as: 'like_suite'
     get '/unlike', to: 'likes#destroy', as: 'unlike_suite'
     get '/designer_dashboard', to: 'designers#dashboard', as: 'designer_dashboard'
@@ -52,10 +52,12 @@ Rails.application.routes.draw do
     get '/get_prd_images/:id', to: 'suites#get_prd_images'
     get '/get_suite_chars/:id', to: 'suites#get_suite_chars'
     get '/why-buy-from-us', to:'wbfromus#whybuyfromus'
-    get '/print-paper', to:'printpaperpage#printpaperpage'
+    get '/guest-addressing', to:'guestaddressing#guestaddressing'
+    get '/paper-and-print-styles', to:'printpaperpage#printpaperpage'
+    get '/bonheur', to:'bonheur#bonheur'
     get '/wedding-invitations/:id', to: 'shop#wedding', as: 'wedding-invitations'
     get '/greeting-cards/:id', to: 'shop#greeting', as: 'greeting-cards'
-    get '/party-invitations/:id', to: 'shop#partyinvites', as: 'partyinvites'
+    get '/other-invitations/:id', to: 'shop#otherinvites', as: 'partyinvites'
 
 
     get '/search'  => 'solrsearch#index'

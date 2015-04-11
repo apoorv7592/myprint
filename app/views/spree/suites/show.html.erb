@@ -16,10 +16,26 @@
    {
    list-style-type: none;  
    }
+
+   .suitenames{
+    font-family:Century Gothic;
+    font-size :15px;
+
+   }
+
+   .suitenames1{
+    font-family:Century Gothic;
+    font-size :11px;
+
+   }
+
 </style>
 <!-- Suite Itemscope start-->
 <div itemscope itemtype="http://schema.org/IndividualProduct" itemdid="<%= @suite.id %>">
-   <h4 itemprop="name"><%=@suite.name %></h4>
+      <div class="col-md-12" style="border-top:1px solid rgba(1,0,0,0.2);border-bottom:1px solid rgba(1,0,0,0.2);margin-bottom:20px;">
+         <h4 itemprop="name" class="suitenames"><b><%=@suite.name %></b></h4>
+         <h4 class="suitenames1">Exclusively Designed By: <%= @suite.designer.name%></h4>
+      </div>
    <div class="col-md-12 suite-upper-cont" >
       <!-- Suite image container-->
       <div class="suite-img-cont">

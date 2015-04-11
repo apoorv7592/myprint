@@ -73,14 +73,48 @@ navbar-nav.navbar-right>li>a{
   }
 
 
+  
  #navigationbar{
     width: 1000px;
-    background : #ffffff;
-    border-bottom:1px solid rgba(1,0,0,0.6);
-    border-top:1px solid rgba(1,0,0,0.6);
+    border-bottom: 1px solid #000;
     margin-bottom:10px;
-    padding-top:5px !important;
+    height:27px;
+    padding-top:4px;
+    margin-right:0px;
+    margin-left:0px;
+    padding-left:1px;
+    padding-right:1px;
     }
+
+    #navigationbar li {
+      float: left !important;
+      margin-right: 83px;
+      list-style-type: none;
+      padding-left:1px;
+      padding-right:1px;
+
+    }
+
+
+    li.last-child{
+      margin-right:0px;
+    }    
+
+
+    #navigationbar li a {
+      display: block;
+      padding: 0 0px;
+      font-size:13px;
+      text-decoration: none;
+      font-family: arial;
+      color: rgba(1,0,0,0.8);
+      margin:0 0px;
+    }
+   
+    #navigationbar li a:hover {
+      color: #6BBCBF;
+      background-color: #fff; }
+
 
 .navigation-div{
     z-index:1000;
@@ -88,14 +122,14 @@ navbar-nav.navbar-right>li>a{
     border-left:1px solid rgba(1,0,0,0.3);
     border-right:1px solid rgba(1,0,0,0.3);
     position:absolute;
-    top:132px;
+    top:124px;
     left:0px;
     width:1000px;
     height:auto;
     display:none;
     padding:10px;
     margin-left:0px;
-    border-bottom:2px solid rgba(255,0,0,0.7);    
+    border-bottom:4px solid #6BBCBF;    
 }
 
 .navbar-nav>li>a:hover,.navbar-nav>li>a:focus{
@@ -117,54 +151,18 @@ margin-left: 0!important;
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12
 {padding-right : 0!important; padding-left : 0!important;}
   
-  #navdiv2{
-    width:244px;
-    border-right:1px solid rgba(1,0,0,0.1);
-    float:left;
-    padding:10px;
-    height:250px;
-    font-family: Century Gothic;
-    font-size:12px;
-  }
-
-  #navdiv4{
-    width:245px;
-    float:left;
-    padding:10px;
-    height:250px;
-    font-family:Century Gothic;
-    font-size:12px;
-  }
-
-  #navdiv1{
-    width:195px;
-    border-right:1px solid rgba(1,0,0,0.1);
-    float:left;
-    padding:10px;
-    height:250px;
-    font-family: Century Gothic;
-    font-size:12px;
-  }
-
-    #navdiv11{
-    width:196px;
-    float:left;
-    padding:10px;
-    height:250px;
-    font-family: Century Gothic;
-    font-size:12px;
-  }
 
 
-  .mainnavatags{
-    margin-right:63px;
-    font-family: Century Gothic;
+
+  .mainnavelements{
+    margin-right:50px;
+    font-family: arial;
     font-size: 13px;
     height:28px;
 }
 
-  .mainnavatags1{
-    font-family: Century Gothic;
+  .mainnavelements1{
+    font-family: arial;
     font-size: 13px;
     height:28px;
     margin-left:1px;
@@ -381,6 +379,7 @@ right: 20px;
   margin-right:4px !important;
   margin-left:4px !important;
   margin-top:10px;
+  margin-bottom:20px;
   float:left;      
 }
 .suite-img{
@@ -436,11 +435,13 @@ right: 20px;
   float:center;
   color:rgba(1,0,0,0.8);
   font-size:12px;
+  text-align:center;
   }
    .viewsuitetxt1{
   float:center;
   color:rgba(1,0,0,0.4);
   font-size:10px;
+  text-align:center;
   }
 
 /* small div box in catalog page below image of color */
@@ -962,30 +963,30 @@ cursor:pointer;
   z-index:9999;
   padding:2px;
   text-align: center;
-  margin-left:-140px;
-  margin-top: 10px;
+  margin-left:-410px;
+  margin-top:-100px;
 
 }
 #boxes #dialog {
   height:auto;
-  padding:5px;
-  background-color:#ffffff;
+  padding:2px;
+  background-color:rgba(1,0,0,0.7);
   font-family:Century Gothic;
-  font-size: 15pt;
 }
 #popupfoot{
   font-family: Century Gothic;
   font-size: 5px;
-  padding: 5px;
+  padding: 0 auto;
+
 }
 #popupfoot a{
   text-decoration: none;
-  font-size: 10px;
-  color:#000;
+  font-size: 20px;
+  color:white;
 }
 .agree:hover{
-  background-color: #ffffff;
-  color:#000;
+  background-color:#000000;
+  color:rgba(1,0,0,0.3);
 }
 
 .emailpopup{
@@ -1074,4 +1075,91 @@ position: absolute;
 #nprogress .bar,
 #nprogress .spinner {
 z-index: 999999;
+}
+
+/* rollover class for text */
+.rollcatg{
+color:black;
+margin-left:10px;
+margin-bottom:4px;
+font-size:11px;
+
+}
+.rollcatg:hover{
+  color:#6BBCBF ;
+}
+
+  #navdiv2{
+    width:244px;
+    border-right:1px solid rgba(1,0,0,0.1);
+    float:left;
+    padding:20px;
+    height:auto;
+    font-family: arial;
+    font-size:11px;
+  }
+
+  #navdiv4{
+    width:245px;
+    float:left;
+    padding:20px;
+    height:auto;
+    font-family:arial;
+    font-size:11px;
+  }
+
+  #navdiv1{
+    width:195px;
+    border-right:1px solid rgba(1,0,0,0.1);
+    float:left;
+    padding:20px;
+    height:auto;
+    font-family: arial;
+    font-size:11px;
+  }
+
+    #navdiv11{
+    width:196px;
+    float:left;
+    padding:20px;
+    height:auto;
+    font-family: arial;
+    font-size:11px;
+  }
+
+@-moz-document url-prefix() {
+      .mainnavelements{
+      margin-right:51px;
+      font-family: arial;
+      font-size: 13px;
+      height:28px;
+      }
+      .mainnavatags1{
+      font-family: arial;
+      font-size: 13px;
+      height:28px;
+      }
+      ul.nav.navbar-nav.navbar-right{
+      width:250px;
+      height:30px;
+      margin-right:0px !important;
+      float:right;
+      }
+      ul.nav.navbar-nav.navbar-right1{
+      width:215px;
+      height:30px;
+      margin-right:0px !important;
+      float:right;
+      }
+
+      #boxes .window {
+        position:absolute;
+        display:none;
+        z-index:9999;
+        padding:2px;
+        text-align: center;
+        margin-left:-140px;
+        margin-top:-100px;
+
+      }
 }
