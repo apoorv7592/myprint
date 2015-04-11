@@ -22,7 +22,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 #App monitoring
-gem 'rails_12factor'
+gem 'newrelic_rpm'
 
 group :production do 
 	gem 'pg'
