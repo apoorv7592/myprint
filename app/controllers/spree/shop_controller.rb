@@ -1,4 +1,5 @@
 module Spree
+
     class ShopController < Spree::HomeController
         
         def wedding
@@ -52,3 +53,5 @@ module Spree
 
     end
 end
+
+

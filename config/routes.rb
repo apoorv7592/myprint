@@ -44,7 +44,8 @@ Rails.application.routes.draw do
     get '/wedding-invitations', to: 'landing_pages#wedding', as: 'wedding'
     get '/wedding-accessories', to: 'landing_pages#wedaccs', as: 'wedaccs'
     get '/greetings', to: 'landing_pages#greetings', as: 'greetings'
-    get '/party-invitations', to: 'landing_pages#partyinvite', as: 'partyinvite'
+    get '/other-invites', to: 'landing_pages#otherinvite', as: 'partyinvite'
+
     get '/like', to: 'likes#create', as: 'like_suite'
     get '/unlike', to: 'likes#destroy', as: 'unlike_suite'
     get '/designer_dashboard', to: 'designers#dashboard', as: 'designer_dashboard'
@@ -59,6 +60,10 @@ Rails.application.routes.draw do
     get '/wedding-invitations/:id', to: 'shop#wedding', as: 'wedding-invitations'
     get '/greeting-cards/:id', to: 'shop#greeting', as: 'greeting-cards'
     get '/other-invitations/:id', to: 'shop#otherinvites', as: 'partyinvites'
+<<<<<<< HEAD
+=======
+
+>>>>>>> 143b63fba46038f217d57d29ddd997c1bb1a4673
 
     get '/search'  => 'solrsearch#index'
     routes = lambda do
