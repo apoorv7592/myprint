@@ -11,6 +11,65 @@
    });  
    
 </script>
+
+<script>
+  $(document).ready(function(){
+    var total = 0;
+    $("select option:selected").each(function(){
+      var qty = $(this).val();
+      var txt = $(this).text();
+      var arr = txt.split('---Rs. ')
+      if(arr[1] != null){
+        var prc = arr[1];
+        if(qty != null){
+          total = total + parseInt(prc)*qty;    
+        }
+      }
+      else{
+        var prc = 0;
+      }
+    });
+    $("#total-price").html(total);    
+
+  })
+</script>
+
+<script type="text/javascript">
+   ;(function($, window, document, undefined) {
+   
+     $.fn.simplegallery = function(options) {
+   
+         var defaults = {
+             'galltime': 300,
+             'gallcontent': '.content',
+             'gallthumbnail': '.thumbnail',
+             'gallthumb': '.thumb'
+         };
+   
+         var settings = $.extend({}, defaults, options);
+   
+         return this.each(function() {
+   
+             $(settings.gallthumb).click(function() {
+   
+                 $(settings.gallcontent).find('img').stop(true,true).fadeOut(settings.galltime).hide();
+   
+                 var img_attr = $(this).find('img').attr("id"),
+                     image_id = img_attr.replace('thumb_', '');
+   
+                 $('.image_' + image_id + '').stop(true,true).fadeIn(settings.galltime);
+                 return false;
+  
+             });
+   
+         });
+   
+     };
+   
+   })(jQuery, window, document);   
+</script>
+
+
 <style type="text/css">
    li
    {
@@ -42,9 +101,13 @@
          <div id="gallery-demo" class="simplegallery">
             <div class="content">
                <% @prds.each_with_index do |p,j| %>
-               <% p.variant_images.each_with_index do |img,i| %>
-               <%= image_tag img.attachment.url, class: 'image_'+ j.to_s, style:"overflow:hidden;" %>
-               <%end %> 
+                 <% p.variant_images.each_with_index do |img,i| %>
+                    <%if j!= 0 %>
+                    <%= image_tag img.attachment.url, style: "display:none",class: 'image_'+ j.to_s %>
+                    <% else %>
+                     <%= image_tag img.attachment.url, class: 'image_'+ j.to_s%>    
+                    <% end %>
+                 <%end %>
                <% end %>
             </div>
             <div class="clear"></div>
@@ -112,61 +175,48 @@
 <div class=" col-md-12 suite-lower-middle">
    <%= render 'spree/shared/reviews' %>
 </div>
-</div>         
-
-<script>
-  $(document).ready(function(){
-    var total = 0;
-    $("select option:selected").each(function(){
-      var qty = $(this).val();
-      var txt = $(this).text();
-      var arr = txt.split('---Rs. ')
-      if(arr[1] != null){
-        var prc = arr[1];
-        if(qty != null){
-          total = total + parseInt(prc)*qty;    
-        }
-      }
-      else{
-        var prc = 0;
-      }
-    });
-    $("#total-price").html(total);    
-
-  })
-</script>
+</div>  
 
 <script type="text/javascript">
-   ;(function($, window, document, undefined) {
-   
-     $.fn.simplegallery = function(options) {
-   
-         var defaults = {
-             'galltime': 300,
-             'gallcontent': '.content',
-             'gallthumbnail': '.thumbnail',
-             'gallthumb': '.thumb'
-         };
-   
-         var settings = $.extend({}, defaults, options);
-   
-         return this.each(function() {
-   
-             $(settings.gallthumb).click(function() {
-   
-                 $(settings.gallcontent).find('img').stop(true,true).fadeOut(settings.galltime).hide();
-   
-                 var img_attr = $(this).find('img').attr("id"),
-                     image_id = img_attr.replace('thumb_', '');
-   
-                 $('.image_' + image_id + '').stop(true,true).fadeIn(settings.galltime);
-                 return false;
-  
-             });
-   
-         });
-   
-     };
-   
-   })(jQuery, window, document);   
+  (function () {
+
+    var scrollHandle = 0,
+        scrollStep = 5,
+        parent = $(window);
+
+    //Start the scrolling process
+    $(".panner").on("mouseenter", function () {
+        var data = $(this).data('scrollModifier'),
+            direction = parseInt(data, 10);        
+
+        $(this).addClass('active');
+
+        startScrolling(direction, scrollStep);
+    });
+
+    //Kill the scrolling
+    $(".panner").on("mouseleave", function () {
+        stopScrolling();
+        $(this).removeClass('active');
+    });
+
+    //Actual handling of the scrolling
+    function startScrolling(modifier, step) {
+        if (scrollHandle === 0) {
+            scrollHandle = setInterval(function () {
+                var newOffset = parent.scrollLeft() + (scrollStep * modifier);
+
+                parent.scrollLeft(newOffset);
+            }, 10);
+        }
+    }
+
+    function stopScrolling() {
+        clearInterval(scrollHandle);
+        scrollHandle = 0;
+    }
+
+}());
 </script>
+
+
