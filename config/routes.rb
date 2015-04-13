@@ -49,7 +49,7 @@ Rails.application.routes.draw do
     get '/like', to: 'likes#create', as: 'like_suite'
     get '/unlike', to: 'likes#destroy', as: 'unlike_suite'
     get '/designer_dashboard', to: 'designers#dashboard', as: 'designer_dashboard'
-    get '/contact_us', to: 'contactus#contact', as:'contact_us'
+    get '/contact-us', to: 'contactus#contact', as:'contact_us'
     get '/get_prd_images/:id', to: 'suites#get_prd_images'
     get '/get_suite_chars/:id', to: 'suites#get_suite_chars'
     get '/why-buy-from-us', to:'wbfromus#whybuyfromus'
@@ -60,10 +60,7 @@ Rails.application.routes.draw do
     get '/wedding-invitations/:id', to: 'shop#wedding', as: 'wedding-invitations'
     get '/greeting-cards/:id', to: 'shop#greeting', as: 'greeting-cards'
     get '/other-invitations/:id', to: 'shop#otherinvites', as: 'partyinvites'
-<<<<<<< HEAD
-=======
 
->>>>>>> 143b63fba46038f217d57d29ddd997c1bb1a4673
 
     get '/search'  => 'solrsearch#index'
     routes = lambda do
