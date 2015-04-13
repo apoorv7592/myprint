@@ -34,7 +34,7 @@
 <div itemscope itemtype="http://schema.org/IndividualProduct" itemdid="<%= @suite.id %>">
       <div class="col-md-12" style="border-top:1px solid rgba(1,0,0,0.2);border-bottom:1px solid rgba(1,0,0,0.2);margin-bottom:20px;">
          <h4 itemprop="name" class="suitenames"><b><%=@suite.name %></b></h4>
-         <h4 class="suitenames1">Exclusively Designed By: <%= @suite.designer.name%></h4>
+         <h4 class="suitenames1">Exclusively Designed By: <%= link_to @suite.designer.name , @suite.designer%></h4>
       </div>
    <div class="col-md-12 suite-upper-cont" >
       <!-- Suite image container-->
@@ -43,7 +43,7 @@
             <div class="content">
                <% @prds.each_with_index do |p,j| %>
                <% p.variant_images.each_with_index do |img,i| %>
-               <%= image_tag img.attachment.url, class: 'image_'+ j.to_s %>
+               <%= image_tag img.attachment.url, class: 'image_'+ j.to_s, style:"overflow:hidden;" %>
                <%end %> 
                <% end %>
             </div>
@@ -71,7 +71,7 @@
                <%= render 'add_sample', prd: p%>
                <% end %>
                <% end %>
-               <%= submit_tag("Order Sample",:style => 'height:30px;width:100px;margin-left:330px;background:white;color:#6BBCBF;border:1px solid rgba(1,0,0,0.3);') %>
+               <%= submit_tag("Order Sample",:style => 'height:30px;width:100px;margin-left:330px;background:white; color:#6BBCBF;border:1px solid rgba(1,0,0,0.3);') %>
                <% end %> 
             </li>
             <li class="prop">
@@ -106,7 +106,7 @@
 </div>
 <div class="col-md-12 suite-middle-cont" >
    <h3>Description:</h3>
-   Created for you by Minted’s global community of designers, our invitation designs will set the perfect tone for your wedding day. With unique designs printed on luxe paper, all foil pressed wedding invitations are available with several matching accessories. If you have any questions or special requests for your invitations, please email us.
+   <%=@suite.description %>
 </div>
 <!-- suite lower middle part-->
 <div class=" col-md-12 suite-lower-middle">
@@ -161,7 +161,7 @@
    
                  $('.image_' + image_id + '').stop(true,true).fadeIn(settings.galltime);
                  return false;
-   
+  
              });
    
          });

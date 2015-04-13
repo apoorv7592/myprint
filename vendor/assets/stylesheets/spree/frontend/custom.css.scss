@@ -859,41 +859,6 @@ margin-top:10px;
 
 .simplegallery {
   margin: 0 auto;
-  width: 417px;
-  height: 380px;
-  overflow: hidden;
-}
-
-.simplegallery .content {
-  background: #fff;
-  position: relative;
-  width: 418px;
-  height: 270px;
-  overflow: hidden;
-}
-
-.simplegallery .content img {
-  width: 415px;
-}
-
-.simplegallery .thumbnail { margin-top: 5px; }
-
-.simplegallery .thumbnail .thumb {
-  float: left;
-  width: 100px;
-  height: 100px;
-  margin: 0 5px 0 0;
-  cursor: pointer;
-}
-
-.simplegallery .thumbnail .thumb img {
-  width: 100px;
-}
-
-.simplegallery .thumbnail .last { margin: 0; }
-
-.simplegallery {
-  margin: 0 auto;
   width: 480px;
   height: 480px;
   overflow: hidden;
@@ -915,7 +880,9 @@ margin-top:10px;
 
 .simplegallery .content img {
   width: 384px;
+  height:auto;
   margin-left:33px;
+  overflow:hidden;
 }
 
 .simplegallery .thumbnail { margin-top: 5px;}

@@ -21,7 +21,7 @@ module Spree
         	arr = []
         	prds.each do |p|
         		p.variant_images.each do |img|
-        			hash = {name: p.name, url: img.attachment.url(:large)}
+        			hash = {name: p.name, url: img.attachment.url(:mini)}
         			arr<<hash
         		end
         	end
