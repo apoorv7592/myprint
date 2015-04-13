@@ -1,5 +1,7 @@
     
-<h4>Suites:&nbsp<%= @subcat.name %></h4>
+<% if @subcat.present? %>    
+<h4>Suites :<%= @subcat.name %></h4>
+<% end %>
 <div class="row" style="height:auto; width:1000px;">
          
       <div class="col-md-3" style="height:auto; width:238px; margin-right:8px;float:left;">
