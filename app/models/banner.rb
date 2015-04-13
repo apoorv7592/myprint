@@ -17,7 +17,7 @@ class Banner < ActiveRecord::Base
   # This method associates the attribute ":attachment" with a file attachment
   has_attached_file :picture,:path => "banners/pictures/:id/:style/:filename", styles: {
     small: '250x200',
-    main: '1000x593>',
+    main: '1000x650>',
     first: '1000x311>',
     second: '492x311>',
     third: '238x268',

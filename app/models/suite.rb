@@ -63,27 +63,31 @@ class Suite < ActiveRecord::Base
 
 	scope :active, ->  { where( "available_on < ? " , Date.today)}
 	
-	searchable do 
-		text :name, :description
-		time :available_on
-		time :created_at
-		integer :like_no
-		integer :avg_rating
-		integer :position
-		
-		text :designer_names do 
-			designer.name
-		end
+    searchable do 
+        text :name, :description
+        time :available_on
+        time :created_at
+        integer :like_no
+        integer :avg_rating
+        integer :position
+        
+        text :designer_names do 
+            designer.name
+        end
 
-		
-		integer :sub_category_ids, multiple: true do
-    		sub_categories.map(&:id)
-  		end
-		integer :designer_id, multiple:true, references: Designer
-		integer :color_ids, multiple:true, references: Color
-		integer :trim_ids, multiple:true, references: Trim
-		integer :dimension_ids, multiple:true, references: Dimension
-	end
+        
+        integer :sub_category_ids, multiple: true do
+            sub_categories.map(&:id)
+          end
+          integer :category_name, multiple: true do 
+              sub_categories.map{|s| s.category.name}
+          end
+        integer :designer_id, multiple:true, references: Designer
+        integer :color_ids, multiple:true, references: Color
+        integer :trim_ids, multiple:true, references: Trim
+        integer :dimension_ids, multiple:true, references: Dimension
+    end
+
 	
 	def self.retrieve_suites
         Suite.all.order('position ASC')
@@ -107,34 +111,42 @@ class Suite < ActiveRecord::Base
 		save
 	end
 
-	def self.search(q,sub_cat_id,designer_id, color_id, trim_id,dimension_id, created_at,like_no,avg_rating,price )
-		@search = Sunspot.search(Suite) do 
-		    	fulltext q
-		    	with(:available_on).less_than(Time.zone.now)
-		    	with(:sub_category_ids, sub_cat_id)
-		    	designer_filter = with(:designer_id, designer_id) if designer_id.present?
-		    	color_filter = with(:color_ids, color_id) if color_id.present?
-				trim_filter = with(:trim_ids, trim_id) if trim_id.present?		    	
-				dimension_filter = with(:dimension_ids, dimension_id) if dimension_id.present?		    	
-				
-				order_by(:position, :desc)
-				order_by(:created_at, :desc) if created_at
-				order_by(:like_no, :desc) if like_no
-				order_by(:avg_rating, :desc) if avg_rating
-				order_by(:price, :desc) if price
-				
-		    	facet :designer_id, exclude: [designer_filter, color_filter, trim_filter, dimension_filter].compact
-		    	facet :color_ids, exclude: [designer_filter, color_filter, trim_filter, dimension_filter].compact
-		    	facet :trim_ids, exclude: [designer_filter, color_filter, trim_filter, dimension_filter].compact
-		    	facet :dimension_ids, exclude: [designer_filter, color_filter, trim_filter, dimension_filter].compact
-		    	
-		    end
 
-	end
+def self.search(q,sub_cat_id,designer_id, color_id, trim_id,dimension_id, created_at,like_no,avg_rating,price, category_name )
+        @search = Sunspot.search(Suite) do 
+                fulltext q
+                with(:available_on).less_than(Time.zone.now)
+                with(:sub_category_ids, sub_cat_id) if sub_cat_id.present?
+                with(:category_name, category_name) if category_name.present?
+
+                designer_filter = with(:designer_id, designer_id) if designer_id.present?
+                color_filter = with(:color_ids, color_id) if color_id.present?
+                trim_filter = with(:trim_ids, trim_id) if trim_id.present?                
+                dimension_filter = with(:dimension_ids, dimension_id) if dimension_id.present?                
+                
+                order_by(:position, :desc)
+                order_by(:created_at, :desc) if created_at
+                order_by(:like_no, :desc) if like_no
+                order_by(:avg_rating, :desc) if avg_rating
+                order_by(:price, :desc) if price
+                
+                facet :designer_id, exclude: [designer_filter, color_filter, trim_filter, dimension_filter].compact
+                facet :color_ids, exclude: [designer_filter, color_filter, trim_filter, dimension_filter].compact
+                facet :trim_ids, exclude: [designer_filter, color_filter, trim_filter, dimension_filter].compact
+                facet :dimension_ids, exclude: [designer_filter, color_filter, trim_filter, dimension_filter].compact
+                
+            end
+
+    end
 	
 	def get_images
 		self.suite_images
 	end
+
+	Sunspot.search(Suite) do
+	  paginate(:page => 2, :per_page => 15)
+	end
+
 	
 	private
 		
