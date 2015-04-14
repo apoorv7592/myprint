@@ -144,6 +144,20 @@ def self.search(q,sub_cat_id,designer_id, color_id, trim_id,dimension_id, create
 	def get_images
 		self.suite_images
 	end
+    def assign_colors(clrs)
+        self.colors.clear
+        clrs.each do |c|
+            clr = Color.where(id: c).first
+            self.colors<<clr
+        end
+    end
+    def assign_subcats(scats)
+        self.sub_categories.clear
+        scats.each do |s|
+            scat = SubCategory.where(id: s).first
+            self.sub_categories<<scat
+        end
+    end
 
 	
 	private

@@ -52,6 +52,20 @@
 			</div>
 
 			<div class="row form-group">
+				<%=f.label 'Colors', class: 'col-sm-2' %>
+				<div class="col-sm-6">
+					<% Color.all.each do |s| %>
+						<% if !@suite.colors.include?(s)%>
+							<div style="height:30px; width:30px;background-color:<%= s.code%>">
+								<%= check_box_tag 'colors[]', s.id%>
+							</div>
+							
+						<%end%>
+					<% end %>
+				</div>
+			</div>
+
+			<div class="row form-group">
 				<%= f.submit 'Submit', class: 'btn btn-primary col-sm-4 col-sm-offset-2' %>
 			</div>
 		<% end %>

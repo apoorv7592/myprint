@@ -79,6 +79,7 @@ Rails.application.routes.draw do
         resources :categories
         resources :sub_categories
         resources :suite_images
+        resources :colors
         
         resources :suites do
           resources :characteristics

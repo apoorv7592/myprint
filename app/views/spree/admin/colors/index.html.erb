@@ -1,0 +1,42 @@
+
+<div class="row">
+	<div class="col-md-10 col-md-offset-1">
+		<div id="cats_noti"></div>
+		<div class="row">
+			<div class="col-md-6">
+				<h4>All Colors</h4>
+			</div>
+			<div class="col-md-6">
+				<div class="pull-right">
+					<%= button_to 'New Color', new_admin_color_path, method: 'get', class: 'btn btn-primary' 	%>
+				</div>
+			</div>
+		</div>
+
+
+		<table class=" table table-striped">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>color code</th>
+					<th>Color</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @colors.each do |c| %>
+					<tr>
+					
+						<td><b><%= c.id %></b></td>
+						<td><b><%= c.name%></b></td>
+						<td><b><%= c.code%></b></td>
+						<td><div style="width:50px; height:50px; background-color:<%=c.code %>;"></div></td>
+						<td><%= link_to 'Edit',edit_admin_color_path(c)%></td>
+
+					</tr>
+				<%end%>
+			</tbody>
+		</table>
+	</div>
+</div>
