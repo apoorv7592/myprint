@@ -5,6 +5,32 @@
       <%= link_to "reset", "/search"%>
       </strong>
    </div>
+      <div class="rowfilterbox">
+      <strong>
+      Theme
+      </strong>
+      <ul style="list-style-type:none;padding:0 !important;">
+         <% for row in @search.facet(:sub_category_ids).rows %>
+         <li style="margin-left:0px !important;">
+            <% if params[:sub_category_id].to_i == row.value %>
+               <%= link_to sub_category_id: row.value, color_id: params[:color_id], trim_id: params[:trim_id],designer: params[:designer], dimension_id: params[:dimension_id],:class=>"checbox1"  do  %>
+                     <%= check_box_tag 'check','ch', true%>
+                     <%= row.instance.name %>
+                  <% end %>
+            <% else %>
+               <%= link_to sub_category_id: row.value, color_id: params[:color_id], trim_id: params[:trim_id],designer: params[:designer], dimension_id: params[:dimension_id],:class=>"checbox1"  do  %>
+                     <%= check_box_tag 'check','ch' %>
+                     <%= row.instance.name %>
+                  <% end %>
+            <% end %>
+            (
+            <%= row.count %>
+            )
+         </li>
+         <% end %>
+      </ul>
+   </div>
+
    <div class="rowfilterbox">
       <strong>
       Designer
@@ -13,12 +39,12 @@
          <% for row in @search.facet(:designer_id).rows %>
          <li style="margin-left:0px !important;">
             <% if params[:designer].to_i == row.value %>
-            <%= link_to designer: nil, color_id: params[:color_id], trim_id: params[:trim_id], dimension_id: params[:dimension_id],:class=>"checbox1"  do  %>
+            <%= link_to designer: nil, color_id: params[:color_id], trim_id: params[:trim_id], dimension_id: params[:dimension_id],sub_category_id: params[:sub_category_id],:class=>"checbox1"  do  %>
             <%= check_box_tag 'check','ch', true%>
             <%= row.instance.name %>
             <% end %>
             <% else %>
-            <%= link_to designer: row.value, color_id: params[:color_id], trim_id: params[:trim_id], dimension_id: params[:dimension_id],:class=>"checbox1"  do  %>
+            <%= link_to designer: row.value, color_id: params[:color_id], trim_id: params[:trim_id], dimension_id: params[:dimension_id],sub_category_id: params[:sub_category_id],:class=>"checbox1"  do  %>
             <%= check_box_tag 'check','ch' %>
             <%= row.instance.name %>
             <% end %>
@@ -38,12 +64,12 @@
          <% for row in @search.facet(:color_ids).rows %>
          <li >
             <% if params[:color_id].to_i == row.value %>
-            <%= link_to color_id: nil, designer: params[:designer], trim_id: params[:trim_id], dimension_id: params[:dimension_id] do %>
+            <%= link_to color_id: nil, designer: params[:designer], trim_id: params[:trim_id],sub_category_id: params[:sub_category_id], dimension_id: params[:dimension_id] do %>
             <div style="width:15px;height:15px;margin-left:3px;float:left;background:<%= row.instance.code %>">
             </div>
             <% end %>
             <% else %>
-            <%= link_to color_id: row.value, designer: params[:designer], trim_id: params[:trim_id], dimension_id: params[:dimension_id] do %>
+            <%= link_to color_id: row.value, designer: params[:designer], trim_id: params[:trim_id],sub_category_id: params[:sub_category_id], dimension_id: params[:dimension_id] do %>
             <div style="width:15px;height:15px;margin-left:3px;float:left;background:<%= row.instance.code %>">
             </div>
             <% end %>
@@ -52,7 +78,7 @@
          <% end %>
       </ul>
    </div>
-   <div class="rowfilterbox">
+   <!--<div class="rowfilterbox">
       <strong>
       Trim
       </strong>
@@ -76,7 +102,7 @@
          </li>
          <% end %>
       </ul>
-   </div>
+   </div>-->
    <div class="rowfilterbox">
       <strong>
       Dimension
@@ -85,12 +111,12 @@
          <% for row in @search.facet(:dimension_ids).rows %>
          <li>
             <% if params[:dimension_id].to_i == row.value %>
-            <%= link_to  dimension_id: nil, designer: params[:designer], color_id: params[:color_id], trim_id: params[:trim_id] do %>
+            <%= link_to  dimension_id: nil, designer: params[:designer], color_id: params[:color_id],sub_category_id: params[:sub_category_id], trim_id: params[:trim_id] do %>
             <%= check_box_tag '', '', true %>
             <%= row.instance.name %>
             <% end %>
             <% else %>
-            <%= link_to  dimension_id: row.value, designer: params[:designer], color_id: params[:color_id], trim_id: params[:trim_id] do %>
+            <%= link_to  dimension_id: row.value, designer: params[:designer], color_id: params[:color_id],sub_category_id: params[:sub_category_id], trim_id: params[:trim_id] do %>
             <%= check_box_tag '' %>
             <%= row.instance.name %>
             <% end %>
