@@ -52,20 +52,7 @@
 				<td><%= @suite.slug %></td>
 
 			</tr>
-			<tr>
-				<td><b>Images</b></td>
-				<td>
-					<table>
-						<% @suite.suite_images.each do |s|%>
-							<tr>
-								<td><%= s.name %></td>
-								<td><%= image_tag s.avatar.url(:thumb)%></td>
-							</tr>
-						<% end %>
-						<%= link_to "Add photos", new_admin_suite_image_path %>
-					</table>
-				</td>
-			</tr>
+	
 			<tr>
 				<td>
 					Products

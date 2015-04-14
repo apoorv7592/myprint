@@ -26,7 +26,6 @@ module Spree
                       styles: { mini: '48x48>', small: '100x100>', product: '500x500>', large: '600x600>' },
                       default_style: :product,
                       path: 'products/:id/:style/:filename',
-                      convert_options: { all: '-strip -auto-orient -colorspace sRGB' }
     validates_attachment :attachment,
       :presence => true,
       :content_type => { :content_type => %w(image/jpeg image/jpg image/png image/gif) }
