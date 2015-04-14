@@ -16,6 +16,5 @@
 //= require turbolinks
 //= require spree/frontend/all
 //= require spree/backend/all
-//= require nprogress
-//= require nprogress-turbolinks
+
 //= require_tree .

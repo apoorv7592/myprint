@@ -103,9 +103,9 @@
                <% @prds.each_with_index do |p,j| %>
                  <% p.variant_images.each_with_index do |img,i| %>
                     <%if j!= 0 %>
-                    <%= image_tag img.attachment.url, style: "display:none",class: 'image_'+ j.to_s %>
+                    <%= image_tag img.attachment.url(:large), style: "display:none",class: 'image_'+ j.to_s %>
                     <% else %>
-                     <%= image_tag img.attachment.url, class: 'image_'+ j.to_s%>   
+                     <%= image_tag img.attachment.url(:large), class: 'image_'+ j.to_s%>   
                     <% end %>
                  <%end %>
                <% end %>
