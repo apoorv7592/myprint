@@ -29,6 +29,7 @@ Rails.application.routes.draw do
     resources :entries
     resources :designers
     resources :suite_images
+    resources :pogos
 
     
     get '/complete_account', to: 'designers#complete_account', as: 'designer_complete_account'    
@@ -80,6 +81,7 @@ Rails.application.routes.draw do
         resources :sub_categories
         resources :suite_images
         resources :colors
+        resources :pogos
         
         resources :suites do
           resources :characteristics
