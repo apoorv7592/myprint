@@ -74,14 +74,10 @@ class Suite < ActiveRecord::Base
         text :designer_names do 
             designer.name
         end
-
-        
-        integer :sub_category_ids, multiple: true do
-            sub_categories.map(&:id)
-          end
-          integer :category_name, multiple: true do 
-              sub_categories.map{|s| s.category.name}
-          end
+        integer :category_name, multiple: true do 
+          sub_categories.map{|s| s.category.name}
+        end
+        integer :sub_category_ids, multiple: true, references: SubCategory
         integer :designer_id, multiple:true, references: Designer
         integer :color_ids, multiple:true, references: Color
         integer :trim_ids, multiple:true, references: Trim
