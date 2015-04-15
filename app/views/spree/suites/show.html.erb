@@ -115,9 +115,7 @@
                <% @prds.each_with_index do |p,j| %>
                <% p.variant_images.each_with_index do |img,i| %>
                <div class="thumb">
-                  <a href="#" rel="<%=j %>">
                   <%= image_tag img.attachment.url, id: 'thumb_'+j.to_s%>
-                  </a>
                </div>
                <% end %>
                <% end %> 
@@ -139,24 +137,25 @@
             </li>
             <li class="prop">
                <% if !@prds.nil? %>
-               <span style="float:left;"><b>Products:</b></span>
-               <div style="margin-left:88px;width:200px;">
+
+               <div style="margin-left:-20px;">
+                  <h5>BUILD YOUR SUITE &nbsp:</h5>
                   <%= form_for :order, url: populate_orders_path do |f| %>
                   <% @prds.each do |p| %>
                   <% if p.is_not_sample? %>
                   <%= render 'add_prod', prd: p %>
                   <% end %> 
                   <%end%>
-                  <div class="row" style="border-top:1px solid rgba(1,0,0,0.3);margin-top:15px;">
+                  <div class="row" style="margin-top:15px;">
                      <div class="col-md-6" >
-                        <b>Total Price</b>
+                        <b>TOTAL VALUE</b>
                      </div>
                      <div class="col-md-6" >
                         <span><b>Rs.</b></span>
                         <b><span id="total-price">0</span></b>
                      </div>
                   </div>
-                  <%= image_submit_tag("buttonbuynow.png",:id => 'add-to-cart-button') %>
+                  <%= image_submit_tag("buttonbuynow.jpg",:id => 'add-to-cart-button') %>
                   <%end %>
                </div>
              <%end %> 
