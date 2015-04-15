@@ -20,7 +20,7 @@
 			<% b= get_banner('Home Page', 1) %>
 			<% if !b.nil? %>
 			<a href= "/wedding-invitations">
-				<%= image_tag b.picture.url(:main), alt:'main banner', class:'img-responsive', width:1000, height: 500 %>
+				<%= image_tag b.avatar.url(:main), alt:'main banner', class:'img-responsive', width:1000, height: 500 %>
 		    </a>	
 			<%end%>	
 
@@ -30,7 +30,7 @@
 			<% b= get_banner('Home Page', 2) %>
 			<% if !b.nil? %>
 			<a href= "/wedding-invitations">
-            <%= image_tag b.picture.url(:main), alt:'main banner', class:'img-responsive', width:1000, height: 500 %>	
+            <%= image_tag b.avatar.url(:main), alt:'main banner', class:'img-responsive', width:1000, height: 500 %>	
             </a>
      	    <%end%>	
 		</div>
@@ -39,7 +39,7 @@
 			<% b= get_banner('Home Page', 3) %>
 		    <% if !b.nil? %>
 		    <a href= "/wedding-invitations">
-            <%= image_tag b.picture.url(:main), alt:'main banner', class:'img-responsive', width:1000, height: 500 %>
+            <%= image_tag b.avatar.url(:main), alt:'main banner', class:'img-responsive', width:1000, height: 500 %>
             </a>	
 			<%end%>	
 		</div>
@@ -48,7 +48,7 @@
 			<% b= get_banner('Home Page', 4) %>
 		    <% if !b.nil? %>
 		    <a href= "/wedding-invitations">
-            <%= image_tag b.picture.url(:main), alt:'main banner', class:'img-responsive', width:1000, height: 500 %>
+            <%= image_tag b.avatar.url(:main), alt:'main banner', class:'img-responsive', width:1000, height: 500 %>
             </a>	
 			<%end%>	
 		</div>

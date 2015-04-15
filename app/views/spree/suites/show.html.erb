@@ -104,9 +104,11 @@
                  <% p.variant_images.each_with_index do |img,i| %>
                     <%if j!= 0 %>
                     <%= image_tag img.attachment.url(:large), style: "display:none",class: 'image_'+ j.to_s %>
+                    <%= p.name %>
                     <% else %>
                      <%= image_tag img.attachment.url(:large), class: 'image_'+ j.to_s%>   
                     <% end %>
+                    <%= p.name %>
                  <%end %>
                <% end %>
             </div>
