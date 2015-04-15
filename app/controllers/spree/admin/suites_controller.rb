@@ -17,13 +17,14 @@ module Spree
 			def create
 				@s = Suite.new(suites_params)
 				scats = params['sub_category_ids']
+				colors = params['colors']
+
+				if !colors.nil?
+					@s.assign_colors(colors)
+				end
+
 				if !scats.nil?
-					scats.each do |s|
-						scat = SubCategory.where(id: s).first
-						if !@s.sub_categories.include?(scat)
-							@s.sub_categories<<scat
-						end
-					end
+					@s.assign_subcats(scats)
 				end
 
 				if @s.save
@@ -48,14 +49,14 @@ module Spree
 			def update
 				@s = Suite.friendly.find(params[:id])
 				scats = params['sub_category_ids']
-				
+				colors = params['colors']
+
+				if !colors.nil?
+					@s.assign_colors(colors)
+				end
+
 				if !scats.nil?
-					scats.each do |s|
-						scat = SubCategory.where(id: s).first
-						if !@s.sub_categories.include?(scat)
-							@s.sub_categories<<scat
-						end
-					end
+					@s.assign_subcats(scats)
 				end
 
 				if @s.update(suites_params)
@@ -87,6 +88,7 @@ module Spree
 					params.require(:suite).permit(:sku_id, :name, :description, :designer_id, :sub_category_id, :available_on, :slug, :position, :avatar)
 
 				end 
+				
 		end
 	end
 end

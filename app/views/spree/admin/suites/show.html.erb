@@ -27,8 +27,15 @@
 				<td><%= @suite.description%></td>
 			</tr>
 			<tr>
-				<td><b>Designer Id</b></td>
-				<td><%= @suite.designer_id%></td>
+				<td><b>Colors</b></td>
+				<td>
+					<% if !@suite.colors.empty? %>
+						<% @suite.colors.each do |c|%>
+							<div style="height:30px; width:50px;
+							background-color:<%= c.code%>;"></div>
+						<% end %>
+					<% end %>
+				</td>
 			</tr>
 			<tr>
 				<td><b>Designer Name</b></td>

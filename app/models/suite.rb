@@ -74,14 +74,10 @@ class Suite < ActiveRecord::Base
         text :designer_names do 
             designer.name
         end
-
-        
-        integer :sub_category_ids, multiple: true do
-            sub_categories.map(&:id)
-          end
-          integer :category_name, multiple: true do 
-              sub_categories.map{|s| s.category.name}
-          end
+        integer :category_name, multiple: true do 
+          sub_categories.map{|s| s.category.name}
+        end
+        integer :sub_category_ids, multiple: true, references: SubCategory
         integer :designer_id, multiple:true, references: Designer
         integer :color_ids, multiple:true, references: Color
         integer :trim_ids, multiple:true, references: Trim
@@ -144,6 +140,20 @@ def self.search(q,sub_cat_id,designer_id, color_id, trim_id,dimension_id, create
 	def get_images
 		self.suite_images
 	end
+    def assign_colors(clrs)
+        self.colors.clear
+        clrs.each do |c|
+            clr = Color.where(id: c).first
+            self.colors<<clr
+        end
+    end
+    def assign_subcats(scats)
+        self.sub_categories.clear
+        scats.each do |s|
+            scat = SubCategory.where(id: s).first
+            self.sub_categories<<scat
+        end
+    end
 
 	
 	private

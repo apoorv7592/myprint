@@ -24,21 +24,16 @@
 				<%= f.label 'Designer', class: 'col-sm-2' %>
 				<%= f.select :designer_id,Designer.all.collect{|d| [d.name,d.id]}, class: 'col-sm-6'%>
 			</div>
-			<td><%if @suite.sub_categories 
-					@suite.sub_categories.each do |s|%>
-						<%= s.name %>,
-					<% end %>
-				<%end%>
-			</td>
 			<div class="row form-group">
 				<%=f.label 'Sub Categories', class: 'col-sm-2' %>
 				<div class="col-sm-6">
 					<% SubCategory.all.each do |s| %>
-						
-						<% if !@suite.sub_categories.include?(s)%>
-							<%= label_tag s.name%>
+						<%= label_tag s.name%>
+						<% if !@suite.sub_categories.include?(s)%>							
 							<%= check_box_tag 'sub_category_ids[]', s.id%>
 							&nbsp
+						<% else %>
+							<%= check_box_tag 'sub_category_ids[]', s.id, checked: true%>
 						<%end%>
 					<% end %>
 				</div>
@@ -61,6 +56,24 @@
 				<%= f.text_field :slug %>
 			</div>
 
+			<div class="row form-group">
+				<%=f.label 'Colors', class: 'col-sm-2' %>
+				<div class="col-sm-6">
+					<% Color.all.each do |s| %>
+						<div style="height:30px; width:30px;background-color:<%= s.code%>", class="col-md-2">
+							<% if !@suite.colors.include?(s)%>
+								<%= check_box_tag 'colors[]', s.id%>
+							<% else %>
+								<%= check_box_tag 'colors[]', s.id, checked: true%>
+
+							<%end%>
+						</div>
+							
+						
+					<% end %>
+				</div>
+			</div>
+			
 
 			<div class="row form-group">
 				<%= f.submit 'Submit', class: 'btn btn-primary col-sm-4 col-sm-offset-2' %>

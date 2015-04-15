@@ -3,8 +3,9 @@
 
 
 <nav id= 'sort-nav' class="navbar navbar-default" >
-<h5 style="float:left;padding:0 auto;">Sort by:&nbsp&nbsp&nbsp</h5>
 <ul class="nav navbar-nav navbar-sort"> 
+<h5 style="float:left;padding:0 auto;">Sort by:&nbsp&nbsp&nbsp</h5>
+
 <li class="checbox1">
 <%= link_to created_at: 1, designer_id: params[:designer_id], color_id: params[:color_id], trim_id: params[:trim_id], dimension_id: params[:dimension_id] do  %>
    		Newest
