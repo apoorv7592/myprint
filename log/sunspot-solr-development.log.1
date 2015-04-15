@@ -302,3 +302,30 @@ Apr 15, 2015 5:12:32 PM org.apache.solr.servlet.SolrDispatchFilter init
 INFO: user.dir=/Users/apoorvgoyal/.rvm/gems/ruby-2.1.4/gems/sunspot_solr-2.1.1/solr
 Apr 15, 2015 5:12:32 PM org.apache.solr.servlet.SolrDispatchFilter init
 INFO: SolrDispatchFilter.init() done
+Apr 15, 2015 9:28:24 PM org.apache.solr.core.SolrDeletionPolicy onInit
+INFO: SolrDeletionPolicy.onInit: commits:num=1
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/apoorvgoyal/.rvm/gems/ruby-2.1.4/gems/sunspot_solr-2.1.1/solr/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@52d3c6c9; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_2u,generation=102,filenames=[_2x.nvd, _2x.fdx, segments_2u, _2x_Lucene41_0.pos, _2x.si, _2x_Lucene41_0.doc, _2x_Lucene41_0.tim, _2x.fdt, _2x_Lucene41_0.tip, _2x.nvm, _2x.fnm]
+Apr 15, 2015 9:28:24 PM org.apache.solr.core.SolrDeletionPolicy updateCommits
+INFO: newest commit = 102[_2x.nvd, _2x.fdx, segments_2u, _2x_Lucene41_0.pos, _2x.si, _2x_Lucene41_0.doc, _2x_Lucene41_0.tim, _2x.fdt, _2x_Lucene41_0.tip, _2x.nvm, _2x.fnm]
+Apr 15, 2015 9:28:24 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@64f8ee5f realtime
+Apr 15, 2015 9:28:24 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {deleteByQuery=type:Suite (-1498534121751707648)} 0 615
+Apr 15, 2015 9:28:25 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {add=[Suite 1 (1498534122586374144), Suite 2 (1498534122649288704), Suite 3 (1498534122651385856), Suite 4 (1498534122653483008), Suite 5 (1498534122655580160), Suite 6 (1498534122656628736), Suite 7 (1498534122658725888), Suite 8 (1498534122660823040), Suite 9 (1498534122662920192), Suite 10 (1498534122663968768), ... (12 adds)]} 0 82
+Apr 15, 2015 9:28:25 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+Apr 15, 2015 9:28:25 PM org.apache.solr.core.SolrDeletionPolicy onCommit
+INFO: SolrDeletionPolicy.onCommit: commits:num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/apoorvgoyal/.rvm/gems/ruby-2.1.4/gems/sunspot_solr-2.1.1/solr/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@52d3c6c9; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_2u,generation=102,filenames=[_2x.nvd, _2x.fdx, segments_2u, _2x_Lucene41_0.pos, _2x.si, _2x_Lucene41_0.doc, _2x_Lucene41_0.tim, _2x.fdt, _2x_Lucene41_0.tip, _2x.nvm, _2x.fnm]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/apoorvgoyal/.rvm/gems/ruby-2.1.4/gems/sunspot_solr-2.1.1/solr/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@52d3c6c9; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_2v,generation=103,filenames=[segments_2v, _2y.fdx, _2y_Lucene41_0.pos, _2y.nvd, _2y_Lucene41_0.tim, _2y_Lucene41_0.doc, _2y.si, _2y_Lucene41_0.tip, _2y.nvm, _2y.fnm, _2y.fdt]
+Apr 15, 2015 9:28:25 PM org.apache.solr.core.SolrDeletionPolicy updateCommits
+INFO: newest commit = 103[segments_2v, _2y.fdx, _2y_Lucene41_0.pos, _2y.nvd, _2y_Lucene41_0.tim, _2y_Lucene41_0.doc, _2y.si, _2y_Lucene41_0.tip, _2y.nvm, _2y.fnm, _2y.fdt]
+Apr 15, 2015 9:28:25 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@5e9720a1 main
+Apr 15, 2015 9:28:25 PM org.apache.solr.core.SolrCore registerSearcher
+INFO: [development] Registered new searcher Searcher@5e9720a1 main{StandardDirectoryReader(segments_2v:384:nrt _2y(4.2):C12)}
+Apr 15, 2015 9:28:25 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+Apr 15, 2015 9:28:25 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {commit=} 0 69
