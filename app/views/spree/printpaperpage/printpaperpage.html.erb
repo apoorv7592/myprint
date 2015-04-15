@@ -1,4 +1,4 @@
 <% b= get_banner('Print-Paper-Page', 1) %>
 <% if !b.nil? %>
-	<%= image_tag b.picture.url(:original), alt:'Print-Paper-Page', class:'img-responsive' ,width:1000%>
+	<%= image_tag b.avatar.url(:original), alt:'Print-Paper-Page', class:'img-responsive' ,width:1000%>
 <% end%>

@@ -14,6 +14,7 @@
 #
 
 class Pogo < ActiveRecord::Base
+
     has_attached_file :avatar, styles: {
         small: '250x200',
         main: '1000x650>',
@@ -24,6 +25,7 @@ class Pogo < ActiveRecord::Base
         sixth: '365x311',
         seventh: '238x238',
         eigth: '238x137'
+
   }
 
   # Validate the attached image is image/jpg, image/png, etc

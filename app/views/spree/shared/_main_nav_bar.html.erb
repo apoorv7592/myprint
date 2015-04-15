@@ -55,16 +55,23 @@ li{
                         
                           <div class="row">
                               <div class="col-md-3" id="navdiv1">
-                                <li><b>&nbsp&nbsp&nbspWEDDING INVITATIONS</b></li>
-                                <li style="margin-left:22px;margin-top:14px;"><%= link_to image_tag('Wedding_Invitation.jpg'), "/wedding-invitations/shop-all" %>
-                                </li><br><br/><br/><br/><br/><br/><br/>
-
+                                <li><b>&nbsp&nbsp&nbspWEDDING INVITATIONS</b>
+                                </li><br/>
+                                <div style="height:300px;width:auto;">
+                                <li style="margin-left:22px;">                 
+                                <% b= get_banner('wedding-roll', 1) %>
+                                  <% if !b.nil? %>
+                                    <%= link_to image_tag(b.avatar.url(:original), alt:'rollover-image', class:'img-responsive') ,"/wedding-invitations/shop-all" %>
+                                  <% end%> 
+                                 </li>
+                                 </div>
                                 <li><a href="/wedding-invitations/shop-all" class="rollcatg"><b>Shop All Wedding Invitations</b>&nbsp
                                 <i class="fa fa-caret-right"></i></a></li> 
                               </div>
                               
                               <div class="col-md-3" id="navdiv1">
                                 <li><b>&nbsp&nbsp&nbspSHOP BY THEME</b></li><br/>
+                                <div style="height:300px;width:auto;">
                                 <li style="margin-bottom:4px;"><a href="/wedding-invitations/western-collections" class="rollcatg">Western Collections</a></li>
                                 <li style="margin-bottom:4px;"><a href="/wedding-invitations/royal-collections" class="rollcatg">Royal Collections</a></li>
                                 <li style="margin-bottom:4px;"><a href="/wedding-invitations/vibrant-color-collections" class="rollcatg">Vibrant Color Collections</a></li>
@@ -72,8 +79,8 @@ li{
                                 <li style="margin-bottom:4px;"><a href="/wedding-invitations/quirky-collections" class="rollcatg">Quirky Collections</a></li>
                                 <li style="margin-bottom:4px;"><a href="/wedding-invitations/ethnic-collections" class="rollcatg">Ethnic Collections</a></li>
                                 <li style="margin-bottom:4px;"><a href="/wedding-invitations/painting-collections" class="rollcatg">Painting Collections</a></li>
-                                <br/><br/><br/><br/><br/><br/><br/><br/>
-                                <li style="margin-top:14px;"><a href="/wedding-invitations/shop-all" class="rollcatg"><b>Shop All Themes</b>&nbsp
+                                </div>
+                                <li ><a href="/wedding-invitations/shop-all" class="rollcatg"><b>Shop All Themes</b>&nbsp
                                 <i class="fa fa-caret-right"></i></a></li>
                                 
                                 <!--<li style="float:left;"><b>SHOP BY COLOR</b></li>
@@ -90,27 +97,36 @@ li{
                               
                               <div class="col-md-3" id="navdiv1">  
                                 <li><b>&nbsp&nbsp&nbspSHOP BY PRINTING STYLES</b></li><br/>
+                                <div style="height:300px;width:auto;">
                                 <li style="margin-bottom:4px;"><a href="" class="rollcatg">Embossing</a></li>
                                 <li style="float:left;margin-bottom:4px;margin-right:100px;"><a href="" class="rollcatg">Letterpress</a></li>
                                 <li style="margin-bottom:4px;"><a href="" class="rollcatg">Laser-Cut</a></li>
                                 <li style="float:left;margin-bottom:4px;"><a href="" class="rollcatg">Foil-Stamped</a></li><br/>
-                                <li style="margin-left:4px;margin-bottom:16px;"><%= link_to image_tag('Wedding_Invitationtwo.jpg',width:180,height:180), "/wedding-invitations/shop-all" %></li><br/>
-
+                                <li style="margin-left:4px;">
+                                <% b= get_banner('wedding-roll', 3) %>
+                                  <% if !b.nil? %>
+                                    <%= link_to image_tag(b.avatar.url(:original), alt:'rollover-image', class:'img-responsive') ,"/wedding-invitations/shop-all" %>
+                                  <% end%>
+                                </li>
+                                </div>
                                 <li><a href="/wedding-invitations/shop-all" class="rollcatg"><b>Shop All Printing Styles
                                 <i class="fa fa-caret-right"></i></a></li>      
                               </div>
                               <div class="col-md-3" id="navdiv1">
                                 <li><b>&nbsp&nbsp&nbspSAVE THE DATE</b></li><br/>
-                                <li style="margin-left:32px;margin-bottom:6px;"><%= link_to image_tag('STD.jpg'), "/wedding-invitations/save-the-date" %></li>
-                                <br/><br/><br/><br/><br/><br/>
-
-                                <li><a href="/wedding-invitations/photo-upload-save-the-date" class="rollcatg"><b>Shop All Save The Dates</b>&nbsp
-
-                                <i class="fa fa-caret-right"></i></a>
+                                <div style="height:300px;width:auto;">
+                                <li style="margin-left:32px;">                     <% b= get_banner('wedding-roll', 3) %>
+                                  <% if !b.nil? %>
+                                    <%= link_to image_tag(b.avatar.url(:original), alt:'rollover-image', class:'img-responsive' ),"/wedding-invitations/shop-all" %>
+                                  <% end%>
+                                </li>
+                                </div>
+                                <li><a href="/wedding-invitations/photo-upload-save-the-date" class="rollcatg"><b>Shop All Save The Dates</b>&nbsp<i class="fa fa-caret-right"></i></a>
                                 </li>                               
                               </div>
                               <div class="col-md-3" id="navdiv11">
-                                <li class="rollcatg"><b>QUALITY YOU WILL FALL IN LOVE WITH.</b></li>  
+                                <li class="rollcatg"><b>QUALITY YOU WILL FALL IN LOVE WITH.</b></li>
+                                <div style="height:295px;width:auto;"></div>
                                 <li><a href="/paper-and-print-styles" class="rollcatg">Check Our Printing & Paper &nbsp&nbspStyles</a></li>                
                               </div>
                           </div>
@@ -132,7 +148,7 @@ li{
                                 <li><b>&nbsp&nbsp&nbsp BIRTHDAY</b></li><br/>
                                 <li style="margin-bottom:4px;"><a href="" class="rollcatg">Birthday Cards For Brother</a></li>
                                 <li style="margin-bottom:4px;"><a href="" class="rollcatg">Birthday Cards For Sister</a></li><br/>
-                                <li style="margin-left:31px;margin-bottom:8px;"><%= link_to image_tag('Birthday_Sister.jpg'), "/wedding-invitations" %></li>
+                                <li style="margin-left:31px;margin-bottom:8px;">   <%= link_to image_tag('Birthday_Sister.jpg'), "/wedding-invitations" %></li>
                                  <br/><br/><br/><br/><br/><br/><br/><br/>
                             </div>
 
@@ -182,28 +198,37 @@ li{
                   <div id="partyinvt" class="navigation-div">
                           <div class="row">
                             <div class="col-md-3" id="navdiv2">
-                                <li><b>&nbsp&nbsp&nbspKIDS BIRTHDAY PARTY IVITATIONS</b></li><br>
-
-                                <li style="margin-left:8px;"><%= link_to image_tag('Birthday_Party_kid.jpg'), "/other-invitations/kids-birthday-party-invitations" %> 
-                                </li><br/><br/>                                             
-                                <li><a href="/other-invitations/kids-birthday-party-invitations" class="rollcatg"><b>Shop All Birthday Party Invitations </b>&nbsp
-
-                                <i class="fa fa-caret-right"></i></a></li>
+                                <li><b>&nbsp&nbsp&nbspKIDS BIRTHDAY PARTY IVITATIONS</b></li><br/>
+                                <div style="height:300px;width:auto;">
+                                <li style="margin-left:8px;">
+                                  <% b= get_banner('other-roll', 1) %>
+                                  <% if !b.nil? %>
+                                    <%= link_to image_tag(b.avatar.url(:original), alt:'rollover-image', class:'img-responsive'),
+                                    "/other-invitations/kids-birthday-party-invitations" %>
+                                  <% end%> 
+                                </li> 
+                                </div>                                            
+                                <li><a href="/other-invitations/kids-birthday-party-invitations" class="rollcatg"><b>Shop All Birthday Party Invitations </b>&nbsp<i class="fa fa-caret-right"></i></a></li>
                             </div>
                             <div class="col-md-3" id="navdiv2">
-                                <br/><br/>                                
+                                <br/><br/>
+                                <div style="height:300px;width:auto;font-weight:normal;">                             
                                 <li><a href="/other-invitations/1st-birthday-party-invitations" class="rollcatg">1st Birthday Party Invitations</a></li><br/>
                                 <li><a href="/other-invitations/baby-shower-invitations" class="rollcatg">Baby Shower Invitations</a></li><br/>
                                 <li><a href="/other-invitations/bridal-shower-invitations" class="rollcatg">Bridal Shower Invitations</a></li>
-
-
-                                <br/><br/><br/><br/><br/><br/><br/><br/><br/>       <br/><br/><br/><br/><br/><br/><br/>        
+                                </div>
 
                             </div>
                             <div class="col-md-3" id="navdiv2">
-                                <li><b>&nbsp&nbsp&nbspHOUSEWARMING INVITATIONS </b></li><br>
-                                <li style="margin-left:32px;margin-bottom:16px;"><%= link_to image_tag('Housewarming.jpg'), "/other-invitations/house-warming-party-invitations" %> 
-                                </li><br/><br/><br/><br/>
+                                <li><b>&nbsp&nbsp&nbspHOUSEWARMING INVITATIONS </b></li><br/>
+                                <div style="height:300px;width:auto;">           
+                                <li style="margin-left:32px;">
+                                  <% b= get_banner('other-roll', 3) %>
+                                  <% if !b.nil? %>
+                                    <%= link_to image_tag(b.avatar.url(:original), alt:'rollover-image', class:'img-responsive'),"/other-invitations/house-warming-party-invitations" %>
+                                  <% end%> 
+                                </li>
+                                </div>
                                 <li><a href="/other-invitations/house-warming-party-invitations" class="rollcatg"><b>Shop All House Warming Invitations</b>&nbsp
 
                                 <i class="fa fa-caret-right"></i></a>
@@ -212,10 +237,15 @@ li{
 
                             <div class="col-md-3" id="navdiv4">
                                 <li><b>&nbsp&nbsp&nbspENGAGEMENT INVITATIONS </b></li><br/>
-                                <li style="margin-left:32px;margin-bottom:5px;"><%= link_to image_tag('Engagement_Party.jpg'), "/other-invitations/engagement-invitations" %> 
-                                </li><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+                                <div style="height:300px;width:auto;">           
+                                <li style="margin-left:32px;">
+                                  <% b= get_banner('other-roll', 4) %>
+                                  <% if !b.nil? %>
+                                    <%= link_to image_tag(b.avatar.url(:original), alt:'rollover-image', class:'img-responsive') ,"/other-invitations/engagement-invitations" %>
+                                  <% end%> 
+                                </li>
+                                </div>
                                 <li><a href="/other-invitations/engagement-invitations" class="rollcatg"><b>Shop All Engagement Invitations</b>&nbsp
-
                                 <i class="fa fa-caret-right"></i></a>
                                 </li>
                             </div> 

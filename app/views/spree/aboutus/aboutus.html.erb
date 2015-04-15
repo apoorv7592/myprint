@@ -51,7 +51,7 @@
    <div class="col-md-6" style="height:300px; width:400px; margin-bottom:10px;text-align:left;">
 		<% b= get_banner('about-us', 1) %>
 		<% if !b.nil? %>
-			<%= image_tag b.picture.url(:original), alt:'about-us', class:'img-responsive', width:400 %>
+			<%= image_tag b.avatar.url(:original), alt:'about-us', class:'img-responsive', width:400 %>
 		<% end%>
    </div>
 </div>

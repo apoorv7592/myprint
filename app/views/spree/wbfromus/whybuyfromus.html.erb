@@ -2,3 +2,9 @@
 <% if !b.nil? %>
 	<%= image_tag b.avatar.url(:original), alt:'What-about-us', class:'img-responsive', width:1000 %>
 <% end%>
+
+
+<% b= get_banner('Waboutus', 1) %>
+<% if !b.nil? %>
+	<%= image_tag b.avatar.url(:original), alt:'rollover-image', class:'img-responsive' %>
+<% end%>

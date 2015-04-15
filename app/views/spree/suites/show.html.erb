@@ -91,10 +91,22 @@
 </style>
 <!-- Suite Itemscope start-->
 <div itemscope itemtype="http://schema.org/IndividualProduct" itemdid="<%= @suite.id %>">
-      <div class="col-md-12" style="border-top:1px solid rgba(1,0,0,0.2);border-bottom:1px solid rgba(1,0,0,0.2);margin-bottom:20px;">
-         <h4 itemprop="name" class="suitenames"><b><%=@suite.name %></b></h4>
-         <h4 class="suitenames1">Exclusively Designed By: <%= link_to @suite.designer.name , @suite.designer%></h4>
-      </div>
+    <div class="col-md-12" style="border-top:1px solid rgba(1,0,0,0.2);border-bottom:1px solid rgba(1,0,0,0.2);margin-bottom:20px;">
+        <div class ="col-md-6" style="width:500px;float:left">
+           <h4 itemprop="name" class="suitenames"><b><%=@suite.name %></b></h4>
+           <h4 class="suitenames1">Exclusively Designed By: <%= link_to @suite.designer.name , @suite.designer%></h4>
+        </div>
+        <div class ="col-md-6" style="width:500px;float:right">
+                 <%= form_for :order, url: populate_orders_path do |f| %> 
+                 <% @prds.each do |p| %>
+                 <% if !p.is_not_sample? %>
+                 <%= render 'add_sample', prd: p%>
+                 <% end %>
+                 <% end %>
+                 <%= submit_tag("Order Sample",:style => 'height:30px;width:100px;margin-left:400px;margin-top:15px;background:white; color:#6BBCBF;border:1px solid rgba(1,0,0,0.3);') %>
+                 <% end %> 
+        </div>
+    </div>
    <div class="col-md-12 suite-upper-cont" >
       <!-- Suite image container-->
       <div class="suite-img-cont">
@@ -104,11 +116,9 @@
                  <% p.variant_images.each_with_index do |img,i| %>
                     <%if j!= 0 %>
                     <%= image_tag img.attachment.url(:large), style: "display:none",class: 'image_'+ j.to_s %>
-                    <%= p.name %>
                     <% else %>
                      <%= image_tag img.attachment.url(:large), class: 'image_'+ j.to_s%>   
                     <% end %>
-                    <%= p.name %>
                  <%end %>
                <% end %>
             </div>
@@ -127,21 +137,11 @@
       <!-- Suite building form-->
       <div class="suite-form-cont">
          <ul>
-            <li class="prop">
-               <%= form_for :order, url: populate_orders_path do |f| %> 
-               <% @prds.each do |p| %>
-               <% if !p.is_not_sample? %>
-               <%= render 'add_sample', prd: p%>
-               <% end %>
-               <% end %>
-               <%= submit_tag("Order Sample",:style => 'height:30px;width:100px;margin-left:330px;background:white; color:#6BBCBF;border:1px solid rgba(1,0,0,0.3);') %>
-               <% end %> 
-            </li>
+
             <li class="prop">
                <% if !@prds.nil? %>
-
                <div style="margin-left:-20px;">
-                  <h5>BUILD YOUR SUITE &nbsp:</h5>
+                  <h5>BUILD YOUR SUITE &nbsp:</h5><br>
                   <%= form_for :order, url: populate_orders_path do |f| %>
                   <% @prds.each do |p| %>
                   <% if p.is_not_sample? %>

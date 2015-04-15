@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150405124039) do
+ActiveRecord::Schema.define(version: 20150414191206) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -237,6 +237,19 @@ ActiveRecord::Schema.define(version: 20150405124039) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "pogos", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.integer  "position"
+    t.string   "category"
+  end
+
+  add_index "pogos", ["category", "position"], name: "index_pogos_on_category_and_position", unique: true
 
   create_table "ratings", force: true do |t|
     t.integer "stars",    default: 0

@@ -1,3 +1,6 @@
 
 <% b= get_banner('Bonheur', 1) %>
-	<%= image_tag b.avatar.url(:main), alt:'Bonheur', class:'img-responisve' %>	
+<% if !b.nil? %>
+
+	<%= image_tag b.avatar.url(:original), alt:'Bonheur', class:'img-responisve', width: 1000 %>	
+<% end %>

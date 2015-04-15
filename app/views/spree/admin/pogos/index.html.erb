@@ -1,0 +1,66 @@
+<title>Printdora.com - Banners</title>
+
+<style>
+table, td, th {
+    border: 1px solid black;
+    text-align:center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th{
+	background: #66cccc;
+	color:white;
+}
+
+td{
+	background: rgba(1,0,0,0.1);
+}
+
+
+</style>
+
+<div  class="col-md-10 col-md-offset-1" style="width:1000px;">
+	<h1 style="text-align:center;"> Pogos</h1>
+	</br>
+	<div class="row">
+		<div class="col-md-12">
+			<%= link_to 'New Pogo', new_admin_pogo_path, class: 'pull-right', class: 'btn btn-primary'%>
+		</div>
+	</div>
+	<div class="row" style="margin-top:30px;">
+		<div class="col-md-12">
+			<table>
+				<thead>
+					<tr>
+						<th> Banner Category </th>
+						<th> Banner Position</th>
+						<th> Banner Size </th>
+						<th> Banner Image</th>
+						<th> Update</th>
+						<th> Delete</th>
+					</tr>
+				</thead>
+
+				<% if !@pogos.empty? %>
+					<% @pogos.each do |bn| %>
+						<tr>
+							<td><%= bn.category %></td>
+							<td><%= bn.position%></td>
+							<td><%= image_tag bn.avatar.url(:small), height: 100%></td>
+							<td><%= bn.avatar_file_size%></td>
+							<td><%= link_to 'Update', edit_admin_pogo_path(bn.id) %></td>
+							<td><%= link_to 'Delete', admin_pogo_path(bn.id), method: 'delete', confirm: 'You Sure?', :title => "Delete #{bn.category}" %></td>
+						</tr>		
+					<%end %>
+				<% end %>
+			</table>		
+		</div>
+	</div>
+
+</div>
+
+
