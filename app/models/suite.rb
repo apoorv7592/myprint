@@ -82,6 +82,7 @@ class Suite < ActiveRecord::Base
         integer :color_ids, multiple:true, references: Color
         integer :trim_ids, multiple:true, references: Trim
         integer :dimension_ids, multiple:true, references: Dimension
+        
     end
 
 
@@ -109,7 +110,7 @@ class Suite < ActiveRecord::Base
 	end
 
 
-def self.search(q,sub_cat_id,designer_id, color_id, trim_id,dimension_id, created_at,like_no,avg_rating,price, category_name )
+def self.search(q,sub_cat_id,designer_id, color_id, trim_id,dimension_id, created_at,like_no,avg_rating,price, category_name, page )
         @search = Sunspot.search(Suite) do 
                 fulltext q
                 with(:available_on).less_than(Time.zone.now)
@@ -132,6 +133,8 @@ def self.search(q,sub_cat_id,designer_id, color_id, trim_id,dimension_id, create
                 facet :trim_ids, exclude: [designer_filter, color_filter, trim_filter, dimension_filter].compact
                 facet :dimension_ids, exclude: [designer_filter, color_filter, trim_filter, dimension_filter].compact
                 
+                paginate :page => page, :per_page => 12
+
             end
 
     end
