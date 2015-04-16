@@ -110,17 +110,18 @@ class Suite < ActiveRecord::Base
 	end
 
 
-def self.search(q,sub_cat_id,designer_id, color_id, trim_id,dimension_id, created_at,like_no,avg_rating,price, category_name, page )
+def self.search(q,sub_category_id,designer_id, color_id, trim_id,dimension_id, created_at,like_no,avg_rating,price, category_name, page )
         @search = Sunspot.search(Suite) do 
                 fulltext q
                 with(:available_on).less_than(Time.zone.now)
-                with(:sub_category_ids, sub_cat_id) if sub_cat_id.present?
+                with(:sub_category_ids, sub_category_id) if sub_category_id.present?
                 with(:category_name, category_name) if category_name.present?
 
                 designer_filter = with(:designer_id, designer_id) if designer_id.present?
                 color_filter = with(:color_ids, color_id) if color_id.present?
                 trim_filter = with(:trim_ids, trim_id) if trim_id.present?                
                 dimension_filter = with(:dimension_ids, dimension_id) if dimension_id.present?                
+                sub_category_filter = with(:sub_category_ids, sub_category_id) if sub_category_id.present?                
                 
                 order_by(:position, :desc)
                 order_by(:created_at, :desc) if created_at
@@ -128,11 +129,13 @@ def self.search(q,sub_cat_id,designer_id, color_id, trim_id,dimension_id, create
                 order_by(:avg_rating, :desc) if avg_rating
                 order_by(:price, :desc) if price
                 
-                facet :designer_id, exclude: [designer_filter, color_filter, trim_filter, dimension_filter].compact
-                facet :color_ids, exclude: [designer_filter, color_filter, trim_filter, dimension_filter].compact
-                facet :trim_ids, exclude: [designer_filter, color_filter, trim_filter, dimension_filter].compact
-                facet :dimension_ids, exclude: [designer_filter, color_filter, trim_filter, dimension_filter].compact
+                facet :designer_id, exclude: [designer_filter, color_filter, trim_filter, dimension_filter,sub_category_filter].compact
+                facet :color_ids, exclude: [designer_filter, color_filter, trim_filter, dimension_filter, sub_category_filter].compact
+                facet :trim_ids, exclude: [designer_filter, color_filter, trim_filter, dimension_filter, sub_category_filter].compact
+                facet :dimension_ids, exclude: [designer_filter, color_filter, trim_filter, dimension_filter, sub_category_filter].compact
+                facet :sub_category_ids, exclude: [designer_filter, color_filter, trim_filter, dimension_filter, sub_category_filter].compact
                 
+
                 paginate :page => page, :per_page => 12
 
             end
