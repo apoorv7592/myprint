@@ -20,10 +20,10 @@ module Spree
 			def create
 			    @lead = Lead.new(lead_params)
 			    if @lead.save
-					redirect_to :back, message:'Our Designer will contact you soon'
-				else
-					redirect_to :back, message:'Some error occured'
-				end
+			      redirect_to @lead
+			    else
+			      render 'new'
+			    end
 			end
 
 			def destroy
