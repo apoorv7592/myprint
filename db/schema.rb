@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150414191206) do
+ActiveRecord::Schema.define(version: 20150416111506) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -174,6 +174,18 @@ ActiveRecord::Schema.define(version: 20150414191206) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+
+  create_table "leads", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "contact"
+    t.string   "city"
+    t.string   "gender"
+    t.string   "product_id"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "leafs", force: true do |t|
     t.text     "venue"

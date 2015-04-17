@@ -30,7 +30,7 @@ Rails.application.routes.draw do
     resources :designers
     resources :suite_images
     resources :pogos
-
+    resources :leads
     
     get '/complete_account', to: 'designers#complete_account', as: 'designer_complete_account'    
 

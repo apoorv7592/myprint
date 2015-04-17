@@ -16,8 +16,7 @@ module Spree
                     params[:color_id], params[:trim_id], params[:dimension_id],
                     params[:created_at], params[:like_no], params[:avg_rating], params[:price], params[:category_id])
             end
-
-            paginate :page => params[:page], :per_page => 2
+            paginate :page => params[:page], :per_page => 12
             @scsuite = @search.results
 
         end
@@ -35,7 +34,7 @@ module Spree
                     params[:color_id], params[:trim_id], params[:dimension_id],
                     params[:created_at], params[:like_no], params[:avg_rating], params[:price], params[:category_id])
             end            
-            paginate :page => params[:page], :per_page => 2
+            paginate(:page => params[:page] || 1, :per_page => 12)
             @scsuite = @search.results
         end
         def otherinvites
@@ -52,7 +51,7 @@ module Spree
                     params[:color_id], params[:trim_id], params[:dimension_id],
                     params[:created_at], params[:like_no], params[:avg_rating], params[:price], params[:category_id])
             end
-                        paginate :page => params[:page], :per_page => 2
+            Suite.paginate(:page => params[:page] || 1, :per_page => 12)
             @scsuite = @search.results
         end
 
