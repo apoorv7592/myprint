@@ -2,7 +2,7 @@ module Spree
 	class LandingPagesController < Spree::HomeController
 	
 		def wedding
-		    	
+		    @lead = Lead.new	
 		end
 
 		def wedaccs
