@@ -61,6 +61,8 @@ Rails.application.routes.draw do
     get '/wedding-invitations/:id', to: 'shop#wedding', as: 'wedding-invitations'
     get '/greeting-cards/:id', to: 'shop#greeting', as: 'greeting-cards'
     get '/other-invitations/:id', to: 'shop#otherinvites', as: 'partyinvites'
+    get '/get-dedicated-designer', to:'dedicateddesigner#dedicateddesigner'
+
 
 
     get '/search'  => 'solrsearch#index'

@@ -22,7 +22,7 @@ module Spree
 			    if @lead.save
 			      redirect_to @lead
 			    else
-			      render 'new'
+					redirect_to :back, notice: @lead.errors.full_messages
 			    end
 			end
 
