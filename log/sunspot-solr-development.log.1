@@ -597,3 +597,47 @@ Apr 18, 2015 1:06:08 AM org.apache.solr.update.DirectUpdateHandler2 commit
 INFO: end_commit_flush
 Apr 18, 2015 1:06:08 AM org.apache.solr.update.processor.LogUpdateProcessor finish
 INFO: [development] webapp=/solr path=/update params={wt=ruby} {commit=} 0 90
+Apr 18, 2015 3:48:52 AM org.apache.solr.request.UnInvertedField <init>
+INFO: UnInverted multi-valued field {field=designer_id_im,memSize=4476,tindexSize=44,time=0,phase1=0,nTerms=2,bigTerms=1,termInstances=1,uses=0}
+Apr 18, 2015 3:48:52 AM org.apache.solr.request.UnInvertedField <init>
+INFO: UnInverted multi-valued field {field=color_ids_im,memSize=4380,tindexSize=44,time=0,phase1=0,nTerms=3,bigTerms=0,termInstances=3,uses=0}
+Apr 18, 2015 3:48:52 AM org.apache.solr.request.UnInvertedField <init>
+INFO: UnInverted multi-valued field {field=trim_ids_im,memSize=4380,tindexSize=44,time=0,phase1=0,nTerms=1,bigTerms=0,termInstances=1,uses=0}
+Apr 18, 2015 3:48:52 AM org.apache.solr.request.UnInvertedField <init>
+INFO: UnInverted multi-valued field {field=dimension_ids_im,memSize=4380,tindexSize=44,time=0,phase1=0,nTerms=1,bigTerms=0,termInstances=1,uses=0}
+Apr 18, 2015 3:48:52 AM org.apache.solr.request.UnInvertedField <init>
+INFO: UnInverted multi-valued field {field=sub_category_ids_im,memSize=4380,tindexSize=44,time=0,phase1=0,nTerms=4,bigTerms=0,termInstances=4,uses=0}
+Apr 18, 2015 3:48:52 AM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={facet.field={!ex%3De9mecgdp20gh}designer_id_im&facet.field={!ex%3De9mecgdp20gh}color_ids_im&facet.field={!ex%3De9mecgdp20gh}trim_ids_im&facet.field={!ex%3De9mecgdp20gh}dimension_ids_im&facet.field={!ex%3De9mecgdp20gh}sub_category_ids_im&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-04\-17T22\:18\:52Z}&fq=sub_category_ids_im:5&fq={!tag%3De9mecgdp20gh}sub_category_ids_im:5&sort=position_i+desc&rows=12&q=*:*&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&f.sub_category_ids_im.facet.mincount=1&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=1 status=0 QTime=31 
+Apr 18, 2015 3:50:39 AM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={facet.field={!ex%3De9mecgdp20gh}designer_id_im&facet.field={!ex%3De9mecgdp20gh}color_ids_im&facet.field={!ex%3De9mecgdp20gh}trim_ids_im&facet.field={!ex%3De9mecgdp20gh}dimension_ids_im&facet.field={!ex%3De9mecgdp20gh}sub_category_ids_im&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-04\-17T22\:20\:39Z}&fq=sub_category_ids_im:5&fq={!tag%3De9mecgdp20gh}sub_category_ids_im:5&sort=position_i+desc&rows=12&q=*:*&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&f.sub_category_ids_im.facet.mincount=1&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=1 status=0 QTime=16 
+Apr 18, 2015 3:51:01 AM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {add=[Suite 2 (1498739388480225280)]} 0 12
+Apr 18, 2015 3:51:02 AM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+Apr 18, 2015 3:51:02 AM org.apache.solr.core.SolrDeletionPolicy onCommit
+INFO: SolrDeletionPolicy.onCommit: commits:num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/apoorvgoyal/.rvm/gems/ruby-2.1.4/gems/sunspot_solr-2.1.1/solr/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@52d3c6c9; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_30,generation=108,filenames=[_33.nvd, _33.fdx, _33_Lucene41_0.pos, _33.si, _33.nvm, _33.fnm, _33.fdt, _33_Lucene41_0.doc, _33_Lucene41_0.tim, _33_Lucene41_0.tip, segments_30]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/apoorvgoyal/.rvm/gems/ruby-2.1.4/gems/sunspot_solr-2.1.1/solr/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@52d3c6c9; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_31,generation=109,filenames=[_34.fdt, _34.nvd, _34.fdx, _33_Lucene41_0.pos, _33.si, _34.si, _33.nvm, _33.fnm, _33_1.del, _33_Lucene41_0.doc, _33_Lucene41_0.tim, _33_Lucene41_0.tip, _33.nvd, _34_Lucene41_0.pos, _33.fdx, _34_Lucene41_0.doc, _34_Lucene41_0.tim, _33.fdt, segments_31, _34.nvm, _34.fnm, _34_Lucene41_0.tip]
+Apr 18, 2015 3:51:02 AM org.apache.solr.core.SolrDeletionPolicy updateCommits
+INFO: newest commit = 109[_34.fdt, _34.nvd, _34.fdx, _33_Lucene41_0.pos, _33.si, _34.si, _33.nvm, _33.fnm, _33_1.del, _33_Lucene41_0.doc, _33_Lucene41_0.tim, _33_Lucene41_0.tip, _33.nvd, _34_Lucene41_0.pos, _33.fdx, _34_Lucene41_0.doc, _34_Lucene41_0.tim, _33.fdt, segments_31, _34.nvm, _34.fnm, _34_Lucene41_0.tip]
+Apr 18, 2015 3:51:02 AM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@5a1338d4 main
+Apr 18, 2015 3:51:02 AM org.apache.solr.core.SolrCore registerSearcher
+INFO: [development] Registered new searcher Searcher@5a1338d4 main{StandardDirectoryReader(segments_31:406:nrt _33(4.2):C12/1 _34(4.2):C1)}
+Apr 18, 2015 3:51:02 AM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+Apr 18, 2015 3:51:02 AM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {commit=} 0 131
+Apr 18, 2015 3:56:15 AM org.apache.solr.request.UnInvertedField <init>
+INFO: UnInverted multi-valued field {field=designer_id_im,memSize=4480,tindexSize=44,time=1,phase1=0,nTerms=2,bigTerms=1,termInstances=1,uses=0}
+Apr 18, 2015 3:56:15 AM org.apache.solr.request.UnInvertedField <init>
+INFO: UnInverted multi-valued field {field=color_ids_im,memSize=4384,tindexSize=44,time=0,phase1=0,nTerms=3,bigTerms=0,termInstances=3,uses=0}
+Apr 18, 2015 3:56:15 AM org.apache.solr.request.UnInvertedField <init>
+INFO: UnInverted multi-valued field {field=trim_ids_im,memSize=4384,tindexSize=44,time=1,phase1=1,nTerms=1,bigTerms=0,termInstances=1,uses=0}
+Apr 18, 2015 3:56:15 AM org.apache.solr.request.UnInvertedField <init>
+INFO: UnInverted multi-valued field {field=dimension_ids_im,memSize=4384,tindexSize=44,time=0,phase1=0,nTerms=1,bigTerms=0,termInstances=1,uses=0}
+Apr 18, 2015 3:56:15 AM org.apache.solr.request.UnInvertedField <init>
+INFO: UnInverted multi-valued field {field=sub_category_ids_im,memSize=4384,tindexSize=44,time=0,phase1=0,nTerms=4,bigTerms=0,termInstances=4,uses=0}
+Apr 18, 2015 3:56:15 AM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={facet.field={!ex%3De9mecgdp20gh}designer_id_im&facet.field={!ex%3De9mecgdp20gh}color_ids_im&facet.field={!ex%3De9mecgdp20gh}trim_ids_im&facet.field={!ex%3De9mecgdp20gh}dimension_ids_im&facet.field={!ex%3De9mecgdp20gh}sub_category_ids_im&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-04\-17T22\:26\:15Z}&fq=sub_category_ids_im:5&fq={!tag%3De9mecgdp20gh}sub_category_ids_im:5&sort=position_i+desc&rows=12&q=*:*&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&f.sub_category_ids_im.facet.mincount=1&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=1 status=0 QTime=28 
