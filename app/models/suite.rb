@@ -39,7 +39,7 @@ class Suite < ActiveRecord::Base
     validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/  # Validate the attached image is image/jpg, image/png, etc	
 		
 		
-    has_many :suite_images, dependent: :destroy	
+    #has_many :suite_images, dependent: :destroy	
 	belongs_to :designer
 	has_and_belongs_to_many :colors
 	has_and_belongs_to_many :trims
