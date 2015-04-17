@@ -1,6 +1,6 @@
 module HomeControllerExtensions
 	def index
-			@designers = Designer.find(1)
+			@designers = Designer.find(9)
 			@lead = Lead.new
 	end
 end

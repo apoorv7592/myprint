@@ -513,3 +513,25 @@ Apr 16, 2015 4:28:26 PM org.apache.solr.core.SolrCore execute
 INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-04\-16T10\:58\:26Z}&fq=category_name_im:0&sort=position_i+desc&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=2 status=0 QTime=2 
 Apr 16, 2015 5:23:41 PM org.apache.solr.core.SolrCore execute
 INFO: [development] webapp=/solr path=/select params={q=*:*&facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-04\-16T11\:53\:41Z}&fq=category_name_im:0&sort=position_i+desc&rows=30&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=2 status=0 QTime=4 
+Apr 17, 2015 5:47:24 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@3399a97c realtime
+Apr 17, 2015 5:47:24 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {deleteByQuery=type:Suite (-1498701411365421056)} 0 94
+Apr 17, 2015 5:47:24 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {add=[Suite 1 (1498701411711451136), Suite 2 (1498701411718791168), Suite 3 (1498701411720888320), Suite 4 (1498701411721936896), Suite 5 (1498701411724034048), Suite 6 (1498701411725082624), Suite 7 (1498701411726131200), Suite 8 (1498701411727179776), Suite 9 (1498701411729276928), Suite 10 (1498701411730325504), ... (12 adds)]} 0 21
+Apr 17, 2015 5:47:24 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+Apr 17, 2015 5:47:24 PM org.apache.solr.core.SolrDeletionPolicy onCommit
+INFO: SolrDeletionPolicy.onCommit: commits:num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/apoorvgoyal/.rvm/gems/ruby-2.1.4/gems/sunspot_solr-2.1.1/solr/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@52d3c6c9; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_2y,generation=106,filenames=[_30.nvm, _30.fnm, _30_Lucene41_0.pos, _31.fdt, _31.si, _30_Lucene41_0.doc, _30_Lucene41_0.tim, segments_2y, _30.si, _31.fdx, _31.nvd, _31_Lucene41_0.doc, _31_Lucene41_0.tim, _31_Lucene41_0.tip, _31.nvm, _31.fnm, _31_Lucene41_0.pos, _30.fdt, _30.nvd, _30.fdx, _30_1.del, _30_Lucene41_0.tip]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/apoorvgoyal/.rvm/gems/ruby-2.1.4/gems/sunspot_solr-2.1.1/solr/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@52d3c6c9; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_2z,generation=107,filenames=[_32_Lucene41_0.tip, _32.nvd, _32.fdx, _32_Lucene41_0.doc, _32_Lucene41_0.tim, _32.si, segments_2z, _32.fdt, _32_Lucene41_0.pos, _32.nvm, _32.fnm]
+Apr 17, 2015 5:47:24 PM org.apache.solr.core.SolrDeletionPolicy updateCommits
+INFO: newest commit = 107[_32_Lucene41_0.tip, _32.nvd, _32.fdx, _32_Lucene41_0.doc, _32_Lucene41_0.tim, _32.si, segments_2z, _32.fdt, _32_Lucene41_0.pos, _32.nvm, _32.fnm]
+Apr 17, 2015 5:47:24 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@361ee2bc main
+Apr 17, 2015 5:47:24 PM org.apache.solr.core.SolrCore registerSearcher
+INFO: [development] Registered new searcher Searcher@361ee2bc main{StandardDirectoryReader(segments_2z:399:nrt _32(4.2):C12)}
+Apr 17, 2015 5:47:24 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+Apr 17, 2015 5:47:24 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {commit=} 0 141
