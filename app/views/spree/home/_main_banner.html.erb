@@ -19,7 +19,7 @@
 		<div class="item active">
 			<% b= get_banner('Home Page', 1) %>
 			<% if !b.nil? %>
-			<a href= "/wedding-invitations">
+			<a href= "/wedding-invitations/shop-all">
 				<%= image_tag b.avatar.url(:main), alt:'main banner', class:'img-responsive', width:1000, height: 500 %>
 		    </a>	
 			<%end%>	
@@ -29,7 +29,7 @@
 		<div class="item">
 			<% b= get_banner('Home Page', 2) %>
 			<% if !b.nil? %>
-			<a href= "/wedding-invitations">
+			<a href="/wedding-invitations/shop-all">>
             <%= image_tag b.avatar.url(:main), alt:'main banner', class:'img-responsive', width:1000, height: 500 %>	
             </a>
      	    <%end%>	
@@ -38,7 +38,7 @@
 		<div class="item">
 			<% b= get_banner('Home Page', 3) %>
 		    <% if !b.nil? %>
-		    <a href= "/wedding-invitations">
+		    <a href= "/designers">
             <%= image_tag b.avatar.url(:main), alt:'main banner', class:'img-responsive', width:1000, height: 500 %>
             </a>	
 			<%end%>	
@@ -47,7 +47,7 @@
 		<div class="item">
 			<% b= get_banner('Home Page', 4) %>
 		    <% if !b.nil? %>
-		    <a href= "/wedding-invitations">
+		    <a href= "/get-dedicated-designer">
             <%= image_tag b.avatar.url(:main), alt:'main banner', class:'img-responsive', width:1000, height: 500 %>
             </a>	
 			<%end%>	

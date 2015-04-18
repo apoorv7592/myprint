@@ -97,7 +97,7 @@
            <h4 class="suitenames1">Exclusively Designed By: <%= link_to @suite.designer.name , @suite.designer%></h4>
         </div>
         <div class ="col-md-6" style="width:500px;float:right">
-            <%= link_to image_tag("advicebtn.jpg",:style => 'float:right;margin-top:10px;'), "#","data-toggle"=>"modal", "data-target"=>"#mysuiteModal",class:"topbar" %>
+            <%= link_to image_tag("ddesigner.jpg",:style => 'float:right;margin-top:10px;'), "#","data-toggle"=>"modal", "data-target"=>"#mysuiteModal",class:"topbar" %>
 
             <%= render "suiteform" %>
                  <!--<%= form_for :order, url: populate_orders_path do |f| %> 
@@ -131,9 +131,12 @@
                <% p.variant_images.each_with_index do |img,i| %>
                <div class="thumb">
                   <%= image_tag img.attachment.url, id: 'thumb_'+j.to_s%>
+                  <%= p.name %>
                </div>
                <% end %>
+
                <% end %> 
+
             </div>
          </div>
       </div>
