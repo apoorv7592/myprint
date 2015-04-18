@@ -94,6 +94,9 @@ gem 'monologue'
 ##for full text search
 gem 'sunspot_rails'
 
+gem 'kaminari'
+gem "sunspot_with_kaminari", '~> 0.2.0'
+
 
 gem 'binding_of_caller'
 
@@ -145,5 +148,8 @@ gem 'nprogress-rails'
 
 #for tree structure
 gem 'ancestry'
+
+#for background job
+gem 'delayed_job_active_record'
 
 

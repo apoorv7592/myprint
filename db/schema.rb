@@ -11,43 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150414191206) do
+ActiveRecord::Schema.define(version: 20150417171602) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
     t.integer "suite_id", null: false
   end
 
+  add_index "Colors_Suites", ["color_id", "suite_id"], name: "index_Colors_Suites_on_color_id_and_suite_id"
+  add_index "Colors_Suites", ["suite_id", "color_id"], name: "index_Colors_Suites_on_suite_id_and_color_id"
+
   create_table "Dimensions_Suites", id: false, force: true do |t|
     t.integer "dimension_id", null: false
     t.integer "suite_id",     null: false
   end
+
+  add_index "Dimensions_Suites", ["dimension_id", "suite_id"], name: "index_Dimensions_Suites_on_dimension_id_and_suite_id"
+  add_index "Dimensions_Suites", ["suite_id", "dimension_id"], name: "index_Dimensions_Suites_on_suite_id_and_dimension_id"
 
   create_table "Papers_Suites", id: false, force: true do |t|
     t.integer "paper_id", null: false
     t.integer "suite_id", null: false
   end
 
+  add_index "Papers_Suites", ["paper_id", "suite_id"], name: "index_Papers_Suites_on_paper_id_and_suite_id"
+  add_index "Papers_Suites", ["suite_id", "paper_id"], name: "index_Papers_Suites_on_suite_id_and_paper_id"
+
   create_table "Suites_Trims", id: false, force: true do |t|
     t.integer "suite_id", null: false
     t.integer "trim_id",  null: false
   end
 
-  create_table "attachinary_files", force: true do |t|
-    t.integer  "attachinariable_id"
-    t.string   "attachinariable_type"
-    t.string   "scope"
-    t.string   "public_id"
-    t.string   "version"
-    t.integer  "width"
-    t.integer  "height"
-    t.string   "format"
-    t.string   "resource_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "attachinary_files", ["attachinariable_type", "attachinariable_id", "scope"], name: "by_scoped_parent"
+  add_index "Suites_Trims", ["suite_id", "trim_id"], name: "index_Suites_Trims_on_suite_id_and_trim_id"
+  add_index "Suites_Trims", ["trim_id", "suite_id"], name: "index_Suites_Trims_on_trim_id_and_suite_id"
 
   create_table "banners", force: true do |t|
     t.string   "category"
@@ -58,6 +54,32 @@ ActiveRecord::Schema.define(version: 20150414191206) do
     t.datetime "picture_updated_at"
     t.integer  "position"
   end
+
+  create_table "blogit_comments", force: true do |t|
+    t.string   "name",       null: false
+    t.string   "email",      null: false
+    t.string   "website"
+    t.text     "body",       null: false
+    t.integer  "post_id",    null: false
+    t.string   "state"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "blogit_comments", ["post_id"], name: "index_blogit_comments_on_post_id"
+
+  create_table "blogit_posts", force: true do |t|
+    t.string   "title",                            null: false
+    t.text     "body",                             null: false
+    t.string   "state",          default: "draft", null: false
+    t.integer  "comments_count", default: 0,       null: false
+    t.integer  "blogger_id"
+    t.string   "blogger_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "blogit_posts", ["blogger_type", "blogger_id"], name: "index_blogit_posts_on_blogger_type_and_blogger_id"
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -72,7 +94,6 @@ ActiveRecord::Schema.define(version: 20150414191206) do
   create_table "characteristics", force: true do |t|
     t.string   "name"
     t.integer  "suite_id"
-    t.integer  "variant_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "avatar_file_name"
@@ -99,6 +120,13 @@ ActiveRecord::Schema.define(version: 20150414191206) do
     t.datetime "updated_at"
   end
 
+  create_table "customizations", force: true do |t|
+    t.string   "color"
+    t.integer  "order_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "custs", force: true do |t|
     t.string   "gr_name"
     t.string   "gr_father_name"
@@ -113,6 +141,22 @@ ActiveRecord::Schema.define(version: 20150414191206) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "delayed_jobs", force: true do |t|
+    t.integer  "priority",   default: 0, null: false
+    t.integer  "attempts",   default: 0, null: false
+    t.text     "handler",                null: false
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority"
 
   create_table "designers", force: true do |t|
     t.string   "name"
@@ -160,6 +204,7 @@ ActiveRecord::Schema.define(version: 20150414191206) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "title"
   end
 
   create_table "friendly_id_slugs", force: true do |t|
@@ -174,6 +219,18 @@ ActiveRecord::Schema.define(version: 20150414191206) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+
+  create_table "leads", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "contact"
+    t.string   "city"
+    t.string   "gender"
+    t.string   "product_id"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "leafs", force: true do |t|
     t.text     "venue"
@@ -1250,6 +1307,10 @@ ActiveRecord::Schema.define(version: 20150414191206) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.string   "name"
+    t.string   "uid"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
     t.boolean  "is_designer",                        default: false
     t.boolean  "subscribed"
   end
@@ -1257,6 +1318,7 @@ ActiveRecord::Schema.define(version: 20150414191206) do
   add_index "spree_users", ["deleted_at"], name: "index_spree_users_on_deleted_at"
   add_index "spree_users", ["email"], name: "email_idx_unique", unique: true
   add_index "spree_users", ["spree_api_key"], name: "index_spree_users_on_spree_api_key"
+  add_index "spree_users", ["uid"], name: "index_spree_users_on_uid"
 
   create_table "spree_variants", force: true do |t|
     t.string   "sku",                                        default: "",    null: false
@@ -1348,6 +1410,7 @@ ActiveRecord::Schema.define(version: 20150414191206) do
     t.string   "slug"
   end
 
+  add_index "sub_categories", ["category_id"], name: "index_sub_categories_on_category_id"
   add_index "sub_categories", ["slug"], name: "index_sub_categories_on_slug"
 
   create_table "sub_categories_suites", id: false, force: true do |t|
@@ -1382,29 +1445,26 @@ ActiveRecord::Schema.define(version: 20150414191206) do
     t.decimal  "avg_rating",          precision: 7, scale: 5, default: 0.0, null: false
     t.integer  "reviews_count",                               default: 0,   null: false
     t.integer  "like_no",                                     default: 0
+    t.string   "slug"
+    t.integer  "position"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.string   "slug"
-    t.integer  "position"
+    t.string   "variant"
+    t.string   "characteristic"
   end
 
   add_index "suites", ["available_on"], name: "index_suites_on_available_on"
+  add_index "suites", ["designer_id"], name: "index_suites_on_designer_id"
   add_index "suites", ["position"], name: "index_suites_on_position"
   add_index "suites", ["slug"], name: "index_suites_on_slug"
+  add_index "suites", ["sub_category_id"], name: "index_suites_on_sub_category_id"
 
   create_table "trims", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "variants", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "name"
-    t.string   "colorcode"
   end
 
 end

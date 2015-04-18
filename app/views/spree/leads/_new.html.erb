@@ -1,0 +1,64 @@
+<style type="text/css">
+	.homeform{
+		width: 300px;
+		font-weight: normal;
+		margin-left: -50px;
+	}
+</style>
+
+<script type="text/javascript">
+$(document).ready(function () {
+$(".homeform").validate({
+debug: true,
+rules: {
+"lead[name]": {required: true, name: true},
+"lead[email]": {required: true, email: true},
+"lead[contact]": {required: true, contact: true},
+"lead[city]": {required: true, city: true},
+}
+});
+});
+</script>
+
+
+<div class="row">
+	<div class="col-sm-offset-2">
+			<%= form_for @lead, html: {class: 'homeform'} do |f| %>
+			<div class="row form-group">
+				<%= f.label 'Name', class: 'col-sm-3' %>
+				<%= f.text_field :name, class: 'col-sm-9'%>
+			</div>
+			<div class="row form-group">
+				<%= f.label 'email', class: 'col-sm-3'%>
+				<%= f.text_field :email, class: 'col-sm-9' %>
+			</div>
+			<div class="row form-group">
+				<%= f.label 'contact', class: 'col-sm-3' %>
+				<%= f.text_field :contact, class: 'col-sm-9'%>
+				
+			</div>
+			<div class="row form-group">
+				<%= f.label 'city', class: 'col-sm-3' %>
+				<%= f.text_field :city, class: 'col-sm-9'%>
+			</div>
+			
+			
+			<div class="row form-group">
+				<%= f.label 'Gender', class: 'col-sm-3' %>
+                <%= f.radio_button :gender, 'male', :checked => true %>Male
+                <%= f.radio_button :gender, 'female' %> Female			
+            </div>
+
+            <div class="row form-group">
+				<%= f.hidden_field :product_id, value: "test", class: 'col-sm-6'%>
+			</div>
+
+			
+
+			<div class="row form-group">
+                <%= image_submit_tag("advicebtn.jpg",:style => 'margin-left:80px;') %>
+
+			</div>
+		<% end %>
+	</div>
+</div>

@@ -231,6 +231,11 @@ GEM
       nokogiri (~> 1.6.0)
       polyglot
       rails (>= 3.1)
+    delayed_job (4.0.6)
+      activesupport (>= 3.0, < 5.0)
+    delayed_job_active_record (4.0.3)
+      activerecord (>= 3.0, < 5.0)
+      delayed_job (>= 3.0, < 4.1)
     devise (3.4.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -458,6 +463,10 @@ GEM
       rails (>= 3)
       sunspot (= 2.1.1)
     sunspot_solr (2.1.1)
+    sunspot_with_kaminari (0.2.0)
+      kaminari (>= 0.14.0)
+      sunspot
+      sunspot_rails
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
       ref
@@ -505,11 +514,13 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.3)
   cloudinary
   coffee-rails (~> 4.0.0)
+  delayed_job_active_record
   font-awesome-rails
   friendly_id
   haml
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   less-rails (~> 2)
   letter_opener
   monologue
@@ -539,6 +550,7 @@ DEPENDENCIES
   state_machine (= 1.2.0)
   sunspot_rails
   sunspot_solr
+  sunspot_with_kaminari (~> 0.2.0)
   therubyracer (~> 0.12.1)
   turbolinks
   uglifier (>= 1.3.0)

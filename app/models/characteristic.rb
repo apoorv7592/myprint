@@ -5,6 +5,7 @@
 #  id                  :integer          not null, primary key
 #  name                :string(255)
 #  suite_id            :integer
+#  variant_id          :integer
 #  created_at          :datetime
 #  updated_at          :datetime
 #  avatar_file_name    :string(255)
