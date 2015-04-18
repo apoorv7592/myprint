@@ -5,7 +5,7 @@ module Spree
         def wedding
             par = params[:id]
             if par=='shop-all'
-                @search = Suite.search(params[:search], params[:sub_cat_id], params[:designer],
+                @search = Suite.search(params[:search], params[:sub_category_id], params[:designer],
                     params[:color_id], params[:trim_id], params[:dimension_id],
                     params[:created_at], params[:like_no], params[:avg_rating], params[:price], 'Wedding Invitations', params[:page])
             else
@@ -23,7 +23,7 @@ module Spree
         def greeting
             par = params[:id]
             if par=='shop-all'
-                @search = Suite.search(params[:search], params[:sub_cat_id], params[:designer],
+                @search = Suite.search(params[:search], params[:sub_category_id], params[:designer],
                     params[:color_id], params[:trim_id], params[:dimension_id],
                     params[:created_at], params[:like_no], params[:avg_rating], params[:price], 'Other Invitations', params[:page])
             else
@@ -39,7 +39,7 @@ module Spree
         def otherinvites
             par = params[:id]
             if par=='shop-all'
-                @search = Suite.search(params[:search], params[:sub_cat_id], params[:designer],
+                @search = Suite.search(params[:search], params[:sub_category_id], params[:designer],
                     params[:color_id], params[:trim_id], params[:dimension_id],
                     params[:created_at], params[:like_no], params[:avg_rating], params[:price], 'Other Invitations', params[:page])
             else
