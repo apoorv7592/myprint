@@ -3,7 +3,7 @@ module Spree
 		class DesignersController < Spree::Admin::BaseController
 			
 			def index
-				@designers = Designer.order('id DESC').page params[:page]
+				@designers = Designer.active
 			end
 
 			def new

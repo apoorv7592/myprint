@@ -23,7 +23,8 @@
 	}
 	.designer-div{
 		margin-top: 0;
-		height: 300px;
+		height: 450px;
+		font-weight: normal;
 	}
 	.designer-box{
 		margin-top: 30px;
@@ -63,6 +64,8 @@
 	}
 	.black-5{
 		color: #808080;
+		font-size:17px;
+
 	}
 	.products{
 		margin-top: 10px;
@@ -76,44 +79,40 @@
 			<div class="row">
 				<div class="col-lg-12 designer-div">
 					<div class="col-lg-6">
-						<%= image_tag @details.avatar.url(:square),height:400,width:400; %>					</div>
+						<%= image_tag @details.avatar.url(:medium),height:400,width:400; %>					
+					</div>
 					<div class="col-lg-6">
 						<div class="designer-name">
 							<h4 class="black-7"><%= @details.name %></h4>
 							<h6 class="crimson black-5"><%= @details.city %></h6>
-						</div>
-						<div class="designer-quote">
-							<h4 class="black-7">I Believe..</h4>
-							<h6 class="crimson black-5">"Simple is Good"</h6>
-						</div>
+					    </div>
 
-
-					<div class="designer-links">
-				        <div>
-							<% if spree_current_user %>
-								<% unless spree_current_user==@designer %>
-								  <% if spree_current_user.following?(@designer) %>
-								    <%= render 'unfollow' %>
-								  <% else %>
-								    <%= render 'follow' %>
-								  <% end %>
+						<div class="designer-links">
+					        <div>
+								<% if spree_current_user %>
+									<% unless spree_current_user==@designer %>
+									  <% if spree_current_user.following?(@designer) %>
+									    <%= render 'unfollow' %>
+									  <% else %>
+									    <%= render 'follow' %>
+									  <% end %>
+									<% end %>
+								<% else %>
+									<%= link_to 'Login to Follow this designer', '/login' %>
 								<% end %>
-							<% else %>
-								<%= link_to 'Login to Follow this designer', '/login' %>
-							<% end %>
-					    </div>
-                        <div style="margin-top:20px;">
-						  <a href="<%= following_user_path(@designer) %>" class="removeline">
-						      <%= @designer.following.count %>
-						    following
-						  </a>
-						  &nbsp&nbsp&nbsp
-						  <a href="<%= followers_user_path(@designer) %>" class="removeline">
-						      <%= @designer.followers.count %>
-						    followers
-						  </a>
-					    </div>
-					</div>
+						    </div>
+	                        <div style="margin-top:20px;">
+							  <a href="<%= following_user_path(@designer) %>" class="removeline">
+							      <%= @designer.following.count %>
+							    following
+							  </a>
+							  &nbsp&nbsp&nbsp
+							  <a href="<%= followers_user_path(@designer) %>" class="removeline">
+							      <%= @designer.followers.count %>
+							    followers
+							  </a>
+						    </div>
+						</div>
 					</div>
 				</div>
 			</div>

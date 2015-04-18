@@ -23,7 +23,7 @@ module Spree
 			      Spree::LeadMailer.delay.send_signup_mail
 			      redirect_to @lead
 			    else
-			      render 'new'
+					redirect_to :back, notice: @lead.errors.full_messages
 			    end
 			end
 

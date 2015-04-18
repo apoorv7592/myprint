@@ -13,6 +13,7 @@ module Spree
 			@pap = @suite.papers
 			@dim = @suite.dimensions
 			@review = @suite.reviews.new
+      @lead = Lead.new
         end
 
         def get_prd_images
