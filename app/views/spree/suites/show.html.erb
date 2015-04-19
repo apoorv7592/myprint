@@ -89,6 +89,18 @@
    }
 
 </style>
+
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TBK7B6"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TBK7B6');</script>
+<!-- End Google Tag Manager -->
+
+
 <!-- Suite Itemscope start-->
 <div itemscope itemtype="http://schema.org/IndividualProduct" itemdid="<%= @suite.id %>">
     <div class="col-md-12" style="margin-bottom:20px;">
@@ -96,8 +108,8 @@
            <h4 itemprop="name" class="suitenames"><b><%=@suite.name %></b></h4>
            <h4 class="suitenames1">Exclusively Designed By: <%= link_to @suite.designer.name , @suite.designer%></h4>
         </div>
-        <div class ="col-md-6" style="width:500px;float:right">
-            <%= link_to image_tag("ddesigner.jpg",:style => 'float:right;margin-top:10px;'), "#","data-toggle"=>"modal", "data-target"=>"#mysuiteModal",class:"topbar" %>
+        <div class ="col-md-6" style="width:500px;">
+            <%= link_to "need help?", "#","data-toggle"=>"modal", "data-target"=>"#mysuiteModal",class:"toplink" %>
 
             <%= render "suiteform" %>
                  <!--<%= form_for :order, url: populate_orders_path do |f| %> 
@@ -142,9 +154,9 @@
       </div>
       <!-- Suite building form-->
       <div class="suite-form-cont">
-         <ul>
+         <!--<ul>
 
-            <!--<li class="prop">
+            <li class="prop">
                <% if !@prds.nil? %>
                <div style="margin-left:-20px;">
                   <h5>BUILD YOUR SUITE &nbsp:</h5><br>
@@ -167,11 +179,25 @@
                   <%end %>
                </div>
              <%end %> 
-          </li> -->
+          </li> 
+
+
           <li class="prop"> 
             <%= render 'spree/suites/add_to_wishlist' %>                
           </li>      
-      </ul>
+      </ul>-->
+
+      <div class="col-md-12" style="padding:30 30px;font-weight:normal;text-align:center;">
+        <h3>Price : <i class="fa fa-inr"></i> xxx</h3>
+        <p>*The above price includes<br>
+          (4 leaves + Envelopes with free guest addressing on it)
+          <br/><br/>
+          You can also add more leaves during customization by paying extra.
+        </p>
+
+        <h4 style="margin-top:300px;">Don't Worry!<br> Our Dedicated Designer will help you from end-to-end customization to delivery of your cards.</h4><br/><br/>
+        <%= link_to image_tag("Customization.jpg"), "/wedding-invitations" %>
+      </div>
    </div>
 </div>
 <div class="col-md-12 suite-middle-cont" >

@@ -134,7 +134,7 @@ def self.search(q,sub_category_id,designer_id, color_id, trim_id,dimension_id, c
                 facet :sub_category_ids, exclude: [designer_filter, color_filter, trim_filter, dimension_filter, sub_category_filter].compact
                 
 
-                paginate :page => page, :per_page => 12
+                paginate :page => page, :per_page => 8
 
             end
 

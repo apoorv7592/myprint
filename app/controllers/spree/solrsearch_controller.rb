@@ -24,7 +24,7 @@ module Spree
 		    	facet :sub_category_ids, exclude: [designer_filter, color_filter, trim_filter, dimension_filter, sub_category_filter].compact
 		    	#with(:color_id).any_of() if params[:color_id].present?
 		    	
-               paginate :page => params[:page], :per_page => 12
+               paginate :page => params[:page], :per_page => 8
 
 		    	#dynamic(:color_ids) do
 		    	#	facet(:color_names)

@@ -37,6 +37,16 @@ li{
 }
 </style>
 
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TBK7B6"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TBK7B6');</script>
+<!-- End Google Tag Manager -->
+
 
    
  
@@ -102,7 +112,7 @@ li{
                                 <li style="float:left;margin-bottom:4px;margin-right:100px;"><a href="" class="rollcatg">Letterpress</a></li>
                                 <li style="margin-bottom:4px;"><a href="" class="rollcatg">Laser-Cut</a></li>
                                 <li style="float:left;margin-bottom:4px;"><a href="" class="rollcatg">Foil-Stamped</a></li><br/>
-                                <li style="margin-left:4px;">
+                                <li style="margin-left:4px;float:left;">
                                 <% b= get_banner('wedding-roll', 2) %>
                                   <% if !b.nil? %>
                                     <%= link_to image_tag(b.avatar.url(:original), alt:'rollover-image', class:'img-responsive') ,"/wedding-invitations/shop-all" %>
