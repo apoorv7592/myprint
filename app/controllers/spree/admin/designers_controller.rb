@@ -21,11 +21,11 @@ module Spree
 			end
 			
 			def edit 
-				@dsg = Designer.where(id: params[:id]).first
+				@dsg = Designer.find(params[:id])
 			end
 
 			def update
-				@dsg = Designer.where(id: params[:id]).first
+				@dsg = Designer.find(params[:id])
 				if @dsg.update(designer_params)
 					render action: 'show' 
 				else
@@ -34,7 +34,7 @@ module Spree
 			end
 
 			def show
-				@dsg = Designer.where(id: params[:id]).first
+				@dsg = Designer.find(params[:id])
 			end
 
 			def activate

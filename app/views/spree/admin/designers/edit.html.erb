@@ -3,7 +3,7 @@
 		<h4><b>Update the designer details</b> </h4>
 	</div>
 </div>
-<%= form_for @dsg,url: admin_designer_path, method: 'put', class: 'form-horizontal' do |f| %>
+<%= form_for (@dsg), url: admin_designer_path, method: 'put', class: 'form-horizontal' do |f| %>
 	<div class="row form-group">
 		<%= f.label :name, class: 'col-sm-2 col-sm-offset-2' %>
 		<%= f.text_field :name, class: 'col-sm-4' %>
