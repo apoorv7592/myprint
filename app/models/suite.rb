@@ -121,12 +121,12 @@ def self.search(q,sub_category_id,designer_id, color_id, trim_id,dimension_id, c
                 dimension_filter = with(:dimension_ids, dimension_id) if dimension_id.present?                
                 sub_category_filter = with(:sub_category_ids, sub_category_id) if sub_category_id.present?                
                 
-                order_by(:position, :desc)
                 order_by(:created_at, :desc) if created_at
                 order_by(:like_no, :desc) if like_no
                 order_by(:avg_rating, :desc) if avg_rating
-                order_by(:price, :desc) if price
-                
+                order_by(:price, :desc) if price                
+                order_by(:position, :desc)
+
                 facet :designer_id, exclude: [designer_filter, color_filter, trim_filter, dimension_filter,sub_category_filter].compact
                 facet :color_ids, exclude: [designer_filter, color_filter, trim_filter, dimension_filter, sub_category_filter].compact
                 facet :trim_ids, exclude: [designer_filter, color_filter, trim_filter, dimension_filter, sub_category_filter].compact

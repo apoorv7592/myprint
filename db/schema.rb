@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150417171602) do
+ActiveRecord::Schema.define(version: 20150419135745) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -230,6 +230,7 @@ ActiveRecord::Schema.define(version: 20150417171602) do
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "status"
   end
 
   create_table "leafs", force: true do |t|
