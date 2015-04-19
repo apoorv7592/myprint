@@ -41,5 +41,9 @@ module Spree
        		a = arr.to_json
        		render json: a
        	end
+
+        def customization
+          @lead = Lead.new
+        end
 	end
 end

@@ -62,6 +62,7 @@ Rails.application.routes.draw do
     get '/greeting-cards/:id', to: 'shop#greeting', as: 'greeting-cards'
     get '/other-invitations/:id', to: 'shop#otherinvites', as: 'partyinvites'
     get '/get-dedicated-designer', to:'dedicateddesigner#dedicateddesigner'
+    get '/customization', to:'suites#customization'
 
 
 
