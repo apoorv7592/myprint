@@ -63,6 +63,12 @@ Rails.application.routes.draw do
     get '/other-invitations/:id', to: 'shop#otherinvites', as: 'partyinvites'
     get '/get-dedicated-designer', to:'dedicateddesigner#dedicateddesigner'
     get '/customization', to:'suites#customization'
+    get '/privacy-policy', to:'privacy#privacy'
+    get '/copyright-policy', to:'copyright#copyright'
+    get '/how-it-works', to:'howitworks#howitworks'
+    get '/return-policy', to:'privacy#return'
+
+
 
 
 

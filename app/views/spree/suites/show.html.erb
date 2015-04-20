@@ -90,18 +90,9 @@
            <h4 itemprop="name" class="suitenames"><b><%=@suite.name %></b></h4>
            <h4 class="suitenames1">Exclusively Designed By: <%= link_to @suite.designer.name , @suite.designer%></h4>
         </div>
-        <div class ="col-md-6" style="width:500px;float:right">
-            <%= link_to image_tag("ddesigner.jpg",:style => 'float:right;margin-top:10px;'), "#","data-toggle"=>"modal", "data-target"=>"#mysuiteModal",class:"topbar" %>
-
-            <%= render "suiteform" %>
-                 <!--<%= form_for :order, url: populate_orders_path do |f| %> 
-                 <% @prds.each do |p| %>
-                 <% if !p.is_not_sample? %>
-                 <%= render 'add_sample', prd: p%>
-                 <% end %>
-                 <% end %>
-                 <%= submit_tag("Order Sample",:style => 'height:30px;width:100px;margin-left:400px;margin-top:15px;background:white; color:#6BBCBF;border:1px solid rgba(1,0,0,0.3);') %>
-                 <% end %> -->
+        <div class ="col-md-6" style="width:500px;float:right;">
+            <a class="toplink" data-target="#mysuiteModal" data-toggle="modal" href="#">need help?</a>
+            <%= render 'suiteform' %>
         </div>
     </div>
    <div class="col-md-12 suite-upper-cont" >
@@ -136,7 +127,7 @@
       </div>
       <!-- Suite building form-->
       <div class="suite-form-cont">
-         <ul>
+         <!--<ul>
 
             <!--<li class="prop">
                <% if !@prds.nil? %>
@@ -161,11 +152,22 @@
                   <%end %>
                </div>
              <%end %> 
-          </li> -->
+          </li> 
           <li class="prop"> 
             <%= render 'spree/suites/add_to_wishlist' %>                
           </li>      
-      </ul>
+      </ul>-->
+    <div class="col-md-12" style="padding:30 30px;font-weight:normal;text-align:center;">
+            <h3>Price : <i class="fa fa-inr"></i> xxx</h3>
+            <p>*The above price includes<br>
+              (4 leaves + Envelopes with free guest addressing on it)
+              <br><br>
+              You can also add more leaves during customization by paying extra.
+            </p>
+
+            <h4 style="margin-top:300px;">Our Dedicated Designer will help you from end-to-end customization to delivery of your cards.</h4><br><br>
+            <%= link_to image_tag("Customization.jpg"), "/customization" %>
+          </div>
    </div>
 </div>
 <div class="col-md-12 suite-middle-cont" >

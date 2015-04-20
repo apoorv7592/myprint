@@ -10,6 +10,7 @@
 	</head>
 
 	<body class="<%= body_class %> container" id="<%= @body_id || 'default' %>" data-hook="body" >
+				<%= render partial: 'spree/shared/google_analytics' %>
 		
 			<div  class="col-md-12" style="width:1000px;margin-left:70px;">
 				<%= render partial: 'spree/shared/topmost_nav' %>
@@ -37,7 +38,7 @@
 					<%= yield :templates %>
 				</div>
 				<%= render partial: 'spree/shared/footer' %>
-				<%= render partial: 'spree/shared/google_analytics' %>
+
 			</div>
 	</body>
 </html>
