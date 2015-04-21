@@ -2,7 +2,7 @@ module Spree
 	class LikesController < Spree::HomeController
 		before_action :authenticate_login
 		def create
-			@s = Suite.where(id: params[:id]).first if params[:id]
+			@s = Suite.friendly.find(params[:id]) if params[:id]
 			u = spree_current_user
 			like = Like.new(user_id: u.id, suite_id: @s.id)
 			if like.save
@@ -19,7 +19,7 @@ module Spree
 		end
 		
 		def destroy
-			@s = Suite.where(id: params[:id]).first if params[:id]
+			@s = Suite.friendly.find(params[:id]) if params[:id]
 			u = spree_current_user
 			like = Like.where(suite_id: @s.id, user_id: u.id).first
 			if like.destroy

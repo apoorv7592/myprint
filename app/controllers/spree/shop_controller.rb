@@ -17,10 +17,6 @@ module Spree
                     params[:created_at], params[:like_no], params[:avg_rating], params[:price], params[:category_id],params[:page])
 
             end
-
-
-
-
             @scsuite = @search.results
 
         end
@@ -38,8 +34,6 @@ module Spree
                     params[:color_id], params[:trim_id], params[:dimension_id],
                     params[:created_at], params[:like_no], params[:avg_rating], params[:price], params[:category_id],params[:page] )
             end            
-
-
             @scsuite = @search.results
         end
         def otherinvites
@@ -56,8 +50,6 @@ module Spree
                     params[:color_id], params[:trim_id], params[:dimension_id],
                     params[:created_at], params[:like_no], params[:avg_rating], params[:price], params[:category_id], params[:page])
             end
-
-                        
             @scsuite = @search.results
         end
 

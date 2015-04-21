@@ -91,6 +91,7 @@ Rails.application.routes.draw do
         resources :suite_images
         resources :colors
         resources :pogos
+        resources :leads
         
         resources :suites do
           resources :characteristics

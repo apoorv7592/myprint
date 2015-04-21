@@ -1,0 +1,43 @@
+<div class="row">
+	<div class="col-md-10 col-md-offset-1">
+		<h1>Leads</h1>
+		<table class="table">
+			<thead>
+				<tr>
+					<th> Id</th>
+					<th> Name</th>
+					<th> Email </th>
+					<th> Contact Number</th>
+					<th> Gender </th>
+					<th> City </th>
+					<th> Product Interested In </th>
+					<th> URL </th>
+
+					<th> Action</th>
+				</tr>
+			</thead>
+
+			<% if !@leads.empty? %>
+				<% @leads.each do |l| %>
+					<tr>
+						<td><%= l.id %></td>
+						<td><%= l.name%></td>
+						<td><%= l.email%></td>
+						<td><%= l.contact%></td>
+						<td><%= l.gender%></td>
+						<td><%= l.city%></td>
+						<td><% s = Suite.find(l.product_id.to_i) if l.product_id.to_i != 0%>
+							<% if s.present?%>
+								<%= link_to s.name, admin_suite_path(s)%>
+							<%end%>
+						</td>
+						<td><%= l.url%></td>
+						
+						<td><%= link_to 'Update', edit_admin_lead_path(l.id) %></td>
+					</tr>		
+				<%end %>
+			<% end %>
+		</table>
+	</div>
+</div>
+		

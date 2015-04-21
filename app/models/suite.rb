@@ -128,6 +128,7 @@ def self.search(q,sub_category_id,designer_id, color_id, trim_id,dimension_id, c
                 order_by(:price, :desc) if price
                 order_by(:position, :desc)
                 
+
                 facet :designer_id, exclude: [designer_filter, color_filter, trim_filter, dimension_filter,sub_category_filter].compact
                 facet :color_ids, exclude: [designer_filter, color_filter, trim_filter, dimension_filter, sub_category_filter].compact
                 facet :trim_ids, exclude: [designer_filter, color_filter, trim_filter, dimension_filter, sub_category_filter].compact

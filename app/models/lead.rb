@@ -19,4 +19,5 @@ class Lead < ActiveRecord::Base
   validates :email, length: { maximum: 500 }
   validates :contact, length: { in: 10..12 }
   validates :city, length: { minimum: 2}
+
 end

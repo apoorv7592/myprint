@@ -149,6 +149,7 @@ gem 'nprogress-rails'
 #for tree structure
 gem 'ancestry'
 
-
+#for background job
+gem 'delayed_job_active_record'
 
 

@@ -20,6 +20,7 @@ module Spree
 			def create
 			    @lead = Lead.new(lead_params)
 			    if @lead.save
+			      Spree::LeadMailer.delay.send_signup_mail
 			      redirect_to @lead
 			    else
 					redirect_to :back, notice: @lead.errors.full_messages
