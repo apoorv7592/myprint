@@ -7,13 +7,12 @@
 	<div><%= render partial: 'accessibility' %></div>
 	<% end -%>
 </div>
-<table id="wishlist">
+<table id="wishlist" style="width:1000px;">
 	<thead>
 		<tr>
 			<% if @wishlist.user == spree_current_user %>
 			<th><%= Spree.t(:wishlist_actions) %></th>
 			<% end -%>
-			<th><%= Spree.t(:item_view) %></th>
 			<th><%= Spree.t(:item_description) %></th>
 			<th><%= Spree.t(:availability) %></th>
 			<th><%= Spree.t(:date_added) %></th>
