@@ -21,7 +21,7 @@ module Spree
 			end
 			
 			def edit 
-				@dsg = Designer.find(params[:id])
+				@dsg = Designer.where(params[:designer_id]).first
 			end
 
 			def update
@@ -34,7 +34,7 @@ module Spree
 			end
 
 			def show
-				@dsg = Designer.find(params[:id])
+				@dsg = Designer.where(params[:designer_id]).first
 			end
 
 			def activate

@@ -2,7 +2,7 @@
 	<div id="wishlist-form">
 		<%= form_for Spree::WishedProduct.new do |f| %>
 			<%= f.hidden_field :suite_id, value: @suite.id %>
-			<button type="submit" style = 'height:30px;width:130px;margin-left:150px;background:#ffffff;color:#6BBCBF;border:none;position:absolute;bottom:40px;'>
+			<button type="submit" style = 'height:30px;width:130px;background:#ffffff;color:#6BBCBF;border:none;margin-top:20px;'>
 		    <%= Spree.t(:add_to_wishlist) %>
 		     <span class="glyphicon glyphicon-pushpin"></span>
 			</button>
