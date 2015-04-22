@@ -245,10 +245,10 @@ function launchWindow(id) {
 
      <%= form_for @subscriber do |f| %>
 
-        <div style="position:absolute;top:220px;left:375px">
+        <div style="position:absolute;top:200px;left:300px">
           <%= f.email_field :email,placeholder:"enter your email address", class:"emailpopup" %>
         </div>
-        <div style="position:absolute;top:250px;left:435px">
+        <div style="position:absolute;top:230px;left:360px">
           <%=f.submit :SignUp,:class=>"submitpopup btn btn-default btn-large" %>
         </div>
      <% end %>
