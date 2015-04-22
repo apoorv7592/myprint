@@ -390,7 +390,7 @@ li.checkbox1{
   width:200px;
   height:200px;
   border:1px solid black;
-  color:blue;
+  color:#6BBCBF;
 }
 
 li.ulfilterbox{
@@ -402,8 +402,13 @@ li.ulfilterbox{
 .rowfilterbox{
   width:217px;
   height:auto;
-  border: 1px solid rgba(1,0,0,0.01);
   margin-bottom:20px;
+  color:rgba(1,0,0,0.6);
+}
+
+
+.rowfilterbox ul li a{
+  color:#6BBCBF;
 }
 
 
