@@ -941,3 +941,25 @@ Apr 22, 2015 7:37:10 PM org.apache.solr.core.SolrCore execute
 INFO: [development] webapp=/solr path=/select params={facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&facet.field={!ex%3D}sub_category_ids_im&start=8&fq=type:Suite&fq=available_on_d:{*+TO+2015\-04\-22T14\:07\:10Z}&sort=position_i+desc&rows=8&q=*:*&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&f.sub_category_ids_im.facet.mincount=1&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=13 status=0 QTime=1 
 Apr 22, 2015 7:37:42 PM org.apache.solr.core.SolrCore execute
 INFO: [development] webapp=/solr path=/select params={facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&facet.field={!ex%3D}sub_category_ids_im&start=8&fq=type:Suite&fq=available_on_d:{*+TO+2015\-04\-22T14\:07\:42Z}&sort=position_i+desc&rows=8&q=*:*&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&f.sub_category_ids_im.facet.mincount=1&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=13 status=0 QTime=2 
+Apr 22, 2015 7:50:48 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@46574271 realtime
+Apr 22, 2015 7:50:49 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {deleteByQuery=type:Suite (-1499162160824057856)} 0 109
+Apr 22, 2015 7:50:49 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {add=[Suite 1 (1499162161393434624), Suite 2 (1499162161401823232), Suite 3 (1499162161403920384), Suite 4 (1499162161404968960), Suite 5 (1499162161406017536), Suite 6 (1499162161407066112), Suite 7 (1499162161408114688), Suite 8 (1499162161410211840), Suite 9 (1499162161411260416), Suite 10 (1499162161412308992), ... (13 adds)]} 0 24
+Apr 22, 2015 7:50:49 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+Apr 22, 2015 7:50:49 PM org.apache.solr.core.SolrDeletionPolicy onCommit
+INFO: SolrDeletionPolicy.onCommit: commits:num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/apoorvgoyal/.rvm/gems/ruby-2.1.4/gems/sunspot_solr-2.1.1/solr/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@52d3c6c9; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_36,generation=114,filenames=[_39.fdx, segments_36, _39.nvd, _38.si, _39_Lucene41_0.doc, _39_Lucene41_0.tim, _39_Lucene41_0.tip, _39_Lucene41_0.pos, _39.nvm, _39.fnm, _38.fdt, _38.nvd, _38_1.del, _38.fdx, _38_Lucene41_0.tip, _38.nvm, _38.fnm, _39.si, _38_Lucene41_0.pos, _39.fdt, _38_Lucene41_0.doc, _38_Lucene41_0.tim]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/apoorvgoyal/.rvm/gems/ruby-2.1.4/gems/sunspot_solr-2.1.1/solr/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@52d3c6c9; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_37,generation=115,filenames=[_3a.nvm, _3a.fnm, _3a.si, _3a.fdt, segments_37, _3a_Lucene41_0.tip, _3a_Lucene41_0.doc, _3a_Lucene41_0.tim, _3a.fdx, _3a_Lucene41_0.pos, _3a.nvd]
+Apr 22, 2015 7:50:49 PM org.apache.solr.core.SolrDeletionPolicy updateCommits
+INFO: newest commit = 115[_3a.nvm, _3a.fnm, _3a.si, _3a.fdt, segments_37, _3a_Lucene41_0.tip, _3a_Lucene41_0.doc, _3a_Lucene41_0.tim, _3a.fdx, _3a_Lucene41_0.pos, _3a.nvd]
+Apr 22, 2015 7:50:49 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@3d61195e main
+Apr 22, 2015 7:50:49 PM org.apache.solr.core.SolrCore registerSearcher
+INFO: [development] Registered new searcher Searcher@3d61195e main{StandardDirectoryReader(segments_37:427:nrt _3a(4.2):C13)}
+Apr 22, 2015 7:50:49 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+Apr 22, 2015 7:50:49 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {commit=} 0 164

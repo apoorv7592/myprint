@@ -61,17 +61,17 @@
       <strong>
       Color
       </strong>
-      <ul style="list-style-type:none;padding:0 !important;">
+      <ul style="list-style-type:none;padding:0 !important;margin-botto:100px;">
          <% for row in @search.facet(:color_ids).rows %>
          <li >
             <% if params[:color_id].to_i == row.value %>
             <%= link_to color_id: nil, designer: params[:designer], trim_id: params[:trim_id],sub_category_id: params[:sub_category_id], dimension_id: params[:dimension_id] do %>
-            <div style="width:15px;height:15px;margin-left:3px;float:left;background:<%= row.instance.code %>">
+            <div style="width:15px;height:15px;margin-left:3px;margin-bottom:3px;float:left;background:<%= row.instance.code %>">
             </div>
             <% end %>
             <% else %>
             <%= link_to color_id: row.value, designer: params[:designer], trim_id: params[:trim_id],sub_category_id: params[:sub_category_id], dimension_id: params[:dimension_id] do %>
-            <div style="width:15px;height:15px;margin-left:3px;float:left;background:<%= row.instance.code %>">
+            <div style="width:15px;height:15px;margin-left:3px;float:left;margin-bottom:3px;background:<%= row.instance.code %>">
             </div>
             <% end %>
             <% end %>

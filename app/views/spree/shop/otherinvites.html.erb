@@ -1,9 +1,6 @@
 <!-- Google Tag Manager -->
 
     
-<% if @subcat.present? %>    
-<h4>Suites: <%= @subcat.name %></h4>
-<% end %>
 <div class="row" style="height:auto; width:1000px;">
      <div class="col-md-12" style="height:150px; width:1000px;margin-bottom:25px;">
           <% b= get_banner('shopall-other', 1) %>
@@ -11,6 +8,11 @@
        <%= image_tag b.avatar.url(:original), alt:'Bonheur', class:'img-responisve', width: 1000 %>  
        <% end %>
      </div>
+
+     <% if @subcat.present? %>    
+        <h5><%= @subcat.name %></h5>
+     <% end %>
+
          
       <div class="col-md-3" style="height:auto; width:230px; margin-right:10px;float:left;border:1px solid rgba(1,0,0,0.3);">
       <%= render 'spree/solrsearch/filter'%>
