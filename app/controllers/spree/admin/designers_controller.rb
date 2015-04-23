@@ -25,7 +25,7 @@ module Spree
 			end
 
 			def update
-				@dsg = Designer.find(params[:id])
+				@dsg = Designer.friendly.find(params[:id])
 				if @dsg.update(designer_params)
 					render action: 'show' 
 				else
