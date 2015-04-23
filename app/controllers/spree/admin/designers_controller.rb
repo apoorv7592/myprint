@@ -21,7 +21,7 @@ module Spree
 			end
 			
 			def edit 
-				@dsg = Designer.where(params[:designer_id]).first
+				@dsg = Designer.friendly.find(params[:id])
 			end
 
 			def update
