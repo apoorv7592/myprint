@@ -152,4 +152,5 @@ gem 'ancestry'
 #for background job
 gem 'delayed_job_active_record'
 
+gem 'rack-timeout'
 

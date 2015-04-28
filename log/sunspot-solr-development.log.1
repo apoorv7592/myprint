@@ -373,3 +373,25 @@ Apr 23, 2015 9:02:06 PM org.apache.solr.update.DirectUpdateHandler2 commit
 INFO: end_commit_flush
 Apr 23, 2015 9:02:06 PM org.apache.solr.update.processor.LogUpdateProcessor finish
 INFO: [development] webapp=/solr path=/update params={wt=ruby} {commit=} 0 79
+Apr 24, 2015 2:44:44 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@7643098c realtime
+Apr 24, 2015 2:44:44 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {deleteByQuery=type:Suite (-1499324098489090048)} 0 60
+Apr 24, 2015 2:44:44 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {add=[Suite 1 (1499324098696708096), Suite 2 (1499324098699853824), Suite 3 (1499324098701950976), Suite 4 (1499324098702999552), Suite 5 (1499324098705096704), Suite 6 (1499324098706145280), Suite 7 (1499324098707193856), Suite 8 (1499324098708242432), Suite 9 (1499324098709291008), Suite 10 (1499324098712436736), ... (13 adds)]} 0 24
+Apr 24, 2015 2:44:44 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+Apr 24, 2015 2:44:44 PM org.apache.solr.core.SolrDeletionPolicy onCommit
+INFO: SolrDeletionPolicy.onCommit: commits:num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/apoorvgoyal/.rvm/gems/ruby-2.1.4/gems/sunspot_solr-2.1.1/solr/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@48fe331e; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_3a,generation=118,filenames=[_3d_Lucene41_0.tip, _3d.nvd, _3d.fdx, _3d_Lucene41_0.doc, _3d_Lucene41_0.tim, _3d.fdt, _3d_Lucene41_0.pos, _3d.nvm, _3d.fnm, segments_3a, _3d.si]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/apoorvgoyal/.rvm/gems/ruby-2.1.4/gems/sunspot_solr-2.1.1/solr/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@48fe331e; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_3b,generation=119,filenames=[_3e.fdx, _3e.nvd, _3e.nvm, _3e.fnm, _3e.fdt, _3e_Lucene41_0.tip, _3e_Lucene41_0.doc, _3e_Lucene41_0.tim, _3e_Lucene41_0.pos, _3e.si, segments_3b]
+Apr 24, 2015 2:44:44 PM org.apache.solr.core.SolrDeletionPolicy updateCommits
+INFO: newest commit = 119[_3e.fdx, _3e.nvd, _3e.nvm, _3e.fnm, _3e.fdt, _3e_Lucene41_0.tip, _3e_Lucene41_0.doc, _3e_Lucene41_0.tim, _3e_Lucene41_0.pos, _3e.si, segments_3b]
+Apr 24, 2015 2:44:44 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@58747d05 main
+Apr 24, 2015 2:44:44 PM org.apache.solr.core.SolrCore registerSearcher
+INFO: [development] Registered new searcher Searcher@58747d05 main{StandardDirectoryReader(segments_3b:443:nrt _3e(4.2):C13)}
+Apr 24, 2015 2:44:44 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+Apr 24, 2015 2:44:44 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {commit=} 0 48
