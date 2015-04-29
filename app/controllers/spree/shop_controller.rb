@@ -18,6 +18,7 @@ module Spree
 
             end
             @scsuite = @search.results
+            @lead = Lead.new
 
         end
         def greeting
@@ -35,6 +36,7 @@ module Spree
                     params[:created_at], params[:like_no], params[:avg_rating], params[:price], params[:category_id],params[:page] )
             end            
             @scsuite = @search.results
+            @lead = Lead.new
         end
         def otherinvites
             par = params[:id]
@@ -51,6 +53,7 @@ module Spree
                     params[:created_at], params[:like_no], params[:avg_rating], params[:price], params[:category_id], params[:page])
             end
             @scsuite = @search.results
+            @lead = Lead.new
         end
 
     end

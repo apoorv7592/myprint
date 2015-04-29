@@ -1,0 +1,50 @@
+<div class="modal fade" id="mycatalogModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"  data-backdrop="false">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title" id="myModalLabel">Please fill your info </h3>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+            <div class="col-sm-offset-2">
+                <%= form_for @lead, html: {class: 'homeform'} do |f| %>
+                <div class="row form-group">
+                  <%= f.label 'Name', class: 'col-sm-3' %>
+                  <%= f.text_field :name, class: 'col-sm-9'%>
+                </div>
+                <div class="row form-group">
+                  <%= f.label 'email', class: 'col-sm-3'%>
+                  <%= f.text_field :email, class: 'col-sm-9' %>
+                </div>
+                <div class="row form-group">
+                  <%= f.label 'contact', class: 'col-sm-3' %>
+                  <%= f.text_field :contact, class: 'col-sm-9'%>
+                  
+                </div>
+                <div class="row form-group">
+                  <%= f.label 'city', class: 'col-sm-3' %>
+                  <%= f.text_field :city, class: 'col-sm-9'%>
+                </div>
+                      
+                <div class="row form-group">
+                  <%= f.label 'Gender', class: 'col-sm-3' %>
+                          <%= f.radio_button :gender, 'male', :checked => true %>Male
+                          <%= f.radio_button :gender, 'female' %> Female      
+                      </div>
+
+                      <div class="row form-group">
+                  <%= f.hidden_field :product_id, value: "test", class: 'col-sm-6'%>
+                </div>
+                <div class="row form-group">
+                          <%= image_submit_tag("ddesigner.jpg",:style => 'margin-left:20px;') %>
+
+                </div>
+              <% end %>
+            </div>
+          </div>
+
+      </div>
+    </div>
+  </div>
+</div>
