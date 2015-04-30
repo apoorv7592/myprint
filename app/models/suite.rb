@@ -20,7 +20,6 @@
 #  avatar_updated_at   :datetime
 #  slug                :string(255)
 #  position            :integer
-#  price               :integer
 #
 
 class Suite < ActiveRecord::Base
@@ -69,7 +68,6 @@ class Suite < ActiveRecord::Base
         integer :like_no
         integer :avg_rating
         integer :position
-        integer :price
         
         text :designer_names do 
             designer.name

@@ -154,26 +154,21 @@
              <%end %> 
           </li> 
           <li class="prop"> 
-
+            <%= render 'spree/suites/add_to_wishlist' %>                
           </li>      
       </ul>-->
           <div class="col-md-12" style="padding:30 30px;font-weight:normal;text-align:center;">
-            <h3 style="margin-top:50px;margin-bottom:30px;">Price : <i class="fa fa-inr"></i>&nbsp<%=@suite.price %></h3>
 
-            <%= link_to image_tag("Customization.jpg"), customization_path(:s_id=> @suite.id) %>
-            <%= render 'spree/suites/add_to_wishlist' %>
+            <h4 >Our Dedicated Designer will help you from end-to-end customization to delivery of your cards.</h4><br/>
+            <%= link_to image_tag("Customization.jpg"), "/customization" %>
 
-
-            <h3 style="margin-top:50px;margin-bottom:250px;font-size:20px;font-weight:normal;">Our Dedicated Designer will help you from end-to-end customization to delivery of your cards.</h3><br/>
-
-
-            <p style="font-size:11px;">*The above price includes :</p>
-            <p1 style="text-align:left;font-size:11px;">
+            <h3 style="margin-top:100px;">Price : <i class="fa fa-inr"></i> xxx</h3>
+            <p>*The above price includes<br>
               (4 leaves + Envelopes with free guest addressing on it)
-              <br>
+              <br><br>
               You can also add more leaves during customization by paying extra.
-            </p1>
-                
+            </p>
+
           </div>
    </div>
 </div>
@@ -187,3 +182,4 @@
 </div>
 </div>  
 
+<div id="img-data"></div>

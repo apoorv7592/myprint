@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150422120538) do
+ActiveRecord::Schema.define(version: 20150419135745) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -1417,7 +1417,6 @@ ActiveRecord::Schema.define(version: 20150422120538) do
     t.datetime "avatar_updated_at"
     t.string   "slug"
     t.integer  "position"
-    t.integer  "price"
   end
 
   add_index "suites", ["available_on"], name: "index_suites_on_available_on"

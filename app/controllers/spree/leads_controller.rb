@@ -19,17 +19,12 @@ module Spree
 
 			def create
 			    @lead = Lead.new(lead_params)
-
 			    if @lead.save
-			        #Spree::LeadMailer.delay.send_signup_mail
-					respond_to do |format|
-						format.html {redirect_to action:'index'}
-					end
-				else
-					respond_to do |format|
-						format.html {redirect_to :back , notice: @lead.errors.full_messages.first}
-					end
-				end
+			      Spree::LeadMailer.delay.send_signup_mail
+			      redirect_to @lead
+			    else
+					redirect_to :back, notice: @lead.errors.full_messages
+			    end
 			end
 
 			def destroy

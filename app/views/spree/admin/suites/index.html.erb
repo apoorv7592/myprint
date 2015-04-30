@@ -21,9 +21,8 @@
 					<th>Relative weight</th>
 					<th>SKU Id</th>
 					<th>Name</th>
-					<th>Price</th>
 					<th>Description</th>
-					<th>Designer Name</th>					
+					<th>Designer Name</th>
 					<th>Designer Id</th>
 					<th>Sub Category</th>
 					<th>Available From(YYYY-MM-DD) </th>
@@ -40,7 +39,6 @@
 						
 						<td><%= s.sku_id %></td>
 						<td><%= link_to s.name, admin_suite_path(s) %></td>
-						<td><%= s.price %></td>						
 						<td><%= s.description %></td>
 						<td><%= s.designer.name %></td>
 						<td><%= s.designer_id %></td>

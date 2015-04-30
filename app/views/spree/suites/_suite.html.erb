@@ -5,17 +5,17 @@
     <div class="suite-img" >
       
       <span itemprop="image"><!-- Placeholder for suite image -->
-        <%=link_to (image_tag p.avatar.url(:medium), alt: p.slug,width:340,height:340), p, "data-no-turbolink"=>"true"%>
+        <%=link_to (image_tag p.avatar.url(:medium), alt: p.slug,width:340,height:340), p, 'data-no-turbolink'=> "true"%>
       </span>
       <%= render 'spree/shared/like', p: p %>
     </div>
     <div class="viewsuitediv">
-      <%= link_to p,:class => "viewsuitetxt", itemprop:'url', "data-no-turbolink"=>"true" do  %>
+      <%= link_to p,:class => "viewsuitetxt", itemprop:'url', 'data-no-turbolink'=> "true",'data-no-turbolink'=> "true" do  %>
         <span itemprop="name"><b><%= p.name %></b></span>
       <% end %>
       <br>
 
-      <span class ="viewsuitetxt1"><b>Rs.&nbsp<%= p.price %></b></span>
+      <span class ="viewsuitetxt1"><b>Rs.xxx</b></span>
       <!--<div class="suite-clrblck">
         <% if p.colors.first %>
           <% p.colors.each do |sc| %>
@@ -30,13 +30,12 @@
         </span>  
       </span>     
       
-      <%= link_to p, class: 'viewsuitebtn', method: 'get', itemprop:"url", "data-no-turbolink"=>"true" do %>
+      <%= link_to p, class: 'viewsuitebtn', method: 'get', itemprop:"url" do %>
           <span class="viewsuitetxt1" >View Suite</span>
       <%end %>
-      <%#= render 'spree/suites/add_to_wishlist' %>                
+      
     </div>
   </div>
 </div> <!--End of itemscope individual products -->
 
 <!-- Fetching images of products-->
- 

@@ -5,6 +5,7 @@
 // the compiled file.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require spree/frontend
 //= require bootstrap-sprockets
