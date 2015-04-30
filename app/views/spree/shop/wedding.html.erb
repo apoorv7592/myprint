@@ -2,16 +2,15 @@
 
 <div class="col-md-12" style="height:auto; width:1000px;"> 
 
-     <div class="col-md-12" style="height:150px; width:1000px;margin-bottom:10px;">
-          <% b= get_banner('shopall-wedding', 1) %>
-       <% if !b.nil? %>
-       <%= image_tag b.avatar.url(:original), alt:'Bonheur', class:'img-responisve', width: 1000 %>  
-       <% end %>
-     </div>
-        <div class ="col-md-12" style="width:1000px;margin-left:235px;">
-            <a class="toplink" data-target="#mycatalogModal" data-toggle="modal" href="#"><%= image_tag "ddesigner.jpg" %></a>
+  <div class="col-md-12" style="height:150px; width:1000px;margin-bottom:15px;">
+         <a data-target="#mycatalogModal" data-toggle="modal" href="#">
+           <% b= get_banner('shopall-wedding', 1) %>
+           <% if !b.nil? %>
+           <%= image_tag b.avatar.url(:original), alt:'webstrip', class:'img-responisve', width: 1000 %>  
+           <% end %>
+         </a>
             <%= render 'catalogform' %>
-        </div>
+  </div>
 
      <div class="col-md-12" style="width:1000px;margin-bottom:10px;">  <% if @subcat.present? %>    
       <h5><%= @subcat.name %></h5>
