@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: eventcategories
+#
+#  id                  :integer          not null, primary key
+#  name                :string(255)
+#  description         :text
+#  avatar_content_type :string(255)
+#  created_at          :datetime
+#  updated_at          :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  avatar: MyString
+
+two:
+  name: MyString
+  description: MyText
+  avatar: MyString

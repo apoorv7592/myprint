@@ -433,3 +433,45 @@ Apr 30, 2015 3:37:40 PM org.apache.solr.core.SolrCore execute
 INFO: [development] webapp=/solr path=/select params={facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&facet.field={!ex%3D}sub_category_ids_im&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-04\-30T10\:07\:40Z}&fq=category_name_im:0&sort=position_i+desc&rows=8&q=*:*&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&f.sub_category_ids_im.facet.mincount=1&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=3 status=0 QTime=2 
 May 02, 2015 11:52:07 AM org.apache.solr.core.SolrCore execute
 INFO: [development] webapp=/solr path=/select params={facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&facet.field={!ex%3D}sub_category_ids_im&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-05\-02T06\:22\:07Z}&fq=category_name_im:0&sort=position_i+desc&rows=8&q=*:*&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&f.sub_category_ids_im.facet.mincount=1&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=3 status=0 QTime=11 
+May 02, 2015 12:00:54 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@13ad4d3c realtime
+May 02, 2015 12:00:54 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {deleteByQuery=type:Suite (-1500038566902759424)} 0 33
+May 02, 2015 12:00:55 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {add=[Suite 1 (1500038567191117824), Suite 2 (1500038567196360704), Suite 3 (1500038567197409280), Suite 4 (1500038567199506432), Suite 5 (1500038567201603584), Suite 6 (1500038567202652160), Suite 7 (1500038567205797888), Suite 8 (1500038567207895040), Suite 9 (1500038567209992192), Suite 10 (1500038567213137920), ... (13 adds)]} 0 30
+May 02, 2015 12:00:55 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+May 02, 2015 12:00:55 PM org.apache.solr.core.SolrDeletionPolicy onCommit
+INFO: SolrDeletionPolicy.onCommit: commits:num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/apoorvgoyal/.rvm/gems/ruby-2.1.4/gems/sunspot_solr-2.1.1/solr/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@220436b5; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_3e,generation=122,filenames=[segments_3e, _3h_Lucene41_0.doc, _3h_Lucene41_0.tim, _3h_Lucene41_0.pos, _3h.nvd, _3h.fdx, _3h.fdt, _3h.si, _3h_Lucene41_0.tip, _3h.nvm, _3h.fnm]
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/apoorvgoyal/.rvm/gems/ruby-2.1.4/gems/sunspot_solr-2.1.1/solr/solr/development/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@220436b5; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_3f,generation=123,filenames=[_3i_Lucene41_0.doc, _3i_Lucene41_0.tip, _3i_Lucene41_0.tim, segments_3f, _3i.fdx, _3i.si, _3i_Lucene41_0.pos, _3i.nvd, _3i.fdt, _3i.nvm, _3i.fnm]
+May 02, 2015 12:00:55 PM org.apache.solr.core.SolrDeletionPolicy updateCommits
+INFO: newest commit = 123[_3i_Lucene41_0.doc, _3i_Lucene41_0.tip, _3i_Lucene41_0.tim, segments_3f, _3i.fdx, _3i.si, _3i_Lucene41_0.pos, _3i.nvd, _3i.fdt, _3i.nvm, _3i.fnm]
+May 02, 2015 12:00:55 PM org.apache.solr.search.SolrIndexSearcher <init>
+INFO: Opening Searcher@2728d568 main
+May 02, 2015 12:00:55 PM org.apache.solr.core.SolrCore registerSearcher
+INFO: [development] Registered new searcher Searcher@2728d568 main{StandardDirectoryReader(segments_3f:459:nrt _3i(4.2):C13)}
+May 02, 2015 12:00:55 PM org.apache.solr.update.DirectUpdateHandler2 commit
+INFO: end_commit_flush
+May 02, 2015 12:00:55 PM org.apache.solr.update.processor.LogUpdateProcessor finish
+INFO: [development] webapp=/solr path=/update params={wt=ruby} {commit=} 0 145
+May 02, 2015 2:40:39 PM org.apache.solr.request.UnInvertedField <init>
+INFO: UnInverted multi-valued field {field=designer_id_im,memSize=4480,tindexSize=44,time=0,phase1=0,nTerms=2,bigTerms=1,termInstances=1,uses=0}
+May 02, 2015 2:40:39 PM org.apache.solr.request.UnInvertedField <init>
+INFO: UnInverted multi-valued field {field=color_ids_im,memSize=4384,tindexSize=44,time=0,phase1=0,nTerms=3,bigTerms=0,termInstances=5,uses=0}
+May 02, 2015 2:40:39 PM org.apache.solr.request.UnInvertedField <init>
+INFO: UnInverted multi-valued field {field=trim_ids_im,memSize=4384,tindexSize=44,time=1,phase1=1,nTerms=1,bigTerms=0,termInstances=1,uses=0}
+May 02, 2015 2:40:39 PM org.apache.solr.request.UnInvertedField <init>
+INFO: UnInverted multi-valued field {field=dimension_ids_im,memSize=4384,tindexSize=44,time=0,phase1=0,nTerms=1,bigTerms=0,termInstances=1,uses=0}
+May 02, 2015 2:40:39 PM org.apache.solr.request.UnInvertedField <init>
+INFO: UnInverted multi-valued field {field=sub_category_ids_im,memSize=4384,tindexSize=44,time=0,phase1=0,nTerms=4,bigTerms=0,termInstances=6,uses=0}
+May 02, 2015 2:40:39 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&facet.field={!ex%3D}sub_category_ids_im&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-05\-02T09\:10\:39Z}&fq=category_name_im:0&sort=position_i+desc&rows=8&q=*:*&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&f.sub_category_ids_im.facet.mincount=1&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=3 status=0 QTime=7 
+May 02, 2015 2:40:44 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&facet.field={!ex%3D}sub_category_ids_im&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-05\-02T09\:10\:44Z}&fq=category_name_im:0&sort=position_i+desc&rows=8&q=*:*&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&f.sub_category_ids_im.facet.mincount=1&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=3 status=0 QTime=2 
+May 02, 2015 2:47:45 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&facet.field={!ex%3D}sub_category_ids_im&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-05\-02T09\:17\:45Z}&fq=category_name_im:0&sort=position_i+desc&rows=8&q=*:*&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&f.sub_category_ids_im.facet.mincount=1&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=3 status=0 QTime=3 
+May 02, 2015 2:47:46 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&facet.field={!ex%3D}sub_category_ids_im&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-05\-02T09\:17\:46Z}&fq=category_name_im:0&sort=position_i+desc&rows=8&q=*:*&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&f.sub_category_ids_im.facet.mincount=1&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=3 status=0 QTime=2 
+May 02, 2015 2:48:04 PM org.apache.solr.core.SolrCore execute
+INFO: [development] webapp=/solr path=/select params={facet.field={!ex%3D}designer_id_im&facet.field={!ex%3D}color_ids_im&facet.field={!ex%3D}trim_ids_im&facet.field={!ex%3D}dimension_ids_im&facet.field={!ex%3D}sub_category_ids_im&start=0&fq=type:Suite&fq=available_on_d:{*+TO+2015\-05\-02T09\:18\:04Z}&sort=position_i+desc&rows=8&q=*:*&f.color_ids_im.facet.mincount=1&f.dimension_ids_im.facet.mincount=1&f.designer_id_im.facet.mincount=1&f.sub_category_ids_im.facet.mincount=1&wt=ruby&facet=true&f.trim_ids_im.facet.mincount=1} hits=13 status=0 QTime=2 
