@@ -2,8 +2,7 @@ class Spree::Admin::ReviewsController < Spree::Admin::ResourceController
 	helper Spree::ReviewsHelper
 	
 	def index
-		@reviews = Spree::Review.all
-		#@reviews = collection
+		@reviews = collection
 	end
 	
 	def approve
@@ -17,7 +16,7 @@ class Spree::Admin::ReviewsController < Spree::Admin::ResourceController
 	end
 
 	def edit
-		return if @review.product
+		return if @review.suite
 			flash[:error] = Spree.t(:error_no_product)
 			redirect_to admin_reviews_path
 		end
@@ -26,6 +25,6 @@ class Spree::Admin::ReviewsController < Spree::Admin::ResourceController
 		def collection
 			params[:q] ||= {}
 			@search = Spree::Review.ransack(params[:q])
-			@collection = @search.result.includes([:suite, :user, :feedback_reviews]).page(params[:page]).per(params[:per_page])
+			@collection = @search.result.includes([:suite, :user, :feedback_reviews])
 		end
 end
