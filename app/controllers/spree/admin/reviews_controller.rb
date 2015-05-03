@@ -2,8 +2,8 @@ class Spree::Admin::ReviewsController < Spree::Admin::ResourceController
 	helper Spree::ReviewsHelper
 	
 	def index
-		@reviews = Spree::Review.all
-		#@reviews = collection
+		#@reviews = Spree::Review.all
+		@reviews = collection
 	end
 	
 	def approve
@@ -26,6 +26,6 @@ class Spree::Admin::ReviewsController < Spree::Admin::ResourceController
 		def collection
 			params[:q] ||= {}
 			@search = Spree::Review.ransack(params[:q])
-			@collection = @search.result.includes([:suite, :user, :feedback_reviews]).page(params[:page]).per(params[:per_page])
+			@collection = @search.result.includes([:suite, :user, :feedback_reviews])
 		end
 end
