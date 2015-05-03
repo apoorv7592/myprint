@@ -11,7 +11,10 @@
        <%= image_tag b.avatar.url(:original), alt:'Bonheur', class:'img-responisve', width: 1000 %>  
        <% end %>
      </div>
-         
+     <div class="col-md-12" style="width:1000px;margin-bottom:10px;">  <% if @subcat.present? %>    
+      <h5><%= @subcat.name %></h5>
+      <% end %>
+      </div>
       <div class="col-md-3" style="height:auto; width:230px; margin-right:10px;float:left;border:1px solid rgba(1,0,0,0.3);">
       <%= render 'spree/solrsearch/filter'%>
       </div>

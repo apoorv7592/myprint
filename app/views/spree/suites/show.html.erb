@@ -159,8 +159,13 @@
       </ul>-->
           <div class="col-md-12" style="padding:30 30px;font-weight:normal;text-align:center;">
 
-            <h4 >Our Dedicated Designer will help you from end-to-end customization to delivery of your cards.</h4><br/>
-            <%= link_to image_tag("Customization.jpg"), "/customization" %>
+            <h3 style="margin-top:50px;margin-bottom:30px;font-weight:normal;font-size:17px;">Starting From : <i class="fa fa-inr"></i>&nbsp<%=@suite.price %></h3>
+
+            <%= link_to image_tag("custbuy.jpg"), customization_path(:s_id=> @suite.id) %>
+            <%= render 'spree/suites/add_to_wishlist' %>
+
+
+            <h3 style="margin-top:50px;margin-bottom:250px;font-size:16px;font-weight:normal;">Our Dedicated Designer will help you from end-to-end customization to delivery of your cards.</h3><br/>
 
             <h3 style="margin-top:100px;">Price : <i class="fa fa-inr"></i> xxx</h3>
             <p>*The above price includes<br>

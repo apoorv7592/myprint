@@ -356,8 +356,9 @@ function launchWindow(id) {
     </div>
     
     <div class="col-md-4" style="height:140px; width:322px; border: 1px solid rgba(1,0,0,0.3); margin-right:8px;margin-left:8px;" >
+    <a href = "/designers/ruchi-singh">
         <div style="height:140px;width:220px; text-align:center;float:left;">
-           <p><span style="font-size:24px; height:auto; font-family:Times; text-align: center; margin-top:2px; margin-bottom: 3px; margin-left: 5px; width:49%;"> Meet our Designer of the month
+           <p><span style="font-size:24px; height:auto; font-family:Times; text-align: center; margin-top:2px; margin-bottom: 3px; margin-left: 5px; width:49%;color:black;"> Meet our Designer of the month
               </span> 
            </p>
            <p><span style="font-size:20px; height:auto; font-family:Times; text-align: center; margin-top:10px; margin-left: 5px; width:49%; font-style:italic;"><%= @designers.name %>
@@ -367,10 +368,11 @@ function launchWindow(id) {
         <div style="height:140px;width:100px;float:left;margin-top:10px;">
             <%= image_tag @designers.avatar.url(:thumb),style:'grayscale:(1,0,0,0.2);'%>
         </div>
+      </a>
     </div>
     
     <div class="col-md-4" style="height:140px; width:321px;margin-left:8px;"> 
-    <a href="/why-buy-from-us" style="text-decoration:none;color:#000;">
+    <a href="/paper-and-print-styles" style="text-decoration:none;color:#000;">
         <%= image_tag 'freeship.jpg' %>
     </a>
     </div>
