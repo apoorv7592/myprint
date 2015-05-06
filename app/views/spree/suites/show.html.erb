@@ -82,13 +82,50 @@
     font-family:Century Gothic;
     font-size :11px;
    }
+   #circlefb,#circletw,#circlegp,#circlein,#circlema,#circlepi {
+    width: 20px;
+    height: 20px;
+    background-color:rgba(1,0,0,0.6);
+    color:#ffffff;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    float: left;
+    margin: 4px;
+   }
+
+   #circlefb:hover{
+    color:#ffffff;
+    background:#3b5998;
+   }
+   #circletw:hover{
+    color:#4099ff;
+    background:#ffffff;
+   }
+   #circlepi:hover{
+    color:#ffffff;
+    background:#c92228;
+   }
+   #circlein:hover{
+    color:#ffffff;
+    background:#3b5998;
+   }
+   #circlegp:hover{
+    color:#ffffff;
+    background:#dd4b39;
+   }
+   #circlema:hover{
+    color:#6bbcbf;
+    background:#ffffff;
+   }
+
+
 </style>
 <!-- Suite Itemscope start-->
 <div itemscope itemtype="http://schema.org/IndividualProduct" itemdid="<%= @suite.id %>">
     <div class="col-md-12" style="margin-bottom:20px;">
         <div class ="col-md-6" style="width:500px;float:left">
-           <h4 itemprop="name" class="suitenames"><b><%=@suite.name %></b></h4>
-           <h4 class="suitenames1">Exclusively Designed By: <%= link_to @suite.designer.name , @suite.designer%></h4>
+
         </div>
         <div class ="col-md-6" style="width:500px;float:right;">
             <a class="toplink" data-target="#mysuiteModal" data-toggle="modal" href="#">need help?</a>
@@ -158,13 +195,43 @@
           </li>      
       </ul>-->
           <div class="col-md-12" style="padding:30 30px;font-weight:normal;text-align:center;">
-            <h3 style="margin-top:50px;margin-bottom:30px;font-weight:normal;font-size:17px;">Starting From : <i class="fa fa-inr"></i>&nbsp<%=@suite.price %></h3>
+           <h4 itemprop="name" class="suitenames"><b><%=@suite.name %></b></h4>
+           <h4 class="suitenames1">Exclusively Designed By: <%= link_to @suite.designer.name , @suite.designer%></h4>
+    
+
+            <% if !@scat.nil? %>
+            <h3 style="margin-top:30px;margin-bottom:10px;font-weight:normal;font-size:15px;">Color:<br></h3>
+            <div style="width:100%;margin-bottom:30px;">
+              <div style="width:50%;margin:0 auto;">
+            <% @scat.each do |p| %>
+            <div style="width:15px;height:15px;margin:3px; background:<%=p.code%>;float:left;"></div>
+            <%end%>
+            </div>
+            </div>
+            <%end%>
+
+            <h3 style="margin-top:50px;margin-bottom:20px;font-weight:normal;font-size:17px;">Starting From : <i class="fa fa-inr"></i>&nbsp<%=@suite.price %></h3>
 
             <%= link_to image_tag("custbuy.jpg"), customization_path(:s_id=> @suite.id) %>
+            <div style="width:100%;margin-bottom:30px;margin-top:10px;">
+              <div style="width:53%;margin:0 auto;">
+              <div id="circlefb"><i class="fa fa-facebook"></i>
+              </div>
+              <div id="circletw"><i class="fa fa-twitter"></i>
+              </div>
+              <div id="circlepi"><i class="fa fa-pinterest-p"></i>
+              </div>
+              <div id="circlein"><i class="fa fa-instagram"></i>
+              </div>
+              <div id="circlegp"><i class="fa fa-google-plus"></i></div>
+              <div id="circlema"><i class="fa fa-envelope-o"></i>
+              </div>
+              </div>
+            </div>
             <%= render 'spree/suites/add_to_wishlist' %>
 
 
-            <h3 style="margin-top:50px;margin-bottom:250px;font-size:16px;font-weight:normal;">Our Dedicated Designer will help you from end-to-end customization to delivery of your cards.</h3><br/>
+            <h3 style="margin-top:50px;margin-bottom:100px;font-size:16px;font-weight:normal;">Our Dedicated Designer will help you from end-to-end customization to delivery of your cards.</h3><br/>
 
 
             <p style="font-size:11px;">*The above price includes :</p>
@@ -185,5 +252,7 @@
 <div class=" col-md-12 suite-lower-middle" style="font-weight:normal;">
    <%= render 'spree/shared/reviews' %>
 </div>
-</div>  
+</div> 
+
+
 
