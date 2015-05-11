@@ -1447,12 +1447,12 @@ ActiveRecord::Schema.define(version: 20150503210139) do
     t.integer  "reviews_count",                               default: 0,   null: false
     t.integer  "like_no",                                     default: 0
     t.string   "slug"
-    t.integer  "position"
+
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.string   "variant"
+    t.integer  "position"
     t.string   "characteristic"
     t.integer  "price"
   end

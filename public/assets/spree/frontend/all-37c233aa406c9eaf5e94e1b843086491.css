@@ -20215,7 +20215,7 @@ li.last-child {
 /* Suite Styling */
 /* line 295, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .suite-blck {
-  height: 500px;
+  height: 480px;
   width: 340px;
   margin-right: 10px !important;
   margin-left: 13px !important;
@@ -20251,21 +20251,20 @@ li.last-child {
 /* for view suite button in catalog page */
 /* line 323, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .viewsuitebtn {
-  width: 70px;
-  height: 22px;
+  width: 100px;
+  height: 25px;
   text-align: center;
-  border: 1px solid rgba(1, 0, 0, 0.3);
-  border-radius: 5px;
-  background: white;
+  border: 1px solid rgba(1, 0, 0, 0.8);
+  border-radius: none;
+  background: #ffffff;
   font-size: 12px;
   font-family: Century Gothic;
   padding: 2px;
 }
 
-/* line 334, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 335, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .viewsuitebtn:hover {
-  background: #b0e0e6;
-  opacity: 0.5;
+  border: 2px solid #6bbcbf;
 }
 
 /* for view suite div below image  in catalog page in which name price and ratings is mentioned */
@@ -20289,14 +20288,14 @@ li.last-child {
   color: rgba(1, 0, 0, 0.8);
   font-size: 12px;
   text-align: center;
-  margin-left: 5px;
+  margin-left: 20px;
 }
 
 /* line 360, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .viewsuitetxt1 {
   float: center;
-  color: rgba(1, 0, 0, 0.4);
-  font-size: 10px;
+  color: rgba(1, 0, 0, 0.8);
+  font-size: 10.5px;
   text-align: center;
 }
 
@@ -20329,7 +20328,7 @@ li.checkbox1 {
   width: 200px;
   height: 200px;
   border: 1px solid black;
-  color: blue;
+  color: #6BBCBF;
 }
 
 /* line 396, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
@@ -20343,24 +20342,29 @@ li.ulfilterbox {
 .rowfilterbox {
   width: 217px;
   height: auto;
-  border: 1px solid rgba(1, 0, 0, 0.01);
   margin-bottom: 20px;
+  color: rgba(1, 0, 0, 0.6);
 }
 
 /* line 410, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+.rowfilterbox ul li a {
+  color: #6BBCBF;
+}
+
+/* line 415, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 #suitedescdiv {
   list-style-type: none;
   border-left: 1px solid rgba(1, 0, 0, 0.2);
   width: 490px;
 }
 
-/* line 416, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 421, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .descriptionbox {
   padding: 20px;
   font-family: Century Gothic;
 }
 
-/* line 422, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 427, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 #userpagenavbar {
   width: 930px;
   height: 40px;
@@ -20369,7 +20373,7 @@ li.ulfilterbox {
   margin-bottom: 10px;
 }
 
-/* line 430, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 435, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .userpagenavdiv {
   z-index: 1000;
   background: white;
@@ -20388,37 +20392,37 @@ li.ulfilterbox {
 }
 
 /* login modal */
-/* line 448, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 453, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 #login-comm-head {
   font-size: 15px;
   font-weight: bold;
 }
 
-/* line 452, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 457, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .login-sub-comm {
   font-size: 12px;
   margin-top: 4px;
   margin-bottom: 4px;
 }
 
-/* line 460, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 465, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .login-comm-icon {
   color: #72BFC2;
 }
 
-/* line 463, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 468, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .login-form-label {
   font-size: 12px;
   margin-left: 5px;
 }
 
-/* line 468, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 473, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .liked {
   color: #6BBCBF;
 }
 
 /* Cart Page */
-/* line 475, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 480, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .panel-body1 {
   width: 200px;
   height: auto;
@@ -20426,7 +20430,7 @@ li.ulfilterbox {
   margin-left: 15px;
 }
 
-/* line 482, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 487, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .checkoutemailbox {
   width: 500px;
   border-radius: 10px;
@@ -20435,7 +20439,7 @@ li.ulfilterbox {
   margin-bottom: 20px;
 }
 
-/* line 491, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 496, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 #checkout-summary {
   width: 300px;
   height: auto;
@@ -20446,7 +20450,7 @@ li.ulfilterbox {
   border: 1px solid #cccccc;
 }
 
-/* line 502, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 507, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 div.well.text-right.form-buttons {
   width: 500px;
   border-radius: 10px;
@@ -20456,19 +20460,19 @@ div.well.text-right.form-buttons {
 }
 
 /*checkout page */
-/* line 512, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 517, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 saveandcont > a {
   border: 1px solid #cccccc;
   background: red !important;
 }
 
-/* line 518, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 523, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 ul#checkout-step-address.progress-steps.nav.nav-pills.nav-justified {
   background: none !important;
   border: 1px solid #cccccc;
 }
 
-/* line 524, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 529, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .myaccountdiv {
   font-size: 10px;
   color: red !important;
@@ -20477,7 +20481,7 @@ ul#checkout-step-address.progress-steps.nav.nav-pills.nav-justified {
   margin-top: 10px;
 }
 
-/* line 533, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 538, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .buttonsignup {
   vertical-align: top;
   padding: none;
@@ -20485,7 +20489,7 @@ ul#checkout-step-address.progress-steps.nav.nav-pills.nav-justified {
   margin-left: 0px  !important;
 }
 
-/* line 540, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 545, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .signupbox {
   width: 302px;
   margin-left: 350px;
@@ -20498,7 +20502,7 @@ ul#checkout-step-address.progress-steps.nav.nav-pills.nav-justified {
   text-align: center;
 }
 
-/* line 552, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 557, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .uparrowdivcart {
   z-index: 1200;
   display: none;
@@ -20511,7 +20515,7 @@ ul#checkout-step-address.progress-steps.nav.nav-pills.nav-justified {
   top: 30px;
 }
 
-/* line 563, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 568, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .uparrowdivcart:after, .uparrowdivcart:before {
   bottom: 100%;
   left: 95%;
@@ -20523,7 +20527,7 @@ ul#checkout-step-address.progress-steps.nav.nav-pills.nav-justified {
   pointer-events: none;
 }
 
-/* line 574, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 579, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .uparrowdivcart:after {
   border-color: rgba(247, 242, 245, 0);
   border-bottom-color: #FFFFFF;
@@ -20531,7 +20535,7 @@ ul#checkout-step-address.progress-steps.nav.nav-pills.nav-justified {
   margin-left: -12px;
 }
 
-/* line 580, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 585, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .uparrowdivcart:before {
   border-color: rgba(107, 250, 169, 0);
   border-bottom-color: #E6E6E6;
@@ -20539,7 +20543,7 @@ ul#checkout-step-address.progress-steps.nav.nav-pills.nav-justified {
   margin-left: -13px;
 }
 
-/* line 587, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 592, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .arrow_box {
   z-index: 1200;
   display: none;
@@ -20552,7 +20556,7 @@ ul#checkout-step-address.progress-steps.nav.nav-pills.nav-justified {
   top: 30px;
 }
 
-/* line 598, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 603, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .arrow_box:after, .arrow_box:before {
   bottom: 100%;
   left: 47%;
@@ -20564,7 +20568,7 @@ ul#checkout-step-address.progress-steps.nav.nav-pills.nav-justified {
   pointer-events: none;
 }
 
-/* line 609, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 614, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .arrow_box:after {
   border-color: rgba(247, 242, 245, 0);
   border-bottom-color: #FFFFFF;
@@ -20572,7 +20576,7 @@ ul#checkout-step-address.progress-steps.nav.nav-pills.nav-justified {
   margin-left: -12px;
 }
 
-/* line 615, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 620, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .arrow_box:before {
   border-color: rgba(107, 250, 169, 0);
   border-bottom-color: #E6E6E6;
@@ -20580,7 +20584,7 @@ ul#checkout-step-address.progress-steps.nav.nav-pills.nav-justified {
   margin-left: -13px;
 }
 
-/* line 622, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 627, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .uparrownewdesigner {
   z-index: 1000;
   display: none;
@@ -20594,7 +20598,7 @@ ul#checkout-step-address.progress-steps.nav.nav-pills.nav-justified {
   top: 30px;
 }
 
-/* line 634, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 639, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .uparrownewdesigner:after, .uparrownewdesigner:before {
   bottom: 100%;
   left: 50%;
@@ -20606,7 +20610,7 @@ ul#checkout-step-address.progress-steps.nav.nav-pills.nav-justified {
   pointer-events: none;
 }
 
-/* line 645, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 650, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .uparrownewdesigner:after {
   border-color: rgba(98, 213, 213, 0);
   border-bottom-color: #FFFFFF;
@@ -20614,7 +20618,7 @@ ul#checkout-step-address.progress-steps.nav.nav-pills.nav-justified {
   margin-left: -12px;
 }
 
-/* line 651, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 656, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .uparrownewdesigner:before {
   border-color: rgba(95, 110, 120, 0);
   border-bottom-color: #E6E6E6;
@@ -20623,7 +20627,7 @@ ul#checkout-step-address.progress-steps.nav.nav-pills.nav-justified {
 }
 
 /* suite page */
-/* line 660, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 665, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .suite-container {
   height: auto;
   width: 1000px;
@@ -20631,7 +20635,7 @@ ul#checkout-step-address.progress-steps.nav.nav-pills.nav-justified {
   padding: 0 auto;
 }
 
-/* line 667, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 672, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .suite-upper-cont {
   height: auto;
   width: 1000px;
@@ -20639,14 +20643,14 @@ ul#checkout-step-address.progress-steps.nav.nav-pills.nav-justified {
   margin-bottom: 50px;
 }
 
-/* line 673, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 678, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .suite-img-cont {
   width: 650px;
-  height: 750px;
+  height: auto;
   float: left;
 }
 
-/* line 678, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 683, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .suite-form-cont {
   width: 350px;
   height: 750px;
@@ -20655,7 +20659,7 @@ ul#checkout-step-address.progress-steps.nav.nav-pills.nav-justified {
   border: 1px solid rgba(1, 0, 0, 0.3);
 }
 
-/* line 685, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 690, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .colorbox {
   width: 18px;
   height: 18px;
@@ -20663,7 +20667,7 @@ ul#checkout-step-address.progress-steps.nav.nav-pills.nav-justified {
   margin-left: 10px;
 }
 
-/* line 692, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 697, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .suite-color-cont {
   height: 20px;
   font-size: 10px;
@@ -20673,25 +20677,26 @@ ul#checkout-step-address.progress-steps.nav.nav-pills.nav-justified {
   margin-left: 10px;
 }
 
-/* line 702, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 707, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .suite-middle-cont {
   height: auto;
   width: 1000px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   border-top: 1px solid rgba(1, 0, 0, 0.3);
   border-bottom: 1px solid rgba(1, 0, 0, 0.3);
-  padding: 20px;
+  padding-top: 1px;
+  padding-bottom: 10px;
 }
 
-/* line 710, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 716, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .suite-lower-middle {
   height: auto;
   width: 1000px;
   margin-bottom: 20px;
-  padding: 20px;
+  padding: 10px;
 }
 
-/* line 716, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 722, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .suite-lower-left-cont {
   height: 165px;
   width: 492px;
@@ -20702,14 +20707,14 @@ ul#checkout-step-address.progress-steps.nav.nav-pills.nav-justified {
   border: 1px solid rgba(1, 0, 0, 0.2);
 }
 
-/* line 725, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 731, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .suite-lower-left-cont-1 {
   height: 165px;
   width: 480px;
   margin: none;
 }
 
-/* line 730, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 736, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .more-prod-cont {
   height: 150px;
   width: 150px;
@@ -20718,7 +20723,7 @@ ul#checkout-step-address.progress-steps.nav.nav-pills.nav-justified {
   float: right;
 }
 
-/* line 737, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 743, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .suite-banner-area {
   height: 165px;
   width: 492px;
@@ -20729,7 +20734,7 @@ ul#checkout-step-address.progress-steps.nav.nav-pills.nav-justified {
   border: 1px solid rgba(1, 0, 0, 0.2);
 }
 
-/* line 747, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 753, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .checbox1 {
   padding-left: 0px !important;
   padding-right: 0px !important;
@@ -20737,7 +20742,7 @@ ul#checkout-step-address.progress-steps.nav.nav-pills.nav-justified {
   margin-top: 7px;
 }
 
-/* line 754, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 760, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 #sort-nav {
   font-size: 13px;
   border: none;
@@ -20747,33 +20752,33 @@ ul#checkout-step-address.progress-steps.nav.nav-pills.nav-justified {
 }
 
 /* sort nav bar */
-/* line 765, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 771, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .sort > a {
   color: rgba(1, 0, 0, 0.8);
 }
 
-/* line 767, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 773, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 nav#sort-nav.navbar.navbar-default {
   height: 20px !important;
   padding: 0 auto;
   margin-bottom: 1px;
 }
 
-/* line 773, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 779, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 ul.nav.navbar-nav.navbar-sort {
   width: 340px;
   height: 30px;
   float: right;
 }
 
-/* line 779, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 785, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .simplegallery {
   margin: 0 auto;
   width: 650px;
   height: 700px;
 }
 
-/* line 785, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 791, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .thumbnail {
   width: 640px;
   height: 130px;
@@ -20781,7 +20786,7 @@ ul.nav.navbar-nav.navbar-sort {
   border: none;
 }
 
-/* line 792, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 798, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .simplegallery .content {
   background: #fff;
   position: relative;
@@ -20791,33 +20796,34 @@ ul.nav.navbar-nav.navbar-sort {
   margin-bottom: 20px;
 }
 
-/* line 801, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 807, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .simplegallery .content img {
-  width: 600px;
+  max-width: 600px;
+  max-height: 600px;
   overflow: hidden;
   margin-left: 20px;
 }
 
-/* line 807, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 814, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .simplegallery .thumbnail {
   margin-top: 5px;
 }
 
-/* line 809, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 816, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .simplegallery .thumbnail .thumb {
   float: left;
   width: 80px;
-  height: 100px;
+  height: auto;
   margin: 5px;
   cursor: pointer;
 }
 
-/* line 817, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 824, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .simplegallery .thumbnail .thumb img {
   width: 80px;
 }
 
-/* line 822, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 829, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .thumb {
   filter: alpha(opacity=100);
   opacity: 1;
@@ -20829,42 +20835,42 @@ ul.nav.navbar-nav.navbar-sort {
   margin: 2px;
 }
 
-/* line 833, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 840, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .thumb:hover, .thumb_selected {
   filter: alpha(opacity=100);
   opacity: 1;
   -moz-opacity: 1;
 }
 
-/* line 840, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 847, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .simplegallery .thumbnail .last {
   margin: 0;
 }
 
-/* line 842, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 849, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .clear {
   clear: both;
 }
 
-/* line 844, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 851, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 #add-sample {
   height: 30px;
   width: 100px;
 }
 
-/* line 849, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 856, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 #add-sample:hover {
   color: #6BBCBF;
   cursor: pointer;
 }
 
 /* Make clicks pass-through */
-/* line 858, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 865, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 #nprogress {
   pointer-events: none;
 }
 
-/* line 861, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 868, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 #nprogress .bar {
   background: #2299dd;
   position: fixed;
@@ -20876,7 +20882,7 @@ ul.nav.navbar-nav.navbar-sort {
 }
 
 /* Fancy blur effect */
-/* line 871, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 878, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 #nprogress .peg {
   display: block;
   position: absolute;
@@ -20891,7 +20897,7 @@ ul.nav.navbar-nav.navbar-sort {
 }
 
 /* Remove these to get rid of the spinner */
-/* line 884, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 891, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 #nprogress .spinner {
   display: block;
   position: fixed;
@@ -20900,7 +20906,7 @@ ul.nav.navbar-nav.navbar-sort {
   right: 15px;
 }
 
-/* line 891, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 898, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 #nprogress .spinner-icon {
   width: 18px;
   height: 18px;
@@ -20913,50 +20919,50 @@ ul.nav.navbar-nav.navbar-sort {
   animation: nprogress-spinner 400ms linear infinite;
 }
 
-/* line 902, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 909, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .nprogress-custom-parent {
   overflow: hidden;
   position: relative;
 }
 
-/* line 907, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 914, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .nprogress-custom-parent #nprogress .spinner,
 .nprogress-custom-parent #nprogress .bar {
   position: absolute;
 }
 
 @-webkit-keyframes nprogress-spinner {
-  /* line 911, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+  /* line 918, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
   0% {
     -webkit-transform: rotate(0deg);
   }
 
-  /* line 912, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+  /* line 919, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
   100% {
     -webkit-transform: rotate(360deg);
   }
 }
 
 @keyframes nprogress-spinner {
-  /* line 915, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+  /* line 922, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
   0% {
     transform: rotate(0deg);
   }
 
-  /* line 916, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+  /* line 923, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
   100% {
     transform: rotate(360deg);
   }
 }
 
-/* line 921, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 928, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 #nprogress .bar,
 #nprogress .spinner {
   z-index: 999999;
 }
 
 /* rollover class for text */
-/* line 926, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 933, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .rollcatg {
   color: black;
   margin-left: 10px;
@@ -20964,12 +20970,12 @@ ul.nav.navbar-nav.navbar-sort {
   font-size: 12px;
 }
 
-/* line 933, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 940, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 .rollcatg:hover {
   color: #6bbcbf;
 }
 
-/* line 937, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 944, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 #navdiv2 {
   width: 244px;
   border-right: 1px solid rgba(1, 0, 0, 0.1);
@@ -20980,7 +20986,7 @@ ul.nav.navbar-nav.navbar-sort {
   font-size: 12px;
 }
 
-/* line 947, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 954, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 #navdiv4 {
   width: 245px;
   float: left;
@@ -20990,7 +20996,7 @@ ul.nav.navbar-nav.navbar-sort {
   font-size: 12px;
 }
 
-/* line 956, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 963, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 #navdiv1 {
   width: 195px;
   border-right: 1px solid rgba(1, 0, 0, 0.1);
@@ -21001,7 +21007,7 @@ ul.nav.navbar-nav.navbar-sort {
   font-size: 12px;
 }
 
-/* line 966, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+/* line 973, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
 #navdiv11 {
   width: 196px;
   float: left;
@@ -21012,7 +21018,7 @@ ul.nav.navbar-nav.navbar-sort {
 }
 
 @-moz-document url-prefix() {
-  /* line 976, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+  /* line 983, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
   .mainnavelements {
     margin-right: 51px;
     font-family: arial;
@@ -21020,14 +21026,14 @@ ul.nav.navbar-nav.navbar-sort {
     height: 28px;
   }
 
-  /* line 982, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+  /* line 989, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
   .mainnavatags1 {
     font-family: arial;
     font-size: 13px;
     height: 28px;
   }
 
-  /* line 987, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+  /* line 994, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
   ul.nav.navbar-nav.navbar-right {
     width: 250px;
     height: 30px;
@@ -21035,7 +21041,7 @@ ul.nav.navbar-nav.navbar-sort {
     float: right;
   }
 
-  /* line 993, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+  /* line 1000, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
   ul.nav.navbar-nav.navbar-right1 {
     width: 245px;
     height: 30px;
@@ -21043,7 +21049,7 @@ ul.nav.navbar-nav.navbar-sort {
     float: right;
   }
 
-  /* line 1000, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
+  /* line 1007, /Users/apoorvgoyal/mypd/vendor/assets/stylesheets/spree/frontend/custom.css.scss */
   #boxes .window {
     position: absolute;
     display: none;

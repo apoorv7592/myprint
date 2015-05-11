@@ -2,6 +2,7 @@ class Spree::Admin::ReviewsController < Spree::Admin::ResourceController
 	helper Spree::ReviewsHelper
 	
 	def index
+		#@reviews = Spree::Review.all
 		@reviews = collection
 	end
 	

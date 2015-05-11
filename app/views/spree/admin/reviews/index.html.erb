@@ -49,7 +49,11 @@
 			<th><%= sort_link @search, :ip_address, Spree::Review.human_attribute_name(:ip_address) %></th>
 			<th><%= sort_link @search, :created_at, Spree::Review.human_attribute_name(:created_at) %></th>
 			<th>Details</th>
+<<<<<<< HEAD
 			<th data-hook="admin_reviews_index_header_actions" class="actions">Actions</th>
+=======
+			<th data-hook="admin_reviews_index_header_actions" class="actions"></th>
+>>>>>>> 50c2ef09420f8e0dee418e62435eb6a00091d124
 		</tr>
 	</thead>
 	<tbody>
@@ -63,7 +67,11 @@
 			<td><%= l review.created_at, format: :short %></td>
 			<td><%= link_to review.title, edit_admin_review_path(review)%></td>
 			<td data-hook="admin_reviews_index_row_actions" class="actions">
+<<<<<<< HEAD
 				<%= link_to_with_icon 'save', Spree.t(:approve), approve_admin_review_url(review),  class: 'approve btn btn-default' unless review.approved %>
+=======
+				<%= link_to_with_icon 'save', Spree.t(:approve), approve_admin_review_url(review), class: 'approve btn btn-default' unless review.approved %>
+>>>>>>> 50c2ef09420f8e0dee418e62435eb6a00091d124
 				<%= link_to_edit review, class: 'edit' %>
 				<%= link_to_delete review %>
 			</td>
