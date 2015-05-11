@@ -48,7 +48,8 @@
 			<th><%= sort_link @search, :user, Spree::Review.human_attribute_name(:user) %></th>
 			<th><%= sort_link @search, :ip_address, Spree::Review.human_attribute_name(:ip_address) %></th>
 			<th><%= sort_link @search, :created_at, Spree::Review.human_attribute_name(:created_at) %></th>
-			<th data-hook="admin_reviews_index_header_actions" class="actions"></th>
+			<th>Details</th>
+			<th data-hook="admin_reviews_index_header_actions" class="actions">Actions</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -60,6 +61,7 @@
 			<td><%= review.user_id ? link_to(review.user.try(:email), [:admin, review.user]) : Spree.t(:anonymous) %></td>
 			<td><%= link_to_if review.ip_address, review.ip_address, "http://whois.domaintools.com/#{review.ip_address}", target: :blank %></td>
 			<td><%= l review.created_at, format: :short %></td>
+			<td><%= link_to review.title, edit_admin_review_path(review)%></td>
 			<td data-hook="admin_reviews_index_row_actions" class="actions">
 				<%= link_to_with_icon 'save', Spree.t(:approve), approve_admin_review_url(review),  class: 'approve btn btn-default' unless review.approved %>
 				<%= link_to_edit review, class: 'edit' %>

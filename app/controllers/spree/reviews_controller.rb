@@ -18,7 +18,7 @@ class Spree::ReviewsController < Spree::StoreController
 		params[:review][:rating].sub!(/\s*[^0-9]*\z/, '') unless params[:review][:rating].blank?
 		@review = Spree::Review.new(review_params)
 		@review.suite_id = @suite.id
-		@review.name = spree_current_user.name if spree_user_signed_in?
+		#@review.name = spree_current_user.name if spree_user_signed_in?
 		@review.user = spree_current_user if spree_user_signed_in?
 		@review.ip_address = request.remote_ip
 		@review.locale = I18n.locale.to_s if Spree::Reviews::Config[:track_locale]
