@@ -33,4 +33,24 @@ Spree::User.class_eval do
   	def is_designer?
   		self.is_designer
   	end
+
+	has_many :discoverfollows
+	has_many :discovers, :through => :discoverfollows
+
+	has_many :pinned, through: :discoverfollows, source: :discover
+    has_many :pins, through: :discoverfollows, source: :user
+
+    #pins a discover
+	def pin(discover)
+	  discoverfollows.create(discover_id: discover.id)
+	end
+	# Unpins a discover.
+	def unpin(discover)
+		discoverfollows.find_by(discover_id: discover.id).destroy
+	end
+	# Returns true if the current user is following the discover.
+	def pinned?(discover)
+    	pinned.include?(discover)
+  	end
+
 end

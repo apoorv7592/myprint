@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: discoverfollows
+#
+#  id          :integer          not null, primary key
+#  user_id     :integer
+#  discover_id :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  follower_id: 1
+  followed_id: 1
+
+two:
+  follower_id: 1
+  followed_id: 1
