@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150503210139) do
+ActiveRecord::Schema.define(version: 20150511195011) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -745,6 +745,7 @@ ActiveRecord::Schema.define(version: 20150503210139) do
     t.boolean  "promotionable",        default: true
     t.string   "meta_title"
     t.integer  "suite_id"
+    t.integer  "designer_id"
   end
 
   add_index "spree_products", ["available_on"], name: "index_spree_products_on_available_on"
@@ -1447,12 +1448,12 @@ ActiveRecord::Schema.define(version: 20150503210139) do
     t.integer  "reviews_count",                               default: 0,   null: false
     t.integer  "like_no",                                     default: 0
     t.string   "slug"
-
+    t.integer  "position"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.integer  "position"
+    t.string   "variant"
     t.string   "characteristic"
     t.integer  "price"
   end
