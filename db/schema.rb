@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150511195011) do
+ActiveRecord::Schema.define(version: 20150517133729) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -187,6 +187,20 @@ ActiveRecord::Schema.define(version: 20150511195011) do
     t.datetime "updated_at"
   end
 
+  create_table "discoverfollows", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "discover_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "discovers", force: true do |t|
+    t.string   "name"
+    t.string   "slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "entries", force: true do |t|
     t.integer  "user_id"
     t.integer  "contest_id"
@@ -308,6 +322,18 @@ ActiveRecord::Schema.define(version: 20150511195011) do
   end
 
   add_index "pogos", ["category", "position"], name: "index_pogos_on_category_and_position", unique: true
+
+  create_table "properties", force: true do |t|
+    t.float    "length"
+    t.float    "width"
+    t.float    "height"
+    t.string   "size"
+    t.string   "material"
+    t.string   "instructions"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "ratings", force: true do |t|
     t.integer "stars",    default: 0
@@ -746,6 +772,8 @@ ActiveRecord::Schema.define(version: 20150511195011) do
     t.string   "meta_title"
     t.integer  "suite_id"
     t.integer  "designer_id"
+    t.integer  "like_no"
+    t.integer  "avg_rating"
   end
 
   add_index "spree_products", ["available_on"], name: "index_spree_products_on_available_on"

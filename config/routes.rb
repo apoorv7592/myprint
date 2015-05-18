@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     resources :contests
     resources :entries
     resources :designers
+    resources :discovers
     resources :suite_images
     resources :pogos
     resources :leads
@@ -40,6 +41,15 @@ Rails.application.routes.draw do
       end
     end
     resources :relationships, only: [:create, :destroy]
+    resources :discoverfollows, only: [:create, :destroy]
+
+    resources :users do
+      member do
+        get :pinned
+      end
+    end
+
+
 
     
     get '/wedding-invitations', to: 'landing_pages#wedding', as: 'wedding'
