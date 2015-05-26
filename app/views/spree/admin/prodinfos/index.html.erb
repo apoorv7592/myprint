@@ -1,0 +1,50 @@
+<% if !@prodinfos.empty? %>
+
+<div class="row">
+	<div class="col-md-10 col-md-offset-1">
+		<div id="suites_noti"></div>
+		<div class="row">
+			<div class="col-md-6">
+				<h4>All Products info</h4>
+			</div>
+			<div class="col-md-6">
+				<div class="pull-right">
+					<%= button_to 'New Product info', new_admin_prodinfo_path, method: 'get', class: 'btn btn-primary' 	%>
+				</div>
+			</div>
+		</div>
+
+
+		<table class=" table table-striped">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Length</th>
+					<th>Width</th>
+					<th>Height</th>
+					<th>Size</th>
+					<th>Material</th>
+					<th>Instuctions</th>					
+					<th>Product Id</th>
+					<th>edit</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @prodinfos.each do |s| %>
+					<tr>
+						<td><b><%= s.id %></b></td>
+						<td><%= s.length %></td>					
+						<td><%= s.width %></td>
+						<td><%= s.height%></td>
+						<td><%= s.size %></td>						
+						<td><%= s.material %></td>
+						<td><%= s.instructions %></td>
+						<td><%= s.product_id %></td>
+						<td><%= link_to 'Update', edit_admin_prodinfo_path(s.id) %></td>
+					</tr>
+				<%end%>
+			</tbody>
+		</table>
+	</div>
+</div>
+<%end%>

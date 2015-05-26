@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150515083036) do
+ActiveRecord::Schema.define(version: 20150526162008) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -124,6 +124,32 @@ ActiveRecord::Schema.define(version: 20150515083036) do
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority"
+
+  create_table "designerratings", force: true do |t|
+    t.integer  "stars",       default: 0
+    t.integer  "user_id"
+    t.integer  "designer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "designerreviews", force: true do |t|
+    t.string   "name"
+    t.string   "location"
+    t.integer  "rating"
+    t.text     "title"
+    t.text     "review"
+    t.boolean  "approved",        default: false
+    t.integer  "user_id"
+    t.string   "ip_address"
+    t.string   "locale"
+    t.boolean  "show_identifier", default: true
+    t.integer  "designer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "designerreviews", ["designer_id"], name: "index_designerreviews_on_designer_id"
 
   create_table "designers", force: true do |t|
     t.string   "name"
@@ -289,7 +315,7 @@ ActiveRecord::Schema.define(version: 20150515083036) do
 
   add_index "pogos", ["category", "position"], name: "index_pogos_on_category_and_position", unique: true
 
-  create_table "properties", force: true do |t|
+  create_table "prodinfos", force: true do |t|
     t.float    "length"
     t.float    "width"
     t.float    "height"
@@ -302,9 +328,12 @@ ActiveRecord::Schema.define(version: 20150515083036) do
   end
 
   create_table "ratings", force: true do |t|
-    t.integer "stars",    default: 0
-    t.integer "suite_id"
-    t.integer "user_id"
+    t.integer  "stars",       default: 0
+    t.integer  "product_id"
+    t.integer  "user_id"
+    t.integer  "designer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "relationships", force: true do |t|
@@ -317,6 +346,21 @@ ActiveRecord::Schema.define(version: 20150515083036) do
   add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id"
   add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
+
+  create_table "similarprods", force: true do |t|
+    t.string   "product_name"
+    t.integer  "product_id"
+    t.integer  "prod1"
+    t.integer  "prod2"
+    t.integer  "prod3"
+    t.integer  "prod4"
+    t.integer  "prod5"
+    t.integer  "prod6"
+    t.integer  "prod7"
+    t.integer  "prod8"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "spree_addresses", force: true do |t|
     t.string   "firstname"
@@ -737,6 +781,8 @@ ActiveRecord::Schema.define(version: 20150515083036) do
     t.boolean  "promotionable",        default: true
     t.string   "meta_title"
     t.integer  "suite_id"
+    t.integer  "reviews_count"
+    t.integer  "avg_rating"
   end
 
   add_index "spree_products", ["available_on"], name: "index_spree_products_on_available_on"
@@ -950,22 +996,24 @@ ActiveRecord::Schema.define(version: 20150515083036) do
   add_index "spree_return_items", ["exchange_inventory_unit_id"], name: "index_spree_return_items_on_exchange_inventory_unit_id"
 
   create_table "spree_reviews", force: true do |t|
-    t.integer  "suite_id"
+    t.integer  "product_id"
     t.string   "name"
     t.string   "location"
     t.integer  "rating"
     t.text     "title"
     t.text     "review"
     t.boolean  "approved",        default: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.integer  "user_id"
     t.string   "ip_address"
-    t.string   "locale",          default: "en"
+    t.string   "locale"
     t.boolean  "show_identifier", default: true
+    t.integer  "designer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "spree_reviews", ["show_identifier"], name: "index_spree_reviews_on_show_identifier"
+  add_index "spree_reviews", ["designer_id"], name: "index_spree_reviews_on_designer_id"
+  add_index "spree_reviews", ["product_id"], name: "index_spree_reviews_on_product_id"
 
   create_table "spree_roles", force: true do |t|
     t.string "name"

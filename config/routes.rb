@@ -49,6 +49,13 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :products do
+      resources :reviews, only: [:index, :new, :create] do
+      end
+    end
+    #post '/reviews/:review_id/feedback(.:format)' => 'feedback_reviews#create', as: :feedback_reviews
+
+
 
 
     
@@ -93,8 +100,16 @@ Rails.application.routes.draw do
         resources :designers do 
           post :deactivate
           post :activate
-          
         end
+        
+        resources :reviews, only: [:index, :destroy, :edit, :update] do
+          member do
+            get :approve
+          end
+          resources :feedback_reviews, only: [:index, :destroy]
+        end
+        resource :review_settings, only: [:edit, :update]
+        
         resources :banners
         resources :categories
         resources :sub_categories
@@ -102,6 +117,10 @@ Rails.application.routes.draw do
         resources :colors
         resources :pogos
         resources :leads
+        resources :prodinfos
+        resources :similarprods do
+          collection { post :import }
+        end
         
         resources :suites do
           resources :characteristics

@@ -1,0 +1,52 @@
+
+<div class="row">
+	<div class="col-sm-offset-2">
+	<h4>New product property</h4>
+
+		<%= form_for @similarprod, url: admin_similarprods_path, html: {class: 'form-horizontal'} do |f| %>
+			<div class="row form-group">
+				<%= f.label 'Product Name', class: 'col-sm-2' %>
+				<%= f.select :product_name,Spree::Product.all.collect{|d| [d.name,d.name]}, class: 'col-sm-6'%>
+			</div>
+			<div class="row form-group">
+				<%= f.label 'Product id', class: 'col-sm-2' %>
+				<%= f.select :product_id,Spree::Product.all.collect{|d| [d.name,d.id]}, class: 'col-sm-6'%>
+			</div>
+						<div class="row form-group">
+				<%= f.label 'Product1', class: 'col-sm-2' %>
+				<%= f.select :prod1,Spree::Product.all.collect{|d| [d.name,d.id]}, class: 'col-sm-6'%>
+			</div>
+            <div class="row form-group">
+				<%= f.label 'Product2', class: 'col-sm-2' %>
+				<%= f.select :prod2,Spree::Product.all.collect{|d| [d.name,d.id]}, class: 'col-sm-6'%>
+			</div>
+			<div class="row form-group">
+				<%= f.label 'Product3', class: 'col-sm-2' %>
+				<%= f.select :prod3,Spree::Product.all.collect{|d| [d.name,d.id]}, class: 'col-sm-6'%>
+			</div>
+			<div class="row form-group">
+				<%= f.label 'Product4', class: 'col-sm-2' %>
+				<%= f.select :prod4,Spree::Product.all.collect{|d| [d.name,d.id]}, class: 'col-sm-6'%>
+			</div>
+			<div class="row form-group">
+				<%= f.label 'Product5', class: 'col-sm-2' %>
+				<%= f.select :prod5,Spree::Product.all.collect{|d| [d.name,d.id]}, class: 'col-sm-6'%>
+			</div>
+			<div class="row form-group">
+				<%= f.label 'Product6', class: 'col-sm-2' %>
+				<%= f.select :prod6,Spree::Product.all.collect{|d| [d.name,d.id]}, class: 'col-sm-6'%>
+			</div>
+			<div class="row form-group">
+				<%= f.label 'Product7', class: 'col-sm-2' %>
+				<%= f.select :prod7,Spree::Product.all.collect{|d| [d.name,d.id]}, class: 'col-sm-6'%>
+			</div>
+			<div class="row form-group">
+				<%= f.label 'Product8', class: 'col-sm-2' %>
+				<%= f.select :prod8,Spree::Product.all.collect{|d| [d.name,d.id]}, class: 'col-sm-6'%>
+			</div>
+			<div class="row form-group">
+				<%= f.submit 'Submit', class: 'btn btn-primary col-sm-4 col-sm-offset-2' %>
+			</div>
+		<% end %>
+	</div>
+</div>
