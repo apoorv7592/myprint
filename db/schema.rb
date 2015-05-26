@@ -11,8 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150523132042) do
-
+ActiveRecord::Schema.define(version: 20150526162008) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -816,13 +815,11 @@ ActiveRecord::Schema.define(version: 20150523132042) do
     t.boolean  "promotionable",        default: true
     t.string   "meta_title"
     t.integer  "suite_id"
-
     t.integer  "designer_id"
     t.integer  "like_no"
     t.integer  "avg_rating"
     t.integer  "discover_id"
     t.integer  "reviews_count"
-    t.integer  "avg_rating"
   end
 
   add_index "spree_products", ["available_on"], name: "index_spree_products_on_available_on"
