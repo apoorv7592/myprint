@@ -20,6 +20,13 @@ Rails.application.routes.draw do
       get '/wedding-customizations', to: 'custs#get_cust', as: 'get_wcust'
 
     end
+    
+    namespace :api, defaults: { format: :json} do
+      scope module: "v1" do
+        resources :discovers
+      end
+    end
+
 
     resources :categories
     resources :sub_categories   
@@ -79,7 +86,7 @@ Rails.application.routes.draw do
     get '/return-policy', to:'privacy#return'
 
 
-
+    get '/test/:id', to: 'discovers#test', as: 'test_product'
 
 
     get '/search'  => 'solrsearch#index'
@@ -124,6 +131,7 @@ Rails.application.routes.draw do
   get '/designer_signup', :to => "devise/registrations#new_designer"
   end
 
+ 
 
   #get '/suites/:id' => 'suites#show'
 

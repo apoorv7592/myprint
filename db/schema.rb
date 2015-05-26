@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150517133729) do
+ActiveRecord::Schema.define(version: 20150523132042) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -774,6 +774,7 @@ ActiveRecord::Schema.define(version: 20150517133729) do
     t.integer  "designer_id"
     t.integer  "like_no"
     t.integer  "avg_rating"
+    t.integer  "discover_id"
   end
 
   add_index "spree_products", ["available_on"], name: "index_spree_products_on_available_on"
@@ -1491,6 +1492,26 @@ ActiveRecord::Schema.define(version: 20150517133729) do
   add_index "suites", ["position"], name: "index_suites_on_position"
   add_index "suites", ["slug"], name: "index_suites_on_slug"
   add_index "suites", ["sub_category_id"], name: "index_suites_on_sub_category_id"
+
+  create_table "taggings", force: true do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       limit: 128
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
+
+  create_table "tags", force: true do |t|
+    t.string  "name"
+    t.integer "taggings_count", default: 0
+  end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true
 
   create_table "trims", force: true do |t|
     t.string   "name"

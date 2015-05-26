@@ -3,7 +3,7 @@ module Spree
 		class DesignersController < Spree::Admin::BaseController
 			
 			def index
-				@designers = Designer.active
+				@designers = Designer.all
 			end
 
 			def new

@@ -1,16 +1,23 @@
 Spree::Product.class_eval do
-	belongs_to :suite
+	acts_as_taggable
+
+    belongs_to :suite
 	belongs_to :designer
 	has_many :properties
+    belongs_to :discover
 
 	searchable do 
-        text :name, :description
+        text :name, :description, :tag_list
         time :created_at
         integer :like_no
         integer :avg_rating
         
         text :designer_names do 
             designer.name
+        end
+        
+        text :discover do 
+            discover.name
         end
         
         #integer :sub_category_ids, multiple: true, references: SubCategory
