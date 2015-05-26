@@ -95,19 +95,6 @@ class Suite < ActiveRecord::Base
     	
     end
 
-	def stars
-		avg_rating.try(:round) || 0
-	end
-
-	def recalculate_rating
-		self[:reviews_count] = reviews.reload.approved.count
-		if reviews_count > 0
-			self[:avg_rating] = reviews.approved.sum(:rating).to_f / reviews_count
-		else
-			self[:avg_rating] = 0
-		end
-		save
-	end
 
 
 def self.search(q,sub_category_id,designer_id, color_id, trim_id,dimension_id, created_at,like_no,avg_rating,price, category_name, page )

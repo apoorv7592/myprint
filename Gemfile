@@ -110,7 +110,7 @@ gem 'omniauth-facebook'
 gem 'spree_social', github: 'spree-contrib/spree_social', branch: 'master'
 
 #user reviews
-gem 'spree_reviews', github: 'spree-contrib/spree_reviews', branch: 'master'
+gem 'spree_reviews', github: 'apoorv7592/spree_reviews', branch: 'master'
 
 #Integrate mailchimp with spree
 gem 'spree_chimpy', github: 'ast0708/spree_chimpy', branch: 'master'
@@ -159,3 +159,6 @@ gem 'rabl'
 gem 'oj'
 #for tagging products
 gem 'acts-as-taggable-on', '~> 3.4'
+
+gem 'roo'
+

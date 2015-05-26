@@ -13,3 +13,4 @@
 //= require nprogress-turbolinks
 //= require_tree .
 
+//= require spree/frontend/spree_reviews
