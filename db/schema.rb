@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150526162008) do
+ActiveRecord::Schema.define(version: 20150526173532) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -168,6 +168,8 @@ ActiveRecord::Schema.define(version: 20150526162008) do
     t.string   "college"
     t.string   "phonenum"
     t.string   "slug"
+    t.integer  "avg_rating"
+    t.integer  "reviews_count"
   end
 
   add_index "designers", ["slug"], name: "index_designers_on_slug", unique: true

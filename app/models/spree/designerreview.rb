@@ -1,8 +1,8 @@
-class Designerreviews < ActiveRecord::Base
+class Designerreview < ActiveRecord::Base
 
   belongs_to :designer, touch: true
   belongs_to :user, class_name: Spree.user_class.to_s
-  has_many   :feedback_reviews
+  #has_many   :feedback_reviews
 
   after_save :recalculate_designer_rating, if: :approved?
   after_destroy :recalculate_designer_rating
@@ -25,10 +25,10 @@ class Designerreviews < ActiveRecord::Base
   scope :not_approved, -> { where(approved: false) }
   scope :default_approval_filter, -> { Designerreviews::Config[:include_unapproved_reviews] ? all : approved }
 
-  def feedback_stars
-    return 0 if feedback_reviews.size <= 0
-    ((feedback_reviews.sum(:rating) / feedback_reviews.size) + 0.5).floor
-  end
+  #def feedback_stars
+    #return 0 if feedback_reviews.size <= 0
+    #((feedback_reviews.sum(:rating) / feedback_reviews.size) + 0.5).floor
+  #end
 
   def recalculate_designer_rating
     designer.recalculate_rating if designer.present?

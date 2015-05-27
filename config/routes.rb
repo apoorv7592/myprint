@@ -53,6 +53,11 @@ Rails.application.routes.draw do
       resources :reviews, only: [:index, :new, :create] do
       end
     end
+
+    resources :designers do
+      resources :reviews, only: [:index, :new, :create] do
+      end
+    end
     #post '/reviews/:review_id/feedback(.:format)' => 'feedback_reviews#create', as: :feedback_reviews
 
 
