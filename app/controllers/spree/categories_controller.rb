@@ -3,8 +3,7 @@ module Spree
 
 		def show
             #@categories = Category.retrieve_categories
-			@cat = Category.find(params[:id])
-			@scat = @cat.sub_categories
+			@category = Category.friendly.find(params[:id])
 		end
     end
 end

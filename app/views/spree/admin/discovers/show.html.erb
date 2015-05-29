@@ -1,0 +1,33 @@
+<div class="row">
+	<div class="col-md-10 col-md-offset-1">
+		<h4><%= link_to 'All Discovers', admin_discovers_path%>
+		>>
+		Discover Details</h4>
+		<table class="table table-striped">
+
+
+			<tr>
+				<td><b>Name</b></td>
+				<td><%= @disc.name%></td>
+			</tr>
+            
+			<tr>
+				<td><b>Category</b></td>
+				<td><%= @disc.category.name if @disc.category.present?%></td>
+			</tr>
+			<tr>
+				<td><b>Avatar</b></td>
+				<td><%= image_tag @disc.avatar.url(:thumb)%></td>
+			</tr>
+		</table>
+			<div class="row">
+				<div class="col-md-4">
+					<%= button_to 'Update', edit_admin_discover_path(@disc), method: 'get' , class: 'btn btn-primary'%>
+				</div>
+				<div class="col-md-2">
+					<%= link_to 'Delete', admin_discover_path(@disc), method: 'delete', data: {confirm: "Are you sure?"} %>
+				</div>		
+			</div>
+			
+	</div>
+</div>

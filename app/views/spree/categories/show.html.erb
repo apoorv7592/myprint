@@ -1,63 +1,1116 @@
-<!-- Google Tag Manager -->
-<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TBK7B6"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-TBK7B6');</script>
-<!-- End Google Tag Manager -->
+ <!DOCTYPE HTML>
 
-<h1>This is a Category Landing page </h1>
+<html lang="en">
+
+<head>
+
+<title>
+</title>
+
+<meta charset="utf-8">
+<link href="http://http://www.prindora.com/" rel="canonical" />
+<link href="favicon-ae466f120367f4c037f88fb33a0a7a55.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+<link rel="stylesheet" href="categorypage.css">
+
+<!-- JQuery CDN -->
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+<!-- Fontawesome CDN -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<!-- Bootstrap CDN -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="categorypage.js"></script>
+
+<style type="text/css">
+  
+  *:focus{
+  outline:none;
+}
+
+button:hover{
+  opacity:0.8;
+}
+
+html a{ 
+  color:#777777;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+html a:hover{
+  color:#C61F26;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+#category_box{
+  column-count:2;
+  column-gap:40px;
+  column-width:150px;
+  -webkit-column-count:2;
+  -webkit-column-gap:40px;
+  -webkit-column-width:150px;
+  -moz-column-count:2;
+  -moz-column-gap:40px;
+  -moz-column-width:150px;
+}
+
+#category_box a{
+  font-size:14px;
+  margin:2px 0;
+  float:left;
+  clear:both;
+}
+
+html, body {
+  font-family: 'Helvetica Neue', 'Helvetica', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', arial, sans-serif;
+  background-color:#E9E9E9;
+}
+
+#cardsarea
+{
+  margin:0 auto;
+  background-color:blue;
+  height:auto;
+  overflow:auto;
+}
+
+#tail{
+  z-index:1000;
+  position:absolute;
+  top:40px;
+  width: 0; 
+  height: 0; 
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid white;
+  display:none;
+}
+
+#category_box{
+  width:400px;
+  height:400px;
+  background-color:white;
+  z-index:1000;
+  position:absolute;
+  top:53px;
+  border-radius:6px;
+  padding:30px;
+  box-shadow:0 2px 2px black;
+  display:none;
+}
+
+.card
+{
+  width:230px;
+  background-color:white;
+  border-radius:6px;
+  color:white;
+  position:absolute;
+  box-shadow:0 0 3px black;
+  -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    transition: all 1s ease;
+  opacity:0.8;
+}
+
+.card:hover{
+  opacity:1;
+}
+
+.cardinfo
+{
+  word-wrap:break-word;
+  padding:10px;
+  width:230px;
+  color:black;
+  font-weight: bold;
+}
+.carddescrip{
+  word-wrap:break-word;
+  padding:5px;
+  width:230px;
+  color:black;
+}
+.designer_info{
+  padding:0 10px 10px 10px;
+  width:230px;
+}
+
+.buyitnow{
+  height:40px;
+  width:150px;
+  margin:10px 40px;
+  border-radius:6px;
+  background-color:#C61F26;
+  border:blacck 1px solid;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+}
+
+.pricing{
+  height:30px;
+  width:100%;
+  float:left;
+  margin:10px 0;
+  font-size:14px;
+  padding:0 10px;
+  color:black;
+}
+
+.addtowishlist{
+  width:28px;
+  height:26px;
+  z-index:1000px;
+  position:absolute;
+  right:10px;
+  top:10px;
+  background:#eeeeee;
+  color:red;
+  border-radius:2px;
+  visibility:hidden;
+}
+
+.cardimage
+{ 
+  width:230px;
+  float:left;
+  cursor:zoom-in;
+  border-radius:6px 6px 0 0;
+}
+
+.cardimage img{
+  border-radius:6px 6px 0 0;
+}
+
+#search{
+  height:30px;
+  margin: auto 10px;
+  position:relative;
+  top:10px;
+  padding:5px;
+  background-color:#E9E9E9;
+  font-weight:bold;
+  border-radius:6px;
+}
+
+#cart{
+  float:right;
+  margin:auto;
+  position:relative;
+  top:8px;
+  color:#C61F26;
+}
+
+#header{
+  background-color:#eeeee;
+  height:50px;
+  margin:0 auto;
+  display:block;
+  padding-right:10px;
+}
+
+#userid{
+  float:right;
+  margin:10px;
+  background-color:#C61F26; 
+  font-weight:bold;
+  color:white;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+}
+
+#category{
+  float:right;
+  margin:10px;
+  margin-right:0;
+  background-color:#C61F26;
+  font-weight:bold;
+  color:white;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+}
+
+.leftmodal{
+  float:left;
+  width:60%;
+}
+.rightmodal{  
+  float:right;
+  width:40%;
+}
+
+.modal-header{
+  height:110px;
+}
+
+.modal-content{
+  width:1000px;
+  margin-left:-200px;
+}
+.modal-slide{
+  height:380px;
+  width:80px;
+  float:left;
+  margin-right:5px;
+}
+
+.modal-gallery-container{
+  width:80px;
+  height:425px;
+  float:left;
+  background-color:orange;
+  margin-right:5px;
+  overflow:hidden;
+}
+
+.modal-gallery-container .modal-gallery{
+  width:100px;
+  height:445px;
+  overflow:scroll;
+  padding-bottom:7px;
+}
+
+.gallerybutton{
+  height:79px;
+  width:80px;
+  margin-top:5px;
+  float:left;
+}
+
+.selected{
+  border:2px black solid;
+}
+
+.designer_image{
+  width:80px;
+  height:80px;
+  float:left;
+}
+
+.designer_name{
+  font-size:40px;
+  float:left;
+  line-height:80px;
+  padding-left:10px;
+}
+
+.modal-image{
+  height:480px;
+  width:480px;
+  float:left;
+  background-color:black;
+  margin:0 5px;
+}
+
+.modal-info{
+  width:388px;
+  float:left;
+  margin-left:5px;
+  padding:10px;
+  border:5px #C61F26 solid;
+  border-radius:6px;
+}
+
+.modaltabs{
+  width:100%;
+  margin:auto;
+  height:auto;
+  float:left;
+  margin-top:10px;
+  text-align:justify;
+}
+
+.tab-content{ 
+  padding:10px;
+}
+
+.similar_products{
+  width:388px;
+  float:left;
+  padding-left:2px;
+  border:5px #C61F26 solid;
+  border-radius:6px;
+  margin-left:5px;
+  margin-top:10px;
+}
+/*
+.share{ 
+  width:388px;
+  height:100px;
+  float:left;
+  padding:10px;
+  border:5px #C61F26 solid;
+  border-radius:6px;
+  margin-left:5px;
+  margin-top:10px;
+}
+*/
+.designer_products{
+  height:200px;
+  width:968px;
+  padding:20px auto;
+  margin-top:10px;
+  float:left;
+}
+
+.stabilizer{
+  height:20px;
+  width:908px;
+  visibility:hidden;
+  clear:both;
+}
+
+.protitle{
+  margin:5px;
+  width:338px;
+  float:left;
+  text-align:center;
+}
+
+.proprice{
+  margin:5px;
+  width:338px;
+  float:left;
+}
+
+.stock{
+  margin:5px;
+  width:338px;
+  float:left;
+}
+
+.filter{
+  margin:5px;
+  width:338px;
+  float:left;
+}
+
+.overview{
+  margin:5px;
+  width:338px;
+  float:left;
+  padding:0;
+}
+
+.overview ul{
+  padding:0;
+  padding-left:20px;
+}
+
+.additionalinfo{
+  margin:5px;
+  width:338px;
+  float:left;
+  text-align:center;
+}
+
+.quantitycontainer{
+  margin:5px;
+  width:338px;
+  float:left;
+}
+
+.addtocart{
+  margin:5px;
+  width:338px;
+  float:left;
+}
+
+.scroll-left{
+  width:40px;
+  height:100%;
+  float:left;
+}
+
+.scroll-right{
+  width:40px;
+  height:100%;
+  float:right;
+}
+
+.designer_gallery_container{
+  width:888px;
+  height:200px;
+  float:left;
+  overflow:hidden;
+}
+
+.designer_gallery{
+  height:220px;
+  width:908px;
+  overflow:scroll;
+}
+
+.desproduct{
+  height:180px;
+  width:160px;
+  background-color:pink;
+  float:left;
+  display:inline-block;
+  margin:9px;
+}
+
+#modalclose{
+  position:absolute;
+  right:10px;
+  top:10px;
+  color:#C61F26;
+  opacity:1;
+}
+
+body.modal-open .blur {
+    -webkit-filter: blur(4px) grayscale(0%);
+  -moz-filter: blur(4px) grayscale(0%);
+  filter: blur(4px) grayscale(0%);
+}
+
+.nextcard{
+  position:fixed;
+  top:300px;
+  right:117px;
+  display:none;
+  z-index:10000;
+}
+
+.prevcard{
+  position:fixed;
+  top:300px;
+  left:100px;
+  display:none;
+  z-index:10000;
+}
+
+.closemodal{
+  position:fixed;
+  top:0;
+  right:117px;
+  z-index:10000;
+  display:none;
+}
+
+#loaderarea{
+  height:50px;
+  position:absolute;
+}
+
+#loaderarea hr{
+  width:300px;
+}
+
+#category_area{
+  width:100%;
+  height:auto;
+  background-color:#E9E9E9;
+  padding:20px;
+}
+
+#category_name{
+  margin:0px auto;
+  width:auto;
+  height:auto;
+  display:table;
+  color:#444444;
+  font-weight:bold;
+  font-size:48px;
+}
 
 
-<div class="row" style="height:auto; width:1000px;">
-         
-      <div class="col-md-3"style="height:100px; width:238px; background:rgba(1,0,0,0.2); margin-right:8px;float:left;">
-      navigation
+#subcategories_area{
+  margin:5px auto 0;
+  width:auto;
+  height:auto;
+  display:table;
+  color:#BABABA;
+  font-weight:bold;
+  font-size:14px;
+  text-align:center;
+}
+
+#subcategories{
+  width:auto;
+  height:auto;
+  margin:0 auto;
+}
+
+.subcategory_link{
+  display:inline-block;
+  width:110px;
+  height:110px;
+  margin:10px 6px;
+  border-radius:6px;
+  background-size:100% 100%;
+  background-repeat:no-repeat;
+  color:white;
+  opacity:0.9;
+  position:relative;
+}
+
+.subcategory_link:hover{
+  color:white;
+  opacity:1;
+}
+
+.subcategory_link > div{
+  position:absolute;
+  bottom:5px;
+  width:110px;
+  height:auto;
+  padding:0 15px;
+  word-wrap:break-word;
+  font-size:12px;
+}
+</style>
+
+<script type="text/javascript">
+  colwidth=240;
+colmargin=10;
+colheights=[];
+colnum=0;
+searchval="";
+gutter=0;
+modalid=-1;
+$(document).ready(function(){
+  
+  $(document).on("click","#category",function(){
+    $("#tail").toggle();
+    $("#category_box").toggle();
+  });
+  
+  $(document).click(function(e){
+    if(e.target.id != "category_box" && e.target.id != "category" && e.target.id != "tail")
+    {
+      $("#tail").hide();
+      $("#category_box").hide();
+    }
+  });
+  
+  // cardsarea layout starts
+  getsubcategories();
+  colinitializer();
+  getcards($("#search").val());
+  $(window).load(colinitializer);
+  $(window).resize(function(){colinitializer();});
+  $(window).resize(function(){colinitializer();});
+  var page =2
+  $(window).scroll(function(){
+    
+    if($(window).scrollTop() == $(document).height() - $(window).height())
+    {
+      getcards(page);
+      page = page+1;
+    }
+  }
+  );
+  
+  /*$("#search").on("input",function()
+    {
+      $('#cardsarea').empty();
+      
+      for(var i=0 ; i<colnum ; i++)
+        colheights[i]=colmargin;
+      
+      getcards(searchval);
+    }
+  );*/
+  
+  //cardsarea layout ends
+  
+  $(document).on("mouseover",".card",function(){
+    $(this).find(".addtowishlist").css("visibility","visible");
+  });
+  
+  $(document).on("mouseout",".card",function(){
+    $(this).find(".addtowishlist").css("visibility","hidden");
+  });
+  
+  // popup layout starts
+  
+  $(document).on("click","#closemodal",function(){
+    $('#myModal').modal('hide');
+  });
+  
+  $('#myModal').on('show.bs.modal', function () {
+    $('#main').addClass('blur');
+    $(".nextcard").show();
+    $(".prevcard").show();
+    $(".closemodal").show();
+  })
+
+  $('#myModal').on('hide.bs.modal', function () {
+    $('#main').removeClass('blur');
+    $(".nextcard").hide();
+    $(".prevcard").hide();
+    $(".closemodal").hide();
+  })
+  
+  $(document).on("click","#nextcard",function(){
+    
+    var cardnum = $(".card").index($("#"+modalid));
+    if(cardnum < $('.card').length-1)
+      cardnum++;
+    else
+      cardnum=0;
+    var nextid = $(".card:eq("+cardnum+")").attr("id");
+    createmodal(nextid);
+  });
+  
+  $(document).on("click","#prevcard",function(){
+    var cardnum = $(".card").index($("#"+modalid));
+    if(cardnum > 0)
+      cardnum--;
+    else
+      cardnum = $('.card').length-1;
+    var previd = $(".card:eq("+cardnum+")").attr("id");
+    createmodal(previd);
+  });
+  
+  $(document).on("click",".cardimage",function(){
+    var x=$(this).parent().attr('id');
+    createmodal(x);
+  });
+  
+    $(document).on("click","#scroll-down",function () {
+      var select = $(this);
+      select.prop("disabled",true);
+      $('.modal-gallery').animate({
+        scrollTop:$('.modal-gallery').scrollTop()+84
+      },ease,function(){select.prop("disabled",false);});
+    });
+    
+    $(document).on("click","#scroll-up",function () {
+      var select = $(this);
+      select.prop("disabled",true);
+      $('.modal-gallery').animate({
+        scrollTop:$('.modal-gallery').scrollTop()-84
+      },"ease",function(){select.prop("disabled",false);});
+    });
+  
+    $(document).on('mouseover','.gallerybutton',function(){
+      $(".selected").removeClass("selected");
+      $(this).addClass("selected");
+      $(".modal-image").css("background-color",$(".selected").css("background-color"));
+      //replace this by source of image linked to that small image
+    });
+    
+    $(document).on("click","#scroll-right",function () {
+      var select = $(this);
+      select.prop("disabled",true);
+      $('.designer_gallery').animate({
+        scrollLeft:$('.designer_gallery').scrollLeft()+180
+      }, "ease",function(){select.prop("disabled",false);});
+    });
+    
+    $(document).on("click","#scroll-left",function () {
+      var select = $(this);
+      select.prop("disabled",true);
+      $('.designer_gallery').animate({
+        scrollLeft:$('.designer_gallery').scrollLeft()-180
+      }, "ease",function(){select.prop("disabled",false);});
+    });
+    
+    
+    //popup layout ends   
+});
+
+
+function getcards(page_no){
+
+  $.ajax({  
+  dataType:"json",
+  async:"TRUE",
+  url:"<%= api_category_path(@category)%>",
+  type:"GET",
+  data:{cardnum:$(".card").length,range:5*colnum, page:page_no},
+  success:function(data){
+    for(var i=0 ; i<=data.length-1 ; i++){
+      var card = "<div id=\""+data[i]['name']+"\" class=\"card\"><div class=\"cardimage\" type=\"button\" class=\"btn\" data-toggle=\"modal\" data-target=\"#myModal\"><image src=\" "+data[i]['img_url']+"\" width=230></div><div class=\"cardpanel\"><button class=\"buyitnow \"><strong>Buy It Now</strong></button><div class=\"pricing\">Rs."+data[i]['price']+"</div><div class=\"cardinfo\">"+data[i]['name']+"</div><div class=\"carddescrip\"><p>"+data[i]['short_descrip']+"</p></div><div class=\"designer_info\"><button class=\"btn\" style=\"padding:0;background:white;color:#5F5F5F\"><image src=\""+data[i]['designer']['img']+"\" style=\"height:50px;\" class=\"img-circle\" > "+data[i]['designer']['name']+"</button><button class=\"btn\" style=\"padding:0;background:white;float:right;position:relative;top:5px;color:#C61F26\"><i class=\"fa fa-plus fa-3x\"></i></button></div></div><button class=\"btn addtowishlist\"><i class=\"fa fa-heart fa-1x\" style=\"position:relative;left:-6px;top:-3px\"></i></button></div>";
+      $("#cardsarea").append(card);
+    }
+    colinitializer();
+    return;
+  },
+  error:function(){
+    alert("ERROR! ERROR! ERROR!");
+  }
+  });
+}
+  
+function createmodal(x){
+  /*
+  $.ajax({  
+  dataType:"json",
+  async:"TRUE",
+  url:"json link",
+  type:"POST",
+  data:{id:x},
+  success:function(data){
+  */  
+    modalid=x;
+    var gallery="";
+    for(var i =0 ; i<10 ; i++)
+    { 
+      gallery+="<div class=\"gallerybutton";
+      if(i==0)
+      gallery+=" selected ";
+      gallery+="\" style=\"background-color:"+getRandomColor()+"\"></div>";
+      /*insert image here and remove background color and replace 10 by number of images*/
+    }
+    
+    $(".modal-gallery").html(gallery);
+    $(".designer_name").html("Designer Name");
+    $(".protitle").html("<strong>"+"Toddler pants from organic denim, blue sarouel pants, baggy trousers"+"</strong>");
+    $(".proprice").html("Price");
+    $(".quantity").html("<select><option>option1</option><option>option2</option><option>option3</option><></select>")
+    $(".stock").html("Only 1 Left in Stock");
+    $(".filterselect").html("<select><option>option1</option><option>option2</option><option>option3</option><></select>")
+    $(".overview").html("<h4>Overview</h4><ul><li>Handmade item</li><li>Made to order</li><li>Feedback: 161 reviews</li><li>Ships worldwide from Düsseldorf, Germany</li></ul>");
+    $(".additionalinfo").html("This shop accepts Etsy Gift Cards");
+    $(".modal-image").css("background-color",$(".selected").css("background-color"));
+    $(".designer_image img").attr("src","images/iusa_75x75.26685356_mqfh.jpg");
+    
+    //fetch similar products and run loop
+    $(".similar_products").html("");
+    for(var i=0; i<6; i++)
+    {
+      $(".similar_products").append("<a href=\"#\"><div class=\"simproduct\" style=\"height:220px;width:170px;background-color:pink;float:left;margin:9px\"><div style=\"width:170px;height:170px;\"><image src=\"loader.gif\" style=\"max-height:170px;max-width:170px;\"></div><div style=\"width:170px;height:25px\">Prod Name</div><div style=\"width:170px;height:25px;\">Price</div></div></a>");
+    }
+    $(".designer_gallery").html("");
+    for(var i=0 ; i<8 ; i++)
+    {
+      $(".designer_gallery").append("<td><a href=\"#\"><div class=\"desproduct\"><div style=\"width:140px;height:140px;\"><image src=\"loader.gif\" style=\"max-height:140px;max-width:140px;\"></div><div style=\"width:140px;height:20px\">Prod Name</div><div style=\"width:140px;height:20px;\">Price</div></div></a></td>");
+    }
+  /*  
+  },
+  error:function(){
+    alert("ERROR! ERROR! ERROR!");
+  }
+  });
+    */
+} 
+  
+function min(arr)
+{
+  var min=arr[0],minindex=0;
+  for(var i=1 ; i<colnum ; i++)
+  {
+    if(arr[i]<min)
+    {
+      min=arr[i];
+      minindex=i;
+    }
+  }
+  return minindex;
+} 
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+function colinitializer(){
+    colnum=Math.floor(Math.max($(window).width()/(colwidth+colmargin),3));
+    gutter=($(window).width()-colnum*(colwidth))/2;
+    for(var i=0 ; i<colnum ; i++)
+    colheights[i]=colmargin;
+    $("#cardsarea").outerWidth(colnum*(colwidth));
+    $("#header").outerWidth(colnum*(colwidth));
+    $("#loaderarea").outerWidth(colnum*(colwidth));
+    $("#search").outerWidth(Math.min($("#category").offset().left-($("#logo img").width()+$("#logo").offset().left)-30,600));
+    $("#category_box").css("right",parseInt($(window).width()-$('#category').offset().left-300)+"px");
+    $("#tail").css("right",parseInt($(window).width()-$('#category').offset().left-100)+"px");
+    positioncards();
+}
+
+function positioncards(){
+    $(".card").each(function(){
+      var left,top,col;
+      col=min(colheights);
+      left=col*(colwidth)+gutter;
+      top=colheights[col]+$("#cardsarea").offset().top;
+      
+      $(this).css({"left":left+"px","top":top+"px"});
+      
+      colheights[col]+=$(this).outerHeight()+colmargin;
+    });
+    
+    var max=0;
+    for(var i=0 ; i<colnum ; i++)
+      if(colheights[i]>max)
+        max=colheights[i];
+    
+    $("#loaderarea").css({"top":parseInt(max+$("#cardsarea").offset().top)+"px","left":$("#header").offset().left+"px"});
+}
+
+function getsubcategories(){
+  $.ajax({  
+  dataType:"json",
+  async:"TRUE",
+  url:"<%= api_get_discovers_path(@category)%>",
+  type:"GET",
+  data:{categoryname:''},
+  success:function(data){
+    for(var i=0 ; i<data.length ; i++)
+    {
+      var card = "<a href=\""+data[i]['url']+"\" class=\"subcategory_link\" style=\"background-image:url("+data[i]['img_url']+")\"><div>"+data[i]['name']+"</div></a>";
+      $("#subcategories").append(card);
+    }
+  
+  },
+  error:function(){
+    alert("ERROR! ERROR! ERROR!");
+  }
+  });
+  
+}
+
+</script>
+
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <a href=""><img src="logo.png" style="height:40px; margin:5px 0; float:left;"></a>
       </div>
       
-      <div class="col-md-9"style="height:auto; width:746px; margin-left:8px;float:right;">
-              <div class="col-md-12" style="height:593px; width:746px; background:rgba(1,0,0,0.2);">
-              <% if !@scat.nil? %>
-                    <% @scat.each do |sc| %>
-                    <span>
-                    <br>
-                      <%= link_to sc.name, sc%>
-                    </br>
-                    </span>
-                    <% end -%>
-              <% end -%>
-              </div>
+      <input type="search" id="search" placeholder="SEARCH" autofocus>
 
-              <div class="col-md-12" style="height:auto; width:746px; margin-top:10px;">
-                <div class="row">
-                  <div class="col-md-6" style="height:311px; width:365px; background:rgba(1,0,0,0.2); margin-right:8px;" >
-                  </div>
-                  <div class="col-md-6" style="height:311px; width:365px;margin-left:8px;background:rgba(1,0,0,0.2);">
-                  </div>
-                </div>
-              </div>
-
-
-              <div class="col-md-12" style="height:auto; width:746px;">
-                <div class="row">
-                  <div class="col-md-4" style="height:238px; width:238px; background:rgba(1,0,0,0.2); margin-right:8px;" >
-                  </div>
-                  <div class="col-md-4" style="height:238px; width:238px; background:rgba(1,0,0,0.2); margin-right:8px;margin-left:8px;" >
-                  </div>
-                   <div class="col-md-4" style="height:238px; width:238px; background:rgba(1,0,0,0.2); margin-left:8px;" >
-                  </div>                 
-                </div>
-              </div>
+      <a href="#cart" id="cart"><i class="fa fa-shopping-cart fa-2x"></i></a>
+      
+      <button type="button" class="btn" id="userid" style="height:30px;text-align:center;line-height:15px;">
+        <img src="images/iusa_75x75.26685356_mqfh.jpg" style="height:26px; float:left; top:-5px; position:relative" class="img-circle">
+        <div style="float:left; margin:auto 10px">
+          Name
+        </div>
+      </button>
+      
+      <button class="btn" style="height:30px;text-align:center;line-height:15px;" id="category" type="button">
+        Categories  <i class="fa fa-bars"></i>
+      </button>
+      
+      <div id="tail"></div>
+      <div id="category_box">
+        <%= link_to 'Wedding', Category.first%>
+        <a href="categorypage.html">LINK IT HERE</a>
+        <a href="categorypage.html">LINK IT HERE</a>
+        <a href="categorypage.html">LINK IT HERE</a>
+        <a href="categorypage.html">LINK IT HERE</a>
+        <a href="categorypage.html">LINK IT HERE</a>
+        <a href="categorypage.html">LINK IT HERE</a>
+        <a href="categorypage.html">LINK IT HERE</a>
+        <a href="categorypage.html">LINK IT HERE</a>
+        <a href="categorypage.html">LINK IT HERE</a>
+        <a href="categorypage.html">LINK IT HERE</a>
+        <a href="categorypage.html">LINK IT HERE</a>
+        <a href="categorypage.html">LINK IT HERE</a>
+        <a href="categorypage.html">LINK IT HERE</a>
+        <a href="categorypage.html">LINK IT HERE</a>
+        <a href="categorypage.html">LINK IT HERE</a>
+        <a href="categorypage.html">LINK IT HERE</a>
+        <a href="categorypage.html">LINK IT HERE</a>
+        <a href="categorypage.html">LINK IT HERE</a>
+        <a href="categorypage.html">LINK IT HERE</a>
+        <a href="categorypage.html">LINK IT HERE</a>
       </div>
-</div>
+      
+      
+    </div>
+    
+    <div id="category_area">
+      <div id="category_name">
+        <%= @category.name%>
+      </div>
+      <div id="subcategories_area">
+        RELATED INTERESTS
+        <div id="subcategories">
+        </div>
+      </div>
+    </div>
+    <div id="cardsarea">
+    </div>
+    
+    <div id="loaderarea">
+      <img src="loader.gif" style="height:30px;margin:0 auto;display:block">
+    </div>
+    
+  </div>
+  
+  <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog" >
+    <div class="modal-content">
+    <div class="modal-header">
+        <div class="designer_image">
+          <img style="max-height:80px; max-width:80px" class="img-circle img-responsive center-block">
+        </div>
+        <div class="designer_name">
+        </div>
+        <button class="btn" style="float:right;position:relative;top:20px;background-color:#C61F26;color:white;"><i class="fa fa-arrow-circle-right"></i> Follow</button>
+    </div>
+    <div class="modal-body">
+    <div class="leftmodal">
+      <div class="modal-slide">
+        <div style="width:80px;height:20px;float:left;margin-top:10px;">
+        <a href="#" id="scroll-up" ><i style="margin-left:33px;color:#C61F26" class="fa fa-chevron-circle-up fa-1x"></i></a>
+        </div>
+        <div class="modal-gallery-container">
+          <div class="modal-gallery">
+          </div>
+        </div>
+        <div style="width:80px;height:20px;float:left">
+        <a href="#" id="scroll-down" ><i style="margin-left:33px;color:#C61F26" class="fa fa-chevron-circle-down fa-1x"></i></a>
+        </div>
+      </div>
+      <div class="modal-image">
+      </div>
+      <div class="modaltabs" role="tabpanel">
+        <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#item_details" aria-controls="item_details" role="tab" data-toggle="tab">Item Details</a></li>
+          <li role="presentation"><a href="#item_ratings" aria-controls="item_ratings" role="tab" data-toggle="tab"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> Ratings</a></li>
+          <li role="presentation"><a href="#policies" aria-controls="policies" role="tab" data-toggle="tab">Shipping & Policies</a></li>
+          </ul>
 
+             <!-- Tab panes -->
+             <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="item_details">
+                ♥ HAREM PANTS MADE FROM HEATHER BLUE ORGANIC SWEAT AND GREEN AND GREY STRIPED CUFFS - MADE TO ORDER: CHOOSE YOUR SIZE (NEWBORN TO 5 YEARS)
+
+                I choosed for this harem pants a warm and cozy sweat fabric. It is so incredible snuggly, perfect for baby's skin. The legs are of a loose-fitting cut. The extra-long cuffs can be folded back if necessary, so the harem pants fit for a long time.
+
+                The pants are ideal for home, at play group or at the children's gymnastics. Just wherever no tight jeans should restrict the mobility. Even cotton diapers have space.
+
+                ♥ FOR WHOM?
+                From baby to toddler, all could need such wonderful pants. I sew them in the sizes 56 to 116. Larger sizes are available on request. If you are unsure about the size, I will be pleased to advice you.
+
+                cm ...... inch .... age (months)
+                56 ...... 22 ....... 0-3
+                62 ...... 24 ....... 3-6
+                68 ...... 27 ....... 6-9
+                74 ...... 30 ....... 9-12
+                80 ...... 32 ....... 12-18
+                86 ...... 34 ....... 18-24
+                92 ...... 36 ....... 2T
+                98 ...... 39 ....... 3T
+                104 ...... 41 ....... 4T
+                110 ...... 43 ....... 4
+                116 ...... 46 ....... 5
+
+
+                ♥ MATERIAL
+                Organic heather blue sweat fabric
+                Organic green and grey striped Cuffs 
+                (98% cotton, 2% elasthan)
+
+                ♥ INDIVIDUALIZATION
+                You can choose your favorite cuffs:
+                http://www.etsy.com/listing/95940577/bundchen-zur-auswahl
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="item_ratings">
+                    
+                Super comfy and soft. Thx!
+
+                Translate   
+              </div>
               
+              <div role="tabpanel" class="tab-pane fade" id="policies">
+                                hipping Costs
+                Shipping to
 
+                Cost
+                $5.66 USD
+                Get shipping costs for multiple items in your cart. Shipping upgrades are available for this item.
+                Policies
+                Payment
+                All Payments are done via direct pay or paypal. 
 
+                I am not allowed to include VAT in my prices because I take advantage of the “Kleinunternehmerregelung” (e.g. small business solution) written down in German VAT tax law (UstG §19)
+                Shipping
+                After receiving the complete payment I will start to produce your order. I will send you a notification when your item has shipped - this will go to the email address that you signed up to Etsy with. I send all orders by letter. If you would like to upgrade to Priority or Express Shipping, please contact me to arrange this before purchase. I will then adjust the shipping costs by additional charges. 
+              </div>
+            </div>
 
+      </div>
+    </div>
+    <div class="rightmodal">
+      <div class="modal-info">
+        <div class="protitle">
+        </div>
+        <div class="proprice">
+        </div>
+        <div class="quantitycontainer">
+        Quantity
+        <div class="quantity">
+        </div>
+        </div>
+        <div class="stock">
+        </div>
+        <div class="filter">
+          Size<br>
+          <div class="filterselect">
+          </div>
+        </div>
+        <div class="overview">
+        </div>
+        <div class="additionalinfo">
+        </div>
+        <div class="addtocart">
+          <button class="btn" style="width:348px;background-color:#C61F26;color:white">ADD TO CART <i class="fa fa-shopping-cart"></i></button>
+        </div>
+      </div>
       
- 
+  <!--    <div class="share">
+      </div>
+  -->   
+      <div class="similar_products">
+      </div>
+      
+    </div>
+    
+    <div class="designer_products">
+      <div class="scroll-left">
+        <a href="#" id="scroll-left" style="position:relative;left:3px;top:75px;"><i style="color:#C61F26" class="fa fa-chevron-circle-left fa-3x"></i></a>
+      </div>
+      <div class="designer_gallery_container">
+        <div class="designer_gallery">
+        </div>
+      </div>
+      <div class="scroll-right">
+        <a href="#" id="scroll-right" style="position:relative;left:3px;top:75px;"><i style="color:#C61F26" class="fa fa-chevron-circle-right fa-3x"></i></a>
+      </div>
+    </div>
+    
+    <!--NEVER DELETE THE STABILIZER DIV BELOW-->
+    <div class="stabilizer">
+    </div>
+    
+    </div>
+    
+    </div>
+    </div>
+  </div>
 
+    <div class="closemodal">
+      <button class="btn" id="closemodal"><i style="color:#C61F26" class="fa fa-times fa-2x"></i></button>
+    </div>
+    <div class="nextcard">
+      <button class="btn" id="nextcard"><i style="color:#C61F26" class="fa fa-chevron-circle-right fa-2x"></i></button>
+    </div>
+    
+    <div class="prevcard">
+      <button class="btn" id="prevcard"><i style="color:#C61F26" class="fa fa-chevron-circle-left fa-2x"></i></button>
+    </div>
+
+</body>
+
+</html>
 

@@ -24,6 +24,8 @@ Rails.application.routes.draw do
     namespace :api, defaults: { format: :json} do
       scope module: "v1" do
         resources :discovers
+        resources :categories
+        get '/get_discovers/:id', to: 'categories#get_discovers', as: 'get_discovers'
       end
     end
 
@@ -132,6 +134,7 @@ Rails.application.routes.draw do
         resources :suites do
           resources :characteristics
         end
+        resources :discovers
         #delete '/volume_prices/:id', :to => "volume_prices#destroy", :as => :volume_price
       end
     end

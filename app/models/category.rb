@@ -18,6 +18,7 @@ class Category < ActiveRecord::Base
 	has_many :sub_categories
 	has_ancestry
 	
+	has_many :discovers
 
 	def self.retrieve_categories
 		Category.all

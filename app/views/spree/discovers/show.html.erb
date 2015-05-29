@@ -125,8 +125,14 @@ html, body {
 	padding:10px;
 	width:230px;
 	color:black;
+	font-weight: bold;
 }
-
+.carddescrip{
+	word-wrap:break-word;
+	padding:5px;
+	width:230px;
+	color:black;
+}
 .designer_info{
 	padding:0 10px 10px 10px;
 	width:230px;
@@ -513,6 +519,7 @@ body.modal-open .blur {
 	font-size:48px;
 }
 
+
 #subcategories_area{
 	margin:5px auto 0;
 	width:auto;
@@ -721,7 +728,7 @@ function getcards(page_no){
 	data:{cardnum:$(".card").length,range:5*colnum, page:page_no},
 	success:function(data){
 		for(var i=0 ; i<=data.length-1 ; i++){
-			var card = "<div id=\""+data[i]['name']+"\" class=\"card\"><div class=\"cardimage\" type=\"button\" class=\"btn\" data-toggle=\"modal\" data-target=\"#myModal\"><image src=\" "+data[i]['img_url']+"\" width=230></div><div class=\"cardpanel\"><button class=\"buyitnow \"><strong>Buy It Now</strong></button><div class=\"pricing\">Rs."+data[i]['price']+"</div><div class=\"cardinfo\">"+data[i]['name']+"</div><div class=\"designer_info\"><button class=\"btn\" style=\"padding:0;background:white;color:#5F5F5F\"><image src=\"images/iusa_75x75.26685356_mqfh.jpg\" style=\"height:50px;\" class=\"img-circle\" > Name</button><button class=\"btn\" style=\"padding:0;background:white;float:right;position:relative;top:5px;color:#C61F26\"><i class=\"fa fa-plus fa-3x\"></i></button></div></div><button class=\"btn addtowishlist\"><i class=\"fa fa-heart fa-1x\" style=\"position:relative;left:-6px;top:-3px\"></i></button></div>";
+			var card = "<div id=\""+data[i]['name']+"\" class=\"card\"><div class=\"cardimage\" type=\"button\" class=\"btn\" data-toggle=\"modal\" data-target=\"#myModal\"><image src=\" "+data[i]['img_url']+"\" width=230></div><div class=\"cardpanel\"><button class=\"buyitnow \"><strong>Buy It Now</strong></button><div class=\"pricing\">Rs."+data[i]['price']+"</div><div class=\"cardinfo\">"+data[i]['name']+"</div><div class=\"carddescrip\"><p>"+data[i]['short_descrip']+"</p></div><div class=\"designer_info\"><button class=\"btn\" style=\"padding:0;background:white;color:#5F5F5F\"><image src=\""+data[i]['designer']['img']+"\" style=\"height:50px;\" class=\"img-circle\" > "+data[i]['designer']['name']+"</button><button class=\"btn\" style=\"padding:0;background:white;float:right;position:relative;top:5px;color:#C61F26\"><i class=\"fa fa-plus fa-3x\"></i></button></div></div><button class=\"btn addtowishlist\"><i class=\"fa fa-heart fa-1x\" style=\"position:relative;left:-6px;top:-3px\"></i></button></div>";
 			$("#cardsarea").append(card);
 		}
 		colinitializer();
@@ -844,28 +851,25 @@ function positioncards(){
 }
 
 function getsubcategories(){
-	/*
 	$.ajax({	
 	dataType:"json",
 	async:"TRUE",
-	url:"connection.php",
-	type:"POST",
-	data:{categoryname:addtoarguments},
+	url:"<%= api_get_discovers_path(@discover.category)%>",
+	type:"GET",
+	data:{categoryname:''},
 	success:function(data){
-		*/
-		
-		for(var i=0 ; i<8 ; i++)
+		for(var i=0 ; i<data.length ; i++)
 		{
-			var card = "<a href=\"#\" class=\"subcategory_link\" style=\"background-image:url(images/3406df1e346d52e46395762dd1fe0578.jpg)\"><div>LINK TEXT</div></a>";
+			var card = "<a href=\""+data[i]['url']+"\" class=\"subcategory_link\" style=\"background-image:url("+data[i]['img_url']+")\"><div>"+data[i]['name']+"</div></a>";
 			$("#subcategories").append(card);
 		}
-		/*
+	
 	},
 	error:function(){
 		alert("ERROR! ERROR! ERROR!");
 	}
 	});
-	*/
+	
 }
 
 </script>
@@ -896,6 +900,7 @@ function getsubcategories(){
 			
 			<div id="tail"></div>
 			<div id="category_box">
+				<%= link_to 'Wedding', Category.first%>
 				<a href="categorypage.html">LINK IT HERE</a>
 				<a href="categorypage.html">LINK IT HERE</a>
 				<a href="categorypage.html">LINK IT HERE</a>

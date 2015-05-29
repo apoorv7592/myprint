@@ -7,7 +7,7 @@ module Spree
 		end
 		
 		def show
-			@discover = Discover.find(params[:id])
+			@discover = Discover.friendly.find(params[:id])
 		end
 
 		def test

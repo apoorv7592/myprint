@@ -1,0 +1,43 @@
+
+<div class="row">
+	<div class="col-md-10 col-md-offset-1">
+		<div id="cats_noti"></div>
+		<div class="row">
+			<div class="col-md-6">
+				<h4>All Discovers</h4>
+			</div>
+			<div class="col-md-6">
+				<div class="pull-right">
+					<%= button_to 'New Discover', new_admin_discover_path, method: 'get', class: 'btn btn-primary' 	%>
+				</div>
+			</div>
+		</div>
+
+
+		<table class=" table table-striped">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Category</th>
+					<th>Avatar</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @discovers.each do |c| %>
+					<tr>
+						<td><b><%= c.id %></b></td>
+						<td><b><%= c.name%></b></td>
+						<td><b><%= c.category.name if c.category.present? %></b></td>
+						<td><%= image_tag c.avatar.url(:thumb)%></td>
+						<td><%= link_to 'Edit',edit_admin_discover_path(c)%></td>
+						<td><%= link_to 'Delete',admin_discover_path(c), method: 'delete',data: {confirm: "Are you sure?"}%></td>
+
+					</tr>
+				<%end%>
+			</tbody>
+		</table>
+	</div>
+</div>
