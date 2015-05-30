@@ -19,5 +19,5 @@
 #  updated_at      :datetime
 #
 
-class SpreeReviews < ActiveRecord::Base
+class Spree::Review < ActiveRecord::Base
 end

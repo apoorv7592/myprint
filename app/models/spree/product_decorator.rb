@@ -5,7 +5,8 @@ Spree::Product.class_eval do
 	belongs_to :designer
 	has_many :properties
     belongs_to :discover
-
+    has_many :likes
+    
 	searchable do 
         text :name, :description, :tag_list
         time :created_at

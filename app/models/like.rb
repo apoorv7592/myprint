@@ -11,5 +11,5 @@
 
 class Like < ActiveRecord::Base
 	belongs_to :spree_user
-	belongs_to :suite
+	belongs_to :spree_product, :class_name => 'Spree::Product'
 end

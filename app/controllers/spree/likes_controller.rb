@@ -2,9 +2,9 @@ module Spree
 	class LikesController < Spree::HomeController
 		before_action :authenticate_login
 		def create
-			@s = Suite.friendly.find(params[:id]) if params[:id]
+			@s = Spree::Product.friendly.find(params[:id]) if params[:id]
 			u = spree_current_user
-			like = Like.new(user_id: u.id, suite_id: @s.id)
+			like = Like.new(user_id: u.id, product_id: @s.id)
 			if like.save
 				@s.like_no +=1
 				@s.save

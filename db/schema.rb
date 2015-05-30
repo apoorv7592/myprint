@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150527094823) do
+ActiveRecord::Schema.define(version: 20150529121841) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -289,13 +289,13 @@ ActiveRecord::Schema.define(version: 20150527094823) do
 
   create_table "likes", force: true do |t|
     t.integer  "user_id"
-    t.integer  "suite_id"
+    t.integer  "product_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "likes", ["suite_id"], name: "index_likes_on_suite_id"
-  add_index "likes", ["user_id", "suite_id"], name: "index_likes_on_user_id_and_suite_id", unique: true
+  add_index "likes", ["product_id"], name: "index_likes_on_product_id"
+  add_index "likes", ["user_id", "product_id"], name: "index_likes_on_user_id_and_product_id", unique: true
   add_index "likes", ["user_id"], name: "index_likes_on_user_id"
 
   create_table "monologue_posts", force: true do |t|
@@ -819,12 +819,11 @@ ActiveRecord::Schema.define(version: 20150527094823) do
     t.datetime "updated_at"
     t.boolean  "promotionable",        default: true
     t.string   "meta_title"
-    t.integer  "suite_id"
     t.integer  "designer_id"
-    t.integer  "like_no"
     t.integer  "avg_rating"
     t.integer  "discover_id"
     t.integer  "reviews_count"
+    t.integer  "like_no",              default: 0
   end
 
   add_index "spree_products", ["available_on"], name: "index_spree_products_on_available_on"
@@ -832,7 +831,6 @@ ActiveRecord::Schema.define(version: 20150527094823) do
   add_index "spree_products", ["name"], name: "index_spree_products_on_name"
   add_index "spree_products", ["shipping_category_id"], name: "index_spree_products_on_shipping_category_id"
   add_index "spree_products", ["slug"], name: "index_spree_products_on_slug", unique: true
-  add_index "spree_products", ["suite_id"], name: "index_spree_products_on_suite_id"
   add_index "spree_products", ["tax_category_id"], name: "index_spree_products_on_tax_category_id"
 
   create_table "spree_products_promotion_rules", id: false, force: true do |t|

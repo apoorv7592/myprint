@@ -728,7 +728,7 @@ function getcards(page_no){
 	data:{cardnum:$(".card").length,range:5*colnum, page:page_no},
 	success:function(data){
 		for(var i=0 ; i<=data.length-1 ; i++){
-			var card = "<div id=\""+data[i]['name']+"\" class=\"card\"><div class=\"cardimage\" type=\"button\" class=\"btn\" data-toggle=\"modal\" data-target=\"#myModal\"><image src=\" "+data[i]['img_url']+"\" width=230></div><div class=\"cardpanel\"><button class=\"buyitnow \"><strong>Buy It Now</strong></button><div class=\"pricing\">Rs."+data[i]['price']+"</div><div class=\"cardinfo\">"+data[i]['name']+"</div><div class=\"carddescrip\"><p>"+data[i]['short_descrip']+"</p></div><div class=\"designer_info\"><button class=\"btn\" style=\"padding:0;background:white;color:#5F5F5F\"><image src=\""+data[i]['designer']['img']+"\" style=\"height:50px;\" class=\"img-circle\" > "+data[i]['designer']['name']+"</button><button class=\"btn\" style=\"padding:0;background:white;float:right;position:relative;top:5px;color:#C61F26\"><i class=\"fa fa-plus fa-3x\"></i></button></div></div><button class=\"btn addtowishlist\"><i class=\"fa fa-heart fa-1x\" style=\"position:relative;left:-6px;top:-3px\"></i></button></div>";
+			var card = "<div id=\""+data[i]['name']+"\" class=\"card\"><div class=\"cardimage\" type=\"button\" class=\"btn\" data-toggle=\"modal\" data-target=\"#myModal\"><image src=\" "+data[i]['img_url']+"\" width=230></div><div class=\"cardpanel\"><button class=\"buyitnow \"><strong>Buy It Now</strong></button><div class=\"pricing\">Rs."+data[i]['price']+"</div><div class=\"cardinfo\">"+data[i]['name']+"</div><div class=\"carddescrip\"><p>"+data[i]['short_descrip']+"</p></div><div class=\"designer_info\"><button class=\"btn\" style=\"padding:0;background:white;color:#5F5F5F\"><image src=\""+data[i]['designer']['img']+"\" style=\"height:50px;\" class=\"img-circle\" > "+data[i]['designer']['name']+"</button><button class=\"btn\" style=\"padding:0;background:white;float:right;position:relative;top:5px;color:#C61F26\"><i class=\"fa fa-plus fa-3x\"></i></button></div></div><a class=\"btn addtowishlist\" href=\"/like/"+data[i]['id']+"\" data-remote=true><i class=\"fa fa-heart fa-1x\" style=\"position:relative;left:-6px;top:-3px\"id =heart"+data[i]['id']+"></i></a></div>";
 			$("#cardsarea").append(card);
 		}
 		colinitializer();
@@ -936,6 +936,7 @@ function getsubcategories(){
 				</div>
 			</div>
 		</div>
+		<%= link_to 'cards', Discover.first, remote: true%>
 		<div id="cardsarea">
 		</div>
 		

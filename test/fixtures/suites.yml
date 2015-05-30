@@ -15,11 +15,12 @@
 #  reviews_count       :integer          default(0), not null
 #  like_no             :integer          default(0)
 #  slug                :string(255)
+#  position            :integer
 #  avatar_file_name    :string(255)
 #  avatar_content_type :string(255)
 #  avatar_file_size    :integer
 #  avatar_updated_at   :datetime
-#  position            :integer
+#  variant             :string(255)
 #  characteristic      :string(255)
 #  price               :integer
 #

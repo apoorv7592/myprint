@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: spree_feedback_reviews
+#
+#  id         :integer          not null, primary key
+#  user_id    :integer
+#  review_id  :integer          not null
+#  rating     :integer          default(0)
+#  comment    :text
+#  created_at :datetime
+#  updated_at :datetime
+#  locale     :string(255)      default("en")
+#
+
 class Spree::FeedbackReview < ActiveRecord::Base
   belongs_to :user, class_name: Spree.user_class.to_s
   belongs_to :review, dependent: :destroy

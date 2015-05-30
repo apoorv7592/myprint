@@ -73,8 +73,8 @@ Rails.application.routes.draw do
     get '/greetings', to: 'landing_pages#greetings', as: 'greetings'
     get '/other-invites', to: 'landing_pages#otherinvite', as: 'partyinvite'
 
-    get '/like', to: 'likes#create', as: 'like_suite'
-    get '/unlike', to: 'likes#destroy', as: 'unlike_suite'
+    get '/like/:id', to: 'likes#create', as: 'like_suite'
+    get '/unlike/:id', to: 'likes#destroy', as: 'unlike_suite'
     get '/designer_dashboard', to: 'designers#dashboard', as: 'designer_dashboard'
     get '/contact-us', to: 'contactus#contact', as:'contact_us'
     get '/get_prd_images/:id', to: 'suites#get_prd_images'
