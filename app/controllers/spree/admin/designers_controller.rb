@@ -3,7 +3,7 @@ module Spree
 		class DesignersController < Spree::Admin::BaseController
 			
 			def index
-				@designers = Designer.active
+				@designers = Designer.all
 			end
 
 			def new
@@ -34,7 +34,7 @@ module Spree
 			end
 
 			def show
-				@dsg = Designer.where(params[:designer_id]).first
+				@dsg = Designer.friendly.find(params[:id])
 			end
 
 			def activate

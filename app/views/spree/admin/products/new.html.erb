@@ -54,9 +54,9 @@
           <% end %>
         </div>
 
-        <div data-hook="new_product_suite" class="col-md-4">
-          <%= f.label 'Suite' %>
-          <%= f.hidden_field :suite_id, value: params[:s_id] %>
+        <div data-hook="new_product_designer" class="col-md-4">
+          <%= f.label 'Designer' %>
+          <%= f.collection_select(:designer_id, Designer.all, :id, :name, prompt: true)%>
         </div>
 
       </div>

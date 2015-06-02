@@ -1,29 +1,3 @@
-<link href='http://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic' rel='stylesheet' type='text/css'>
-
-
-<style>
-h2 {
-   width: 100%; 
-   text-align: center; 
-   border-bottom: 1px solid #000; 
-   line-height: 0.1em;
-   margin: 10px 0 15px; 
-   font-size: 30px;
-   font-family: 'Old Standard TT', serif;
-   font-style: italic; 
-} 
-
-h2 span { 
-    background:#fff; 
-    padding:20px 10px; 
-}
-</style>
-
-
-<div class="col-md-12" style="height:auto;width:1000px;margin-bottom:30px;margin-top:50px;">
-<h2><span> How it Works </span></h2> 
-</div> 
-
 <% b= get_banner('Home Page', 8) %>
 <% if !b.nil? %>
 <%= image_tag b.avatar.url(:main), alt:'second banner', class:'img-responsive' %>

@@ -165,6 +165,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    acts-as-taggable-on (3.4.2)
+      activerecord (>= 3.2, < 5)
     acts_as_list (0.5.0)
       activerecord (>= 3.0)
     addressable (2.3.6)
@@ -269,6 +271,9 @@ GEM
     jquery-rails (3.1.2)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jquery-turbolinks (2.1.0)
+      railties (>= 3.1.0)
+      turbolinks
     jquery-ui-rails (5.0.3)
       railties (>= 3.2.16)
     json (1.8.1)
@@ -331,6 +336,7 @@ GEM
       json (~> 1.7)
       money (< 7.0.0)
       nokogiri (~> 1.4)
+    oj (2.6.0)
     omniauth (1.2.2)
       hashie (>= 1.2, < 4)
       rack (~> 1.0)
@@ -511,6 +517,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on (~> 3.4)
   ancestry
   annotate
   aws-sdk (~> 1.59.1)
@@ -525,17 +532,20 @@ DEPENDENCIES
   haml
   jbuilder (~> 2.0)
   jquery-rails
+  jquery-turbolinks
   kaminari
   less-rails (~> 2)
   letter_opener
   monologue
   newrelic_rpm
   nprogress-rails
+  oj
   omniauth-facebook
   paperclip
   pg
   popen4
   progress_bar
+  rabl
   rack-timeout
   rails (= 4.1.8)
   rails_12factor

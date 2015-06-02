@@ -234,7 +234,8 @@ function launchWindow(id) {
 }
 
 </script>
-
+<% p = Discover.first%>
+<%= link_to 'Test Product', discover_path(p) %>
 
 <div id="boxes">
     <!-- Start of Sticky Note -->
@@ -245,10 +246,10 @@ function launchWindow(id) {
 
      <%= form_for @subscriber do |f| %>
 
-        <div style="position:absolute;top:200px;left:300px">
+        <div style="position:absolute;top:220px;left:375px">
           <%= f.email_field :email,placeholder:"enter your email address", class:"emailpopup" %>
         </div>
-        <div style="position:absolute;top:230px;left:360px">
+        <div style="position:absolute;top:250px;left:435px">
           <%=f.submit :SignUp,:class=>"submitpopup btn btn-default btn-large" %>
         </div>
      <% end %>
@@ -278,7 +279,7 @@ function launchWindow(id) {
                         <span class="bigspan"><h6><b>Customization</b></h6> Modify designs to suit your style and taste</span></li>
                         <li class="cust">
                         <span class="smallspan"><i class="fa fa-user fa-3x"></i></span>
-                        <span class="bigspan"><h6><b>Free Dedicated Designer</b></h6> Get experienced Graphic Designer to assist you in end-to-end customization</span></li>
+                        <span class="bigspan"><h6><b>Free Dedicated Designer</b></h6> Get experienced Graphic Designer to assit you in end-to-end customization</span></li>
                         <li class="cust">
                         <span class="smallspan"><i class="fa fa-rocket fa-3x"></i></span>
                         <span class="bigspan"><h6 ><b>No Hassles</b></h6> Get all the services at your door step</span></li>
@@ -384,7 +385,7 @@ function launchWindow(id) {
   var ready;
   ready = function(){
     $('.carousel').carousel({
-        interval: 3500
+        interval: 1000
     });
   };
   

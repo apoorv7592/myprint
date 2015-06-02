@@ -8,7 +8,7 @@ require 'coffee_script'
 	module Designerreviews
 		module_function
 			def config(*)
-				yield(Desinerreviews::Config)
+				yield(Designerreviews::Config)
 			end
 		end
     

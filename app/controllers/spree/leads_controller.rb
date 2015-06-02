@@ -19,8 +19,8 @@ module Spree
 
 			def create
 			    @lead = Lead.new(lead_params)
-
 			    if @lead.save
+
 			        Spree::LeadMailer.delay.send_signup_mail(@lead.email)
 					respond_to do |format|
 						format.html {redirect_to action:'index'}

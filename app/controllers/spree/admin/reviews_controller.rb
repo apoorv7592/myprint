@@ -1,6 +1,7 @@
 class Spree::Admin::ReviewsController < Spree::Admin::ResourceController
   helper Spree::ReviewsHelper
 
+
   def index
     @reviews = collection
   end

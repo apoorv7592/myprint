@@ -20,6 +20,13 @@ Rails.application.routes.draw do
       get '/wedding-customizations', to: 'custs#get_cust', as: 'get_wcust'
 
     end
+    
+    namespace :api, defaults: { format: :json} do
+      scope module: "v1" do
+        resources :discovers
+      end
+    end
+
 
     resources :categories
     resources :sub_categories   
@@ -84,20 +91,21 @@ Rails.application.routes.draw do
     get '/greeting-cards/:id', to: 'shop#greeting', as: 'greeting-cards'
     get '/other-invitations/:id', to: 'shop#otherinvites', as: 'partyinvites'
     get '/get-dedicated-designer', to:'dedicateddesigner#dedicateddesigner'
-    get '/customization', to:'suites#customization', as:'customization'
+    get '/customization', to:'suites#customization'
     get '/privacy-policy', to:'privacy#privacy'
     get '/copyright-policy', to:'copyright#copyright'
     get '/how-it-works', to:'howitworks#howitworks'
     get '/return-policy', to:'privacy#return'
 
 
-
+    get '/test/:id', to: 'discovers#test', as: 'test_product'
 
 
     get '/search'  => 'solrsearch#index'
     routes = lambda do
       namespace :admin do
         resources :products do
+          collection { post :import }
           resources :variants do
             get :volume_prices, :on => :member
           end
@@ -148,6 +156,7 @@ Rails.application.routes.draw do
   get '/designer_signup', :to => "devise/registrations#new_designer"
   end
 
+ 
 
   #get '/suites/:id' => 'suites#show'
 

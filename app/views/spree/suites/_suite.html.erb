@@ -5,12 +5,12 @@
     <div class="suite-img" >
       
       <span itemprop="image"><!-- Placeholder for suite image -->
-        <%=link_to (image_tag p.avatar.url(:medium), alt: p.slug,width:340,height:340), p, "data-no-turbolink"=>"true"%>
+        <%=link_to (image_tag p.avatar.url(:medium), alt: p.slug,width:340,height:340), p, 'data-no-turbolink'=> "true"%>
       </span>
       <%= render 'spree/shared/like', p: p %>
     </div>
     <div class="viewsuitediv">
-      <%= link_to p,:class => "viewsuitetxt", itemprop:'url', "data-no-turbolink"=>"true" do  %>
+      <%= link_to p,:class => "viewsuitetxt", itemprop:'url', 'data-no-turbolink'=> "true",'data-no-turbolink'=> "true" do  %>
         <span itemprop="name"><b><%= p.name %></b></span>
       <% end %>
       <br>
@@ -33,10 +33,9 @@
       <%= link_to p, class: 'viewsuitebtn', method: 'get', itemprop:"url", "data-no-turbolink"=>"true" do %>
           <span class="viewsuitetxt1" >View Card</span>
       <%end %>
-      <%#= render 'spree/suites/add_to_wishlist' %>                
+      
     </div>
   </div>
 </div> <!--End of itemscope individual products -->
 
 <!-- Fetching images of products-->
- 

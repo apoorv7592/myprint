@@ -70,7 +70,6 @@ class Suite < ActiveRecord::Base
         integer :like_no
         integer :avg_rating
         integer :position
-        integer :price
         
         text :designer_names do 
             designer.name

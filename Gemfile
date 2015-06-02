@@ -152,7 +152,14 @@ gem 'ancestry'
 #for background job
 gem 'delayed_job_active_record'
 
+gem 'jquery-turbolinks'
 gem 'rack-timeout'
+#For Json API
+gem 'rabl'
+gem 'oj'
+#for tagging products
+gem 'acts-as-taggable-on', '~> 3.4'
 
 gem 'roo'
+
 
