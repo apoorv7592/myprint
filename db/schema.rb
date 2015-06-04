@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150529121841) do
 
+
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
     t.integer "suite_id", null: false
@@ -55,32 +56,6 @@ ActiveRecord::Schema.define(version: 20150529121841) do
     t.integer  "position"
   end
 
-  create_table "blogit_comments", force: true do |t|
-    t.string   "name",       null: false
-    t.string   "email",      null: false
-    t.string   "website"
-    t.text     "body",       null: false
-    t.integer  "post_id",    null: false
-    t.string   "state"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "blogit_comments", ["post_id"], name: "index_blogit_comments_on_post_id"
-
-  create_table "blogit_posts", force: true do |t|
-    t.string   "title",                            null: false
-    t.text     "body",                             null: false
-    t.string   "state",          default: "draft", null: false
-    t.integer  "comments_count", default: 0,       null: false
-    t.integer  "blogger_id"
-    t.string   "blogger_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "blogit_posts", ["blogger_type", "blogger_id"], name: "index_blogit_posts_on_blogger_type_and_blogger_id"
-
   create_table "categories", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -116,13 +91,6 @@ ActiveRecord::Schema.define(version: 20150529121841) do
     t.datetime "start_date"
     t.datetime "end_date"
     t.boolean  "active",      default: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "customizations", force: true do |t|
-    t.string   "color"
-    t.integer  "order_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -201,6 +169,8 @@ ActiveRecord::Schema.define(version: 20150529121841) do
     t.string   "college"
     t.string   "phonenum"
     t.string   "slug"
+    t.integer  "avg_rating"
+    t.integer  "reviews_count"
   end
 
   add_index "designers", ["slug"], name: "index_designers_on_slug", unique: true
@@ -249,7 +219,6 @@ ActiveRecord::Schema.define(version: 20150529121841) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.string   "title"
   end
 
   create_table "friendly_id_slugs", force: true do |t|
@@ -819,8 +788,12 @@ ActiveRecord::Schema.define(version: 20150529121841) do
     t.datetime "updated_at"
     t.boolean  "promotionable",        default: true
     t.string   "meta_title"
+
     t.integer  "designer_id"
+    t.integer  "suite_id"
+    t.integer  "reviews_count"
     t.integer  "avg_rating"
+    t.integer  "designer_id"
     t.integer  "discover_id"
     t.integer  "reviews_count"
     t.integer  "like_no",              default: 0
@@ -1388,10 +1361,6 @@ ActiveRecord::Schema.define(version: 20150529121841) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
-    t.string   "name"
-    t.string   "uid"
-    t.string   "oauth_token"
-    t.datetime "oauth_expires_at"
     t.boolean  "is_designer",                        default: false
     t.boolean  "subscribed"
   end
@@ -1399,7 +1368,6 @@ ActiveRecord::Schema.define(version: 20150529121841) do
   add_index "spree_users", ["deleted_at"], name: "index_spree_users_on_deleted_at"
   add_index "spree_users", ["email"], name: "email_idx_unique", unique: true
   add_index "spree_users", ["spree_api_key"], name: "index_spree_users_on_spree_api_key"
-  add_index "spree_users", ["uid"], name: "index_spree_users_on_uid"
 
   create_table "spree_variants", force: true do |t|
     t.string   "sku",                                        default: "",    null: false
@@ -1527,12 +1495,11 @@ ActiveRecord::Schema.define(version: 20150529121841) do
     t.integer  "reviews_count",                               default: 0,   null: false
     t.integer  "like_no",                                     default: 0
     t.string   "slug"
-    t.integer  "position"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.string   "variant"
+    t.integer  "position"
     t.string   "characteristic"
     t.integer  "price"
   end

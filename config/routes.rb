@@ -63,6 +63,11 @@ Rails.application.routes.draw do
       resources :reviews, only: [:index, :new, :create] do
       end
     end
+
+    resources :designers do
+      resources :reviews, only: [:index, :new, :create] do
+      end
+    end
     #post '/reviews/:review_id/feedback(.:format)' => 'feedback_reviews#create', as: :feedback_reviews
 
 
@@ -103,6 +108,7 @@ Rails.application.routes.draw do
     routes = lambda do
       namespace :admin do
         resources :products do
+          collection { post :import }
           resources :variants do
             get :volume_prices, :on => :member
           end

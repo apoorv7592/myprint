@@ -1,0 +1,36 @@
+<%= form_for designerreview, url: designer_designerreviews_path(designer), html: { method: :post } do |f| %>
+  <%= render 'spree/shared/error_messages', target: designerreview %>
+
+  <div class="form-group">
+    <%= f.label :rating %>
+    <%= render 'spree/designerreviews/stars', stars: designerreview.rating, edit_enabled: true %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, maxlength: 255, size: 50, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, maxlength: 255, size: 50, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :designerreview %>
+    <%= f.text_area :review, wrap: 'virtual', rows: 10, cols: 50, class: 'form-control' %>
+  </div>
+
+  <% if Designerreviews::Config[:show_identifier] %>
+    <div class="checkbox">
+      <%= f.label :show_identifier do %>
+        <%= f.check_box :show_identifier, checked: true %>
+        <%= Designerreview.human_attribute_name(:show_identifier) %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="form-actions">
+    <%= f.submit Spree.t(:submit_your_designerreview), class: 'btn btn-default' %>
+  </div>
+<% end %>

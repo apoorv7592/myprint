@@ -76,3 +76,8 @@
 <% end %>
 
 <%= render :partial => 'spree/admin/shared/index_table_options', :locals => { :collection => @collection } %>
+
+<%= form_tag({:action => :import}, multipart: true) do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag( "Import" ) %>
+<% end %>
