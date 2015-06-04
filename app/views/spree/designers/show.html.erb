@@ -72,6 +72,7 @@
 		margin-top: 10px;
 		margin-bottom: 20px;
 	}
+
 </style>
 
 
@@ -95,9 +96,12 @@
 								<% if spree_current_user %>
 									<% unless spree_current_user==@designer %>
 									  <% if spree_current_user.following?(@designer) %>
-									    <%= render 'unfollow' %>
+									    <div id= "follow_form">
+										    <%= render 'unfollow' %>
+									    </div>
 									  <% else %>
-									    <%= render 'follow' %>
+									    <div id="follow_form">
+									    	<%= render 'follow' %>
 									  <% end %>
 									<% end %>
 								<% else %>

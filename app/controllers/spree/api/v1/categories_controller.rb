@@ -14,8 +14,16 @@ module Spree
 					end
 					per_page = 2
 					@discovers = @category.discovers
-					@products = @discover.spree_products
-					@results = @products[(page-1)*per_page...(page*per_page)]
+					arr= Array.new
+					
+					@discovers.each do |d|
+						prds = d.spree_products.limit(10).order("RANDOM()")
+						prds.each do |p|
+							arr<<p
+						end
+					end
+					
+					@results = arr
 					respond_to do |format|
 						format.json 
 					end

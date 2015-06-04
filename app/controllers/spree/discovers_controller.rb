@@ -8,6 +8,7 @@ module Spree
 		
 		def show
 			@discover = Discover.friendly.find(params[:id])
+			@designer = User.first
 		end
 
 		def test

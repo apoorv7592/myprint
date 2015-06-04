@@ -1,579 +1,13 @@
- <!DOCTYPE HTML>
-
-<html lang="en">
-
-<head>
-
-<title>
-</title>
-
-<meta charset="utf-8">
-<link href="http://http://www.prindora.com/" rel="canonical" />
-<link href="favicon-ae466f120367f4c037f88fb33a0a7a55.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
-<link rel="stylesheet" href="categorypage.css">
-
-<!-- JQuery CDN -->
-<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
-<!-- Fontawesome CDN -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-<!-- Bootstrap CDN -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<script src="categorypage.js"></script>
-
-<style type="text/css">
-	
-	*:focus{
-	outline:none;
-}
-
-button:hover{
-	opacity:0.8;
-}
-
-html a{	
-	color:#777777;
-	text-decoration:none;
-	font-weight:bold;
-}
-
-html a:hover{
-	color:#C61F26;
-	text-decoration:none;
-	font-weight:bold;
-}
-
-#category_box{
-	column-count:2;
-	column-gap:40px;
-	column-width:150px;
-	-webkit-column-count:2;
-	-webkit-column-gap:40px;
-	-webkit-column-width:150px;
-	-moz-column-count:2;
-	-moz-column-gap:40px;
-	-moz-column-width:150px;
-}
-
-#category_box a{
-	font-size:14px;
-	margin:2px 0;
-	float:left;
-	clear:both;
-}
-
-html, body {
-	font-family: 'Helvetica Neue', 'Helvetica', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', arial, sans-serif;
-	background-color:#E9E9E9;
-}
-
-#cardsarea
-{
-	margin:0 auto;
-	background-color:blue;
-	height:auto;
-	overflow:auto;
-}
-
-#tail{
-	z-index:1000;
-	position:absolute;
-	top:40px;
-	width: 0; 
-	height: 0; 
-	border-left: 20px solid transparent;
-	border-right: 20px solid transparent;
-	border-bottom: 20px solid white;
-	display:none;
-}
-
-#category_box{
-	width:400px;
-	height:400px;
-	background-color:white;
-	z-index:1000;
-	position:absolute;
-	top:53px;
-	border-radius:6px;
-	padding:30px;
-	box-shadow:0 2px 2px black;
-	display:none;
-}
-
-.card
-{
-	width:230px;
-	background-color:white;
-	border-radius:6px;
-	color:white;
-	position:absolute;
-	box-shadow:0 0 3px black;
-	-webkit-transition: all 1s ease;
-    -moz-transition: all 1s ease;
-    transition: all 1s ease;
-	opacity:0.8;
-}
-
-.card:hover{
-	opacity:1;
-}
-
-.cardinfo
-{
-	word-wrap:break-word;
-	padding:10px;
-	width:230px;
-	color:black;
-	font-weight: bold;
-}
-.carddescrip{
-	word-wrap:break-word;
-	padding:5px;
-	width:230px;
-	color:black;
-}
-.designer_info{
-	padding:0 10px 10px 10px;
-	width:230px;
-}
-
-.buyitnow{
-	height:40px;
-	width:150px;
-	margin:10px 40px;
-	border-radius:6px;
-	background-color:#C61F26;
-	border:blacck 1px solid;
-	-webkit-box-shadow: 0 10px 6px -6px #777;
-       -moz-box-shadow: 0 10px 6px -6px #777;
-            box-shadow: 0 10px 6px -6px #777;
-}
-
-.pricing{
-	height:30px;
-	width:100%;
-	float:left;
-	margin:10px 0;
-	font-size:14px;
-	padding:0 10px;
-	color:black;
-}
-
-.addtowishlist{
-	width:28px;
-	height:26px;
-	z-index:1000px;
-	position:absolute;
-	right:10px;
-	top:10px;
-	background:#eeeeee;
-	color:red;
-	border-radius:2px;
-	visibility:hidden;
-}
-
-.cardimage
-{	
-	width:230px;
-	float:left;
-	cursor:zoom-in;
-	border-radius:6px 6px 0 0;
-}
-
-.cardimage img{
-	border-radius:6px 6px 0 0;
-}
-
-#search{
-	height:30px;
-	margin: auto 10px;
-	position:relative;
-	top:10px;
-	padding:5px;
-	background-color:#E9E9E9;
-	font-weight:bold;
-	border-radius:6px;
-}
-
-#cart{
-	float:right;
-	margin:auto;
-	position:relative;
-	top:8px;
-	color:#C61F26;
-}
-
-#header{
-	background-color:#eeeee;
-	height:50px;
-	margin:0 auto;
-	display:block;
-	padding-right:10px;
-}
-
-#userid{
-	float:right;
-	margin:10px;
-	background-color:#C61F26;	
-	font-weight:bold;
-	color:white;
-	-webkit-box-shadow: 0 10px 6px -6px #777;
-       -moz-box-shadow: 0 10px 6px -6px #777;
-            box-shadow: 0 10px 6px -6px #777;
-}
-
-#category{
-	float:right;
-	margin:10px;
-	margin-right:0;
-	background-color:#C61F26;
-	font-weight:bold;
-	color:white;
-	-webkit-box-shadow: 0 10px 6px -6px #777;
-       -moz-box-shadow: 0 10px 6px -6px #777;
-            box-shadow: 0 10px 6px -6px #777;
-}
-
-.leftmodal{
-	float:left;
-	width:60%;
-}
-.rightmodal{	
-	float:right;
-	width:40%;
-}
-
-.modal-header{
-	height:110px;
-}
-
-.modal-content{
-	width:1000px;
-	margin-left:-200px;
-}
-.modal-slide{
-	height:380px;
-	width:80px;
-	float:left;
-	margin-right:5px;
-}
-
-.modal-gallery-container{
-	width:80px;
-	height:425px;
-	float:left;
-	background-color:orange;
-	margin-right:5px;
-	overflow:hidden;
-}
-
-.modal-gallery-container .modal-gallery{
-	width:100px;
-	height:445px;
-	overflow:scroll;
-	padding-bottom:7px;
-}
-
-.gallerybutton{
-	height:79px;
-	width:80px;
-	margin-top:5px;
-	float:left;
-}
-
-.selected{
-	border:2px black solid;
-}
-
-.designer_image{
-	width:80px;
-	height:80px;
-	float:left;
-}
-
-.designer_name{
-	font-size:40px;
-	float:left;
-	line-height:80px;
-	padding-left:10px;
-}
-
-.modal-image{
-	height:480px;
-	width:480px;
-	float:left;
-	background-color:black;
-	margin:0 5px;
-}
-
-.modal-info{
-	width:388px;
-	float:left;
-	margin-left:5px;
-	padding:10px;
-	border:5px #C61F26 solid;
-	border-radius:6px;
-}
-
-.modaltabs{
-	width:100%;
-	margin:auto;
-	height:auto;
-	float:left;
-	margin-top:10px;
-	text-align:justify;
-}
-
-.tab-content{	
-	padding:10px;
-}
-
-.similar_products{
-	width:388px;
-	float:left;
-	padding-left:2px;
-	border:5px #C61F26 solid;
-	border-radius:6px;
-	margin-left:5px;
-	margin-top:10px;
-}
-/*
-.share{	
-	width:388px;
-	height:100px;
-	float:left;
-	padding:10px;
-	border:5px #C61F26 solid;
-	border-radius:6px;
-	margin-left:5px;
-	margin-top:10px;
-}
-*/
-.designer_products{
-	height:200px;
-	width:968px;
-	padding:20px auto;
-	margin-top:10px;
-	float:left;
-}
-
-.stabilizer{
-	height:20px;
-	width:908px;
-	visibility:hidden;
-	clear:both;
-}
-
-.protitle{
-	margin:5px;
-	width:338px;
-	float:left;
-	text-align:center;
-}
-
-.proprice{
-	margin:5px;
-	width:338px;
-	float:left;
-}
-
-.stock{
-	margin:5px;
-	width:338px;
-	float:left;
-}
-
-.filter{
-	margin:5px;
-	width:338px;
-	float:left;
-}
-
-.overview{
-	margin:5px;
-	width:338px;
-	float:left;
-	padding:0;
-}
-
-.overview ul{
-	padding:0;
-	padding-left:20px;
-}
-
-.additionalinfo{
-	margin:5px;
-	width:338px;
-	float:left;
-	text-align:center;
-}
-
-.quantitycontainer{
-	margin:5px;
-	width:338px;
-	float:left;
-}
-
-.addtocart{
-	margin:5px;
-	width:338px;
-	float:left;
-}
-
-.scroll-left{
-	width:40px;
-	height:100%;
-	float:left;
-}
-
-.scroll-right{
-	width:40px;
-	height:100%;
-	float:right;
-}
-
-.designer_gallery_container{
-	width:888px;
-	height:200px;
-	float:left;
-	overflow:hidden;
-}
-
-.designer_gallery{
-	height:220px;
-	width:908px;
-	overflow:scroll;
-}
-
-.desproduct{
-	height:180px;
-	width:160px;
-	background-color:pink;
-	float:left;
-	display:inline-block;
-	margin:9px;
-}
-
-#modalclose{
-	position:absolute;
-	right:10px;
-	top:10px;
-	color:#C61F26;
-	opacity:1;
-}
-
-body.modal-open .blur {
-    -webkit-filter: blur(4px) grayscale(0%);
-	-moz-filter: blur(4px) grayscale(0%);
-	filter: blur(4px) grayscale(0%);
-}
-
-.nextcard{
-	position:fixed;
-	top:300px;
-	right:117px;
-	display:none;
-	z-index:10000;
-}
-
-.prevcard{
-	position:fixed;
-	top:300px;
-	left:100px;
-	display:none;
-	z-index:10000;
-}
-
-.closemodal{
-	position:fixed;
-	top:0;
-	right:117px;
-	z-index:10000;
-	display:none;
-}
-
-#loaderarea{
-	height:50px;
-	position:absolute;
-}
-
-#loaderarea hr{
-	width:300px;
-}
-
-#category_area{
-	width:100%;
-	height:auto;
-	background-color:#E9E9E9;
-	padding:20px;
-}
-
-#category_name{
-	margin:0px auto;
-	width:auto;
-	height:auto;
-	display:table;
-	color:#444444;
-	font-weight:bold;
-	font-size:48px;
-}
-
-
-#subcategories_area{
-	margin:5px auto 0;
-	width:auto;
-	height:auto;
-	display:table;
-	color:#BABABA;
-	font-weight:bold;
-	font-size:14px;
-	text-align:center;
-}
-
-#subcategories{
-	width:auto;
-	height:auto;
-	margin:0 auto;
-}
-
-.subcategory_link{
-	display:inline-block;
-	width:110px;
-	height:110px;
-	margin:10px 6px;
-	border-radius:6px;
-	background-size:100% 100%;
-	background-repeat:no-repeat;
-	color:white;
-	opacity:0.9;
-	position:relative;
-}
-
-.subcategory_link:hover{
-	color:white;
-	opacity:1;
-}
-
-.subcategory_link > div{
-	position:absolute;
-	bottom:5px;
-	width:110px;
-	height:auto;
-	padding:0 15px;
-	word-wrap:break-word;
-	font-size:12px;
-}
-</style>
-
 <script type="text/javascript">
-	colwidth=240;
+	default_colwidth=230;
+colwidth=0;
 colmargin=10;
 colheights=[];
 colnum=0;
 searchval="";
 gutter=0;
 modalid=-1;
+cardsdata = [];
 $(document).ready(function(){
 	
 	$(document).on("click","#category",function(){
@@ -590,15 +24,29 @@ $(document).ready(function(){
 	});
 	
 	// cardsarea layout starts
-	getsubcategories();
 	colinitializer();
-	getcards($("#search").val());
+	getsubcategories();
+	getcards(searchval);
+	
 	$(window).load(colinitializer);
+	
+	var timer;
+	$(window).bind('load', function() {
+	  if(timer)
+		clearTimeout(timer);
+	  timer = setTimeout(function(){colinitializer();}, 100);
+	});
+	
 	$(window).resize(function(){colinitializer();});
-	$(window).resize(function(){colinitializer();});
-	var page =2
+	
+	$(window).bind('resize', function() {
+	  if(timer)
+		clearTimeout(timer);
+	  timer = setTimeout(function(){colinitializer();}, 100);
+	});
+	
+	var page = 2
 	$(window).scroll(function(){
-		
 		if($(window).scrollTop() == $(document).height() - $(window).height())
 		{
 			getcards(page);
@@ -679,7 +127,7 @@ $(document).ready(function(){
 			select.prop("disabled",true);
 			$('.modal-gallery').animate({
 				scrollTop:$('.modal-gallery').scrollTop()+84
-			},ease,function(){select.prop("disabled",false);});
+			},"ease",function(){select.prop("disabled",false);});
 		});
 		
 		$(document).on("click","#scroll-up",function () {
@@ -693,7 +141,7 @@ $(document).ready(function(){
 		$(document).on('mouseover','.gallerybutton',function(){
 			$(".selected").removeClass("selected");
 			$(this).addClass("selected");
-			$(".modal-image").css("background-color",$(".selected").css("background-color"));
+			$(".modal-image").attr("src",$(".selected img").attr("src"));
 			//replace this by source of image linked to that small image
 		});
 		
@@ -715,23 +163,41 @@ $(document).ready(function(){
 		
 		
 		//popup layout ends		
+		
+		//login window
+			
+		$(document).on("click","#userid",function(){
+			$("#wrapper").css({"top":parseInt($(window).height()/2-$('#wrapper').outerHeight()/2)+"px","left":parseInt($(window).width()/2-$("#wrapper").outerWidth()/2)+"px"});
+			$("#wrapper").toggle();
+			$("#main").toggleClass("blur");
+		});
+	
+		$(document).on("click","#close",function(){
+			$("#wrapper").hide();
+			$("#main").removeClass("blur");
+		});
+		
+		//login window
 });
 
 
 function getcards(page_no){
-
+	
 	$.ajax({	
 	dataType:"json",
 	async:"TRUE",
 	url:"<%= api_discover_path(@discover)%>",
-	type:"GET",
-	data:{cardnum:$(".card").length,range:5*colnum, page:page_no},
+	method:"GET",
+	data:{cardnum:$(".card").length,range:4*colnum, page:page_no},
+	beforeSend:function(){$("#loaderarea").show();},
 	success:function(data){
-		for(var i=0 ; i<=data.length-1 ; i++){
-			var card = "<div id=\""+data[i]['name']+"\" class=\"card\"><div class=\"cardimage\" type=\"button\" class=\"btn\" data-toggle=\"modal\" data-target=\"#myModal\"><image src=\" "+data[i]['img_url']+"\" width=230></div><div class=\"cardpanel\"><button class=\"buyitnow \"><strong>Buy It Now</strong></button><div class=\"pricing\">Rs."+data[i]['price']+"</div><div class=\"cardinfo\">"+data[i]['name']+"</div><div class=\"carddescrip\"><p>"+data[i]['short_descrip']+"</p></div><div class=\"designer_info\"><button class=\"btn\" style=\"padding:0;background:white;color:#5F5F5F\"><image src=\""+data[i]['designer']['img']+"\" style=\"height:50px;\" class=\"img-circle\" > "+data[i]['designer']['name']+"</button><button class=\"btn\" style=\"padding:0;background:white;float:right;position:relative;top:5px;color:#C61F26\"><i class=\"fa fa-plus fa-3x\"></i></button></div></div><a class=\"btn addtowishlist\" href=\"/like/"+data[i]['id']+"\" data-remote=true><i class=\"fa fa-heart fa-1x\" style=\"position:relative;left:-6px;top:-3px\"id =heart"+data[i]['id']+"></i></a></div>";
+		cardsdata.push.apply(cardsdata,data);
+		for(var i=0 ; i<data.length ; i++){
+			var card = "<div id=\""+data[i]['id']+"\" class=\"card\"><div class=\"cardimage\" type=\"button\" class=\"btn\" data-toggle=\"modal\" data-target=\"#myModal\"><img src=\""+data[i]['spree_assets'][0]['url']+"\"></div><div class=\"cardpanel\"><button class=\"buyitnow\"><strong>Buy Now</strong></button><div class=\"pricing\">Rs."+ data[i]['price']+"</div><div class=\"cardinfo\">"+data[i]['short_descrip']+"</div><div class=\"designer_info\"><a href=/designers/"+data[i]['designer']['slug']+" class=\"btn bttn\" style=\"padding:0;background:white;color:#5F5F5F\"><image src=\""+data[i]['designer']['img']+"\" style=\"height:35px;\" class=\"img-circle\" > "+data[i]['designer']['name']+"</a></div></div><button class=\"btn addtowishlist bttn\"><i class=\"fa fa-heart fa-1x\" style=\"position:relative;left:-6px;top:-3px\"></i></button></div>";
 			$("#cardsarea").append(card);
 		}
 		colinitializer();
+		$("#loaderarea").hide();
 		return;
 	},
 	error:function(){
@@ -741,56 +207,74 @@ function getcards(page_no){
 }
 	
 function createmodal(x){
-	/*
 	$.ajax({	
 	dataType:"json",
 	async:"TRUE",
-	url:"json link",
-	type:"POST",
-	data:{id:x},
+	url: "/api/modal_info/"+x,
+	method:"GET",
+	data:{cardnum:x, id: x},
 	success:function(data){
-	*/	
 		modalid=x;
+		data1={};
+		for(var i=0 ; i<cardsdata.length ; i++)
+		{
+			if(x==cardsdata[i]['id'])
+			{
+				data1=cardsdata[i];//this is the info of the clicked product;
+				break;
+			}
+		}
 		var gallery="";
-		for(var i =0 ; i<10 ; i++)
+		for(var i=0 ; i<data1["spree_assets"].length ; i++)
 		{	
 			gallery+="<div class=\"gallerybutton";
 			if(i==0)
-			gallery+=" selected ";
-			gallery+="\" style=\"background-color:"+getRandomColor()+"\"></div>";
-			/*insert image here and remove background color and replace 10 by number of images*/
+			gallery+=" selected";
+			gallery+="\"><img src=\""+data1["spree_assets"][i]['url']+"\"></div>";
 		}
-		
 		$(".modal-gallery").html(gallery);
+		if(data1["spree_assets"].length>5)
+		{
+			$("#scroll-up").show();
+			$("#scroll-down").show();
+		}
+		else
+		{
+			$("#scroll-up").hide();
+			$("#scroll-down").hide();
+		}
+		$(".modal-gallery").scrollTop(0);
+		$(".designer_gallery").scrollLeft(0);
+		
+		$(".modal-image").attr("src",$(".selected img").attr("src"));
 		$(".designer_name").html("Designer Name");
-		$(".protitle").html("<strong>"+"Toddler pants from organic denim, blue sarouel pants, baggy trousers"+"</strong>");
-		$(".proprice").html("Price");
+		$(".protitle").html("<strong>"+data1['name']+"</strong>");
+		$(".proprice").html("<strong>Rs. "+data1['price']+ "</strong>");
 		$(".quantity").html("<select><option>option1</option><option>option2</option><option>option3</option><></select>")
 		$(".stock").html("Only 1 Left in Stock");
 		$(".filterselect").html("<select><option>option1</option><option>option2</option><option>option3</option><></select>")
 		$(".overview").html("<h4>Overview</h4><ul><li>Handmade item</li><li>Made to order</li><li>Feedback: 161 reviews</li><li>Ships worldwide from Düsseldorf, Germany</li></ul>");
 		$(".additionalinfo").html("This shop accepts Etsy Gift Cards");
-		$(".modal-image").css("background-color",$(".selected").css("background-color"));
-		$(".designer_image img").attr("src","images/iusa_75x75.26685356_mqfh.jpg");
+		$(".designer_image img").attr("src",data1['designer']['img']);
 		
 		//fetch similar products and run loop
 		$(".similar_products").html("");
 		for(var i=0; i<6; i++)
 		{
-			$(".similar_products").append("<a href=\"#\"><div class=\"simproduct\" style=\"height:220px;width:170px;background-color:pink;float:left;margin:9px\"><div style=\"width:170px;height:170px;\"><image src=\"loader.gif\" style=\"max-height:170px;max-width:170px;\"></div><div style=\"width:170px;height:25px\">Prod Name</div><div style=\"width:170px;height:25px;\">Price</div></div></a>");
+			$(".similar_products").append("<a href=\"#\" onclick=\"createmodal("+data["sim_products"][i].number+")\"><div class=\"simproduct bttn\"><div style=\"width:170px;height:170px;text-align:center;vertical-align:middle;\"><img src=\""+data["sim_products"][i].image+"\" style=\"height:170px;width:170px;\"></div><div style=\"width:170px;height:25px\">Prod Name</div><div style=\"width:170px;height:25px;\">$ "+data["sim_products"][i].number+"</div></div></a>");
 		}
 		$(".designer_gallery").html("");
 		for(var i=0 ; i<8 ; i++)
 		{
-			$(".designer_gallery").append("<td><a href=\"#\"><div class=\"desproduct\"><div style=\"width:140px;height:140px;\"><image src=\"loader.gif\" style=\"max-height:140px;max-width:140px;\"></div><div style=\"width:140px;height:20px\">Prod Name</div><div style=\"width:140px;height:20px;\">Price</div></div></a></td>");
+			$(".designer_gallery").append("<td><a href=\"#\"  onclick=\"createmodal("+data["des_products"][i].number+")\"><div class=\"desproduct bttn\"><div><img src=\""+data["des_products"][i].image+"\" style=\"height:160px;width:160px;\"></div><div style=\"width:160px;height:20px\">Prod Name</div><div style=\"width:160px;height:20px;\">$ "+data["des_products"][i].number+"</div></div></a></td>");
 		}
-	/*	
+	
 	},
 	error:function(){
 		alert("ERROR! ERROR! ERROR!");
 	}
 	});
-		*/
+
 }	
 	
 function min(arr)
@@ -817,24 +301,42 @@ function getRandomColor() {
 }
 
 function colinitializer(){
-		colnum=Math.floor(Math.max($(window).width()/(colwidth+colmargin),3));
-		gutter=($(window).width()-colnum*(colwidth))/2;
+		if($(document).innerWidth()<480)
+		{
+			colwidth=($(window).innerWidth()-3*colmargin)/2;
+		}
+		else 
+			colwidth=default_colwidth;
+		$(".card").css("width",colwidth+"px");
+		$(".buyitnow").css("width",colwidth-20+"px");
+		colnum=Math.floor(Math.max($(window).innerWidth()/(colwidth+colmargin),1));
 		for(var i=0 ; i<colnum ; i++)
 		colheights[i]=colmargin;
-		$("#cardsarea").outerWidth(colnum*(colwidth));
-		$("#header").outerWidth(colnum*(colwidth));
-		$("#loaderarea").outerWidth(colnum*(colwidth));
+		$("#cardsarea").outerWidth(colnum*(colwidth+colmargin));
+		if($(document).innerWidth()>480)
+		$("#header").outerWidth(colnum*(colwidth+colmargin));
+		else
+		$("#header").outerWidth($(window).innerWidth()-2*colmargin);	
+		$("#loaderarea").outerWidth(colnum*(colwidth+colmargin));
 		$("#search").outerWidth(Math.min($("#category").offset().left-($("#logo img").width()+$("#logo").offset().left)-30,600));
 		$("#category_box").css("right",parseInt($(window).width()-$('#category').offset().left-300)+"px");
-		$("#tail").css("right",parseInt($(window).width()-$('#category').offset().left-100)+"px");
+		$("#tail").css("right",parseInt($(window).innerWidth()-$('#category').offset().left-100)+"px");
+		$(".modal-dialog").width(Math.min($(window).innerWidth()-200,1000));
+		$(".closemodal").css("left",($(window).innerWidth()+$('.modal-dialog').width())/2+20+"px");
+		$(".nextcard").css("left",($(window).innerWidth()+$('.modal-dialog').width())/2+20+"px");
+		$(".prevcard").css("right",($(window).innerWidth()+$('.modal-dialog').width())/2+37+"px");
 		positioncards();
 }
 
 function positioncards(){
+		if($(window).innerWidth()<480)
+			gutter=0;
+		else
+			gutter=($(window).innerWidth()-colnum*(colwidth+colmargin))/2-colmargin/2;
 		$(".card").each(function(){
 			var left,top,col;
 			col=min(colheights);
-			left=col*(colwidth)+gutter;
+			left=col*(colwidth+colmargin)+colmargin+gutter;
 			top=colheights[col]+$("#cardsarea").offset().top;
 			
 			$(this).css({"left":left+"px","top":top+"px"});
@@ -849,8 +351,8 @@ function positioncards(){
 		
 		$("#loaderarea").css({"top":parseInt(max+$("#cardsarea").offset().top)+"px","left":$("#header").offset().left+"px"});
 }
-
 function getsubcategories(){
+	
 	$.ajax({	
 	dataType:"json",
 	async:"TRUE",
@@ -858,12 +360,14 @@ function getsubcategories(){
 	type:"GET",
 	data:{categoryname:''},
 	success:function(data){
-		for(var i=0 ; i<data.length ; i++)
+		
+		
+		for(var i=0 ; i<8 ; i++)
 		{
 			var card = "<a href=\""+data[i]['url']+"\" class=\"subcategory_link\" style=\"background-image:url("+data[i]['img_url']+")\"><div>"+data[i]['name']+"</div></a>";
 			$("#subcategories").append(card);
 		}
-	
+		
 	},
 	error:function(){
 		alert("ERROR! ERROR! ERROR!");
@@ -872,35 +376,38 @@ function getsubcategories(){
 	
 }
 
+
 </script>
 
 </head>
 
 <body>
 	<div id="main">
+		<div id="head">
 		<div id="header">
 			<div id="logo">
 				<a href=""><img src="logo.png" style="height:40px; margin:5px 0; float:left;"></a>
 			</div>
 			
-			<input type="search" id="search" placeholder="SEARCH" autofocus>
+			<input class="hidden480" type="search" id="search" placeholder="SEARCH" autofocus>
 
-			<a href="#cart" id="cart"><i class="fa fa-shopping-cart fa-2x"></i></a>
+			<a href="cart.html" id="cart" class="bttn"><i class="fa fa-shopping-cart fa-2x"></i></a>
 			
-			<button type="button" class="btn" id="userid" style="height:30px;text-align:center;line-height:15px;">
+			<button type="button" class="btn bttn" id="userid" style="height:30px;text-align:center;line-height:15px;">
 				<img src="images/iusa_75x75.26685356_mqfh.jpg" style="height:26px; float:left; top:-5px; position:relative" class="img-circle">
-				<div style="float:left; margin:auto 10px">
+				<div class="hidden800" style="float:left; margin:auto 10px">
 					Name
 				</div>
 			</button>
 			
-			<button class="btn" style="height:30px;text-align:center;line-height:15px;" id="category" type="button">
-				Categories  <i class="fa fa-bars"></i>
+			<button class="btn bttn" style="height:30px;text-align:center;line-height:15px;" id="category" type="button">
+				<span class="hidden800">Categories</span>  <i class="fa fa-bars"></i>
 			</button>
+			
+			<button class="btn bttn display480" id="searchtab" style="height:30px;text-align:center;line-height:15px;" type="button"><i class="fa fa-search"></i></button>
 			
 			<div id="tail"></div>
 			<div id="category_box">
-				<%= link_to 'Wedding', Category.first%>
 				<a href="categorypage.html">LINK IT HERE</a>
 				<a href="categorypage.html">LINK IT HERE</a>
 				<a href="categorypage.html">LINK IT HERE</a>
@@ -924,6 +431,7 @@ function getsubcategories(){
 			</div>
 			
 			
+		</div>
 		</div>
 		
 		<div id="category_area">
@@ -936,12 +444,14 @@ function getsubcategories(){
 				</div>
 			</div>
 		</div>
-		<%= link_to 'cards', Discover.first, remote: true%>
+		
 		<div id="cardsarea">
 		</div>
 		
 		<div id="loaderarea">
-			<img src="loader.gif" style="height:30px;margin:0 auto;display:block">
+			<div style="display:block;margin:0 auto;width:30px;">
+			<i class="fa fa-spinner fa-pulse fa-3x"></i>
+			</div>
 		</div>
 		
 	</div>
@@ -955,24 +465,23 @@ function getsubcategories(){
 				</div>
 				<div class="designer_name">
 				</div>
-				<button class="btn" style="float:right;position:relative;top:20px;background-color:#C61F26;color:white;"><i class="fa fa-arrow-circle-right"></i> Follow</button>
+				<button class="btn bttn" style="float:right;position:relative;top:20px;background-color:#6BBCBF;color:white;"><i class="fa fa-arrow-circle-right"></i> Follow</button>
 		</div>
 		<div class="modal-body">
 		<div class="leftmodal">
 			<div class="modal-slide">
 				<div style="width:80px;height:20px;float:left;margin-top:10px;">
-				<a href="#" id="scroll-up" ><i style="margin-left:33px;color:#C61F26" class="fa fa-chevron-circle-up fa-1x"></i></a>
+				<a href="#" id="scroll-up"><i style="margin-left:33px;color:#6BBCBF" class="fa fa-chevron-circle-up fa-1x"></i></a>
 				</div>
 				<div class="modal-gallery-container">
 					<div class="modal-gallery">
 					</div>
 				</div>
 				<div style="width:80px;height:20px;float:left">
-				<a href="#" id="scroll-down" ><i style="margin-left:33px;color:#C61F26" class="fa fa-chevron-circle-down fa-1x"></i></a>
+				<a href="#" id="scroll-down"><i style="margin-left:33px;color:#6BBCBF" class="fa fa-chevron-circle-down fa-1x"></i></a>
 				</div>
 			</div>
-			<div class="modal-image">
-			</div>
+			<img class="modal-image">
 			<div class="modaltabs" role="tabpanel">
 				<!-- Nav tabs -->
 				  <ul class="nav nav-tabs" role="tablist">
@@ -1065,7 +574,7 @@ function getsubcategories(){
 				<div class="additionalinfo">
 				</div>
 				<div class="addtocart">
-					<button class="btn" style="width:348px;background-color:#C61F26;color:white">ADD TO CART <i class="fa fa-shopping-cart"></i></button>
+					<button class="btn bttn" style="width:348px;background-color:#6BBCBF;color:white">ADD TO CART <i class="fa fa-shopping-cart"></i></button>
 				</div>
 			</div>
 			
@@ -1078,15 +587,15 @@ function getsubcategories(){
 		</div>
 		
 		<div class="designer_products">
-			<div class="scroll-left">
-				<a href="#" id="scroll-left" style="position:relative;left:3px;top:75px;"><i style="color:#C61F26" class="fa fa-chevron-circle-left fa-3x"></i></a>
+			<div class="scroll-right bttn">
+				<a href="#" id="scroll-right" style="position:relative;left:3px;top:75px;"><i style="color:#6BBCBF" class="fa fa-chevron-circle-right fa-3x"></i></a>
+			</div>
+			<div class="scroll-left bttn">
+				<a href="#" id="scroll-left" style="position:relative;left:3px;top:75px;"><i style="color:#6BBCBF" class="fa fa-chevron-circle-left fa-3x"></i></a>
 			</div>
 			<div class="designer_gallery_container">
 				<div class="designer_gallery">
 				</div>
-			</div>
-			<div class="scroll-right">
-				<a href="#" id="scroll-right" style="position:relative;left:3px;top:75px;"><i style="color:#C61F26" class="fa fa-chevron-circle-right fa-3x"></i></a>
 			</div>
 		</div>
 		
@@ -1101,17 +610,75 @@ function getsubcategories(){
   </div>
 
 		<div class="closemodal">
-			<button class="btn" id="closemodal"><i style="color:#C61F26" class="fa fa-times fa-2x"></i></button>
+			<button class="btn bttn" id="closemodal"><i style="color:#6BBCBF" class="fa fa-times fa-2x"></i></button>
 		</div>
 		<div class="nextcard">
-			<button class="btn" id="nextcard"><i style="color:#C61F26" class="fa fa-chevron-circle-right fa-2x"></i></button>
+			<button class="btn bttn" id="nextcard"><i style="color:#6BBCBF" class="fa fa-chevron-circle-right fa-2x"></i></button>
 		</div>
 		
 		<div class="prevcard">
-			<button class="btn" id="prevcard"><i style="color:#C61F26" class="fa fa-chevron-circle-left fa-2x"></i></button>
+			<button class="btn bttn" id="prevcard"><i style="color:#6BBCBF" class="fa fa-chevron-circle-left fa-2x"></i></button>
+		</div>
+		
+		<div id="wrapper">
+			<div id="leftpart">	
+				<div role="tabpanel">
+
+				  <!-- Nav tabs -->
+				  <ul class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active"><a href="#login" aria-controls="login" role="tab" data-toggle="tab">Login</a></li>
+					<li role="presentation"><a href="#sinup" aria-controls="sinup" role="tab" data-toggle="tab">Signup</a></li>
+				  </ul>
+
+				  <!-- Tab panes -->
+				  <div class="tab-content">
+					<div role="tabpanel" class="tab-pane active" id="login">
+						<form id="login-form">
+						<div class="form_row">
+							<label for="login-email">Email</label>
+							<input type="text" autocomplete="on" id="login-email" name="login-email" autofocus>
+						</div>
+						<div class="form_row">
+							<label for="login-password">Password</label>
+							<input type="password" id="login-password" name="login-password">
+						</div>
+						<div class="form_row">
+							<input class="btn bttn" type="submit" id="login-submit" value="LOG IN">
+							<div id="forgot-password" style="position:relative; top:10px"><a href="#">Forgot Your Password?</a></div>
+						</div>
+						</form>
+						<div style="position:relative; top:10px">Don't have an account? <a href="#signup">Create One!</a></div>
+					</div>
+					<div role="tabpanel" class="tab-pane fade" id="sinup">
+						<form id="signup-form">
+						<div class="form_row">
+							<label for="signup-email">Email</label>
+							<input type="text" autocomplete="on" id="signup-email" name="signup-email" autofocus>
+						</div>
+						<div class="form_row">
+							<label for="signup-password">Password</label>
+							<input type="password" id="signup-password" name="signup-password">
+						</div>
+						<div class="form_row">
+							<label for="signup-repeat_password">Repeat</label>
+							<input type="password" id="signup-repeat_password" name="signup-repeat_password">
+						</div>
+						<div class="form_row">
+							<input class="btn bttn" type="submit" id="signup-submit" value="SIGN UP NOW!">
+						</div>
+						</form>
+					</div>
+				  </div>
+
+				</div>
+			</div>
+			<div id="divider"><div id="updivider"></div><div id="or">OR</div><div id="downdivider"></div></div>
+			<div id="rightpart">
+				<div id="signinwith">Sign in with</div>
+			</div>
+			<div id="close"><i class="fa fa-times"></i></div>
 		</div>
 
 </body>
 
 </html>
-
