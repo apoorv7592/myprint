@@ -1,14 +1,14 @@
 <div id="reviews">
   <h3 class="designer-section-title"><%= Spree.t(:reviews) %></h3>
-  <% if Designerreviews::Config[:include_unapproved_reviews] == false and @designer.reviews.approved.count == 0 %>
-    <p class="reviews-none"><%= Spree.t(:no_reviews_available) %></p>
+  <% if @details.reviews.approved.count == 0 %>
+    <p class="reviews-none">No Reviews Available</p>
   <% else %>
     <%= render 'spree/shared/designerrating', designer: @designer, review: 0 %>
     <% for review in (Designerreviews::Config[:track_locale] ? @designer.reviews.localized(I18n.locale) : @designer.reviews).default_approval_filter.preview %>
       <%= render 'spree/shared/designerreview', review: review %>
     <% end %>
   <% end %>
-  <% if !Designerreviews::Config[:require_login] || spree_current_user %>
-    <%= link_to Spree.t(:write_your_own_review), new_designer_review_path(@designer), class: 'btn btn-default', rel: 'nofollow' %>
+  <% if spree_current_user %>
+    <%= link_to Spree.t(:write_your_own_review), new_designer_review_path(@details), class: 'btn btn-default', rel: 'nofollow' %>
   <% end %>
 </div>
