@@ -386,11 +386,13 @@ function getsubcategories(){
 		<div id="head">
 		<div id="header">
 			<div id="logo">
-				<a href=""><img src="logo.png" style="height:40px; margin:5px 0; float:left;"></a>
+				<%= link_to root_path do %>
+					<%= image_tag 'logo.png', height:40, style: 'float:left; margin:5px 0;'%>
+				<% end %>
 			</div>
-			
-			<input class="hidden480" type="search" id="search" placeholder="SEARCH" autofocus>
-
+			<%= form_tag search_path, method: 'get' do %>
+				<%= search_field_tag :q, '', class: 'hidden480', id: 'search', placeholder: 'Search'%>
+			<%end %>
 			<a href="cart.html" id="cart" class="bttn"><i class="fa fa-shopping-cart fa-2x"></i></a>
 			
 			<button type="button" class="btn bttn" id="userid" style="height:30px;text-align:center;line-height:15px;">

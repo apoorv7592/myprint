@@ -2,18 +2,17 @@ module Spree
 	class SolrsearchController < Spree::HomeController
 
 		def index
+			
 			@search = Sunspot.search(Spree::Product) do 
-		    	fulltext params[:search]
-		    	
-               paginate :page => params[:page], :per_page => 8
-
-		    	#dynamic(:color_ids) do
-		    	#	facet(:color_names)
-		    	#end
+		    	fulltext params[:q]
+                paginate :page => params[:page], :per_page => 8
 		    end
-		    @suites = @search.results
-		end
+		    @products = @search.results
 
-		
+		    @search= Sunspot.search(Discover) do
+		    	fulltext params[:q]
+		    end
+		    @discovers = @search.results
+		end
 	end
 end

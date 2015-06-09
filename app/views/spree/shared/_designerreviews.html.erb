@@ -1,10 +1,10 @@
 <div id="reviews">
-  <h3 class="designer-section-title"><%= Spree.t(:reviews) %></h3>
-  <% if @details.reviews.approved.count == 0 %>
+  <h3 class="designer-section-title"> Reviews </h3>
+  <% if @details.designerreviews.approved.count == 0 %>
     <p class="reviews-none">No Reviews Available</p>
   <% else %>
     <%= render 'spree/shared/designerrating', designer: @designer, review: 0 %>
-    <% for review in (Designerreviews::Config[:track_locale] ? @designer.reviews.localized(I18n.locale) : @designer.reviews).default_approval_filter.preview %>
+    <% for review in  @details.designerreviews.default_approval_filter.preview %>
       <%= render 'spree/shared/designerreview', review: review %>
     <% end %>
   <% end %>

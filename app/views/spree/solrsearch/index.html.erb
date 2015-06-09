@@ -1,21 +1,15 @@
+<h3>Products </h3>
+<% @products.each do |r|  %>
+  <strong>
+  <%= r.name%>
+    
+  </strong>
+<% end %>
 
-<div class="row">
-        <div class="col-md-3"style="height:auto; width:230px; margin-right:10px;float:left;border:1px solid rgba(1,0,0,0.3);">
-        </div>
-
-        <div class="col-md-9"style="height:auto; width:746px; margin-left:8px;float:right;">
-          <%= render 'spree/suites/sort' %>
-            <div class="col-md-12" style="height:auto; width:746px;">
-              <div class="row">
-                <% if @suites.present? %>
-                  <% @suites.each do |p| %>
-                   <%= p.name%>
-                  <% end %> 
-                <% end %>                
-              </div>
-            </div>
-        </div>
-</div>
-
-<div style="float:right;"><%= paginate @suites %></div>
-
+<h4>Discovers</h4>
+<% @discovers.each do |r|  %>
+  <strong>
+  <%= r.name%>
+    
+  </strong>
+<% end %>

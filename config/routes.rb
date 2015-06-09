@@ -104,7 +104,7 @@ Rails.application.routes.draw do
     get '/test/:id', to: 'discovers#test', as: 'test_product'
 
 
-    get '/search'  => 'solrsearch#index'
+    get '/search'  => 'solrsearch#index', as: 'search'
     routes = lambda do
       namespace :admin do
         resources :products do

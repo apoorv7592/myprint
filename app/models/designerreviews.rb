@@ -19,4 +19,5 @@
 #
 
 class Designerreviews < ActiveRecord::Base
+	belongs_to :designer
 end
