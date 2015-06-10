@@ -6,7 +6,6 @@ module Spree
 				
 				def modal_info
 					@result = Spree::Product.friendly.find(params[:id])
-					
 					respond_to do |format|
 						format.json
 					end

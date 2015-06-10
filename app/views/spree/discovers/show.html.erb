@@ -247,14 +247,16 @@ function createmodal(x){
 		$(".designer_gallery").scrollLeft(0);
 		
 		$(".modal-image").attr("src",$(".selected img").attr("src"));
-		$(".designer_name").html("Designer Name");
+		$(".designer_name").html(data1['designer']['name']);
 		$(".protitle").html("<strong>"+data1['name']+"</strong>");
 		$(".proprice").html("<strong>Rs. "+data1['price']+ "</strong>");
-		$(".quantity").html("<select><option>option1</option><option>option2</option><option>option3</option><></select>")
+
+		$(".variant_id").html("<input id='token' name='variant_id[]' type='hidden' value='"+data[0]['master_variant_id']+"' />")
 		$(".stock").html("Only 1 Left in Stock");
 		$(".filterselect").html("<select><option>option1</option><option>option2</option><option>option3</option><></select>")
 		$(".overview").html("<h4>Overview</h4><ul><li>Handmade item</li><li>Made to order</li><li>Feedback: 161 reviews</li><li>Ships worldwide from Düsseldorf, Germany</li></ul>");
 		$(".additionalinfo").html("This shop accepts Etsy Gift Cards");
+		$("#item_details").html(data1['description']);
 		$(".designer_image img").attr("src",data1['designer']['img']);
 		
 		//fetch similar products and run loop
@@ -495,37 +497,7 @@ function getsubcategories(){
 						 <!-- Tab panes -->
 						 <div class="tab-content">
 							<div role="tabpanel" class="tab-pane active" id="item_details">
-								♥ HAREM PANTS MADE FROM HEATHER BLUE ORGANIC SWEAT AND GREEN AND GREY STRIPED CUFFS - MADE TO ORDER: CHOOSE YOUR SIZE (NEWBORN TO 5 YEARS)
-
-								I choosed for this harem pants a warm and cozy sweat fabric. It is so incredible snuggly, perfect for baby's skin. The legs are of a loose-fitting cut. The extra-long cuffs can be folded back if necessary, so the harem pants fit for a long time.
-
-								The pants are ideal for home, at play group or at the children's gymnastics. Just wherever no tight jeans should restrict the mobility. Even cotton diapers have space.
-
-								♥ FOR WHOM?
-								From baby to toddler, all could need such wonderful pants. I sew them in the sizes 56 to 116. Larger sizes are available on request. If you are unsure about the size, I will be pleased to advice you.
-
-								cm ...... inch .... age (months)
-								56 ...... 22 ....... 0-3
-								62 ...... 24 ....... 3-6
-								68 ...... 27 ....... 6-9
-								74 ...... 30 ....... 9-12
-								80 ...... 32 ....... 12-18
-								86 ...... 34 ....... 18-24
-								92 ...... 36 ....... 2T
-								98 ...... 39 ....... 3T
-								104 ...... 41 ....... 4T
-								110 ...... 43 ....... 4
-								116 ...... 46 ....... 5
-
-
-								♥ MATERIAL
-								Organic heather blue sweat fabric
-								Organic green and grey striped Cuffs 
-								(98% cotton, 2% elasthan)
-
-								♥ INDIVIDUALIZATION
-								You can choose your favorite cuffs:
-								http://www.etsy.com/listing/95940577/bundchen-zur-auswahl
+								
 							</div>
 							<div role="tabpanel" class="tab-pane fade" id="item_ratings">
 								    
@@ -559,25 +531,31 @@ function getsubcategories(){
 				</div>
 				<div class="proprice">
 				</div>
-				<div class="quantitycontainer">
-				Quantity
-				<div class="quantity">
-				</div>
-				</div>
-				<div class="stock">
-				</div>
-				<div class="filter">
-					Size<br>
-					<div class="filterselect">
+				<%= form_for :order, url: populate_orders_path do |f| %>
+					<div class="quantitycontainer">
+						Quantity
+						<div class="variant_id">
+						</div>
+						<div class="quantity">
+							<%= select_tag 'quantity[]', options_for_select((1..10))%>
+						</div>
 					</div>
-				</div>
-				<div class="overview">
-				</div>
-				<div class="additionalinfo">
-				</div>
-				<div class="addtocart">
-					<button class="btn bttn" style="width:348px;background-color:#6BBCBF;color:white">ADD TO CART <i class="fa fa-shopping-cart"></i></button>
-				</div>
+					<div class="stock">
+					</div>
+					<div class="filter">
+						Size<br>
+						<div class="filterselect">
+						</div>
+					</div>
+					<div class="overview">
+					</div>
+					<div class="additionalinfo">
+					</div>
+					<div class="addtocart">
+					<%= submit_tag 'ADD TO CART', class: 'btn bttn', style:"width:348px;background-color:#6BBCBF;color:white" %>	
+						
+					</div>
+				<% end %>
 			</div>
 			
 	<!--		<div class="share">
