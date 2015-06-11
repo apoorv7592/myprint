@@ -48,17 +48,13 @@ Rails.application.routes.draw do
     resources :users do
       member do
         get :following, :followers
+        get :discover_following
       end
     end
     resources :relationships, only: [:create, :destroy]
     resources :discoverfollows, only: [:create, :destroy]
 
-    resources :users do
-      member do
-        get :pinned
-      end
-    end
-
+    
     resources :products do
       resources :reviews, only: [:index, :new, :create] do
       end

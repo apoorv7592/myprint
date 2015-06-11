@@ -17,6 +17,9 @@ Spree::User.class_eval do
     has_many :following, through: :active_relationships, source: :followed
     has_many :followers, through: :passive_relationships, source: :follower
 
+    has_many :discoverfollows, class_name: "Discoverfollow", dependent: :destroy
+    has_many :discover_following, through: :discoverfollows, source: :discover
+
     # Follows a user.
 	def follow(other_user)
 	  active_relationships.create(followed_id: other_user.id)
@@ -30,27 +33,39 @@ Spree::User.class_eval do
     	following.include?(other_user)
   	end
 
+  	def follow_discover(discover)
+  		discoverfollows.create(discover_id: discover.id)
+  	end
+
+  	def unfollow_discover(discover)
+		discoverfollows.find_by(discover_id: discover.id).destroy
+	end
+
+	def following_discover?(discover)
+		discover_following.include?(discover)	
+	end
+  	
   	def is_designer?
   		self.is_designer
   	end
 
-	has_many :discoverfollows
-	has_many :discovers, :through => :discoverfollows
+	#has_many :discoverfollows
+	#has_many :discovers, :through => :discoverfollows
 
-	has_many :pinned, through: :discoverfollows, source: :discover
-    has_many :pins, through: :discoverfollows, source: :user
+	#has_many :pinned, through: :discoverfollows, source: :discover
+    #has_many :pins, through: :discoverfollows, source: :user
 
     #pins a discover
-	def pin(discover)
-	  discoverfollows.create(discover_id: discover.id)
-	end
+	#def pin(discover)
+	#  discoverfollows.create(discover_id: discover.id)
+	#end
 	# Unpins a discover.
-	def unpin(discover)
-		discoverfollows.find_by(discover_id: discover.id).destroy
-	end
+	#def unpin(discover)
+	#	discoverfollows.find_by(discover_id: discover.id).destroy
+	#end
 	# Returns true if the current user is following the discover.
-	def pinned?(discover)
-    	pinned.include?(discover)
-  	end
+	#def pinned?(discover)
+    #	pinned.include?(discover)
+  	#end
 
 end

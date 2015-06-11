@@ -4,21 +4,21 @@ module Spree
 		def create
 		    #user = Spree::User.find(params[:user_id])
 		    discover = Discover.find(params[:discover_id])
-		    spree_current_user.pin(discover)
+		    spree_current_user.follow_discover(discover)
 		    respond_to do |format|
 		    	
 		    	format.html {redirect_to :back}
-		    	format.js
+		    	format.js {@discover = discover}
 
 		    end
   		end
 
   		def destroy
-    		user = Discoverfollow.find(params[:id]).discover
-    		spree_current_user.unpin(user)
+    		discover = Discover.find(params[:discover_id])
+    		spree_current_user.unfollow_discover(discover)
     		respond_to do |format|
 		    	format.html {redirect_to :back}
-		    	format.js
+		    	format.js {@discover = discover}
 		    end
   		end
 	end

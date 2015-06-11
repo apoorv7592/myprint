@@ -440,8 +440,29 @@ function getsubcategories(){
 		
 		<div id="category_area">
 			<div id="category_name">
-				Gifts
+				<%= @discover.name%>
 			</div>
+			
+			<!-- Follow Button, need to be place properly-->
+			<div id="follow-container">
+				<div><!-- Don't change the id-->
+					<% if spree_current_user %>
+						<% if spree_current_user.following_discover?(@discover) %>
+							<div id="follow-form">
+								<%= render 'discover_unfollow'%>		
+							</div>
+						<% else %>
+							<div id="follow-form">
+								<%= render 'discover_follow'%>
+							</div>
+
+						<% end %>	
+					<% end %>
+				</div>
+				
+			</div>
+			<!-- End of the follow button-->
+			
 			<div id="subcategories_area">
 				RELATED INTERESTS
 				<div id="subcategories">
