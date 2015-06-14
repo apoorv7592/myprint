@@ -258,7 +258,22 @@ function createmodal(x){
 		$(".additionalinfo").html("This shop accepts Etsy Gift Cards");
 		$("#item_details").html(data1['description']);
 		$(".designer_image img").attr("src",data1['designer']['img']);
+		$("#product_id").attr("value",data1['id']);
 		
+		// fetch and insert the comments
+		$("#all-comments").html("");
+		var logged_in= "<%= spree_current_user.present? %>";
+		var current_user_id = "<%= spree_current_user.id if spree_current_user.present? %>";
+		
+		for(var i = 0; i < data[0]['comments'].length; i++){
+			if(logged_in== 'true' && current_user_id== data[0]['comments'][i]['user_id']){
+				$("#all-comments").append("<div id=comment-"+data[0]['comments'][i]['id']+" class='row' style='border-bottom:1px solid #F2F2F2;'><div class='col-md-11'><div><b>"+data[0]['comments'][i]['user']+"</b></div><div>"+data[0]['comments'][i]['body']+"</div></div><div class='col-md-1'></div><form method='post' action='/delete_comment' data-remote='true' accept-charset='UTF-8'><div style='display:none'></div><input id='comment_id' type='hidden' value='"+data[0]['comments'][i]['id']+"' name='comment_id'></input><input data-confirm='Are you sure !!' class='delete-button' type='submit' value='x' name='commit' data-toggle='tooltip' data-placement='left' title='Delete this comment'></input></form></div>");
+			}
+			else
+			{
+				$("#all-comments").append("<div class='row' style='border-bottom:1px solid #F2F2F2;'><div class='col-md-11'><div><b>"+data[0]['comments'][i]['user']+"</b></div><div>"+data[0]['comments'][i]['body']+"</div></div><div class='col-md-1'></div></div>");		
+			}
+		}
 		//fetch similar products and run loop
 		$(".similar_products").html("");
 		for(var i=0; i<6; i++)
@@ -437,12 +452,16 @@ function getsubcategories(){
 			
 		</div>
 		</div>
-		
+
 		<div id="category_area">
 			<div id="category_name">
 				<%= @discover.name%>
 			</div>
-			
+			<%= form_tag delete_comment_path, remote: true do |f|%>
+				<%= hidden_field_tag :comment_id,''%>
+				<%= text_field_tag :text %>
+				<%= submit_tag 'x',class: 'delete-button', style: 'background:none; border:none; color: #F2F2F2', data: {confirm: 'Are you sure !!'}%>
+			<% end %>	
 			<!-- Follow Button, need to be place properly-->
 			<div id="follow-container">
 				<div><!-- Don't change the id-->
@@ -510,14 +529,31 @@ function getsubcategories(){
 			<div class="modaltabs" role="tabpanel">
 				<!-- Nav tabs -->
 				  <ul class="nav nav-tabs" role="tablist">
-					<li role="presentation" class="active"><a href="#item_details" aria-controls="item_details" role="tab" data-toggle="tab">Item Details</a></li>
+					<li role="presentation" class="active"><a href="#comments" aria-controls="comments" role="tab" data-toggle="tab">Comments</a></li>
+					
+					<li role="presentation" ><a href="#item_details" aria-controls="item_details" role="tab" data-toggle="tab">Item Details</a></li>
 					<li role="presentation"><a href="#item_ratings" aria-controls="item_ratings" role="tab" data-toggle="tab"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> Ratings</a></li>
 					<li role="presentation"><a href="#policies" aria-controls="policies" role="tab" data-toggle="tab">Shipping & Policies</a></li>
 				  </ul>
 
 						 <!-- Tab panes -->
 						 <div class="tab-content">
-							<div role="tabpanel" class="tab-pane active" id="item_details">
+							<div role="tabpanel" class="tab-pane active" id="comments">
+								<div id="all-comments">
+								</div>
+								<div id="new-comment"></div>
+									<div class="row">
+										<% if spree_current_user %>
+											<%= render 'add_comment'%>
+										<% else %>
+											
+											<%= link_to 'Login to comment', '/login', style:'margin-top: 10px; font-weight:bold;'%>
+													
+											
+										<% end %>
+									</div>
+							</div>
+							<div role="tabpanel" class="tab-pane " id="item_details">
 								
 							</div>
 							<div role="tabpanel" class="tab-pane fade" id="item_ratings">

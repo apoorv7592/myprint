@@ -11,4 +11,3 @@ end
 child :master_images do 
 	node(:url){|d| d.attachment.url}
 end
-

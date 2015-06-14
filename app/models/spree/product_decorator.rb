@@ -1,7 +1,8 @@
 Spree::Product.class_eval do
 	require 'csv'
 	acts_as_taggable
-
+	acts_as_commentable
+	
     belongs_to :suite
 	belongs_to :designer
 	has_many :properties

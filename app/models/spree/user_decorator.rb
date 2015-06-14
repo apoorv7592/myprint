@@ -3,6 +3,7 @@ Spree::User.class_eval do
 	has_one :designer
 	has_many :entries
 	has_many :custs
+	has_many :comments
 
 	has_many :likes, dependent: :destroy
 
