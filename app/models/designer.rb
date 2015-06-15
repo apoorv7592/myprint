@@ -19,6 +19,8 @@
 #  college             :string(255)
 #  phonenum            :string(255)
 #  slug                :string(255)
+#  avg_rating          :integer
+#  reviews_count       :integer
 #
 
 class Designer < ActiveRecord::Base

@@ -1,17 +1,53 @@
-<fieldset id="password-credentials">
 	<div class="form-group">
-		<%= f.email_field :email, :class => 'form-control', :placeholder => Spree.t(:email) %>
+		<%= f.label 'Name', class: 'col-md-2 control-label signup-label '%>
+		<div class="col-md-4 col-md-offset-1">
+			<%= f.text_field :first_name, :class => 'form-control ', :placeholder => Spree.t(:first_name) %>
+		</div>
+		<div class="col-md-4 col-md-offset-1">
+			<%= f.text_field :last_name, :class => 'form-control ', :placeholder => Spree.t(:last_name) %>
+		</div>
 	</div>
-	<hr />
-	<div class="form-group">
-		<%= f.password_field :password, :class => 'form-control', :placeholder => Spree.t(:password) %>
-	</div>
-	<div class="form-group">
-		<%= f.password_field :password_confirmation, :class => 'form-control', :placeholder => Spree.t(:confirm_password) %>
-	</div>
+	
+		<div class="form-group">
+			<%= f.label 'Email', class: 'col-md-2 control-label signup-label signup-label ' %>
+			<div class="col-md-9 col-md-offset-1"> 
+				<%= f.email_field :email, :class => 'form-control ', :placeholder => Spree.t(:email) %>
+			</div>
+		</div>
+		<div class="form-group">
+			<%= f.label 'Mobile', class: 'col-md-2 control-label signup-label ' %>
+			<div class="col-md-9 col-md-offset-1"> 
+				<div class="input-group">
+					<span class="input-group-addon">+91</span>
+					<%= f.text_field :phone, :class => 'form-control ', :placeholder=> 'Mobile' %>	
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<%= f.label 'Password', class: 'col-md-2 control-label signup-label '%>
+			<div class="col-md-4 col-md-offset-1">
+				<%= f.password_field :password, :class => 'form-control ', :placeholder => Spree.t(:password) %>
+			</div>
+			<div class="col-md-4 col-md-offset-1">
+				<%= f.password_field :password_confirmation, :class => 'form-control', :placeholder => Spree.t(:confirm_password) %>
+			</div>
+		</div>
+		<div class="form-group">
+			<%= f.label 'Gender', class: 'col-md-2 control-label signup-label '%>
+			<div class="col-md-2 col-md-offset-1">
+				<span class="signup-label "> Male</span>
+				<%= f.radio_button :gender, "Male"%>
+			</div>
+			<div class="col-md-4 col-md-offset-1">
+				<span class="signup-label "> Female</span>
+				<%= f.radio_button :gender, "Female"%>
+			</div>
+		</div>
 	<div class="form-group">		
-		<%= f.check_box :is_designer, {}, 'true', 'false' %>
-		<%= f.label 'Are you a designer ?' %>
+		<%#= f.check_box :is_designer, {}, 'true', 'false' %>
+		<%#= f.label 'Are you a designer ?' %>
 	</div>
-</fieldset>
-<div data-hook="signup_below_password_fields"></div>
+
+<!--
+<div data-hook="signup_below_password_fields"></div> 
+-->
