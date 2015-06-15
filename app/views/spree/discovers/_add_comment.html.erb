@@ -1,6 +1,6 @@
 <%= form_tag add_comment_path, remote: true, class: 'form' do |f| %>
 	<%= hidden_field_tag :product_id, '' %>
-	<b><%= spree_current_user.name%></b>
+	<b><%= spree_current_user.full_name%></b>
 	<div class="form-group">
 		<%= text_area_tag :comment, '',plceholder: 'comment', class: 'form-control'%>	
 	</div>

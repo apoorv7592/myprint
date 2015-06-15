@@ -7,7 +7,7 @@ child :root_comments do
 	attributes :id,:body
 	node(:user) do |c|
 		u = Spree::User.find(c.user_id)
-		u.name
+		u.full_name
 	end
 	node(:user_id) do |c|
 		c.user_id

@@ -54,6 +54,14 @@ Spree::User.class_eval do
   		self.is_designer
   	end
 
+  	def full_name
+		if self.first_name.present? && self.last_name.present?
+  			self.first_name+' '+ self.last_name 
+  		else
+  			''
+  		end
+  	end
+
 	#has_many :discoverfollows
 	#has_many :discovers, :through => :discoverfollows
 
