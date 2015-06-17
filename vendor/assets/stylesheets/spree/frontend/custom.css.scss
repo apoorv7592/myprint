@@ -1025,6 +1025,8 @@ font-size:12px;
   font-size:12px;
   color:#666;
 }
+
+/* Reviews */
 .review-main-title{
   font-weight:bold;
   font-size:18px;  
@@ -1056,4 +1058,20 @@ font-size:12px;
 .review-body{
   font-size:12px;
   color:#A9A9A9;
+}
+/* Comments */
+
+.comment-cont{
+  border-bottom:1px solid #F2F2F2;
+  padding-top:5px;
+  padding-bottom:5px;
+}
+.comment-user{
+  font-size:12px;
+  color:#666;
+  font-weight:bold;
+}
+.comment-body{
+  font-size:12px;
+  color:#141823;
 }

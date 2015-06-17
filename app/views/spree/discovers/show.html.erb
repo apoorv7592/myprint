@@ -264,14 +264,14 @@ function createmodal(x){
 		$("#all-comments").html("");
 		var logged_in= "<%= spree_current_user.present? %>";
 		var current_user_id = "<%= spree_current_user.id if spree_current_user.present? %>";
-		
+		$("#new-comment").html("");
 		for(var i = 0; i < data[0]['comments'].length; i++){
 			if(logged_in== 'true' && current_user_id== data[0]['comments'][i]['user_id']){
-				$("#all-comments").append("<div id=comment-"+data[0]['comments'][i]['id']+" class='row' style='border-bottom:1px solid #F2F2F2;'><div class='col-md-11'><div><b>"+data[0]['comments'][i]['user']+"</b></div><div>"+data[0]['comments'][i]['body']+"</div></div><div class='col-md-1'></div><form method='post' action='/delete_comment' data-remote='true' accept-charset='UTF-8'><div style='display:none'></div><input id='comment_id' type='hidden' value='"+data[0]['comments'][i]['id']+"' name='comment_id'></input><input data-confirm='Are you sure !!' class='delete-button' type='submit' value='x' name='commit' data-toggle='tooltip' data-placement='left' title='Delete this comment'></input></form></div>");
+				$("#all-comments").append("<div id=comment-"+data[0]['comments'][i]['id']+" class='row comment-cont'><div class='col-md-11'><div class='comment-user'>"+data[0]['comments'][i]['user']+"</div><div class='comment-body'>"+data[0]['comments'][i]['body']+"</div></div><div class='col-md-1'></div><form method='post' action='/delete_comment' data-remote='true' accept-charset='UTF-8'><div style='display:none'></div><input id='comment_id' type='hidden' value='"+data[0]['comments'][i]['id']+"' name='comment_id'></input><input data-confirm='Are you sure !!' class='delete-button' type='submit' value='x' name='commit' data-toggle='tooltip' data-placement='left' title='Delete this comment'></input></form></div>");
 			}
 			else
 			{
-				$("#all-comments").append("<div class='row' style='border-bottom:1px solid #F2F2F2;'><div class='col-md-11'><div><b>"+data[0]['comments'][i]['user']+"</b></div><div>"+data[0]['comments'][i]['body']+"</div></div><div class='col-md-1'></div></div>");		
+				$("#all-comments").append("<div class='row comment-cont' style='border-bottom:1px solid #F2F2F2;'><div class='col-md-11'><div class='comment-user'>"+data[0]['comments'][i]['user']+"</div><div class='comment-body'>"+data[0]['comments'][i]['body']+"</div></div><div class='col-md-1'></div></div>");		
 			}
 		}
 		//fetch similar products and run loop
@@ -458,11 +458,6 @@ function getsubcategories(){
 			<div id="category_name">
 				<%= @discover.name%>
 			</div>
-			<%= form_tag delete_comment_path, remote: true do |f|%>
-				<%= hidden_field_tag :comment_id,''%>
-				<%= text_field_tag :text %>
-				<%= submit_tag 'x',class: 'delete-button', style: 'background:none; border:none; color: #F2F2F2', data: {confirm: 'Are you sure !!'}%>
-			<% end %>	
 			<!-- Follow Button, need to be place properly-->
 			<div id="follow-container">
 				<div><!-- Don't change the id-->
@@ -505,12 +500,13 @@ function getsubcategories(){
   <div class="modal-dialog" >
     <div class="modal-content">
 		<div class="modal-header">
+				<div class='by-designer'>By</div>
 				<div class="designer_image">
 					<img style="max-height:80px; max-width:80px" class="img-circle img-responsive center-block">
 				</div>
 				<div class="designer_name">
 				</div>
-				<button class="btn bttn" style="float:right;position:relative;top:20px;background-color:#6BBCBF;color:white;"><i class="fa fa-arrow-circle-right"></i> Follow</button>
+				<button class="btn bttn" style="float:right;position:relative;top:20px;background-color:#6BBCBF;color:white;"><i class="fa fa-arrow-circle-right"></i> Follow this designer</button>
 		</div>
 		<div class="modal-body">
 		<div class="leftmodal">
