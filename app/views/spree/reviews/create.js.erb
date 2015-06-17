@@ -1,0 +1,5 @@
+<% if @errors.nil? %>
+	alert("Your review has been submitted successfully and is pending approval");
+<% else %>
+	$("#review-form-feedback").html("<%= escape_javascript(@errors.to_sentence)%>")
+<% end %>

@@ -1,5 +1,5 @@
 <script type="text/javascript">
-	default_colwidth=230;
+default_colwidth=230;
 colwidth=0;
 colmargin=10;
 colheights=[];
@@ -291,7 +291,8 @@ function createmodal(x){
 		alert("ERROR! ERROR! ERROR!");
 	}
 	});
-
+	// to get the review form for the product
+	$.get('/review_form/'+x);
 }	
 	
 function min(arr)
@@ -532,7 +533,7 @@ function getsubcategories(){
 					<li role="presentation" class="active"><a href="#comments" aria-controls="comments" role="tab" data-toggle="tab">Comments</a></li>
 					
 					<li role="presentation" ><a href="#item_details" aria-controls="item_details" role="tab" data-toggle="tab">Item Details</a></li>
-					<li role="presentation"><a href="#item_ratings" aria-controls="item_ratings" role="tab" data-toggle="tab"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> Ratings</a></li>
+					<li role="presentation"><a href="#item_ratings" aria-controls="item_ratings" role="tab" data-toggle="tab"> <span id='tab-ratings'> Ratings</span></a></li>
 					<li role="presentation"><a href="#policies" aria-controls="policies" role="tab" data-toggle="tab">Shipping & Policies</a></li>
 				  </ul>
 
@@ -557,14 +558,11 @@ function getsubcategories(){
 								
 							</div>
 							<div role="tabpanel" class="tab-pane fade" id="item_ratings">
-								    
-								Super comfy and soft. Thx!
-
-								Translate   
+								yyy
 							</div>
 							
 							<div role="tabpanel" class="tab-pane fade" id="policies">
-																hipping Costs
+																Shipping Costs
 								Shipping to
 
 								Cost

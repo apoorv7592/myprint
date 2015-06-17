@@ -1,0 +1,18 @@
+<div id="reviews">
+  <h3 class="review-main-title"><%= Spree.t(:reviews) %></h3>
+  <% if Spree::Reviews::Config[:include_unapproved_reviews] == false and @product.reviews.approved.count == 0 %>
+    <p class="reviews-none"><%= Spree.t(:no_reviews_available) %></p>
+  <% else %>
+    <% for review in (Spree::Reviews::Config[:track_locale] ? @product.reviews.localized(I18n.locale) : @product.reviews).default_approval_filter.preview %>
+      <%= render 'spree/reviews/review', review: review %>
+    <% end %>
+  <% end %>
+  <div id="new-review"></div>
+  <% if spree_current_user.present? %>
+    <div class='review-title'>Write your own review </div>
+    <div id='review-form-feedback' style='color:red;'></div>
+    <%= render 'spree/reviews/new_form', review: @review, product: @product%>
+  <% else %>
+    <%= link_to 'Login to write a review', '/login'%>
+  <%end %>
+</div>

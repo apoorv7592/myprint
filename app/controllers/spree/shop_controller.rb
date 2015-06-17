@@ -56,6 +56,7 @@ module Spree
             @lead = Lead.new
         end
 
+
     end
 end
 
