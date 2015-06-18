@@ -99,7 +99,7 @@ Rails.application.routes.draw do
     post '/add_comment', to: 'comments#add_comment', as: 'add_comment'
     get '/test/:id', to: 'discovers#test', as: 'test_product'
     post '/delete_comment', to: 'comments#delete_comment', as: 'delete_comment'
-    get '/review_form/:id', to: 'reviews#review_form', as: 'review_form'
+    get '/other_forms/:id', to: 'reviews#other_forms', as: 'other_forms'
 
     get '/search'  => 'solrsearch#index', as: 'search'
     routes = lambda do

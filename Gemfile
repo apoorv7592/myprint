@@ -106,7 +106,7 @@ gem 'binding_of_caller'
 gem 'popen4'
 
 gem 'seed-fu'
-gem 'omniauth-facebook'
+#gem 'omniauth-facebook'
 gem 'spree_social', github: 'spree-contrib/spree_social', branch: 'master'
 
 #user reviews

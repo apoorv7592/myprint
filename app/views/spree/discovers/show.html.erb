@@ -292,7 +292,7 @@ function createmodal(x){
 	}
 	});
 	// to get the review form for the product
-	$.get('/review_form/'+x);
+	$.get('/other_forms/'+x);
 }	
 	
 function min(arr)
@@ -400,6 +400,7 @@ function getsubcategories(){
 </head>
 
 <body>
+
 	<div id="main">
 		<div id="head">
 		<div id="header">
@@ -506,6 +507,7 @@ function getsubcategories(){
 				</div>
 				<div class="designer_name">
 				</div>
+				<div id='follow-cont'></div>
 				<button class="btn bttn" style="float:right;position:relative;top:20px;background-color:#6BBCBF;color:white;"><i class="fa fa-arrow-circle-right"></i> Follow this designer</button>
 		</div>
 		<div class="modal-body">

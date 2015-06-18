@@ -66,7 +66,10 @@
 					<%= yield :templates %>
 				</div>
 				<%#= render partial: 'spree/shared/footer' %>
-
+				<div> Params</div>
+				<%= params.inspect %>
+				<div>Auth Hash</div>
+				<%=session[:omniauth]%>
 			</div>
 	</body>
 </html>

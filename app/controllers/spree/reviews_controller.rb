@@ -39,9 +39,10 @@ class Spree::ReviewsController < Spree::StoreController
     end
   end
 
-  def review_form
+  def other_forms
     @product = Spree::Product.find(params[:id])
     @review = @product.reviews.new
+    @designer = @product.designer
     respond_to do |format|
       format.js
     end
