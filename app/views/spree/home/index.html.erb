@@ -1,399 +1,553 @@
+<script type="text/javascript">
+default_colwidth=230;
+colwidth=0;
+colmargin=10;
+colheights=[];
+colnum=0;
+searchval="";
+gutter=0;
+modalid=-1;
+cardsdata = [];
+$(document).ready(function(){
+  
+  $(document).on("click","#category",function(){
+    $("#tail").toggle();
+    $("#category_box").toggle();
+  });
+  
+  $(document).click(function(e){
+    if(e.target.id != "category_box" && e.target.id != "category" && e.target.id != "tail")
+    {
+      $("#tail").hide();
+      $("#category_box").hide();
+    }
+  });
+  
+  // cardsarea layout starts
+  colinitializer();
+  getsubcategories();
+  getcards(searchval);
+  
+  $(window).load(colinitializer);
+  
+  var timer;
+  $(window).bind('load', function() {
+    if(timer)
+    clearTimeout(timer);
+    timer = setTimeout(function(){colinitializer();}, 100);
+  });
+  
+  $(window).resize(function(){colinitializer();});
+  
+  $(window).bind('resize', function() {
+    if(timer)
+    clearTimeout(timer);
+    timer = setTimeout(function(){colinitializer();}, 100);
+  });
+  
+  var page = 2
+  $(window).scroll(function(){
+    if($(window).scrollTop() == $(document).height() - $(window).height())
+    {
+      getcards(page);
+      page = page+1;
+    }
+  }
+  );
+  
+  /*$("#search").on("input",function()
+    {
+      $('#cardsarea').empty();
+      
+      for(var i=0 ; i<colnum ; i++)
+        colheights[i]=colmargin;
+      
+      getcards(searchval);
+    }
+  );*/
+  
+  //cardsarea layout ends
+  
+  $(document).on("mouseover",".card",function(){
+    $(this).find(".addtowishlist").css("visibility","visible");
+  });
+  
+  $(document).on("mouseout",".card",function(){
+    $(this).find(".addtowishlist").css("visibility","hidden");
+  });
+  
+  // popup layout starts
+  
+  $(document).on("click","#closemodal",function(){
+    $('#myModal').modal('hide');
+  });
+  
+  $('#myModal').on('show.bs.modal', function () {
+    $('#main').addClass('blur');
+    $(".nextcard").show();
+    $(".prevcard").show();
+    $(".closemodal").show();
+  })
 
-<link href='http://fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic' rel='stylesheet' type='text/css'>
-
-
-<style>
-h2 {
-   width: 100%; 
-   text-align: center; 
-   border-bottom: 1px solid #000; 
-   line-height: 0.1em;
-   margin: 10px 0 15px; 
-   font-size: 30px;
-   font-family: 'Old Standard TT', serif;
-   font-style: italic; 
-} 
-
-h2 span { 
-    background:#fff; 
-    padding:20px 10px; 
-}
-
-h4 {
-     font-size: 23px;
-     font-family: 'Old Standard TT', serif;
-     font-style: italic; 
-     float: right;
-     margin-right: 10px;
-     margin-left: 10px;
-
-}
-
-h5 {
-     font-size: 17px;
-     font-family: 'Old Standard TT', serif;
-     font-style: italic; 
-
-}
-
-p span{ 
-font-weight: normal;}
-
-h6{     
-     font-size: 20px;
-     font-family:Times; 
-     margin-top:1px;
-     margin-bottom:1px;
-}
-
-h3{
-  margin-top:1px;
-  font-size: 30px;
-  font-family:Times;
-}
-
-#mask {
-  position:absolute;
-  margin-left:-150px;
-  margin-top:-150px;
-  z-index:9000;
-  background-color:#000;
-  display:none;
-}
-
-#boxes .window {
-  position:fixed;
-  width:700px;
-  height:200px;
-  display:none;
-  z-index:9999;
-  padding:20px;
-}
-
-
-#boxes #dialog2 {
-  width:630px; 
-  height:340px;
-  padding:50px 0 20px 25px;
-  margin-top: 150px;
-  margin-left: 10px;
-}
-
-
-#popupfoot{
-  font-size: 5px;
-  padding: 0 auto;
-
-}
-#popupfoot a{
-  text-decoration: none;
-  font-size: 20px;
-  color:white;
-}
-
-
-.emailpopup{
-height:23px;
-width:180px;
-padding:5px;
-font-size:12px;
-background:#ffffff;
-
-}
-.submitpopup{
-height:20px;
-width:60px;
-padding:1px;
-font-size:9px;
-background:#ffffff;
-}
-
-.whychooseus{
-    width:590px;
-    font-weight: normal;
-}
-
-.smallspan{
-  width:50px;
-  height:65px;
-  float:left;
-  color: #6BBCBF;
-}
-
-.bigspan{
-  float:left;
-  width:525px;
-  height:65px;
-  padding-left: 20px;
-}
-
-ul.choose li{
-  margin-bottom: 30px;
-  margin-left: -30px;
-}
-
-
-</style>
-
-
-<script>
-
-$(document).ready(function() {  
-
-//if the cookie hasLaunch is not set, then show the modal window
-if (!readCookie('hasLaunch')) {
-    //launch it
-    launchWindow('#dialog2');       
-    //then set the cookie, so next time the modal won't be displaying again.
-    createCookie('hasLaunch', 1, 1);
-}
-
-//if close button is clicked
-$('.window .close').click(function () {
-    $('#mask').hide();
-    $('.window').hide();
-});     
-
-//if mask is clicked
-$('#mask').click(function () {
-    $(this).hide();
-    $('.window').hide();
-});         
-
-
-$(window).resize(function () {
-
-    var box = $('#boxes .window');
-
-    //Get the screen height and width
-    var maskHeight = $(document).height();
-    var maskWidth = $(window).width();
-
-    //Set height and width to mask to fill up the whole screen
-    $('#mask').css({'width':maskWidth,'height':maskHeight});
-
-    //Get the window height and width
-    var winH = $(window).height();
-    var winW = $(window).width();
-
-    //Set the popup window to center
-    box.css('top',  winH/2 - box.height()/2);
-    box.css('left', winW/2 - box.width()/2);
-
-}); 
-
+  $('#myModal').on('hide.bs.modal', function () {
+    $('#main').removeClass('blur');
+    $(".nextcard").hide();
+    $(".prevcard").hide();
+    $(".closemodal").hide();
+  })
+  
+  $(document).on("click","#nextcard",function(){
+    
+    var cardnum = $(".card").index($("#"+modalid));
+    if(cardnum < $('.card').length-1)
+      cardnum++;
+    else
+      cardnum=0;
+    var nextid = $(".card:eq("+cardnum+")").attr("id");
+    createmodal(nextid);
+  });
+  
+  $(document).on("click","#prevcard",function(){
+    var cardnum = $(".card").index($("#"+modalid));
+    if(cardnum > 0)
+      cardnum--;
+    else
+      cardnum = $('.card').length-1;
+    var previd = $(".card:eq("+cardnum+")").attr("id");
+    createmodal(previd);
+  });
+  
+  $(document).on("click",".cardimage",function(){
+    var x=$(this).parent().attr('id');
+    createmodal(x);
+  });
+  
+    $(document).on("click","#scroll-down",function () {
+      var select = $(this);
+      select.prop("disabled",true);
+      $('.modal-gallery').animate({
+        scrollTop:$('.modal-gallery').scrollTop()+84
+      },"ease",function(){select.prop("disabled",false);});
+    });
+    
+    $(document).on("click","#scroll-up",function () {
+      var select = $(this);
+      select.prop("disabled",true);
+      $('.modal-gallery').animate({
+        scrollTop:$('.modal-gallery').scrollTop()-84
+      },"ease",function(){select.prop("disabled",false);});
+    });
+  
+    $(document).on('mouseover','.gallerybutton',function(){
+      $(".selected").removeClass("selected");
+      $(this).addClass("selected");
+      $(".modal-image").attr("src",$(".selected img").attr("src"));
+      //replace this by source of image linked to that small image
+    });
+    
+    $(document).on("click","#scroll-right",function () {
+      var select = $(this);
+      select.prop("disabled",true);
+      $('.designer_gallery').animate({
+        scrollLeft:$('.designer_gallery').scrollLeft()+180
+      }, "ease",function(){select.prop("disabled",false);});
+    });
+    
+    $(document).on("click","#scroll-left",function () {
+      var select = $(this);
+      select.prop("disabled",true);
+      $('.designer_gallery').animate({
+        scrollLeft:$('.designer_gallery').scrollLeft()-180
+      }, "ease",function(){select.prop("disabled",false);});
+    });
+    
+    
+    //popup layout ends   
+    
+    //login window
+      
+    $(document).on("click","#userid",function(){
+      $("#wrapper").css({"top":parseInt($(window).height()/2-$('#wrapper').outerHeight()/2)+"px","left":parseInt($(window).width()/2-$("#wrapper").outerWidth()/2)+"px"});
+      $("#wrapper").toggle();
+      $("#main").toggleClass("blur");
+    });
+  
+    $(document).on("click","#close",function(){
+      $("#wrapper").hide();
+      $("#main").removeClass("blur");
+    });
+    
+    //login window
 });
 
-function createCookie(name,value,days) {
-if (days) {
-    var date = new Date();
-    //date.setTime(date.getTime()+(days*24*60*60*1000));
-    date.setTime(date.getTime()+(1*24*60*60*1000));
-    var expires = "; expires="+date.toGMTString();
-}
-else var expires = "";
-document.cookie = name+"="+value+expires+"; path=/";
-}
 
-function readCookie(name) {
-var nameEQ = name + "=";
-var ca = document.cookie.split(';');
-for(var i=0;i < ca.length;i++) {
-    var c = ca[i];
-    while (c.charAt(0)==' ') c = c.substring(1,c.length);
-    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-}
-return null;
-}
-
-function launchWindow(id) {
-
-    //Get the screen height and width
-    var maskHeight = $(document).height();
-    var maskWidth = $(window).width();
-
-    //Set heigth and width to mask to fill up the whole screen
-    $('#mask').css({'width':maskWidth,'height':maskHeight});
-
-    //transition effect     
-    $('#mask').fadeIn(1000);    
-    $('#mask').fadeTo("slow",0.8);  
-
-    //Get the window height and width
-    var winH = $(window).height();
-    var winW = $(window).width();
-
-    //Set the popup window to center
-    $(id).css('top',  winH/2-$(id).height());
-    $(id).css('left', winW/2-$(id).width()/2);
-
-    //transition effect
-    $(id).fadeIn(2000); 
-
-
-}
-
-</script>
-<% p = Discover.first%>
-<%= link_to 'Test Product', discover_path(p) %>
-
-<div id="boxes">
-    <!-- Start of Sticky Note -->
-  <div id="dialog2" class="window">
-    <div style="position:relative;" >
-    <%= image_tag 'signuppop.jpg'%>
-    <% @subscriber ||= Spree::Chimpy::Subscriber.new %>
-
-     <%= form_for @subscriber do |f| %>
-
-        <div style="position:absolute;top:220px;left:375px">
-          <%= f.email_field :email,placeholder:"enter your email address", class:"emailpopup" %>
-        </div>
-        <div style="position:absolute;top:250px;left:435px">
-          <%=f.submit :SignUp,:class=>"submitpopup btn btn-default btn-large" %>
-        </div>
-     <% end %>
-    </div>
-    <div id="popupfoot"> <a href="" class="close"><span class="glyphicon glyphicon-remove-sign"></span></a>   
-    </div>
-  </div>
-    <!-- End of Sticky Note -->
-<!-- Mask to cover the whole screen -->
-  <div id="mask"></div>
-</div>
-
-
-<!--index page starts from here-->
-<div id='result_json'></div>
-<div class="col-md-12" style="height:500px;width:1000px;margin-bottom:30px;background:rgba(1,0,0,0.1);display:inline;">
-<%= render 'main_banner'%>
-</div>
-
- <div class="col-md-12" style="height:auto; width:1000px;margin-bottom:35px;">     
-    <div class="col-md-8" style="height:440px;width:592px;margin-right:8px;">
-              <div class="whychooseus">
-                    <h3>Why choose us</h3>
-                    <ul class="choose">
-                        <li class="cust">
-                        <span class="smallspan"><i class="fa fa-paint-brush fa-3x"></i></span>
-                        <span class="bigspan"><h6><b>Customization</b></h6> Modify designs to suit your style and taste</span></li>
-                        <li class="cust">
-                        <span class="smallspan"><i class="fa fa-user fa-3x"></i></span>
-                        <span class="bigspan"><h6><b>Free Dedicated Designer</b></h6> Get experienced Graphic Designer to assit you in end-to-end customization</span></li>
-                        <li class="cust">
-                        <span class="smallspan"><i class="fa fa-rocket fa-3x"></i></span>
-                        <span class="bigspan"><h6 ><b>No Hassles</b></h6> Get all the services at your door step</span></li>
-                        <li class="cust">
-                        <span class="smallspan"><i class="fa fa-stack-overflow fa-3x"></i></span>
-                        <span class="bigspan"><h6><b>Wide range of designs</b></h6> Exclusive and unique designs from world class designers</span></li>
-                        <li class="cust">
-                        <span class="smallspan"><i class="fa fa-envelope fa-3x"></i></span>
-                        <span class="bigspan"><h6><b>Free Recipient Addressing</b> </h6> We add recipient addresses on your envelopes so that you can save your time</span></li>
-                        <li class="cust">
-                        <span class="smallspan"><i class="fa fa-thumbs-up fa-3x"></i></span>
-                        <span class="bigspan"><h6 ><b>Quality you can feel</b></h6>  Luxe paper and best prints. We bet you will fall in love with our cards</span></li>
-                    </ul>
-                </div>
-    </div>    
-    <div class="col-md-4" style="height:440px;width:392px;margin-left:8px;"> 
-        <h3>Get FREE Design advice</h3>  
-    <div class="col-md-4" style="height:400px;width:392px;box-shadow: 0px 0px 3px 3px rgba(0,0,0,0.4);padding:20px;"> 
-    <p style= "font-weight:normal;margin-left:20px;margin-bottom:20px;">Get an Expert Designer to help you Choose, Customize <br>and Buy our cards.<br></p>
-        <%= render 'spree/leads/new_home' %>
-    <p style= "font-weight:normal;margin-left:15px;">or call +91-9953733764 to talk to your dedicated designer</p>
-    </div>
-    </div>
- </div>
-
-<!--<div class="col-md-12" style="height:auto;width:1000px;margin-bottom:30px;">
-<h2><span> Services at your Doorstep</span></h2> 
-</div> 
-
-<div class="col-md-12" style="height:230px;width:1000px;margin-bottom:50px;background:rgba(1,0,0,0.1);display:inline;">
-  	<%= render 'second_banner'%>
-</div>-->
-
-<div class="col-md-12" style="height:auto;width:1000px;margin-bottom:30px;">
-<h2><span> How it Works </span></h2> 
-</div> 
-
-<div class="col-md-12" style="height:650px;width:1000px;margin-bottom:30px;background:rgba(1,0,0,0.1);display:inline; ">
-<%= render 'fifth_banner' %>  
-</div>
-
-<div class="col-md-12" style="height:auto;width:1000px;margin-bottom:30px;">
-<h2><span> Other Invitations </span></h2>
-</div>
-
-
-<div class="col-md-12" style="height:auto;width:1000px;margin-bottom:30px;">
-    <div class="col-md-6" style="height:311px;width:492px;margin-right:8px;background:pink;display:inline;">
-    <%= render 'third_banner'%>
-    </div>
-    <div class="col-md-6" style="height:311px;width:492px;margin-left:8px;background:lavender;display:inline;">
-    <%= render 'fourth_banner'%>
-    </div>
-</div>
-
-
-<div class="col-md-12" style="height:70px;width:1000px;margin-bottom:10px;">
-  <div class="col-md-6" style="height:150px;width:492px;margin-right:8px;display:inline; margin-top:10px;text-align:center;">
-     <a href="/other-invitations/bridal-shower-invitations">
-        <p><span style="font-size:16px; text-align:center; margin-top:10px; width:49%; color:#6BBCBF"> Shop all Bridal Shower Invitations<i class="fa fa-arrow-circle-right"></i></span></p>
-     </a>
-  </div>
-  <div class="col-md-6" style="height:70px;width:492px;margin-left:8px; display:inline; margin-top:10px;text-align:center;">
-     <a href="/other-invitations/1st-birthday-party-invitations"> 
-     <p><span style="font-size:16px; text-align:center; margin-top:10px; width:49%; color:#6BBCBF"> Shop all 1st Birthday Party Invitations<i class="fa fa-arrow-circle-right"></i></span></p>
-     </a>
-  </div>
-</div>
-
-
- <div class="col-md-12" style="height:auto; width:1000px;margin-bottom:30px;">     
-    <div class="col-md-4" style="height:140px; width:321px; margin-right:8px;">
-    <a href="/why-buy-from-us" style="text-decoration:none;color:#000;">
-        <%= image_tag 'wbuyus.jpg' %>
-    </a>
-    </div>
-    
-    <div class="col-md-4" style="height:140px; width:322px; border: 1px solid rgba(1,0,0,0.3); margin-right:8px;margin-left:8px;" >
-    <a href = "/designers/ruchi-singh">
-        <div style="height:140px;width:220px; text-align:center;float:left;">
-           <p><span style="font-size:24px; height:auto; font-family:Times; text-align: center; margin-top:2px; margin-bottom: 3px; margin-left: 5px; width:49%;color:black;"> Meet our Designer of the month
-              </span> 
-           </p>
-           <p><span style="font-size:20px; height:auto; font-family:Times; text-align: center; margin-top:10px; margin-left: 5px; width:49%; font-style:italic;"><%= @designers.name %>
-            </span> 
-           </p>
-        </div>
-        <div style="height:140px;width:100px;float:left;margin-top:10px;">
-            <%= image_tag @designers.avatar.url(:thumb),style:'grayscale:(1,0,0,0.2);'%>
-        </div>
-      </a>
-    </div>
-    
-    <div class="col-md-4" style="height:140px; width:321px;margin-left:8px;"> 
-    <a href="/paper-and-print-styles" style="text-decoration:none;color:#000;">
-        <%= image_tag 'freeship.jpg' %>
-    </a>
-    </div>
-</div>
-
-
-<script type="text/javascript">
-  var ready;
-  ready = function(){
-    $('.carousel').carousel({
-        interval: 1000
-    });
-  };
+function getcards(page_no){
   
-  $(document).ready(ready);
-  $( document ).on('page:load',ready);
+  $.ajax({  
+  dataType:"json",
+  async:"TRUE",
+  url:"<%= api_get_default_feed_path%>",
+  method:"GET",
+  data:{cardnum:$(".card").length,range:4*colnum, page:page_no},
+  beforeSend:function(){$("#loaderarea").show();},
+  success:function(data){
+    cardsdata.push.apply(cardsdata,data);
+    for(var i=0 ; i<data.length ; i++){
+      var card = "<div id=\""+data[i]['id']+"\" class=\"card\"><div class=\"cardimage\" type=\"button\" class=\"btn\" data-toggle=\"modal\" data-target=\"#myModal\"><img src=\""+data[i]['spree_assets'][0]['url']+"\"></div><div class=\"cardpanel\"><button class=\"buyitnow\"><strong>Buy Now</strong></button><div class=\"pricing\">Rs."+ data[i]['price']+"</div><div class=\"cardinfo\">"+data[i]['short_descrip']+"</div><div class=\"designer_info\"><a href=/designers/"+data[i]['designer']['slug']+" class=\"btn bttn\" style=\"padding:0;background:white;color:#5F5F5F\"><image src=\""+data[i]['designer']['img']+"\" style=\"height:35px;\" class=\"img-circle\" > "+data[i]['designer']['name']+"</a></div></div><button class=\"btn addtowishlist bttn\"><i class=\"fa fa-heart fa-1x\" style=\"position:relative;left:-6px;top:-3px\"></i></button></div>";
+      $("#cardsarea").append(card);
+    }
+    colinitializer();
+    $("#loaderarea").hide();
+    return;
+  },
+  error:function(){
+    alert("ERROR! ERROR! ERROR!");
+  }
+  });
+}
+  
+function createmodal(x){
+  $.ajax({  
+  dataType:"json",
+  async:"TRUE",
+  url: "/api/modal_info/"+x,
+  method:"GET",
+  data:{cardnum:x, id: x},
+  success:function(data){
+    modalid=x;
+    data1={};
+    for(var i=0 ; i<cardsdata.length ; i++)
+    {
+      if(x==cardsdata[i]['id'])
+      {
+        data1=cardsdata[i];//this is the info of the clicked product;
+        break;
+      }
+    }
+    var gallery="";
+    for(var i=0 ; i<data1["spree_assets"].length ; i++)
+    { 
+      gallery+="<div class=\"gallerybutton";
+      if(i==0)
+      gallery+=" selected";
+      gallery+="\"><img src=\""+data1["spree_assets"][i]['url']+"\"></div>";
+    }
+    $(".modal-gallery").html(gallery);
+    if(data1["spree_assets"].length>5)
+    {
+      $("#scroll-up").show();
+      $("#scroll-down").show();
+    }
+    else
+    {
+      $("#scroll-up").hide();
+      $("#scroll-down").hide();
+    }
+    $(".modal-gallery").scrollTop(0);
+    $(".designer_gallery").scrollLeft(0);
+    
+    $(".modal-image").attr("src",$(".selected img").attr("src"));
+    $(".designer_name").html(data1['designer']['name']);
+    $(".protitle").html("<strong>"+data1['name']+"</strong>");
+    $(".proprice").html("<strong>Rs. "+data1['price']+ "</strong>");
+
+    $(".variant_id").html("<input id='token' name='variant_id[]' type='hidden' value='"+data[0]['master_variant_id']+"' />")
+    $(".stock").html("Only 1 Left in Stock");
+    $(".filterselect").html("<select><option>option1</option><option>option2</option><option>option3</option><></select>")
+    $(".overview").html("<h4>Overview</h4><ul><li>Handmade item</li><li>Made to order</li><li>Feedback: 161 reviews</li><li>Ships worldwide from Düsseldorf, Germany</li></ul>");
+    $(".additionalinfo").html("This shop accepts Etsy Gift Cards");
+    $("#item_details").html(data1['description']);
+    $(".designer_image img").attr("src",data1['designer']['img']);
+    $("#product_id").attr("value",data1['id']);
+    
+    // fetch and insert the comments
+    $("#all-comments").html("");
+    var logged_in= "<%= spree_current_user.present? %>";
+    var current_user_id = "<%= spree_current_user.id if spree_current_user.present? %>";
+    $("#new-comment").html("");
+    for(var i = 0; i < data[0]['comments'].length; i++){
+      if(logged_in== 'true' && current_user_id== data[0]['comments'][i]['user_id']){
+        $("#all-comments").append("<div id=comment-"+data[0]['comments'][i]['id']+" class='row comment-cont'><div class='col-md-11'><div class='comment-user'>"+data[0]['comments'][i]['user']+"</div><div class='comment-body'>"+data[0]['comments'][i]['body']+"</div></div><div class='col-md-1'></div><form method='post' action='/delete_comment' data-remote='true' accept-charset='UTF-8'><div style='display:none'></div><input id='comment_id' type='hidden' value='"+data[0]['comments'][i]['id']+"' name='comment_id'></input><input data-confirm='Are you sure !!' class='delete-button' type='submit' value='x' name='commit' data-toggle='tooltip' data-placement='left' title='Delete this comment'></input></form></div>");
+      }
+      else
+      {
+        $("#all-comments").append("<div class='row comment-cont' style='border-bottom:1px solid #F2F2F2;'><div class='col-md-11'><div class='comment-user'>"+data[0]['comments'][i]['user']+"</div><div class='comment-body'>"+data[0]['comments'][i]['body']+"</div></div><div class='col-md-1'></div></div>");    
+      }
+    }
+    //fetch similar products and run loop
+    $(".similar_products").html("");
+    for(var i=0; i<6; i++)
+    {
+      $(".similar_products").append("<a href=\"#\" onclick=\"createmodal("+data["sim_products"][i].number+")\"><div class=\"simproduct bttn\"><div style=\"width:170px;height:170px;text-align:center;vertical-align:middle;\"><img src=\""+data["sim_products"][i].image+"\" style=\"height:170px;width:170px;\"></div><div style=\"width:170px;height:25px\">Prod Name</div><div style=\"width:170px;height:25px;\">$ "+data["sim_products"][i].number+"</div></div></a>");
+    }
+    $(".designer_gallery").html("");
+    for(var i=0 ; i<8 ; i++)
+    {
+      $(".designer_gallery").append("<td><a href=\"#\"  onclick=\"createmodal("+data["des_products"][i].number+")\"><div class=\"desproduct bttn\"><div><img src=\""+data["des_products"][i].image+"\" style=\"height:160px;width:160px;\"></div><div style=\"width:160px;height:20px\">Prod Name</div><div style=\"width:160px;height:20px;\">$ "+data["des_products"][i].number+"</div></div></a></td>");
+    }
+  
+  },
+  error:function(){
+    alert("ERROR! ERROR! ERROR!");
+  }
+  });
+  // to get the review form for the product
+  $.get('/other_forms/'+x);
+} 
+  
+function min(arr)
+{
+  var min=arr[0],minindex=0;
+  for(var i=1 ; i<colnum ; i++)
+  {
+    if(arr[i]<min)
+    {
+      min=arr[i];
+      minindex=i;
+    }
+  }
+  return minindex;
+} 
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+function colinitializer(){
+    if($(document).innerWidth()<480)
+    {
+      colwidth=($(window).innerWidth()-3*colmargin)/2;
+    }
+    else 
+      colwidth=default_colwidth;
+    $(".card").css("width",colwidth+"px");
+    $(".buyitnow").css("width",colwidth-20+"px");
+    colnum=Math.floor(Math.max($(window).innerWidth()/(colwidth+colmargin),1));
+    for(var i=0 ; i<colnum ; i++)
+    colheights[i]=colmargin;
+    $("#cardsarea").outerWidth(colnum*(colwidth+colmargin));
+    if($(document).innerWidth()>480)
+    $("#header").outerWidth(colnum*(colwidth+colmargin));
+    else
+    $("#header").outerWidth($(window).innerWidth()-2*colmargin);  
+    $("#loaderarea").outerWidth(colnum*(colwidth+colmargin));
+    $("#search").outerWidth(Math.min($("#category").offset().left-($("#logo img").width()+$("#logo").offset().left)-30,600));
+    $("#category_box").css("right",parseInt($(window).width()-$('#category').offset().left-300)+"px");
+    $("#tail").css("right",parseInt($(window).innerWidth()-$('#category').offset().left-100)+"px");
+    $(".modal-dialog").width(Math.min($(window).innerWidth()-200,1000));
+    $(".closemodal").css("left",($(window).innerWidth()+$('.modal-dialog').width())/2+20+"px");
+    $(".nextcard").css("left",($(window).innerWidth()+$('.modal-dialog').width())/2+20+"px");
+    $(".prevcard").css("right",($(window).innerWidth()+$('.modal-dialog').width())/2+37+"px");
+    positioncards();
+}
+
+function positioncards(){
+    if($(window).innerWidth()<480)
+      gutter=0;
+    else
+      gutter=($(window).innerWidth()-colnum*(colwidth+colmargin))/2-colmargin/2;
+    $(".card").each(function(){
+      var left,top,col;
+      col=min(colheights);
+      left=col*(colwidth+colmargin)+colmargin+gutter;
+      top=colheights[col]+$("#cardsarea").offset().top;
+      
+      $(this).css({"left":left+"px","top":top+"px"});
+      
+      colheights[col]+=$(this).outerHeight()+colmargin;
+    });
+    
+    var max=0;
+    for(var i=0 ; i<colnum ; i++)
+      if(colheights[i]>max)
+        max=colheights[i];
+    
+    $("#loaderarea").css({"top":parseInt(max+$("#cardsarea").offset().top)+"px","left":$("#header").offset().left+"px"});
+}
+function getsubcategories(){}
+
+
 </script>
 
+</head>
 
+<body>
 
+  <div id="main">
+    
+    <div id="cardsarea">
+    </div>
+    
+    <div id="loaderarea">
+      <div style="display:block;margin:0 auto;width:30px;">
+      <i class="fa fa-spinner fa-pulse fa-3x"></i>
+      </div>
+    </div>
+    
+  </div>
+  
+  <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog" >
+    <div class="modal-content">
+    <div class="modal-header">
+        <div class='by-designer'>By</div>
+        <div class="designer_image">
+          <img style="max-height:80px; max-width:80px" class="img-circle img-responsive center-block">
+        </div>
+        <div class="designer_name">
+        </div>
+        <div id='follow-cont'></div>
+        <button class="btn bttn" style="float:right;position:relative;top:20px;background-color:#6BBCBF;color:white;"><i class="fa fa-arrow-circle-right"></i> Follow this designer</button>
+    </div>
+    <div class="modal-body">
+    <div class="leftmodal">
+      <div class="modal-slide">
+        <div style="width:80px;height:20px;float:left;margin-top:10px;">
+        <a href="#" id="scroll-up"><i style="margin-left:33px;color:#6BBCBF" class="fa fa-chevron-circle-up fa-1x"></i></a>
+        </div>
+        <div class="modal-gallery-container">
+          <div class="modal-gallery">
+          </div>
+        </div>
+        <div style="width:80px;height:20px;float:left">
+        <a href="#" id="scroll-down"><i style="margin-left:33px;color:#6BBCBF" class="fa fa-chevron-circle-down fa-1x"></i></a>
+        </div>
+      </div>
+      <img class="modal-image">
+      <div class="modaltabs" role="tabpanel">
+        <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#comments" aria-controls="comments" role="tab" data-toggle="tab">Comments</a></li>
+          
+          <li role="presentation" ><a href="#item_details" aria-controls="item_details" role="tab" data-toggle="tab">Item Details</a></li>
+          <li role="presentation"><a href="#item_ratings" aria-controls="item_ratings" role="tab" data-toggle="tab"> <span id='tab-ratings'> Ratings</span></a></li>
+          <li role="presentation"><a href="#policies" aria-controls="policies" role="tab" data-toggle="tab">Shipping & Policies</a></li>
+          </ul>
 
+             <!-- Tab panes -->
+             <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="comments">
+                <div id="all-comments">
+                </div>
+                <div id="new-comment"></div>
+                  <div class="row">
+                    <% if spree_current_user %>
+                      <%= render 'spree/shared/add_comment'%>
+                    <% else %>
+                      
+                      <%= link_to 'Login to comment', '/login', style:'margin-top: 10px; font-weight:bold;'%>
+                          
+                      
+                    <% end %>
+                  </div>
+              </div>
+              <div role="tabpanel" class="tab-pane " id="item_details">
+                
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="item_ratings">
+                yyy
+              </div>
+              
+              <div role="tabpanel" class="tab-pane fade" id="policies">
+                                Shipping Costs
+                Shipping to
 
+                Cost
+                $5.66 USD
+                Get shipping costs for multiple items in your cart. Shipping upgrades are available for this item.
+                Policies
+                Payment
+                All Payments are done via direct pay or paypal. 
+
+                I am not allowed to include VAT in my prices because I take advantage of the “Kleinunternehmerregelung” (e.g. small business solution) written down in German VAT tax law (UstG §19)
+                Shipping
+                After receiving the complete payment I will start to produce your order. I will send you a notification when your item has shipped - this will go to the email address that you signed up to Etsy with. I send all orders by letter. If you would like to upgrade to Priority or Express Shipping, please contact me to arrange this before purchase. I will then adjust the shipping costs by additional charges. 
+              </div>
+            </div>
+
+      </div>
+    </div>
+    <div class="rightmodal">
+      <div class="modal-info">
+        <div class="protitle">
+        </div>
+        <div class="proprice">
+        </div>
+        <%= form_for :order, url: populate_orders_path do |f| %>
+          <div class="quantitycontainer">
+            Quantity
+            <div class="variant_id">
+            </div>
+            <div class="quantity">
+              <%= select_tag 'quantity[]', options_for_select((1..10))%>
+            </div>
+          </div>
+          <div class="stock">
+          </div>
+          <div class="filter">
+            Size<br>
+            <div class="filterselect">
+            </div>
+          </div>
+          <div class="overview">
+          </div>
+          <div class="additionalinfo">
+          </div>
+          <div class="addtocart">
+          <%= submit_tag 'ADD TO CART', class: 'btn bttn', style:"width:348px;background-color:#6BBCBF;color:white" %>  
+            
+          </div>
+        <% end %>
+      </div>
+      
+  <!--    <div class="share">
+      </div>
+  -->   
+      <div class="similar_products">
+      </div>
+      
+    </div>
+    
+    <div class="designer_products">
+      <div class="scroll-right bttn">
+        <a href="#" id="scroll-right" style="position:relative;left:3px;top:75px;"><i style="color:#6BBCBF" class="fa fa-chevron-circle-right fa-3x"></i></a>
+      </div>
+      <div class="scroll-left bttn">
+        <a href="#" id="scroll-left" style="position:relative;left:3px;top:75px;"><i style="color:#6BBCBF" class="fa fa-chevron-circle-left fa-3x"></i></a>
+      </div>
+      <div class="designer_gallery_container">
+        <div class="designer_gallery">
+        </div>
+      </div>
+    </div>
+    
+    <!--NEVER DELETE THE STABILIZER DIV BELOW-->
+    <div class="stabilizer">
+    </div>
+    
+    </div>
+    
+    </div>
+    </div>
+  </div>
+
+    <div class="closemodal">
+      <button class="btn bttn" id="closemodal"><i style="color:#6BBCBF" class="fa fa-times fa-2x"></i></button>
+    </div>
+    <div class="nextcard">
+      <button class="btn bttn" id="nextcard"><i style="color:#6BBCBF" class="fa fa-chevron-circle-right fa-2x"></i></button>
+    </div>
+    
+    <div class="prevcard">
+      <button class="btn bttn" id="prevcard"><i style="color:#6BBCBF" class="fa fa-chevron-circle-left fa-2x"></i></button>
+    </div>
+    
+    
+</body>
+
+</html>

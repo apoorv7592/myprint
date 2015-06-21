@@ -32,6 +32,7 @@ class Discover < ActiveRecord::Base
 	# Validate the attached image is image/jpg, image/png, etc
 	validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
+	has_many :stories, as: :object
 	searchable do 
         text :name
     end

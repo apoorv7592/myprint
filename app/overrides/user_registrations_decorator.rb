@@ -18,3 +18,11 @@ Deface::Override.new(
   replace: 'div#new-customer h6',
   partial: 'spree/users/new-customer'
 )
+#For navbar
+
+Deface::Override.new(
+  virtual_path: 'spree/shared/header',
+  name: 'add_socials_to_login_extras',
+  insert_after: '[data-hook="login_extras"]',
+  partial: 'spree/shared/social'
+)

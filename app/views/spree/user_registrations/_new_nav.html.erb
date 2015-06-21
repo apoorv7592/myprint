@@ -1,0 +1,25 @@
+<div class="col-md-4 col-md-offset-1">
+			<%= f.text_field :last_name, :class => 'form-control ', value: session[:omniauth]['info']['last_name'] if session[:omniauth]%>
+		</div>
+<div class="col-md-12">
+	<div>
+		<div id="new-customer" data-hook="login">
+			<%= form_for resource, :as => :spree_user, :url => spree.registration_path(@user), html: {class: 'form-horizontal signup-form'} do |f| %>
+			<div data-hook="signup_inside_form">
+				<%= render :partial => 'spree/user_registrations/user_form_nav',  locals: {:f => f} %>
+
+				<div class="form-group text-center">
+					<div class="col-md-8 ">
+						<%= f.submit "Signup with Prindora", :class => 'btn btn-lg btn-success btn-block' %>
+						<div class="signup-tc">*By signing up you agree to our T&C</div>
+					</div>
+				</div>
+			</div>
+			<% end %>
+			<div class="text-center">
+				<%= Spree.t(:or) %>
+				<%= link_to Spree.t(:login_as_existing), spree.login_path %>
+			</div>
+		</div>
+	</div>
+</div>

@@ -42,7 +42,7 @@
 
 			<div  class="col-md-12" style="width:1000px;margin-left:70px;">
 				<%#= render partial: 'spree/shared/topmost_nav' %>
-				<%#= render partial: 'spree/shared/header' %>
+				<%= render partial: 'spree/shared/header' %>
 				<%#= render partial: 'spree/shared/main_nav_bar' %>
 				
 				<div class="row" data-hook>
@@ -66,10 +66,6 @@
 					<%= yield :templates %>
 				</div>
 				<%#= render partial: 'spree/shared/footer' %>
-				<div> Params</div>
-				<%= params.inspect %>
-				<div>Auth Hash</div>
-				<%=session[:omniauth]%>
 			</div>
 	</body>
 </html>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150614193343) do
+ActiveRecord::Schema.define(version: 20150619082919) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -1504,6 +1504,20 @@ ActiveRecord::Schema.define(version: 20150614193343) do
 
   add_index "spree_zones", ["default_tax"], name: "index_spree_zones_on_default_tax"
   add_index "spree_zones", ["kind"], name: "index_spree_zones_on_kind"
+
+  create_table "stories", force: true do |t|
+    t.integer  "actor_id"
+    t.string   "actor_type"
+    t.string   "verb"
+    t.integer  "object_id"
+    t.string   "object_type"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "stories", ["actor_id"], name: "index_stories_on_actor_id"
+  add_index "stories", ["object_id"], name: "index_stories_on_object_id"
 
   create_table "sub_categories", force: true do |t|
     t.string   "name"

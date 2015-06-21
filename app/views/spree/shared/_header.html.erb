@@ -1,45 +1,82 @@
-<style type="">
-	.inner-addon { 
-    position: relative; 
-}
-
-/* style icon */
-.inner-addon .fa {
-  position: absolute;
-  padding-top: 8px;
-  padding-left: 8px;
-  padding-right: 8px;
-  pointer-events: none;
-}
-
-/* align icon */
-.right-addon .fa { right: 0px;}
-
-/* add padding  */
-.right-addon input { padding-right: 30px; }
-
-#logo{
-	margin-bottom: 10px;
-}
-</style>
-
-	<header id="header" data-hook>
-		
-		<div class="container" style="width:1000px;padding:0 !important;margin-bottom:10px;">
-			<div class="row-fluid">
-				<div class="col-md-6" style="float:left;">
-					<figure id="logo" data-hook>
-						<%= link_to image_tag('logo.png', height: 45), root_path %>
-					</figure>
-				</div>
-				
-				<div class="col-md-6" style="float:right;">
-				<div class="inner-addon right-addon">
-			    <i class="fa fa-search"></i>
-			    <%= render :partial => 'spree/shared/search' %>
-                </div>
-				</div>
-				
+<div id="header">
+			<div id="logo">
+				<%= link_to root_path do %>
+					<%= image_tag 'logo.png', height:40, style: 'float:left; margin:5px 0;'%>
+				<% end %>
 			</div>
+			<%= form_tag search_path, method: 'get' do %>
+				<%= search_field_tag :q, '', class: 'hidden480', id: 'search', placeholder: 'Search', value: params[:q]%>
+			<%end %>
+			<a href="cart.html" id="cart" class="bttn"><i class="fa fa-shopping-cart fa-2x"></i></a>
+			
+			<button type="button" class="btn bttn" id="userid" style="height:30px;text-align:center;line-height:15px;">
+				<img src="images/iusa_75x75.26685356_mqfh.jpg" style="height:26px; float:left; top:-5px; position:relative" class="img-circle">
+				<div class="hidden800" style="float:left; margin:auto 10px">
+					Name
+				</div>
+			</button>
+			
+			<button class="btn bttn" style="height:30px;text-align:center;line-height:15px;" id="category" type="button">
+				<span class="hidden800">Categories</span>  <i class="fa fa-bars"></i>
+			</button>
+			
+			<button class="btn bttn display480" id="searchtab" style="height:30px;text-align:center;line-height:15px;" type="button"><i class="fa fa-search"></i></button>
+			
+			<div id="tail"></div>
+			<div id="category_box">
+				<a href="categorypage.html">LINK IT HERE</a>
+				<a href="categorypage.html">LINK IT HERE</a>
+				<a href="categorypage.html">LINK IT HERE</a>
+				<a href="categorypage.html">LINK IT HERE</a>
+				<a href="categorypage.html">LINK IT HERE</a>
+				<a href="categorypage.html">LINK IT HERE</a>
+				<a href="categorypage.html">LINK IT HERE</a>
+				<a href="categorypage.html">LINK IT HERE</a>
+				<a href="categorypage.html">LINK IT HERE</a>
+				<a href="categorypage.html">LINK IT HERE</a>
+				<a href="categorypage.html">LINK IT HERE</a>
+				<a href="categorypage.html">LINK IT HERE</a>
+				<a href="categorypage.html">LINK IT HERE</a>
+				<a href="categorypage.html">LINK IT HERE</a>
+				<a href="categorypage.html">LINK IT HERE</a>
+				<a href="categorypage.html">LINK IT HERE</a>
+				<a href="categorypage.html">LINK IT HERE</a>
+				<a href="categorypage.html">LINK IT HERE</a>
+				<a href="categorypage.html">LINK IT HERE</a>
+				<a href="categorypage.html">LINK IT HERE</a>
+			</div>
+			
+			
 		</div>
-	</header>
+	<div id="wrapper">
+      <div id="leftpart"> 
+        <div role="tabpanel">
+
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#login" aria-controls="login" role="tab" data-toggle="tab">Login</a></li>
+          <li role="presentation"><a href="#sinup" aria-controls="sinup" role="tab" data-toggle="tab">Signup</a></li>
+          </ul>
+
+          <!-- Tab panes -->
+          <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="login">
+           <%= render 'spree/user_sessions/new_nav'%>
+          </div>
+          <div role="tabpanel" class="tab-pane fade" id="sinup">
+            <%= render 'spree/user_registrations/new_nav'%>
+          </div>
+          </div>
+
+        </div>
+      </div>
+      <div id="divider"><div id="updivider"></div><div id="or">OR</div><div id="downdivider"></div></div>
+      <div id="rightpart">
+        <div id="signinwith">Sign in with</div>
+        <div data-hook="login_extras"></div>
+      </div>
+      <div id="close"><i class="fa fa-times"></i></div>
+    </div>
+
+
+</div>

@@ -1,0 +1,32 @@
+# == Schema Information
+#
+# Table name: stories
+#
+#  id          :integer          not null, primary key
+#  actor_id    :integer
+#  actor_type  :string(255)
+#  verb        :string(255)
+#  object_id   :integer
+#  object_type :string(255)
+#  description :string(255)
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  actor_id: 1
+  actor: 
+  verb: MyString
+  object_id: 1
+  object_type: MyString
+  description: MyString
+
+two:
+  actor_id: 1
+  actor: 
+  verb: MyString
+  object_id: 1
+  object_type: MyString
+  description: MyString

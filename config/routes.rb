@@ -27,6 +27,7 @@ Rails.application.routes.draw do
         resources :categories
         get '/get_discovers/:id', to: 'categories#get_discovers', as: 'get_discovers'
         get '/modal_info/:id', to: 'products#modal_info', as: 'modal_info'
+        get 'get_default_feed', to: 'feeds#get_default_feed', as: 'get_default_feed'
       end
     end
 

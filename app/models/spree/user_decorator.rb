@@ -25,13 +25,19 @@ Spree::User.class_eval do
     has_many :discoverfollows, class_name: "Discoverfollow", dependent: :destroy
     has_many :discover_following, through: :discoverfollows, source: :discover
 
+    has_many :stories, as: :actor
+    has_many :stories, as: :object
     # Follows a user.
 	def follow(other_user)
-	  active_relationships.create(followed_id: other_user.id)
+	  if active_relationships.create(followed_id: other_user.id)
+	  	Story.create_story(self,other_user,'follow', '')
+	  end
 	end
 	# Unfollows a user.
 	def unfollow(other_user)
-		active_relationships.find_by(followed_id: other_user.id).destroy
+		if active_relationships.find_by(followed_id: other_user.id).destroy
+			Story.create_story(self,other_user,'unfollow', '')
+		end
 	end
 	# Returns true if the current user is following the other user.
 	def following?(other_user)
@@ -39,11 +45,15 @@ Spree::User.class_eval do
   	end
 
   	def follow_discover(discover)
-  		discoverfollows.create(discover_id: discover.id)
+  		if discoverfollows.create(discover_id: discover.id)
+  			Story.create_story(self, discover, 'follow', '')
+  		end
   	end
 
   	def unfollow_discover(discover)
-		discoverfollows.find_by(discover_id: discover.id).destroy
+		if discoverfollows.find_by(discover_id: discover.id).destroy
+			Story.create_story(self, discover, 'unfollow', '')
+		end
 	end
 
 	def following_discover?(discover)
