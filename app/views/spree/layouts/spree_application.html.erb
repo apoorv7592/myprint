@@ -17,56 +17,43 @@
         </script>
 	</head>
 
-	<body class="<%= body_class %> container" id="<%= @body_id || 'default' %>" data-hook="body" >
+	<body  id="<%= @body_id || 'default' %>" data-hook="body" >
+	<!-- class="<%= body_class %> container" -->
+		<script>
+		  window.fbAsyncInit = function() {
+		    FB.init({
+		      appId      : '1719839441577015',
+		      xfbml      : true,
+		      version    : 'v2.3'
+		    });
+		  };
 
-	<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1719839441577015',
-      xfbml      : true,
-      version    : 'v2.3'
-    });
-  };
+		  (function(d, s, id){
+		     var js, fjs = d.getElementsByTagName(s)[0];
+		     if (d.getElementById(id)) {return;}
+		     js = d.createElement(s); js.id = id;
+		     js.src = "//connect.facebook.net/en_US/sdk.js";
+		     fjs.parentNode.insertBefore(js, fjs);
+		   }(document, 'script', 'facebook-jssdk'));
+		</script>
+			<%= render partial: 'spree/shared/google_analytics' %>
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-
-				<%= render partial: 'spree/shared/google_analytics' %>
-
-
-			<div  class="col-md-12" style="width:1000px;margin-left:70px;">
-				<%#= render partial: 'spree/shared/topmost_nav' %>
-				<%= render partial: 'spree/shared/header' %>
-				<%#= render partial: 'spree/shared/main_nav_bar' %>
-				
-				<div class="row" data-hook>
-					<%= breadcrumbs(@taxon) %>
-					<%= render partial: 'spree/shared/sidebar' if content_for? :sidebar %>
-
-					<div id="content" class="<%= !content_for?(:sidebar) ? "col-sm-12" : "col-sm-8 col-md-9" %>" data-hook>
-						
-			<!-- Notification Message -->
-			<script type="text/javascript">
-				<% flash.each do |msg_type, text| %>
-					 noty({text: 'noty - a jquery notification library!';
-					 	timeout:1500;
-					});
-				<% end %>
-			</script>
-
+			<div class="row">
+				<div  class="col-md-12" >
+					<%#= render partial: 'spree/shared/topmost_nav' %>
+					<%= render partial: 'spree/shared/header' %>
+					<%#= render partial: 'spree/shared/main_nav_bar' %>
+					
+					
 						<%= flash_messages %>
 						<%= yield %>
-					</div>
-					<%= yield :templates %>
-				</div>
-				<%#= render partial: 'spree/shared/footer' %>
+						</div>
+						<%= yield :templates %>
+					
+					<%#= render partial: 'spree/shared/footer' %>
+				</div>	
 			</div>
+			
 	</body>
 </html>
 

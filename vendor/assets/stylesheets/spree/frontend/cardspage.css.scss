@@ -18,7 +18,11 @@
 #main{
 	margin-top:50px;
 }
-
+.logo{
+	margin-left:10px;
+	margin-right:5px;
+	margin-top:10px;
+}
 #category_box{
 	column-count:2;
 	column-gap:40px;
@@ -62,7 +66,7 @@
 
 html, body {
 	font-family: 'Helvetica Neue', 'Helvetica', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', 'Meiryo', 'ＭＳ Ｐゴシック', arial, sans-serif;
-	background-color:#E9E9E9;
+	background-color:#E9E9E9 !important;
 }
 
 #cardsarea
@@ -196,11 +200,11 @@ html, body {
 }
 
 #header{
-	background-color:#eeeee;
+	background-color:white;
 	height:50px;
 	margin:0 auto;
 	display:block;
-	padding:0 5px;
+	padding-bottom:60px;
 }
 
 #userid{

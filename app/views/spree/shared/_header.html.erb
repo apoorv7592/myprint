@@ -1,24 +1,35 @@
-<div id="header">
-			<div id="logo">
+<div class="navbar navbar-default" id="header">
+			<div class="navbar-header" id="logo">
 				<%= link_to root_path do %>
-					<%= image_tag 'logo.png', height:40, style: 'float:left; margin:5px 0;'%>
+					<%= image_tag 'logo.png', height:40, class: 'logo'%>
 				<% end %>
 			</div>
-			<%= form_tag search_path, method: 'get' do %>
-				<%= search_field_tag :q, '', class: 'hidden480', id: 'search', placeholder: 'Search', value: params[:q]%>
+			<%= form_tag search_path, method: 'get', class: 'navbar-form' do %>
+				<%= search_field_tag :q, '', id: 'search', placeholder: 'Search', value: params[:q], class: 'col-md-6' %>
 			<%end %>
-			<a href="cart.html" id="cart" class="bttn"><i class="fa fa-shopping-cart fa-2x"></i></a>
+			<ul class="nav navbar-nav">
+				<li>
+					<button class="btn bttn" style="text-align:center;line-height:15px;" id="category" type="button">
+						<span class="hidden800">Categories</span>  <i class="fa fa-bars"></i>
+					</button>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">	
+				<li>
+					<button type="button" class="btn bttn" id="userid" style="text-align:center;line-height:15px;" id="category"  >
+						<!--<img src="images/iusa_75x75.26685356_mqfh.jpg" style=" float:left; top:-5px; position:relative" class="img-circle"> -->
+						<span class="hidden800 text-center" style="float:left; margin:auto 10px">
+							Name
+						</span>
+					</button>
+				</li>
+				<li>
+					<button action="/cart" method="get" type="button" class="btn bttn" style="text-align:center;height:29px; margin-top:10px;">
+						<span><%= fa_icon "shopping-cart"%></span>
+					</button>
+				</li>
+			</ul>
 			
-			<button type="button" class="btn bttn" id="userid" style="height:30px;text-align:center;line-height:15px;">
-				<img src="images/iusa_75x75.26685356_mqfh.jpg" style="height:26px; float:left; top:-5px; position:relative" class="img-circle">
-				<div class="hidden800" style="float:left; margin:auto 10px">
-					Name
-				</div>
-			</button>
-			
-			<button class="btn bttn" style="height:30px;text-align:center;line-height:15px;" id="category" type="button">
-				<span class="hidden800">Categories</span>  <i class="fa fa-bars"></i>
-			</button>
 			
 			<button class="btn bttn display480" id="searchtab" style="height:30px;text-align:center;line-height:15px;" type="button"><i class="fa fa-search"></i></button>
 			

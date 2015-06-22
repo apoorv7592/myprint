@@ -336,7 +336,6 @@ function colinitializer(){
     else
     $("#header").outerWidth($(window).innerWidth()-2*colmargin);  
     $("#loaderarea").outerWidth(colnum*(colwidth+colmargin));
-    $("#search").outerWidth(Math.min($("#category").offset().left-($("#logo img").width()+$("#logo").offset().left)-30,600));
     $("#category_box").css("right",parseInt($(window).width()-$('#category').offset().left-300)+"px");
     $("#tail").css("right",parseInt($(window).innerWidth()-$('#category').offset().left-100)+"px");
     $(".modal-dialog").width(Math.min($(window).innerWidth()-200,1000));
@@ -379,9 +378,9 @@ function getsubcategories(){}
 <body>
 
   <div id="main">
-    
     <div id="cardsarea">
     </div>
+  
     
     <div id="loaderarea">
       <div style="display:block;margin:0 auto;width:30px;">
