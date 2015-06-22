@@ -5,7 +5,7 @@ module Spree
 				respond_to :json
 				
 				def get_default_feed
-					random_ids = Spree::Product.ids.sort_by{rand}.slice(0, 25)	
+					random_ids = Spree::Product.ids.sort_by{rand}.slice(0, ENV['PER_PAGE'].to_i )	
 					@results = Spree::Product.where(id: random_ids)
 				end
 

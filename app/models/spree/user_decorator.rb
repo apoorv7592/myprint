@@ -7,7 +7,7 @@ Spree::User.class_eval do
 	validates :first_name, presence: true
 	validates :last_name, presence: true
 	#validates :phone, presence: true
-	validates :gender, presence: true
+	#validates :gender, presence: true
 
 	has_many :likes, dependent: :destroy
 

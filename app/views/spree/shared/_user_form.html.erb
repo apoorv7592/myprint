@@ -1,17 +1,30 @@
 	<div class="form-group">
 		<%= f.label 'Name', class: 'col-md-2 control-label signup-label '%>
 		<div class="col-md-4 col-md-offset-1">
-			<%= f.text_field :first_name, :class => 'form-control ', value: session[:omniauth]['info']['first_name'] if session[:omniauth] %>
+			<% if session[:omniauth] %>
+				<%= f.text_field :first_name, :class => 'form-control ', value: session[:omniauth]['info']['first_name'] %>
+			<% else %>
+				<%= f.text_field :first_name, :class => 'form-control', placeholder: 'first name'%>
+			<% end %>
+
 		</div>
 		<div class="col-md-4 col-md-offset-1">
-			<%= f.text_field :last_name, :class => 'form-control ', value: session[:omniauth]['info']['last_name'] if session[:omniauth]%>
+			<% if session[:omniauth]%>
+				<%= f.text_field :last_name, :class => 'form-control ',  value: session[:omniauth]['info']['last_name']%>
+			<% else %>
+				<%= f.text_field :last_name, :class => 'form-control ', placeholder: 'last name' %>
+			<% end %>
 		</div>
 	</div>
 	
 		<div class="form-group">
 			<%= f.label 'Email', class: 'col-md-2 control-label signup-label signup-label ' %>
 			<div class="col-md-9 col-md-offset-1"> 
-				<%= f.email_field :email, :class => 'form-control ', :placeholder => Spree.t(:email),value: session[:omniauth]['info']['email'] if session[:omniauth] %>
+				<% if session[:omniauth]%>
+					<%= f.email_field :email, :class => 'form-control ', :placeholder => Spree.t(:email),value: session[:omniauth]['info']['email'] if session[:omniauth] %>
+				<% else %>
+					<%= f.email_field :email, :class => 'form-control ', :placeholder => Spree.t(:email)%>
+				<% end %>
 			</div>
 		</div>
 		<div class="form-group">
