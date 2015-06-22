@@ -13,6 +13,7 @@ $(document).ready(function(){
   $(document).on("click","#category",function(){
     $("#tail").toggle();
     $("#category_box").toggle();
+    $("#main").toggleClass("blur");
   });
   
   $(document).click(function(e){
@@ -20,6 +21,8 @@ $(document).ready(function(){
     {
       $("#tail").hide();
       $("#category_box").hide();
+      $("#main").removeClass("blur");
+      
     }
   });
   

@@ -10,18 +10,36 @@
 			<ul class="nav navbar-nav">
 				<li>
 					<button class="btn bttn" style="text-align:center;line-height:15px;" id="category" type="button">
-						<span class="hidden800">Categories</span>  <i class="fa fa-bars"></i>
+						Categories
 					</button>
 				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">	
 				<li>
-					<button type="button" class="btn bttn" id="userid" style="text-align:center;line-height:15px;" id="category"  >
-						<!--<img src="images/iusa_75x75.26685356_mqfh.jpg" style=" float:left; top:-5px; position:relative" class="img-circle"> -->
-						<span class="hidden800 text-center" style="float:left; margin:auto 10px">
-							Name
-						</span>
-					</button>
+					<% if spree_current_user.present? %>
+						<div class="dropdown">
+							<button type="button" class="btn bttn dropdown-toggle" id="user-header" style="text-align:center;line-height:15px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  >
+							<!--<img src="images/iusa_75x75.26685356_mqfh.jpg" style=" float:left; top:-5px; position:relative" class="img-circle"> -->
+							<span class="hidden800 text-center" style="float:left; margin:auto 10px">
+								<%= fa_icon 'user'%>
+								<%= spree_current_user.first_name %>
+							</span>
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="user-header">
+							<li><%= link_to 'My Account', '#'%> </li>
+							<li><%= link_to 'Logout', '/logout'%></li>
+						</ul>
+
+						</div>
+						
+					<% else %>
+						<button type="button" class="btn bttn" id="userid" style="text-align:center;line-height:15px;" id="category"  >
+							<!--<img src="images/iusa_75x75.26685356_mqfh.jpg" style=" float:left; top:-5px; position:relative" class="img-circle"> -->
+							<span class="hidden800 text-center" style="float:left; margin:auto 10px">
+								Login/Signup
+							</span>
+						</button>
+					<% end %>
 				</li>
 				<li>
 					<button action="/cart" method="get" type="button" class="btn bttn" style="text-align:center;height:29px; margin-top:10px;">
