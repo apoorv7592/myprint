@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150623111901) do
+ActiveRecord::Schema.define(version: 20150623161056) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -233,7 +233,7 @@ ActiveRecord::Schema.define(version: 20150623111901) do
   end
 
   create_table "discoverfollows", force: true do |t|
-    t.integer  "user_id"
+    t.integer  "spree_user_id"
     t.integer  "discover_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -394,14 +394,13 @@ ActiveRecord::Schema.define(version: 20150623111901) do
   end
 
   create_table "product_discovers", force: true do |t|
-    t.integer  "product_id",  default: 0, null: false
-    t.integer  "discover_id", default: 0, null: false
+    t.integer  "discover_id",      default: 0, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "spree_product_id"
   end
 
   add_index "product_discovers", ["discover_id"], name: "index_product_discovers_on_discover_id"
-  add_index "product_discovers", ["product_id"], name: "index_product_discovers_on_product_id"
 
   create_table "ratings", force: true do |t|
     t.integer  "stars",       default: 0
