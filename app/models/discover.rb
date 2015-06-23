@@ -19,9 +19,12 @@ class Discover < ActiveRecord::Base
 	friendly_id :name, use: [:slugged, :history]
 	
     belongs_to :category
-    has_many :discoverfollows
+    
+    has_many :discoverfollows, foreign_key: "discover_id"
 	has_many :users, class_name: 'Spree::User', :through => :discoverfollows
-	has_many :spree_products, :class_name => 'Spree::Product', dependent: :destroy
+	
+	has_many :product_discovers
+	has_many :products, class_name: 'Spree::Product', through: :product_discovers
 
 	has_attached_file :avatar, styles: {
 	    thumb: '100x100>',

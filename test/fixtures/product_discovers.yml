@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: product_discovers
+#
+#  id          :integer          not null, primary key
+#  product_id  :integer          default(0), not null
+#  discover_id :integer          default(0), not null
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product_id: 1
+  discover_id: 1
+
+two:
+  product_id: 1
+  discover_id: 1

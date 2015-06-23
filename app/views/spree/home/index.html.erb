@@ -28,9 +28,16 @@ $(document).ready(function(){
   
   // cardsarea layout starts
   colinitializer();
-  getsubcategories();
+  //getsubcategories();
   getcards(searchval);
-  
+  $(document).on("click",".cardimage",function(){
+    var x=$(this).parent().attr('id');
+    createmodal(x);
+  });
+  $(document).on("click",".buy-card-btn",function(){
+    var x=$(this).attr('data-id');
+    createmodal(x);
+  });
   $(window).load(colinitializer);
   
   var timer;
@@ -119,13 +126,7 @@ $(document).ready(function(){
     var previd = $(".card:eq("+cardnum+")").attr("id");
     createmodal(previd);
   });
-  
-  $(document).on("click",".cardimage",function(){
-    var x=$(this).parent().attr('class');
-    createmodal(x);
-  });
 
-  
     $(document).on("click","#scroll-down",function () {
       var select = $(this);
       select.prop("disabled",true);
@@ -197,7 +198,9 @@ function getcards(page_no){
   success:function(data){
     cardsdata.push.apply(cardsdata,data);
     for(var i=0 ; i<data.length ; i++){
-      var card = "<div id=\""+data[i]['id']+"\" class=\"card\"><div class=\"cardimage\" type=\"button\" class=\"btn\" data-toggle=\"modal\" data-target=\"#myModal\"><img src=\""+data[i]['spree_assets'][0]['url']+"\"></div><div class=\"cardpanel\"><div class=\"cardinfo\"><div class='prd-name-card text-center'>"+data[i]['name']+"</div><div class='row'><div class='col-md-6 prc-card'>Rs."+data[i]['price']+"</div><div class='col-md-6 text-right buy-card-btn'><div  class='btn btn-default'><span class='buy-card-text'>Buy</span></div></div></div><div class='short-card'>"+data[i]['short_descrip']+"</div><div class=\"designer_info\"><a href=/designers/"+data[i]['designer']['slug']+" class=\"btn bttn\" style=\"padding:0;background:white;color:#5F5F5F\"><image src=\""+data[i]['designer']['img']+"\" style=\"height:35px;\" class=\"img-circle\" > "+data[i]['designer']['name']+"</a></div></div><button class=\"btn addtowishlist bttn\"><i class=\"fa fa-heart fa-1x\" style=\"position:relative;left:-6px;top:-3px\"></i></button></div>";
+
+      var card = "<div id=\""+data[i]['id']+"\" class=\"card\"><div class=\"cardimage\" type=\"button\" class=\"btn\" data-toggle=\"modal\" data-target=\"#myModal\"><img src=\""+data[i]['spree_assets'][0]['url']+"\"></div><div class=\"cardpanel\"><div class='row'><div class='col-md-12 prd-name-card text-justify'>"+data[i]['name']+"</div><div class=\"cardinfo\"><div class='row'><div class='col-md-6 prc-card'>Rs. "+data[i]['price']+"</div><div class='col-md-6 text-right'><div class='btn btn-default buy-card-btn' data-toggle=\"modal\" data-target=\"#myModal\" data-id="+data[i]['id']+">Buy</div></div></div><div class='row'><div class='col-md-12'>"+data[i]['short_descrip']+"</div></div></div><div class=\"designer_info\"><a href=/designers/"+data[i]['designer']['slug']+" class=\"btn bttn\" style=\"padding:0;background:white;color:#5F5F5F\"><image src=\""+data[i]['designer']['img']+"\" style=\"height:35px;\" class=\"img-circle\" > "+data[i]['designer']['name']+"</a></div></div><button class=\"btn addtowishlist bttn\"><i class=\"fa fa-heart fa-1x\" style=\"position:relative;left:-6px;top:-3px\"></i></button></div>";
+
       $("#cardsarea").append(card);
     }
     colinitializer();
