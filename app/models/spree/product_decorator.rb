@@ -8,7 +8,7 @@ Spree::Product.class_eval do
 	has_many :properties
     has_many :likes
     
-    has_many :product_discovers, foreign_key: "product_id"
+    has_many :product_discovers, foreign_key: "spree_product_id"
     has_many :discovers, through: :product_discovers
 	searchable do 
         text :name, :description, :tag_list
@@ -21,7 +21,7 @@ Spree::Product.class_eval do
         end
         
         text :discover do 
-            discover.name
+            discovers.name
         end
         
         #integer :sub_category_ids, multiple: true, references: SubCategory
@@ -65,10 +65,17 @@ Spree::Product.class_eval do
 		     c.price = row[6]
 		     c.shipping_category_id = row[7]
 		     c.designer_id = row[8]
-		     c.discover_id = row[9]
-
+		     
+		     discover_string = row[9]
+		     discover_ids = discover_string.split(',')
+		     
+		     c.save!
+		     discover_ids.each do |d|
+		     	c.discovers<<Discover.where(name: d).first
+		     end
+		     c.save!
 		   #c.prodinfos.build(:length => row[8], :height => row[10],:instructions => row[11], :material => row[12], :product_id => row[13])
-		   c.save
+		   #c.save
 		#loc = c.locations.first
 		#loc.pastors.build(:firstname => row[1])
 		#loc.save

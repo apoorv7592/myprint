@@ -14,6 +14,6 @@ class ProductDiscover < ActiveRecord::Base
 	belongs_to :discover
 
 
-	validates :product_id, presence: true
+	validates :spree_product_id, presence: true
 	validates :discover_id, presence: true
 end

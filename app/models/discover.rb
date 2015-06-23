@@ -24,7 +24,7 @@ class Discover < ActiveRecord::Base
 	has_many :users, class_name: 'Spree::User', :through => :discoverfollows
 	
 	has_many :product_discovers
-	has_many :products, class_name: 'Spree::Product', through: :product_discovers
+	has_many :spree_products, class_name: 'Spree::Product', through: :product_discovers
 
 	has_attached_file :avatar, styles: {
 	    thumb: '100x100>',
