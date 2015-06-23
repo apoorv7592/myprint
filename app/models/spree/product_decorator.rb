@@ -6,9 +6,10 @@ Spree::Product.class_eval do
     belongs_to :suite
 	belongs_to :designer
 	has_many :properties
-    belongs_to :discover
     has_many :likes
     
+    has_many :product_discovers, foreign_key: "product_id"
+    has_many :discovers, through: :product_discovers
 	searchable do 
         text :name, :description, :tag_list
         time :created_at
@@ -63,11 +64,10 @@ Spree::Product.class_eval do
 		     c.meta_title = row[5]
 		     c.price = row[6]
 		     c.shipping_category_id = row[7]
-		     c.designer_id = row[12]
-		     c.discover_id = row[14]
-		     c.suite_id = row[15]
+		     c.designer_id = row[8]
+		     c.discover_id = row[9]
 
-		   c.prodinfos.build(:length => row[8], :height => row[10],:instructions => row[11], :material => row[12], :product_id => row[13])
+		   #c.prodinfos.build(:length => row[8], :height => row[10],:instructions => row[11], :material => row[12], :product_id => row[13])
 		   c.save
 		#loc = c.locations.first
 		#loc.pastors.build(:firstname => row[1])

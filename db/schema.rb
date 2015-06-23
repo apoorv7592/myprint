@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150619082919) do
+ActiveRecord::Schema.define(version: 20150623111901) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -251,6 +251,14 @@ ActiveRecord::Schema.define(version: 20150619082919) do
     t.datetime "avatar_updated_at"
   end
 
+  create_table "discovers_products", force: true do |t|
+    t.integer "discover_id"
+    t.integer "spree_products_id"
+  end
+
+  add_index "discovers_products", ["discover_id"], name: "index_discovers_products_on_discover_id"
+  add_index "discovers_products", ["spree_products_id"], name: "index_discovers_products_on_spree_products_id"
+
   create_table "entries", force: true do |t|
     t.integer  "user_id"
     t.integer  "contest_id"
@@ -384,6 +392,16 @@ ActiveRecord::Schema.define(version: 20150619082919) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "product_discovers", force: true do |t|
+    t.integer  "product_id",  default: 0, null: false
+    t.integer  "discover_id", default: 0, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "product_discovers", ["discover_id"], name: "index_product_discovers_on_discover_id"
+  add_index "product_discovers", ["product_id"], name: "index_product_discovers_on_product_id"
 
   create_table "ratings", force: true do |t|
     t.integer  "stars",       default: 0

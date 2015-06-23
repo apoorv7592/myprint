@@ -111,6 +111,7 @@ Rails.application.routes.draw do
             get :volume_prices, :on => :member
           end
         end
+        get '/bulk_upload', to: 'products#bulk_upload', as: 'bulk_upload'
         resources :designers do 
           post :deactivate
           post :activate
