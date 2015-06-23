@@ -121,9 +121,10 @@ $(document).ready(function(){
   });
   
   $(document).on("click",".cardimage",function(){
-    var x=$(this).parent().attr('id');
+    var x=$(this).parent().attr('class');
     createmodal(x);
   });
+
   
     $(document).on("click","#scroll-down",function () {
       var select = $(this);
@@ -196,7 +197,7 @@ function getcards(page_no){
   success:function(data){
     cardsdata.push.apply(cardsdata,data);
     for(var i=0 ; i<data.length ; i++){
-      var card = "<div id=\""+data[i]['id']+"\" class=\"card\"><div class=\"cardimage\" type=\"button\" class=\"btn\" data-toggle=\"modal\" data-target=\"#myModal\"><img src=\""+data[i]['spree_assets'][0]['url']+"\"></div><div class=\"cardpanel\"><button class=\"buyitnow\"><strong>Buy Now</strong></button><div class=\"pricing\">Rs."+ data[i]['price']+"</div><div class=\"cardinfo\">"+data[i]['short_descrip']+"</div><div class=\"designer_info\"><a href=/designers/"+data[i]['designer']['slug']+" class=\"btn bttn\" style=\"padding:0;background:white;color:#5F5F5F\"><image src=\""+data[i]['designer']['img']+"\" style=\"height:35px;\" class=\"img-circle\" > "+data[i]['designer']['name']+"</a></div></div><button class=\"btn addtowishlist bttn\"><i class=\"fa fa-heart fa-1x\" style=\"position:relative;left:-6px;top:-3px\"></i></button></div>";
+      var card = "<div id=\""+data[i]['id']+"\" class=\"card\"><div class=\"cardimage\" type=\"button\" class=\"btn\" data-toggle=\"modal\" data-target=\"#myModal\"><img src=\""+data[i]['spree_assets'][0]['url']+"\"></div><div class=\"cardpanel\"><div class=\"cardinfo\"><div class='prd-name-card text-center'>"+data[i]['name']+"</div><div class='row'><div class='col-md-6 prc-card'>Rs."+data[i]['price']+"</div><div class='col-md-6 text-right buy-card-btn'><div  class='btn btn-default'><span class='buy-card-text'>Buy</span></div></div></div><div class='short-card'>"+data[i]['short_descrip']+"</div><div class=\"designer_info\"><a href=/designers/"+data[i]['designer']['slug']+" class=\"btn bttn\" style=\"padding:0;background:white;color:#5F5F5F\"><image src=\""+data[i]['designer']['img']+"\" style=\"height:35px;\" class=\"img-circle\" > "+data[i]['designer']['name']+"</a></div></div><button class=\"btn addtowishlist bttn\"><i class=\"fa fa-heart fa-1x\" style=\"position:relative;left:-6px;top:-3px\"></i></button></div>";
       $("#cardsarea").append(card);
     }
     colinitializer();
@@ -277,17 +278,7 @@ function createmodal(x){
         $("#all-comments").append("<div class='row comment-cont' style='border-bottom:1px solid #F2F2F2;'><div class='col-md-11'><div class='comment-user'>"+data[0]['comments'][i]['user']+"</div><div class='comment-body'>"+data[0]['comments'][i]['body']+"</div></div><div class='col-md-1'></div></div>");    
       }
     }
-    //fetch similar products and run loop
-    $(".similar_products").html("");
-    for(var i=0; i<6; i++)
-    {
-      $(".similar_products").append("<a href=\"#\" onclick=\"createmodal("+data["sim_products"][i].number+")\"><div class=\"simproduct bttn\"><div style=\"width:170px;height:170px;text-align:center;vertical-align:middle;\"><img src=\""+data["sim_products"][i].image+"\" style=\"height:170px;width:170px;\"></div><div style=\"width:170px;height:25px\">Prod Name</div><div style=\"width:170px;height:25px;\">$ "+data["sim_products"][i].number+"</div></div></a>");
-    }
-    $(".designer_gallery").html("");
-    for(var i=0 ; i<8 ; i++)
-    {
-      $(".designer_gallery").append("<td><a href=\"#\"  onclick=\"createmodal("+data["des_products"][i].number+")\"><div class=\"desproduct bttn\"><div><img src=\""+data["des_products"][i].image+"\" style=\"height:160px;width:160px;\"></div><div style=\"width:160px;height:20px\">Prod Name</div><div style=\"width:160px;height:20px;\">$ "+data["des_products"][i].number+"</div></div></a></td>");
-    }
+   
   
   },
   error:function(){
