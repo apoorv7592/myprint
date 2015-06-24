@@ -10,6 +10,7 @@ Spree::Product.class_eval do
     
     has_many :product_discovers, foreign_key: "spree_product_id"
     has_many :discovers, through: :product_discovers
+
 	searchable do 
         text :name, :description, :tag_list
         time :created_at
@@ -65,13 +66,18 @@ Spree::Product.class_eval do
 		     c.price = row[6]
 		     c.shipping_category_id = row[7]
 		     c.designer_id = row[8]
+		     c.overview = row[10]
+		     c.cod = row[11]
+		     c.delivery_time = row[12]
 		     
 		     discover_string = row[9]
 		     discover_ids = discover_string.split(',')
-		     
 		     c.save!
 		     discover_ids.each do |d|
-		     	c.discovers<<Discover.where(name: d).first
+		     	dis = Discover.where(name: d).first
+		     	if dis
+		     		c.discovers<<dis
+		     	end
 		     end
 		     c.save!
 		   #c.prodinfos.build(:length => row[8], :height => row[10],:instructions => row[11], :material => row[12], :product_id => row[13])

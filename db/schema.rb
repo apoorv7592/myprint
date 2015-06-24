@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150623161056) do
+ActiveRecord::Schema.define(version: 20150624071101) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -842,7 +842,7 @@ ActiveRecord::Schema.define(version: 20150623161056) do
   add_index "spree_product_properties", ["property_id"], name: "index_spree_product_properties_on_property_id"
 
   create_table "spree_products", force: true do |t|
-    t.string   "name",                 default: "",   null: false
+    t.string   "name",                 default: "",    null: false
     t.text     "description"
     t.datetime "available_on"
     t.datetime "deleted_at"
@@ -860,6 +860,10 @@ ActiveRecord::Schema.define(version: 20150623161056) do
     t.integer  "discover_id"
     t.integer  "reviews_count"
     t.integer  "like_no",              default: 0
+    t.text     "shipping"
+    t.text     "overview"
+    t.boolean  "cod",                  default: false
+    t.integer  "delivery_time"
   end
 
   add_index "spree_products", ["available_on"], name: "index_spree_products_on_available_on"

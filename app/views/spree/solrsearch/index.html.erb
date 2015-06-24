@@ -237,9 +237,9 @@ function createmodal(x){
 		$(".variant_id").html("<input id='token' name='variant_id[]' type='hidden' value='"+data[0]['master_variant_id']+"' />")
 		$(".stock").html("Only 1 Left in Stock");
 		$(".filterselect").html("<select><option>option1</option><option>option2</option><option>option3</option><></select>")
-		$(".overview").html("<h4>Overview</h4><ul><li>Handmade item</li><li>Made to order</li><li>Feedback: 161 reviews</li><li>Ships worldwide from Düsseldorf, Germany</li></ul>");
+		$(".overview").html(data[0]['overview_text']);
 		$(".additionalinfo").html("This shop accepts Etsy Gift Cards");
-		$("#item_details").html(data1['description']);
+		$("#item_details").html(data[0]['description']);
 		$(".designer_image img").attr("src",data1['designer']['img']);
 		$("#product_id").attr("value",data1['id']);
 		
