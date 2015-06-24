@@ -4,8 +4,8 @@ Spree::User.class_eval do
 	has_many :entries
 	has_many :custs
 	has_many :comments
-	validates :first_name, presence: true
-	validates :last_name, presence: true
+	#validates :first_name, presence: true
+	#validates :last_name, presence: true
 	#validates :phone, presence: true
 	#validates :gender, presence: true
 

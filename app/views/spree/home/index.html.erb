@@ -170,18 +170,7 @@ $(document).ready(function(){
     //popup layout ends   
     
     //login window
-      
-    $(document).on("click","#userid",function(){
-      $("#wrapper").css({"top":parseInt($(window).height()/2-$('#wrapper').outerHeight()/2)+"px","left":parseInt($(window).width()/2-$("#wrapper").outerWidth()/2)+"px"});
-      $("#wrapper").toggle();
-      $("#main").toggleClass("blur");
-    });
-  
-    $(document).on("click","#close",function(){
-      $("#wrapper").hide();
-      $("#main").removeClass("blur");
-    });
-    
+   
     //login window
 });
 

@@ -93,7 +93,7 @@
            <%= render 'spree/user_sessions/new_nav'%>
           </div>
           <div role="tabpanel" class="tab-pane fade" id="sinup">
-            <%= render 'spree/user_registrations/new_nav'%>
+            <%#= render 'spree/user_registrations/new'%>
           </div>
           </div>
 
@@ -109,3 +109,18 @@
 
 
 </div>
+
+<script>
+
+    $(document).on("click","#userid",function(){
+      $("#wrapper").css({"top":parseInt($(window).height()/2-$('#wrapper').outerHeight()/2)+"px","left":parseInt($(window).width()/2-$("#wrapper").outerWidth()/2)+"px"});
+      $("#wrapper").toggle();
+      $("#main").toggleClass("blur");
+    });
+  
+    $(document).on("click","#close",function(){
+      $("#wrapper").hide();
+      $("#main").removeClass("blur");
+    });
+    
+</script>
