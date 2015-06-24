@@ -1,7 +1,7 @@
 <script type="text/javascript">
 default_colwidth=230;
 colwidth=0;
-colmargin=10;
+colmargin=18;
 colheights=[];
 colnum=0;
 searchval="";
@@ -188,7 +188,7 @@ function getcards(page_no){
     cardsdata.push.apply(cardsdata,data);
     for(var i=0 ; i<data.length ; i++){
 
-      var card = "<div id=\""+data[i]['id']+"\" class=\"card\"><div class=\"cardimage\" type=\"button\" class=\"btn\" data-toggle=\"modal\" data-target=\"#myModal\"><img src=\""+data[i]['spree_assets'][0]['url']+"\"></div><div class=\"cardpanel\"><div class='row'><div class='col-md-12 prd-name-card text-justify'>"+data[i]['name']+"</div><div class=\"cardinfo\"><div class='row'><div class='col-md-6 prc-card'>Rs. "+data[i]['price']+"</div><div class='col-md-6 text-right'><div class='btn btn-default buy-card-btn' data-toggle=\"modal\" data-target=\"#myModal\" data-id="+data[i]['id']+">Buy</div></div></div><div class='row'><div class='col-md-12'>"+data[i]['short_descrip']+"</div></div></div><div class=\"designer_info\"><a href=/designers/"+data[i]['designer']['slug']+" class=\"btn bttn\" style=\"padding:0;background:white;color:#5F5F5F\"><image src=\""+data[i]['designer']['img']+"\" style=\"height:35px;\" class=\"img-circle\" > "+data[i]['designer']['name']+"</a></div></div><button class=\"btn addtowishlist bttn\"><i class=\"fa fa-heart fa-1x\" style=\"position:relative;left:-6px;top:-3px\"></i></button></div>";
+      var card = "<div id=\""+data[i]['id']+"\" class=\"card\"><div class=\"cardimage\" type=\"button\" class=\"btn\" data-toggle=\"modal\" data-target=\"#myModal\"><img src=\""+data[i]['spree_assets'][0]['url']+"\"></div><div class=\"cardpanel\"><div class='row'><div class='col-md-12 prd-name-card text-justify'>"+data[i]['name']+"</div><div class=\"cardinfo\"><div class='row'><div class='col-md-6 prc-card'>Rs. "+data[i]['price']+"</div><div class='col-md-6 text-right'><div class='buy-card-btn' data-toggle=\"modal\" data-target=\"#myModal\" data-id="+data[i]['id']+"><img alt='Buy button' src='/assets/buy_button.png', style='height:40px; cursor:pointer' /></div></div></div><div class='row'><div class='col-md-12 short-descrip-card'>"+data[i]['short_descrip']+"</div></div></div><div class=\"designer_info\"><a href=/designers/"+data[i]['designer']['slug']+" class=\"btn bttn\" style=\"padding:0;background:white;color:#5F5F5F\"><image src=\""+data[i]['designer']['img']+"\" style=\"height:35px;\" class=\"img-circle\" > "+data[i]['designer']['name']+"</a></div></div><button class=\"btn addtowishlist bttn\"><i class=\"fa fa-heart fa-1x\" style=\"position:relative;left:-6px;top:-3px\"></i></button></div>";
 
       $("#cardsarea").append(card);
     }
@@ -317,10 +317,7 @@ function colinitializer(){
     for(var i=0 ; i<colnum ; i++)
     colheights[i]=colmargin;
     $("#cardsarea").outerWidth(colnum*(colwidth+colmargin));
-    if($(document).innerWidth()>480)
-    $("#header").outerWidth(colnum*(colwidth+colmargin));
-    else
-    $("#header").outerWidth($(window).innerWidth()-2*colmargin);  
+    
     $("#loaderarea").outerWidth(colnum*(colwidth+colmargin));
     $("#category_box").css("right",parseInt($(window).width()-$('#category').offset().left-300)+"px");
     $("#tail").css("right",parseInt($(window).innerWidth()-$('#category').offset().left-100)+"px");

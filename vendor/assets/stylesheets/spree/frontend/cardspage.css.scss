@@ -21,7 +21,7 @@
 .logo{
 	margin-left:10px;
 	margin-right:5px;
-	margin-top:10px;
+	margin-top:6px;
 }
 #category_box{
 	column-count:2;
@@ -83,7 +83,7 @@ html, body {
 	border-radius:6px;
 	color:white;
 	position:absolute;
-	box-shadow:0 0 3px black;
+	box-shadow:2px 2px 3px #888888;
 	-webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
     transition: all 1s ease;
@@ -220,21 +220,17 @@ html, body {
 	margin:0 auto;
 	display:block;
 	padding-bottom:60px;
-}
+	border:none;
+	box-shadow:1px 1px 4px #B8B8B8;
 
-#userid{
-	float:right;
-	margin:10px;
-	background-color:#006567;	
-	font-weight:bold;
-	color:white;
+
 }
 
 #category{
 	float:right;
 	margin:10px;
 	margin-right:0;
-	background-color:#006567;
+	background-color:#F37F66;
 	font-weight:bold;
 	color:white;
 	z-index:100;
@@ -243,10 +239,18 @@ html, body {
 	float:right;
 	margin:10px;
 	margin-right:0;
-	background-color:#CB2B37;
+	background-color:#F37F66;
 	font-weight:bold;
 	color:white;
 	z-index:100;	
+}
+
+#userid{
+	float:right;
+	margin:10px;
+	background-color:#F37F66;	
+	font-weight:bold;
+	color:white;
 }
 
 .leftmodal{
@@ -721,7 +725,7 @@ form{
 	font-size:16px;
 	font-weight:bold;
 	color:#333333;
-	padding-top:3px;
+	padding-top:10px;
 }
 .buy-card-btn{
 	font-size:14px;
@@ -732,4 +736,8 @@ form{
 }
 .short-card{
 	padding-top:5px;
+}
+.short-descrip-card{
+	padding-top:7px;
+	color:#666;
 }
