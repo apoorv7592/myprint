@@ -61,17 +61,17 @@ Spree::Product.class_eval do
 
         (2..spreadsheet.last_row).each do |i|
         	c = Spree::Product.new
-        	c.name = spreadsheet.cell(2,1)
-	         c.description = spreadsheet.cell(2,2)
-	         c.available_on = spreadsheet.cell(2,3)
-	         c.slug = spreadsheet.cell(2,4)
-	         c.meta_keywords = spreadsheet.cell(2,5)
-	         c.meta_title = spreadsheet.cell(2,6)
-	         c.price = spreadsheet.cell(2,7)
-	         c.shipping_category_id = spreadsheet.cell(2,8)
-	         c.designer_id = spreadsheet.cell(2,9)
+        	c.name = spreadsheet.cell(i,1)
+	         c.description = spreadsheet.cell(i,2)
+	         c.available_on = spreadsheet.cell(i,3)
+	         c.slug = spreadsheet.cell(i,4)
+	         c.meta_keywords = spreadsheet.cell(i,5)
+	         c.meta_title = spreadsheet.cell(i,6)
+	         c.price = spreadsheet.cell(i,7)
+	         c.shipping_category_id = spreadsheet.cell(i,8)
+	         c.designer_id = spreadsheet.cell(i,9)
 	         
-	         discover_string = spreadsheet.cell(2,10)
+	         discover_string = spreadsheet.cell(i,10)
 	         discover_ids = discover_string.split(',')
 	         c.save!
 	         discover_ids.each do |d|
@@ -81,9 +81,10 @@ Spree::Product.class_eval do
 	            end
 	         end
 	         
-	         c.overview = spreadsheet.cell(2,11)
-	         c.cod = spreadsheet.cell(2,12)
-	         c.delivery_time = spreadsheet.cell(2,13)
+	         c.overview = spreadsheet.cell(i,11)
+	         c.cod = spreadsheet.cell(i,12)
+	         c.delivery_time = spreadsheet.cell(i,13)
+	         c.pin = spreadsheet.cell(i,14)
 	         c.save!
         end
       end

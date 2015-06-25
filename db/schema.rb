@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150624071101) do
+ActiveRecord::Schema.define(version: 20150625123008) do
 
   create_table "Colors_Suites", id: false, force: true do |t|
     t.integer "color_id", null: false
@@ -864,6 +864,7 @@ ActiveRecord::Schema.define(version: 20150624071101) do
     t.text     "overview"
     t.boolean  "cod",                  default: false
     t.integer  "delivery_time"
+    t.string   "pin"
   end
 
   add_index "spree_products", ["available_on"], name: "index_spree_products_on_available_on"
