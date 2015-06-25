@@ -161,7 +161,7 @@ gem 'oj'
 gem 'acts-as-taggable-on', '~> 3.4'
 
 gem 'roo'
-
+gem 'iconv'
 # for comments
 gem 'acts_as_commentable_with_threading'
 

@@ -1,5 +1,6 @@
 Spree::Product.class_eval do
 	require 'csv'
+	require 'roo'
 	acts_as_taggable
 	acts_as_commentable
 	
@@ -55,37 +56,46 @@ Spree::Product.class_eval do
 	  end
 
 	  def self.import(file)
-        CSV.foreach(file.path, headers: true) do |row|
-		   c = Spree::Product.new
-		     c.name = row[0]
-		     c.description = row[1]
-		     c.available_on = row[2]
-		     c.slug = row[3]
-		     c.meta_keywords = row[4]
-		     c.meta_title = row[5]
-		     c.price = row[6]
-		     c.shipping_category_id = row[7]
-		     c.designer_id = row[8]
-		     c.overview = row[10]
-		     c.cod = row[11]
-		     c.delivery_time = row[12]
-		     
-		     discover_string = row[9]
-		     discover_ids = discover_string.split(',')
-		     c.save!
-		     discover_ids.each do |d|
-		     	dis = Discover.where(name: d).first
-		     	if dis
-		     		c.discovers<<dis
-		     	end
-		     end
-		     c.save!
-		   #c.prodinfos.build(:length => row[8], :height => row[10],:instructions => row[11], :material => row[12], :product_id => row[13])
-		   #c.save
-		#loc = c.locations.first
-		#loc.pastors.build(:firstname => row[1])
-		#loc.save
+        spreadsheet = open_spreadsheet(file)
+        header = spreadsheet.row(1) 
+
+        (2..spreadsheet.last_row).each do |i|
+        	c = Spree::Product.new
+        	c.name = spreadsheet.cell(2,1)
+	         c.description = spreadsheet.cell(2,2)
+	         c.available_on = spreadsheet.cell(2,3)
+	         c.slug = spreadsheet.cell(2,4)
+	         c.meta_keywords = spreadsheet.cell(2,5)
+	         c.meta_title = spreadsheet.cell(2,6)
+	         c.price = spreadsheet.cell(2,7)
+	         c.shipping_category_id = spreadsheet.cell(2,8)
+	         c.designer_id = spreadsheet.cell(2,9)
+	         
+	         discover_string = spreadsheet.cell(2,10)
+	         discover_ids = discover_string.split(',')
+	         c.save!
+	         discover_ids.each do |d|
+	            dis = Discover.where(name: d).first
+	            if dis
+	                c.discovers<<dis
+	            end
+	         end
+	         
+	         c.overview = spreadsheet.cell(2,11)
+	         c.cod = spreadsheet.cell(2,12)
+	         c.delivery_time = spreadsheet.cell(2,13)
+	         c.save!
         end
       end
+
+      def self.open_spreadsheet(file)
+  		case File.extname(file.original_filename)
+	  		when ".csv" then Roo::CSV.new(file.path, file_warning: :ignore)
+	  		when ".xls" then Roo::Excel.new(file.path, file_warning: :ignore )
+	  		when ".xlsx" then Roo::Excelx.new(file.path, file_warning: :ignore )
+	  		when ".ods" then Roo::OpenOffice.new(file.path, file_warning: :ignore)
+	  		else raise "Unknown file type: #{file.original_filename}"
+  	  	end
+	  end
 
 end
