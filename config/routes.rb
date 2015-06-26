@@ -29,6 +29,7 @@ Rails.application.routes.draw do
         get '/modal_info/:id', to: 'products#modal_info', as: 'modal_info'
         get 'get_default_feed', to: 'feeds#get_default_feed', as: 'get_default_feed'
         get '/search_prod/:id', to: 'products#search_prod', as: 'search_prod'
+        get '/des_prod/:id', to: 'designers#des_prod', as: 'des_prod' 
       end
     end
 

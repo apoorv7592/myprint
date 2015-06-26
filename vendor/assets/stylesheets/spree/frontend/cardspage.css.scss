@@ -756,3 +756,27 @@ form{
 	padding-top:2px;
 	color:#666;
 }
+.des-cover{
+	height:500px;
+	width:100%;
+	background-image:image-url('des_cover.jpg');
+}
+.des-img-cont{
+	margin-top:120px;
+}
+.des-name{
+	padding-top:20px;
+	font-size:30px;
+	font-weight:bold;
+	color:white
+}
+.des-about{
+	padding-top:10px;
+	font-size:14px;
+	color:white;
+}
+.des-fl-count{
+	font-size:14px;
+	color:white;
+	font-weight:bold;
+}

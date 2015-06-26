@@ -1,155 +1,570 @@
+<script type="text/javascript">
+default_colwidth=230;
+colwidth=0;
+colmargin=18;
+colheights=[];
+colnum=0;
+searchval="";
+gutter=0;
+modalid=-1;
+cardsdata = [];
+$(document).on('ready page:change', function () {
+  
+  $(document).on("click","#category",function(){
+    $("#tail").toggle();
+    $("#category_box").toggle();
+    $("#main").toggleClass("blur");
+  });
+  
+  $(document).click(function(e){
+    if(e.target.id != "category_box" && e.target.id != "category" && e.target.id != "tail")
+    {
+      $("#tail").hide();
+      $("#category_box").hide();
+      $("#main").removeClass("blur");
+      
+    }
+  });
+  
+  // cardsarea layout starts
+  colinitializer();
+  //getsubcategories();
+  getcards(searchval);
+  $(document).on("click",".cardimage",function(){
+    var x=$(this).parent().attr('id');
+    createmodal(x);
+  });
+  $(document).on("click",".buy-card-btn",function(){
+    var x=$(this).attr('data-id');
+    createmodal(x);
+  });
+  $(window).load(colinitializer);
+  
+  var timer;
+  $(window).bind('load', function() {
+    if(timer)
+    clearTimeout(timer);
+    timer = setTimeout(function(){colinitializer();}, 100);
+  });
+  
+  $(window).resize(function(){colinitializer();});
+  
+  $(window).bind('resize', function() {
+    if(timer)
+    clearTimeout(timer);
+    timer = setTimeout(function(){colinitializer();}, 100);
+  });
+  
+  var page = 2
+  $(window).scroll(function(){
+    if($(window).scrollTop() == $(document).height() - $(window).height())
+    {
+      getcards(page);
+      page = page+1;
+    }
+  }
+  );
+  
+  /*$("#search").on("input",function()
+    {
+      $('#cardsarea').empty();
+      
+      for(var i=0 ; i<colnum ; i++)
+        colheights[i]=colmargin;
+      
+      getcards(searchval);
+    }
+  );*/
+  
+  //cardsarea layout ends
+  
+  $(document).on("mouseover",".card",function(){
+    $(this).find(".addtowishlist").css("visibility","visible");
+  });
+  
+  $(document).on("mouseout",".card",function(){
+    $(this).find(".addtowishlist").css("visibility","hidden");
+  });
+  
+  // popup layout starts
 
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Dancing+Script" />
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Crimson+Text" />
-<link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-<style type="text/css">
-	.designer-container{
-		width: 1000px;
-		margin: auto;
-	}
-	.designer-container h2{
-		text-align: center;
-		margin-bottom: 30px;
-	}
-	.designer-container .row{
-		margin: 0 !important;
-	}
-	.designer-container h3{
-		font-family: sans-serif;
-    	font-size: 17px;
-    	font-weight: normal;
-    	margin: 5px 0 0;
-    	text-align: left;
-	}
-	.designer-div{
-		margin-top: 0;
-		height: 450px;
-		font-weight: normal;
-	}
-	.designer-box{
-		margin-top: 30px;
-	}
-	.designer-description {
-		text-align: center;
-		margin-top: 30px;
-	}
-	.designer-products{
-		margin-top: 30px;
-	}
-	.designer-name{
-		margin-bottom: 40px;
-	}
-	.designer-products h4,.designer-name h4{
-		font-family: Dancing Script;
-		font-size: 30px;
-	}
-	.designer-quote{
-		margin-bottom: 40px
-	}
-	.designer-quote h6{
-		font-size: 25px;
-	}
-	.designer-quote h4{
-		font-size: 20px;
-		font-family: Kaushan Script;
-	}
-	.designer-links button{
-		margin-right: 5px;
-	}
-	.crimson{
-		font-family: Crimson Text;
-		font-weight: normal;
-	}
-	.black-7{
-		color: #4d4d4d;
-	}
-	.black-5{
-		color: #808080;
-		font-size:17px;
+  $(document).on("click","#nextcard",function(){
+    
+    var cardnum = $(".card").index($("#"+modalid));
+    if(cardnum < $('.card').length-1)
+      cardnum++;
+    else
+      cardnum=0;
+    var nextid = $(".card:eq("+cardnum+")").attr("id");
+    createmodal(nextid);
+  });
+  
+  $(document).on("click","#prevcard",function(){
+    var cardnum = $(".card").index($("#"+modalid));
+    if(cardnum > 0)
+      cardnum--;
+    else
+      cardnum = $('.card').length-1;
+    var previd = $(".card:eq("+cardnum+")").attr("id");
+    createmodal(previd);
+  });
 
-	}
-	.products{
-		margin-top: 10px;
-		margin-bottom: 20px;
-	}
-
-</style>
+    $(document).on("click","#scroll-down",function () {
+      var select = $(this);
+      select.prop("disabled",true);
+      $('.modal-gallery').animate({
+        scrollTop:$('.modal-gallery').scrollTop()+84
+      },"ease",function(){select.prop("disabled",false);});
+    });
+    
+    $(document).on("click","#scroll-up",function () {
+      var select = $(this);
+      select.prop("disabled",true);
+      $('.modal-gallery').animate({
+        scrollTop:$('.modal-gallery').scrollTop()-84
+      },"ease",function(){select.prop("disabled",false);});
+    });
+  
+    $(document).on('mouseover','.gallerybutton',function(){
+      $(".selected").removeClass("selected");
+      $(this).addClass("selected");
+      $(".modal-image").attr("src",$(".selected img").attr("src"));
+      //replace this by source of image linked to that small image
+    });
+    
+    $(document).on("click","#scroll-right",function () {
+      var select = $(this);
+      select.prop("disabled",true);
+      $('.designer_gallery').animate({
+        scrollLeft:$('.designer_gallery').scrollLeft()+180
+      }, "ease",function(){select.prop("disabled",false);});
+    });
+    
+    $(document).on("click","#scroll-left",function () {
+      var select = $(this);
+      select.prop("disabled",true);
+      $('.designer_gallery').animate({
+        scrollLeft:$('.designer_gallery').scrollLeft()-180
+      }, "ease",function(){select.prop("disabled",false);});
+    });
+    
+    
+    //popup layout ends   
+    
+    //login window
+   
+    //login window
+});
 
 
-		<div class="designer-container">
-			<h2 class="crimson black-7" style="border-bottom:1px solid black;">
-			MEET OUR DESIGNER
-			</h2>
-			<div class="row">
-				<div class="col-lg-12 designer-div">
-					<div class="col-lg-6">
-						<%= image_tag @details.avatar.url(:medium),height:400,width:400; %>					
-					</div>
-					<div class="col-lg-6">
-						<div class="designer-name">
-							<h4 class="black-7"><%= @details.name %></h4>
-							<h6 class="crimson black-5"><%= @details.city %></h6>
-					    </div>
+function getcards(page_no){
+  
+  $.ajax({  
+  dataType:"json",
+  async:"TRUE",
+  url:'/api/des_prod/'+'<%= @designer.id%>',
+  method:"GET",
+  data:{cardnum:$(".card").length,range:4*colnum, page:page_no},
+  beforeSend:function(){$("#loaderarea").show();},
+  success:function(data){
+    cardsdata.push.apply(cardsdata,data);
+    for(var i=0 ; i<data.length ; i++){
 
-						<div class="designer-links">
-					        <div>
-								<% if spree_current_user %>
-									<% unless spree_current_user==@designer %>
-									  <% if spree_current_user.following?(@designer) %>
-									    <div id= "follow_form">
-										    <%= render 'unfollow' %>
-									    </div>
-									  <% else %>
-									    <div id="follow_form">
-									    	<%= render 'follow' %>
-									  <% end %>
-									<% end %>
-								<% else %>
-									<%= button_to 'Login to follow this designer', '/login',class: "btn btn-primary",style: "width:203px;height:30px;background:#87c9c2;color:white;" %>
-								<% end %>
-						    </div>
-	                        <div style="margin-top:20px;">
-							  <a href="<%= following_user_path(@designer) %>" class="removeline">
-							      <%= @designer.following.count %>
-							    following
-							  </a>
-							  &nbsp&nbsp&nbsp
-							  <a href="<%= followers_user_path(@designer) %>" class="removeline">
-							      <%= @designer.followers.count %>
-							    followers
-							  </a>
-						    </div>
-						</div>
-					</div>
-				</div>
+      var card = "<div id=\""+data[i]['id']+"\" class=\"card\"><div class=\"cardimage\" type=\"button\" class=\"btn\" data-toggle=\"modal\" data-target=\"#myModal\"><img src=\""+data[i]['spree_assets'][0]['url']+"\"></div><div class=\"cardpanel\"><div class='row'><div class='prd-name-card text-justify'>"+data[i]['name']+"</div></div><div class=\"cardinfo\"><div class='row'><div class='col-md-12 short-descrip-card'>"+data[i]['short_descrip']+"</div></div><div class='row'><div class='col-md-6 prc-card'>Rs. "+data[i]['price']+"</div><div class='col-md-6 text-right'><div class='buy-card-btn' data-toggle=\"modal\" data-target=\"#myModal\" data-id="+data[i]['id']+"><img alt='Buy button' src='/assets/buy_button.png', style='height:40px; cursor:pointer' /></div></div></div></div><div class=\"designer_info\"><a href=/designers/"+data[i]['designer']['slug']+" class=\"btn bttn\" style=\"padding-left:5px;background:white;color:#5F5F5F\"><image src=\""+data[i]['designer']['img']+"\" style=\"height:35px;\" class=\"img-circle\" > "+data[i]['designer']['name']+"</a></div></div><button class=\"btn addtowishlist bttn\"><i class=\"fa fa-heart fa-1x\" style=\"position:relative;left:-6px;top:-3px\"></i></button></div>";
+
+      $("#cardsarea").append(card);
+    }
+    colinitializer();
+    $("#loaderarea").hide();
+    return;
+  },
+  error:function(){
+    alert("ERROR! ERROR! ERROR!");
+  }
+  });
+}
+function setupHistoryClicks(url){
+  history.pushState(null, null, url);
+  window.addEventListener("popstate", url, false);
+}
+
+function createmodal(x){
+  $.ajax({  
+  dataType:"json",
+  async:"TRUE",
+  url: "/api/modal_info/"+x,
+  method:"GET",
+  data:{cardnum:x, id: x},
+  success:function(data){
+    
+    // change url
+    //setupHistoryClicks(data[0]['prod_url']);
+
+    modalid=x;
+    data1={};
+    for(var i=0 ; i<cardsdata.length ; i++)
+    {
+      if(x==cardsdata[i]['id'])
+      {
+        data1=cardsdata[i];//this is the info of the clicked product;
+        break;
+      }
+    }
+    var gallery="";
+    for(var i=0 ; i<data1["spree_assets"].length ; i++)
+    { 
+      gallery+="<div class=\"gallerybutton";
+      if(i==0)
+      gallery+=" selected";
+      gallery+="\"><img src=\""+data1["spree_assets"][i]['url']+"\"></div>";
+    }
+    $(".modal-gallery").html(gallery);
+    if(data1["spree_assets"].length>5)
+    {
+      $("#scroll-up").show();
+      $("#scroll-down").show();
+    }
+    else
+    {
+      $("#scroll-up").hide();
+      $("#scroll-down").hide();
+    }
+    $(".modal-gallery").scrollTop(0);
+    $(".designer_gallery").scrollLeft(0);
+    
+    $(".modal-image").attr("src",$(".selected img").attr("src"));
+    $(".designer_name").html(data1['designer']['name']);
+    $(".protitle").html("<strong>"+data1['name']+"</strong>");
+    $(".proprice").html("<strong>Rs. "+data1['price']+ "</strong>");
+
+    $(".variant_id").html("<input id='token' name='variant_id[]' type='hidden' value='"+data[0]['master_variant_id']+"' />")
+    $(".stock").html("Only 1 Left in Stock");
+    $(".filterselect").html("<select><option>option1</option><option>option2</option><option>option3</option><></select>")
+    $(".overview").html(data[0]['overview_text']);
+    $(".additionalinfo").html("This shop accepts Etsy Gift Cards");
+    $("#item_details").html(data[0]['description']);
+    $(".designer_image img").attr("src",data1['designer']['img']);
+    $("#product_id").attr("value",data1['id']);
+    
+    // fetch and insert the comments
+    $("#all-comments").html("");
+    var logged_in= "<%= spree_current_user.present? %>";
+    var current_user_id = "<%= spree_current_user.id if spree_current_user.present? %>";
+    $("#new-comment").html("");
+    for(var i = 0; i < data[0]['comments'].length; i++){
+      if(logged_in== 'true' && current_user_id== data[0]['comments'][i]['user_id']){
+        $("#all-comments").append("<div id=comment-"+data[0]['comments'][i]['id']+" class='row comment-cont'><div class='col-md-11'><div class='comment-user'>"+data[0]['comments'][i]['user']+"</div><div class='comment-body'>"+data[0]['comments'][i]['body']+"</div></div><div class='col-md-1'></div><form method='post' action='/delete_comment' data-remote='true' accept-charset='UTF-8'><div style='display:none'></div><input id='comment_id' type='hidden' value='"+data[0]['comments'][i]['id']+"' name='comment_id'></input><input data-confirm='Are you sure !!' class='delete-button' type='submit' value='x' name='commit' data-toggle='tooltip' data-placement='left' title='Delete this comment'></input></form></div>");
+      }
+      else
+      {
+        $("#all-comments").append("<div class='row comment-cont' style='border-bottom:1px solid #F2F2F2;'><div class='col-md-11'><div class='comment-user'>"+data[0]['comments'][i]['user']+"</div><div class='comment-body'>"+data[0]['comments'][i]['body']+"</div></div><div class='col-md-1'></div></div>");    
+      }
+    }
+   
+  
+  },
+  error:function(){
+    alert("ERROR! ERROR! ERROR!");
+  }
+  });
+  // to get the review form for the product
+  $.get('/other_forms/'+x);
+} 
+$(".card").click(function(){
+  $('#myModal').modal('show');
+});
+  
+function min(arr)
+{
+  var min=arr[0],minindex=0;
+  for(var i=1 ; i<colnum ; i++)
+  {
+    if(arr[i]<min)
+    {
+      min=arr[i];
+      minindex=i;
+    }
+  }
+  return minindex;
+} 
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+function colinitializer(){
+    if($(document).innerWidth()<480)
+    {
+      colwidth=($(window).innerWidth()-3*colmargin)/2;
+    }
+    else 
+      colwidth=default_colwidth;
+    $(".card").css("width",colwidth+"px");
+    $(".buyitnow").css("width",colwidth-20+"px");
+    colnum=Math.floor(Math.max($(window).innerWidth()/(colwidth+colmargin),1));
+    for(var i=0 ; i<colnum ; i++)
+    colheights[i]=colmargin;
+    $("#cardsarea").outerWidth(colnum*(colwidth+colmargin));
+    
+    $("#loaderarea").outerWidth(colnum*(colwidth+colmargin));
+    $("#category_box").css("right",parseInt($(window).width()-$('#category').offset().left-300)+"px");
+    $("#tail").css("right",parseInt($(window).innerWidth()-$('#category').offset().left-100)+"px");
+    $(".modal-dialog").width(Math.min($(window).innerWidth()-200,1000));
+    $(".closemodal").css("left",($(window).innerWidth()+$('.modal-dialog').width())/2+20+"px");
+    $(".nextcard").css("left",($(window).innerWidth()+$('.modal-dialog').width())/2+20+"px");
+    $(".prevcard").css("right",($(window).innerWidth()+$('.modal-dialog').width())/2+37+"px");
+    positioncards();
+}
+
+function positioncards(){
+    if($(window).innerWidth()<480)
+      gutter=0;
+    else
+      gutter=($(window).innerWidth()-colnum*(colwidth+colmargin))/2-colmargin/2;
+    $(".card").each(function(){
+      var left,top,col;
+      col=min(colheights);
+      left=col*(colwidth+colmargin)+colmargin+gutter;
+      top=colheights[col]+$("#cardsarea").offset().top;
+      
+      $(this).css({"left":left+"px","top":top+"px"});
+      
+      colheights[col]+=$(this).outerHeight()+colmargin;
+    });
+    
+    var max=0;
+    for(var i=0 ; i<colnum ; i++)
+      if(colheights[i]>max)
+        max=colheights[i];
+    
+    $("#loaderarea").css({"top":parseInt(max+$("#cardsarea").offset().top)+"px","left":$("#header").offset().left+"px"});
+}
+function getsubcategories(){}
+  
+
+</script>
+
+<div class="row">
+	<div class="col-md-12 des-cover">
+		<div class="row">
+			<div class="col-md-2 col-md-offset-5 des-img-cont text-center">
+				<%= image_tag @details.avatar.url(:medium), width: 180, class: 'img-rounded des-img'%>
 			</div>
-
-			<div class="designer-description">
-				<h5 class="crimson">ABOUT</h5>
-				<p class="crimson">
+		</div>
+		<div class="row">
+			<div class="col-md-2 col-md-offset-5 des-name text-center">
+				<%= @details.name%>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1 text-center des-about">
 				<%= @details.about %>
 			</div>
-
-			<div class="designer-products">
-				<h4 class="black-7">Products by <%= @details.name %></h4>
-				<div class="row">
-					<div class="products col-lg-12">
-						<% @details.suites.each do |d|%>
-							<div class="col-lg-3">
-								
-								<%=link_to_if d.present?, image_tag(d.avatar.url(:square)),d %>
-							</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2 col-md-offset-5 text-center">
+				<% if spree_current_user %>
+					<% unless spree_current_user==@designer %>
+					    <% if spree_current_user.following?(@designer) %>
+						    <div id= "follow_form">
+							    <%= render 'unfollow' %>
+						    </div>
+						<% else %>
+						    <div id="follow_form">
+						    	<%= render 'follow' %>
 						<% end %>
-					</div>
-				</div>
+					<% end %>
+				<% else %>
+					<%= button_to 'Login to follow this designer', '/login',class: "btn btn-primary",style: "width:203px;height:30px;background:#87c9c2;color:white;" %>
+				<% end %>
 			</div>
-     	</div>
- <div class=" col-md-12 suite-lower-middle">
-   <%#= render 'spree/shared/designerreviews' %>
+		</div>
+		<div class="row">
+			<div class="col-md-2 col-md-offset-5 text-center des-fl-count">
+				<%= @designer.following.count %>
+				following
+				&nbsp&nbsp&nbsp
+				<%= @designer.followers.count %>
+				followers
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+ <div id="main">
+    <div id="cardsarea">
+    </div>
+  
+    
+    <div id="loaderarea">
+      <div style="display:block;margin:0 auto;width:30px;">
+      <i class="fa fa-spinner fa-pulse fa-3x"></i>
+      </div>
+    </div>
+    
+  </div>
+  
+  <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog" >
+    <div class="modal-content">
+    <div class="modal-header">
+        <div class='by-designer'>By</div>
+        <div class="designer_image">
+          <img style="max-height:80px; max-width:80px" class="img-circle img-responsive center-block">
+        </div>
+        <div class="designer_name">
+        </div>
+        <div id='follow-cont'></div>
+        <button class="btn bttn" style="float:right;position:relative;top:20px;background-color:#6BBCBF;color:white;"><i class="fa fa-arrow-circle-right"></i> Follow this designer</button>
+    </div>
+    <div class="modal-body">
+    <div class="leftmodal">
+      <div class="modal-slide">
+        <div style="width:80px;height:20px;float:left;margin-top:10px;">
+        <a href="#" id="scroll-up"><i style="margin-left:33px;color:#6BBCBF" class="fa fa-chevron-circle-up fa-1x"></i></a>
+        </div>
+        <div class="modal-gallery-container">
+          <div class="modal-gallery">
+          </div>
+        </div>
+        <div style="width:80px;height:20px;float:left">
+        <a href="#" id="scroll-down"><i style="margin-left:33px;color:#6BBCBF" class="fa fa-chevron-circle-down fa-1x"></i></a>
+        </div>
+      </div>
+      <img class="modal-image">
+      <div class="modaltabs" role="tabpanel">
+        <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#comments" aria-controls="comments" role="tab" data-toggle="tab">Comments</a></li>
+          
+          <li role="presentation" ><a href="#item_details" aria-controls="item_details" role="tab" data-toggle="tab">Item Details</a></li>
+          <li role="presentation"><a href="#item_ratings" aria-controls="item_ratings" role="tab" data-toggle="tab"> <span id='tab-ratings'> Ratings</span></a></li>
+          <li role="presentation"><a href="#policies" aria-controls="policies" role="tab" data-toggle="tab">Shipping & Policies</a></li>
+          </ul>
+
+             <!-- Tab panes -->
+             <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="comments">
+                <div id="all-comments">
+                </div>
+                <div id="new-comment"></div>
+                  <div class="row">
+                    <% if spree_current_user %>
+                      <%= render 'spree/shared/add_comment'%>
+                    <% else %>
+                      
+                      <%= link_to 'Login to comment', '/login', style:'margin-top: 10px; font-weight:bold;'%>
+                          
+                      
+                    <% end %>
+                  </div>
+              </div>
+              <div role="tabpanel" class="tab-pane " id="item_details">
+                
+              </div>
+              <div role="tabpanel" class="tab-pane fade" id="item_ratings">
+                yyy
+              </div>
+              
+              <div role="tabpanel" class="tab-pane fade" id="policies">
+                                Shipping Costs
+                Shipping to
+
+                Cost
+                $5.66 USD
+                Get shipping costs for multiple items in your cart. Shipping upgrades are available for this item.
+                Policies
+                Payment
+                All Payments are done via direct pay or paypal. 
+
+                I am not allowed to include VAT in my prices because I take advantage of the “Kleinunternehmerregelung” (e.g. small business solution) written down in German VAT tax law (UstG §19)
+                Shipping
+                After receiving the complete payment I will start to produce your order. I will send you a notification when your item has shipped - this will go to the email address that you signed up to Etsy with. I send all orders by letter. If you would like to upgrade to Priority or Express Shipping, please contact me to arrange this before purchase. I will then adjust the shipping costs by additional charges. 
+              </div>
+            </div>
+
+      </div>
+    </div>
+    <div class="rightmodal">
+      <div class="modal-info">
+        <div class="protitle">
+        </div>
+        <div class="proprice">
+        </div>
+        <%= form_for :order, url: populate_orders_path do |f| %>
+          <div class="quantitycontainer">
+            Quantity
+            <div class="variant_id">
+            </div>
+            <div class="quantity">
+              <%= select_tag 'quantity[]', options_for_select((1..10))%>
+            </div>
+          </div>
+          <div class="stock">
+          </div>
+          <div class="filter">
+            Size<br>
+            <div class="filterselect">
+            </div>
+          </div>
+          <div class="overview">
+          </div>
+          <div class="additionalinfo">
+          </div>
+          <div class="addtocart">
+            <%= submit_tag 'ADD TO CART', class: 'btn addtocartbtn' %>  
+            
+          </div>
+        <% end %>
+      </div>
+      
+  <!--    <div class="share">
+      </div>
+  -->   
+      <div class="similar_products">
+      </div>
+      
+    </div>
+    
+    <div class="designer_products">
+      <div class="scroll-right bttn">
+        <a href="#" id="scroll-right" style="position:relative;left:3px;top:75px;"><i style="color:#6BBCBF" class="fa fa-chevron-circle-right fa-3x"></i></a>
+      </div>
+      <div class="scroll-left bttn">
+        <a href="#" id="scroll-left" style="position:relative;left:3px;top:75px;"><i style="color:#6BBCBF" class="fa fa-chevron-circle-left fa-3x"></i></a>
+      </div>
+      <div class="designer_gallery_container">
+        <div class="designer_gallery">
+        </div>
+      </div>
+    </div>
+    
+    <!--NEVER DELETE THE STABILIZER DIV BELOW-->
+    <div class="stabilizer">
+    </div>
+    
+    </div>
+    
+    </div>
+    </div>
   </div>
 
-
-
-
-
+    <div class="closemodal">
+      <button class="btn bttn" id="closemodal"><i style="color:#6BBCBF" class="fa fa-times fa-2x"></i></button>
+    </div>
+    <div class="nextcard">
+      <button class="btn bttn" id="nextcard"><i style="color:#6BBCBF" class="fa fa-chevron-circle-right fa-2x"></i></button>
+    </div>
+    
+    <div class="prevcard">
+      <button class="btn bttn" id="prevcard"><i style="color:#6BBCBF" class="fa fa-chevron-circle-left fa-2x"></i></button>
+    </div>
+    
 

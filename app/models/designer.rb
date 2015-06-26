@@ -29,7 +29,7 @@ class Designer < ActiveRecord::Base
 	friendly_id :name, use: [:slugged, :history]
 	
 	has_many :suites
-	has_many :spree_products
+	has_many :spree_products, class_name: 'Spree::Product'
 
 	has_many :entries, dependent: :destroy
 	belongs_to :user, class_name: 'Spree::User'
