@@ -9,5 +9,5 @@ child :designer do
 end
 
 child :master_images do 
-	node(:url){|d| d.attachment.url}
+	node(:url){|d| d.attachment.url(:large)}
 end

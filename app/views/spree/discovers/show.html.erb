@@ -1,7 +1,7 @@
 <script type="text/javascript">
 default_colwidth=230;
 colwidth=0;
-colmargin=10;
+colmargin=18;
 colheights=[];
 colnum=0;
 searchval="";
@@ -197,7 +197,7 @@ function getcards(page_no){
 	success:function(data){
 		cardsdata.push.apply(cardsdata,data);
 		for(var i=0 ; i<data.length ; i++){
-			var card = "<div id=\""+data[i]['id']+"\" class=\"card\"><div class=\"cardimage\" type=\"button\" class=\"btn\" data-toggle=\"modal\" data-target=\"#myModal\"><img src=\""+data[i]['spree_assets'][0]['url']+"\"></div><div class=\"cardpanel\"><div class='prod-name text-center'>"+data[i]['name']+"</div><div class='row'><div class='col-md-6 price-card'>Rs."+data[i]['price']+"</div><div class='col-md-6 buy-card text-right'><i class='fa fa-cart'>Buy</i></div></div><div class=\"cardinfo\">"+data[i]['short_descrip']+"</div><div class=\"designer_info\"><a href=/designers/"+data[i]['designer']['slug']+" class=\"btn bttn\" style=\"padding:0;background:white;color:#5F5F5F\"><image src=\""+data[i]['designer']['img']+"\" style=\"height:35px;\" class=\"img-circle\" > "+data[i]['designer']['name']+"</a></div></div><button class=\"btn addtowishlist bttn\"><i class=\"fa fa-heart fa-1x\" style=\"position:relative;left:-6px;top:-3px\"></i></button></div>";
+			var card = "<div id=\""+data[i]['id']+"\" class=\"card\"><div class=\"cardimage\" type=\"button\" class=\"btn\" data-toggle=\"modal\" data-target=\"#myModal\"><img src=\""+data[i]['spree_assets'][0]['url']+"\"></div><div class=\"cardpanel\"><div class='row'><div class='prd-name-card text-justify'>"+data[i]['name']+"</div></div><div class=\"cardinfo\"><div class='row'><div class='col-md-12 short-descrip-card'>"+data[i]['short_descrip']+"</div></div><div class='row'><div class='col-md-6 prc-card'>Rs. "+data[i]['price']+"</div><div class='col-md-6 text-right'><div class='buy-card-btn' data-toggle=\"modal\" data-target=\"#myModal\" data-id="+data[i]['id']+"><img alt='Buy button' src='/assets/buy_button.png', style='height:40px; cursor:pointer' /></div></div></div></div><div class=\"designer_info\"><a href=/designers/"+data[i]['designer']['slug']+" class=\"btn bttn\" style=\"padding-left:5px;background:white;color:#5F5F5F\"><image src=\""+data[i]['designer']['img']+"\" style=\"height:35px;\" class=\"img-circle\" > "+data[i]['designer']['name']+"</a></div></div><button class=\"btn addtowishlist bttn\"><i class=\"fa fa-heart fa-1x\" style=\"position:relative;left:-6px;top:-3px\"></i></button></div>";
 			$("#cardsarea").append(card);
 		}
 		colinitializer();
@@ -251,6 +251,9 @@ function createmodal(x){
 		$(".designer_gallery").scrollLeft(0);
 		
 		$(".modal-image").attr("src",$(".selected img").attr("src"));
+
+
+
 		$(".designer_name").html(data1['designer']['name']);
 		$(".protitle").html("<strong>"+data1['name']+"</strong>");
 		$(".proprice").html("<strong>Rs. "+data1['price']+ "</strong>");
@@ -289,6 +292,8 @@ function createmodal(x){
 		{
 			$(".designer_gallery").append("<td><a href=\"#\"  onclick=\"createmodal("+data["des_products"][i].number+")\"><div class=\"desproduct bttn\"><div><img src=\""+data["des_products"][i].image+"\" style=\"height:160px;width:160px;\"></div><div style=\"width:160px;height:20px\">Prod Name</div><div style=\"width:160px;height:20px;\">$ "+data["des_products"][i].number+"</div></div></a></td>");
 		}
+
+
 	
 	},
 	error:function(){
@@ -335,10 +340,7 @@ function colinitializer(){
 		for(var i=0 ; i<colnum ; i++)
 		colheights[i]=colmargin;
 		$("#cardsarea").outerWidth(colnum*(colwidth+colmargin));
-		if($(document).innerWidth()>480)
-		$("#header").outerWidth(colnum*(colwidth+colmargin));
-		else
-		$("#header").outerWidth($(window).innerWidth()-2*colmargin);	
+			
 		$("#loaderarea").outerWidth(colnum*(colwidth+colmargin));
 		$("#search").outerWidth(Math.min($("#category").offset().left-($("#logo img").width()+$("#logo").offset().left)-30,600));
 		$("#category_box").css("right",parseInt($(window).width()-$('#category').offset().left-300)+"px");
@@ -476,7 +478,7 @@ function getsubcategories(){
 				<a href="#" id="scroll-down"><i style="margin-left:33px;color:#6BBCBF" class="fa fa-chevron-circle-down fa-1x"></i></a>
 				</div>
 			</div>
-			<img class="modal-image">
+			<img id='modal-image' class="modal-image">
 			<div class="modaltabs" role="tabpanel">
 				<!-- Nav tabs -->
 				  <ul class="nav nav-tabs" role="tablist">
@@ -557,7 +559,7 @@ function getsubcategories(){
 					<div class="additionalinfo">
 					</div>
 					<div class="addtocart">
-					<%= submit_tag 'ADD TO CART', class: 'btn bttn', style:"width:348px;background-color:#6BBCBF;color:white" %>	
+					<%= submit_tag 'ADD TO CART', class: 'btn bttn addtocartbtn' %>	
 						
 					</div>
 				<% end %>

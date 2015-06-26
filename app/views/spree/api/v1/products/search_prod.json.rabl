@@ -7,7 +7,7 @@ node(:master_variant_id){|p| p.master.id}
 
 
 child :master_images do 
-	node(:url){|d| d.attachment.url}
+	node(:url){|d| d.attachment.url(:large)}
 end
 
 child :designer do 

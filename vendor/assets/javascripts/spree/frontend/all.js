@@ -11,7 +11,7 @@
 //= require bootstrap-sprockets
 //= require nprogress
 //= require nprogress-turbolinks
-
+//= require jquery.rating
 
 //= require spree/frontend/spree_reviews
 

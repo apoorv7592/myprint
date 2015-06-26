@@ -316,11 +316,12 @@ html, body {
 }
 
 .modal-image{
-	height:480px;
-	width:480px;
-	float:left;
+	max-height:480px;
+	max-width:480px;
 	background-color:black;
-	margin:0 5px;
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
 	border-radius:6px;
 }
 
