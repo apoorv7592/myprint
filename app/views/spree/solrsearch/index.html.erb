@@ -1,7 +1,7 @@
 <script type="text/javascript">
 default_colwidth=230;
 colwidth=0;
-colmargin=10;
+colmargin=18;
 colheights=[];
 colnum=0;
 searchval="";
@@ -13,6 +13,7 @@ $(document).ready(function(){
 	$(document).on("click","#category",function(){
 		$("#tail").toggle();
 		$("#category_box").toggle();
+    	$("#main").toggleClass("blur");
 	});
 	
 	$(document).click(function(e){
@@ -20,6 +21,7 @@ $(document).ready(function(){
 		{
 			$("#tail").hide();
 			$("#category_box").hide();
+      		$("#main").removeClass("blur");
 		}
 	});
 	
@@ -183,8 +185,9 @@ $(document).ready(function(){
 
 function getcards(page_no){
 	<% @products.each do |p| %>
-		$("#cardsarea").append("<div id=\"<%= p.id %>\" class=\"card\"><div class=\"cardimage\" type=\"button\" class=\"btn\" data-toggle=\"modal\" data-target=\"#myModal\"><img src=\"<%= p.master_images.first.attachment.url %>\"></div><div class=\"cardpanel\"><button class=\"buyitnow\"><strong>Buy Now</strong></button><div class=\"pricing\">Rs.<%= p.price %></div><div class=\"cardinfo\"><%= truncate(p.description,lenght:140) %></div><div class=\"designer_info\"><a href=/designers/<%=p.designer.slug %> class=\"btn bttn\" style=\"padding:0;background:white;color:#5F5F5F\"><image src=\"<%= p.designer.avatar.url%>\" style=\"height:35px;\" class=\"img-circle\" > <%= p.designer.name %></a></div></div><button class=\"btn addtowishlist bttn\"><i class=\"fa fa-heart fa-1x\" style=\"position:relative;left:-6px;top:-3px\"></i></button></div>");
+		$("#cardsarea").append("<div id=\"<%= p.id %>\" class=\"card\"><div class=\"cardimage\" type=\"button\" class=\"btn\" data-toggle=\"modal\" data-target=\"#myModal\"><img src=\"<%= p.master_images.first.attachment.url %>\"></div><div class=\"cardpanel\"><div class='row'><div class='prd-name-card text-justify'><%= p.name %></div></div><div class=\"cardinfo\"><div class='row'><div class='col-md-12 short-descrip-card'><%= truncate(p.description, length: 140)%></div></div><div class='row'><div class='col-md-6 prc-card'>Rs. <%= p.price %></div><div class='col-md-6 text-right'><div class='buy-card-btn' data-toggle=\"modal\" data-target=\"#myModal\" data-id=<%=p.id%>><img alt='Buy button' src='/assets/buy_button.png', style='height:40px; cursor:pointer' /></div></div></div></div><div class=\"designer_info\"><a href=/designers/<%=p.designer.slug %> class=\"btn bttn\" style=\"padding-left:5px;background:white;color:#5F5F5F\"><image src=\"<%=p.designer.avatar.url%>\" style=\"height:35px;\" class=\"img-circle\" > <%= p.designer.name%></a></div></div><button class=\"btn addtowishlist bttn\"><i class=\"fa fa-heart fa-1x\" style=\"position:relative;left:-6px;top:-3px\"></i></button></div>");
 	<% end %>
+	
 	colinitializer();
 	$("#loaderarea").hide();
 }
@@ -193,30 +196,21 @@ function createmodal(x){
 	$.ajax({	
 	dataType:"json",
 	async:"TRUE",
-	url: "/api/modal_info/"+x,
+	url: "/api/search_prod/"+x,
 	method:"GET",
 	data:{cardnum:x, id: x},
 	success:function(data){
 		modalid=x;
-		data1={};
-		for(var i=0 ; i<cardsdata.length ; i++)
-		{
-			if(x==cardsdata[i]['id'])
-			{
-				data1=cardsdata[i];//this is the info of the clicked product;
-				break;
-			}
-		}
 		var gallery="";
-		for(var i=0 ; i<data1["spree_assets"].length ; i++)
+		for(var i=0 ; i<data[0]["spree_assets"].length ; i++)
 		{	
 			gallery+="<div class=\"gallerybutton";
 			if(i==0)
 			gallery+=" selected";
-			gallery+="\"><img src=\""+data1["spree_assets"][i]['url']+"\"></div>";
+			gallery+="\"><img src=\""+data[0]["spree_assets"][i]['url']+"\"></div>";
 		}
 		$(".modal-gallery").html(gallery);
-		if(data1["spree_assets"].length>5)
+		if(data[0]["spree_assets"].length>5)
 		{
 			$("#scroll-up").show();
 			$("#scroll-down").show();
@@ -230,9 +224,9 @@ function createmodal(x){
 		$(".designer_gallery").scrollLeft(0);
 		
 		$(".modal-image").attr("src",$(".selected img").attr("src"));
-		$(".designer_name").html(data1['designer']['name']);
-		$(".protitle").html("<strong>"+data1['name']+"</strong>");
-		$(".proprice").html("<strong>Rs. "+data1['price']+ "</strong>");
+		$(".designer_name").html(data[0]['designer']['name']);
+		$(".protitle").html("<strong>"+data[0]['name']+"</strong>");
+		$(".proprice").html("<strong>Rs. "+data[0]['price']+ "</strong>");
 
 		$(".variant_id").html("<input id='token' name='variant_id[]' type='hidden' value='"+data[0]['master_variant_id']+"' />")
 		$(".stock").html("Only 1 Left in Stock");
@@ -240,8 +234,8 @@ function createmodal(x){
 		$(".overview").html(data[0]['overview_text']);
 		$(".additionalinfo").html("This shop accepts Etsy Gift Cards");
 		$("#item_details").html(data[0]['description']);
-		$(".designer_image img").attr("src",data1['designer']['img']);
-		$("#product_id").attr("value",data1['id']);
+		$(".designer_image img").attr("src",data[0]['designer']['img']);
+		$("#product_id").attr("value",data[0]['id']);
 		
 		// fetch and insert the comments
 		$("#all-comments").html("");
@@ -257,18 +251,7 @@ function createmodal(x){
 				$("#all-comments").append("<div class='row comment-cont' style='border-bottom:1px solid #F2F2F2;'><div class='col-md-11'><div class='comment-user'>"+data[0]['comments'][i]['user']+"</div><div class='comment-body'>"+data[0]['comments'][i]['body']+"</div></div><div class='col-md-1'></div></div>");		
 			}
 		}
-		//fetch similar products and run loop
-		$(".similar_products").html("");
-		for(var i=0; i<6; i++)
-		{
-			$(".similar_products").append("<a href=\"#\" onclick=\"createmodal("+data["sim_products"][i].number+")\"><div class=\"simproduct bttn\"><div style=\"width:170px;height:170px;text-align:center;vertical-align:middle;\"><img src=\""+data["sim_products"][i].image+"\" style=\"height:170px;width:170px;\"></div><div style=\"width:170px;height:25px\">Prod Name</div><div style=\"width:170px;height:25px;\">$ "+data["sim_products"][i].number+"</div></div></a>");
-		}
-		$(".designer_gallery").html("");
-		for(var i=0 ; i<8 ; i++)
-		{
-			$(".designer_gallery").append("<td><a href=\"#\"  onclick=\"createmodal("+data["des_products"][i].number+")\"><div class=\"desproduct bttn\"><div><img src=\""+data["des_products"][i].image+"\" style=\"height:160px;width:160px;\"></div><div style=\"width:160px;height:20px\">Prod Name</div><div style=\"width:160px;height:20px;\">$ "+data["des_products"][i].number+"</div></div></a></td>");
-		}
-	
+		
 	},
 	error:function(){
 		alert("MODAL ERROR! ERROR! ERROR!");
@@ -361,8 +344,7 @@ function getsubcategories(){
 	type:"GET",
 	data:{categoryname:''},
 	success:function(data){
-		
-		
+	
 		for(var i=0 ; i<8 ; i++)
 		{
 			var card = "<a href=\""+data[i]['url']+"\" class=\"subcategory_link\" style=\"background-image:url("+data[i]['img_url']+")\"><div>"+data[i]['name']+"</div></a>";
@@ -391,9 +373,11 @@ function getsubcategories(){
 			<div id="subcategories_area">
 				DISCOVERS
 				<div id="subcategories">
-					<% @discovers.each do |d|%> 
-						<%= link_to  d, class: 'subcategory_link', style: "background-image:url(#{d.avatar.url})" do %>
-							<div><%= d.name %></div>
+					<% if @discovers.present? %>
+						<% @discovers.each do |d|%> 
+							<%= link_to  d, class: 'subcategory_link', style: "background-image:url(#{d.avatar.url})" do %>
+								<div><%= d.name %></div>
+							<% end %>
 						<% end %>
 					<% end %>
 				</div>

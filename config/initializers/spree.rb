@@ -10,7 +10,7 @@ Spree.config do |config|
   # Example:
   # Uncomment to stop tracking inventory levels in the application
   # config.track_inventory_levels = false
-  #config.searcher_class = Spree::Search::Solr
+  config.searcher_class = Spree::Search::Solr
 end
 
 Spree::PermittedAttributes.user_attributes << [:first_name, :last_name, :phone, :gender]

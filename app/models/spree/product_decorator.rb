@@ -13,10 +13,10 @@ Spree::Product.class_eval do
     has_many :discovers, through: :product_discovers
 
 	searchable do 
-        text :name, :description, :tag_list
+        text :name, :description
         time :created_at
         #integer :like_no
-        integer :avg_rating
+        #integer :avg_rating
         
         text :designer_names do 
             designer.name

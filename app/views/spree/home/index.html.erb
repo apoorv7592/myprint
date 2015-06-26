@@ -8,7 +8,7 @@ searchval="";
 gutter=0;
 modalid=-1;
 cardsdata = [];
-$(document).ready(function(){
+$(document).on('ready page:change', function () {
   
   $(document).on("click","#category",function(){
     $("#tail").toggle();
@@ -87,25 +87,7 @@ $(document).ready(function(){
   });
   
   // popup layout starts
-  
-  $(document).on("click","#closemodal",function(){
-    $('#myModal').modal('hide');
-  });
-  
-  $('#myModal').on('show.bs.modal', function () {
-    $('#main').addClass('blur');
-    $(".nextcard").show();
-    $(".prevcard").show();
-    $(".closemodal").show();
-  })
 
-  $('#myModal').on('hide.bs.modal', function () {
-    $('#main').removeClass('blur');
-    $(".nextcard").hide();
-    $(".prevcard").hide();
-    $(".closemodal").hide();
-  })
-  
   $(document).on("click","#nextcard",function(){
     
     var cardnum = $(".card").index($("#"+modalid));
@@ -188,7 +170,7 @@ function getcards(page_no){
     cardsdata.push.apply(cardsdata,data);
     for(var i=0 ; i<data.length ; i++){
 
-      var card = "<div id=\""+data[i]['id']+"\" class=\"card\"><div class=\"cardimage\" type=\"button\" class=\"btn\" data-toggle=\"modal\" data-target=\"#myModal\"><img src=\""+data[i]['spree_assets'][0]['url']+"\"></div><div class=\"cardpanel\"><div class='row'><div class='col-md-12 prd-name-card text-justify'>"+data[i]['name']+"</div><div class=\"cardinfo\"><div class='row'><div class='col-md-6 prc-card'>Rs. "+data[i]['price']+"</div><div class='col-md-6 text-right'><div class='buy-card-btn' data-toggle=\"modal\" data-target=\"#myModal\" data-id="+data[i]['id']+"><img alt='Buy button' src='/assets/buy_button.png', style='height:40px; cursor:pointer' /></div></div></div><div class='row'><div class='col-md-12 short-descrip-card'>"+data[i]['short_descrip']+"</div></div></div><div class=\"designer_info\"><a href=/designers/"+data[i]['designer']['slug']+" class=\"btn bttn\" style=\"padding:0;background:white;color:#5F5F5F\"><image src=\""+data[i]['designer']['img']+"\" style=\"height:35px;\" class=\"img-circle\" > "+data[i]['designer']['name']+"</a></div></div><button class=\"btn addtowishlist bttn\"><i class=\"fa fa-heart fa-1x\" style=\"position:relative;left:-6px;top:-3px\"></i></button></div>";
+      var card = "<div id=\""+data[i]['id']+"\" class=\"card\"><div class=\"cardimage\" type=\"button\" class=\"btn\" data-toggle=\"modal\" data-target=\"#myModal\"><img src=\""+data[i]['spree_assets'][0]['url']+"\"></div><div class=\"cardpanel\"><div class='row'><div class='prd-name-card text-justify'>"+data[i]['name']+"</div></div><div class=\"cardinfo\"><div class='row'><div class='col-md-12 short-descrip-card'>"+data[i]['short_descrip']+"</div></div><div class='row'><div class='col-md-6 prc-card'>Rs. "+data[i]['price']+"</div><div class='col-md-6 text-right'><div class='buy-card-btn' data-toggle=\"modal\" data-target=\"#myModal\" data-id="+data[i]['id']+"><img alt='Buy button' src='/assets/buy_button.png', style='height:40px; cursor:pointer' /></div></div></div></div><div class=\"designer_info\"><a href=/designers/"+data[i]['designer']['slug']+" class=\"btn bttn\" style=\"padding-left:5px;background:white;color:#5F5F5F\"><image src=\""+data[i]['designer']['img']+"\" style=\"height:35px;\" class=\"img-circle\" > "+data[i]['designer']['name']+"</a></div></div><button class=\"btn addtowishlist bttn\"><i class=\"fa fa-heart fa-1x\" style=\"position:relative;left:-6px;top:-3px\"></i></button></div>";
 
       $("#cardsarea").append(card);
     }
@@ -201,7 +183,11 @@ function getcards(page_no){
   }
   });
 }
-  
+function setupHistoryClicks(url){
+  history.pushState(null, null, url);
+  window.addEventListener("popstate", url, false);
+}
+
 function createmodal(x){
   $.ajax({  
   dataType:"json",
@@ -210,6 +196,10 @@ function createmodal(x){
   method:"GET",
   data:{cardnum:x, id: x},
   success:function(data){
+    
+    // change url
+    //setupHistoryClicks(data[0]['prod_url']);
+
     modalid=x;
     data1={};
     for(var i=0 ; i<cardsdata.length ; i++)
@@ -280,6 +270,9 @@ function createmodal(x){
   // to get the review form for the product
   $.get('/other_forms/'+x);
 } 
+$(".card").click(function(){
+  $('#myModal').modal('show');
+});
   
 function min(arr)
 {
@@ -352,7 +345,7 @@ function positioncards(){
     $("#loaderarea").css({"top":parseInt(max+$("#cardsarea").offset().top)+"px","left":$("#header").offset().left+"px"});
 }
 function getsubcategories(){}
-
+  
 
 </script>
 
@@ -481,7 +474,7 @@ function getsubcategories(){}
           <div class="additionalinfo">
           </div>
           <div class="addtocart">
-          <%= submit_tag 'ADD TO CART', class: 'btn bttn', style:"width:348px;background-color:#6BBCBF;color:white" %>  
+            <%= submit_tag 'ADD TO CART', class: 'btn addtocartbtn' %>  
             
           </div>
         <% end %>

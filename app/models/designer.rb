@@ -37,7 +37,7 @@ class Designer < ActiveRecord::Base
 	validates :name, presence: true
 	validates :city, presence: true
 	#validates :phonenum, presence: true
-	validates :city, presence: true
+	#validates :city, presence: true
 	validates :about, presence: true
 	
 	has_many :designerreviews

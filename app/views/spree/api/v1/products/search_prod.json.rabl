@@ -1,9 +1,20 @@
 collection @result
-attributes :id, :name, :description
+attributes :id, :name, :price
 
 node(:description){|p| simple_format(p.description)}
 
 node(:master_variant_id){|p| p.master.id}
+
+
+child :master_images do 
+	node(:url){|d| d.attachment.url}
+end
+
+child :designer do 
+	attributes :name
+	node(:img){|d| d.avatar.url}
+end
+
 
 node(:overview_text) do |p|
 	ov = p.overview
