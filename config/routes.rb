@@ -69,7 +69,7 @@ Rails.application.routes.draw do
     end
     #post '/reviews/:review_id/feedback(.:format)' => 'feedback_reviews#create', as: :feedback_reviews
 
-
+    get '/seller', to: 'static_pages#seller', as: 'seller'
 
 
     

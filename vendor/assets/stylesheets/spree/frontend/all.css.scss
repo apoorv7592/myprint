@@ -1,4 +1,7 @@
-/*
- *= require_tree
- *= require font-awesome
-*/
+@import "font-awesome";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "spree/frontend/cardspage";
+@import "spree/frontend/common";
+@import "spree/frontend/custom";
+@import "spree/frontend/one_page_checkout";
